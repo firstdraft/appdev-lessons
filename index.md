@@ -1,8 +1,8 @@
 ---
-title: "A Book"
-author: "Ben"
-description: "This book introduces the ABC theory, and ..."
-# url: 'https\://bookdown.org/john/awesome/'
+title: "AD1"
+author: "Ben + Raghu"
+description: "This book covers the AD1 course at UChicago"
+url: # 'https\://bookdown.org/john/awesome/'
 github-repo: "bpurinton/appdev-textbook"
 site: bookdown::bookdown_site 
 documentclass: book
@@ -10,6 +10,8 @@ favicon: "assets/favicon.ico"
 ---
 
 # Preface {-}
+
+This is the basic outline of a "Lesson" in the planned LMS app, including the syntax for LTI placement and quiz questions
 
 ```ruby
 class Person
