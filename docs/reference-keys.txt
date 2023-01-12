@@ -1,12 +1,11 @@
 appdev-outline
 diátaxis
-the-structure
 technical-references-code-vs.-terminology
 whats-missing
 course-overview
 gitpod-technical-setup
 video-segment-setting-up-accounts-datutorial
-text-companion-setting-up-accounts-dahowto
+setting-up-accounts-text
 video-segment-starting-a-new-gitpod-project-datutorial
 text-companion-starting-a-new-gitpod-project-dahowto
 video-segment-rails-grade-and-git-committing-datutorial
