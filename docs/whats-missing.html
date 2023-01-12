@@ -23,6 +23,7 @@
 <meta name="author" content="Ben + Raghu" />
 
 
+<meta name="date" content="2023-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -137,8 +138,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="choose-one.html"><a href="choose-one.html"><i class="fa fa-check"></i>Choose one</a></li>
-<li class="chapter" data-level="" data-path="choose-all-that-apply.html"><a href="choose-all-that-apply.html"><i class="fa fa-check"></i>Choose all that apply</a></li>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html"><i class="fa fa-check"></i>Planned LMS</a>
+<ul>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html#choose-one"><i class="fa fa-check"></i>Choose one</a></li>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html#choose-all-that-apply"><i class="fa fa-check"></i>Choose all that apply</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="appdev-outline.html"><a href="appdev-outline.html"><i class="fa fa-check"></i><b>1</b> AppDev Outline</a>
 <ul>
@@ -386,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A" data-path="terminology-technical-reference.html"><a href="terminology-technical-reference.html"><i class="fa fa-check"></i><b>A</b> Terminology Technical Reference</a></li>
 <li class="chapter" data-level="B" data-path="ruby-technical-reference.html"><a href="ruby-technical-reference.html"><i class="fa fa-check"></i><b>B</b> Ruby Technical Reference</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown">
+<li><a href="https://github.com/rstudio/bookdown" target="_blank">
 Proudly published with bookdown</a></li>
 
 </ul>
@@ -410,19 +414,19 @@ Proudly published with bookdown</a></li>
 <h2><span class="header-section-number">1.3</span> What’s missing?<a href="whats-missing.html#whats-missing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Running list of things TODO:</p>
 <ul>
-<li><p>The location(s) of the technical references (“TechRef”), and how they are built up</p></li>
+<li><p>The location(s) of the technical references (“TechRef”), and how they are built up, currently found in glossaries.</p></li>
 <li><p>Command-line basics</p>
 <ul>
 <li>could just be a short “Tutorial” video along with a “TechRef” of all the commands shown in the course</li>
 <li>place to explain directory structure and filepaths</li>
 </ul></li>
-<li><p>Dedicated video + text content of technical setup. Gitpod and github accounts, opening gitpod workspace, tab organization, /git commiting, rails grade, etc. Can be done with “RPS HTML” or “String” as example. <strong>See “Gitpod Technical Setup” topic in “Week 1” below.</strong></p></li>
+<li><p>Dedicated video + text content of technical setup. Gitpod and github accounts, opening gitpod workspace, tab organization, /git commiting, rails grade, etc. Can be done with “RPS HTML” or “String” as example. <strong>See <a href="gitpod-technical-setup.html#gitpod-technical-setup">Gitpod Technical Setup</a>.</strong></p></li>
 <li><p>Dedicated video + text content of gems and Gemfile (and maybe <code>bundle</code>). This is found throughout content right now.</p></li>
-<li><p>CSS reference, there is some here: <code>classbook.md</code></p></li>
+<li><p>CSS reference, there is some here: <a href="https://github.com/firstdraft/appdev-chapters/blob/benp-edits/classbook.md" target="_blank"><code>classbook.md</code></a></p></li>
 <li><p>Text doc with “keyboard magic” commands (e.g., TAB completion, opening/clearing terminal).</p></li>
-<li><p>Dedicated video + text for ideas.firstdraft.com with domain model for OfferUp. <strong>See Week 6" topic “Domain Modeling”</strong></p></li>
-<li><p>Video tutorial for <a href="https://association-accessors.firstdraft.com/" class="uri">https://association-accessors.firstdraft.com/</a>. This is in the last 10 minutes of Day 7 recording right now. Maybe a dedicated chapter for <code>belongs_to</code>, <code>has_many</code>, <code>scope</code>, <code>through</code>, and use of <code>.joins()</code> for queries.</p></li>
-<li><p>Dedicated video + text content for starting from scratch, generator resources, and migration. This is spread across videos (e.g., Day 7 video, Day 8 short video, Photogram and MSM signin), chapters (e.g., <code>active-record.md</code>, <code>draft-generators.md</code>, <code>draft-account.md</code>), classroom examples (Day 8 recordings). <strong>See “Week 8” topic “Starting from Scratch with Generators” below.</strong></p></li>
+<li><p>Dedicated video + text for ideas.firstdraft.com with domain model for OfferUp. <strong>See <a href="domain-modeling.html#domain-modeling">Domain Modeling</a></strong></p></li>
+<li><p>Video tutorial for <a href="https://association-accessors.firstdraft.com/" target="_blank">https://association-accessors.firstdraft.com/</a>. This is in the last 10 minutes of Day 7 recording right now. Maybe a dedicated chapter for <code>belongs_to</code>, <code>has_many</code>, <code>scope</code>, <code>through</code>, and use of <code>.joins()</code> for queries.</p></li>
+<li><p>Dedicated video + text content for starting from scratch, generator resources, and migration. This is spread across videos (e.g., Day 7 video, Day 8 short video, Photogram and MSM signin), chapters (e.g., <a href="https://github.com/firstdraft/appdev-chapters/blob/benp-edits/active-record.md" target="_blank"><code>active-record.md</code></a>, <a href="https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-generators.md" target="_blank"><code>draft-generators.md</code></a>, <a href="https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-account.md" target="_blank"><code>draft-account.md</code></a>), classroom examples (Day 8 recordings). <strong>See <a href="starting-from-scratch-with-generators.html#starting-from-scratch-with-generators">Starting from Scratch with Generators</a></strong></p></li>
 <li><p>API videos for Mailgun, Twilio, etc.</p></li>
 <li><p>Print stylesheet applied to any lesson to make hard copies (pdf)</p></li>
 <li><p>Heroku alternative video / writeup</p></li>

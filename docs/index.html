@@ -23,6 +23,7 @@
 <meta name="author" content="Ben + Raghu" />
 
 
+<meta name="date" content="2023-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -30,7 +31,7 @@
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 
-<link rel="next" href="choose-one.html"/>
+<link rel="next" href="planned-lms.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -137,8 +138,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="choose-one.html"><a href="choose-one.html"><i class="fa fa-check"></i>Choose one</a></li>
-<li class="chapter" data-level="" data-path="choose-all-that-apply.html"><a href="choose-all-that-apply.html"><i class="fa fa-check"></i>Choose all that apply</a></li>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html"><i class="fa fa-check"></i>Planned LMS</a>
+<ul>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html#choose-one"><i class="fa fa-check"></i>Choose one</a></li>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html#choose-all-that-apply"><i class="fa fa-check"></i>Choose all that apply</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="appdev-outline.html"><a href="appdev-outline.html"><i class="fa fa-check"></i><b>1</b> AppDev Outline</a>
 <ul>
@@ -386,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A" data-path="terminology-technical-reference.html"><a href="terminology-technical-reference.html"><i class="fa fa-check"></i><b>A</b> Terminology Technical Reference</a></li>
 <li class="chapter" data-level="B" data-path="ruby-technical-reference.html"><a href="ruby-technical-reference.html"><i class="fa fa-check"></i><b>B</b> Ruby Technical Reference</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown">
+<li><a href="https://github.com/rstudio/bookdown" target="_blank">
 Proudly published with bookdown</a></li>
 
 </ul>
@@ -409,28 +413,11 @@ Proudly published with bookdown</a></li>
 <div id="header">
 <h1 class="title">AD1</h1>
 <p class="author"><em>Ben + Raghu</em></p>
+<p class="date"><em>2023-01-12</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This is the basic outline of a “Lesson” in the planned LMS app, including the syntax for LTI placement and quiz questions</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
-<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true"></a>     <span class="ot">attr_accessor</span> <span class="st">:first_name</span>, <span class="st">:last_name</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true"></a>     </span>
-<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true"></a>     <span class="kw">def</span> full_name</span>
-<span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true"></a>       <span class="st">&quot;</span><span class="ot">#{</span>first_name<span class="ot">}</span><span class="st"> </span><span class="ot">#{</span>last_name<span class="ot">}</span><span class="st">&quot;</span></span>
-<span id="cb1-6"><a href="index.html#cb1-6" aria-hidden="true"></a>     <span class="kw">end</span></span>
-<span id="cb1-7"><a href="index.html#cb1-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<ul>
-<li>Bullets</li>
-<li>More <code>bullets</code></li>
-</ul>
-<p>A paragraph.</p>
-<p>LTI{Launch the tool}(<a href="https://lti-provider-example.herokuapp.com/lti_tool" class="uri">https://lti-provider-example.herokuapp.com/lti_tool</a>)[test]{secret}(20)[foo]{400}</p>
-<ul>
-<li>Bullets</li>
-<li>More bullets</li>
-</ul>
-<p>LTI{ }(<a href="https://lti-provider-example.herokuapp.com/lti_tool" class="uri">https://lti-provider-example.herokuapp.com/lti_tool</a>)[test]{secret}(10)[bar]</p>
+<p>This document is originally based on a chronological outline of the AppDev course content, from the Canvas material for “BUSN 36110 81 (Summer 2022) Application Development”.</p>
 </div>
             </section>
 
@@ -438,7 +425,7 @@ Proudly published with bookdown</a></li>
         </div>
       </div>
 
-<a href="choose-one.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="planned-lms.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

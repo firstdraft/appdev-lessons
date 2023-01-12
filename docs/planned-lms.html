@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>37 Photogram Signin | AD1</title>
+  <title>Planned LMS | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="37 Photogram Signin | AD1" />
+  <meta property="og:title" content="Planned LMS | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="bpurinton/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="37 Photogram Signin | AD1" />
+  <meta name="twitter:title" content="Planned LMS | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="cookies-intro.html"/>
-<link rel="next" href="starting-from-scratch-with-generators.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="appdev-outline.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -410,99 +410,85 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="photogram-signin" class="section level1 hasAnchor" number="37">
-<h1><span class="header-section-number">37</span> Photogram Signin<a href="photogram-signin.html#photogram-signin" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>(Intro to Authentication)</p>
+<div id="planned-lms" class="section level2 unnumbered hasAnchor">
+<h2>Planned LMS<a href="planned-lms.html#planned-lms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This is the basic outline of a “Lesson” in the planned LMS app, including the syntax for LTI placement and quiz questions</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="planned-lms.html#cb1-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
+<span id="cb1-2"><a href="planned-lms.html#cb1-2" aria-hidden="true"></a>     <span class="ot">attr_accessor</span> <span class="st">:first_name</span>, <span class="st">:last_name</span></span>
+<span id="cb1-3"><a href="planned-lms.html#cb1-3" aria-hidden="true"></a>     </span>
+<span id="cb1-4"><a href="planned-lms.html#cb1-4" aria-hidden="true"></a>     <span class="kw">def</span> full_name</span>
+<span id="cb1-5"><a href="planned-lms.html#cb1-5" aria-hidden="true"></a>       <span class="st">&quot;</span><span class="ot">#{</span>first_name<span class="ot">}</span><span class="st"> </span><span class="ot">#{</span>last_name<span class="ot">}</span><span class="st">&quot;</span></span>
+<span id="cb1-6"><a href="planned-lms.html#cb1-6" aria-hidden="true"></a>     <span class="kw">end</span></span>
+<span id="cb1-7"><a href="planned-lms.html#cb1-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <ul>
-<li><p>Transcription <code>photogram-signin.md</code> contains time-stamped sections matching the headings here</p></li>
-<li><p>Chapters (and slides):</p>
+<li>Bullets</li>
+<li>More <code>bullets</code></li>
+</ul>
+<p>A paragraph.</p>
+<p>LTI{Launch the tool}(<a href="https://lti-provider-example.herokuapp.com/lti_tool" class="uri">https://lti-provider-example.herokuapp.com/lti_tool</a>)[test]{secret}(20)[foo]{400}</p>
 <ul>
-<li><code>cookies-vs-session.md</code></li>
+<li>Bullets</li>
+<li>More bullets</li>
+</ul>
+<p>LTI{ }(<a href="https://lti-provider-example.herokuapp.com/lti_tool" class="uri">https://lti-provider-example.herokuapp.com/lti_tool</a>)[test]{secret}(10)[bar]</p>
+<div id="choose-one" class="section level3 unnumbered hasAnchor">
+<h3>Choose one<a href="planned-lms.html#choose-one" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>First bullet point is the question itself?</li>
+<li>First option
+<ul>
+<li>This is not correct because of xyz reason</li>
 </ul></li>
-<li><p>Project: <a href="https://github.com/appdev-projects/photogram-signin" class="uri">https://github.com/appdev-projects/photogram-signin</a></p></li>
-<li><p>Workspace open, tabs organized, aware of /git committing and rails grade. Link to technical setup.</p></li>
-</ul>
-<div id="video-segment-storing-passwords-datutorial" class="section level3 hasAnchor" number="37.0.1">
-<h3><span class="header-section-number">37.0.1</span> Video Segment: Storing Passwords (da=“Tutorial”)<a href="photogram-signin.html#video-segment-storing-passwords-datutorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<li>Second option
 <ul>
-<li>migration file: <code>rails g migration AddPasswordDigestToUsers</code></li>
-<li>add <code>password_digest</code> Column to <code>User</code></li>
-<li>explore <code>db/migrate</code> and <code>rails db:migrate</code></li>
-<li>add <code>has_secure_password</code> to <code>app/models/user.rb</code> to get <code>.password</code> and <code>.password_confirmation</code></li>
-<li><code>bcrypt</code> gem</li>
-</ul>
-<div id="text-companion-storing-passwords-dahowto" class="section level4 hasAnchor" number="37.0.1.1">
-<h4><span class="header-section-number">37.0.1.1</span> Text Companion: Storing Passwords (da=“HowTo”)<a href="photogram-signin.html#text-companion-storing-passwords-dahowto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-</div>
-</div>
-<div id="video-segment-signup-form-datutorial" class="section level3 hasAnchor" number="37.0.2">
-<h3><span class="header-section-number">37.0.2</span> Video Segment: Signup Form (da=“Tutorial”)<a href="photogram-signin.html#video-segment-signup-form-datutorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li>add navigation links in <code>app/views/layouts/application.html.erb</code></li>
-<li>RCAV <strong>/user_sign_up</strong></li>
-<li>copy and modify add user form found in <code>app/views/users/index.html.erb</code>
-<ul>
-<li>use <code>type="password"</code> inputs</li>
+<li>This is not correct because of xyz reason</li>
+<li>Also not correct because of abc reason</li>
 </ul></li>
-<li>fix <code>create</code> action to use <code>.password</code> and <code>.password_confirmation</code> before <code>.save</code></li>
-<li>control flow with <code>:notice</code> or <code>:alert</code></li>
-</ul>
-<div id="text-companion-signup-form-dahowto" class="section level4 hasAnchor" number="37.0.2.1">
-<h4><span class="header-section-number">37.0.2.1</span> Text Companion: Signup Form (da=“HowTo”)<a href="photogram-signin.html#text-companion-signup-form-dahowto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-</div>
-</div>
-<div id="video-segment-notices-and-alerts-datutorial" class="section level3 hasAnchor" number="37.0.3">
-<h3><span class="header-section-number">37.0.3</span> Video Segment: Notices and Alerts (da=“Tutorial”)<a href="photogram-signin.html#video-segment-notices-and-alerts-datutorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<li>Third option
 <ul>
-<li>add <code>notice</code> and <code>alert</code> to <code>app/views/layouts/application.html.erb</code></li>
-<li>use <code>if ... present?</code> control flow and style green and red</li>
-</ul>
-<div id="text-companion-notices-and-alerts-dahowto" class="section level4 hasAnchor" number="37.0.3.1">
-<h4><span class="header-section-number">37.0.3.1</span> Text Companion: Notices and Alerts (da=“HowTo”)<a href="photogram-signin.html#text-companion-notices-and-alerts-dahowto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-</div>
-</div>
-<div id="video-segment-signout-with-reset_session-datutorial" class="section level3 hasAnchor" number="37.0.4">
-<h3><span class="header-section-number">37.0.4</span> Video Segment: Signout with <code>reset_session</code> (da=“Tutorial”)<a href="photogram-signin.html#video-segment-signout-with-reset_session-datutorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<li>That’s right! Because of xyz reason</li>
+</ul></li>
+<li>Fourth option
 <ul>
-<li>add <code>session.store(:user_id, user.id)</code> to <code>create</code> action</li>
-<li>RCAV <strong>/user_sign_out</strong> with <code>reset_session</code> in <code>toast_cookies</code> action</li>
+<li>This is not correct because of xyz reason</li>
+</ul></li>
 </ul>
-<div id="text-companion-signout-with-reset_session-dahowto" class="section level4 hasAnchor" number="37.0.4.1">
-<h4><span class="header-section-number">37.0.4.1</span> Text Companion: Signout with <code>reset_session</code> (da=“HowTo”)<a href="photogram-signin.html#text-companion-signout-with-reset_session-dahowto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>{: .choose_best #bin points=“30” answer=“3” }</p>
 </div>
-</div>
-<div id="video-segment-signin-with-post-and-authenticate-datutorial" class="section level3 hasAnchor" number="37.0.5">
-<h3><span class="header-section-number">37.0.5</span> Video Segment: Signin with <code>post</code> and <code>authenticate</code> (da=“Tutorial”)<a href="photogram-signin.html#video-segment-signin-with-post-and-authenticate-datutorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="choose-all-that-apply" class="section level3 unnumbered hasAnchor">
+<h3>Choose all that apply<a href="planned-lms.html#choose-all-that-apply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>RCAV <strong>/user_sign_in</strong> with <code>new_session_form</code> action</li>
-<li>signin form with <code>action="/verify_credentials"</code> and <code>method="post"</code></li>
-<li><code>authenticate</code> action using <code>user.authenticate</code> and control flow</li>
-</ul>
-<div id="text-companion-signin-with-post-and-authenticate-dahowto" class="section level4 hasAnchor" number="37.0.5.1">
-<h4><span class="header-section-number">37.0.5.1</span> Text Companion: Signin with <code>post</code> and <code>authenticate</code> (da=“HowTo”)<a href="photogram-signin.html#text-companion-signin-with-post-and-authenticate-dahowto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-</div>
-</div>
-<div id="video-segment-remove-user-facing-ids-datutorial" class="section level3 hasAnchor" number="37.0.6">
-<h3><span class="header-section-number">37.0.6</span> Video Segment: Remove User-Facing IDs (da=“Tutorial”)<a href="photogram-signin.html#video-segment-remove-user-facing-ids-datutorial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<li>First bullet point is the question itself?</li>
+<li>First option
 <ul>
-<li>put <code>photo.owner_id = session.fetch(:user_id)</code> and <code>comment.author_id = session.fetch(:user_id)</code> in backend <code>create</code> actions of add photo and add comment forms</li>
+<li>This is not correct because of xyz reason</li>
+</ul></li>
+<li>Second option
+<ul>
+<li>This is not correct because of xyz reason</li>
+<li>Also not correct because of abc reason</li>
+</ul></li>
+<li>Third option
+<ul>
+<li>That’s right! Because of xyz reason</li>
+</ul></li>
+<li>Fourth option
+<ul>
+<li>That’s right! Because of xyz reason</li>
+</ul></li>
 </ul>
-<div id="text-companion-remove-user-facing-ids-dahowto" class="section level4 hasAnchor" number="37.0.6.1">
-<h4><span class="header-section-number">37.0.6.1</span> Text Companion: Remove User-Facing IDs (da=“HowTo”)<a href="photogram-signin.html#text-companion-remove-user-facing-ids-dahowto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-</div>
-</div>
-<div id="finish-and-submit-photogram-signin-daexercise" class="section level3 hasAnchor" number="37.0.7">
-<h3><span class="header-section-number">37.0.7</span> Finish and Submit Photogram Signin (da=“Exercise”)<a href="photogram-signin.html#finish-and-submit-photogram-signin-daexercise" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>{: .choose_all #baz points=“30” answer=“[3, 4]” }</p>
 
 </div>
 </div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="cookies-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="starting-from-scratch-with-generators.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appdev-outline.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -534,7 +520,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bpurinton/appdev-textbook/edit/master/lessons/photogram-signin.md",
+"link": "https://github.com/bpurinton/appdev-textbook/edit/master/index.md",
 "text": "Edit"
 },
 "history": {
@@ -542,7 +528,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/bpurinton/appdev-textbook/blob/master/lessons/photogram-signin.md",
+"link": "https://github.com/bpurinton/appdev-textbook/blob/master/index.md",
 "text": null
 },
 "download": null,
