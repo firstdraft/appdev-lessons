@@ -5,11 +5,11 @@ bookdown::gitbook:
   split_by: section # rmd, chapter, section, chapter+number, section+number
   config: # all defaults below
     toc:
-      collapse: none # subsection (if the TOC is getting too long), none
+      collapse: subsection # subsection (if the TOC is getting too long), none
       scroll_highlight: true
       before: |
-        <p>AppDev</p>
-        <p>Raghu + Ben</p>
+        <li>AppDev</li>
+        <li>Raghu + Ben</li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown">
         Proudly published with bookdown</a></li>

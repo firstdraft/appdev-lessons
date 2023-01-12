@@ -194,7 +194,7 @@ Running list of things TODO:
 
 ---
 
-## Deploying to Heroku, Optional
+## Deploying to Heroku
 
 - *This content has not been transcribed and may change*
 
