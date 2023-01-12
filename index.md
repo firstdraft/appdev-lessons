@@ -3,7 +3,7 @@ title: "A Book"
 author: "Ben"
 description: "This book introduces the ABC theory, and ..."
 # url: 'https\://bookdown.org/john/awesome/'
-# github-repo: "bpurinton/bpurinton.github.io"
+github-repo: "bpurinton/appdev-textbook"
 site: bookdown::bookdown_site 
 documentclass: book
 favicon: "assets/favicon.ico"
