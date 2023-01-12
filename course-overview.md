@@ -1,0 +1,15 @@
+# Course Overview 
+
+**(da="Explain")**
+
+  - Bird's Eye View Slides (https://slides.com/raghubetina/01-birds-eye-view?token=u4vg--N6)
+    - 01-09: Course intro
+    - 10-15: What does it mean to know how to code?
+    - 16-21: SaaS
+    - 22-26: URLs
+    - 27-33: Raghu's journey
+    - 34-40: How learning SaaS has evolved
+    - 41-46: Ruby on Rails, Play the whole game
+    - 47-49: Teaching team
+    - 50-79: Record keeping (history, tables, databases, domain modeling, CRUD)
+    - 80-88: Must See Movies example relational database tables
