@@ -1,0 +1,43 @@
+# see gitbook options: https://bookdown.org/yihui/bookdown/html.html#gitbook-style
+bookdown::gitbook:
+  # lib_dir: assets
+  highlight: pygments # highlight, default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, and breezedark
+  split_by: section # rmd, chapter, section, chapter+number, section+number
+  config: # all defaults below
+    toc:
+      collapse: none # subsection (if the TOC is getting too long), none
+      scroll_highlight: true
+      before: |
+        <p>AppDev</p>
+        <p>Raghu + Ben</p>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown">
+        Proudly published with bookdown</a></li>
+    toolbar:
+      position: fixed
+    edit : # null
+    download: null # null (will look for available files), [["book.pdf", "PDF"]], false
+    search:
+      engine: lunr # or fuse
+      # options to control/tune search engine behavior (for
+      # fuse.js, refer to https://fusejs.io/api/options.html)
+      options: null
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: false
+      github: true
+      twitter: false
+      linkedin: false
+      weibo: false
+      instapaper: false
+      vk: false
+      whatsapp: false
+      all: #['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
+    info: true
+
+# also pdf, but need LaTeX for that
+# bookdown::pdf_book: 
+#   default

@@ -1,0 +1,6 @@
+# rmd_files: ["index.md", "a.md", "rps-rcav/intro.md", "rps-rcav/first-section.md", "rps-rcav/second-section.md", 
+#             "02.Rmd", "001.md", "appendix/a.md", "appendix/b.md"]
+rmd_files: ["index.md", "appdev-content-outline.md"]
+# view: https://github.com/rstudio/bookdown-demo/blob/master/%s
+# edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+output_dir: "docs"
