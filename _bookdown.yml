@@ -1,9 +1,9 @@
 # rmd_files: ["index.md", "a.md", "rps-rcav/intro.md", "rps-rcav/first-section.md", "rps-rcav/second-section.md", 
 #             "02.Rmd", "001.md", "appendix/a.md", "appendix/b.md"]
 
-rmd_files: ["index.md", "frontmatter/appdev-outline.md", "frontmatter/whats-missing.md",
-            "course-setup/course-overview.md", "course-setup/gitpod-technical-setup.md",
-            "appendix/terminology.md", "appendix/ruby.md"]
+rmd_files: ["index.md", "appdev-outline.md", "whats-missing.md",
+            "course-overview.md", "gitpod-technical-setup.md",
+            "terminology-reference.md", "ruby-reference.md"]
 
 view: https://github.com/bpurinton/appdev-textbook/blob/master/%s
 edit: https://github.com/bpurinton/appdev-textbook/edit/master/%s
