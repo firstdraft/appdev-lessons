@@ -12,14 +12,15 @@ Here is a practical guide for how to edit and compile the book. A lot more detai
 
     ```
     .
-    ├── assets                         # images
-    │   └── <...>.png
+    ├── assets                         # images, one subdir for each lesson file
+    │    └── lesson-name  
+    │        └── <...>.png
     ├── docs                           # compiled by bookdown::render_book()
     │   └── <...>.html
     ├── glossaries                     # tech ref glossaries
     │   └── <...>-reference.md  
     ├── lessons                        # markdown file for each lesson / chapter
-    │   └── <...>.md
+    │   └── <lesson-name>.md
     ├── original-outline               # original outline for reference
     │   └── appdev-content-outline.md
     ├── _bookdown.yml                  # config file with chapter order and compilation location docs/
