@@ -5,7 +5,7 @@ bookdown::gitbook:
   split_by: section # rmd, chapter, section, chapter+number, section+number
   config: # all defaults below
     toc:
-      collapse: section # subsection # subsection (if the TOC is getting too long), none
+      collapse: section # section or subsection (if the TOC is getting too long), none
       scroll_highlight: true
       before: |
         <li>AppDev</li>

@@ -1,6 +1,6 @@
-# More Ruby 
+# Ruby Gym
 
-(da="Explain")
+Notes: 
 
   - Ruby Foundations Slides (https://firstdraft.slides.com/raghubetina/05-ruby-foundations?token=SFyjvCyP)
     - 01-06: Basic recap
