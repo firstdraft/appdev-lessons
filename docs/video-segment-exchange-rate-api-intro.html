@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>14.5 Finish and Submit Fortune Teller | AD1</title>
+  <title>17.2 Video Segment: Exchange Rate API Intro | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="14.5 Finish and Submit Fortune Teller | AD1" />
+  <meta property="og:title" content="17.2 Video Segment: Exchange Rate API Intro | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="14.5 Finish and Submit Fortune Teller | AD1" />
+  <meta name="twitter:title" content="17.2 Video Segment: Exchange Rate API Intro | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="video-segment-navbar-and-zodiac-debugging.html"/>
-<link rel="next" href="omnicalc-2-forms-params-apis.html"/>
+<link rel="prev" href="video-segment-urls-and-dynamic-routes.html"/>
+<link rel="next" href="video-segment-building-forex.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -444,7 +444,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="17.2.1" data-path="video-segment-exchange-rate-api-intro.html"><a href="video-segment-exchange-rate-api-intro.html#text-companion-exchange-rate-api-intro"><i class="fa fa-check"></i><b>17.2.1</b> Text Companion: Exchange Rate API Intro</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="video-segment-building-1.html"><a href="video-segment-building-1.html"><i class="fa fa-check"></i><b>17.3</b> Video Segment: Building 1</a></li>
+<li class="chapter" data-level="17.3" data-path="video-segment-building-forex.html"><a href="video-segment-building-forex.html"><i class="fa fa-check"></i><b>17.3</b> Video Segment: Building /forex</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="video-segment-building-forex.html"><a href="video-segment-building-forex.html#text-companion-building-forex"><i class="fa fa-check"></i><b>17.3.1</b> Text Companion: Building /forex</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="video-segment-building-forexsymbolsymbol.html"><a href="video-segment-building-forexsymbolsymbol.html"><i class="fa fa-check"></i><b>17.4</b> Video Segment: Building /forex/SYMBOL/SYMBOL</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="video-segment-building-forexsymbolsymbol.html"><a href="video-segment-building-forexsymbolsymbol.html#text-companion-building-forexsymbolsymbol"><i class="fa fa-check"></i><b>17.4.1</b> Text Companion: Building /forex/SYMBOL/SYMBOL</a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="finish-and-submit-dashboards.html"><a href="finish-and-submit-dashboards.html"><i class="fa fa-check"></i><b>17.5</b> Finish and Submit Dashboards</a>
+<ul>
+<li class="chapter" data-level="17.5.1" data-path="finish-and-submit-dashboards.html"><a href="finish-and-submit-dashboards.html#the-covid-tracking-project"><i class="fa fa-check"></i><b>17.5.1</b> The COVID Tracking Project</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="classroom-domain-modeling.html"><a href="classroom-domain-modeling.html"><i class="fa fa-check"></i><b>18</b> Classroom Domain Modeling</a>
 <ul>
@@ -479,61 +490,76 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="finish-and-submit-fortune-teller" class="section level2 hasAnchor" number="14.5">
-<h2><span class="header-section-number">14.5</span> Finish and Submit Fortune Teller<a href="finish-and-submit-fortune-teller.html#finish-and-submit-fortune-teller" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="video-segment-exchange-rate-api-intro" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Video Segment: Exchange Rate API Intro<a href="video-segment-exchange-rate-api-intro.html#video-segment-exchange-rate-api-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Notes:</p>
 <ul>
-<li>Below are relevant notes for the rest of the project taken from the README</li>
+<li>time stamp 00:02:10 to 00:03:56</li>
+<li>explore <a href="https://api.exchangerate.host/symbols" class="uri">https://api.exchangerate.host/symbols</a></li>
+<li>discuss JSON format</li>
+<li>using <strong>/symbols</strong> and <strong>/convert</strong></li>
 </ul></li>
 </ul>
-<div id="debugging-checklist" class="section level3 hasAnchor" number="14.5.1">
-<h3><span class="header-section-number">14.5.1</span> Debugging checklist<a href="finish-and-submit-fortune-teller.html#debugging-checklist" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol style="list-style-type: decimal">
-<li>READ the error message. Extract as much useful information from it as possible.</li>
-<li>If there’s no error message, find another way to give yourself feedback; <strong>make the invisible visible</strong>.</li>
-</ol>
-<ul>
-<li>Use the server log.</li>
-<li>Print things; in this new world, that means use embedded Ruby tags (<code>&lt;%=  %&gt;</code>) in the view templates. We can’t use the <code>p</code> method anymore since we aren’t writing command line programs anymore.</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>If all else fails — the error message isn’t helpful, or there isn’t one and you can’t spot the issue visually — delete the offending code (or comment it out), and re-type the R→C→A→V from scratch. Hopefully you’ve been making lots of git commits, so there’s no fear in doing so.</li>
-</ol>
+<p>In this next project, let’s finally use some more realistic data. Enough with random numbers and rock, paper, scissors. Let’s get some actual data from APIs like we did with the umbrella project. <strong>BENP: did they do this project?</strong></p>
+<p>The first API that we’re going to use is called <a href="https://api.exchangerate.host/symbols" target="_blank"><strong>https://api.exchangerate.host/symbols</strong></a>. It gives us back JSON that looks like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="video-segment-exchange-rate-api-intro.html#cb1-1" aria-hidden="true"></a><span class="er">//</span> <span class="er">20221219122429</span></span>
+<span id="cb1-2"><a href="video-segment-exchange-rate-api-intro.html#cb1-2" aria-hidden="true"></a><span class="er">//</span> <span class="er">https://api.exchangerate.host/symbols</span></span>
+<span id="cb1-3"><a href="video-segment-exchange-rate-api-intro.html#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="video-segment-exchange-rate-api-intro.html#cb1-4" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb1-5"><a href="video-segment-exchange-rate-api-intro.html#cb1-5" aria-hidden="true"></a>  <span class="dt">&quot;motd&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-6"><a href="video-segment-exchange-rate-api-intro.html#cb1-6" aria-hidden="true"></a>    <span class="dt">&quot;msg&quot;</span><span class="fu">:</span> <span class="st">&quot;If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.&quot;</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="video-segment-exchange-rate-api-intro.html#cb1-7" aria-hidden="true"></a>    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://exchangerate.host/#/donate&quot;</span></span>
+<span id="cb1-8"><a href="video-segment-exchange-rate-api-intro.html#cb1-8" aria-hidden="true"></a>  <span class="fu">},</span></span>
+<span id="cb1-9"><a href="video-segment-exchange-rate-api-intro.html#cb1-9" aria-hidden="true"></a>  <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="video-segment-exchange-rate-api-intro.html#cb1-10" aria-hidden="true"></a>  <span class="dt">&quot;symbols&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-11"><a href="video-segment-exchange-rate-api-intro.html#cb1-11" aria-hidden="true"></a>    <span class="dt">&quot;AED&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-12"><a href="video-segment-exchange-rate-api-intro.html#cb1-12" aria-hidden="true"></a>      <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;United Arab Emirates Dirham&quot;</span><span class="fu">,</span></span>
+<span id="cb1-13"><a href="video-segment-exchange-rate-api-intro.html#cb1-13" aria-hidden="true"></a>      <span class="dt">&quot;code&quot;</span><span class="fu">:</span> <span class="st">&quot;AED&quot;</span></span>
+<span id="cb1-14"><a href="video-segment-exchange-rate-api-intro.html#cb1-14" aria-hidden="true"></a>    <span class="fu">},</span></span>
+<span id="cb1-15"><a href="video-segment-exchange-rate-api-intro.html#cb1-15" aria-hidden="true"></a>    <span class="dt">&quot;AFN&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-16"><a href="video-segment-exchange-rate-api-intro.html#cb1-16" aria-hidden="true"></a>      <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Afghan Afghani&quot;</span><span class="fu">,</span></span>
+<span id="cb1-17"><a href="video-segment-exchange-rate-api-intro.html#cb1-17" aria-hidden="true"></a>      <span class="dt">&quot;code&quot;</span><span class="fu">:</span> <span class="st">&quot;AFN&quot;</span></span>
+<span id="cb1-18"><a href="video-segment-exchange-rate-api-intro.html#cb1-18" aria-hidden="true"></a>    <span class="fu">},</span></span>
+<span id="cb1-19"><a href="video-segment-exchange-rate-api-intro.html#cb1-19" aria-hidden="true"></a>    </span>
+<span id="cb1-20"><a href="video-segment-exchange-rate-api-intro.html#cb1-20" aria-hidden="true"></a>    <span class="er">//</span> <span class="er">...</span></span></code></pre></div>
+<p>Where we can see many currencies (even crypto!). This is a free API. If you put in any of their supported symbols, it will instantaneously and for free give you back the current exchange rate. For example if we use the URL to go from USD to Euros:</p>
+<p><strong><a href="https://api.exchangerate.host/convert?from=USD&amp;to=EUR" class="uri">https://api.exchangerate.host/convert?from=USD&amp;to=EUR</a></strong></p>
+<p>Then we get back:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="video-segment-exchange-rate-api-intro.html#cb2-1" aria-hidden="true"></a><span class="er">//</span> <span class="er">20221219123153</span></span>
+<span id="cb2-2"><a href="video-segment-exchange-rate-api-intro.html#cb2-2" aria-hidden="true"></a><span class="er">//</span> <span class="er">https://api.exchangerate.host/convert?from=USD&amp;to=EUR</span></span>
+<span id="cb2-3"><a href="video-segment-exchange-rate-api-intro.html#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="video-segment-exchange-rate-api-intro.html#cb2-4" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb2-5"><a href="video-segment-exchange-rate-api-intro.html#cb2-5" aria-hidden="true"></a>  <span class="dt">&quot;motd&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-6"><a href="video-segment-exchange-rate-api-intro.html#cb2-6" aria-hidden="true"></a>    <span class="dt">&quot;msg&quot;</span><span class="fu">:</span> <span class="st">&quot;If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.&quot;</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="video-segment-exchange-rate-api-intro.html#cb2-7" aria-hidden="true"></a>    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://exchangerate.host/#/donate&quot;</span></span>
+<span id="cb2-8"><a href="video-segment-exchange-rate-api-intro.html#cb2-8" aria-hidden="true"></a>  <span class="fu">},</span></span>
+<span id="cb2-9"><a href="video-segment-exchange-rate-api-intro.html#cb2-9" aria-hidden="true"></a>  <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb2-10"><a href="video-segment-exchange-rate-api-intro.html#cb2-10" aria-hidden="true"></a>  <span class="dt">&quot;query&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-11"><a href="video-segment-exchange-rate-api-intro.html#cb2-11" aria-hidden="true"></a>    <span class="dt">&quot;from&quot;</span><span class="fu">:</span> <span class="st">&quot;USD&quot;</span><span class="fu">,</span></span>
+<span id="cb2-12"><a href="video-segment-exchange-rate-api-intro.html#cb2-12" aria-hidden="true"></a>    <span class="dt">&quot;to&quot;</span><span class="fu">:</span> <span class="st">&quot;EUR&quot;</span><span class="fu">,</span></span>
+<span id="cb2-13"><a href="video-segment-exchange-rate-api-intro.html#cb2-13" aria-hidden="true"></a>    <span class="dt">&quot;amount&quot;</span><span class="fu">:</span> <span class="dv">1</span></span>
+<span id="cb2-14"><a href="video-segment-exchange-rate-api-intro.html#cb2-14" aria-hidden="true"></a>  <span class="fu">},</span></span>
+<span id="cb2-15"><a href="video-segment-exchange-rate-api-intro.html#cb2-15" aria-hidden="true"></a>  <span class="dt">&quot;info&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-16"><a href="video-segment-exchange-rate-api-intro.html#cb2-16" aria-hidden="true"></a>    <span class="dt">&quot;rate&quot;</span><span class="fu">:</span> <span class="fl">0.942959</span></span>
+<span id="cb2-17"><a href="video-segment-exchange-rate-api-intro.html#cb2-17" aria-hidden="true"></a>  <span class="fu">},</span></span>
+<span id="cb2-18"><a href="video-segment-exchange-rate-api-intro.html#cb2-18" aria-hidden="true"></a>  <span class="dt">&quot;historical&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb2-19"><a href="video-segment-exchange-rate-api-intro.html#cb2-19" aria-hidden="true"></a>  <span class="dt">&quot;date&quot;</span><span class="fu">:</span> <span class="st">&quot;2022-12-19&quot;</span><span class="fu">,</span></span>
+<span id="cb2-20"><a href="video-segment-exchange-rate-api-intro.html#cb2-20" aria-hidden="true"></a>  <span class="dt">&quot;result&quot;</span><span class="fu">:</span> <span class="fl">0.942959</span></span>
+<span id="cb2-21"><a href="video-segment-exchange-rate-api-intro.html#cb2-21" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
+<p>This is great for us to practice our dynamic routes and APIs.</p>
+<p>We’ll use the two <strong>api.exchangerate.host</strong> endpoints for listing symbols <strong>/symbols</strong> and converting currencies <strong>/convert</strong> to build our <a href="https://dashboards.matchthetarget.com" target="_blank">target</a>. Full documentation for the API can be found <a href="https://exchangerate.host/#/#docs" target="_blank">here</a></p>
+<div id="text-companion-exchange-rate-api-intro" class="section level3 hasAnchor" number="17.2.1">
+<h3><span class="header-section-number">17.2.1</span> Text Companion: Exchange Rate API Intro<a href="video-segment-exchange-rate-api-intro.html#text-companion-exchange-rate-api-intro" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="more-rcav-practice" class="section level3 hasAnchor" number="14.5.2">
-<h3><span class="header-section-number">14.5.2</span> More RCAV Practice<a href="finish-and-submit-fortune-teller.html#more-rcav-practice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In the nav, there are links to 18 pages that simulate rolling dice in various combinations that are useful for board games (six-sided dice, from one die up to six dice) and other, more exotic dice combinations that are useful for e.g. <a href="https://en.wikipedia.org/wiki/Dungeons_%26_Dragons#Game_mechanics">Dungeons &amp; Dragons</a>.</p>
-<p>Right now, none of those URLs work; and the routes don’t even exist. Implement them, one at a time. Try to type them out rather than copy-pasting; the point is to build muscle memory and encounter error messages in a controlled setting.</p>
-<p>There are no automated tests for Part 3; this is just extra reps for practice.</p>
 </div>
-<div id="reflections" class="section level3 hasAnchor" number="14.5.3">
-<h3><span class="header-section-number">14.5.3</span> Reflections<a href="finish-and-submit-fortune-teller.html#reflections" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>Of the error messages that you encountered during debugging, which ones were most helpful? Which ones were least helpful?</p></li>
-<li><p>In this project, the subfolders within <code>app/views/</code> that we store our ERB templates in had various different suffixes:</p>
-<ul>
-<li><code>app/views/lottery_stuff/</code></li>
-<li><code>app/views/flame_interface/</code></li>
-<li><code>app/views/nature_templates/</code></li>
-<li><code>app/views/wind_html/</code></li>
-<li><code>app/views/aqua/</code> (no suffix)</li>
-</ul>
-<p>If you had to pick one style for us to use consistently in the future, which do you prefer? Or can you think of a different subfolder naming convention that you would prefer more?</p></li>
-<li><p>You now know how to respond to visits to URLs with dynamically generated HTML. This is, fundamentally, how Twitter, GitHub, Basecamp, NYTimes, Airbnb, and every other web application works. But, of course, we have a lot more to learn before we could build, for example, a social network.</p>
-<p>What are we still missing? What are you most curious to learn next?</p></li>
-</ul>
-
-</div>
-</div>
-<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="video-segment-navbar-and-zodiac-debugging.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="omnicalc-2-forms-params-apis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="video-segment-urls-and-dynamic-routes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-building-forex.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -565,7 +591,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/fortune-teller.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/dashboards.md",
 "text": "Edit"
 },
 "history": {
@@ -573,7 +599,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/fortune-teller.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/dashboards.md",
 "text": null
 },
 "download": null,

@@ -1,5 +1,5 @@
 # Rubber Duck Debugging 
 
-(da="Explain")
+- Notes:
 
-  - just a reading: https://www.thoughtfulcode.com/rubber-duck-debugging-psychology/
+  - just a reading: [https://www.thoughtfulcode.com/rubber-duck-debugging-psychology/](https://www.thoughtfulcode.com/rubber-duck-debugging-psychology/){target="_blank"}

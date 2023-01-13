@@ -81,6 +81,19 @@ Here is a practical guide for how to edit and compile the book. A lot more detai
 
 ### Notes and Quirks of Bookdown
 
+- Ben once got a weird `render_book()` error message when compiling with this `<a href="/forex/<%= a_symbol %>">` in-line code in the markdown chapter. The error message said:
+
+  ```
+  Error in rawToChar(out) : 
+  embedded nul in string: '/forex/&lt;Pa_symbol \0t;'
+  In addition: Warning message:
+  In FUN(X[[i]], ...) : out-of-range values treated as 0 in coercion to raw
+  ```
+
+  It took **awhile** to debug. Be warned. There were other instances of `<%= a_symbol %>` in the documnet, but none were in-line (always code blocks).
+
+---
+
 - Additional book configuration is contained in the required `index.md` file in the frontmatter:
 
   ```

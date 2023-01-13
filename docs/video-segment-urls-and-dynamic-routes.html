@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>14.5 Finish and Submit Fortune Teller | AD1</title>
+  <title>17.1 Video Segment: URLs and Dynamic Routes | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="14.5 Finish and Submit Fortune Teller | AD1" />
+  <meta property="og:title" content="17.1 Video Segment: URLs and Dynamic Routes | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="14.5 Finish and Submit Fortune Teller | AD1" />
+  <meta name="twitter:title" content="17.1 Video Segment: URLs and Dynamic Routes | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="video-segment-navbar-and-zodiac-debugging.html"/>
-<link rel="next" href="omnicalc-2-forms-params-apis.html"/>
+<link rel="prev" href="dashboards-dynamic-route-segments.html"/>
+<link rel="next" href="video-segment-exchange-rate-api-intro.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -444,7 +444,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="17.2.1" data-path="video-segment-exchange-rate-api-intro.html"><a href="video-segment-exchange-rate-api-intro.html#text-companion-exchange-rate-api-intro"><i class="fa fa-check"></i><b>17.2.1</b> Text Companion: Exchange Rate API Intro</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="video-segment-building-1.html"><a href="video-segment-building-1.html"><i class="fa fa-check"></i><b>17.3</b> Video Segment: Building 1</a></li>
+<li class="chapter" data-level="17.3" data-path="video-segment-building-forex.html"><a href="video-segment-building-forex.html"><i class="fa fa-check"></i><b>17.3</b> Video Segment: Building /forex</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="video-segment-building-forex.html"><a href="video-segment-building-forex.html#text-companion-building-forex"><i class="fa fa-check"></i><b>17.3.1</b> Text Companion: Building /forex</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="video-segment-building-forexsymbolsymbol.html"><a href="video-segment-building-forexsymbolsymbol.html"><i class="fa fa-check"></i><b>17.4</b> Video Segment: Building /forex/SYMBOL/SYMBOL</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="video-segment-building-forexsymbolsymbol.html"><a href="video-segment-building-forexsymbolsymbol.html#text-companion-building-forexsymbolsymbol"><i class="fa fa-check"></i><b>17.4.1</b> Text Companion: Building /forex/SYMBOL/SYMBOL</a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="finish-and-submit-dashboards.html"><a href="finish-and-submit-dashboards.html"><i class="fa fa-check"></i><b>17.5</b> Finish and Submit Dashboards</a>
+<ul>
+<li class="chapter" data-level="17.5.1" data-path="finish-and-submit-dashboards.html"><a href="finish-and-submit-dashboards.html#the-covid-tracking-project"><i class="fa fa-check"></i><b>17.5.1</b> The COVID Tracking Project</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="classroom-domain-modeling.html"><a href="classroom-domain-modeling.html"><i class="fa fa-check"></i><b>18</b> Classroom Domain Modeling</a>
 <ul>
@@ -479,61 +490,34 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="finish-and-submit-fortune-teller" class="section level2 hasAnchor" number="14.5">
-<h2><span class="header-section-number">14.5</span> Finish and Submit Fortune Teller<a href="finish-and-submit-fortune-teller.html#finish-and-submit-fortune-teller" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="video-segment-urls-and-dynamic-routes" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Video Segment: URLs and Dynamic Routes<a href="video-segment-urls-and-dynamic-routes.html#video-segment-urls-and-dynamic-routes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Notes:</p>
 <ul>
-<li>Below are relevant notes for the rest of the project taken from the README</li>
+<li>time stamp 00:00:00 to 00:02:00</li>
+<li>dynamic route segments in <code>params</code>. sometimes we call these flexible routes.</li>
+<li>using <strong>/chapters/841</strong> as example</li>
+<li>wildcards</li>
 </ul></li>
 </ul>
-<div id="debugging-checklist" class="section level3 hasAnchor" number="14.5.1">
-<h3><span class="header-section-number">14.5.1</span> Debugging checklist<a href="finish-and-submit-fortune-teller.html#debugging-checklist" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol style="list-style-type: decimal">
-<li>READ the error message. Extract as much useful information from it as possible.</li>
-<li>If there’s no error message, find another way to give yourself feedback; <strong>make the invisible visible</strong>.</li>
-</ol>
-<ul>
-<li>Use the server log.</li>
-<li>Print things; in this new world, that means use embedded Ruby tags (<code>&lt;%=  %&gt;</code>) in the view templates. We can’t use the <code>p</code> method anymore since we aren’t writing command line programs anymore.</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>If all else fails — the error message isn’t helpful, or there isn’t one and you can’t spot the issue visually — delete the offending code (or comment it out), and re-type the R→C→A→V from scratch. Hopefully you’ve been making lots of git commits, so there’s no fear in doing so.</li>
-</ol>
-</div>
-<div id="more-rcav-practice" class="section level3 hasAnchor" number="14.5.2">
-<h3><span class="header-section-number">14.5.2</span> More RCAV Practice<a href="finish-and-submit-fortune-teller.html#more-rcav-practice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In the nav, there are links to 18 pages that simulate rolling dice in various combinations that are useful for board games (six-sided dice, from one die up to six dice) and other, more exotic dice combinations that are useful for e.g. <a href="https://en.wikipedia.org/wiki/Dungeons_%26_Dragons#Game_mechanics">Dungeons &amp; Dragons</a>.</p>
-<p>Right now, none of those URLs work; and the routes don’t even exist. Implement them, one at a time. Try to type them out rather than copy-pasting; the point is to build muscle memory and encounter error messages in a controlled setting.</p>
-<p>There are no automated tests for Part 3; this is just extra reps for practice.</p>
-</div>
-<div id="reflections" class="section level3 hasAnchor" number="14.5.3">
-<h3><span class="header-section-number">14.5.3</span> Reflections<a href="finish-and-submit-fortune-teller.html#reflections" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>Of the error messages that you encountered during debugging, which ones were most helpful? Which ones were least helpful?</p></li>
-<li><p>In this project, the subfolders within <code>app/views/</code> that we store our ERB templates in had various different suffixes:</p>
-<ul>
-<li><code>app/views/lottery_stuff/</code></li>
-<li><code>app/views/flame_interface/</code></li>
-<li><code>app/views/nature_templates/</code></li>
-<li><code>app/views/wind_html/</code></li>
-<li><code>app/views/aqua/</code> (no suffix)</li>
-</ul>
-<p>If you had to pick one style for us to use consistently in the future, which do you prefer? Or can you think of a different subfolder naming convention that you would prefer more?</p></li>
-<li><p>You now know how to respond to visits to URLs with dynamically generated HTML. This is, fundamentally, how Twitter, GitHub, Basecamp, NYTimes, Airbnb, and every other web application works. But, of course, we have a lot more to learn before we could build, for example, a social network.</p>
-<p>What are we still missing? What are you most curious to learn next?</p></li>
-</ul>
-
+<p>The modern world revolves around the humble URL. And now I hope you’re staring to notice these and understand them a little bit better. For example the <a href="https://chapters.firstdraft.com/chapters/841" target="_blank">refactoring Fortune Teller chapter</a>:</p>
+<p><strong><a href="https://chapters.firstdraft.com/chapters/841" class="uri">https://chapters.firstdraft.com/chapters/841</a></strong></p>
+<p>You’ve got a path <strong>/chapters/841</strong> with two segments, <strong>chapters</strong> and <strong>841</strong>, just like in our dice rolls from refactoring: <strong><a href="https://refactoring-fortune-teller.matchthetarget.com/roll/42/1337" class="uri">https://refactoring-fortune-teller.matchthetarget.com/roll/42/1337</a></strong>.</p>
+<p>We know how to connect a visit to the full path to a Ruby method that can generate dynamic content rather than just having static pages in the <code>public/</code> folder.</p>
+<p>After your experience refactoring, you now also know that you can have parts of the path that are <em>dynamic</em>. So we don’t need to write a route for every single URL that we want to support. We can allow pieces of the path to be <em>wildcards</em> (like <strong>841</strong> in our chapter example), and in doing so we can support an infinite number of URLs because anything that matches a certain pattern will be recognized and routed to a single action that knows how to handle all requests of that variety.</p>
+<p>So this is a second form of user input. The first form was <em>query stings</em> in the URL, and these are the <em>dynamic route segments</em>, which is how users tell us which resource they want. And that’s it for user input! Both of them end up in our <code>params</code> hash, which we can <code>.fetch()</code> from.</p>
+<div id="text-companion-urls-and-dynamic-routes" class="section level3 hasAnchor" number="17.1.1">
+<h3><span class="header-section-number">17.1.1</span> Text Companion: URLs and Dynamic Routes<a href="video-segment-urls-and-dynamic-routes.html#text-companion-urls-and-dynamic-routes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
-<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="video-segment-navbar-and-zodiac-debugging.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="omnicalc-2-forms-params-apis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dashboards-dynamic-route-segments.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-exchange-rate-api-intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -565,7 +549,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/fortune-teller.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/dashboards.md",
 "text": "Edit"
 },
 "history": {
@@ -573,7 +557,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/fortune-teller.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/dashboards.md",
 "text": null
 },
 "download": null,
