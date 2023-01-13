@@ -19,7 +19,8 @@
   - `string.md`
   - "Exercises" in Replits
 
-### Video Segment: Setting up String Gitpod (da="Tutorial")
+### Setting up String Gitpod 
+**da="Tutorial"**
 
   - *not yet transcribed*
   - This video + text overlaps with "Week 1 Technical Setup" material

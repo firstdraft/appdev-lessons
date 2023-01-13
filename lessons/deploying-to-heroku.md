@@ -1,12 +1,15 @@
 # Deploying to Heroku
 
-- *This content has not been transcribed and may change*
+Notes:
 
-- Chapters:
-    - `deploying-to-heroku.md`
+  - This could be a sub-section in [Technical Setup][Technical Setup]
+  - The [video](https://canvas.uchicago.edu/courses/41147/pages/video-deploying-to-heroku){target="_blank"} is not yet transcribed and may change
 
-### Video Segment: Deploying to Heroku, Optional (da="Tutorial")
+  - Project: N/A
 
-  - dedicated video with signing up and how it works
+  - Target: N/A
 
-#### Text Companion: Deploying to Heroku, Optional (da="HowTo")
+  - Useful chapters:
+
+    - [`deploying-to-heroku.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/deploying-to-heroku.md){target="_blank"}
+    - [See Canvas](https://canvas.uchicago.edu/courses/47526/assignments/523302){target="_blank"}

@@ -1,8 +1,20 @@
-# AppDev Outline
+# Outline Notes
 
 Although originally based on the chronological assignments on Canvas in ["BUSN 36110 81 (Summer 2022) Application Development"](https://canvas.uchicago.edu/courses/41147){target="_blank"}, this book has some re-ordering. 
 
-## Diátaxis
+## Updated Diátaxis
+
+**Update: in the original outline, sections were tagged with the type. We don't need to be so strict, but we should adhere to some rules of thumb**
+
+  1. Terminology and code syntax should be collected in technical reference glossaries
+
+  2. Video tutorials should not digress too much into explanations and generalizations
+
+  3. How-to written guides and accompaniments to videos should be concise, with code that can be copy-pasted
+  
+  4. Explanations are room to expand on ideas and digress 
+
+### Original Outline Diátaxis
 
 In an effort towards [Diátaxis](https://diataxis.fr/){target="_blank"}, the content is identified by small chunks of material with tags:
 
@@ -11,25 +23,27 @@ In an effort towards [Diátaxis](https://diataxis.fr/){target="_blank"}, the con
       - practical guided tutorials that produce meaningful results
       - avoid abstraction, generalization, explanation, choices
 
-  1. **da="HowTo"**
+  2. **da="HowTo"**
       - *pratical-work quadrant*
       - similar to tutorial, but more concise with no digression or teaching
 
-  1. **da="Explain"**
+  3. **da="Explain"**
       - *theoretical-study quadrant*
       - understanding-oriented discussions referring to big-picture topics
       - include concepts, connections, abstraction, generalzation, alternatives, optional readings
   
-  1. **da="TechRef"**
+  4. **da="TechRef"**
       - *theoretical-work quadrant*
       - indexes, glossaries, dictionaries
       - pure information, concise, no ambiguity, provide examples
 
-  1. **da="Exercise"**
+  5. **da="Exercise"**
       - *our own*
       - this is not part of the cannon, but we add it
 
-Note, the difference between "Tutorials" and "HowTo" [here](https://diataxis.fr/tutorials-how-to/#whats-the-difference-between-a-tutorial-and-how-to-guide){target="_blank"}. They are distinguished by the user needs: *study* ("Tutorial") vs. *work* ("HowTo"). Tutorials provide a learning experience, how-to-guides help the user accomplish a task. Any **gitpod and other videos are "Tutorials"** and the **written accompaniment is a "HowTo"**. How-to-guides should never be videos, because a user should be able to quickly refer to what they need, without buffering or scrubbing.
+The "TechRef" (glossaries) and "Exercise" (quizzes + projects) tags are obvious, so content in these categories is not explicitly labelled in the outline.
+
+Note, the difference between "Tutorials" and "HowTo" [here](https://diataxis.fr/tutorials-how-to/#whats-the-difference-between-a-tutorial-and-how-to-guide){target="_blank"}. They are distinguished by the user needs: *study* ("Tutorial") vs. *work* ("HowTo"). Tutorials provide a learning experience, how-to-guides help the user accomplish a task. Any **video walkthroughs are "Tutorials"** and their **written accompaniments are "HowTos"**. How-to-guides should never be videos, because a user should be able to quickly refer to what they need, without buffering or scrubbing.
 
 ## Technical References: Code vs. Terminology
 

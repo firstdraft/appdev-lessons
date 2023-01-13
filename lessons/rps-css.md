@@ -1,16 +1,23 @@
 # Rock, Paper, Scissors CSS
 
-  - *This content has not been transcribed and may change*
+Notes:
 
-  - Chapters:
-    - `classbook.md`
+  - The [video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d8c4d225-34ea-4fb9-b14f-ab9e00dd4f60&start=0){target="_blank"} is not yet transcribed and may change
 
-  - Project: https://github.com/appdev-projects/rps-css
+  - Project (ungraded): [https://github.com/appdev-projects/rps-css](https://github.com/appdev-projects/rps-css){target="_blank"}
 
-### Video Segment: Nth bite-size chunk of RPS CSS (da="Tutorial")
+  - Target: [https://rps-css.matchthetarget.com/rock](https://rps-css.matchthetarget.com/rock){target="_blank"}
+
+  - Useful chapters:
+
+    - [`classbook.md#styling-with-css`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/classbook.md#styling-with-css){target="_blank"}, but this is outdated?
+
+## Video Segment: 1st bite-size chunk of RPS CSS
+
+### Text Companion: 1st bite-size chunk of RPS CSS
+
+## Video Segment: Nth bite-size chunk of RPS CSS
 
   - *The pattern repeats*
 
-#### Text Companion: Nth bite-size chunk of RPS CSS (da="HowTo")
-
-### Finish and Submit RPS CSS (da="Exercise")
+### Text Companion: Nth bite-size chunk of RPS CSS

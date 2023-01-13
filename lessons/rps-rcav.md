@@ -1,15 +1,12 @@
-# Rock, Paper, Scissors RCAV
+# Rock, Paper, Scissors RCAV 
 
-  - Transcription `adding-routes-RPS-RCAV.md` contains time-stamped sections matching the headings here
+Notes:
 
-  - Chapters (and slides):
-    - `adding-routes.md`
-    - `rcav-flowchart.md`
-    - Routing - RCAV Slides: https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q
+  - Original video transcription: [`adding-routes-RPS-RCAV.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/adding-routes-RPS-RCAV.md){target="_blank"}
 
-  - Project: https://github.com/appdev-projects/rps-rcav
+  - Original text: [`adding-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/adding-routes.md){target="_blank"}, [`rcav-flowchart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rcav-flowchart.md){target="_blank"}, [Routing - RCAV Slides](https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q){target="_blank"}
 
-  - Workspace open, tabs organized, aware of /git committing and rails grade. Link to technical setup.
+  - Project: [https://github.com/appdev-projects/rps-rcav](https://github.com/appdev-projects/rps-rcav){target="_blank"}
 
 ### Video Segment: Dynamic Web Applications and URLs (da="Explain")
 

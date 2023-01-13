@@ -11,15 +11,12 @@ rmd_files:
 
     # lessons
     "lessons/course-overview.md", 
-    "lessons/gitpod-technical-setup.md",
+    "lessons/technical-setup.md",
     "lessons/rps-html.md", 
     "lessons/deploying-to-heroku.md",
     "lessons/rps-css.md", 
     "lessons/relationships.md",
-    "lessons/html-recap.md", 
-    "lessons/css-recap.md",
-    "lessons/style-sheets-recap.md", 
-    "lessons/design.md",
+    "lessons/html-css-stylesheets-and-design-recap.md", 
     "lessons/linkinbio.md", 
     "lessons/intro-to-ruby.md",
     "lessons/more-ruby.md", 

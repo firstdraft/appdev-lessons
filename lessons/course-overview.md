@@ -1,8 +1,12 @@
 # Course Overview 
 
-**(da="Explain")**
+Notes:
 
-  - Bird's Eye View Slides (https://slides.com/raghubetina/01-birds-eye-view?token=u4vg--N6)
+  - Non-transcribed video: [Day 1 Recording](https://uchicago.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=e7931193-543f-4813-aae0-ae71013abee0){target="_blank"}
+  
+  - Video content: [Bird's Eye View Slides](https://slides.com/raghubetina/01-birds-eye-view?token=u4vg--N6){target="_blank"}
+  
+  - Each slide section could be a separate video+text
     - 01-09: Course intro
     - 10-15: What does it mean to know how to code?
     - 16-21: SaaS
@@ -13,3 +17,13 @@
     - 47-49: Teaching team
     - 50-79: Record keeping (history, tables, databases, domain modeling, CRUD)
     - 80-88: Must See Movies example relational database tables
+
+## Course intro
+
+## What does it mean to know how to code?
+
+## SaaS
+
+## URLs
+
+## etc. from slides

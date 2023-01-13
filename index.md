@@ -12,7 +12,7 @@ favicon: "assets/favicon.ico"
 
 # Preface {-}
 
-This document is originally based on a chronological outline of the AppDev course content, from the Canvas material for "BUSN 36110 81 (Summer 2022) Application Development". 
+This document is originally based on a chronological outline of the AppDev course content, from the Canvas material for ["BUSN 36110 81 (Summer 2022) Application Development"](https://canvas.uchicago.edu/courses/41147){target="_blank"}.
 
 ## Planned LMS {-}
 
