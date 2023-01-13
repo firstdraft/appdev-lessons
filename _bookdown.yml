@@ -24,7 +24,7 @@ rmd_files:
     "lessons/omnicalc-1.md",
     "lessons/fortune-teller.md",
     "lessons/omnicalc-2.md", 
-    # "lessons/refactoring-fortune-teller-with-dynamic-routes.md",
+    "lessons/refactoring-fortune-teller-with-dynamic-routes.md",
     # "lessons/classroom-domain-modeling.md",
     # "lessons/rubber-duck-debugging.md",
     # "lessons/omnicalc-debug.md",

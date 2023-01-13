@@ -214,5 +214,13 @@ using-gems-to-interact-with-apis
 google-cloud-translate
 twilio
 stretch-goal-1
+refactoring-fortune-teller-with-dynamic-routes
+part-1-dice
+part-2-horoscopes
+stringto_sym
+regressions
+refactoring
+finish-and-submit-refactoring-fortune-teller
+optional-extra-challenge
 terminology-technical-reference
 ruby-technical-reference
