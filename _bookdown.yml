@@ -1,5 +1,5 @@
-view: https://github.com/firstdraft/appdev-textbook/blob/master/%s
-edit: https://github.com/firstdraft/appdev-textbook/edit/master/%s
+view: https://github.com/firstdraft/appdev-textbook/blob/main/%s
+edit: https://github.com/firstdraft/appdev-textbook/edit/main/%s
 output_dir: "docs"
 
 # here is the list of lessons in order as they appear in the textbook
@@ -21,8 +21,8 @@ rmd_files:
     "lessons/intro-to-ruby.md",
     "lessons/ruby-gym.md", 
     "lessons/rps-rcav.md",
-    # "lessons/omnicalc-1.md",
-    # "lessons/fortune-teller.md",
+    "lessons/omnicalc-1.md",
+    "lessons/fortune-teller.md",
     # "lessons/omnicalc-2.md", 
     # "lessons/refactoring-fortune-teller-with-dynamic-routes.md",
     # "lessons/classroom-domain-modeling.md",

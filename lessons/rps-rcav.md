@@ -11,7 +11,7 @@
   - Useful chapters:
 
     - [`adding-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/adding-routes.md){target="_blank"}
-    - [`rcav-flowchart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rcav-flowchart.md){target="_blank"}
+    - [`rcav-flowchart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rcav-flowchart.md){target="_blank"}, not actually zipped in here yet
     - [Routing - RCAV Slides](https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q){target="_blank"}
 
 
@@ -584,7 +584,7 @@ And now would be a good time to run `rails grade` at the GitPod console to check
   - time stamp 00:37:10 to 00:40:18
   - RCAV with `render` for **/**
 
-The [target](https://rps-rcav.matchthetarget.com/){:target="_blank"} has a homepage at the root URL, **/**. In the old days, we would create a file in `public/` called `index.html`, but now we are pretty much done with `public/` except maybe for static assets like images or css files, but we won't put any more user-facing URL pages there. Those will be connected up with routes from here on. Let's go to our `config/routes.rb` and add a homepage route:
+The [target](https://rps-rcav.matchthetarget.com/){target="_blank"} has a homepage at the root URL, **/**. In the old days, we would create a file in `public/` called `index.html`, but now we are pretty much done with `public/` except maybe for static assets like images or css files, but we won't put any more user-facing URL pages there. Those will be connected up with routes from here on. Let's go to our `config/routes.rb` and add a homepage route:
 
 ```ruby
 # config/routes.rb
@@ -938,7 +938,7 @@ Time for a `rails grade` and a `/git` commit!
   - `layout("wrapper.html.erb")` in `ApplicationController`
   - `:layout` argument for `render()`
 
-It would now be nice to add some links so we don't need to type in the URL addresses, like in our [target](https://rps-rcav.matchthetarget.com/){:target="_blank"}. 
+It would now be nice to add some links so we don't need to type in the URL addresses, like in our [target](https://rps-rcav.matchthetarget.com/){target="_blank"}. 
 
 Let's start with our `game_templates/user_paper.html.erb`:
 
