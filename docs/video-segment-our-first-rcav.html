@@ -365,7 +365,7 @@ Proudly published with bookdown</a></li>
 </ul>
 <p>Our workflow for a dynamic web application is always the same: Route, Controller, Action, View (RCAV). Remember, the world is ruled by URLs. So we will always start with what URL we want to build and get it to work.</p>
 <p>If we begin by navigating to the route <strong>/rock</strong> in our Rails browser: <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/rock</strong>, then we get an error message: No route matches [GET] “/rock”.</p>
-<p><img src="assets/err-no-routes-match.png" /></p>
+<p><img src="assets/rps-rcav/err-no-routes-match.png" /></p>
 <p>We need to <em>Read The Error Message</em> (RTEM) and define the first route that will allow us to support a request of the form for our users.</p>
 <p>Let’s open the file <code>config/routes.rb</code> and define the route by adding the following code:</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb40-1"><a href="video-segment-our-first-rcav.html#cb40-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
@@ -410,7 +410,7 @@ Proudly published with bookdown</a></li>
 <p>{: mark_lines=“10-12”}</p>
 <p>And we just created a full RCAV request lifecycle. If we go back to the browser and refresh the URL: <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/rock</strong>, then we will end up on Wikipedia.</p>
 <p>If I go back to GitPod and look in my server log (use <code>Cmd + J</code> to open and close the log, <code>Cmd + K</code> to clear the log), then I will see something like:</p>
-<p><img src="assets/rock-to-wikipedia-server-log.png" /></p>
+<p><img src="assets/rps-rcav/rock-to-wikipedia-server-log.png" /></p>
 <p>We can see exactly what happened. Someone tried to <code>GET "/rock"</code> from a given IP address at a given time, we found a route with instructions to use <code>ApplicationController#play_rock</code> (where the <code>Something#something</code> is Ruby shorthand for <code>Class.method</code>, with the <code>.</code> exchanged for a <code>#</code>), calling this controller-action pair resulted in a redirect to the given URL (<code>https://www.wikipedia.org</code>), and the entire request lifecycle completed in the stated time with no errors.</p>
 <div id="text-companion-our-first-rcav" class="section level3 hasAnchor" number="12.5.1">
 <h3><span class="header-section-number">12.5.1</span> Text Companion: Our First RCAV<a href="video-segment-our-first-rcav.html#text-companion-our-first-rcav" class="anchor-section" aria-label="Anchor link to header"></a></h3>

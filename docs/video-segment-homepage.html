@@ -375,7 +375,7 @@ Proudly published with bookdown</a></li>
 <p>We are adding the <code>"/"</code> homepage route, we are using the <code>application_controller.rb</code> file, and we are using the action (or the method within the <code>ApplicationController</code>) that we call <code>homepage</code>.</p>
 <p>Now if I refresh the <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/</strong> page, I get an error message that the <code>homepage</code> action cannot be found in <code>ApplicationController</code>:</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb54-1"><a href="video-segment-homepage.html#cb54-1" aria-hidden="true"></a><span class="dt">The</span> action <span class="st">&#39;play_rock&#39;</span> could <span class="kw">not</span> be found <span class="kw">for</span> <span class="dt">ApplicationController</span></span></code></pre></div>
-<p><img src="assets/err-action-not-in-contoller.png" /></p>
+<p><img src="assets/rps-rcav/err-action-not-in-contoller.png" /></p>
 <p>This is good! That means we defined the route correctly. If you still see a “No route matches” error, then double-check your route syntax and get that error to go away before you proceed further. The error occurs because we did not yet define the action. So we need to go to our <code>app/controllers/application_controller.rb</code> file and add:</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb55-1"><a href="video-segment-homepage.html#cb55-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
 <span id="cb55-2"><a href="video-segment-homepage.html#cb55-2" aria-hidden="true"></a></span>

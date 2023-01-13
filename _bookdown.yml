@@ -21,7 +21,7 @@ rmd_files:
     "lessons/intro-to-ruby.md",
     "lessons/ruby-gym.md", 
     "lessons/rps-rcav.md",
-    # "lessons/omnicalc-1.md", 
+    # "lessons/omnicalc-1.md",
     # "lessons/fortune-teller.md",
     # "lessons/omnicalc-2.md", 
     # "lessons/refactoring-fortune-teller-with-dynamic-routes.md",

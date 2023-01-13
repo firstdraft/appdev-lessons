@@ -372,18 +372,18 @@ Proudly published with bookdown</a></li>
 <p>In all of our Rails apps, after you start the server, you can navigate to the address <code>/git</code> in your live application. If you’re using Gitpod, the URL will look like:</p>
 <pre><code>https://[YOUR GITPOD WORKSPACE URL].gitpod.io/git</code></pre>
 <p>That will open a page that looks like this:</p>
-<p><img src="assets/git-clean.png" /></p>
+<p><img src="assets/technical-setup/git-clean.png" /></p>
 <p>As soon as you make any changes to any of the code in the project, and refresh this page, the lines that you changed will appear:</p>
-<p><img src="assets/git-changes.png" /></p>
+<p><img src="assets/technical-setup/git-changes.png" /></p>
 <p>On the left, you see the code as it was previously; on the right, you see the new code. Lines added are highlighted in green, lines removed are highlighted in red.</p>
 <p>Below, there are two things you can do: <strong>commit</strong> your changes on the left, and switch to a new <strong>branch</strong> on the right. When you hear the word “commit”, think “snapshot”. When you hear the word “branch”, think “version”.</p>
 <p>A Git commit is a snapshot of <em>all</em> of the folders and files in your project <em>at a particular time</em>. Since our files of code are all interdependent, it doesn’t make sense to save versions of individual files — we need to know the <em>entire</em> state of the project for a version to be useful.</p>
 <p>Each branch (“version”) is a series of commits (“snapshots”).</p>
 <p>The most important thing for you to remember is simple: <strong>commit early and commit often</strong>. As long as you are taking snapshots of your work at various points, it will always be easy to get back to a previous state in case you want to start over and explore a different approach.</p>
 <p>To commit, enter a title for the snapshot (required), and, optionally, a longer description:</p>
-<p><img src="assets/git-commit.png" /></p>
+<p><img src="assets/technical-setup/git-commit.png" /></p>
 <p>After you commit, you will no longer have any pending changes:</p>
-<p><img src="assets/git-changes-committed.png" /></p>
+<p><img src="assets/technical-setup/git-changes-committed.png" /></p>
 <p>If you edit your code again, then you can make further commits.</p>
 <p><strong>Fundamentally, that’s all you need to worry about: just make lots of commits as you work.</strong></p>
 <p>The best time to commit is right after you just got something to work, before you start on your next experiment.</p>
@@ -393,23 +393,23 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">3.3.3</span> Jumping back in time<a href="git.html#jumping-back-in-time" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the History dialog at the bottom, you can see a list of all of the commits you’ve made. If you want to jump back in time to one of them, copy the 7 letter code (known as the “hash” of the commit; it is a unique identifier) in front of it into the “Branch off of” field above. Pick a name for a new version, and click “Create a new branch off of…”.</p>
 <p>It will snap all of the files in the project back to that point in time, and you can now make further commits along a new path — while still retaining all of your old commits on the old path.</p>
-<p><img src="assets/git-jump-back.png" /></p>
+<p><img src="assets/technical-setup/git-jump-back.png" /></p>
 <p>You can easily jump to any commit from any branch at any time — so feel free to experiment! Make a commit to save your current work, then jump back to a previous commit to try a different approach.</p>
 </div>
 <div id="switch-to-a-different-branch" class="section level3 hasAnchor" number="3.3.4">
 <h3><span class="header-section-number">3.3.4</span> Switch to a Different Branch<a href="git.html#switch-to-a-different-branch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Have you gone back in time and decided your first attempt was better? Turn your attention to the “Existing Branches” panel on the right. This will list any branches your project has— <code>master</code> is the default starting branch. To switch to a different branch, click the blue double arrow button next to the name of the branch you want to switch to.</p>
-<p><img src="assets/git-switch-branch.png" /></p>
+<p><img src="assets/technical-setup/git-switch-branch.png" /></p>
 <p>If you’re ever unsure of what branch you’re on, the top of the page should list “On branch ___”.</p>
 </div>
 <div id="push-to-github" class="section level3 hasAnchor" number="3.3.5">
 <h3><span class="header-section-number">3.3.5</span> Push to GitHub<a href="git.html#push-to-github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Gitpod workspaces are not permanent. Even if we make git commits, if the workspace is deleted so is all of our work! This is where GitHub comes in. We can push all of the commits we’ve made to our repository on GitHub where it will live forever. If our Gitpod workspace gets destroyed we can just re-create another one from the latest commit on GitHub!</p>
 <p>Before you can push to GitHub, you need to give Gitpod access. Head over to the <a href="https://gitpod.io/integrations">Integrations under your account settings</a> in Gitpod and make sure you check “public repos” and click “Update”.</p>
-<p><img src="assets/gitpod-integration-settings.png" /></p>
+<p><img src="assets/technical-setup/gitpod-integration-settings.png" /></p>
 <p>This should open a GitHub authorization dialogue.</p>
 <p><strong>Make sure to click “Grant” next to the GitHub organization you created for class</strong></p>
-<p><img src="assets/gitpod-github-organization-permissions.png" /></p>
+<p><img src="assets/technical-setup/gitpod-github-organization-permissions.png" /></p>
 <p>Now you should be all set to push your commits to GitHub!</p>
 </div>
 </div>

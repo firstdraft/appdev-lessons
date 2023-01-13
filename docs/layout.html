@@ -415,7 +415,7 @@ Proudly published with bookdown</a></li>
 <span id="cb24-2"><a href="layout.html#cb24-2" aria-hidden="true"></a>  <span class="kw">border</span>: <span class="dv">thin</span> <span class="cn">red</span> <span class="dv">solid</span><span class="op">;</span></span>
 <span id="cb24-3"><a href="layout.html#cb24-3" aria-hidden="true"></a>}</span></code></pre></div>
 <p>This puts a thin red border around every element. Your page should now look something like this:</p>
-<p><img src="assets/linkinbio-before-flex-grow.png" /></p>
+<p><img src="assets/linkinbio/linkinbio-before-flex-grow.png" /></p>
 <p>We can see that the <code>&lt;a&gt;</code> elements are only just wide enough to fit their content, so centering within them isn’t doing anything. Instead, we want the <code>&lt;a&gt;</code> element to occupy all of the available space to the right of the thumbnail.</p>
 <p>To achieve, this we can use <a href="https://css-tricks.com/almanac/properties/f/flex-grow/" target="_blank">the <code>flex-grow</code> property</a>:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb25-1"><a href="layout.html#cb25-1" aria-hidden="true"></a><span class="fu">.link</span> a {</span>
@@ -459,7 +459,7 @@ Proudly published with bookdown</a></li>
 <span id="cb28-6"><a href="layout.html#cb28-6" aria-hidden="true"></a>  <span class="kw">flex-grow</span>: <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb28-7"><a href="layout.html#cb28-7" aria-hidden="true"></a>}</span></code></pre></div>
 <p>Our page layout should now look solid!</p>
-<p><img src="assets/linkinbio-finished-layout.png" /></p>
+<p><img src="assets/linkinbio/linkinbio-finished-layout.png" /></p>
 <p>Let’s add a little bit of padding inside our <code>div.link</code>s:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb29-1"><a href="layout.html#cb29-1" aria-hidden="true"></a><span class="fu">.link</span> {</span>
 <span id="cb29-2"><a href="layout.html#cb29-2" aria-hidden="true"></a>  <span class="kw">background-color</span>: <span class="cn">#f9bc60</span><span class="op">;</span></span>

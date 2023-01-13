@@ -38,15 +38,15 @@ I recommend using your `.edu` email address, as that will qualify you for some d
 
 If you already have a GitHub account, I recommend making a new one for this class, because some of the tools that we use will ask for permission to view _all_ of your repositories. If you have access to e.g. private work repositories, then you should make a new account and keep things separate.
 
-![](assets/1-github-join.png)
+![](assets/technical-setup/1-github-join.png)
 
-![](assets/2-github-plan.png)
+![](assets/technical-setup/2-github-plan.png)
 
-![](assets/3-github-survey.png)
+![](assets/technical-setup/3-github-survey.png)
 
-![](assets/4-github-complete.png)
+![](assets/technical-setup/4-github-complete.png)
 
-![](assets/5-github-verify-email.png)
+![](assets/technical-setup/5-github-verify-email.png)
 
 ### Get a Heroku account
 
@@ -54,11 +54,11 @@ Sign up for a free Heroku account at [signup.heroku.com](https://signup.heroku.c
 
 If asked what your primary development language is, say Ruby. You can use any one of your email addresses, but remember to verify it.
 
-![](assets/6-heroku-join.png)
+![](assets/technical-setup/6-heroku-join.png)
 
-![](assets/7-heroku-verify-email.png)
+![](assets/technical-setup/7-heroku-verify-email.png)
 
-![](assets/8-heroku-welcome.png)
+![](assets/technical-setup/8-heroku-welcome.png)
 
 ### GitHub and Heroku readings
 
@@ -134,11 +134,11 @@ To do so:
 
 Open Dev Tools:
 
-![](assets/hard-refresh-dev-tools-2.png)
+![](assets/technical-setup/hard-refresh-dev-tools-2.png)
 
 With Dev Tools open, "hard" refresh:
 
-![](assets/hard-refresh-right-click-refresh-2.png)
+![](assets/technical-setup/hard-refresh-right-click-refresh-2.png)
 
 Your HTML document should now have the latest CSS and any other linked assets (like images or javascripts).
 
@@ -150,19 +150,19 @@ Your HTML document should now have the latest CSS and any other linked assets (l
 
 You can't use your mouse at the command line, so it's important to know how to move around quickly so you're not restricted to just using your arrows. Jump back to the beginning of the line with <kbd>Ctrl</kbd> + <kbd>A</kbd>:
 
-![](assets/back-to-beginning.gif)
+![](assets/technical-setup/back-to-beginning.gif)
 
 ##### Jump to end of line
 
 Mac OS, Windows: <kbd>Ctrl</kbd> + <kbd>E</kbd>
 
-![](assets/back-to-end.gif)
+![](assets/technical-setup/back-to-end.gif)
 
 ##### Up and down arrows to scroll through your history
 
 Use your up and down arrows to scroll through your command history so that you don't have to re-type your commands over and over.
 
-![](assets/previous-terminal-command.gif)
+![](assets/technical-setup/previous-terminal-command.gif)
 
 ##### Clear Terminal
 
@@ -170,28 +170,28 @@ Mac OS: <kbd>Command</kbd> + <kbd>K</kbd>
 
 Windows: Disabled by default[^windows-clear]
 
-![](assets/clear_terminal.gif)
+![](assets/technical-setup/clear_terminal.gif)
 
 
 [^windows-clear]: A recent Gitpod update removed this keyboard shortcut for Windows, so you'll need to configure it yourself.
 
 From the menu open Preferences and select Keyboard shortcuts.
 
-![](assets/gitpod-keyboard-shortcuts.png)
+![](assets/technical-setup/gitpod-keyboard-shortcuts.png)
 
 Then search for "terminal clear" in the search bar and click the plus icon to the left of it.
 
-![](assets/gitpod-clear-terminal.png)
+![](assets/technical-setup/gitpod-clear-terminal.png)
 
 Finally, type <kbd>ctrl</kbd> + <kbd>k</kbd> and <kbd>Enter</kbd> to confirm.
 
-![](assets/gitpod-ctrl-k.png)
+![](assets/technical-setup/gitpod-ctrl-k.png)
 
 ##### Interrupt command
 
 If something goes wrong with a terminal program (i.e. you made a typo, a program gets stuck in an infinite loop, etc), you can generally interrupt it with <kbd>Ctrl</kbd> + <kbd>C</kbd>:
 
-![](assets/ctrl-c-to-quit.gif)
+![](assets/technical-setup/ctrl-c-to-quit.gif)
 
 ##### Q to exit
 
@@ -199,7 +199,7 @@ When the output of a terminal command is too tall for a terminal tab to display 
 
 Mac OS, Windows: <kbd>Q</kbd>
 
-![](assets/q-to-exit.gif)
+![](assets/technical-setup/q-to-exit.gif)
 
 #### Editor keyboard shortcuts
 
@@ -211,7 +211,7 @@ Mac OS: <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
 
 Windows: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
 
-![](assets/gitpod-command-palette.gif)
+![](assets/technical-setup/gitpod-command-palette.gif)
 
 ##### Quick open file
 
@@ -223,7 +223,7 @@ Windows: <kbd>Ctrl</kbd> + <kbd>P</kbd>
 
 And then fuzzily search for its name. For example, you could type "phco" to get to **ph**otos_**co**ntroller.rb and the list would quickly narrow to bring that file to the top of the list.
 
-![](assets/open_file.gif)
+![](assets/technical-setup/open_file.gif)
 
 ##### Toggle Code Comment
 
@@ -235,7 +235,7 @@ Windows: <kbd>Ctrl</kbd> + <kbd>/</kbd>
 
 You can also highlight multiple lines of code and comment/uncomment all of them at once.
 
-![](assets/toggle-comment.gif)
+![](assets/technical-setup/toggle-comment.gif)
 
 ##### Find (and replace)
 
@@ -243,7 +243,7 @@ Mac OS: <kbd>Command</kbd> + <kbd>F</kbd>
 
 Windows: <kbd>Ctrl</kbd> + <kbd>F</kbd>
 
-![](assets/find_and_replace.gif)
+![](assets/technical-setup/find_and_replace.gif)
 
 ##### Find Next Selection
 
@@ -251,7 +251,7 @@ Mac OS: <kbd>Command</kbd> + <kbd>D</kbd>
 
 Windows: <kbd>Ctrl</kbd> + <kbd>D</kbd>
 
-![](assets/select_next.gif)
+![](assets/technical-setup/select_next.gif)
 
 If you go too far by mistake, you can step backwards with <kbd>Command</kbd> + <kbd>U</kbd> or <kbd>Ctrl</kbd> + <kbd>U</kbd>.
 
@@ -261,7 +261,7 @@ Mac OS: <kbd>Option</kbd> + <kbd>&#11015;</kbd>
 
 Windows: <kbd>Alt</kbd> + <kbd>&#11015;</kbd>
 
-![](assets/move_line.gif)
+![](assets/technical-setup/move_line.gif)
 
 ##### Duplicate line
 
@@ -269,7 +269,7 @@ Mac OS: <kbd>Shift</kbd> + <kbd>Option</kbd> + <kbd>&#11015;</kbd>
 
 Windows: <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>&#11015;</kbd>
 
-![](assets/duplicate_line.gif)
+![](assets/technical-setup/duplicate_line.gif)
 
 ##### Add/Remove Tab spaces for multiple lines
 
@@ -277,7 +277,7 @@ Mac OS: (<kbd>Shift</kbd>) + <kbd>Tab</kbd>
 
 Windows: (<kbd>Shift</kbd>) + <kbd>Tab</kbd>
 
-![](assets/tab-spacing.gif)
+![](assets/technical-setup/tab-spacing.gif)
 
 ##### Add More Cursors
 
@@ -285,13 +285,13 @@ Mac OS: <kbd>Option</kbd> + Click
 
 Windows: <kbd>Alt</kbd> + Click
 
-![](assets/multiple-cursors.gif)
+![](assets/technical-setup/multiple-cursors.gif)
 
 ##### Embedded Ruby (ERB) Tag Toggle
 
 Mac OS, Windows: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>
 
-![](assets/ERB-shortcut.gif)
+![](assets/technical-setup/ERB-shortcut.gif)
 
 ##### Toggle Terminal Panel
 
@@ -299,7 +299,7 @@ Mac OS: <kbd>Command</kbd> + <kbd>J</kbd>
 
 Windows: <kbd>Ctrl</kbd> + <kbd>J</kbd>
 
-![](assets/toggle_terminal_view.gif)
+![](assets/technical-setup/toggle_terminal_view.gif)
 
 ##### Open New Terminal
 
@@ -307,7 +307,7 @@ Mac OS: <kbd>Ctrl</kbd> + <kbd>~</kbd> (i.e. <kbd>Ctrl</kbd> + <kbd>Shift</kbd> 
 
 Windows: <kbd>Ctrl</kbd> + <kbd>~</kbd> (i.e. <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>)
 
-![](assets/new_terminal.gif)
+![](assets/technical-setup/new_terminal.gif)
 
 
 
@@ -333,11 +333,11 @@ In all of our Rails apps, after you start the server, you can navigate to the ad
 
 That will open a page that looks like this:
 
-![](assets/git-clean.png)
+![](assets/technical-setup/git-clean.png)
 
 As soon as you make any changes to any of the code in the project, and refresh this page, the lines that you changed will appear:
 
-![](assets/git-changes.png)
+![](assets/technical-setup/git-changes.png)
 
 On the left, you see the code as it was previously; on the right, you see the new code. Lines added are highlighted in green, lines removed are highlighted in red.
 
@@ -351,11 +351,11 @@ The most important thing for you to remember is simple: **commit early and commi
 
 To commit, enter a title for the snapshot (required), and, optionally, a longer description:
 
-![](assets/git-commit.png)
+![](assets/technical-setup/git-commit.png)
 
 After you commit, you will no longer have any pending changes:
 
-![](assets/git-changes-committed.png)
+![](assets/technical-setup/git-changes-committed.png)
 
 If you edit your code again, then you can make further commits.
 
@@ -371,7 +371,7 @@ In the History dialog at the bottom, you can see a list of all of the commits yo
 
 It will snap all of the files in the project back to that point in time, and you can now make further commits along a new path — while still retaining all of your old commits on the old path.
 
-![](assets/git-jump-back.png)
+![](assets/technical-setup/git-jump-back.png)
 
 You can easily jump to any commit from any branch at any time — so feel free to experiment! Make a commit to save your current work, then jump back to a previous commit to try a different approach.
 
@@ -379,7 +379,7 @@ You can easily jump to any commit from any branch at any time — so feel free t
 
 Have you gone back in time and decided your first attempt was better? Turn your attention to the "Existing Branches" panel on the right. This will list any branches your project has— `master` is the default starting branch. To switch to a different branch, click the blue double arrow button next to the name of the branch you want to switch to.
 
-![](assets/git-switch-branch.png)
+![](assets/technical-setup/git-switch-branch.png)
 
 If you're ever unsure of what branch you're on, the top of the page should list "On branch \_\_\_".
 
@@ -389,13 +389,13 @@ Gitpod workspaces are not permanent. Even if we make git commits, if the workspa
 
 Before you can push to GitHub, you need to give Gitpod access. Head over to the [Integrations under your account settings](https://gitpod.io/integrations) in Gitpod and make sure you check "public repos" and click "Update". 
 
-![](assets/gitpod-integration-settings.png)
+![](assets/technical-setup/gitpod-integration-settings.png)
 
 This should open a GitHub authorization dialogue.
 
 **Make sure to click "Grant" next to the GitHub organization you created for class**
 
-![](assets/gitpod-github-organization-permissions.png)
+![](assets/technical-setup/gitpod-github-organization-permissions.png)
 
 Now you should be all set to push your commits to GitHub!
 
@@ -413,7 +413,7 @@ Now you should be all set to push your commits to GitHub!
 
 If you haven't already, [sign up for a free GitHub account](https://github.com/join) (or sign in to yours if you already have one):
 
-![](assets/join-github.png)
+![](assets/technical-setup/join-github.png)
 
 In this example screenshot, I chose a username of `demolearner1` — remember yours. Also, don't forget to check your email and verify the address you entered.
 
@@ -425,45 +425,45 @@ To keep things organized, we're going to create a separate GitHub organization a
 
 Click the `+` on the right side of the navbar and select "New organization":
 
-![](assets/new-organization.png)
+![](assets/technical-setup/new-organization.png)
 
 Choose any name for the organization; most students choose `[YOUR USERNAME]-appdev`. In this example screenshot, I chose `demolearner1-appdev`:
 
-![](assets/org-name.png)
+![](assets/technical-setup/org-name.png)
 
 You can "Skip" or "Finish" the rest of the screens:
 
-![](assets/finish-org.png)
+![](assets/technical-setup/finish-org.png)
 
 #### Login to Canvas
 
 Open up the Assignments tab and make sure they're sorted by type.
 
-![](assets/login-canvas.png)
+![](assets/technical-setup/login-canvas.png)
 
 Scroll down to the assignment you want to start and click the link that says 'Load [your assignment name] in a new window' (the name of the project will vary).
 
-![](assets/load-assignment.png)
+![](assets/technical-setup/load-assignment.png)
 
 **_Before_ you click "Authorize", make sure to click the "Grant" button next to the organization that you created earlier.** Only then, click authorize to allow the firstdraft Grades application to access your account. 
 
-![](assets/authorize-first-draft.png)
+![](assets/technical-setup/authorize-first-draft.png)
 
 Select the name of your GitHub **organization** and submit the form.
 
-![](assets/add-github-org-name.png)
+![](assets/technical-setup/add-github-org-name.png)
 
 The next screen will ask you to accept an invitation to a GitHub team. You can click the link on that screen to accept, or you'll have an invitation in your email inbox as well.
 
 Once you've joined, you should see feedback that you're now a member of appdev-projects:
 
-![](assets/github-joined-org-feedback.png)
+![](assets/technical-setup/github-joined-org-feedback.png)
 
 #### Daily workflow
 
 The stuff above about setting up your organization and permissions was just a one-time thing. From now on, you'll just head to Canvas and click "Load assignment in a new tab". You should see something like the following (the name of the project will vary):
 
-![](assets/grade-setup-instructions.png)
+![](assets/technical-setup/grade-setup-instructions.png)
 
 We will automatically make a copy (a "fork", in GitHub parlance) of the repository under your new GitHub organization. Then, you can choose to either "Create new workspace in Gitpod" or head to your "Gitpod Dashboard" to view existing workspaces.
 
@@ -475,23 +475,23 @@ rails grade
 
 You'll be asked for your access token; **copy-paste it carefully from the grades.firstdraft.com page that you loaded from Canvas**.
 
-![](assets/gitpod-enter-token.png)
+![](assets/technical-setup/gitpod-enter-token.png)
 
 You should see output that looks like:
 
-![](assets/gitpod-rails-grade.png)
+![](assets/technical-setup/gitpod-rails-grade.png)
 
 Copy-paste the Results URL into a new tab, or click on it (but make sure it isn't truncated).
 
-![](assets/gitpod-rails-grade-open.png)
+![](assets/technical-setup/gitpod-rails-grade-open.png)
 
-![](assets/rails-grade-results.png)
+![](assets/technical-setup/rails-grade-results.png)
 
 **(Some projects aren't graded; in that case there may only be one dummy test listed.)**
 
 You can click on one of the tests to get more feedback on what might have gone wrong:
 
-![](assets/rails-grade-results-details.png)
+![](assets/technical-setup/rails-grade-results-details.png)
 
 In this case, the test expected to find an element with a class of `word_count` that contains the number 10, but instead it only found the content "Replace this string with your answer". 
 
@@ -509,37 +509,37 @@ Since then, whenever we gave permission to a third-party (like Gitpod or grades.
 
 Go to GitHub and sign in. In this example, I am signed in as the user `demolearner1`. Click on the user icon in the top-right and find "Settings":
 
-![](assets/github-settings.jpg)
+![](assets/technical-setup/github-settings.jpg)
 
 Next, click on "Organizations" in the left sidebar:
 
-![](assets/github-orgs.jpg)
+![](assets/technical-setup/github-orgs.jpg)
 
 Find the organization that **_you_ created**. You likely picked a name like `[YOUR USERNAME]-appdev`:
 
-![](assets/org-list.jpg)
+![](assets/technical-setup/org-list.jpg)
 
 Next, go to the Settings of the organization:
 
-![](assets/find-org-settings.jpg)
+![](assets/technical-setup/find-org-settings.jpg)
 
 In the left sidebar, find "Third-party access":
 
-![](assets/third-party-access.jpg)
+![](assets/technical-setup/third-party-access.jpg)
 
 -   If it says that you approved both, then you are good to go and you can go to the next section.
 -   If neither Cloud9 nor Grades appears in this list, click the "Remove restrictions" button instead and you can go to the next section.
 -   If it says that access is Denied next to Cloud9 or Grades, then proceed.
 
-![](assets/access-denied.jpg)
+![](assets/technical-setup/access-denied.jpg)
 
 Click on whichever one you denied and Grant Access:
 
-![](assets/grant-access.jpg)
+![](assets/technical-setup/grant-access.jpg)
 
 You should see a message confirming that access has been granted:
 
-![](assets/access-granted-flash.jpg)
+![](assets/technical-setup/access-granted-flash.jpg)
 
 Repeat for the other third-party app if necessary.
 
@@ -557,15 +557,15 @@ If for some reason you need to make a single-sign-on provider (like GitHub, Twit
 
 In the case of GitHub, go to your personal settings:
 
-![](assets/github-personal-settings.jpg)
+![](assets/technical-setup/github-personal-settings.jpg)
 
 Find "Applications" in the left sidebar:
 
-![](assets/github-applications.jpg)
+![](assets/technical-setup/github-applications.jpg)
 
 Click the "Authorized OAuth Apps" tab and then click "Revoke" next to whichever one you want to "forget":
 
-![](assets/github-revoke-oauth.jpg)
+![](assets/technical-setup/github-revoke-oauth.jpg)
 
 Then, return to the third-party app and "Sign in with..." again to start over from scratch. In our case, click on an assignment from within Canvas again to re-start the authorization process — and this time don't forget to grant access to the organization that **_you_ created**.
 
@@ -578,13 +578,13 @@ It's often helpful to share a snapshot of the state of your entire Gitpod worksp
 
 From the hamburger menu in the top-left corner of your IDE, select `Gitpod: Share Workspace Snapshot`:
 
-![](assets/gitpod-snapshot-file-menu.png)
+![](assets/technical-setup/gitpod-snapshot-file-menu.png)
 
 #### Copy the snapshot URL
 
 It will take a moment to create the snapshot. Then a dialog will pop up in the bottom-right corner that will give you the URL to copy and share:
 
-![](assets/gitpod-snapshot-copy-url.png)
+![](assets/technical-setup/gitpod-snapshot-copy-url.png)
 
 ##### The correct URL looks like this
 

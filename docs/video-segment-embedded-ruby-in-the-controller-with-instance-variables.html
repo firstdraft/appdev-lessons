@@ -440,7 +440,7 @@ Proudly published with bookdown</a></li>
 <p>{: mark_lines=“23-31”}</p>
 <p>In the above highlighted code we have removed all of the embedded Ruby tags (<code>&lt;% %&gt;</code> and <code>&lt;%= %&gt;</code>) from the code we had in the <code>.html.erb</code> view template. Now when a user visits the route <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/paper</strong>, the action <code>play_paper</code> in the controller <code>ApplicationController</code> will be triggered, and the code will be run before the template is rendered.</p>
 <p>So let’s try to visit <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/paper</strong> again. Oops, we get this error:</p>
-<p><img src="assets/err-undefined-local-var-or-meth.png" /></p>
+<p><img src="assets/rps-rcav/err-undefined-local-var-or-meth.png" /></p>
 <p>In our <code>game_templates/user_paper.html.erb</code> view template, when we get to the first embedded Ruby tag:</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb63-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
 <span id="cb63-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-2" aria-hidden="true"></a></span>
