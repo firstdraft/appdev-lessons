@@ -367,7 +367,7 @@ Proudly published with bookdown</a></li>
 <div id="join-github" class="section level4 hasAnchor" number="3.4.1.1">
 <h4><span class="header-section-number">3.4.1.1</span> Join GitHub<a href="rails-grade.html#join-github" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you haven’t already, <a href="https://github.com/join">sign up for a free GitHub account</a> (or sign in to yours if you already have one):</p>
-<p><img src="/assets/join-github.png" /></p>
+<p><img src="assets/join-github.png" /></p>
 <p>In this example screenshot, I chose a username of <code>demolearner1</code> — remember yours. Also, don’t forget to check your email and verify the address you entered.</p>
 <p>For now, think of GitHub like Dropbox-for-programmers; it’s where we’re going to store all of our code.</p>
 </div>
@@ -375,43 +375,43 @@ Proudly published with bookdown</a></li>
 <h4><span class="header-section-number">3.4.1.2</span> Create GitHub organization<a href="rails-grade.html#create-github-organization" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>To keep things organized, we’re going to create a separate GitHub organization account for you to store your AppDev projects under (to keep them separate from the personal projects that you’ll hopefully be building soon!).</p>
 <p>Click the <code>+</code> on the right side of the navbar and select “New organization”:</p>
-<p><img src="/assets/new-organization.png" /></p>
+<p><img src="assets/new-organization.png" /></p>
 <p>Choose any name for the organization; most students choose <code>[YOUR USERNAME]-appdev</code>. In this example screenshot, I chose <code>demolearner1-appdev</code>:</p>
-<p><img src="/assets/org-name.png" /></p>
+<p><img src="assets/org-name.png" /></p>
 <p>You can “Skip” or “Finish” the rest of the screens:</p>
-<p><img src="/assets/finish-org.png" /></p>
+<p><img src="assets/finish-org.png" /></p>
 </div>
 <div id="login-to-canvas" class="section level4 hasAnchor" number="3.4.1.3">
 <h4><span class="header-section-number">3.4.1.3</span> Login to Canvas<a href="rails-grade.html#login-to-canvas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Open up the Assignments tab and make sure they’re sorted by type.</p>
-<p><img src="/assets/login-canvas.png" /></p>
+<p><img src="assets/login-canvas.png" /></p>
 <p>Scroll down to the assignment you want to start and click the link that says ‘Load [your assignment name] in a new window’ (the name of the project will vary).</p>
-<p><img src="/assets/load-assignment.png" /></p>
+<p><img src="assets/load-assignment.png" /></p>
 <p><strong><em>Before</em> you click “Authorize”, make sure to click the “Grant” button next to the organization that you created earlier.</strong> Only then, click authorize to allow the firstdraft Grades application to access your account.</p>
-<p><img src="/assets/authorize-first-draft.png" /></p>
+<p><img src="assets/authorize-first-draft.png" /></p>
 <p>Select the name of your GitHub <strong>organization</strong> and submit the form.</p>
-<p><img src="/assets/add-github-org-name.png" /></p>
+<p><img src="assets/add-github-org-name.png" /></p>
 <p>The next screen will ask you to accept an invitation to a GitHub team. You can click the link on that screen to accept, or you’ll have an invitation in your email inbox as well.</p>
 <p>Once you’ve joined, you should see feedback that you’re now a member of appdev-projects:</p>
-<p><img src="/assets/github-joined-org-feedback.png" /></p>
+<p><img src="assets/github-joined-org-feedback.png" /></p>
 </div>
 <div id="daily-workflow" class="section level4 hasAnchor" number="3.4.1.4">
 <h4><span class="header-section-number">3.4.1.4</span> Daily workflow<a href="rails-grade.html#daily-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The stuff above about setting up your organization and permissions was just a one-time thing. From now on, you’ll just head to Canvas and click “Load assignment in a new tab”. You should see something like the following (the name of the project will vary):</p>
-<p><img src="/assets/grade-setup-instructions.png" /></p>
+<p><img src="assets/grade-setup-instructions.png" /></p>
 <p>We will automatically make a copy (a “fork”, in GitHub parlance) of the repository under your new GitHub organization. Then, you can choose to either “Create new workspace in Gitpod” or head to your “Gitpod Dashboard” to view existing workspaces.</p>
 <p>Either way, once you’re in the workspace, we can get the project loaded up and try out the feedback feature. After the <code>bin/setup</code> script is done running, start working on the project to do whatever the instructions tell you. <strong>When you’re ready for feedback</strong>, try a new command at a new Terminal prompt:</p>
 <pre><code>rails grade</code></pre>
 <p>You’ll be asked for your access token; <strong>copy-paste it carefully from the grades.firstdraft.com page that you loaded from Canvas</strong>.</p>
-<p><img src="/assets/gitpod-enter-token.png" /></p>
+<p><img src="assets/gitpod-enter-token.png" /></p>
 <p>You should see output that looks like:</p>
-<p><img src="/assets/gitpod-rails-grade.png" /></p>
+<p><img src="assets/gitpod-rails-grade.png" /></p>
 <p>Copy-paste the Results URL into a new tab, or click on it (but make sure it isn’t truncated).</p>
-<p><img src="/assets/gitpod-rails-grade-open.png" /></p>
-<p><img src="/assets/rails-grade-results.png" /></p>
+<p><img src="assets/gitpod-rails-grade-open.png" /></p>
+<p><img src="assets/rails-grade-results.png" /></p>
 <p><strong>(Some projects aren’t graded; in that case there may only be one dummy test listed.)</strong></p>
 <p>You can click on one of the tests to get more feedback on what might have gone wrong:</p>
-<p><img src="/assets/rails-grade-results-details.png" /></p>
+<p><img src="assets/rails-grade-results-details.png" /></p>
 <p>In this case, the test expected to find an element with a class of <code>word_count</code> that contains the number 10, but instead it only found the content “Replace this string with your answer”.</p>
 <p>You can click the “Examine Test” button to read the actual Ruby of the automated test; it’s surprisingly readable. Ruby’s testing libraries use method names that are supposed to make tests readable even for non-technical managers and clients. You can see specifically what flow is being tested and what inputs are being used and what the expected output is, and try to reproduce the issue in your own app manually using the same inputs.</p>
 <p>You can run <code>rails grade</code> in your Terminal as many times as you want, and you will get a new updated build report each time. It will only report your highest score back to Canvas.</p>
@@ -423,25 +423,25 @@ Proudly published with bookdown</a></li>
 <p>Once upon a time, we all <a href="https://chapters.firstdraft.com/chapters/777#create-github-organization">created our own GitHub organizations</a> to keep our classwork separate from our personal projects.</p>
 <p>Since then, whenever we gave permission to a third-party (like Gitpod or grades.firstdraft.com) to access our GitHub accounts, we were supposed to remember to grant access to our organization too. <strong>If you forgot to click “Grant” next to the organization that you created before you clicked “Authorize”, you’re going to run into problems.</strong> Let’s fix it.</p>
 <p>Go to GitHub and sign in. In this example, I am signed in as the user <code>demolearner1</code>. Click on the user icon in the top-right and find “Settings”:</p>
-<p><img src="/assets/github-settings.jpg" /></p>
+<p><img src="assets/github-settings.jpg" /></p>
 <p>Next, click on “Organizations” in the left sidebar:</p>
-<p><img src="/assets/github-orgs.jpg" /></p>
+<p><img src="assets/github-orgs.jpg" /></p>
 <p>Find the organization that <strong><em>you</em> created</strong>. You likely picked a name like <code>[YOUR USERNAME]-appdev</code>:</p>
-<p><img src="/assets/org-list.jpg" /></p>
+<p><img src="assets/org-list.jpg" /></p>
 <p>Next, go to the Settings of the organization:</p>
-<p><img src="/assets/find-org-settings.jpg" /></p>
+<p><img src="assets/find-org-settings.jpg" /></p>
 <p>In the left sidebar, find “Third-party access”:</p>
-<p><img src="/assets/third-party-access.jpg" /></p>
+<p><img src="assets/third-party-access.jpg" /></p>
 <ul>
 <li>If it says that you approved both, then you are good to go and you can go to the next section.</li>
 <li>If neither Cloud9 nor Grades appears in this list, click the “Remove restrictions” button instead and you can go to the next section.</li>
 <li>If it says that access is Denied next to Cloud9 or Grades, then proceed.</li>
 </ul>
-<p><img src="/assets/access-denied.jpg" /></p>
+<p><img src="assets/access-denied.jpg" /></p>
 <p>Click on whichever one you denied and Grant Access:</p>
-<p><img src="/assets/grant-access.jpg" /></p>
+<p><img src="assets/grant-access.jpg" /></p>
 <p>You should see a message confirming that access has been granted:</p>
-<p><img src="/assets/access-granted-flash.jpg" /></p>
+<p><img src="assets/access-granted-flash.jpg" /></p>
 <p>Repeat for the other third-party app if necessary.</p>
 <div id="make-sure-that-youve-accepted-your-team-invitation" class="section level4 hasAnchor" number="3.4.2.1">
 <h4><span class="header-section-number">3.4.2.1</span> Make sure that you’ve accepted your team invitation<a href="rails-grade.html#make-sure-that-youve-accepted-your-team-invitation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -455,11 +455,11 @@ Proudly published with bookdown</a></li>
 <h4><span class="header-section-number">3.4.2.3</span> Resetting OAuth permissions to square one<a href="rails-grade.html#resetting-oauth-permissions-to-square-one" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If for some reason you need to make a single-sign-on provider (like GitHub, Twitter, or Facebook) “forget” that you ever authorized a third-party app, maybe because you don’t use it anymore or maybe because you want to change the permissions that you gave it, you need to delete or revoke the “access token” that you previously issued to it.</p>
 <p>In the case of GitHub, go to your personal settings:</p>
-<p><img src="/assets/github-personal-settings.jpg" /></p>
+<p><img src="assets/github-personal-settings.jpg" /></p>
 <p>Find “Applications” in the left sidebar:</p>
-<p><img src="/assets/github-applications.jpg" /></p>
+<p><img src="assets/github-applications.jpg" /></p>
 <p>Click the “Authorized OAuth Apps” tab and then click “Revoke” next to whichever one you want to “forget”:</p>
-<p><img src="/assets/github-revoke-oauth.jpg" /></p>
+<p><img src="assets/github-revoke-oauth.jpg" /></p>
 <p>Then, return to the third-party app and “Sign in with…” again to start over from scratch. In our case, click on an assignment from within Canvas again to re-start the authorization process — and this time don’t forget to grant access to the organization that <strong><em>you</em> created</strong>.</p>
 </div>
 </div>
@@ -469,12 +469,12 @@ Proudly published with bookdown</a></li>
 <div id="take-the-snapshot" class="section level4 hasAnchor" number="3.4.3.1">
 <h4><span class="header-section-number">3.4.3.1</span> Take the snapshot<a href="rails-grade.html#take-the-snapshot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>From the hamburger menu in the top-left corner of your IDE, select <code>Gitpod: Share Workspace Snapshot</code>:</p>
-<p><img src="/assets/gitpod-snapshot-file-menu.png" /></p>
+<p><img src="assets/gitpod-snapshot-file-menu.png" /></p>
 </div>
 <div id="copy-the-snapshot-url" class="section level4 hasAnchor" number="3.4.3.2">
 <h4><span class="header-section-number">3.4.3.2</span> Copy the snapshot URL<a href="rails-grade.html#copy-the-snapshot-url" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>It will take a moment to create the snapshot. Then a dialog will pop up in the bottom-right corner that will give you the URL to copy and share:</p>
-<p><img src="/assets/gitpod-snapshot-copy-url.png" /></p>
+<p><img src="assets/gitpod-snapshot-copy-url.png" /></p>
 <div id="the-correct-url-looks-like-this" class="section level5 hasAnchor" number="3.4.3.2.1">
 <h5><span class="header-section-number">3.4.3.2.1</span> The correct URL looks like this<a href="rails-grade.html#the-correct-url-looks-like-this" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The URL that you share should look something like this:</p>

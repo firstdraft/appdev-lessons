@@ -278,7 +278,7 @@ And we just created a full RCAV request lifecycle. If we go back to the browser 
 
 If I go back to GitPod and look in my server log (use `Cmd + J` to open and close the log, `Cmd + K` to clear the log), then I will see something like:
 
-![](/assets/rock-to-wikipedia-server-log.png)
+![](assets/rock-to-wikipedia-server-log.png)
 
 We can see exactly what happened. Someone tried to `GET "/rock"` from a given IP address at a given time, we found a route with instructions to use `ApplicationController#play_rock` (where the `Something#something` is Ruby shorthand for `Class.method`, with the `.` exchanged for a `#`), calling this controller-action pair resulted in a redirect to the given URL (`https://www.wikipedia.org`), and the entire request lifecycle completed in the stated time with no errors.
 
