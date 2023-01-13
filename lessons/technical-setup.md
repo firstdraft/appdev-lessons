@@ -1,6 +1,6 @@
 # Technical Setup
 
-Notes:
+- Notes:
 
   - These steps are done in the [RPS HTML][Rock, Paper, Scissors HTML] content (original [video](https://canvas.uchicago.edu/courses/41147/pages/video-rps-html-intro-to-gitpod-and-html){target="_blank"}), and [String][Setting up String Gitpod] exercise (original [video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=0){target="_blank"})
 
@@ -26,7 +26,7 @@ Notes:
 
 ## Setting Up Accounts 
 
-Notes:
+- Notes:
 
   - sections from [`day-2-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-2-notes.md){target="_blank"}
 
@@ -69,7 +69,7 @@ While you're waiting for everyone to finish creating accounts, read up on GitHub
 
 ## GitPod
 
-Notes:
+- Notes:
 
   - sections from [`getting-started-with-gitpod.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/getting-started-with-gitpod.md){target="_blank"}, [`tips-and-tricks.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/tips-and-tricks.md){target="_blank"}, and [`hard-reload.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hard-reload.md){target="_blank"}
   - can use [RPS HTML][Rock, Paper, Scissors HTML] as example
@@ -313,7 +313,7 @@ Windows: <kbd>Ctrl</kbd> + <kbd>~</kbd> (i.e. <kbd>Ctrl</kbd> + <kbd>Shift</kbd>
 
 ## Git 
 
-Notes:
+- Notes:
 
   - sections from [`using-git-to-experiement-and-save-work.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/using-git-to-experiement-and-save-work.md){target="_blank"}
 
@@ -401,7 +401,7 @@ Now you should be all set to push your commits to GitHub!
 
 ## `rails grade`
 
-Notes:
+- Notes:
 
   - sections from [`rails-grade.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rails-grade.md){target="_blank"}, [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){target="_blank"}, and [`gitpod-snapshot.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/gitpod-snapshot.md){target="_blank"}
   - kind of awkward placement, this video and text could go early in RPS HTML video

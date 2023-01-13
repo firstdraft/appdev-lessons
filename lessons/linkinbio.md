@@ -1,6 +1,6 @@
 # Linkinbio 
 
-Notes:
+- Notes:
 
    - No video for this, only chapter
    

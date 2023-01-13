@@ -1,6 +1,6 @@
 # Course Overview 
 
-Notes:
+- Notes:
 
   - Non-transcribed video: [Day 1 Recording](https://uchicago.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=e7931193-543f-4813-aae0-ae71013abee0){target="_blank"}
   

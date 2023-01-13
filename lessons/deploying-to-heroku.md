@@ -1,6 +1,6 @@
 # Deploying to Heroku
 
-Notes:
+- Notes:
 
   - This could be a sub-section in [Technical Setup][Technical Setup]
   - The [video](https://canvas.uchicago.edu/courses/41147/pages/video-deploying-to-heroku){target="_blank"} is not yet transcribed and may change

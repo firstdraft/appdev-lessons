@@ -1,6 +1,6 @@
 # HTML, CSS, Stylesheets, and Design Recap 
 
-Notes:
+- Notes:
 
   - This was in-class work from the un-transcribed [Day 2 recording](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e657b973-16a5-4daf-80fc-aebc013d125a){target="_blank"}
 
@@ -10,7 +10,7 @@ Notes:
 
 ## HTML Recap and Replits
 
-Notes:
+- Notes:
 
   - *this could all just be in the technical reference for HTML, with Replit exercises following the review*
 
@@ -25,7 +25,7 @@ Notes:
 
 ## CSS Recap and Replits
 
-Notes:
+- Notes:
 
   - *this could all just be in the technical reference for CSS, with Replit exercises following the review*
 
@@ -41,7 +41,7 @@ Notes:
 
 ## Stylesheets Recap and Replits
 
-Notes: 
+- Notes: 
 
   - [HTML and CSS Recap Slides](https://firstdraft.slides.com/raghubetina/html-and-css-recap?token=8gU8ghvw){target="_blank"}
     - 20-23, 25-26: Borrowing style sheets
@@ -52,7 +52,7 @@ Notes:
 
 ## Design Resources
 
-Notes:
+- Notes:
 
   - [HTML and CSS Recap Slides](https://firstdraft.slides.com/raghubetina/html-and-css-recap?token=8gU8ghvw){target="_blank"}
     - 29: Readings

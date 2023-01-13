@@ -1,6 +1,6 @@
-# Rock, Paper, Scissors HTML
+# Rock, Paper, Scissors HTML 
 
-Notes:
+- Notes:
 
   - The [video](https://canvas.uchicago.edu/courses/41147/pages/video-rps-html-intro-to-gitpod-and-html){target="_blank"} is not yet transcribed and may change
 
@@ -21,10 +21,14 @@ Notes:
 
 ## Video Segment: Nth bite-size chunk of RPS HTML
 
+- Notes:
+
   - *The pattern repeats*
 
 ### Text Companion: Nth bite-size chunk of RPS HTML
 
 ## Finish and Submit RPS HTML
+
+- Notes:
 
   - Refer students to [`rails grade`][`rails grade`], [git][Git], and [Sharing a Gitpod Snapshot][Sharing a Gitpod Snapshot] sections for how to get help

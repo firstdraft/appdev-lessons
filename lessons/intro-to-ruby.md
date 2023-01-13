@@ -1,6 +1,6 @@
 # Intro to Ruby
 
-Notes:
+- Notes:
 
   - These are all the pre-class Ruby homework assignments consisting of a reading with Replits, potentially followed by a GitPod exercise. The chapter and project repository is listed in each sub-section. 
   
@@ -14,19 +14,19 @@ Notes:
 
 ## Nouns, Verbs, and Grammar
 
-Notes:
+- Notes:
 
   - [`nouns-verbs-and-grammar.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/nouns-verbs-and-grammar.md){target="_blank"}
 
 ## Program Notes
 
-Notes:
+- Notes:
 
   - [`program-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/program-notes.md){target="_blank"}
 
 ## String
 
-Notes:
+- Notes:
 
   - [`string.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/string.md){target="_blank"}
   - setup [video](https://canvas.uchicago.edu/courses/47526/pages/video-getting-started-with-the-ruby-chapters){target="_blank"}
@@ -34,14 +34,14 @@ Notes:
 
 ## Integer
 
-Notes:
+- Notes:
 
   - [`integer.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/integer.md){target="_blank"}
   - Project: [https://github.com/appdev-projects/integer-chapter](https://github.com/appdev-projects/integer-chapter){target="_blank"}
 
 ## Float
 
-Notes:
+- Notes:
   
   - [`float.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/float.md){target="_blank"}
   - Project: [https://github.com/appdev-projects/float-chapter](https://github.com/appdev-projects/float-chapter){target="_blank"}
@@ -50,49 +50,49 @@ Notes:
 
 ## Date
 
-Notes:
+- Notes:
 
   - [`date.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/date.md){target="_blank"}
   - Project: [https://github.com/appdev-projects/date-chapter](https://github.com/appdev-projects/date-chapter){target="_blank"}
 
 ## Array
 
-Notes:
+- Notes:
 
   - [`array.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/array.md){target="_blank"}
   - Project: [https://github.com/appdev-projects/array-chapter](https://github.com/appdev-projects/array-chapter){target="_blank"}
 
 ## Conditionals
 
-Notes:
+- Notes:
 
   - [`conditionals.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/conditionals.md){target="_blank"}
   - Project: [https://github.com/appdev-projects/if-statements-chapter](https://github.com/appdev-projects/if-statements-chapter){target="_blank"}
 
 ## Loops
 
-Notes:
+- Notes:
 
   - [`loops.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/loops.md){target="_blank"}
   - Project: [https://github.com/appdev-projects/loops-chapter](https://github.com/appdev-projects/loops-chapter){target="_blank"}
 
 ## Each
 
-Notes:
+- Notes:
 
   - [`each.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/each.md){target="_blank"}
   - Project: [https://github.com/appdev-projects/each-chapter](https://github.com/appdev-projects/each-chapter){target="_blank"}
 
 ## Hash
 
-Notes:
+- Notes:
 
   - [`hash.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hash.md){target="_blank"}
   - Project: [https://github.com/appdev-projects/hash-chapter](https://github.com/appdev-projects/hash-chapter){target="_blank"}
 
 ## Our own classes
 
-Notes:
+- Notes:
 
   - [`our-own-classes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/our-own-classes.md){target="_blank"}
   - Project: [https://github.com/appdev-projects/our-own-classes-chapter](https://github.com/appdev-projects/our-own-classes-chapter){target="_blank"}

@@ -1,6 +1,6 @@
 # Relationships 
 
-Notes:
+- Notes:
 
   - This was in-class work from the un-transcribed [Day 2 recording](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e657b973-16a5-4daf-80fc-aebc013d125a){target="_blank"}
 
@@ -11,7 +11,7 @@ Notes:
 
 ## Practice Identifying Relationships
 
-Notes:
+- Notes:
 
   - [Records and Relationships Slides](https://firstdraft.slides.com/raghubetina/records-and-relationships?token=hKsM-8iq){target="_blank"}
   

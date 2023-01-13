@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>12.11 Video Segment: Embedded Ruby in the Controller with Instance Variables | AD1</title>
+  <meta name="description" content="This book covers the AD1 course at UChicago" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="12.11 Video Segment: Embedded Ruby in the Controller with Instance Variables | AD1" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book covers the AD1 course at UChicago" />
+  <meta name="github-repo" content="bpurinton/appdev-textbook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12.11 Video Segment: Embedded Ruby in the Controller with Instance Variables | AD1" />
+  
+  <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
+  
+
+<meta name="author" content="Ben + Raghu" />
+
+
+<meta name="date" content="2023-01-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="video-segment-reinforce-rcav-with-paper.html"/>
+<link rel="next" href="video-segment-linking-pages-with-layouts.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li>AppDev</li>
+<li>Raghu + Ben</li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html"><i class="fa fa-check"></i>Planned LMS</a>
+<ul>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html#choose-one"><i class="fa fa-check"></i>Choose one</a></li>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html#choose-all-that-apply"><i class="fa fa-check"></i>Choose all that apply</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="outline-notes.html"><a href="outline-notes.html"><i class="fa fa-check"></i><b>1</b> Outline Notes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="updated-diátaxis.html"><a href="updated-diátaxis.html"><i class="fa fa-check"></i><b>1.1</b> Updated Diátaxis</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="updated-diátaxis.html"><a href="updated-diátaxis.html#original-outline-diátaxis"><i class="fa fa-check"></i><b>1.1.1</b> Original Outline Diátaxis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="technical-references-code-vs.-terminology.html"><a href="technical-references-code-vs.-terminology.html"><i class="fa fa-check"></i><b>1.2</b> Technical References: Code vs. Terminology</a></li>
+<li class="chapter" data-level="1.3" data-path="whats-missing.html"><a href="whats-missing.html"><i class="fa fa-check"></i><b>1.3</b> What’s missing?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="course-overview.html"><a href="course-overview.html"><i class="fa fa-check"></i><b>2</b> Course Overview</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="course-intro.html"><a href="course-intro.html"><i class="fa fa-check"></i><b>2.1</b> Course intro</a></li>
+<li class="chapter" data-level="2.2" data-path="what-does-it-mean-to-know-how-to-code.html"><a href="what-does-it-mean-to-know-how-to-code.html"><i class="fa fa-check"></i><b>2.2</b> What does it mean to know how to code?</a></li>
+<li class="chapter" data-level="2.3" data-path="saas.html"><a href="saas.html"><i class="fa fa-check"></i><b>2.3</b> SaaS</a></li>
+<li class="chapter" data-level="2.4" data-path="urls.html"><a href="urls.html"><i class="fa fa-check"></i><b>2.4</b> URLs</a></li>
+<li class="chapter" data-level="2.5" data-path="etc.-from-slides.html"><a href="etc.-from-slides.html"><i class="fa fa-check"></i><b>2.5</b> etc. from slides</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="technical-setup.html"><a href="technical-setup.html"><i class="fa fa-check"></i><b>3</b> Technical Setup</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="setting-up-accounts.html"><a href="setting-up-accounts.html"><i class="fa fa-check"></i><b>3.1</b> Setting Up Accounts</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="setting-up-accounts.html"><a href="setting-up-accounts.html#get-a-github-account"><i class="fa fa-check"></i><b>3.1.1</b> Get a GitHub account</a></li>
+<li class="chapter" data-level="3.1.2" data-path="setting-up-accounts.html"><a href="setting-up-accounts.html#get-a-heroku-account"><i class="fa fa-check"></i><b>3.1.2</b> Get a Heroku account</a></li>
+<li class="chapter" data-level="3.1.3" data-path="setting-up-accounts.html"><a href="setting-up-accounts.html#github-and-heroku-readings"><i class="fa fa-check"></i><b>3.1.3</b> GitHub and Heroku readings</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="gitpod.html"><a href="gitpod.html"><i class="fa fa-check"></i><b>3.2</b> GitPod</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="gitpod.html"><a href="gitpod.html#getting-started-with-gitpod"><i class="fa fa-check"></i><b>3.2.1</b> Getting Started With Gitpod</a></li>
+<li class="chapter" data-level="3.2.2" data-path="gitpod.html"><a href="gitpod.html#forcing-chrome-to-hard-refresh"><i class="fa fa-check"></i><b>3.2.2</b> Forcing Chrome to “Hard” Refresh</a></li>
+<li class="chapter" data-level="3.2.3" data-path="gitpod.html"><a href="gitpod.html#gitpod-keyboard-shortcuts-and-other-productivity-tips"><i class="fa fa-check"></i><b>3.2.3</b> Gitpod keyboard shortcuts and other productivity tips</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="git.html"><a href="git.html"><i class="fa fa-check"></i><b>3.3</b> Git</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="git.html"><a href="git.html#what-git-is"><i class="fa fa-check"></i><b>3.3.1</b> What Git is</a></li>
+<li class="chapter" data-level="3.3.2" data-path="git.html"><a href="git.html#why-we-care"><i class="fa fa-check"></i><b>3.3.2</b> Why we care</a></li>
+<li class="chapter" data-level="3.3.3" data-path="git.html"><a href="git.html#jumping-back-in-time"><i class="fa fa-check"></i><b>3.3.3</b> Jumping back in time</a></li>
+<li class="chapter" data-level="3.3.4" data-path="git.html"><a href="git.html#switch-to-a-different-branch"><i class="fa fa-check"></i><b>3.3.4</b> Switch to a Different Branch</a></li>
+<li class="chapter" data-level="3.3.5" data-path="git.html"><a href="git.html#push-to-github"><i class="fa fa-check"></i><b>3.3.5</b> Push to GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="rails-grade.html"><a href="rails-grade.html"><i class="fa fa-check"></i><b>3.4</b> <code>rails grade</code></a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="rails-grade.html"><a href="rails-grade.html#getting-automated-feedback-with-rails-grade"><i class="fa fa-check"></i><b>3.4.1</b> Getting automated feedback with rails grade</a></li>
+<li class="chapter" data-level="3.4.2" data-path="rails-grade.html"><a href="rails-grade.html#fixing-your-organization-permissions"><i class="fa fa-check"></i><b>3.4.2</b> Fixing your organization permissions</a></li>
+<li class="chapter" data-level="3.4.3" data-path="rails-grade.html"><a href="rails-grade.html#sharing-a-gitpod-snapshot"><i class="fa fa-check"></i><b>3.4.3</b> Sharing a Gitpod Snapshot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rock-paper-scissors-html.html"><a href="rock-paper-scissors-html.html"><i class="fa fa-check"></i><b>4</b> Rock, Paper, Scissors HTML</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="video-segment-1st-bite-size-chunk-of-rps-html.html"><a href="video-segment-1st-bite-size-chunk-of-rps-html.html"><i class="fa fa-check"></i><b>4.1</b> Video Segment: 1st bite-size chunk of RPS HTML</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="video-segment-1st-bite-size-chunk-of-rps-html.html"><a href="video-segment-1st-bite-size-chunk-of-rps-html.html#text-companion-1st-bite-size-chunk-of-rps-html"><i class="fa fa-check"></i><b>4.1.1</b> Text Companion: 1st bite-size chunk of RPS HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="video-segment-nth-bite-size-chunk-of-rps-html.html"><a href="video-segment-nth-bite-size-chunk-of-rps-html.html"><i class="fa fa-check"></i><b>4.2</b> Video Segment: Nth bite-size chunk of RPS HTML</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="video-segment-nth-bite-size-chunk-of-rps-html.html"><a href="video-segment-nth-bite-size-chunk-of-rps-html.html#text-companion-nth-bite-size-chunk-of-rps-html"><i class="fa fa-check"></i><b>4.2.1</b> Text Companion: Nth bite-size chunk of RPS HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="finish-and-submit-rps-html.html"><a href="finish-and-submit-rps-html.html"><i class="fa fa-check"></i><b>4.3</b> Finish and Submit RPS HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html"><i class="fa fa-check"></i><b>5</b> Deploying to Heroku</a></li>
+<li class="chapter" data-level="6" data-path="rock-paper-scissors-css.html"><a href="rock-paper-scissors-css.html"><i class="fa fa-check"></i><b>6</b> Rock, Paper, Scissors CSS</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="video-segment-1st-bite-size-chunk-of-rps-css.html"><a href="video-segment-1st-bite-size-chunk-of-rps-css.html"><i class="fa fa-check"></i><b>6.1</b> Video Segment: 1st bite-size chunk of RPS CSS</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="video-segment-1st-bite-size-chunk-of-rps-css.html"><a href="video-segment-1st-bite-size-chunk-of-rps-css.html#text-companion-1st-bite-size-chunk-of-rps-css"><i class="fa fa-check"></i><b>6.1.1</b> Text Companion: 1st bite-size chunk of RPS CSS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="video-segment-nth-bite-size-chunk-of-rps-css.html"><a href="video-segment-nth-bite-size-chunk-of-rps-css.html"><i class="fa fa-check"></i><b>6.2</b> Video Segment: Nth bite-size chunk of RPS CSS</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="video-segment-nth-bite-size-chunk-of-rps-css.html"><a href="video-segment-nth-bite-size-chunk-of-rps-css.html#text-companion-nth-bite-size-chunk-of-rps-css"><i class="fa fa-check"></i><b>6.2.1</b> Text Companion: Nth bite-size chunk of RPS CSS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="relationships.html"><a href="relationships.html"><i class="fa fa-check"></i><b>7</b> Relationships</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="practice-identifying-relationships.html"><a href="practice-identifying-relationships.html"><i class="fa fa-check"></i><b>7.1</b> Practice Identifying Relationships</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="html-css-stylesheets-and-design-recap.html"><a href="html-css-stylesheets-and-design-recap.html"><i class="fa fa-check"></i><b>8</b> HTML, CSS, Stylesheets, and Design Recap</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="html-recap-and-replits.html"><a href="html-recap-and-replits.html"><i class="fa fa-check"></i><b>8.1</b> HTML Recap and Replits</a></li>
+<li class="chapter" data-level="8.2" data-path="css-recap-and-replits.html"><a href="css-recap-and-replits.html"><i class="fa fa-check"></i><b>8.2</b> CSS Recap and Replits</a></li>
+<li class="chapter" data-level="8.3" data-path="stylesheets-recap-and-replits.html"><a href="stylesheets-recap-and-replits.html"><i class="fa fa-check"></i><b>8.3</b> Stylesheets Recap and Replits</a></li>
+<li class="chapter" data-level="8.4" data-path="design-resources.html"><a href="design-resources.html"><i class="fa fa-check"></i><b>8.4</b> Design Resources</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="design-resources.html"><a href="design-resources.html#readings"><i class="fa fa-check"></i><b>8.4.1</b> Readings</a></li>
+<li class="chapter" data-level="8.4.2" data-path="design-resources.html"><a href="design-resources.html#resources"><i class="fa fa-check"></i><b>8.4.2</b> Resources</a></li>
+<li class="chapter" data-level="8.4.3" data-path="design-resources.html"><a href="design-resources.html#quick-links-to-assets"><i class="fa fa-check"></i><b>8.4.3</b> Quick links to assets</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="linkinbio.html"><a href="linkinbio.html"><i class="fa fa-check"></i><b>9</b> Linkinbio</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>9.1</b> Getting started</a></li>
+<li class="chapter" data-level="9.2" data-path="first-things-first-the-content.html"><a href="first-things-first-the-content.html"><i class="fa fa-check"></i><b>9.2</b> First things first — the content</a></li>
+<li class="chapter" data-level="9.3" data-path="basic-html-structure.html"><a href="basic-html-structure.html"><i class="fa fa-check"></i><b>9.3</b> Basic HTML Structure</a></li>
+<li class="chapter" data-level="9.4" data-path="html-validator.html"><a href="html-validator.html"><i class="fa fa-check"></i><b>9.4</b> HTML Validator</a></li>
+<li class="chapter" data-level="9.5" data-path="view-source.html"><a href="view-source.html"><i class="fa fa-check"></i><b>9.5</b> View Source</a></li>
+<li class="chapter" data-level="9.6" data-path="sizing-images.html"><a href="sizing-images.html"><i class="fa fa-check"></i><b>9.6</b> Sizing images</a></li>
+<li class="chapter" data-level="9.7" data-path="basic-colors.html"><a href="basic-colors.html"><i class="fa fa-check"></i><b>9.7</b> Basic colors</a></li>
+<li class="chapter" data-level="9.8" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i><b>9.8</b> Layout</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="layout.html"><a href="layout.html#overall-page-layout"><i class="fa fa-check"></i><b>9.8.1</b> Overall page layout</a></li>
+<li class="chapter" data-level="9.8.2" data-path="layout.html"><a href="layout.html#layout-for-each-link"><i class="fa fa-check"></i><b>9.8.2</b> Layout for each link</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="deploy.html"><a href="deploy.html"><i class="fa fa-check"></i><b>9.9</b> Deploy!</a></li>
+<li class="chapter" data-level="9.10" data-path="this-is-the-end-of-the-required-portion.html"><a href="this-is-the-end-of-the-required-portion.html"><i class="fa fa-check"></i><b>9.10</b> This is the end of the required portion</a></li>
+<li class="chapter" data-level="9.11" data-path="make-it-your-own.html"><a href="make-it-your-own.html"><i class="fa fa-check"></i><b>9.11</b> Make it your own</a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="make-it-your-own.html"><a href="make-it-your-own.html#fun-design-resources"><i class="fa fa-check"></i><b>9.11.1</b> Fun design resources</a></li>
+<li class="chapter" data-level="9.11.2" data-path="make-it-your-own.html"><a href="make-it-your-own.html#always-be-committing"><i class="fa fa-check"></i><b>9.11.2</b> Always be committing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="intro-to-ruby.html"><a href="intro-to-ruby.html"><i class="fa fa-check"></i><b>10</b> Intro to Ruby</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html"><i class="fa fa-check"></i><b>10.1</b> Nouns, Verbs, and Grammar</a></li>
+<li class="chapter" data-level="10.2" data-path="program-notes.html"><a href="program-notes.html"><i class="fa fa-check"></i><b>10.2</b> Program Notes</a></li>
+<li class="chapter" data-level="10.3" data-path="string.html"><a href="string.html"><i class="fa fa-check"></i><b>10.3</b> String</a></li>
+<li class="chapter" data-level="10.4" data-path="integer.html"><a href="integer.html"><i class="fa fa-check"></i><b>10.4</b> Integer</a></li>
+<li class="chapter" data-level="10.5" data-path="float.html"><a href="float.html"><i class="fa fa-check"></i><b>10.5</b> Float</a></li>
+<li class="chapter" data-level="10.6" data-path="date.html"><a href="date.html"><i class="fa fa-check"></i><b>10.6</b> Date</a></li>
+<li class="chapter" data-level="10.7" data-path="array.html"><a href="array.html"><i class="fa fa-check"></i><b>10.7</b> Array</a></li>
+<li class="chapter" data-level="10.8" data-path="conditionals.html"><a href="conditionals.html"><i class="fa fa-check"></i><b>10.8</b> Conditionals</a></li>
+<li class="chapter" data-level="10.9" data-path="loops.html"><a href="loops.html"><i class="fa fa-check"></i><b>10.9</b> Loops</a></li>
+<li class="chapter" data-level="10.10" data-path="each.html"><a href="each.html"><i class="fa fa-check"></i><b>10.10</b> Each</a></li>
+<li class="chapter" data-level="10.11" data-path="hash.html"><a href="hash.html"><i class="fa fa-check"></i><b>10.11</b> Hash</a></li>
+<li class="chapter" data-level="10.12" data-path="our-own-classes.html"><a href="our-own-classes.html"><i class="fa fa-check"></i><b>10.12</b> Our own classes</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>11</b> Ruby Gym</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="optional-ruby-practice-daexercise.html"><a href="optional-ruby-practice-daexercise.html"><i class="fa fa-check"></i><b>11.1</b> Optional Ruby Practice (da=“Exercise”)</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="rock-paper-scissors-rcav.html"><a href="rock-paper-scissors-rcav.html"><i class="fa fa-check"></i><b>12</b> Rock, Paper, Scissors RCAV</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="video-segment-dynamic-web-applications-and-urls.html"><a href="video-segment-dynamic-web-applications-and-urls.html"><i class="fa fa-check"></i><b>12.1</b> Video Segment: Dynamic Web Applications and URLs</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="video-segment-dynamic-web-applications-and-urls.html"><a href="video-segment-dynamic-web-applications-and-urls.html#text-companion-dynamic-web-applications-and-urls"><i class="fa fa-check"></i><b>12.1.1</b> Text Companion: Dynamic Web Applications and URLs</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="video-segment-route.html"><a href="video-segment-route.html"><i class="fa fa-check"></i><b>12.2</b> Video Segment: Route</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="video-segment-route.html"><a href="video-segment-route.html#text-companion-route"><i class="fa fa-check"></i><b>12.2.1</b> Text Companion: Route</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html"><i class="fa fa-check"></i><b>12.3</b> Video Segment: Controller, Action, View</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>12.3.1</b> Text Companion: Controller, Action, View</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html"><i class="fa fa-check"></i><b>12.4</b> Video Segment: Dropping <code>self.</code></a>
+<ul>
+<li class="chapter" data-level="12.4.1" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html#text-companion-dropping-.self"><i class="fa fa-check"></i><b>12.4.1</b> Text Companion: Dropping <code>.self</code></a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html"><i class="fa fa-check"></i><b>12.5</b> Video Segment: Our First RCAV</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html#text-companion-our-first-rcav"><i class="fa fa-check"></i><b>12.5.1</b> Text Companion: Our First RCAV</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html"><i class="fa fa-check"></i><b>12.6</b> Video Segment: Render HTML</a>
+<ul>
+<li class="chapter" data-level="12.6.1" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html#text-companion-render-html"><i class="fa fa-check"></i><b>12.6.1</b> Text Companion: Render HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="video-segment-embedded-ruby-tags.html"><a href="video-segment-embedded-ruby-tags.html"><i class="fa fa-check"></i><b>12.7</b> Video Segment: Embedded Ruby Tags</a>
+<ul>
+<li class="chapter" data-level="12.7.1" data-path="video-segment-embedded-ruby-tags.html"><a href="video-segment-embedded-ruby-tags.html#text-companion-embedded-ruby-tags"><i class="fa fa-check"></i><b>12.7.1</b> Text Companion: Embedded Ruby Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="12.8" data-path="video-segment-control-flow-with-embedded-ruby.html"><a href="video-segment-control-flow-with-embedded-ruby.html"><i class="fa fa-check"></i><b>12.8</b> Video Segment: Control Flow with Embedded Ruby</a>
+<ul>
+<li class="chapter" data-level="12.8.1" data-path="video-segment-control-flow-with-embedded-ruby.html"><a href="video-segment-control-flow-with-embedded-ruby.html#text-companion-control-flow-with-embedded-ruby"><i class="fa fa-check"></i><b>12.8.1</b> Text Companion: Control Flow with Embedded Ruby</a></li>
+</ul></li>
+<li class="chapter" data-level="12.9" data-path="video-segment-homepage.html"><a href="video-segment-homepage.html"><i class="fa fa-check"></i><b>12.9</b> Video Segment: Homepage</a>
+<ul>
+<li class="chapter" data-level="12.9.1" data-path="video-segment-homepage.html"><a href="video-segment-homepage.html#text-companion-homepage"><i class="fa fa-check"></i><b>12.9.1</b> Text Companion: Homepage</a></li>
+</ul></li>
+<li class="chapter" data-level="12.10" data-path="video-segment-reinforce-rcav-with-paper.html"><a href="video-segment-reinforce-rcav-with-paper.html"><i class="fa fa-check"></i><b>12.10</b> Video Segment: Reinforce RCAV with /paper</a>
+<ul>
+<li class="chapter" data-level="12.10.1" data-path="video-segment-reinforce-rcav-with-paper.html"><a href="video-segment-reinforce-rcav-with-paper.html#text-companion-reinforce-rcav-with-paper"><i class="fa fa-check"></i><b>12.10.1</b> Text Companion: Reinforce RCAV with /paper</a></li>
+</ul></li>
+<li class="chapter" data-level="12.11" data-path="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html"><i class="fa fa-check"></i><b>12.11</b> Video Segment: Embedded Ruby in the Controller with Instance Variables</a>
+<ul>
+<li class="chapter" data-level="12.11.1" data-path="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#text-companion-embedded-ruby-in-the-controller-with-instance-variables"><i class="fa fa-check"></i><b>12.11.1</b> Text Companion: Embedded Ruby in the Controller with Instance Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="12.12" data-path="video-segment-linking-pages-with-layouts.html"><a href="video-segment-linking-pages-with-layouts.html"><i class="fa fa-check"></i><b>12.12</b> Video Segment: Linking Pages with Layouts</a>
+<ul>
+<li class="chapter" data-level="12.12.1" data-path="video-segment-linking-pages-with-layouts.html"><a href="video-segment-linking-pages-with-layouts.html#text-companion-linking-pages-with-layouts"><i class="fa fa-check"></i><b>12.12.1</b> Text Companion: Linking Pages with Layouts</a></li>
+</ul></li>
+<li class="chapter" data-level="12.13" data-path="finish-and-submit-rps-rcav.html"><a href="finish-and-submit-rps-rcav.html"><i class="fa fa-check"></i><b>12.13</b> Finish and Submit RPS RCAV</a></li>
+<li class="chapter" data-level="12.14" data-path="rcav-addendums.html"><a href="rcav-addendums.html"><i class="fa fa-check"></i><b>12.14</b> RCAV Addendums</a>
+<ul>
+<li class="chapter" data-level="12.14.1" data-path="rcav-addendums.html"><a href="rcav-addendums.html#addendum-rendering-json"><i class="fa fa-check"></i><b>12.14.1</b> Addendum: Rendering JSON</a></li>
+<li class="chapter" data-level="12.14.2" data-path="rcav-addendums.html"><a href="rcav-addendums.html#addendum-custom-controller-files"><i class="fa fa-check"></i><b>12.14.2</b> Addendum: Custom Controller Files</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Glossaries</b></span></li>
+<li class="chapter" data-level="A" data-path="terminology-technical-reference.html"><a href="terminology-technical-reference.html"><i class="fa fa-check"></i><b>A</b> Terminology Technical Reference</a></li>
+<li class="chapter" data-level="B" data-path="ruby-technical-reference.html"><a href="ruby-technical-reference.html"><i class="fa fa-check"></i><b>B</b> Ruby Technical Reference</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="_blank">
+Proudly published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AD1</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="video-segment-embedded-ruby-in-the-controller-with-instance-variables" class="section level2 hasAnchor" number="12.11">
+<h2><span class="header-section-number">12.11</span> Video Segment: Embedded Ruby in the Controller with Instance Variables<a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#video-segment-embedded-ruby-in-the-controller-with-instance-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Notes:</p>
+<ul>
+<li>moving conditional control flow <code>&lt;% if ... %&gt;</code> from <strong>/rock</strong> into the <code>ApplicationController</code> action <code>play_rock</code></li>
+<li>local variables vs. instance variables with <code>@</code>-notation</li>
+</ul></li>
+</ul>
+<p>Now that we are RCAV pros, let me show you another (perhaps better, depending on your taste) way of writing our embedded Ruby code. Let’s return to the <code>game_templates/user_rock.html.erb</code> file:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb60-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
+<span id="cb60-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-2" aria-hidden="true"></a></span>
+<span id="cb60-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb60-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-4" aria-hidden="true"></a></span>
+<span id="cb60-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
+<span id="cb60-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-6" aria-hidden="true"></a></span>
+<span id="cb60-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb60-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb60-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb60-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-10" aria-hidden="true"></a></span>
+<span id="cb60-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-11" aria-hidden="true"></a><span class="er">&lt;</span>% if comp_move == &quot;rock&quot; %&gt;</span>
+<span id="cb60-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-12" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We tied!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb60-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-13" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
+<span id="cb60-14"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-14" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We lost!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb60-15"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-15" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
+<span id="cb60-16"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-16" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We won!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb60-17"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb60-17" aria-hidden="true"></a><span class="er">&lt;</span>% end %&gt;</span></code></pre></div>
+<p>{: mark_lines=“5”}</p>
+<p>The highlighted code <code>&lt;% comp_move = ["rock", "paper", "scissors"].sample %&gt;</code> is okay, but you could imagine that in a real application there may be dozens of lines of code to prepare the information that we actually want to show the user. Our example is trivial. In reality we may lookup data from a database, doing math on it, finding API data, and more. Think of our “take your umbrella” example <strong>BENP: insert link to this DarkSky API example; but wait, has it even been presented up to this point?</strong>, which took around 30 lines of Ruby code to produce. We want somewhere other than the HTML template to put this code.</p>
+<p>We can in fact do that!</p>
+<p>Let’s go back to the <code>game_templates/user_paper.html.erb</code> file, since we didn’t get as far there and see how we can make this modification. We would like our file to look like this:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb61-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb61-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-2" aria-hidden="true"></a></span>
+<span id="cb61-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb61-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb61-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb61-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-6" aria-hidden="true"></a></span>
+<span id="cb61-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb61-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb61-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb61-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-10" aria-hidden="true"></a></span>
+<span id="cb61-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb61-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= outcome %&gt;!</span>
+<span id="cb61-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb61-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“7-13”}</p>
+<p>We wish we could just do this and avoid all the lines of embedded Ruby that are in the previous <code>user_rock.html.erb</code> view template. The responsibility for these computations really don’t belong here, the view templates should be given some data and then the job should just be to format and present it beautifuly and usably to the user. In the backend the responsibility should be marshalling the correct data and sending it to the view template.</p>
+<p>We can return to our <code>app/controllers/application_controller.rb</code> controller file and do the following:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb62-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb62-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-2" aria-hidden="true"></a></span>
+<span id="cb62-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb62-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb62-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-5" aria-hidden="true"></a></span>
+<span id="cb62-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb62-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb62-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-8" aria-hidden="true"></a>  </span>
+<span id="cb62-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
+<span id="cb62-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
+<span id="cb62-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb62-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-12" aria-hidden="true"></a></span>
+<span id="cb62-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb62-14"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb62-15"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-15" aria-hidden="true"></a>    </span>
+<span id="cb62-16"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb62-17"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-17" aria-hidden="true"></a>    </span>
+<span id="cb62-18"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
+<span id="cb62-19"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-19" aria-hidden="true"></a></span>
+<span id="cb62-20"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
+<span id="cb62-21"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb62-22"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-22" aria-hidden="true"></a></span>
+<span id="cb62-23"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-23" aria-hidden="true"></a>  <span class="kw">def</span> play_paper</span>
+<span id="cb62-24"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-24" aria-hidden="true"></a>    comp_move = [<span class="st">&quot;rock&quot;</span>, <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;scissors&quot;</span>].sample</span>
+<span id="cb62-25"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-25" aria-hidden="true"></a>    </span>
+<span id="cb62-26"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-26" aria-hidden="true"></a>    <span class="kw">if</span> comp_move == <span class="st">&quot;rock&quot;</span></span>
+<span id="cb62-27"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-27" aria-hidden="true"></a>      outcome = <span class="st">&quot;won&quot;</span></span>
+<span id="cb62-28"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-28" aria-hidden="true"></a>    <span class="kw">elsif</span> comp_move == <span class="st">&quot;paper&quot;</span></span>
+<span id="cb62-29"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-29" aria-hidden="true"></a>      outcome =  <span class="st">&quot;tied&quot;</span></span>
+<span id="cb62-30"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-30" aria-hidden="true"></a>    <span class="kw">elsif</span> comp_move == <span class="st">&quot;scissors&quot;</span></span>
+<span id="cb62-31"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-31" aria-hidden="true"></a>      outcome = <span class="st">&quot;lost&quot;</span></span>
+<span id="cb62-32"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-32" aria-hidden="true"></a>    <span class="kw">end</span></span>
+<span id="cb62-33"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-33" aria-hidden="true"></a></span>
+<span id="cb62-34"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-34" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_paper.html.erb&quot;</span> })</span>
+<span id="cb62-35"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-35" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb62-36"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-36" aria-hidden="true"></a></span>
+<span id="cb62-37"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb62-37" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“23-31”}</p>
+<p>In the above highlighted code we have removed all of the embedded Ruby tags (<code>&lt;% %&gt;</code> and <code>&lt;%= %&gt;</code>) from the code we had in the <code>.html.erb</code> view template. Now when a user visits the route <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/paper</strong>, the action <code>play_paper</code> in the controller <code>ApplicationController</code> will be triggered, and the code will be run before the template is rendered.</p>
+<p>So let’s try to visit <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/paper</strong> again. Oops, we get this error:</p>
+<p><img src="assets/err-undefined-local-var-or-meth.png" /></p>
+<p>In our <code>game_templates/user_paper.html.erb</code> view template, when we get to the first embedded Ruby tag:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb63-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb63-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-2" aria-hidden="true"></a></span>
+<span id="cb63-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb63-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb63-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb63-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-6" aria-hidden="true"></a></span>
+<span id="cb63-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb63-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb63-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb63-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-10" aria-hidden="true"></a></span>
+<span id="cb63-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb63-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= outcome %&gt;!</span>
+<span id="cb63-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb63-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“8”}</p>
+<p>That <em>local variable</em> <code>comp_move</code> is undefined! A <em>local variable</em> only exists in the scope it was defined. If I create a local variable in a loop, it will only exist in that loop. If I want some variable available outside the loop, then I would need to create it outside the loop and modify it in the loop. So there’s a scope to local variables and I can’t just use it in my template if I created it in the <code>play_paper</code> method (action). The variable is effectively “dead” after <code>play_paper</code> executes.</p>
+<p>So how do we make the controller variables available in the view template? Let’s modify our <code>app/controllers/application_controller.rb</code>:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb64-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb64-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-2" aria-hidden="true"></a></span>
+<span id="cb64-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb64-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb64-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-5" aria-hidden="true"></a></span>
+<span id="cb64-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb64-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb64-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-8" aria-hidden="true"></a>  </span>
+<span id="cb64-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
+<span id="cb64-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
+<span id="cb64-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb64-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-12" aria-hidden="true"></a></span>
+<span id="cb64-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb64-14"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb64-15"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-15" aria-hidden="true"></a>    </span>
+<span id="cb64-16"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb64-17"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-17" aria-hidden="true"></a>    </span>
+<span id="cb64-18"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
+<span id="cb64-19"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-19" aria-hidden="true"></a></span>
+<span id="cb64-20"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
+<span id="cb64-21"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb64-22"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-22" aria-hidden="true"></a></span>
+<span id="cb64-23"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-23" aria-hidden="true"></a>  <span class="kw">def</span> play_paper</span>
+<span id="cb64-24"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-24" aria-hidden="true"></a>    <span class="ot">@comp_move</span> = [<span class="st">&quot;rock&quot;</span>, <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;scissors&quot;</span>].sample</span>
+<span id="cb64-25"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-25" aria-hidden="true"></a>    </span>
+<span id="cb64-26"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-26" aria-hidden="true"></a>    <span class="kw">if</span> <span class="ot">@comp_move</span> == <span class="st">&quot;rock&quot;</span></span>
+<span id="cb64-27"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-27" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;won&quot;</span></span>
+<span id="cb64-28"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-28" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;paper&quot;</span></span>
+<span id="cb64-29"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-29" aria-hidden="true"></a>      <span class="ot">@outcome</span> =  <span class="st">&quot;tied&quot;</span></span>
+<span id="cb64-30"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-30" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;scissors&quot;</span></span>
+<span id="cb64-31"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-31" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;lost&quot;</span></span>
+<span id="cb64-32"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-32" aria-hidden="true"></a>    <span class="kw">end</span></span>
+<span id="cb64-33"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-33" aria-hidden="true"></a></span>
+<span id="cb64-34"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-34" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_paper.html.erb&quot;</span> })</span>
+<span id="cb64-35"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-35" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb64-36"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-36" aria-hidden="true"></a></span>
+<span id="cb64-37"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb64-37" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“23 25-30”}</p>
+<p>All we did was place an <code>@</code> symbol before any variable that we want access to in our view template. This is a new kind of variable called an <em>instance variable</em>. This type of variable will survive as long as the instance the object in which its created survives <strong>BENP: last sentence a bit confusing</strong>. In this case when someone visits <strong>/paper</strong>, Rails is going to create an instance of the <code>ApplicationController</code> class and then run the <code>play_paper</code> method. So as long as the <code>ApplicationController</code> instance is alive (Rails keeps it until the response is sent to the user), the variables produced by <code>play_paper</code> will exist.</p>
+<p>When someone visits <strong>/paper</strong>, we now have <code>@comp_move</code> and <code>@outcome</code> available for our template. We just need to make sure those instance variables are also properly referenced in <code>game_templates/user_paper.html.erb</code>:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb65-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb65-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-2" aria-hidden="true"></a></span>
+<span id="cb65-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb65-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb65-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb65-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-6" aria-hidden="true"></a></span>
+<span id="cb65-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb65-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= @comp_move %&gt;!</span>
+<span id="cb65-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb65-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-10" aria-hidden="true"></a></span>
+<span id="cb65-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb65-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= @outcome %&gt;!</span>
+<span id="cb65-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb65-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“8 12”}</p>
+<p>Again, we just use the leading <code>@</code> symbols on our variables to tie them to the instance variables in the controller. And if we visit the <strong>/paper</strong> URL, it works! And we have a much improved organization.</p>
+<p>Most computation work like this should go in the controller as we have done it here. We will have cases where embedded Ruby goes in the template (e.g., rendering database records with <code>each</code> loops, <code>if</code> statements to check if a user is allowed to see something, other conditional statements). If it can happen in the controller, it should happen there.</p>
+<p>Time for a <code>rails grade</code> and a <code>/git</code> commit!</p>
+<div id="text-companion-embedded-ruby-in-the-controller-with-instance-variables" class="section level3 hasAnchor" number="12.11.1">
+<h3><span class="header-section-number">12.11.1</span> Text Companion: Embedded Ruby in the Controller with Instance Variables<a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#text-companion-embedded-ruby-in-the-controller-with-instance-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="video-segment-reinforce-rcav-with-paper.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-linking-pages-with-layouts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bpurinton/appdev-textbook/edit/master/lessons/rps-rcav.md",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/bpurinton/appdev-textbook/blob/master/lessons/rps-rcav.md",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>
