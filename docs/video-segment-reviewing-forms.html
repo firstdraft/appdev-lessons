@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 What does it mean to know how to code? | AD1</title>
+  <title>15.3 Video Segment: Reviewing Forms | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta property="og:title" content="15.3 Video Segment: Reviewing Forms | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta name="twitter:title" content="15.3 Video Segment: Reviewing Forms | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="course-intro.html"/>
-<link rel="next" href="saas.html"/>
+<link rel="prev" href="video-segment-reviewing-query-strings.html"/>
+<link rel="next" href="video-segment-intro-to-apis-with-street-to-coordinates.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -444,16 +444,81 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="what-does-it-mean-to-know-how-to-code" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> What does it mean to know how to code?<a href="what-does-it-mean-to-know-how-to-code.html#what-does-it-mean-to-know-how-to-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="video-segment-reviewing-forms" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> Video Segment: Reviewing Forms<a href="video-segment-reviewing-forms.html#video-segment-reviewing-forms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Notes:</p>
+<ul>
+<li>time stamp 00:50:45 to 00:58:00</li>
+<li>examine target <strong>/add</strong> and implement using forms</li>
+</ul></li>
+</ul>
+<p>Our results page works, but it’s a pain for our users to type in the URL query string. If they make any mistake like typing “first_number” instead of “first_num”, like <strong>/wizard_add?first_number=4&amp;second_num=10</strong>, they would get the error:</p>
+<pre><code>param is missing or the value is empty: first_num</code></pre>
+<p>because in our <code>add_result</code> action in our <code>MathController</code>, we have <code>@first = params.fetch("first_num").to_f</code>. But <code>"first_num"</code> does not exist in our <code>params</code> variable, because the user accidentally named it <code>first_number</code> in the URL.</p>
+<p>Hence, we need a form for the user to type into. So the usual RCAV here:</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb132-1"><a href="video-segment-reviewing-forms.html#cb132-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb132-2"><a href="video-segment-reviewing-forms.html#cb132-2" aria-hidden="true"></a></span>
+<span id="cb132-3"><a href="video-segment-reviewing-forms.html#cb132-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb132-4"><a href="video-segment-reviewing-forms.html#cb132-4" aria-hidden="true"></a>  </span>
+<span id="cb132-5"><a href="video-segment-reviewing-forms.html#cb132-5" aria-hidden="true"></a>  get(<span class="st">&quot;/add&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;math&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;add_form&quot;</span> })</span>
+<span id="cb132-6"><a href="video-segment-reviewing-forms.html#cb132-6" aria-hidden="true"></a>  </span>
+<span id="cb132-7"><a href="video-segment-reviewing-forms.html#cb132-7" aria-hidden="true"></a>  get(<span class="st">&quot;/wizard_add&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;math&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;add_results&quot;</span> })</span>
+<span id="cb132-8"><a href="video-segment-reviewing-forms.html#cb132-8" aria-hidden="true"></a></span>
+<span id="cb132-9"><a href="video-segment-reviewing-forms.html#cb132-9" aria-hidden="true"></a>  <span class="co"># For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html</span></span>
+<span id="cb132-10"><a href="video-segment-reviewing-forms.html#cb132-10" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“5”}</p>
+<p>Then:</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb133-1"><a href="video-segment-reviewing-forms.html#cb133-1" aria-hidden="true"></a><span class="co"># app/controllers/math_controller.rb</span></span>
+<span id="cb133-2"><a href="video-segment-reviewing-forms.html#cb133-2" aria-hidden="true"></a></span>
+<span id="cb133-3"><a href="video-segment-reviewing-forms.html#cb133-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">MathController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb133-4"><a href="video-segment-reviewing-forms.html#cb133-4" aria-hidden="true"></a>  <span class="kw">def</span> add_form</span>
+<span id="cb133-5"><a href="video-segment-reviewing-forms.html#cb133-5" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/add_form.html.erb&quot;</span> })</span>
+<span id="cb133-6"><a href="video-segment-reviewing-forms.html#cb133-6" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb133-7"><a href="video-segment-reviewing-forms.html#cb133-7" aria-hidden="true"></a></span>
+<span id="cb133-8"><a href="video-segment-reviewing-forms.html#cb133-8" aria-hidden="true"></a>  <span class="kw">def</span> add_results</span>
+<span id="cb133-9"><a href="video-segment-reviewing-forms.html#cb133-9" aria-hidden="true"></a>    <span class="ot">@first</span> = params.fetch(<span class="st">&quot;first_num&quot;</span>).to_f</span>
+<span id="cb133-10"><a href="video-segment-reviewing-forms.html#cb133-10" aria-hidden="true"></a></span>
+<span id="cb133-11"><a href="video-segment-reviewing-forms.html#cb133-11" aria-hidden="true"></a>    <span class="ot">@second</span> = params.fetch(<span class="st">&quot;second_num&quot;</span>).to_f</span>
+<span id="cb133-12"><a href="video-segment-reviewing-forms.html#cb133-12" aria-hidden="true"></a></span>
+<span id="cb133-13"><a href="video-segment-reviewing-forms.html#cb133-13" aria-hidden="true"></a>    <span class="ot">@result</span> = <span class="ot">@first</span> + <span class="ot">@second</span></span>
+<span id="cb133-14"><a href="video-segment-reviewing-forms.html#cb133-14" aria-hidden="true"></a></span>
+<span id="cb133-15"><a href="video-segment-reviewing-forms.html#cb133-15" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/add_results.html.erb&quot;</span> })</span>
+<span id="cb133-16"><a href="video-segment-reviewing-forms.html#cb133-16" aria-hidden="true"></a>  <span class="kw">end</span> </span>
+<span id="cb133-17"><a href="video-segment-reviewing-forms.html#cb133-17" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“4-6”}</p>
+<p>Put some copy in the new view template we create:</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb134-1"><a href="video-segment-reviewing-forms.html#cb134-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/math_templates/add_form.html.erb --&gt;</span></span>
+<span id="cb134-2"><a href="video-segment-reviewing-forms.html#cb134-2" aria-hidden="true"></a></span>
+<span id="cb134-3"><a href="video-segment-reviewing-forms.html#cb134-3" aria-hidden="true"></a>hi</span></code></pre></div>
+<p>And when we see our URL <strong>/add</strong> loads with no error, we can put together our form in the view template to finish things off:</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb135-1"><a href="video-segment-reviewing-forms.html#cb135-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/math_templates/add_form.html.erb --&gt;</span></span>
+<span id="cb135-2"><a href="video-segment-reviewing-forms.html#cb135-2" aria-hidden="true"></a></span>
+<span id="cb135-3"><a href="video-segment-reviewing-forms.html#cb135-3" aria-hidden="true"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/wizard_add&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb135-4"><a href="video-segment-reviewing-forms.html#cb135-4" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> name=</span><span class="st">&quot;first_num&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb135-5"><a href="video-segment-reviewing-forms.html#cb135-5" aria-hidden="true"></a></span>
+<span id="cb135-6"><a href="video-segment-reviewing-forms.html#cb135-6" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> name=</span><span class="st">&quot;second_num&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb135-7"><a href="video-segment-reviewing-forms.html#cb135-7" aria-hidden="true"></a>  </span>
+<span id="cb135-8"><a href="video-segment-reviewing-forms.html#cb135-8" aria-hidden="true"></a>  <span class="kw">&lt;button&gt;</span></span>
+<span id="cb135-9"><a href="video-segment-reviewing-forms.html#cb135-9" aria-hidden="true"></a>    Add</span>
+<span id="cb135-10"><a href="video-segment-reviewing-forms.html#cb135-10" aria-hidden="true"></a>  <span class="kw">&lt;/button&gt;</span></span>
+<span id="cb135-11"><a href="video-segment-reviewing-forms.html#cb135-11" aria-hidden="true"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“3-11”}</p>
+<p>The all important <code>action="/wizard_add"</code> attribute in the opening <code>&lt;form&gt;</code> tag, tells the form that when we click the <code>&lt;button&gt;</code>, then route to <strong>/wizard_add</strong>, which activates the first RCAV we built to do the computation. This is the most basic, working version of the form, but you will need to add a lot more like the input labels. Of course, we want a valid form, so you will need to include the matching <code>for=""</code> and <code>id=""</code> attributes for each <code>&lt;label&gt;</code> and associated <code>&lt;input&gt;</code>, and make sure everything matches the target. <strong>BENP: could link to forms-query-strings-and-params.md chapter or whatever that content becomes</strong></p>
+<p>Complete the rest of the assignment on your own and make sure to be <code>/git</code> committing anytime you get something working with <code>rails grade</code>.</p>
+<p>You will need to wire up all RCAVs and the associated forms for “Add”, “Subtract”, “Divide”, and “Mulitply”.</p>
+<p><strong>BENP: From below, I think a new chapter /recording / chapter is in order.</strong></p>
+<div id="text-companion-reviewing-forms" class="section level3 hasAnchor" number="15.3.1">
+<h3><span class="header-section-number">15.3.1</span> Text Companion: Reviewing Forms<a href="video-segment-reviewing-forms.html#text-companion-reviewing-forms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="course-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="saas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="video-segment-reviewing-query-strings.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-intro-to-apis-with-street-to-coordinates.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -485,7 +550,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/omnicalc-2.md",
 "text": "Edit"
 },
 "history": {
@@ -493,7 +558,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/omnicalc-2.md",
 "text": null
 },
 "download": null,

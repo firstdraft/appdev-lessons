@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 What does it mean to know how to code? | AD1</title>
+  <title>15.4 Video Segment: Intro to APIs with Street to Coordinates | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta property="og:title" content="15.4 Video Segment: Intro to APIs with Street to Coordinates | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta name="twitter:title" content="15.4 Video Segment: Intro to APIs with Street to Coordinates | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="course-intro.html"/>
-<link rel="next" href="saas.html"/>
+<link rel="prev" href="video-segment-reviewing-forms.html"/>
+<link rel="next" href="finish-and-submit-omnicalc-2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -444,16 +444,208 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="what-does-it-mean-to-know-how-to-code" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> What does it mean to know how to code?<a href="what-does-it-mean-to-know-how-to-code.html#what-does-it-mean-to-know-how-to-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="video-segment-intro-to-apis-with-street-to-coordinates" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">15.4</span> Video Segment: Intro to APIs with Street to Coordinates<a href="video-segment-intro-to-apis-with-street-to-coordinates.html#video-segment-intro-to-apis-with-street-to-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Notes:</p>
+<ul>
+<li>time stamp 01:00:00 to 01:21:00</li>
+<li>there is a bunch of explanation here about APIs</li>
+<li>implementing <strong>/experiment</strong> for “Street to Coordinates”</li>
+<li>API keys</li>
+<li>JSON</li>
+<li>Google Maps API</li>
+<li>JSON to Hash with <code>JSON.parse(open(@url).read)</code></li>
+</ul></li>
+</ul>
+<p>Let’s begin to experiment with APIs in our app. One of the homework videos for next week includes some API work, but we will get a taste here.</p>
+<p>First we will add a route to experiment with:</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb136-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb136-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-2" aria-hidden="true"></a></span>
+<span id="cb136-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb136-4"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-4" aria-hidden="true"></a>  </span>
+<span id="cb136-5"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-5" aria-hidden="true"></a>  get(<span class="st">&quot;/add&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;math&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;add_form&quot;</span> })</span>
+<span id="cb136-6"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-6" aria-hidden="true"></a>  </span>
+<span id="cb136-7"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-7" aria-hidden="true"></a>  get(<span class="st">&quot;/wizard_add&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;math&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;add_results&quot;</span> })</span>
+<span id="cb136-8"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-8" aria-hidden="true"></a></span>
+<span id="cb136-9"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-9" aria-hidden="true"></a>  get(<span class="st">&quot;/experiment&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;experiment&quot;</span> })</span>
+<span id="cb136-10"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-10" aria-hidden="true"></a></span>
+<span id="cb136-11"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-11" aria-hidden="true"></a>  <span class="co"># For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html</span></span>
+<span id="cb136-12"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb136-12" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“9”}</p>
+<p>We are just going to use the <code>application_controller.rb</code> file as our controller and add an action there <code>experiment</code>.</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb137-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb137-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb137-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb137-2" aria-hidden="true"></a></span>
+<span id="cb137-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb137-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb137-4"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb137-4" aria-hidden="true"></a>  <span class="kw">def</span> experiment</span>
+<span id="cb137-5"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb137-5" aria-hidden="true"></a></span>
+<span id="cb137-6"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb137-6" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/experiment.html.erb&quot;</span> })</span>
+<span id="cb137-7"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb137-7" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb137-8"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb137-8" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“3-6”}</p>
+<p>We just put the new template again in the <code>app/views/math_templates/</code> folder, just to <code>experiment.html.erb</code>.</p>
+<p>And here is a bunch of handy links (<strong>BENP: originally from README, can we remove some links? yes definitely</strong>) with information on APIs:</p>
+<ul>
+<li><p><a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en" target="_blank">JSONView Chrome extension</a></p></li>
+<li><p><a href="https://darksky.net/forecast/41.8887,-87.6355/us12/en" target="_blank">Dark Sky forecast at the Merchandise Mart for humans</a></p></li>
+<li><p>Dark Sky forecast at the Merchandise Mart for machines:</p>
+<p><strong><a href="https://api.darksky.net/forecast/REPLACE_THIS_PATH_SEGMENT_WITH_YOUR_API_TOKEN/41.8887,-87.6355" class="uri">https://api.darksky.net/forecast/REPLACE_THIS_PATH_SEGMENT_WITH_YOUR_API_TOKEN/41.8887,-87.6355</a></strong></p></li>
+<li><p><a href="https://darksky.net/dev/docs" target="_blank">Dark Sky API docs</a></p></li>
+<li><p><a href="https://goo.gl/maps/2mXdvBnHSGuMq98m6" target="_blank">Map of Merchandise Mart for humans</a></p></li>
+<li><p>Map of Merchandise Mart for machines:</p>
+<p><strong><a href="https://maps.googleapis.com/maps/api/geocode/json?address=Merchandise%20Mart%20Chicago&amp;key=REPLACE_THIS_QUERY_STRING_PARAMETER_WITH_YOUR_API_TOKEN" class="uri">https://maps.googleapis.com/maps/api/geocode/json?address=Merchandise%20Mart%20Chicago&amp;key=REPLACE_THIS_QUERY_STRING_PARAMETER_WITH_YOUR_API_TOKEN</a></strong></p></li>
+<li><p><a href="https://developers.google.com/maps/documentation/geocoding/start" target="_blank">Google Geocoding API docs</a></p></li>
+<li><p><a href="https://chapters.firstdraft.com/chapters/792" target="_blank">How to store secrets securely on Gitpod</a></p></li>
+</ul>
+<p>If we look at the <a href="https://omnicalc-2.matchthetarget.com/" target="_blank">target</a> and navigate to “Street to Coordinates”, <strong>BENP: video cuts out</strong> … the reason for that is, it costs money. Each time we’re making an API call, they are tracking our use and charging us if we are above some limit. GoogleMaps has a very high limit of API calls before charging begins, but the text messaging in the “Translate” page costs money for every message. That is why we have password secured the target in this case. So this is something to keep in mind: if you start to play around with APIs and sign up for an account with a credit card, then be careful with your API credentials!</p>
+<p>In this project any necessary API credentials are made available to you <strong>BENP: these are from Canvas and probably should not be / or should be changed in the final material. ALL API KEYS LABELLED AS <code>TODO</code></strong>:</p>
+<ul>
+<li><p><code>TWILIO_ACCOUNT_SID</code> : <code>TODO</code></p></li>
+<li><p><code>TWILIO_AUTH_TOKEN</code> : <code>TODO</code></p></li>
+<li><p><code>TWILIO_SENDING_PHONE_NUMBER</code> : <code>TODO</code></p></li>
+<li><p><code>MAILGUN_API_KEY</code> : <code>TODO</code></p></li>
+<li><p><code>MAILGUN_SENDING_DOMAIN</code> : <code>TODO</code></p></li>
+<li><p><code>GMAPS_KEY</code> : <code>TODO</code></p></li>
+<li><p><code>DARK_SKY_KEY</code> : <code>TODO</code></p></li>
+<li><p><code>TRANSLATE_PROJECT</code> : <code>omnicalc</code></p></li>
+<li><p><code>TRANSLATE_CREDENTIALS</code> :</p>
+<pre><code>{ TODO } </code></pre></li>
+</ul>
+<p>So you can feel free to play around. But with your own credentials, be careful and protect them. <strong>BENP: could link to <code>storing-credentials-securely.md</code> content here</strong></p>
+<p>How do I begin to think about tackling “Street to Coordinates”?</p>
+<p>I have an address and I want the latitude and longitude. I don’t want to use my company resources to building up a huge database of this information that I can lookup in. So let’s use <a href="https://developers.google.com/maps/documentation/geocoding/start" target="_blank">Google’s Geocoding API</a>.</p>
+<p>The first step of any API work is doing some homework. Search around on the internet for different options and read through some of the documentation. If we look around in the Google documentation, we would find a URL:</p>
+<p><strong><a href="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;key=YOUR_API_KEY" class="uri">https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;key=YOUR_API_KEY</a></strong></p>
+<p>What do we see? We have an address: <strong><a href="https://maps.googleapis.com/maps/api/geocode/json" class="uri">https://maps.googleapis.com/maps/api/geocode/json</a></strong> and a query string: <strong>?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;key=YOUR_API_KEY</strong>. And we can see the query string includes an <strong>address=</strong> variable, and a <strong>key=</strong> variable. If we try to visit the URL as it is, we would see a page like:</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb139-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-1" aria-hidden="true"></a><span class="er">//</span> <span class="er">20221217132605</span></span>
+<span id="cb139-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-2" aria-hidden="true"></a><span class="er">//</span> <span class="er">https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;key=YOUR_API_KEY</span></span>
+<span id="cb139-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-3" aria-hidden="true"></a></span>
+<span id="cb139-4"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-4" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb139-5"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-5" aria-hidden="true"></a>  <span class="dt">&quot;error_message&quot;</span><span class="fu">:</span> <span class="st">&quot;The provided API key is invalid. &quot;</span><span class="fu">,</span></span>
+<span id="cb139-6"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-6" aria-hidden="true"></a>  <span class="dt">&quot;results&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb139-7"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-7" aria-hidden="true"></a>    </span>
+<span id="cb139-8"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-8" aria-hidden="true"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb139-9"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-9" aria-hidden="true"></a>  <span class="dt">&quot;status&quot;</span><span class="fu">:</span> <span class="st">&quot;REQUEST_DENIED&quot;</span></span>
+<span id="cb139-10"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb139-10" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
+<p>We see an error message. Because we need to replace <strong>YOUR_API_KEY</strong>, with our API key!</p>
+<p>So we can go into a new tab and try to do that with our <code>GMAPS_KEY</code> <strong>BENP: this key is expired and needs to be changed everywhere above and below</strong>:</p>
+<p><strong><a href="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;key=TODO" class="uri">https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;key=TODO</a></strong></p>
+<p>And when we enter this address in the tab, we should see a very long JSON file displayed in our browser, something like:</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb140-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-1" aria-hidden="true"></a><span class="er">//</span> <span class="er">20221217131844</span></span>
+<span id="cb140-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-2" aria-hidden="true"></a><span class="er">//</span> <span class="er">https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;key=TODO</span></span>
+<span id="cb140-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-3" aria-hidden="true"></a></span>
+<span id="cb140-4"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-4" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb140-5"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-5" aria-hidden="true"></a>  <span class="dt">&quot;results&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb140-6"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-6" aria-hidden="true"></a>    <span class="fu">{</span></span>
+<span id="cb140-7"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-7" aria-hidden="true"></a>        <span class="dt">&quot;address_components&quot;</span><span class="fu">:</span></span>
+<span id="cb140-8"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-8" aria-hidden="true"></a>        <span class="er">...</span></span>
+<span id="cb140-9"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-9" aria-hidden="true"></a>    <span class="fu">}</span></span>
+<span id="cb140-10"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-10" aria-hidden="true"></a>    <span class="er">...</span></span>
+<span id="cb140-11"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-11" aria-hidden="true"></a>  <span class="ot">]</span></span>
+<span id="cb140-12"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb140-12" aria-hidden="true"></a><span class="fu">}</span>     </span></code></pre></div>
+<p>There may be several hundred lines displayed and it may not be broken into readable lines if you don’t have a third party extension like <a href="https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh" target="_blank">JSON Viewer for Chrome</a>.</p>
+<p>If you examine the page, you will see lots of information about the address we entered. <em>JSON</em>, or <em>Javascript Object Notation</em>, is not the same format as HTML. JSON is somewhat similar to CSV, and there is another format called XML that many APIs use. These are all just different data formats that are much easier to parse programmatically compared to HTML.</p>
+<p>If I change the query string in my URL to whatever I want (even with spaces):</p>
+<p><strong><a href="https://maps.googleapis.com/maps/api/geocode/json?address=5807" class="uri">https://maps.googleapis.com/maps/api/geocode/json?address=5807</a> S Woodlawn Ave&amp;key=TODO</strong></p>
+<p>Then the JSON information will change to give me information on that address <code>5807 S Woodlawn Ave</code>. If I look carefully and scroll down, I could even find the following:</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb141-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb141-1" aria-hidden="true"></a><span class="er">...</span></span>
+<span id="cb141-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb141-2" aria-hidden="true"></a><span class="er">&quot;location&quot;:</span> <span class="fu">{</span></span>
+<span id="cb141-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb141-3" aria-hidden="true"></a>          <span class="dt">&quot;lat&quot;</span><span class="fu">:</span> <span class="fl">41.7891387</span><span class="fu">,</span></span>
+<span id="cb141-4"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb141-4" aria-hidden="true"></a>          <span class="dt">&quot;lng&quot;</span><span class="fu">:</span> <span class="fl">-87.5954555</span></span>
+<span id="cb141-5"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb141-5" aria-hidden="true"></a>        <span class="fu">}</span><span class="er">,</span></span>
+<span id="cb141-6"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb141-6" aria-hidden="true"></a><span class="er">...</span></span></code></pre></div>
+<p>Ahh, just what we needed to display on our “Street to Coordinates” result page! Wow, APIs seem intimidating, but in reality it’s just a URL that we provide and we get back information from a database owned by some company. Once we get to the stage of entering a URL with some form data and receiving a response, then it’s actually pretty simple to finish our app.</p>
+<p>Now it’s time to actually get our form and results working. We’ll start by just copying our working URL into the <code>experiment</code> action in our GitPod app:</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb142-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb142-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb142-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb142-2" aria-hidden="true"></a></span>
+<span id="cb142-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb142-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb142-4"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb142-4" aria-hidden="true"></a>  <span class="kw">def</span> experiment</span>
+<span id="cb142-5"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb142-5" aria-hidden="true"></a>    <span class="ot">@url</span> = <span class="st">&quot;https://maps.googleapis.com/maps/api/geocode/json?address=5807 S Woodlawn Ave&amp;key=TODO&quot;</span></span>
+<span id="cb142-6"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb142-6" aria-hidden="true"></a></span>
+<span id="cb142-7"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb142-7" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/experiment.html.erb&quot;</span> })</span>
+<span id="cb142-8"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb142-8" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb142-9"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb142-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“5”}</p>
+<p>(You may see <code>%20</code> characters in the place of the URL spaces we put in, like <code>5807%20S%20Woodlawn%20Ave</code>. You can copy those in too, they just mean “space”.)</p>
+<p>And now we can use some cool methods for opening (<code>open</code> built into Ruby):</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb143-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb143-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-2" aria-hidden="true"></a></span>
+<span id="cb143-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb143-4"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-4" aria-hidden="true"></a>  <span class="kw">def</span> experiment</span>
+<span id="cb143-5"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-5" aria-hidden="true"></a>    <span class="ot">@url</span> = <span class="st">&quot;https://maps.googleapis.com/maps/api/geocode/json?address=5807 S Woodlawn Ave&amp;key=TODO&quot;</span></span>
+<span id="cb143-6"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-6" aria-hidden="true"></a></span>
+<span id="cb143-7"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-7" aria-hidden="true"></a>    <span class="ot">@raw</span> = open(<span class="ot">@url</span>)</span>
+<span id="cb143-8"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-8" aria-hidden="true"></a></span>
+<span id="cb143-9"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-9" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/experiment.html.erb&quot;</span> })</span>
+<span id="cb143-10"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-10" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb143-11"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb143-11" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“7”}</p>
+<p>Now if we open our view template and inject this instance variable in:</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb144-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb144-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/math_templates/experiment.html.erb --&gt;</span></span>
+<span id="cb144-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb144-2" aria-hidden="true"></a></span>
+<span id="cb144-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb144-3" aria-hidden="true"></a><span class="er">&lt;</span>%= @raw %&gt;</span></code></pre></div>
+<p>{: mark_lines=“3”}</p>
+<p>then load the URL <strong>/experiment</strong> in our app browser, we will see “#<StringIO:0x00007f623b0d66b0>” or something similar. This is an object of class <code>String</code>, which contains that page. We can call another method on this in the view template:</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb145-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb145-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/math_templates/experiment.html.erb --&gt;</span></span>
+<span id="cb145-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb145-2" aria-hidden="true"></a></span>
+<span id="cb145-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb145-3" aria-hidden="true"></a><span class="er">&lt;</span>%= @raw.read %&gt;</span></code></pre></div>
+<p>{: mark_lines=“3”}</p>
+<p>which will get the body of the page and return is as a string when we refresh the browser. This will be the entire (long) JSON string.</p>
+<p>We can put all this into the action:</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb146-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb146-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-2" aria-hidden="true"></a></span>
+<span id="cb146-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb146-4"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-4" aria-hidden="true"></a>  <span class="kw">def</span> experiment</span>
+<span id="cb146-5"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-5" aria-hidden="true"></a>    <span class="ot">@url</span> = <span class="st">&quot;https://maps.googleapis.com/maps/api/geocode/json?address=5807 S Woodlawn Ave&amp;key=TODO&quot;</span></span>
+<span id="cb146-6"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-6" aria-hidden="true"></a></span>
+<span id="cb146-7"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-7" aria-hidden="true"></a>    <span class="ot">@raw</span> = open(<span class="ot">@url</span>).read</span>
+<span id="cb146-8"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-8" aria-hidden="true"></a></span>
+<span id="cb146-9"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-9" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/experiment.html.erb&quot;</span> })</span>
+<span id="cb146-10"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-10" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb146-11"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb146-11" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“7”}</p>
+<p>We could now remove the <code>.read</code> from our HTML view template. We can go into our action and change <code>address=5807 S Woodlawn Ave</code> in the URL to whatever we want (e.g., <code>address=Miami FL</code>), and if we refresh <strong>/experiment</strong> then we will see the JSON changing. The page now dynamically reacts using information from the Google API.</p>
+<p>Now, we can also parse the JSON (which is currently just a long <code>String</code> variable) to get just the information we want. We don’t want to directly parse the string (e.g., with <code>.split()</code>). There is a much better way: we can convert it into a <code>Hash</code> using the built in class <code>JSON</code> and one of its methods, <code>parse()</code>, to convert it to a <code>Hash</code>. Then we can take our <code>Hash</code>, bury through the key/value pairs (there are <code>Hash</code>es within the <code>Hash</code>!), and figure out where the latitude and longitude values are to then pull out (<code>.fetch()</code>) as instance variables and put on our webpage.</p>
+<p>Alltogether that looks like:</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb147-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb147-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-2" aria-hidden="true"></a></span>
+<span id="cb147-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb147-4"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-4" aria-hidden="true"></a>  <span class="kw">def</span> experiment</span>
+<span id="cb147-5"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-5" aria-hidden="true"></a>    <span class="ot">@url</span> = <span class="st">&quot;https://maps.googleapis.com/maps/api/geocode/json?address=5807 S Woodlawn Ave&amp;key=TODO&quot;</span></span>
+<span id="cb147-6"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-6" aria-hidden="true"></a></span>
+<span id="cb147-7"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-7" aria-hidden="true"></a>    <span class="ot">@raw</span> = open(<span class="ot">@url</span>).read</span>
+<span id="cb147-8"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-8" aria-hidden="true"></a></span>
+<span id="cb147-9"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-9" aria-hidden="true"></a>    <span class="ot">@parsed</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw</span>) <span class="co"># parsed is now a Hash class</span></span>
+<span id="cb147-10"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-10" aria-hidden="true"></a></span>
+<span id="cb147-11"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-11" aria-hidden="true"></a>    <span class="co"># and we bury down into the hash with the key/value pairs</span></span>
+<span id="cb147-12"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-12" aria-hidden="true"></a>    <span class="co"># to get what we want</span></span>
+<span id="cb147-13"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-13" aria-hidden="true"></a>    <span class="ot">@results</span> = <span class="ot">@parsed</span>.fetch(<span class="st">&quot;results&quot;</span>)</span>
+<span id="cb147-14"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-14" aria-hidden="true"></a>    <span class="ot">@geom</span> = <span class="ot">@results</span>.fetch(<span class="st">&quot;geometry&quot;</span>)</span>
+<span id="cb147-15"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-15" aria-hidden="true"></a>    <span class="ot">@loc</span> = <span class="ot">@geom</span>.fetch(<span class="st">&quot;location&quot;</span>)</span>
+<span id="cb147-16"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-16" aria-hidden="true"></a>    <span class="ot">@lat</span> = <span class="ot">@loc</span>.fetch(<span class="st">&quot;lat&quot;</span>)</span>
+<span id="cb147-17"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-17" aria-hidden="true"></a>    <span class="ot">@lng</span> = <span class="ot">@loc</span>.fetch(<span class="st">&quot;lng&quot;</span>)</span>
+<span id="cb147-18"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-18" aria-hidden="true"></a></span>
+<span id="cb147-19"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-19" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/experiment.html.erb&quot;</span> })</span>
+<span id="cb147-20"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-20" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb147-21"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb147-21" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“9-17”}</p>
+<p>And display that in our experiment template:</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb148-1"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb148-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/math_templates/experiment.html.erb --&gt;</span></span>
+<span id="cb148-2"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb148-2" aria-hidden="true"></a></span>
+<span id="cb148-3"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#cb148-3" aria-hidden="true"></a>Latitude <span class="er">&lt;</span>%= @lat %&gt;, Longitude <span class="er">&lt;</span>%= @lng %&gt;</span></code></pre></div>
+<p>{: mark_lines=“3”}</p>
+<p>Now, we hard-coded an address <code>5807 S Woodlawn Ave</code> into our <code>experiment</code> action in the <code>@url</code> variable, so we would need this to come from an associated input form so the user could change this string. That is not required, but is good practice if you implement it.</p>
+<div id="text-companion-intro-to-apis-with-street-to-coordinates" class="section level3 hasAnchor" number="15.4.1">
+<h3><span class="header-section-number">15.4.1</span> Text Companion: Intro to APIs with Street to Coordinates<a href="video-segment-intro-to-apis-with-street-to-coordinates.html#text-companion-intro-to-apis-with-street-to-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="course-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="saas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="video-segment-reviewing-forms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="finish-and-submit-omnicalc-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -485,7 +677,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/omnicalc-2.md",
 "text": "Edit"
 },
 "history": {
@@ -493,7 +685,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/omnicalc-2.md",
 "text": null
 },
 "download": null,

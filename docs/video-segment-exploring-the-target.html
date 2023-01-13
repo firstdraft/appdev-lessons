@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 What does it mean to know how to code? | AD1</title>
+  <title>15.1 Video Segment: Exploring the Target | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta property="og:title" content="15.1 Video Segment: Exploring the Target | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta name="twitter:title" content="15.1 Video Segment: Exploring the Target | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="course-intro.html"/>
-<link rel="next" href="saas.html"/>
+<link rel="prev" href="omnicalc-2.html"/>
+<link rel="next" href="video-segment-reviewing-query-strings.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -444,16 +444,42 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="what-does-it-mean-to-know-how-to-code" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> What does it mean to know how to code?<a href="what-does-it-mean-to-know-how-to-code.html#what-does-it-mean-to-know-how-to-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="video-segment-exploring-the-target" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Video Segment: Exploring the Target<a href="video-segment-exploring-the-target.html#video-segment-exploring-the-target" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Notes:</p>
+<ul>
+<li>time stamp 00:38:36 to 00:42:54</li>
+<li>doing math, intro to APIs</li>
+<li>Street to Coordinates</li>
+<li>Translate with SMS</li>
+</ul></li>
+</ul>
+<p>Forms are incredibley important to us. The first layer of building a dynamic application is connecting the Route, Controller, Action, View. Having some variables displayed on the page so it is dynamic and not static HTML.</p>
+<p>The second thing we need to do is accept information from our users because just generating random stuff on a page is boring, so we’ll be building tons and tons of forms for the rest of the quarter.</p>
+<p>Omnicalc 2 is very similar to Omnicalc 1, where you began to learn forms in that homework. In this case, if I have a look at <code>config/routes.rb</code>, the file is empty:</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb122-1"><a href="video-segment-exploring-the-target.html#cb122-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb122-2"><a href="video-segment-exploring-the-target.html#cb122-2" aria-hidden="true"></a></span>
+<span id="cb122-3"><a href="video-segment-exploring-the-target.html#cb122-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb122-4"><a href="video-segment-exploring-the-target.html#cb122-4" aria-hidden="true"></a></span>
+<span id="cb122-5"><a href="video-segment-exploring-the-target.html#cb122-5" aria-hidden="true"></a>  <span class="co"># For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html</span></span>
+<span id="cb122-6"><a href="video-segment-exploring-the-target.html#cb122-6" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>So will need to build up the <a href="https://omnicalc-2.matchthetarget.com/" target="_blank">target</a> step-by-step. When you open this app, you need to enter a username (<em>appdev</em>) and password (<em>fullstack</em>). The reason for this, is because, if we have time, we’re going to do some more fun things than we’ve done so far. Instead of just getting numbers and doing some math, we’ll be doing some more fun things.</p>
+<p>For example if we look in the target, there’s a “Street to Coordinates” calculator. If you type in and address here, like “5807 S Woodlawn Ave” and click “Lookup Coordinates”, then it displays latitude and longitude. So all the form entry steps are the same as what you’ve already done, but the application does much more here. How did we get from a street address to these coordinates? What’s the Ruby for that? Well, we’re going to learn how to do that.</p>
+<p>Even more cool, there’s a link in the target called “Translate”. Ff we fill out this form, maybe with “Ruby is the best!” in the first box, and then select a language from the second drop down menu (e.g., Chinese (simplified)), and put in a phone number in the last box with the country code (e.g., +1 for USA), and finally hit translate, then the text gets translated and the number we entered gets a text message with that translation!</p>
+<p>It’s still all about entering in forms, but the way we achieve these responses is very empowering. This is known as <em>Application Programming Interface</em>, or <em>API</em>, programming. This means that other companies, like Google, will allow us to Create, Read, Update, and Delete information in <em>their</em> databases, and they will send back information that they have. We don’t need to create their data, we can use their resources. Both the street to coordinates and translation service above is provided by Google (actually the text messaging part is another company called Twilio).</p>
+<p>We also have link to “Street to Weather” or “Coordinates to Weather”. These use two APIs, one for Google to get the location, and the second is the DarkSky API to get back a detailed weather forecast.</p>
+<div id="text-companion-exploring-the-target" class="section level3 hasAnchor" number="15.1.1">
+<h3><span class="header-section-number">15.1.1</span> Text Companion: Exploring the Target<a href="video-segment-exploring-the-target.html#text-companion-exploring-the-target" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="course-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="saas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="omnicalc-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-reviewing-query-strings.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -485,7 +511,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/omnicalc-2.md",
 "text": "Edit"
 },
 "history": {
@@ -493,7 +519,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/omnicalc-2.md",
 "text": null
 },
 "download": null,

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 What does it mean to know how to code? | AD1</title>
+  <title>15.5 Finish and Submit Omnicalc 2 | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta property="og:title" content="15.5 Finish and Submit Omnicalc 2 | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta name="twitter:title" content="15.5 Finish and Submit Omnicalc 2 | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="course-intro.html"/>
-<link rel="next" href="saas.html"/>
+<link rel="prev" href="video-segment-intro-to-apis-with-street-to-coordinates.html"/>
+<link rel="next" href="terminology-technical-reference.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -444,16 +444,77 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="what-does-it-mean-to-know-how-to-code" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> What does it mean to know how to code?<a href="what-does-it-mean-to-know-how-to-code.html#what-does-it-mean-to-know-how-to-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="finish-and-submit-omnicalc-2" class="section level2 hasAnchor" number="15.5">
+<h2><span class="header-section-number">15.5</span> Finish and Submit Omnicalc 2<a href="finish-and-submit-omnicalc-2.html#finish-and-submit-omnicalc-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Notes:</p>
+<ul>
+<li>Below are relevant notes for the rest of the project taken from the README</li>
+<li>API stretch goal should maybe go in a separate place?</li>
+</ul></li>
+</ul>
+<p><strong>BENP: I think all of this additional API stuff needs to go in a separate document with links to <code>google-translate.md</code> and <code>sending-emails-and-texts.md</code> documents that right now are just linked as optional exercises on the Day 5 material on Canvas</strong></p>
+<div id="your-tasks" class="section level3 hasAnchor" number="15.5.1">
+<h3><span class="header-section-number">15.5.1</span> Your tasks<a href="finish-and-submit-omnicalc-2.html#your-tasks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Street to Coordinates:</strong> Figure out how to turn an arbitrary street address (find a place that is <a href="https://www.rainviewer.com/">sort of rainy</a> right now to test with) into a latitude/longitude using the Geocoding API.</li>
+<li><strong>Coordinates to weather:</strong> Figure out how to turn a latitude/longitude pair into a weather forecast using the Dark Sky API Show the information displayed in the target:
+<ul>
+<li>Current Temperature</li>
+<li>Current summaray</li>
+<li>Outlooks for next sixy minutes, several hours, several days</li>
+</ul></li>
+<li><strong>Street to Weather:</strong> Put the above two together — given an arbitrary street address, display the forecast.</li>
+</ul>
 </div>
+<div id="stretch-goal" class="section level3 hasAnchor" number="15.5.2">
+<h3><span class="header-section-number">15.5.2</span> Stretch goal<a href="finish-and-submit-omnicalc-2.html#stretch-goal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Stretch goal: check whether there is a &gt;50% chance of precipitation at any point during the next 12 hours. If so, we will print “You should take an umbrella!”</p></li>
+<li><p>Explore <a href="https://darksky.net/dev/docs#forecast-request">the API documentation</a> to see what information is available to help you check this.</p></li>
+<li><p>Something that might or might not be useful: <a href="https://apidock.com/ruby/Time/at/class">the <code>Time.at</code> method</a>.</p>
+<p>(Humans have <a href="https://en.wikipedia.org/wiki/List_of_calendars">many, many different ways of representing dates</a>. For the purposes of different pieces of software being able to agree on dates and times, most systems when talking to each other use <a href="https://en.wikipedia.org/wiki/Unix_time">Epoch time</a> notation, or the number of seconds that have passed since midnight UTC on January 1st (minus leap seconds). Dark Sky, for example, includes times in this format. You can use <code>Time.at()</code> to convert to something more familiar, if you want to.)</p></li>
+<li><p>Put all of the pieces together; given an arbitrary address:</p>
+<ul>
+<li>print the current temperature</li>
+<li>print outlook for the next hour</li>
+<li>print whether a person should carry an umbrella.</li>
+</ul></li>
+</ul>
+</div>
+<div id="using-gems-to-interact-with-apis" class="section level3 hasAnchor" number="15.5.3">
+<h3><span class="header-section-number">15.5.3</span> Using gems to interact with APIs<a href="finish-and-submit-omnicalc-2.html#using-gems-to-interact-with-apis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Interacting with APIs can be easier if someone has written a Ruby library (or “gem”) with methods that already know the URLs, parse the JSON, and return exactly the values we want.</p>
+<div id="google-cloud-translate" class="section level4 hasAnchor" number="15.5.3.1">
+<h4><span class="header-section-number">15.5.3.1</span> Google Cloud Translate<a href="finish-and-submit-omnicalc-2.html#google-cloud-translate" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>See <a href="https://chapters.firstdraft.com/chapters/849">this Chapter for a guide to using the Google Translate API via its first-party gem</a>.</p>
+<p>Read more at the gem docs:</p>
+<ul>
+<li><a href="https://googleapis.dev/ruby/google-cloud-translate/latest/index.html#Using_the_legacy_v2_client">Ruby gem documentation</a></li>
+</ul>
+</div>
+<div id="twilio" class="section level4 hasAnchor" number="15.5.3.2">
+<h4><span class="header-section-number">15.5.3.2</span> Twilio<a href="finish-and-submit-omnicalc-2.html#twilio" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>See <a href="https://chapters.firstdraft.com/chapters/848#example-of-how-to-send-an-sms-with-the-twilio-gem">this Chapter for a guide to sending text messages via the Twilio API</a>.</p>
+</div>
+<div id="stretch-goal-1" class="section level4 hasAnchor" number="15.5.3.3">
+<h4><span class="header-section-number">15.5.3.3</span> Stretch goal<a href="finish-and-submit-omnicalc-2.html#stretch-goal-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Make your app behave like the target!</strong> Accept some text from the user, ask for a target language, translate the text, and SMS it to a phone number.</p>
+
+</div>
+</div>
+</div>
+<!-- </div> -->
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="course-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="saas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="video-segment-intro-to-apis-with-street-to-coordinates.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="terminology-technical-reference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -485,7 +546,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/omnicalc-2.md",
 "text": "Edit"
 },
 "history": {
@@ -493,7 +554,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/omnicalc-2.md",
 "text": null
 },
 "download": null,

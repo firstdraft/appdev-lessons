@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 What does it mean to know how to code? | AD1</title>
+  <title>15.2 Video Segment: Reviewing Query Strings | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta property="og:title" content="15.2 Video Segment: Reviewing Query Strings | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 What does it mean to know how to code? | AD1" />
+  <meta name="twitter:title" content="15.2 Video Segment: Reviewing Query Strings | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="course-intro.html"/>
-<link rel="next" href="saas.html"/>
+<link rel="prev" href="video-segment-exploring-the-target.html"/>
+<link rel="next" href="video-segment-reviewing-forms.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -444,16 +444,104 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="what-does-it-mean-to-know-how-to-code" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> What does it mean to know how to code?<a href="what-does-it-mean-to-know-how-to-code.html#what-does-it-mean-to-know-how-to-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="video-segment-reviewing-query-strings" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Video Segment: Reviewing Query Strings<a href="video-segment-reviewing-query-strings.html#video-segment-reviewing-query-strings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Notes:</p>
+<ul>
+<li>time stamp 00:42:54 to 00:50:45</li>
+<li>examine target <strong>/wizard_add</strong> and implement using query string and <code>params</code></li>
+</ul></li>
+</ul>
+<p>All that said, the important goal of this project (and the required part) is building forms, so let’s do one of the four forms together now: Add, Subtract, Multiply, Divide.</p>
+<p>We will focus on the “Add” form. Let’s visit <strong>/add</strong> in our Rails app browser. As expected we get a “No route matches” error. So we will need to build this up step-by-step.</p>
+<p>But first, observe the target app. In each calculator there are two actions. There is one action that just displays the form. Then when I fill out the form and press the button, it takes me to a different URL. If we fill out “Add” with “4” in the first number and “10” in the second, then press the button, the resulting URL on the “Addition” page looks like <strong>/wizard_add?first_num=4&amp;second_num=10</strong>.</p>
+<p>Any of the other forms on our target works this same way: the information we put in the form is placed as variables in the URL <em>query string</em> preceded by the <strong>?</strong> character. If I know how this form works, I can just type directly into the URL with new variable values, and I will get a new result. I never even need to visit the form page. I want to emphasize here, the form and second action that does the work are two totally separate independent actions. We use forms because we want a nice interface for our users. It is polite to add a form for our users, who are not developers like us.</p>
+<p>We’ll implement <strong>/add</strong> now, but we will go backwards. First, I’m going to implement the second step <strong>/wizard_add</strong>:</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb123-1"><a href="video-segment-reviewing-query-strings.html#cb123-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb123-2"><a href="video-segment-reviewing-query-strings.html#cb123-2" aria-hidden="true"></a></span>
+<span id="cb123-3"><a href="video-segment-reviewing-query-strings.html#cb123-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb123-4"><a href="video-segment-reviewing-query-strings.html#cb123-4" aria-hidden="true"></a>  </span>
+<span id="cb123-5"><a href="video-segment-reviewing-query-strings.html#cb123-5" aria-hidden="true"></a>  get(<span class="st">&quot;/wizard_add&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;math&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;add_results&quot;</span> })</span>
+<span id="cb123-6"><a href="video-segment-reviewing-query-strings.html#cb123-6" aria-hidden="true"></a></span>
+<span id="cb123-7"><a href="video-segment-reviewing-query-strings.html#cb123-7" aria-hidden="true"></a>  <span class="co"># For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html</span></span>
+<span id="cb123-8"><a href="video-segment-reviewing-query-strings.html#cb123-8" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“5”}</p>
+<p>My selection for the <code>:controller</code> and <code>:action</code> names above, mean I’ll need to create these in out app. So in the <code>app/controllers/</code> folder we need to make a new file <code>math_controller.rb</code> and fill it in with our inherited <code>ApplicationController</code> functionality and our new action:</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb124-1"><a href="video-segment-reviewing-query-strings.html#cb124-1" aria-hidden="true"></a><span class="co"># app/controllers/math_controller.rb</span></span>
+<span id="cb124-2"><a href="video-segment-reviewing-query-strings.html#cb124-2" aria-hidden="true"></a></span>
+<span id="cb124-3"><a href="video-segment-reviewing-query-strings.html#cb124-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">MathController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb124-4"><a href="video-segment-reviewing-query-strings.html#cb124-4" aria-hidden="true"></a>  <span class="kw">def</span> add_results</span>
+<span id="cb124-5"><a href="video-segment-reviewing-query-strings.html#cb124-5" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/add_results.html.erb&quot;</span> })</span>
+<span id="cb124-6"><a href="video-segment-reviewing-query-strings.html#cb124-6" aria-hidden="true"></a>  <span class="kw">end</span> </span>
+<span id="cb124-7"><a href="video-segment-reviewing-query-strings.html#cb124-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>And our selection to just render some HTML, means that we also need to create the view template. So in the <code>app/views/</code> folder we need to first make a new folder <code>math_templates/</code> and then a new file in that folder called <code>add_results.html.erb</code>. And in this file we can put some placeholder text to render:</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb125-1"><a href="video-segment-reviewing-query-strings.html#cb125-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/math_templates/add_results.html.erb --&gt;</span></span>
+<span id="cb125-2"><a href="video-segment-reviewing-query-strings.html#cb125-2" aria-hidden="true"></a></span>
+<span id="cb125-3"><a href="video-segment-reviewing-query-strings.html#cb125-3" aria-hidden="true"></a>hi</span></code></pre></div>
+<p>Now if we didn’t make any typos and visit or refresh <strong>/wizard_add</strong>, we will see our rendered HTML. You will also already see a navbar, that we included in the app, and this, as you have already seen, is in the <code>app/views/layout/application.html.erb</code> file that is applied to every page.</p>
+<p>Now if a user includes a query string in the URL, like <strong>/wizard_add?zebra=bob</strong>, there is no effect on the routing when we press enter. But if we look into our server log in the GitPod terminal tab running your server (<a href="https://chapters.firstdraft.com/chapters/834#clear-terminal">Cmd-K or Ctrl-K to clear it out</a>), we can find:</p>
+<pre><code>...
+HTML
+  Parameters: {&quot;zebra&quot;=&gt;&quot;bob&quot;}
+  Rendering math_templates/add_results.html.erb
+  Rendered math_templates/add_results.html.erb within layouts/application
+...</code></pre>
+<p>Our query string that is automatically split, parsed, and added to <code>params</code>. All before I have built the form. Let’s use the expected query string: <strong>/wizard_add?first_num=4&amp;second_num=10</strong>. And observe now in the server log:</p>
+<pre><code>...
+HTML
+  Parameters: {&quot;first_num&quot;=&gt;&quot;4&quot;, &quot;second_num&quot;=&gt;&quot;10&quot;}
+  Rendering math_templates/add_results.html.erb
+  Rendered math_templates/add_results.html.erb within layouts/application
+...</code></pre>
+<p>{: mark_lines=“3”}</p>
+<p>We can now pull out this information in our action:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb128-1"><a href="video-segment-reviewing-query-strings.html#cb128-1" aria-hidden="true"></a><span class="co"># app/controllers/math_controller.rb</span></span>
+<span id="cb128-2"><a href="video-segment-reviewing-query-strings.html#cb128-2" aria-hidden="true"></a></span>
+<span id="cb128-3"><a href="video-segment-reviewing-query-strings.html#cb128-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">MathController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb128-4"><a href="video-segment-reviewing-query-strings.html#cb128-4" aria-hidden="true"></a>  <span class="kw">def</span> add_result</span>
+<span id="cb128-5"><a href="video-segment-reviewing-query-strings.html#cb128-5" aria-hidden="true"></a>    <span class="ot">@first</span> = params.fetch(<span class="st">&quot;first_num&quot;</span>)</span>
+<span id="cb128-6"><a href="video-segment-reviewing-query-strings.html#cb128-6" aria-hidden="true"></a></span>
+<span id="cb128-7"><a href="video-segment-reviewing-query-strings.html#cb128-7" aria-hidden="true"></a>    <span class="ot">@second</span> = params.fetch(<span class="st">&quot;second_num&quot;</span>)</span>
+<span id="cb128-8"><a href="video-segment-reviewing-query-strings.html#cb128-8" aria-hidden="true"></a></span>
+<span id="cb128-9"><a href="video-segment-reviewing-query-strings.html#cb128-9" aria-hidden="true"></a>    <span class="ot">@result</span> = <span class="ot">@first</span> + <span class="ot">@second</span></span>
+<span id="cb128-10"><a href="video-segment-reviewing-query-strings.html#cb128-10" aria-hidden="true"></a></span>
+<span id="cb128-11"><a href="video-segment-reviewing-query-strings.html#cb128-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/add_results.html.erb&quot;</span> })</span>
+<span id="cb128-12"><a href="video-segment-reviewing-query-strings.html#cb128-12" aria-hidden="true"></a>  <span class="kw">end</span> </span>
+<span id="cb128-13"><a href="video-segment-reviewing-query-strings.html#cb128-13" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“5-9”}</p>
+<p>And display the <em>instance variables</em> on our view template:</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb129-1"><a href="video-segment-reviewing-query-strings.html#cb129-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/math_templates/add_results.html.erb --&gt;</span></span>
+<span id="cb129-2"><a href="video-segment-reviewing-query-strings.html#cb129-2" aria-hidden="true"></a></span>
+<span id="cb129-3"><a href="video-segment-reviewing-query-strings.html#cb129-3" aria-hidden="true"></a><span class="er">&lt;</span>%= @result %&gt;</span></code></pre></div>
+<p>{: mark_lines=“3”}</p>
+<p>And if we now refresh <strong>/wizard_add?first_num=4&amp;second_num=10</strong>, we see the result displayed as “410”. Why? Because we are adding two strings in our action! We need to remember to convert them to floats or integers to do math on them:</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb130-1"><a href="video-segment-reviewing-query-strings.html#cb130-1" aria-hidden="true"></a><span class="co"># app/controllers/math_controller.rb</span></span>
+<span id="cb130-2"><a href="video-segment-reviewing-query-strings.html#cb130-2" aria-hidden="true"></a></span>
+<span id="cb130-3"><a href="video-segment-reviewing-query-strings.html#cb130-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">MathController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb130-4"><a href="video-segment-reviewing-query-strings.html#cb130-4" aria-hidden="true"></a>  <span class="kw">def</span> add_results</span>
+<span id="cb130-5"><a href="video-segment-reviewing-query-strings.html#cb130-5" aria-hidden="true"></a>    <span class="ot">@first</span> = params.fetch(<span class="st">&quot;first_num&quot;</span>).to_f</span>
+<span id="cb130-6"><a href="video-segment-reviewing-query-strings.html#cb130-6" aria-hidden="true"></a></span>
+<span id="cb130-7"><a href="video-segment-reviewing-query-strings.html#cb130-7" aria-hidden="true"></a>    <span class="ot">@second</span> = params.fetch(<span class="st">&quot;second_num&quot;</span>).to_f</span>
+<span id="cb130-8"><a href="video-segment-reviewing-query-strings.html#cb130-8" aria-hidden="true"></a></span>
+<span id="cb130-9"><a href="video-segment-reviewing-query-strings.html#cb130-9" aria-hidden="true"></a>    <span class="ot">@result</span> = <span class="ot">@first</span> + <span class="ot">@second</span></span>
+<span id="cb130-10"><a href="video-segment-reviewing-query-strings.html#cb130-10" aria-hidden="true"></a></span>
+<span id="cb130-11"><a href="video-segment-reviewing-query-strings.html#cb130-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;math_templates/add_results.html.erb&quot;</span> })</span>
+<span id="cb130-12"><a href="video-segment-reviewing-query-strings.html#cb130-12" aria-hidden="true"></a>  <span class="kw">end</span> </span>
+<span id="cb130-13"><a href="video-segment-reviewing-query-strings.html#cb130-13" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“5 7”}</p>
+<p>And now we should get “14.0” on our page. We won’t flesh out all the copy and formatting to get our HTML view template to match the target page, but this should be straightforward.</p>
+<div id="text-companion-reviewing-query-strings" class="section level3 hasAnchor" number="15.2.1">
+<h3><span class="header-section-number">15.2.1</span> Text Companion: Reviewing Query Strings<a href="video-segment-reviewing-query-strings.html#text-companion-reviewing-query-strings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="course-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="saas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="video-segment-exploring-the-target.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-reviewing-forms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -485,7 +573,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/omnicalc-2.md",
 "text": "Edit"
 },
 "history": {
@@ -493,7 +581,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/course-overview.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/omnicalc-2.md",
 "text": null
 },
 "download": null,
