@@ -121,6 +121,8 @@ Here is a practical guide for how to edit and compile the book. A lot more detai
 
   This separates the glossaries from the main content in the rendered book
 
+---
+
 - Bookdown can use `.Rmd` (R-markdown) files that can include executable blocks for R code for generating figures, etc. It's also happy to just use `.md` files. 
 
 ---
