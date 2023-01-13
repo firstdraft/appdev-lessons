@@ -2,7 +2,7 @@
 
 This repository will hold the outline for a textbook written with [bookdown](https://bookdown.org/). Some notes about using bookdown can be found [here](https://www.bendirt.com/bookdown/). But there are more and better details in the section below.
 
-The site is deployed at [x] from the `docs/` folder, which was generated locally with the R command `bookdown::render_book()`.
+The site is deployed at [https://firstdraft.github.io/appdev-textbook/](https://firstdraft.github.io/appdev-textbook/) from the `docs/` folder, which was generated locally with the R command `bookdown::render_book()`.
 
 ## Practical guide to get to work
 
