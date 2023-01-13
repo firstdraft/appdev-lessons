@@ -1,5 +1,5 @@
-view: https://github.com/bpurinton/appdev-textbook/blob/master/%s
-edit: https://github.com/bpurinton/appdev-textbook/edit/master/%s
+view: https://github.com/firstdraft/appdev-textbook/blob/master/%s
+edit: https://github.com/firstdraft/appdev-textbook/edit/master/%s
 output_dir: "docs"
 
 # here is the list of lessons in order as they appear in the textbook

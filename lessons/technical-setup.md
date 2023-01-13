@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - These steps are done in the [RPS HTML][Rock, Paper, Scissors HTML] content (original [video](https://canvas.uchicago.edu/courses/41147/pages/video-rps-html-intro-to-gitpod-and-html){target="_blank"}), and [String][Setting up String Gitpod] exercise (original [video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=0){target="_blank"})
+  - These steps are done in the [RPS HTML][Rock, Paper, Scissors HTML] content (original [video](https://canvas.uchicago.edu/courses/41147/pages/video-rps-html-intro-to-gitpod-and-html){target="_blank"}), and [String][String] exercise (original [video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=0){target="_blank"})
 
   - This is a place to collect dedicated how-to-guides to refer students back to
   

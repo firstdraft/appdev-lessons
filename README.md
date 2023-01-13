@@ -102,7 +102,7 @@ Here is a practical guide for how to edit and compile the book. A lot more detai
     2.  `_bookdown.yml` (view and edit github links, and file order)
     3. `_output.yml` (type of output format and styling options for that format)
 
-  **There are some github links spread around that need to be changed, right now you can just find and replace any `bpurinton/appdev-textbook` with the name of the `<location>/<repo-name>`**
+  **There are some github links spread around that need to be changed if the repo is moved, find and replace with `<location>/<repo-name>`. Currently they are `firstdraft/appdev-textbook`**
 
 ---
 
