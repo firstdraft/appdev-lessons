@@ -166,7 +166,7 @@ finish-and-submit-rps-rcav
 rcav-addendums
 addendum-rendering-json
 addendum-custom-controller-files
-omnicalc-1
+omnicalc-1-forms-and-query-strings
 video-segment-intro-to-forms-and-exploring-the-target
 text-companion-intro-to-forms-and-exploring-the-target
 video-segment-squarenew-rcav
@@ -198,7 +198,7 @@ finish-and-submit-fortune-teller
 debugging-checklist
 more-rcav-practice
 reflections
-omnicalc-2
+omnicalc-2-forms-params-apis
 video-segment-exploring-the-target
 text-companion-exploring-the-target
 video-segment-reviewing-query-strings
@@ -222,5 +222,12 @@ regressions
 refactoring
 finish-and-submit-refactoring-fortune-teller
 optional-extra-challenge
+classroom-domain-modeling
+review-msm-tables
+yap-model
+photogram-model
+very-best-model
+erds
+additional-models
 terminology-technical-reference
 ruby-technical-reference

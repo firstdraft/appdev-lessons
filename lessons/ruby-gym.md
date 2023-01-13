@@ -6,11 +6,11 @@
 
   - **Here is the Google-Fu Note** [Ruby Foundations Slides](https://firstdraft.slides.com/raghubetina/05-ruby-foundations?token=SFyjvCyP){target="_blank"}: 07-08: We Are Inventors, Google-Fu
 
+  - Project (graded): [https://checkins.firstdraft.com/exercises/1/student](https://checkins.firstdraft.com/exercises/1/student){target="_blank"}
+
   - Useful chapters:
     
     - [`the-one-reference.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/the-one-reference.md){target="_blank"}
-
-  - Project (graded): [https://checkins.firstdraft.com/exercises/1/student](https://checkins.firstdraft.com/exercises/1/student){target="_blank"}
 
 ## Optional Ruby Practice
 
