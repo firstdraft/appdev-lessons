@@ -133,9 +133,10 @@ each
 hash
 our-own-classes
 ruby-gym
-optional-ruby-practice-daexercise
+optional-ruby-practice
 rock-paper-scissors-rcav
 video-segment-dynamic-web-applications-and-urls
+potential-quiz-question
 text-companion-dynamic-web-applications-and-urls
 video-segment-route
 text-companion-route

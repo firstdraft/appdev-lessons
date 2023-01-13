@@ -79,6 +79,21 @@ You can fully _specify_ a web application by listing out the URLs that users can
 
 Now — how do we get our web server to perform the above tasks when users visit the above URLs?
 
+### Potential Quiz Question
+
+- First bullet point is the question itself?
+- First option
+    - This is not correct because of xyz reason
+- Second option
+    - This is not correct because of xyz reason
+    - Also not correct because of abc reason
+- Third option
+    - That's right! Because of xyz reason
+- Fourth option
+    - This is not correct because of xyz reason
+{: .choose_best #bin points="30" answer="3" }
+
+
 ### Text Companion: Dynamic Web Applications and URLs
 
 ## Video Segment: Route

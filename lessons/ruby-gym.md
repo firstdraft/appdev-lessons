@@ -12,7 +12,7 @@
 
   - Project (graded): [https://checkins.firstdraft.com/exercises/1/student](https://checkins.firstdraft.com/exercises/1/student){target="_blank"}
 
-## Optional Ruby Practice (da="Exercise")
+## Optional Ruby Practice
 
 - Notes:
 
