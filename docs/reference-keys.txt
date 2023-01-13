@@ -144,6 +144,8 @@ video-segment-controller-action-view
 text-companion-controller-action-view
 video-segment-dropping-self.
 text-companion-dropping-.self
+video-segment-starting-our-gitpod-workspace
+text-companion-starting-our-gitpod-workspace
 video-segment-our-first-rcav
 text-companion-our-first-rcav
 video-segment-render-html

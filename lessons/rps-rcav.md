@@ -18,7 +18,8 @@
 ## Video Segment: Dynamic Web Applications and URLs
 
 - Notes:
-
+  
+  - time stamp 00:00:00 to 00:03:30
   - request lifecycle of Route, Controller, Action, View
   - web interface and URLs
   - actions
@@ -100,6 +101,7 @@ Now — how do we get our web server to perform the above tasks when users visi
 
 - Notes:
 
+  - time stamp 00:03:30 to 00:07:10
   - all about routing and `config/routes.rb`
   - `get()`
 
@@ -135,6 +137,7 @@ The `get` method is *inherited*, we don't need to build this method ourselves, w
 
 - Notes:
 
+  - time stamp 00:07:10 to 00:08:30
   - all about `app/controllers/`
   - `ApplicationController` inheritance
 
@@ -191,6 +194,7 @@ As you can see, the argument to `redirect_to` is a `String` which contains some 
 
 - Notes:
 
+  - time stamp 00:08:30 to 00:11:00
   - why we drop `self.`
 
 Just to get something out of the way: Usually we always call `object.method`, and we are using the `self` keyword above because we are calling these methods on the instance of the class (`ApplicationController`) that we are defining the method (`play_rock`) for. Kind of like when we learned about the `Person` class and there is `first_name` and `last_name`, and if we wanted a `full_name` method we called `self.first_name + self.last_name`. In this case we're defining `play_rock` and we want use the method `redirect` which already exists on `ApplicationController`, since it's inherited via `< ActionController::Base`. The point is, we are using a method that already exists to build our new method, hence `self.redirect_to`. In Ruby, when you're calling a method on `self`, you can drop the `self.`, and Ruby will figure it out, so we can rewrite the route, controller, action steps to:
@@ -217,10 +221,35 @@ end
 
 ### Text Companion: Dropping `.self`
 
+## Video Segment: Starting Our GitPod Workspace
+
+- Notes:
+
+  - time stamp 00:11:00 to 00:13:30
+  - these are common steps that should be done first in *any* project
+  - maybe link to [Technical Setup][Technical Setup]
+
+Let's spin up a workspace and open the RPS-RCAV GitPod so we can visualize the steps and see some results. We'll finally make our Rock Paper Scissors game work, by having the computer opponent randomly choose a move rather than always playing paper. We will then be able to compute outcomes based on the computer's move.
+
+[Here is the assignment](https://github.com/appdev-projects/rps-rcav){target="_blank"}. As usual:
+
+1. Start the web server by running `bin/server`.
+2. Navigate to your live application preview.
+3. As you work, remember to navigate to **/git** and **A**lways **B**e **C**ommitting.
+4. Organize your workspace tabs. **BENP: Added this step!**
+5. Run `rails grade` as often as you like to see how you are doing, but make sure you **test your app manually first** to make sure it matches the target's behavior.
+
+**BENP: possible image(s) (better, GIFs?) of starting a workspace, opening /git, organizing tabs, noting the target favicon. But these are probably in a different chapter.**
+
+The target for this project [here](https://rps-rcav.matchthetarget.com/){target="_blank"}, looks similar to what we have produced, but the key is that the computer plays different moves, and the application is finally *dynamic*. So how do we get here?
+
+### Text Companion: Starting Our GitPod Workspace
+
 ## Video Segment: Our First RCAV
 
 - Notes:
 
+  - time stamp 00:13:30 to 00:18:40
   - debugging an RCAV for **/rock** 
   - RTEM
   - ends with `redirect_to`
@@ -303,6 +332,7 @@ We can see exactly what happened. Someone tried to `GET "/rock"` from a given IP
 
 - Notes:
 
+  - time stamp 00:18:40 to 00:26:38
   - from `render({ :plain => "Hello, world!" })` to `render({ :template => "game_templates/user_rock.html.erb" })`
   - `.html` vs. `.html.erb`
   - `app/views/` view templates rather than `public/`
@@ -439,6 +469,7 @@ So after all of that we have an HTML page that basically does what we could have
 
 - Notes:
 
+  - time stamp 00:26:38 to 00:31:37
   - all about `<% %>` and `<%= %>` in a view template
 
 But we can do something way better with this new system. Let's add the following to our embedded Ruby file:
@@ -511,6 +542,7 @@ Alright, we are now finally building dynamic web applications. We are able to re
 
 - Notes:
 
+  - time stamp 00:31:37 to 00:37:10
   - conditionals
   - all about `<% if ... %>`
 
@@ -549,6 +581,7 @@ And now would be a good time to run `rails grade` at the GitPod console to check
 
 - Notes:
 
+  - time stamp 00:37:10 to 00:40:18
   - RCAV with `render` for **/**
 
 The [target](https://rps-rcav.matchthetarget.com/){:target="_blank"} has a homepage at the root URL, **/**. In the old days, we would create a file in `public/` called `index.html`, but now we are pretty much done with `public/` except maybe for static assets like images or css files, but we won't put any more user-facing URL pages there. Those will be connected up with routes from here on. Let's go to our `config/routes.rb` and add a homepage route:
@@ -620,6 +653,7 @@ Now when we refresh **http://[YOUR APP DOMAIN]/**, there is no error and our HTM
 
 - Notes:
 
+  - time stamp 00:40:18 to 00:44:27
   - RCAV with `render` for **/paper**
 
 Let's start with the **/paper** route, for when we play paper. First we define the route in `config/routes.rb` with a controller:
@@ -701,6 +735,7 @@ And now our view at **http://[YOUR APP DOMAIN]/paper** renders content with no e
 
 - Notes:
 
+  - time stamp 00:44:27 to 00:54:20
   - moving conditional control flow `<% if ... %>` from **/rock** into the `ApplicationController` action `play_rock`
   - local variables vs. instance variables with `@`-notation
 
@@ -898,6 +933,7 @@ Time for a `rails grade` and a `/git` commit!
 
 - Notes:
 
+  - time stamp 00:54:20 to 01:00:49
   - all about `app/views/layouts/wrapper.html.erb` to get some headers, footers, and navigation links
   - `layout("wrapper.html.erb")` in `ApplicationController`
   - `:layout` argument for `render()`
