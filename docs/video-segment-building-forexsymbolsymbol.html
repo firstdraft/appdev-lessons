@@ -466,6 +466,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.5" data-path="erds.html"><a href="erds.html"><i class="fa fa-check"></i><b>18.5</b> ERDs</a></li>
 <li class="chapter" data-level="18.6" data-path="additional-models.html"><a href="additional-models.html"><i class="fa fa-check"></i><b>18.6</b> Additional Models</a></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="omnicalc-debug.html"><a href="omnicalc-debug.html"><i class="fa fa-check"></i><b>19</b> Omnicalc Debug</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="omnicalc-debug-readme.html"><a href="omnicalc-debug-readme.html"><i class="fa fa-check"></i><b>19.1</b> Omnicalc Debug README</a></li>
+</ul></li>
 <li class="appendix"><span><b>Glossaries</b></span></li>
 <li class="chapter" data-level="A" data-path="terminology-technical-reference.html"><a href="terminology-technical-reference.html"><i class="fa fa-check"></i><b>A</b> Terminology Technical Reference</a></li>
 <li class="chapter" data-level="B" data-path="ruby-technical-reference.html"><a href="ruby-technical-reference.html"><i class="fa fa-check"></i><b>B</b> Ruby Technical Reference</a></li>
@@ -501,158 +505,158 @@ Proudly published with bookdown</a></li>
 </ul>
 <p>Let’s start with the next step, where a user can select a currrency on <strong>/forex</strong>, which brings them to <strong>/forex/SYMBOL</strong>, where they can select a second currency bringing them to the exchange rate on <strong>/forex/SYMBOL/SYMBOL</strong>.</p>
 <p>We begin by simulating what we want to work by navigating our browser to <strong>/forex/AWG</strong>, RTEM, and starting the RCAV:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb13-1"><a href="video-segment-building-forexsymbolsymbol.html#cb13-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb13-2"><a href="video-segment-building-forexsymbolsymbol.html#cb13-2" aria-hidden="true"></a></span>
-<span id="cb13-3"><a href="video-segment-building-forexsymbolsymbol.html#cb13-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
-<span id="cb13-4"><a href="video-segment-building-forexsymbolsymbol.html#cb13-4" aria-hidden="true"></a></span>
-<span id="cb13-5"><a href="video-segment-building-forexsymbolsymbol.html#cb13-5" aria-hidden="true"></a>  get(<span class="st">&quot;/forex&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;first_currency&quot;</span> })</span>
-<span id="cb13-6"><a href="video-segment-building-forexsymbolsymbol.html#cb13-6" aria-hidden="true"></a></span>
-<span id="cb13-7"><a href="video-segment-building-forexsymbolsymbol.html#cb13-7" aria-hidden="true"></a>  get(<span class="st">&quot;/forex/...&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;second_currency&quot;</span> })</span>
-<span id="cb13-8"><a href="video-segment-building-forexsymbolsymbol.html#cb13-8" aria-hidden="true"></a></span>
-<span id="cb13-9"><a href="video-segment-building-forexsymbolsymbol.html#cb13-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb179-1"><a href="video-segment-building-forexsymbolsymbol.html#cb179-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb179-2"><a href="video-segment-building-forexsymbolsymbol.html#cb179-2" aria-hidden="true"></a></span>
+<span id="cb179-3"><a href="video-segment-building-forexsymbolsymbol.html#cb179-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb179-4"><a href="video-segment-building-forexsymbolsymbol.html#cb179-4" aria-hidden="true"></a></span>
+<span id="cb179-5"><a href="video-segment-building-forexsymbolsymbol.html#cb179-5" aria-hidden="true"></a>  get(<span class="st">&quot;/forex&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;first_currency&quot;</span> })</span>
+<span id="cb179-6"><a href="video-segment-building-forexsymbolsymbol.html#cb179-6" aria-hidden="true"></a></span>
+<span id="cb179-7"><a href="video-segment-building-forexsymbolsymbol.html#cb179-7" aria-hidden="true"></a>  get(<span class="st">&quot;/forex/...&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;second_currency&quot;</span> })</span>
+<span id="cb179-8"><a href="video-segment-building-forexsymbolsymbol.html#cb179-8" aria-hidden="true"></a></span>
+<span id="cb179-9"><a href="video-segment-building-forexsymbolsymbol.html#cb179-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“7”}</p>
 <p>Where we have <code>/...</code> above, we want a dynamic route wildcard that can be pulled out in the <code>params</code>, otherwise, we have the usual controller (same as our previous) and a new action we will make in that controller (<code>"second_currency"</code>).</p>
 <p>We don’t want to type <code>/AWG</code>, because that is just one of our many currencies. But, if we remember our dynamic routes <strong>BENP: link to dice here</strong>, we know we can use a symbol to make it flexible, like so:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb14-1"><a href="video-segment-building-forexsymbolsymbol.html#cb14-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb14-2"><a href="video-segment-building-forexsymbolsymbol.html#cb14-2" aria-hidden="true"></a></span>
-<span id="cb14-3"><a href="video-segment-building-forexsymbolsymbol.html#cb14-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
-<span id="cb14-4"><a href="video-segment-building-forexsymbolsymbol.html#cb14-4" aria-hidden="true"></a></span>
-<span id="cb14-5"><a href="video-segment-building-forexsymbolsymbol.html#cb14-5" aria-hidden="true"></a>  get(<span class="st">&quot;/forex&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;first_currency&quot;</span> })</span>
-<span id="cb14-6"><a href="video-segment-building-forexsymbolsymbol.html#cb14-6" aria-hidden="true"></a></span>
-<span id="cb14-7"><a href="video-segment-building-forexsymbolsymbol.html#cb14-7" aria-hidden="true"></a>  get(<span class="st">&quot;/forex/:from_currency&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;second_currency&quot;</span> })</span>
-<span id="cb14-8"><a href="video-segment-building-forexsymbolsymbol.html#cb14-8" aria-hidden="true"></a></span>
-<span id="cb14-9"><a href="video-segment-building-forexsymbolsymbol.html#cb14-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb180-1"><a href="video-segment-building-forexsymbolsymbol.html#cb180-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb180-2"><a href="video-segment-building-forexsymbolsymbol.html#cb180-2" aria-hidden="true"></a></span>
+<span id="cb180-3"><a href="video-segment-building-forexsymbolsymbol.html#cb180-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb180-4"><a href="video-segment-building-forexsymbolsymbol.html#cb180-4" aria-hidden="true"></a></span>
+<span id="cb180-5"><a href="video-segment-building-forexsymbolsymbol.html#cb180-5" aria-hidden="true"></a>  get(<span class="st">&quot;/forex&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;first_currency&quot;</span> })</span>
+<span id="cb180-6"><a href="video-segment-building-forexsymbolsymbol.html#cb180-6" aria-hidden="true"></a></span>
+<span id="cb180-7"><a href="video-segment-building-forexsymbolsymbol.html#cb180-7" aria-hidden="true"></a>  get(<span class="st">&quot;/forex/:from_currency&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;second_currency&quot;</span> })</span>
+<span id="cb180-8"><a href="video-segment-building-forexsymbolsymbol.html#cb180-8" aria-hidden="true"></a></span>
+<span id="cb180-9"><a href="video-segment-building-forexsymbolsymbol.html#cb180-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“7”}</p>
 <p>Now our routing error in the browser should be gone and we can move on to making the action in our controller:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb15-1"><a href="video-segment-building-forexsymbolsymbol.html#cb15-1" aria-hidden="true"></a><span class="co"># app/controllers/currencies_controller.rb</span></span>
-<span id="cb15-2"><a href="video-segment-building-forexsymbolsymbol.html#cb15-2" aria-hidden="true"></a></span>
-<span id="cb15-3"><a href="video-segment-building-forexsymbolsymbol.html#cb15-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CurrenciesController</span> &lt; <span class="dt">ApplicationController</span></span>
-<span id="cb15-4"><a href="video-segment-building-forexsymbolsymbol.html#cb15-4" aria-hidden="true"></a>  <span class="kw">def</span> first_currency</span>
-<span id="cb15-5"><a href="video-segment-building-forexsymbolsymbol.html#cb15-5" aria-hidden="true"></a>    </span>
-<span id="cb15-6"><a href="video-segment-building-forexsymbolsymbol.html#cb15-6" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb15-7"><a href="video-segment-building-forexsymbolsymbol.html#cb15-7" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb15-8"><a href="video-segment-building-forexsymbolsymbol.html#cb15-8" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb15-9"><a href="video-segment-building-forexsymbolsymbol.html#cb15-9" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb15-10"><a href="video-segment-building-forexsymbolsymbol.html#cb15-10" aria-hidden="true"></a></span>
-<span id="cb15-11"><a href="video-segment-building-forexsymbolsymbol.html#cb15-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_one.html.erb&quot;</span> })</span>
-<span id="cb15-12"><a href="video-segment-building-forexsymbolsymbol.html#cb15-12" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb15-13"><a href="video-segment-building-forexsymbolsymbol.html#cb15-13" aria-hidden="true"></a></span>
-<span id="cb15-14"><a href="video-segment-building-forexsymbolsymbol.html#cb15-14" aria-hidden="true"></a>  <span class="kw">def</span> second_currency</span>
-<span id="cb15-15"><a href="video-segment-building-forexsymbolsymbol.html#cb15-15" aria-hidden="true"></a>    </span>
-<span id="cb15-16"><a href="video-segment-building-forexsymbolsymbol.html#cb15-16" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_two.html.erb&quot;</span> })</span>
-<span id="cb15-17"><a href="video-segment-building-forexsymbolsymbol.html#cb15-17" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb15-18"><a href="video-segment-building-forexsymbolsymbol.html#cb15-18" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb181-1"><a href="video-segment-building-forexsymbolsymbol.html#cb181-1" aria-hidden="true"></a><span class="co"># app/controllers/currencies_controller.rb</span></span>
+<span id="cb181-2"><a href="video-segment-building-forexsymbolsymbol.html#cb181-2" aria-hidden="true"></a></span>
+<span id="cb181-3"><a href="video-segment-building-forexsymbolsymbol.html#cb181-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CurrenciesController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb181-4"><a href="video-segment-building-forexsymbolsymbol.html#cb181-4" aria-hidden="true"></a>  <span class="kw">def</span> first_currency</span>
+<span id="cb181-5"><a href="video-segment-building-forexsymbolsymbol.html#cb181-5" aria-hidden="true"></a>    </span>
+<span id="cb181-6"><a href="video-segment-building-forexsymbolsymbol.html#cb181-6" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
+<span id="cb181-7"><a href="video-segment-building-forexsymbolsymbol.html#cb181-7" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
+<span id="cb181-8"><a href="video-segment-building-forexsymbolsymbol.html#cb181-8" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
+<span id="cb181-9"><a href="video-segment-building-forexsymbolsymbol.html#cb181-9" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
+<span id="cb181-10"><a href="video-segment-building-forexsymbolsymbol.html#cb181-10" aria-hidden="true"></a></span>
+<span id="cb181-11"><a href="video-segment-building-forexsymbolsymbol.html#cb181-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_one.html.erb&quot;</span> })</span>
+<span id="cb181-12"><a href="video-segment-building-forexsymbolsymbol.html#cb181-12" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb181-13"><a href="video-segment-building-forexsymbolsymbol.html#cb181-13" aria-hidden="true"></a></span>
+<span id="cb181-14"><a href="video-segment-building-forexsymbolsymbol.html#cb181-14" aria-hidden="true"></a>  <span class="kw">def</span> second_currency</span>
+<span id="cb181-15"><a href="video-segment-building-forexsymbolsymbol.html#cb181-15" aria-hidden="true"></a>    </span>
+<span id="cb181-16"><a href="video-segment-building-forexsymbolsymbol.html#cb181-16" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_two.html.erb&quot;</span> })</span>
+<span id="cb181-17"><a href="video-segment-building-forexsymbolsymbol.html#cb181-17" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb181-18"><a href="video-segment-building-forexsymbolsymbol.html#cb181-18" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“14-17”}</p>
 <p>And we will right away add some static markup from the target (“View Source”) into our view template:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="video-segment-building-forexsymbolsymbol.html#cb16-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/currency_templates/step_two.html.erb --&gt;</span></span>
-<span id="cb16-2"><a href="video-segment-building-forexsymbolsymbol.html#cb16-2" aria-hidden="true"></a></span>
-<span id="cb16-3"><a href="video-segment-building-forexsymbolsymbol.html#cb16-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Convert AWG<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb16-4"><a href="video-segment-building-forexsymbolsymbol.html#cb16-4" aria-hidden="true"></a></span>
-<span id="cb16-5"><a href="video-segment-building-forexsymbolsymbol.html#cb16-5" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Go <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex&quot;</span><span class="kw">&gt;</span>back<span class="kw">&lt;a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb16-6"><a href="video-segment-building-forexsymbolsymbol.html#cb16-6" aria-hidden="true"></a></span>
-<span id="cb16-7"><a href="video-segment-building-forexsymbolsymbol.html#cb16-7" aria-hidden="true"></a><span class="kw">&lt;ul&gt;</span></span>
-<span id="cb16-8"><a href="video-segment-building-forexsymbolsymbol.html#cb16-8" aria-hidden="true"></a>  <span class="kw">&lt;li&gt;</span></span>
-<span id="cb16-9"><a href="video-segment-building-forexsymbolsymbol.html#cb16-9" aria-hidden="true"></a>    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex/AWG/INR&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb16-10"><a href="video-segment-building-forexsymbolsymbol.html#cb16-10" aria-hidden="true"></a>      Convert 1 AWG to INR...</span>
-<span id="cb16-11"><a href="video-segment-building-forexsymbolsymbol.html#cb16-11" aria-hidden="true"></a>    <span class="kw">&lt;/a&gt;</span></span>
-<span id="cb16-12"><a href="video-segment-building-forexsymbolsymbol.html#cb16-12" aria-hidden="true"></a>  <span class="kw">&lt;/li&gt;</span></span>
-<span id="cb16-13"><a href="video-segment-building-forexsymbolsymbol.html#cb16-13" aria-hidden="true"></a></span>
-<span id="cb16-14"><a href="video-segment-building-forexsymbolsymbol.html#cb16-14" aria-hidden="true"></a>  <span class="kw">&lt;li&gt;</span></span>
-<span id="cb16-15"><a href="video-segment-building-forexsymbolsymbol.html#cb16-15" aria-hidden="true"></a>    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/AWG/EUR&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb16-16"><a href="video-segment-building-forexsymbolsymbol.html#cb16-16" aria-hidden="true"></a>      Convert 1 AWG to EUR...</span>
-<span id="cb16-17"><a href="video-segment-building-forexsymbolsymbol.html#cb16-17" aria-hidden="true"></a>    <span class="kw">&lt;/a&gt;</span></span>
-<span id="cb16-18"><a href="video-segment-building-forexsymbolsymbol.html#cb16-18" aria-hidden="true"></a>  <span class="kw">&lt;/li&gt;</span></span>
-<span id="cb16-19"><a href="video-segment-building-forexsymbolsymbol.html#cb16-19" aria-hidden="true"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb182-1"><a href="video-segment-building-forexsymbolsymbol.html#cb182-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/currency_templates/step_two.html.erb --&gt;</span></span>
+<span id="cb182-2"><a href="video-segment-building-forexsymbolsymbol.html#cb182-2" aria-hidden="true"></a></span>
+<span id="cb182-3"><a href="video-segment-building-forexsymbolsymbol.html#cb182-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Convert AWG<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb182-4"><a href="video-segment-building-forexsymbolsymbol.html#cb182-4" aria-hidden="true"></a></span>
+<span id="cb182-5"><a href="video-segment-building-forexsymbolsymbol.html#cb182-5" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Go <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex&quot;</span><span class="kw">&gt;</span>back<span class="kw">&lt;a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb182-6"><a href="video-segment-building-forexsymbolsymbol.html#cb182-6" aria-hidden="true"></a></span>
+<span id="cb182-7"><a href="video-segment-building-forexsymbolsymbol.html#cb182-7" aria-hidden="true"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb182-8"><a href="video-segment-building-forexsymbolsymbol.html#cb182-8" aria-hidden="true"></a>  <span class="kw">&lt;li&gt;</span></span>
+<span id="cb182-9"><a href="video-segment-building-forexsymbolsymbol.html#cb182-9" aria-hidden="true"></a>    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex/AWG/INR&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb182-10"><a href="video-segment-building-forexsymbolsymbol.html#cb182-10" aria-hidden="true"></a>      Convert 1 AWG to INR...</span>
+<span id="cb182-11"><a href="video-segment-building-forexsymbolsymbol.html#cb182-11" aria-hidden="true"></a>    <span class="kw">&lt;/a&gt;</span></span>
+<span id="cb182-12"><a href="video-segment-building-forexsymbolsymbol.html#cb182-12" aria-hidden="true"></a>  <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb182-13"><a href="video-segment-building-forexsymbolsymbol.html#cb182-13" aria-hidden="true"></a></span>
+<span id="cb182-14"><a href="video-segment-building-forexsymbolsymbol.html#cb182-14" aria-hidden="true"></a>  <span class="kw">&lt;li&gt;</span></span>
+<span id="cb182-15"><a href="video-segment-building-forexsymbolsymbol.html#cb182-15" aria-hidden="true"></a>    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/AWG/EUR&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb182-16"><a href="video-segment-building-forexsymbolsymbol.html#cb182-16" aria-hidden="true"></a>      Convert 1 AWG to EUR...</span>
+<span id="cb182-17"><a href="video-segment-building-forexsymbolsymbol.html#cb182-17" aria-hidden="true"></a>    <span class="kw">&lt;/a&gt;</span></span>
+<span id="cb182-18"><a href="video-segment-building-forexsymbolsymbol.html#cb182-18" aria-hidden="true"></a>  <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb182-19"><a href="video-segment-building-forexsymbolsymbol.html#cb182-19" aria-hidden="true"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
 <p>This pattern of list items would need to be repeated over and over. So let’s make the static mockup dynamic by looping over the symbols array:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="video-segment-building-forexsymbolsymbol.html#cb17-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/currency_templates/step_two.html.erb --&gt;</span></span>
-<span id="cb17-2"><a href="video-segment-building-forexsymbolsymbol.html#cb17-2" aria-hidden="true"></a></span>
-<span id="cb17-3"><a href="video-segment-building-forexsymbolsymbol.html#cb17-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Convert AWG<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb17-4"><a href="video-segment-building-forexsymbolsymbol.html#cb17-4" aria-hidden="true"></a></span>
-<span id="cb17-5"><a href="video-segment-building-forexsymbolsymbol.html#cb17-5" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Go <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex&quot;</span><span class="kw">&gt;</span>back<span class="kw">&lt;a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb17-6"><a href="video-segment-building-forexsymbolsymbol.html#cb17-6" aria-hidden="true"></a></span>
-<span id="cb17-7"><a href="video-segment-building-forexsymbolsymbol.html#cb17-7" aria-hidden="true"></a><span class="kw">&lt;ul&gt;</span></span>
-<span id="cb17-8"><a href="video-segment-building-forexsymbolsymbol.html#cb17-8" aria-hidden="true"></a>  <span class="er">&lt;</span>% @array_of_symbols.each do |a_symbol| %&gt;</span>
-<span id="cb17-9"><a href="video-segment-building-forexsymbolsymbol.html#cb17-9" aria-hidden="true"></a>    <span class="kw">&lt;li&gt;</span></span>
-<span id="cb17-10"><a href="video-segment-building-forexsymbolsymbol.html#cb17-10" aria-hidden="true"></a>      <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex/AWG/</span><span class="er">&lt;</span><span class="st">%= a_symbol %&gt;&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb17-11"><a href="video-segment-building-forexsymbolsymbol.html#cb17-11" aria-hidden="true"></a>        Convert 1 AWG to <span class="er">&lt;</span>%= a_symbol %&gt;...</span>
-<span id="cb17-12"><a href="video-segment-building-forexsymbolsymbol.html#cb17-12" aria-hidden="true"></a>      <span class="kw">&lt;/a&gt;</span></span>
-<span id="cb17-13"><a href="video-segment-building-forexsymbolsymbol.html#cb17-13" aria-hidden="true"></a>    <span class="kw">&lt;/li&gt;</span></span>
-<span id="cb17-14"><a href="video-segment-building-forexsymbolsymbol.html#cb17-14" aria-hidden="true"></a>  <span class="er">&lt;</span>% end %&gt;</span>
-<span id="cb17-15"><a href="video-segment-building-forexsymbolsymbol.html#cb17-15" aria-hidden="true"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb183-1"><a href="video-segment-building-forexsymbolsymbol.html#cb183-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/currency_templates/step_two.html.erb --&gt;</span></span>
+<span id="cb183-2"><a href="video-segment-building-forexsymbolsymbol.html#cb183-2" aria-hidden="true"></a></span>
+<span id="cb183-3"><a href="video-segment-building-forexsymbolsymbol.html#cb183-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Convert AWG<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb183-4"><a href="video-segment-building-forexsymbolsymbol.html#cb183-4" aria-hidden="true"></a></span>
+<span id="cb183-5"><a href="video-segment-building-forexsymbolsymbol.html#cb183-5" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Go <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex&quot;</span><span class="kw">&gt;</span>back<span class="kw">&lt;a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb183-6"><a href="video-segment-building-forexsymbolsymbol.html#cb183-6" aria-hidden="true"></a></span>
+<span id="cb183-7"><a href="video-segment-building-forexsymbolsymbol.html#cb183-7" aria-hidden="true"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb183-8"><a href="video-segment-building-forexsymbolsymbol.html#cb183-8" aria-hidden="true"></a>  <span class="er">&lt;</span>% @array_of_symbols.each do |a_symbol| %&gt;</span>
+<span id="cb183-9"><a href="video-segment-building-forexsymbolsymbol.html#cb183-9" aria-hidden="true"></a>    <span class="kw">&lt;li&gt;</span></span>
+<span id="cb183-10"><a href="video-segment-building-forexsymbolsymbol.html#cb183-10" aria-hidden="true"></a>      <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex/AWG/</span><span class="er">&lt;</span><span class="st">%= a_symbol %&gt;&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb183-11"><a href="video-segment-building-forexsymbolsymbol.html#cb183-11" aria-hidden="true"></a>        Convert 1 AWG to <span class="er">&lt;</span>%= a_symbol %&gt;...</span>
+<span id="cb183-12"><a href="video-segment-building-forexsymbolsymbol.html#cb183-12" aria-hidden="true"></a>      <span class="kw">&lt;/a&gt;</span></span>
+<span id="cb183-13"><a href="video-segment-building-forexsymbolsymbol.html#cb183-13" aria-hidden="true"></a>    <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb183-14"><a href="video-segment-building-forexsymbolsymbol.html#cb183-14" aria-hidden="true"></a>  <span class="er">&lt;</span>% end %&gt;</span>
+<span id="cb183-15"><a href="video-segment-building-forexsymbolsymbol.html#cb183-15" aria-hidden="true"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
 <p>{: mark_lines=“8-14”}</p>
 <p>And now back into our controller, just copy and pasting from our previous action:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb18-1"><a href="video-segment-building-forexsymbolsymbol.html#cb18-1" aria-hidden="true"></a><span class="co"># app/controllers/currencies_controller.rb</span></span>
-<span id="cb18-2"><a href="video-segment-building-forexsymbolsymbol.html#cb18-2" aria-hidden="true"></a></span>
-<span id="cb18-3"><a href="video-segment-building-forexsymbolsymbol.html#cb18-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CurrenciesController</span> &lt; <span class="dt">ApplicationController</span></span>
-<span id="cb18-4"><a href="video-segment-building-forexsymbolsymbol.html#cb18-4" aria-hidden="true"></a>  <span class="kw">def</span> first_currency</span>
-<span id="cb18-5"><a href="video-segment-building-forexsymbolsymbol.html#cb18-5" aria-hidden="true"></a>    </span>
-<span id="cb18-6"><a href="video-segment-building-forexsymbolsymbol.html#cb18-6" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb18-7"><a href="video-segment-building-forexsymbolsymbol.html#cb18-7" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb18-8"><a href="video-segment-building-forexsymbolsymbol.html#cb18-8" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb18-9"><a href="video-segment-building-forexsymbolsymbol.html#cb18-9" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb18-10"><a href="video-segment-building-forexsymbolsymbol.html#cb18-10" aria-hidden="true"></a></span>
-<span id="cb18-11"><a href="video-segment-building-forexsymbolsymbol.html#cb18-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_one.html.erb&quot;</span> })</span>
-<span id="cb18-12"><a href="video-segment-building-forexsymbolsymbol.html#cb18-12" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb18-13"><a href="video-segment-building-forexsymbolsymbol.html#cb18-13" aria-hidden="true"></a></span>
-<span id="cb18-14"><a href="video-segment-building-forexsymbolsymbol.html#cb18-14" aria-hidden="true"></a>  <span class="kw">def</span> second_currency</span>
-<span id="cb18-15"><a href="video-segment-building-forexsymbolsymbol.html#cb18-15" aria-hidden="true"></a></span>
-<span id="cb18-16"><a href="video-segment-building-forexsymbolsymbol.html#cb18-16" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb18-17"><a href="video-segment-building-forexsymbolsymbol.html#cb18-17" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb18-18"><a href="video-segment-building-forexsymbolsymbol.html#cb18-18" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb18-19"><a href="video-segment-building-forexsymbolsymbol.html#cb18-19" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb18-20"><a href="video-segment-building-forexsymbolsymbol.html#cb18-20" aria-hidden="true"></a>    </span>
-<span id="cb18-21"><a href="video-segment-building-forexsymbolsymbol.html#cb18-21" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_two.html.erb&quot;</span> })</span>
-<span id="cb18-22"><a href="video-segment-building-forexsymbolsymbol.html#cb18-22" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb18-23"><a href="video-segment-building-forexsymbolsymbol.html#cb18-23" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb184-1"><a href="video-segment-building-forexsymbolsymbol.html#cb184-1" aria-hidden="true"></a><span class="co"># app/controllers/currencies_controller.rb</span></span>
+<span id="cb184-2"><a href="video-segment-building-forexsymbolsymbol.html#cb184-2" aria-hidden="true"></a></span>
+<span id="cb184-3"><a href="video-segment-building-forexsymbolsymbol.html#cb184-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CurrenciesController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb184-4"><a href="video-segment-building-forexsymbolsymbol.html#cb184-4" aria-hidden="true"></a>  <span class="kw">def</span> first_currency</span>
+<span id="cb184-5"><a href="video-segment-building-forexsymbolsymbol.html#cb184-5" aria-hidden="true"></a>    </span>
+<span id="cb184-6"><a href="video-segment-building-forexsymbolsymbol.html#cb184-6" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
+<span id="cb184-7"><a href="video-segment-building-forexsymbolsymbol.html#cb184-7" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
+<span id="cb184-8"><a href="video-segment-building-forexsymbolsymbol.html#cb184-8" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
+<span id="cb184-9"><a href="video-segment-building-forexsymbolsymbol.html#cb184-9" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
+<span id="cb184-10"><a href="video-segment-building-forexsymbolsymbol.html#cb184-10" aria-hidden="true"></a></span>
+<span id="cb184-11"><a href="video-segment-building-forexsymbolsymbol.html#cb184-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_one.html.erb&quot;</span> })</span>
+<span id="cb184-12"><a href="video-segment-building-forexsymbolsymbol.html#cb184-12" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb184-13"><a href="video-segment-building-forexsymbolsymbol.html#cb184-13" aria-hidden="true"></a></span>
+<span id="cb184-14"><a href="video-segment-building-forexsymbolsymbol.html#cb184-14" aria-hidden="true"></a>  <span class="kw">def</span> second_currency</span>
+<span id="cb184-15"><a href="video-segment-building-forexsymbolsymbol.html#cb184-15" aria-hidden="true"></a></span>
+<span id="cb184-16"><a href="video-segment-building-forexsymbolsymbol.html#cb184-16" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
+<span id="cb184-17"><a href="video-segment-building-forexsymbolsymbol.html#cb184-17" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
+<span id="cb184-18"><a href="video-segment-building-forexsymbolsymbol.html#cb184-18" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
+<span id="cb184-19"><a href="video-segment-building-forexsymbolsymbol.html#cb184-19" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
+<span id="cb184-20"><a href="video-segment-building-forexsymbolsymbol.html#cb184-20" aria-hidden="true"></a>    </span>
+<span id="cb184-21"><a href="video-segment-building-forexsymbolsymbol.html#cb184-21" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_two.html.erb&quot;</span> })</span>
+<span id="cb184-22"><a href="video-segment-building-forexsymbolsymbol.html#cb184-22" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb184-23"><a href="video-segment-building-forexsymbolsymbol.html#cb184-23" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“16-19”}</p>
 <p>Okay, it looks close. But we need to get the information out of our dynamic route <strong>/forex/SYMBOL</strong> to make our page change with each currency.</p>
 <p>Well everytime we visit a given route (by typing or clicking a link) like <strong>/forex/AWG</strong>, or <strong>/forex/INR</strong>, or <strong>/forex/EUR</strong>, because I defined my route dynamically in <code>config/routes.rb</code> as <code>"/forex/:from_currency"</code>, if we view our server log in the GitPod terminal window when we visit the page, then we will see:</p>
 <pre><code>Parameters: {&quot;from_currency&quot;=&gt;&quot;EUR&quot;}</code></pre>
 <p>So we have the currency symbol in the hash, and we can pull it out and use it in our controller:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb20-1"><a href="video-segment-building-forexsymbolsymbol.html#cb20-1" aria-hidden="true"></a><span class="co"># app/controllers/currencies_controller.rb</span></span>
-<span id="cb20-2"><a href="video-segment-building-forexsymbolsymbol.html#cb20-2" aria-hidden="true"></a></span>
-<span id="cb20-3"><a href="video-segment-building-forexsymbolsymbol.html#cb20-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CurrenciesController</span> &lt; <span class="dt">ApplicationController</span></span>
-<span id="cb20-4"><a href="video-segment-building-forexsymbolsymbol.html#cb20-4" aria-hidden="true"></a>  <span class="kw">def</span> first_currency</span>
-<span id="cb20-5"><a href="video-segment-building-forexsymbolsymbol.html#cb20-5" aria-hidden="true"></a>    </span>
-<span id="cb20-6"><a href="video-segment-building-forexsymbolsymbol.html#cb20-6" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb20-7"><a href="video-segment-building-forexsymbolsymbol.html#cb20-7" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb20-8"><a href="video-segment-building-forexsymbolsymbol.html#cb20-8" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb20-9"><a href="video-segment-building-forexsymbolsymbol.html#cb20-9" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb20-10"><a href="video-segment-building-forexsymbolsymbol.html#cb20-10" aria-hidden="true"></a></span>
-<span id="cb20-11"><a href="video-segment-building-forexsymbolsymbol.html#cb20-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_one.html.erb&quot;</span> })</span>
-<span id="cb20-12"><a href="video-segment-building-forexsymbolsymbol.html#cb20-12" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb20-13"><a href="video-segment-building-forexsymbolsymbol.html#cb20-13" aria-hidden="true"></a></span>
-<span id="cb20-14"><a href="video-segment-building-forexsymbolsymbol.html#cb20-14" aria-hidden="true"></a>  <span class="kw">def</span> second_currency</span>
-<span id="cb20-15"><a href="video-segment-building-forexsymbolsymbol.html#cb20-15" aria-hidden="true"></a></span>
-<span id="cb20-16"><a href="video-segment-building-forexsymbolsymbol.html#cb20-16" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb20-17"><a href="video-segment-building-forexsymbolsymbol.html#cb20-17" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb20-18"><a href="video-segment-building-forexsymbolsymbol.html#cb20-18" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb20-19"><a href="video-segment-building-forexsymbolsymbol.html#cb20-19" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb20-20"><a href="video-segment-building-forexsymbolsymbol.html#cb20-20" aria-hidden="true"></a>    </span>
-<span id="cb20-21"><a href="video-segment-building-forexsymbolsymbol.html#cb20-21" aria-hidden="true"></a>    <span class="co"># params are</span></span>
-<span id="cb20-22"><a href="video-segment-building-forexsymbolsymbol.html#cb20-22" aria-hidden="true"></a>    <span class="co"># Parameters: {&quot;from_currency&quot;=&gt;&quot;EUR&quot;}</span></span>
-<span id="cb20-23"><a href="video-segment-building-forexsymbolsymbol.html#cb20-23" aria-hidden="true"></a>    <span class="ot">@from_symbol</span> = params.fetch(<span class="st">&quot;from_currency&quot;</span>)</span>
-<span id="cb20-24"><a href="video-segment-building-forexsymbolsymbol.html#cb20-24" aria-hidden="true"></a>    </span>
-<span id="cb20-25"><a href="video-segment-building-forexsymbolsymbol.html#cb20-25" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_two.html.erb&quot;</span> })</span>
-<span id="cb20-26"><a href="video-segment-building-forexsymbolsymbol.html#cb20-26" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb20-27"><a href="video-segment-building-forexsymbolsymbol.html#cb20-27" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb186-1"><a href="video-segment-building-forexsymbolsymbol.html#cb186-1" aria-hidden="true"></a><span class="co"># app/controllers/currencies_controller.rb</span></span>
+<span id="cb186-2"><a href="video-segment-building-forexsymbolsymbol.html#cb186-2" aria-hidden="true"></a></span>
+<span id="cb186-3"><a href="video-segment-building-forexsymbolsymbol.html#cb186-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CurrenciesController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb186-4"><a href="video-segment-building-forexsymbolsymbol.html#cb186-4" aria-hidden="true"></a>  <span class="kw">def</span> first_currency</span>
+<span id="cb186-5"><a href="video-segment-building-forexsymbolsymbol.html#cb186-5" aria-hidden="true"></a>    </span>
+<span id="cb186-6"><a href="video-segment-building-forexsymbolsymbol.html#cb186-6" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
+<span id="cb186-7"><a href="video-segment-building-forexsymbolsymbol.html#cb186-7" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
+<span id="cb186-8"><a href="video-segment-building-forexsymbolsymbol.html#cb186-8" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
+<span id="cb186-9"><a href="video-segment-building-forexsymbolsymbol.html#cb186-9" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
+<span id="cb186-10"><a href="video-segment-building-forexsymbolsymbol.html#cb186-10" aria-hidden="true"></a></span>
+<span id="cb186-11"><a href="video-segment-building-forexsymbolsymbol.html#cb186-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_one.html.erb&quot;</span> })</span>
+<span id="cb186-12"><a href="video-segment-building-forexsymbolsymbol.html#cb186-12" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb186-13"><a href="video-segment-building-forexsymbolsymbol.html#cb186-13" aria-hidden="true"></a></span>
+<span id="cb186-14"><a href="video-segment-building-forexsymbolsymbol.html#cb186-14" aria-hidden="true"></a>  <span class="kw">def</span> second_currency</span>
+<span id="cb186-15"><a href="video-segment-building-forexsymbolsymbol.html#cb186-15" aria-hidden="true"></a></span>
+<span id="cb186-16"><a href="video-segment-building-forexsymbolsymbol.html#cb186-16" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
+<span id="cb186-17"><a href="video-segment-building-forexsymbolsymbol.html#cb186-17" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
+<span id="cb186-18"><a href="video-segment-building-forexsymbolsymbol.html#cb186-18" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
+<span id="cb186-19"><a href="video-segment-building-forexsymbolsymbol.html#cb186-19" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
+<span id="cb186-20"><a href="video-segment-building-forexsymbolsymbol.html#cb186-20" aria-hidden="true"></a>    </span>
+<span id="cb186-21"><a href="video-segment-building-forexsymbolsymbol.html#cb186-21" aria-hidden="true"></a>    <span class="co"># params are</span></span>
+<span id="cb186-22"><a href="video-segment-building-forexsymbolsymbol.html#cb186-22" aria-hidden="true"></a>    <span class="co"># Parameters: {&quot;from_currency&quot;=&gt;&quot;EUR&quot;}</span></span>
+<span id="cb186-23"><a href="video-segment-building-forexsymbolsymbol.html#cb186-23" aria-hidden="true"></a>    <span class="ot">@from_symbol</span> = params.fetch(<span class="st">&quot;from_currency&quot;</span>)</span>
+<span id="cb186-24"><a href="video-segment-building-forexsymbolsymbol.html#cb186-24" aria-hidden="true"></a>    </span>
+<span id="cb186-25"><a href="video-segment-building-forexsymbolsymbol.html#cb186-25" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_two.html.erb&quot;</span> })</span>
+<span id="cb186-26"><a href="video-segment-building-forexsymbolsymbol.html#cb186-26" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb186-27"><a href="video-segment-building-forexsymbolsymbol.html#cb186-27" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“16-19”}</p>
 <p>And back on our template we embed the new instance variable in our previous <code>AWG</code> static mockup (it’s as easy as replacing every instance with <code>&lt;%= @from_symbol %&gt;</code>):</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb21-1"><a href="video-segment-building-forexsymbolsymbol.html#cb21-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/currency_templates/step_two.html.erb --&gt;</span></span>
-<span id="cb21-2"><a href="video-segment-building-forexsymbolsymbol.html#cb21-2" aria-hidden="true"></a></span>
-<span id="cb21-3"><a href="video-segment-building-forexsymbolsymbol.html#cb21-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Convert <span class="er">&lt;</span>%= @from_symbol %&gt;<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb21-4"><a href="video-segment-building-forexsymbolsymbol.html#cb21-4" aria-hidden="true"></a></span>
-<span id="cb21-5"><a href="video-segment-building-forexsymbolsymbol.html#cb21-5" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Go <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex&quot;</span><span class="kw">&gt;</span>back<span class="kw">&lt;a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb21-6"><a href="video-segment-building-forexsymbolsymbol.html#cb21-6" aria-hidden="true"></a></span>
-<span id="cb21-7"><a href="video-segment-building-forexsymbolsymbol.html#cb21-7" aria-hidden="true"></a><span class="kw">&lt;ul&gt;</span></span>
-<span id="cb21-8"><a href="video-segment-building-forexsymbolsymbol.html#cb21-8" aria-hidden="true"></a>  <span class="er">&lt;</span>% @array_of_symbols.each do |a_symbol| %&gt;</span>
-<span id="cb21-9"><a href="video-segment-building-forexsymbolsymbol.html#cb21-9" aria-hidden="true"></a>    <span class="kw">&lt;li&gt;</span></span>
-<span id="cb21-10"><a href="video-segment-building-forexsymbolsymbol.html#cb21-10" aria-hidden="true"></a>      <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex/</span><span class="er">&lt;</span><span class="st">%= @from_symbol %&gt;/</span><span class="er">&lt;</span><span class="st">%= a_symbol %&gt;&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb21-11"><a href="video-segment-building-forexsymbolsymbol.html#cb21-11" aria-hidden="true"></a>        Convert 1 <span class="er">&lt;</span>%= @from_symbol %&gt; to <span class="er">&lt;</span>%= a_symbol %&gt;...</span>
-<span id="cb21-12"><a href="video-segment-building-forexsymbolsymbol.html#cb21-12" aria-hidden="true"></a>      <span class="kw">&lt;/a&gt;</span></span>
-<span id="cb21-13"><a href="video-segment-building-forexsymbolsymbol.html#cb21-13" aria-hidden="true"></a>    <span class="kw">&lt;/li&gt;</span></span>
-<span id="cb21-14"><a href="video-segment-building-forexsymbolsymbol.html#cb21-14" aria-hidden="true"></a>  <span class="er">&lt;</span>% end %&gt;</span>
-<span id="cb21-15"><a href="video-segment-building-forexsymbolsymbol.html#cb21-15" aria-hidden="true"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb187-1"><a href="video-segment-building-forexsymbolsymbol.html#cb187-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/currency_templates/step_two.html.erb --&gt;</span></span>
+<span id="cb187-2"><a href="video-segment-building-forexsymbolsymbol.html#cb187-2" aria-hidden="true"></a></span>
+<span id="cb187-3"><a href="video-segment-building-forexsymbolsymbol.html#cb187-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Convert <span class="er">&lt;</span>%= @from_symbol %&gt;<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb187-4"><a href="video-segment-building-forexsymbolsymbol.html#cb187-4" aria-hidden="true"></a></span>
+<span id="cb187-5"><a href="video-segment-building-forexsymbolsymbol.html#cb187-5" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Go <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex&quot;</span><span class="kw">&gt;</span>back<span class="kw">&lt;a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb187-6"><a href="video-segment-building-forexsymbolsymbol.html#cb187-6" aria-hidden="true"></a></span>
+<span id="cb187-7"><a href="video-segment-building-forexsymbolsymbol.html#cb187-7" aria-hidden="true"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb187-8"><a href="video-segment-building-forexsymbolsymbol.html#cb187-8" aria-hidden="true"></a>  <span class="er">&lt;</span>% @array_of_symbols.each do |a_symbol| %&gt;</span>
+<span id="cb187-9"><a href="video-segment-building-forexsymbolsymbol.html#cb187-9" aria-hidden="true"></a>    <span class="kw">&lt;li&gt;</span></span>
+<span id="cb187-10"><a href="video-segment-building-forexsymbolsymbol.html#cb187-10" aria-hidden="true"></a>      <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex/</span><span class="er">&lt;</span><span class="st">%= @from_symbol %&gt;/</span><span class="er">&lt;</span><span class="st">%= a_symbol %&gt;&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb187-11"><a href="video-segment-building-forexsymbolsymbol.html#cb187-11" aria-hidden="true"></a>        Convert 1 <span class="er">&lt;</span>%= @from_symbol %&gt; to <span class="er">&lt;</span>%= a_symbol %&gt;...</span>
+<span id="cb187-12"><a href="video-segment-building-forexsymbolsymbol.html#cb187-12" aria-hidden="true"></a>      <span class="kw">&lt;/a&gt;</span></span>
+<span id="cb187-13"><a href="video-segment-building-forexsymbolsymbol.html#cb187-13" aria-hidden="true"></a>    <span class="kw">&lt;/li&gt;</span></span>
+<span id="cb187-14"><a href="video-segment-building-forexsymbolsymbol.html#cb187-14" aria-hidden="true"></a>  <span class="er">&lt;</span>% end %&gt;</span>
+<span id="cb187-15"><a href="video-segment-building-forexsymbolsymbol.html#cb187-15" aria-hidden="true"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
 <p>{: mark_lines=“3 10-11”}</p>
 <p>And we have a dynamic route setup for the list of currency conversions! Test it manually, do a <code>rails grade</code>, and be sure to <code>/git</code> commit if everything looks good.</p>
 <p>The last step is to build the second currency symbol route, like <strong>/forex/AWG/USD</strong>. So you need to get two pieces of data out. You need to write a route that can accept two dynamic segments, fetch both of those segments from the params hash, and then use that to call the API: <strong><a href="https://api.exchangerate.host/convert?from=AWG&amp;to=EUR" class="uri">https://api.exchangerate.host/convert?from=AWG&amp;to=EUR</a></strong>, and finally extract the exchange rate from the JSON returned.</p>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>13 Omnicalc 1 (Forms and Query Strings) | AD1</title>
+  <title>19 Rubber Duck Debugging | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="13 Omnicalc 1 (Forms and Query Strings) | AD1" />
+  <meta property="og:title" content="19 Rubber Duck Debugging | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="13 Omnicalc 1 (Forms and Query Strings) | AD1" />
+  <meta name="twitter:title" content="19 Rubber Duck Debugging | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="rcav-addendums.html"/>
-<link rel="next" href="video-segment-intro-to-forms-and-exploring-the-target.html"/>
+<link rel="prev" href="additional-models.html"/>
+<link rel="next" href="omnicalc-debug.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -466,9 +466,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.5" data-path="erds.html"><a href="erds.html"><i class="fa fa-check"></i><b>18.5</b> ERDs</a></li>
 <li class="chapter" data-level="18.6" data-path="additional-models.html"><a href="additional-models.html"><i class="fa fa-check"></i><b>18.6</b> Additional Models</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="omnicalc-debug.html"><a href="omnicalc-debug.html"><i class="fa fa-check"></i><b>19</b> Omnicalc Debug</a>
+<li class="chapter" data-level="19" data-path="rubber-duck-debugging.html"><a href="rubber-duck-debugging.html"><i class="fa fa-check"></i><b>19</b> Rubber Duck Debugging</a></li>
+<li class="chapter" data-level="20" data-path="omnicalc-debug.html"><a href="omnicalc-debug.html"><i class="fa fa-check"></i><b>20</b> Omnicalc Debug</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="omnicalc-debug-readme.html"><a href="omnicalc-debug-readme.html"><i class="fa fa-check"></i><b>19.1</b> Omnicalc Debug README</a></li>
+<li class="chapter" data-level="20.1" data-path="omnicalc-debug-readme.html"><a href="omnicalc-debug-readme.html"><i class="fa fa-check"></i><b>20.1</b> Omnicalc Debug README</a></li>
 </ul></li>
 <li class="appendix"><span><b>Glossaries</b></span></li>
 <li class="chapter" data-level="A" data-path="terminology-technical-reference.html"><a href="terminology-technical-reference.html"><i class="fa fa-check"></i><b>A</b> Terminology Technical Reference</a></li>
@@ -494,30 +495,23 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="omnicalc-1-forms-and-query-strings" class="section level1 hasAnchor" number="13">
-<h1><span class="header-section-number">13</span> Omnicalc 1 (Forms and Query Strings)<a href="omnicalc-1-forms-and-query-strings.html#omnicalc-1-forms-and-query-strings" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="rubber-duck-debugging" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">19</span> Rubber Duck Debugging<a href="rubber-duck-debugging.html#rubber-duck-debugging" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
 <li><p>Notes:</p>
 <ul>
-<li><p>Forms and Query Strings</p></li>
-<li><p><a href="https://canvas.uchicago.edu/courses/41147/pages/video-omnicalc-1-forms-and-query-strings" target="_blank">Original video</a> transcription is in <a href="https://github.com/firstdraft/appdev-chapters/blob/benp-edits/forms-query-strings-and-params-Omnicalc-Part1.md" target="_blank"><code>forms-query-strings-and-params-Omnicalc-Part1.md</code></a></p></li>
-<li><p>Project (graded): <a href="https://github.com/appdev-projects/omnicalc-1" target="_blank">https://github.com/appdev-projects/omnicalc-1</a></p></li>
-<li><p>Target: <a href="https://omnicalc-1.matchthetarget.com/" target="_blank">https://omnicalc-1.matchthetarget.com/</a></p></li>
-<li><p>Useful chapters:</p>
-<ul>
-<li><a href="https://github.com/firstdraft/appdev-chapters/blob/benp-edits/forms-query-strings-and-params.md" target="_blank"><code>forms-query-strings-and-params.md</code></a> not</li>
-</ul></li>
+<li>just a reading: <a href="https://www.thoughtfulcode.com/rubber-duck-debugging-psychology/" target="_blank">https://www.thoughtfulcode.com/rubber-duck-debugging-psychology/</a></li>
 </ul></li>
 </ul>
-<p><strong>BENP: Would be useful here to show the “layouts” folder that is providing the wrapper with the table of buttons. But I am confused because now the wrapper is not pointed out in the application_controller.rb file as in RPS RCAV. In any case, the layouts/application.html.erb is finally brought up in relation to the nav bar in the Day 4 video @ 28’30" for the fortune teller app. Probably good to bring this up earlier. Also because this is where all the html header stuff went that is missing from our .html.erb view templates.</strong></p>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="rcav-addendums.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="video-segment-intro-to-forms-and-exploring-the-target.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="additional-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="omnicalc-debug.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -549,7 +543,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/omnicalc-1.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/rubber-duck-debugging.md",
 "text": "Edit"
 },
 "history": {
@@ -557,7 +551,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/omnicalc-1.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/rubber-duck-debugging.md",
 "text": null
 },
 "download": null,

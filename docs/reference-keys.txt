@@ -227,7 +227,12 @@ video-segment-urls-and-dynamic-routes
 text-companion-urls-and-dynamic-routes
 video-segment-exchange-rate-api-intro
 text-companion-exchange-rate-api-intro
-video-segment-building-1
+video-segment-building-forex
+text-companion-building-forex
+video-segment-building-forexsymbolsymbol
+text-companion-building-forexsymbolsymbol
+finish-and-submit-dashboards
+the-covid-tracking-project
 classroom-domain-modeling
 review-msm-tables
 yap-model
@@ -235,11 +240,7 @@ photogram-model
 very-best-model
 erds
 additional-models
+omnicalc-debug
+omnicalc-debug-readme
 terminology-technical-reference
 ruby-technical-reference
-video-segment-building-forex
-text-companion-building-forex
-video-segment-building-forexsymbolsymbol
-text-companion-building-forexsymbolsymbol
-finish-and-submit-dashboards
-the-covid-tracking-project
