@@ -352,5 +352,6 @@ video-segment-has_many
 text-companion-has_many
 video-segment-other-relationships-and-wizard
 finish-and-submit-refactoring-msm-again
+photogram-associations
 terminology-technical-reference
 ruby-technical-reference
