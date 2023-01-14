@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>17.4 Video Segment: Building /forex/SYMBOL/SYMBOL | AD1</title>
+  <title>29.2 Video Segment: Typos and NilClass Bug | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="17.4 Video Segment: Building /forex/SYMBOL/SYMBOL | AD1" />
+  <meta property="og:title" content="29.2 Video Segment: Typos and NilClass Bug | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="17.4 Video Segment: Building /forex/SYMBOL/SYMBOL | AD1" />
+  <meta name="twitter:title" content="29.2 Video Segment: Typos and NilClass Bug | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="video-segment-building-forex.html"/>
-<link rel="next" href="finish-and-submit-dashboards.html"/>
+<link rel="prev" href="video-segment-homepage-debugging.html"/>
+<link rel="next" href="video-segment-association-accessor-self.id-bug.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -690,174 +690,98 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="video-segment-building-forexsymbolsymbol" class="section level2 hasAnchor" number="17.4">
-<h2><span class="header-section-number">17.4</span> Video Segment: Building /forex/SYMBOL/SYMBOL<a href="video-segment-building-forexsymbolsymbol.html#video-segment-building-forexsymbolsymbol" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="video-segment-typos-and-nilclass-bug" class="section level2 hasAnchor" number="29.2">
+<h2><span class="header-section-number">29.2</span> Video Segment: Typos and <code>NilClass</code> Bug<a href="video-segment-typos-and-nilclass-bug.html#video-segment-typos-and-nilclass-bug" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>-Notes:</p>
 <ul>
-<li><p>Notes:</p>
-<ul>
-<li>time stamp 00:22:39 to 00:33:01</li>
-<li>RCAV <strong>/forex/SYMBOL/SYMBOL</strong> URL with dynamic route segments that lists all available currency exchange rates from JSON at <a href="https://api.exchangerate.host/convert" class="uri">https://api.exchangerate.host/convert</a> with query strings like <strong>?from=USD&amp;to=EUR</strong></li>
-</ul></li>
+<li>time stamp 00:11:35 to 00:17:47</li>
+<li>RTEM to slowly debug <strong>/venues/[ID of venue]</strong></li>
+<li>tricky bug: <code>undefined method 'address' for nil:NilClass</code></li>
+<li><code>ActiveRecord::Relation</code> single instance <code>.at(0)</code></li>
 </ul>
-<p>Let’s start with the next step, where a user can select a currrency on <strong>/forex</strong>, which brings them to <strong>/forex/SYMBOL</strong>, where they can select a second currency bringing them to the exchange rate on <strong>/forex/SYMBOL/SYMBOL</strong>.</p>
-<p>We begin by simulating what we want to work by navigating our browser to <strong>/forex/AWG</strong>, RTEM, and starting the RCAV:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb185-1"><a href="video-segment-building-forexsymbolsymbol.html#cb185-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb185-2"><a href="video-segment-building-forexsymbolsymbol.html#cb185-2" aria-hidden="true"></a></span>
-<span id="cb185-3"><a href="video-segment-building-forexsymbolsymbol.html#cb185-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
-<span id="cb185-4"><a href="video-segment-building-forexsymbolsymbol.html#cb185-4" aria-hidden="true"></a></span>
-<span id="cb185-5"><a href="video-segment-building-forexsymbolsymbol.html#cb185-5" aria-hidden="true"></a>  get(<span class="st">&quot;/forex&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;first_currency&quot;</span> })</span>
-<span id="cb185-6"><a href="video-segment-building-forexsymbolsymbol.html#cb185-6" aria-hidden="true"></a></span>
-<span id="cb185-7"><a href="video-segment-building-forexsymbolsymbol.html#cb185-7" aria-hidden="true"></a>  get(<span class="st">&quot;/forex/...&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;second_currency&quot;</span> })</span>
-<span id="cb185-8"><a href="video-segment-building-forexsymbolsymbol.html#cb185-8" aria-hidden="true"></a></span>
-<span id="cb185-9"><a href="video-segment-building-forexsymbolsymbol.html#cb185-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>{: mark_lines=“7”}</p>
-<p>Where we have <code>/...</code> above, we want a dynamic route wildcard that can be pulled out in the <code>params</code>, otherwise, we have the usual controller (same as our previous) and a new action we will make in that controller (<code>"second_currency"</code>).</p>
-<p>We don’t want to type <code>/AWG</code>, because that is just one of our many currencies. But, if we remember our dynamic routes <strong>BENP: link to dice here</strong>, we know we can use a symbol to make it flexible, like so:</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb186-1"><a href="video-segment-building-forexsymbolsymbol.html#cb186-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb186-2"><a href="video-segment-building-forexsymbolsymbol.html#cb186-2" aria-hidden="true"></a></span>
-<span id="cb186-3"><a href="video-segment-building-forexsymbolsymbol.html#cb186-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
-<span id="cb186-4"><a href="video-segment-building-forexsymbolsymbol.html#cb186-4" aria-hidden="true"></a></span>
-<span id="cb186-5"><a href="video-segment-building-forexsymbolsymbol.html#cb186-5" aria-hidden="true"></a>  get(<span class="st">&quot;/forex&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;first_currency&quot;</span> })</span>
-<span id="cb186-6"><a href="video-segment-building-forexsymbolsymbol.html#cb186-6" aria-hidden="true"></a></span>
-<span id="cb186-7"><a href="video-segment-building-forexsymbolsymbol.html#cb186-7" aria-hidden="true"></a>  get(<span class="st">&quot;/forex/:from_currency&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;currencies&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;second_currency&quot;</span> })</span>
-<span id="cb186-8"><a href="video-segment-building-forexsymbolsymbol.html#cb186-8" aria-hidden="true"></a></span>
-<span id="cb186-9"><a href="video-segment-building-forexsymbolsymbol.html#cb186-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>{: mark_lines=“7”}</p>
-<p>Now our routing error in the browser should be gone and we can move on to making the action in our controller:</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb187-1"><a href="video-segment-building-forexsymbolsymbol.html#cb187-1" aria-hidden="true"></a><span class="co"># app/controllers/currencies_controller.rb</span></span>
-<span id="cb187-2"><a href="video-segment-building-forexsymbolsymbol.html#cb187-2" aria-hidden="true"></a></span>
-<span id="cb187-3"><a href="video-segment-building-forexsymbolsymbol.html#cb187-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CurrenciesController</span> &lt; <span class="dt">ApplicationController</span></span>
-<span id="cb187-4"><a href="video-segment-building-forexsymbolsymbol.html#cb187-4" aria-hidden="true"></a>  <span class="kw">def</span> first_currency</span>
-<span id="cb187-5"><a href="video-segment-building-forexsymbolsymbol.html#cb187-5" aria-hidden="true"></a>    </span>
-<span id="cb187-6"><a href="video-segment-building-forexsymbolsymbol.html#cb187-6" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb187-7"><a href="video-segment-building-forexsymbolsymbol.html#cb187-7" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb187-8"><a href="video-segment-building-forexsymbolsymbol.html#cb187-8" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb187-9"><a href="video-segment-building-forexsymbolsymbol.html#cb187-9" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb187-10"><a href="video-segment-building-forexsymbolsymbol.html#cb187-10" aria-hidden="true"></a></span>
-<span id="cb187-11"><a href="video-segment-building-forexsymbolsymbol.html#cb187-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_one.html.erb&quot;</span> })</span>
-<span id="cb187-12"><a href="video-segment-building-forexsymbolsymbol.html#cb187-12" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb187-13"><a href="video-segment-building-forexsymbolsymbol.html#cb187-13" aria-hidden="true"></a></span>
-<span id="cb187-14"><a href="video-segment-building-forexsymbolsymbol.html#cb187-14" aria-hidden="true"></a>  <span class="kw">def</span> second_currency</span>
-<span id="cb187-15"><a href="video-segment-building-forexsymbolsymbol.html#cb187-15" aria-hidden="true"></a>    </span>
-<span id="cb187-16"><a href="video-segment-building-forexsymbolsymbol.html#cb187-16" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_two.html.erb&quot;</span> })</span>
-<span id="cb187-17"><a href="video-segment-building-forexsymbolsymbol.html#cb187-17" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb187-18"><a href="video-segment-building-forexsymbolsymbol.html#cb187-18" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>{: mark_lines=“14-17”}</p>
-<p>And we will right away add some static markup from the target (“View Source”) into our view template:</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb188-1"><a href="video-segment-building-forexsymbolsymbol.html#cb188-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/currency_templates/step_two.html.erb --&gt;</span></span>
-<span id="cb188-2"><a href="video-segment-building-forexsymbolsymbol.html#cb188-2" aria-hidden="true"></a></span>
-<span id="cb188-3"><a href="video-segment-building-forexsymbolsymbol.html#cb188-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Convert AWG<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb188-4"><a href="video-segment-building-forexsymbolsymbol.html#cb188-4" aria-hidden="true"></a></span>
-<span id="cb188-5"><a href="video-segment-building-forexsymbolsymbol.html#cb188-5" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Go <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex&quot;</span><span class="kw">&gt;</span>back<span class="kw">&lt;a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb188-6"><a href="video-segment-building-forexsymbolsymbol.html#cb188-6" aria-hidden="true"></a></span>
-<span id="cb188-7"><a href="video-segment-building-forexsymbolsymbol.html#cb188-7" aria-hidden="true"></a><span class="kw">&lt;ul&gt;</span></span>
-<span id="cb188-8"><a href="video-segment-building-forexsymbolsymbol.html#cb188-8" aria-hidden="true"></a>  <span class="kw">&lt;li&gt;</span></span>
-<span id="cb188-9"><a href="video-segment-building-forexsymbolsymbol.html#cb188-9" aria-hidden="true"></a>    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex/AWG/INR&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb188-10"><a href="video-segment-building-forexsymbolsymbol.html#cb188-10" aria-hidden="true"></a>      Convert 1 AWG to INR...</span>
-<span id="cb188-11"><a href="video-segment-building-forexsymbolsymbol.html#cb188-11" aria-hidden="true"></a>    <span class="kw">&lt;/a&gt;</span></span>
-<span id="cb188-12"><a href="video-segment-building-forexsymbolsymbol.html#cb188-12" aria-hidden="true"></a>  <span class="kw">&lt;/li&gt;</span></span>
-<span id="cb188-13"><a href="video-segment-building-forexsymbolsymbol.html#cb188-13" aria-hidden="true"></a></span>
-<span id="cb188-14"><a href="video-segment-building-forexsymbolsymbol.html#cb188-14" aria-hidden="true"></a>  <span class="kw">&lt;li&gt;</span></span>
-<span id="cb188-15"><a href="video-segment-building-forexsymbolsymbol.html#cb188-15" aria-hidden="true"></a>    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/AWG/EUR&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb188-16"><a href="video-segment-building-forexsymbolsymbol.html#cb188-16" aria-hidden="true"></a>      Convert 1 AWG to EUR...</span>
-<span id="cb188-17"><a href="video-segment-building-forexsymbolsymbol.html#cb188-17" aria-hidden="true"></a>    <span class="kw">&lt;/a&gt;</span></span>
-<span id="cb188-18"><a href="video-segment-building-forexsymbolsymbol.html#cb188-18" aria-hidden="true"></a>  <span class="kw">&lt;/li&gt;</span></span>
-<span id="cb188-19"><a href="video-segment-building-forexsymbolsymbol.html#cb188-19" aria-hidden="true"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
-<p>This pattern of list items would need to be repeated over and over. So let’s make the static mockup dynamic by looping over the symbols array:</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb189-1"><a href="video-segment-building-forexsymbolsymbol.html#cb189-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/currency_templates/step_two.html.erb --&gt;</span></span>
-<span id="cb189-2"><a href="video-segment-building-forexsymbolsymbol.html#cb189-2" aria-hidden="true"></a></span>
-<span id="cb189-3"><a href="video-segment-building-forexsymbolsymbol.html#cb189-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Convert AWG<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb189-4"><a href="video-segment-building-forexsymbolsymbol.html#cb189-4" aria-hidden="true"></a></span>
-<span id="cb189-5"><a href="video-segment-building-forexsymbolsymbol.html#cb189-5" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Go <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex&quot;</span><span class="kw">&gt;</span>back<span class="kw">&lt;a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb189-6"><a href="video-segment-building-forexsymbolsymbol.html#cb189-6" aria-hidden="true"></a></span>
-<span id="cb189-7"><a href="video-segment-building-forexsymbolsymbol.html#cb189-7" aria-hidden="true"></a><span class="kw">&lt;ul&gt;</span></span>
-<span id="cb189-8"><a href="video-segment-building-forexsymbolsymbol.html#cb189-8" aria-hidden="true"></a>  <span class="er">&lt;</span>% @array_of_symbols.each do |a_symbol| %&gt;</span>
-<span id="cb189-9"><a href="video-segment-building-forexsymbolsymbol.html#cb189-9" aria-hidden="true"></a>    <span class="kw">&lt;li&gt;</span></span>
-<span id="cb189-10"><a href="video-segment-building-forexsymbolsymbol.html#cb189-10" aria-hidden="true"></a>      <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex/AWG/</span><span class="er">&lt;</span><span class="st">%= a_symbol %&gt;&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb189-11"><a href="video-segment-building-forexsymbolsymbol.html#cb189-11" aria-hidden="true"></a>        Convert 1 AWG to <span class="er">&lt;</span>%= a_symbol %&gt;...</span>
-<span id="cb189-12"><a href="video-segment-building-forexsymbolsymbol.html#cb189-12" aria-hidden="true"></a>      <span class="kw">&lt;/a&gt;</span></span>
-<span id="cb189-13"><a href="video-segment-building-forexsymbolsymbol.html#cb189-13" aria-hidden="true"></a>    <span class="kw">&lt;/li&gt;</span></span>
-<span id="cb189-14"><a href="video-segment-building-forexsymbolsymbol.html#cb189-14" aria-hidden="true"></a>  <span class="er">&lt;</span>% end %&gt;</span>
-<span id="cb189-15"><a href="video-segment-building-forexsymbolsymbol.html#cb189-15" aria-hidden="true"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
-<p>{: mark_lines=“8-14”}</p>
-<p>And now back into our controller, just copy and pasting from our previous action:</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb190-1"><a href="video-segment-building-forexsymbolsymbol.html#cb190-1" aria-hidden="true"></a><span class="co"># app/controllers/currencies_controller.rb</span></span>
-<span id="cb190-2"><a href="video-segment-building-forexsymbolsymbol.html#cb190-2" aria-hidden="true"></a></span>
-<span id="cb190-3"><a href="video-segment-building-forexsymbolsymbol.html#cb190-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CurrenciesController</span> &lt; <span class="dt">ApplicationController</span></span>
-<span id="cb190-4"><a href="video-segment-building-forexsymbolsymbol.html#cb190-4" aria-hidden="true"></a>  <span class="kw">def</span> first_currency</span>
-<span id="cb190-5"><a href="video-segment-building-forexsymbolsymbol.html#cb190-5" aria-hidden="true"></a>    </span>
-<span id="cb190-6"><a href="video-segment-building-forexsymbolsymbol.html#cb190-6" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb190-7"><a href="video-segment-building-forexsymbolsymbol.html#cb190-7" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb190-8"><a href="video-segment-building-forexsymbolsymbol.html#cb190-8" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb190-9"><a href="video-segment-building-forexsymbolsymbol.html#cb190-9" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb190-10"><a href="video-segment-building-forexsymbolsymbol.html#cb190-10" aria-hidden="true"></a></span>
-<span id="cb190-11"><a href="video-segment-building-forexsymbolsymbol.html#cb190-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_one.html.erb&quot;</span> })</span>
-<span id="cb190-12"><a href="video-segment-building-forexsymbolsymbol.html#cb190-12" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb190-13"><a href="video-segment-building-forexsymbolsymbol.html#cb190-13" aria-hidden="true"></a></span>
-<span id="cb190-14"><a href="video-segment-building-forexsymbolsymbol.html#cb190-14" aria-hidden="true"></a>  <span class="kw">def</span> second_currency</span>
-<span id="cb190-15"><a href="video-segment-building-forexsymbolsymbol.html#cb190-15" aria-hidden="true"></a></span>
-<span id="cb190-16"><a href="video-segment-building-forexsymbolsymbol.html#cb190-16" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb190-17"><a href="video-segment-building-forexsymbolsymbol.html#cb190-17" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb190-18"><a href="video-segment-building-forexsymbolsymbol.html#cb190-18" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb190-19"><a href="video-segment-building-forexsymbolsymbol.html#cb190-19" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb190-20"><a href="video-segment-building-forexsymbolsymbol.html#cb190-20" aria-hidden="true"></a>    </span>
-<span id="cb190-21"><a href="video-segment-building-forexsymbolsymbol.html#cb190-21" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_two.html.erb&quot;</span> })</span>
-<span id="cb190-22"><a href="video-segment-building-forexsymbolsymbol.html#cb190-22" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb190-23"><a href="video-segment-building-forexsymbolsymbol.html#cb190-23" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>{: mark_lines=“16-19”}</p>
-<p>Okay, it looks close. But we need to get the information out of our dynamic route <strong>/forex/SYMBOL</strong> to make our page change with each currency.</p>
-<p>Well everytime we visit a given route (by typing or clicking a link) like <strong>/forex/AWG</strong>, or <strong>/forex/INR</strong>, or <strong>/forex/EUR</strong>, because I defined my route dynamically in <code>config/routes.rb</code> as <code>"/forex/:from_currency"</code>, if we view our server log in the GitPod terminal window when we visit the page, then we will see:</p>
-<pre><code>Parameters: {&quot;from_currency&quot;=&gt;&quot;EUR&quot;}</code></pre>
-<p>So we have the currency symbol in the hash, and we can pull it out and use it in our controller:</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb192-1"><a href="video-segment-building-forexsymbolsymbol.html#cb192-1" aria-hidden="true"></a><span class="co"># app/controllers/currencies_controller.rb</span></span>
-<span id="cb192-2"><a href="video-segment-building-forexsymbolsymbol.html#cb192-2" aria-hidden="true"></a></span>
-<span id="cb192-3"><a href="video-segment-building-forexsymbolsymbol.html#cb192-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CurrenciesController</span> &lt; <span class="dt">ApplicationController</span></span>
-<span id="cb192-4"><a href="video-segment-building-forexsymbolsymbol.html#cb192-4" aria-hidden="true"></a>  <span class="kw">def</span> first_currency</span>
-<span id="cb192-5"><a href="video-segment-building-forexsymbolsymbol.html#cb192-5" aria-hidden="true"></a>    </span>
-<span id="cb192-6"><a href="video-segment-building-forexsymbolsymbol.html#cb192-6" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb192-7"><a href="video-segment-building-forexsymbolsymbol.html#cb192-7" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb192-8"><a href="video-segment-building-forexsymbolsymbol.html#cb192-8" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb192-9"><a href="video-segment-building-forexsymbolsymbol.html#cb192-9" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb192-10"><a href="video-segment-building-forexsymbolsymbol.html#cb192-10" aria-hidden="true"></a></span>
-<span id="cb192-11"><a href="video-segment-building-forexsymbolsymbol.html#cb192-11" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_one.html.erb&quot;</span> })</span>
-<span id="cb192-12"><a href="video-segment-building-forexsymbolsymbol.html#cb192-12" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb192-13"><a href="video-segment-building-forexsymbolsymbol.html#cb192-13" aria-hidden="true"></a></span>
-<span id="cb192-14"><a href="video-segment-building-forexsymbolsymbol.html#cb192-14" aria-hidden="true"></a>  <span class="kw">def</span> second_currency</span>
-<span id="cb192-15"><a href="video-segment-building-forexsymbolsymbol.html#cb192-15" aria-hidden="true"></a></span>
-<span id="cb192-16"><a href="video-segment-building-forexsymbolsymbol.html#cb192-16" aria-hidden="true"></a>    <span class="ot">@raw_data</span> = open(<span class="st">&quot;https://api.exchangerate.host/symbols&quot;</span>).read</span>
-<span id="cb192-17"><a href="video-segment-building-forexsymbolsymbol.html#cb192-17" aria-hidden="true"></a>    <span class="ot">@parsed_data</span> = <span class="dt">JSON</span>.parse(<span class="ot">@raw_data</span>)</span>
-<span id="cb192-18"><a href="video-segment-building-forexsymbolsymbol.html#cb192-18" aria-hidden="true"></a>    <span class="ot">@symbols_hash</span> = <span class="ot">@parsed_data</span>.fetch(<span class="st">&quot;symbols&quot;</span>)</span>
-<span id="cb192-19"><a href="video-segment-building-forexsymbolsymbol.html#cb192-19" aria-hidden="true"></a>    <span class="ot">@array_of_symbols</span> = <span class="ot">@symbols</span>.keys</span>
-<span id="cb192-20"><a href="video-segment-building-forexsymbolsymbol.html#cb192-20" aria-hidden="true"></a>    </span>
-<span id="cb192-21"><a href="video-segment-building-forexsymbolsymbol.html#cb192-21" aria-hidden="true"></a>    <span class="co"># params are</span></span>
-<span id="cb192-22"><a href="video-segment-building-forexsymbolsymbol.html#cb192-22" aria-hidden="true"></a>    <span class="co"># Parameters: {&quot;from_currency&quot;=&gt;&quot;EUR&quot;}</span></span>
-<span id="cb192-23"><a href="video-segment-building-forexsymbolsymbol.html#cb192-23" aria-hidden="true"></a>    <span class="ot">@from_symbol</span> = params.fetch(<span class="st">&quot;from_currency&quot;</span>)</span>
-<span id="cb192-24"><a href="video-segment-building-forexsymbolsymbol.html#cb192-24" aria-hidden="true"></a>    </span>
-<span id="cb192-25"><a href="video-segment-building-forexsymbolsymbol.html#cb192-25" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;currency_templates/step_two.html.erb&quot;</span> })</span>
-<span id="cb192-26"><a href="video-segment-building-forexsymbolsymbol.html#cb192-26" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb192-27"><a href="video-segment-building-forexsymbolsymbol.html#cb192-27" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>{: mark_lines=“16-19”}</p>
-<p>And back on our template we embed the new instance variable in our previous <code>AWG</code> static mockup (it’s as easy as replacing every instance with <code>&lt;%= @from_symbol %&gt;</code>):</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb193-1"><a href="video-segment-building-forexsymbolsymbol.html#cb193-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/currency_templates/step_two.html.erb --&gt;</span></span>
-<span id="cb193-2"><a href="video-segment-building-forexsymbolsymbol.html#cb193-2" aria-hidden="true"></a></span>
-<span id="cb193-3"><a href="video-segment-building-forexsymbolsymbol.html#cb193-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Convert <span class="er">&lt;</span>%= @from_symbol %&gt;<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb193-4"><a href="video-segment-building-forexsymbolsymbol.html#cb193-4" aria-hidden="true"></a></span>
-<span id="cb193-5"><a href="video-segment-building-forexsymbolsymbol.html#cb193-5" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Go <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex&quot;</span><span class="kw">&gt;</span>back<span class="kw">&lt;a&gt;</span>.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb193-6"><a href="video-segment-building-forexsymbolsymbol.html#cb193-6" aria-hidden="true"></a></span>
-<span id="cb193-7"><a href="video-segment-building-forexsymbolsymbol.html#cb193-7" aria-hidden="true"></a><span class="kw">&lt;ul&gt;</span></span>
-<span id="cb193-8"><a href="video-segment-building-forexsymbolsymbol.html#cb193-8" aria-hidden="true"></a>  <span class="er">&lt;</span>% @array_of_symbols.each do |a_symbol| %&gt;</span>
-<span id="cb193-9"><a href="video-segment-building-forexsymbolsymbol.html#cb193-9" aria-hidden="true"></a>    <span class="kw">&lt;li&gt;</span></span>
-<span id="cb193-10"><a href="video-segment-building-forexsymbolsymbol.html#cb193-10" aria-hidden="true"></a>      <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/forex/</span><span class="er">&lt;</span><span class="st">%= @from_symbol %&gt;/</span><span class="er">&lt;</span><span class="st">%= a_symbol %&gt;&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb193-11"><a href="video-segment-building-forexsymbolsymbol.html#cb193-11" aria-hidden="true"></a>        Convert 1 <span class="er">&lt;</span>%= @from_symbol %&gt; to <span class="er">&lt;</span>%= a_symbol %&gt;...</span>
-<span id="cb193-12"><a href="video-segment-building-forexsymbolsymbol.html#cb193-12" aria-hidden="true"></a>      <span class="kw">&lt;/a&gt;</span></span>
-<span id="cb193-13"><a href="video-segment-building-forexsymbolsymbol.html#cb193-13" aria-hidden="true"></a>    <span class="kw">&lt;/li&gt;</span></span>
-<span id="cb193-14"><a href="video-segment-building-forexsymbolsymbol.html#cb193-14" aria-hidden="true"></a>  <span class="er">&lt;</span>% end %&gt;</span>
-<span id="cb193-15"><a href="video-segment-building-forexsymbolsymbol.html#cb193-15" aria-hidden="true"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
-<p>{: mark_lines=“3 10-11”}</p>
-<p>And we have a dynamic route setup for the list of currency conversions! Test it manually, do a <code>rails grade</code>, and be sure to <code>/git</code> commit if everything looks good.</p>
-<p>The last step is to build the second currency symbol route, like <strong>/forex/AWG/USD</strong>. So you need to get two pieces of data out. You need to write a route that can accept two dynamic segments, fetch both of those segments from the params hash, and then use that to call the API: <strong><a href="https://api.exchangerate.host/convert?from=AWG&amp;to=EUR" class="uri">https://api.exchangerate.host/convert?from=AWG&amp;to=EUR</a></strong>, and finally extract the exchange rate from the JSON returned.</p>
-<div id="text-companion-building-forexsymbolsymbol" class="section level3 hasAnchor" number="17.4.1">
-<h3><span class="header-section-number">17.4.1</span> Text Companion: Building /forex/SYMBOL/SYMBOL<a href="video-segment-building-forexsymbolsymbol.html#text-companion-building-forexsymbolsymbol" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In our app, let’s try to manually navigate to <strong>/venues/1</strong>. We are trying to get to a venue details page, like in our target. We get a “no route matches” error.</p>
+<p>Based on the developer conventions from the Rails community, we were expecting the list of things we are interested in (the <code>index</code> action) to be on a URL with the plural name of the thing of interest, in this case <strong>/venues</strong>. Also, for the individual venue, it is typical to put the details page at <strong>/venues/[ID of venue]</strong>. In this case, we tried to get to the details page of the venue from our <code>venues</code> table with the <code>id</code> column value of “1”.</p>
+<p>We could have named these routes anything we want, like <strong>/venue_details</strong>. But we don’t because it is usually good to follow conventions.</p>
+<p>Back to the error, let’s check our route:</p>
+<div class="sourceCode" id="cb360"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb360-1"><a href="video-segment-typos-and-nilclass-bug.html#cb360-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb360-2"><a href="video-segment-typos-and-nilclass-bug.html#cb360-2" aria-hidden="true"></a></span>
+<span id="cb360-3"><a href="video-segment-typos-and-nilclass-bug.html#cb360-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb360-4"><a href="video-segment-typos-and-nilclass-bug.html#cb360-4" aria-hidden="true"></a></span>
+<span id="cb360-5"><a href="video-segment-typos-and-nilclass-bug.html#cb360-5" aria-hidden="true"></a>  get(<span class="st">&quot;/&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;users&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;index&quot;</span> })</span>
+<span id="cb360-6"><a href="video-segment-typos-and-nilclass-bug.html#cb360-6" aria-hidden="true"></a>  get(<span class="st">&quot;/users&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;users&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;all_users&quot;</span> })</span>
+<span id="cb360-7"><a href="video-segment-typos-and-nilclass-bug.html#cb360-7" aria-hidden="true"></a>  get(<span class="st">&quot;/users/:username&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;user&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;show&quot;</span> })</span>
+<span id="cb360-8"><a href="video-segment-typos-and-nilclass-bug.html#cb360-8" aria-hidden="true"></a>  get(<span class="st">&quot;/insert_user_record&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;venues&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;create&quot;</span> })</span>
+<span id="cb360-9"><a href="video-segment-typos-and-nilclass-bug.html#cb360-9" aria-hidden="true"></a>  get(<span class="st">&quot;/update_users/:user_id&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;users&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;update&quot;</span> })</span>
+<span id="cb360-10"><a href="video-segment-typos-and-nilclass-bug.html#cb360-10" aria-hidden="true"></a></span>
+<span id="cb360-11"><a href="video-segment-typos-and-nilclass-bug.html#cb360-11" aria-hidden="true"></a>  get(<span class="st">&quot;/venues&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;venues&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;index&quot;</span> })</span>
+<span id="cb360-12"><a href="video-segment-typos-and-nilclass-bug.html#cb360-12" aria-hidden="true"></a>  get(<span class="st">&quot;/insert_venue_record&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;venues&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;create&quot;</span> })</span>
+<span id="cb360-13"><a href="video-segment-typos-and-nilclass-bug.html#cb360-13" aria-hidden="true"></a>  get(<span class="st">&quot;/venue/:an_id&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;venue&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;show&quot;</span> })</span>
+<span id="cb360-14"><a href="video-segment-typos-and-nilclass-bug.html#cb360-14" aria-hidden="true"></a>  post(<span class="st">&quot;/update_venue/:the_id&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;update&quot;</span> })</span>
+<span id="cb360-15"><a href="video-segment-typos-and-nilclass-bug.html#cb360-15" aria-hidden="true"></a>  get(<span class="st">&quot;/delete_venue/:id_to_delete&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;venue&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;destroy&quot;</span> })</span>
+<span id="cb360-16"><a href="video-segment-typos-and-nilclass-bug.html#cb360-16" aria-hidden="true"></a>  </span>
+<span id="cb360-17"><a href="video-segment-typos-and-nilclass-bug.html#cb360-17" aria-hidden="true"></a>  get(<span class="st">&quot;/insert_comment_record&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;comments&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;create&quot;</span> })</span>
+<span id="cb360-18"><a href="video-segment-typos-and-nilclass-bug.html#cb360-18" aria-hidden="true"></a> </span>
+<span id="cb360-19"><a href="video-segment-typos-and-nilclass-bug.html#cb360-19" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“13”}</p>
+<p>Right away, we can spot that the path <em>and</em> controller <code>"venue"</code> should say <code>"venues"</code> to match the controller file <code>app/controllers/venues_controller.rb</code>, which is, again by convention, the plural <code>snake_case</code> name of the table. Change these both to <code>"venues"</code>, and refresh <strong>/venues/1</strong>. A new error:</p>
+<pre><code>param is missing or the value is empty: venue_id</code></pre>
+<p>In the error page, we see the highlighted code is in the <code>app/controllers/venue_controllers.rb</code> file in the <code>show</code> action in the first line:</p>
+<div class="sourceCode" id="cb362"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb362-1"><a href="video-segment-typos-and-nilclass-bug.html#cb362-1" aria-hidden="true"></a><span class="co"># app/controllers/venue_controllers.rb</span></span>
+<span id="cb362-2"><a href="video-segment-typos-and-nilclass-bug.html#cb362-2" aria-hidden="true"></a></span>
+<span id="cb362-3"><a href="video-segment-typos-and-nilclass-bug.html#cb362-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">VenuesController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb362-4"><a href="video-segment-typos-and-nilclass-bug.html#cb362-4" aria-hidden="true"></a>  ...</span>
+<span id="cb362-5"><a href="video-segment-typos-and-nilclass-bug.html#cb362-5" aria-hidden="true"></a>  <span class="kw">def</span> show</span>
+<span id="cb362-6"><a href="video-segment-typos-and-nilclass-bug.html#cb362-6" aria-hidden="true"></a>    venue_id = params.fetch(<span class="st">&quot;venue_id&quot;</span>)</span>
+<span id="cb362-7"><a href="video-segment-typos-and-nilclass-bug.html#cb362-7" aria-hidden="true"></a>    matching_venues = <span class="dt">Venue</span>.where({ <span class="st">:id</span> =&gt; venue_id })</span>
+<span id="cb362-8"><a href="video-segment-typos-and-nilclass-bug.html#cb362-8" aria-hidden="true"></a>    the_venue = matching_venues</span>
+<span id="cb362-9"><a href="video-segment-typos-and-nilclass-bug.html#cb362-9" aria-hidden="true"></a></span>
+<span id="cb362-10"><a href="video-segment-typos-and-nilclass-bug.html#cb362-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;venue_templates/details.html.erb&quot;</span> })</span>
+<span id="cb362-11"><a href="video-segment-typos-and-nilclass-bug.html#cb362-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb362-12"><a href="video-segment-typos-and-nilclass-bug.html#cb362-12" aria-hidden="true"></a>  ...</span>
+<span id="cb362-13"><a href="video-segment-typos-and-nilclass-bug.html#cb362-13" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“6”}</p>
+<p>On the error page you can also note that I have the “Request Info” section of the page, where it actually shows me my “Request parameters” hash. We see that in our action we are trying to look up the <code>venue_id</code> from <code>params</code>, but in our <code>params</code> hash (which we can also have a look at in the error page REPL), we have this key as <code>an_id</code>. This is the name we gave it up in our <code>config/routes.rb</code> file, so we can change the name there <em>or</em> in the action:</p>
+<div class="sourceCode" id="cb363"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb363-1"><a href="video-segment-typos-and-nilclass-bug.html#cb363-1" aria-hidden="true"></a><span class="co"># app/controllers/venue_controllers.rb</span></span>
+<span id="cb363-2"><a href="video-segment-typos-and-nilclass-bug.html#cb363-2" aria-hidden="true"></a></span>
+<span id="cb363-3"><a href="video-segment-typos-and-nilclass-bug.html#cb363-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">VenuesController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb363-4"><a href="video-segment-typos-and-nilclass-bug.html#cb363-4" aria-hidden="true"></a>  ...</span>
+<span id="cb363-5"><a href="video-segment-typos-and-nilclass-bug.html#cb363-5" aria-hidden="true"></a>  <span class="kw">def</span> show</span>
+<span id="cb363-6"><a href="video-segment-typos-and-nilclass-bug.html#cb363-6" aria-hidden="true"></a>    venue_id = params.fetch(<span class="st">&quot;an_id&quot;</span>)</span>
+<span id="cb363-7"><a href="video-segment-typos-and-nilclass-bug.html#cb363-7" aria-hidden="true"></a>    matching_venues = <span class="dt">Venue</span>.where({ <span class="st">:id</span> =&gt; venue_id })</span>
+<span id="cb363-8"><a href="video-segment-typos-and-nilclass-bug.html#cb363-8" aria-hidden="true"></a>    the_venue = matching_venues</span>
+<span id="cb363-9"><a href="video-segment-typos-and-nilclass-bug.html#cb363-9" aria-hidden="true"></a></span>
+<span id="cb363-10"><a href="video-segment-typos-and-nilclass-bug.html#cb363-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;venue_templates/details.html.erb&quot;</span> })</span>
+<span id="cb363-11"><a href="video-segment-typos-and-nilclass-bug.html#cb363-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb363-12"><a href="video-segment-typos-and-nilclass-bug.html#cb363-12" aria-hidden="true"></a>  ...</span>
+<span id="cb363-13"><a href="video-segment-typos-and-nilclass-bug.html#cb363-13" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“6”}</p>
+<p>And once we have the correct parameter, we can refresh <strong>/venues/1</strong>, and get another error:</p>
+<pre><code>undefined method `address&#39; for nil:NilClass</code></pre>
+<p>It is common to stop after you get to undefined method and go searching for this missing method. But you need to <strong>Read The <em>whole</em> Error Message</strong>. We can see that the highlighted code where the error occurred is in <code>views/venue_templates/details.html.erb</code> where we try and do <code>@the_venue.address</code>. The problem is that we are calling <code>.address</code> <em>on</em> a <code>nil</code> object. What is the <code>nil</code> object? <code>@the_venue</code>!</p>
+<p>In our error page REPL, if we type <code>&gt;&gt; @the_venue</code>, indeed we will see the return <code>=&gt; nil</code>. We expected an instance of <code>Venue</code> from our <code>venues</code> table here.</p>
+<p>Let’s start by looking at our show action above. We are taking an ID from the path (here “1”): <code>venue_id = params.fetch("an_id")</code>. Then we are looking up the matching venues from the table: <code>matching_venues = Venue.where({ :id =&gt; venue_id })</code>.</p>
+<p>We can see how this looks by going back to our error page REPL and entering <code>&gt;&gt; Venue.where({ :id =&gt; 1 })</code>. And we will see that this returns an <code>ActiveRecord::Relation</code> with one venue in it.</p>
+<p>Now we want to get just the first venue, because we only want one result and we don’t want the full array-like <code>ActiveRecord::Relation</code>. Right away we see the two errors: we need to call <code>.at(0)</code> or <code>.first</code>, and we also need to make the action variable an instance variable so we can access it in our view template:</p>
+<div class="sourceCode" id="cb365"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb365-1"><a href="video-segment-typos-and-nilclass-bug.html#cb365-1" aria-hidden="true"></a><span class="co"># app/controllers/venue_controllers.rb</span></span>
+<span id="cb365-2"><a href="video-segment-typos-and-nilclass-bug.html#cb365-2" aria-hidden="true"></a></span>
+<span id="cb365-3"><a href="video-segment-typos-and-nilclass-bug.html#cb365-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">VenuesController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb365-4"><a href="video-segment-typos-and-nilclass-bug.html#cb365-4" aria-hidden="true"></a>  ...</span>
+<span id="cb365-5"><a href="video-segment-typos-and-nilclass-bug.html#cb365-5" aria-hidden="true"></a>  <span class="kw">def</span> show</span>
+<span id="cb365-6"><a href="video-segment-typos-and-nilclass-bug.html#cb365-6" aria-hidden="true"></a>    venue_id = params.fetch(<span class="st">&quot;an_id&quot;</span>)</span>
+<span id="cb365-7"><a href="video-segment-typos-and-nilclass-bug.html#cb365-7" aria-hidden="true"></a>    matching_venues = <span class="dt">Venue</span>.where({ <span class="st">:id</span> =&gt; venue_id })</span>
+<span id="cb365-8"><a href="video-segment-typos-and-nilclass-bug.html#cb365-8" aria-hidden="true"></a>    <span class="ot">@the_venue</span> = matching_venues.at(<span class="dv">0</span>)</span>
+<span id="cb365-9"><a href="video-segment-typos-and-nilclass-bug.html#cb365-9" aria-hidden="true"></a></span>
+<span id="cb365-10"><a href="video-segment-typos-and-nilclass-bug.html#cb365-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;venue_templates/details.html.erb&quot;</span> })</span>
+<span id="cb365-11"><a href="video-segment-typos-and-nilclass-bug.html#cb365-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb365-12"><a href="video-segment-typos-and-nilclass-bug.html#cb365-12" aria-hidden="true"></a>  ...</span>
+<span id="cb365-13"><a href="video-segment-typos-and-nilclass-bug.html#cb365-13" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“8”}</p>
+<p>This was tricky, because with instance variables in Ruby, there is no error if the instance variable doesn’t exist. It just returns a <code>nil</code> object. Then when we try and call our defined methods on that object, we begin to get error messages. But the error is not with the methods, but rather with the object they are being called on.</p>
+<p>If we refresh <strong>/venues/1</strong> and get another error message:</p>
+<pre><code>undefined method `address&#39; for #&lt;Venue:ActiveRecord_Relation:...&gt;</code></pre>
+<p>again, don’t stop reading after <code>undefined method 'address'</code>. We can now see that the venue object is being returned, so that’s good. But the <code>.address</code> is undefined. But that’s because we are not returning a single instance of <code>Venue</code>, we are getting an <code>ActiveRecord::Relation</code> **BENP: okay, I have been writing :: everywhere, but in the error message it is _, which is correct?**. That means we are trying to call <code>.address</code> on an array-like object, and we forgot the <code>.at(0)</code> in our <code>show</code> action above.</p>
+<div id="text-companion-typos-and-nilclass-bug" class="section level3 hasAnchor" number="29.2.1">
+<h3><span class="header-section-number">29.2.1</span> Text Companion: Typos and <code>NilClass</code> Bug<a href="video-segment-typos-and-nilclass-bug.html#text-companion-typos-and-nilclass-bug" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
             </section>
@@ -865,8 +789,8 @@ Proudly published with bookdown</a></li>
           </div>
         </div>
       </div>
-<a href="video-segment-building-forex.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="finish-and-submit-dashboards.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="video-segment-homepage-debugging.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-association-accessor-self.id-bug.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -898,7 +822,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/dashboards.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/very-best-debug.md",
 "text": "Edit"
 },
 "history": {
@@ -906,7 +830,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/dashboards.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/very-best-debug.md",
 "text": null
 },
 "download": null,

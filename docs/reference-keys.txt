@@ -335,5 +335,14 @@ tasks
 workflow
 things-to-keep-in-mind
 must-see-movies-validations
+very-best-debug
+video-segment-homepage-debugging
+text-companion-homepage-debugging
+video-segment-typos-and-nilclass-bug
+text-companion-typos-and-nilclass-bug
+video-segment-association-accessor-self.id-bug
+text-companion-association-accessor-self.id-bug
+finish-and-submit-very-best-debug
+standard-workflow
 terminology-technical-reference
 ruby-technical-reference
