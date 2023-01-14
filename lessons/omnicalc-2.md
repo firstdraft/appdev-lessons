@@ -579,26 +579,89 @@ Now, we hard-coded an address `5807 S Woodlawn Ave` into our `experiment` action
     - print outlook for the next hour
     - print whether a person should carry an umbrella.
 
-
 ### Using gems to interact with APIs
+
+- Notes:
+
+  - from [https://github.com/appdev-targets/omnicalc-2-api-starting-point#using-gems-to-interact-with-apis](https://github.com/appdev-targets/omnicalc-2-api-starting-point#using-gems-to-interact-with-apis){target="_blank"}
 
 Interacting with APIs can be easier if someone has written a Ruby library (or "gem") with methods that already know the URLs, parse the JSON, and return exactly the values we want.
 
+#### Twilio
+
+In your `Gemfile`, add:
+
+```ruby
+gem "twilio-ruby"
+```
+
+Then, at a Terminal prompt:
+
+```bash
+bundle install
+```
+
+You will then have access to the `Twilio::REST::Client` class. It is used like this:
+
+```ruby
+# Retrieve your credentials from secure storage
+twilio_sid = ENV.fetch("TWILIO_ACCOUNT_SID")
+twilio_token = ENV.fetch("TWILIO_AUTH_TOKEN")
+twilio_sending_number = ENV.fetch("TWILIO_SENDING_PHONE_NUMBER")
+
+# Create an instance of the Twilio Client and authenticate with your API key
+twilio_client = Twilio::REST::Client.new(twilio_sid, twilio_token)
+
+# Craft your SMS as a Hash with three keys
+sms_parameters = {
+  :from => twilio_sending_number,
+  :to => "+19876543210", # Put your own phone number here if you want to see it in action
+  :body => "It's going to rain today — take an umbrella!"
+}
+
+# Send your SMS!
+twilio_client.api.account.messages.create(sms_parameters)
+```
+
+ - Sign up for your own Twilio account — [if use this referral link you'll $10 in credit](https://www.twilio.com/referral/86ykDX), and so will our class account.
+ - [Twilio Ruby Quickstarts](https://www.twilio.com/docs/quickstart/ruby)
 
 #### Google Cloud Translate
 
-See [this Chapter for a guide to using the Google Translate API via its first-party gem](https://chapters.firstdraft.com/chapters/849).
+ - [Google Cloud Translation](https://cloud.google.com/translate)
+
+Here's the crux of using the official Google Translate gem.
+
+Add the gem to your Gemfile:
+
+```ruby
+# /Gemfile
+gem "google-cloud-translate", "2.3.0"
+```
+
+Then `bundle install` and restart your web server.
+
+You now have access to the `Google::Cloud::Translate` class. To use it:
+
+```ruby
+require "google/cloud/translate"
+gt_client = Google::Cloud::Translate.new({ :version => :v2 })
+translation = gt_client.translate("Hello, world!", { :to => "es" })
+```
+
+Amazing! (If that didn't work, ensure that you've added my API credentials [as environment variables on Gitpod](https://chapters.firstdraft.com/chapters/792). You can find them in Canvas.)
+
+To list all available languages,
+
+```ruby
+languages = gt_client.languages("en") # The argument determines what language to list the other language names in
+languages.size #=> 104
+languages[0].code #=> "af"
+languages[0].name #=> "Afrikaans"
+```
+
+**Stretch goal:** Make your app behave like the target 
 
 Read more at the gem docs:
 
  - [Ruby gem documentation](https://googleapis.dev/ruby/google-cloud-translate/latest/index.html#Using_the_legacy_v2_client)
-
-
-#### Twilio
-
-See [this Chapter for a guide to sending text messages via the Twilio API](https://chapters.firstdraft.com/chapters/848#example-of-how-to-send-an-sms-with-the-twilio-gem).
-
-
-#### Stretch goal
-
-**Make your app behave like the target!** Accept some text from the user, ask for a target language, translate the text, and SMS it to a phone number.

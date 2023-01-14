@@ -33,7 +33,7 @@ We already have all the tools to build our first dynamic web application. **BENP
 
 Let's recall that Software as a Service (SaaS) has eaten the world. What does this mean? For an application that runs on a server and transmits information across the internet, the **interface** consists of a set of URLs that a user can visit. People can type in a URL, click a link, or submit a form, and then get back some information relevant and valuable to them.
 
-![](assets/rps-rcav/airbnb-url.png)
+![](/assets/rps-rcav/airbnb-url.png)
 
 Each URL will either
 
@@ -258,7 +258,7 @@ Our workflow for a dynamic web application is always the same: Route, Controller
 
 If we begin by navigating to the route **/rock** in our Rails browser: **http://[YOUR APP DOMAIN]/rock**, then we get an error message: No route matches [GET] "/rock".
 
-![](assets/rps-rcav/err-no-routes-match.png)
+![](/assets/rps-rcav/err-no-routes-match.png)
 
 We need to *Read The Error Message* (RTEM) and define the first route that will allow us to support a request of the form for our users. 
 
@@ -322,7 +322,7 @@ And we just created a full RCAV request lifecycle. If we go back to the browser 
 
 If I go back to GitPod and look in my server log (use `Cmd + J` to open and close the log, `Cmd + K` to clear the log), then I will see something like:
 
-![](assets/rps-rcav/rock-to-wikipedia-server-log.png)
+![](/assets/rps-rcav/rock-to-wikipedia-server-log.png)
 
 We can see exactly what happened. Someone tried to `GET "/rock"` from a given IP address at a given time, we found a route with instructions to use `ApplicationController#play_rock` (where the `Something#something` is Ruby shorthand for `Class.method`, with the `.` exchanged for a `#`), calling this controller-action pair resulted in a redirect to the given URL (`https://www.wikipedia.org`), and the entire request lifecycle completed in the stated time with no errors.
 
@@ -607,7 +607,7 @@ Now if I refresh the **http://[YOUR APP DOMAIN]/** page, I get an error message 
 The action 'play_rock' could not be found for ApplicationController
 ```
 
-![](assets/rps-rcav/err-action-not-in-contoller.png)
+![](/assets/rps-rcav/err-action-not-in-contoller.png)
 
 This is good! That means we defined the route correctly. If you still see a "No route matches" error, then double-check your route syntax and get that error to go away before you proceed further. The error occurs because we did not yet define the action. So we need to go to our `app/controllers/application_controller.rb` file and add:
 
@@ -713,7 +713,7 @@ end
 
 Now we can pretend we are a user and again refresh **http://[YOUR APP DOMAIN]/paper**. And we'll get a new error message that tells us we are missing the view template:
 
-![](assets/rps-rcav/err-missing-view-template.png)
+![](/assets/rps-rcav/err-missing-view-template.png)
 
 If you cannot figure out what your typo is and why an error message keeps coming up, then delete what you wrote and try to type it again from scratch (or talk to your rubber duck). 
 
@@ -834,7 +834,7 @@ In the above highlighted code we have removed all of the embedded Ruby tags (`<%
 
 So let's try to visit **http://[YOUR APP DOMAIN]/paper** again. Oops, we get this error:
 
-![](assets/rps-rcav/err-undefined-local-var-or-meth.png)
+![](/assets/rps-rcav/err-undefined-local-var-or-meth.png)
 
 In our `game_templates/user_paper.html.erb` view template, when we get to the first embedded Ruby tag:
 

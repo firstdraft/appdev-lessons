@@ -1,14 +1,24 @@
 # APIs Demo
 
-Google Translate and SMS with Twilio, Optional (da="Tutorial", da="Explain")
+- Notes:
 
-  - No video
+  - Google Translate and SMS with Twilio, Optional
 
-  - Chapters (and slides):
-    - `google-translate.md` 
-    - `sending-emails-and-texts.md`
-    - `storing-credentials-securely.md`
+  - No video, just the chapters below
   
   - Project:
-    - Start: https://github.com/appdev-targets/omnicalc-2-api-starting-point
-    - Solution: https://github.com/appdev-targets/omnicalc-2-api-starting-point/tree/translate-solution
+    - Start: [https://github.com/appdev-targets/omnicalc-2-api-starting-point](https://github.com/appdev-targets/omnicalc-2-api-starting-point){target="_blank"}
+    - Solution: [https://github.com/appdev-targets/omnicalc-2-api-starting-point/tree/translate-solution](https://github.com/appdev-targets/omnicalc-2-api-starting-point/tree/translate-solution){target="_blank"}
+
+  - Target: [https://omnicalc-2.matchthetarget.com/](https://omnicalc-2.matchthetarget.com/){target="_blank"}
+
+  - Useful chapters:
+    - [`storing-credentials-securely.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/storing-credentials-securely.md){target="_blank"}
+    - [`google-translate.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/google-translate.md){target="_blank"}
+    - [`sending-emails-and-texts.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/sending-emails-and-texts.md){target="_blank"}
+
+## APIs Demo README
+
+- Notes:
+
+  - see Omnicalc 2 lesson section [Using gems to interact with APIs][Using gems to interact with APIs]
