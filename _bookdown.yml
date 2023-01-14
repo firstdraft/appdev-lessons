@@ -34,7 +34,7 @@ rmd_files:
     "lessons/different-ruby-styles.md",
     "lessons/history-of-ml.md",
     "lessons/refactoring-msm-queries.md",
-    "lessons/domain-modeling.md",
+    # "lessons/domain-modeling.md",
     # "lessons/photogram-gui.md",
     # "lessons/msm-validations.md",
     # "lessons/very-best-debug.md",

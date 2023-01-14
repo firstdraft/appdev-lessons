@@ -38,14 +38,15 @@ Finally, draw an ERD of your schema design in [firstdraft.com](https://firstdraf
 
 **BENP: the image / GIF of the OfferUp firstdraft solution ("Part 2b: OfferUp example solution" on Canvas) could be plopped in here, or that's part of the tutorial video for this app**
 
-## Video Segment: Ideas Tutorial (da="Tutorial")
+
+## Video Segment: Ideas Tutorial
 
 - Notes:
 
   - content does not exist 
   - dedicated tutorial for [ideas.firstdraft.com](https://firstdraft.com/){target="_blank"} with domain model for OfferUp
 
-#### Text Companion: Ideas Tutorial (da="HowTo")
+#### Text Companion: Ideas Tutorial
 
 - Notes:
 
