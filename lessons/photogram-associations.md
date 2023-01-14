@@ -1,13 +1,13 @@
 # Photogram Associations
 
-Optional Exercise (da="Exercise")
+- Notes:
 
-  - Un-graded assignment, no tests, no `rails grade`
+  - Un-graded, optional assignment, no tests, no `rails grade`
 
   - `has_many`, `belongs_to`, `scope`, `through`
 
-  - Chapters (and slides):
-    - using https://association-accessors.firstdraft.com/ (needs a video tutorial)
+  - using https://association-accessors.firstdraft.com/ (needs a video tutorial, see notes in [Refactoring MSM Again][Refactoring MSM Again]
+
     - two readings:
       - https://guides.rubyonrails.org/association_basics.html
       - stretch goal: https://remimercier.com/scoped-active-record-associations/

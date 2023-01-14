@@ -344,5 +344,13 @@ video-segment-association-accessor-self.id-bug
 text-companion-association-accessor-self.id-bug
 finish-and-submit-very-best-debug
 standard-workflow
+draft-resource-generator
+refactoring-msm-again
+video-segment-belongs_to
+text-companion-belongs_to
+video-segment-has_many
+text-companion-has_many
+video-segment-other-relationships-and-wizard
+finish-and-submit-refactoring-msm-again
 terminology-technical-reference
 ruby-technical-reference
