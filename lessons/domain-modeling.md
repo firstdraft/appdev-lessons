@@ -2,6 +2,8 @@
 
 - Notes:
 
+  - This is classroom work, but there is room here for a video+text walkthrough of ideas.firstdraft
+
   - [Day 6 recording video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=69b47533-78a4-40f4-80a1-aed9010f30f8){target="_blank"} is partially transcribed in [`day-6-recording.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-6-recording.md){target="_blank"}. This is copied below/
 
   - Project: domain model [OfferUp](https://ddd-offer-up.herokuapp.com/){target="_blank"}
