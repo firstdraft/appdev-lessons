@@ -1,7 +1,5 @@
 # History of ML
 
-Optional Reading 
+- Notes:
 
-(da="Explain")
-
-  - many links, could be compressed, see Canvas
+  - many links, could be compressed, [see Canvas](https://canvas.uchicago.edu/courses/41147/assignments/465958){target="_blank"}

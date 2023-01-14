@@ -1,5 +1,5 @@
 # Different Ruby Styles
 
-(da="Explain")
+- Notes:
 
-  - just read `optional-syntaxes-in-ruby.md`
+  - Could be copied in here: [`optional-syntaxes-in-ruby.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/optional-syntaxes-in-ruby.md){target="_blank"}
