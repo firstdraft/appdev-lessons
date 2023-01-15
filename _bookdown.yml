@@ -43,7 +43,7 @@ rmd_files:
     "lessons/photogram-associations.md",
     "lessons/cookies-intro.md",
     "lessons/photogram-signin.md",
-    # "lessons/starting-from-scratch-with-generators.md",
+    "lessons/starting-from-scratch-with-generators.md",
     # "lessons/msm-signin.md",
     # "lessons/bootstrap-intro-with-task-list.md",
 
