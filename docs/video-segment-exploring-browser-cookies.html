@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>13.4 Video Segment: Query String and Parameters Hash | AD1</title>
+  <title>33.1 Video Segment: Exploring Browser Cookies | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="13.4 Video Segment: Query String and Parameters Hash | AD1" />
+  <meta property="og:title" content="33.1 Video Segment: Exploring Browser Cookies | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="13.4 Video Segment: Query String and Parameters Hash | AD1" />
+  <meta name="twitter:title" content="33.1 Video Segment: Exploring Browser Cookies | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="video-segment-squarenew-form.html"/>
-<link rel="next" href="video-segment-squareresults-rcav.html"/>
+<link rel="prev" href="cookies-intro.html"/>
+<link rel="next" href="video-segment-cookies-object.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -717,35 +717,26 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="video-segment-query-string-and-parameters-hash" class="section level2 hasAnchor" number="13.4">
-<h2><span class="header-section-number">13.4</span> Video Segment: Query String and Parameters Hash<a href="video-segment-query-string-and-parameters-hash.html#video-segment-query-string-and-parameters-hash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="video-segment-exploring-browser-cookies" class="section level2 hasAnchor" number="33.1">
+<h2><span class="header-section-number">33.1</span> Video Segment: Exploring Browser Cookies<a href="video-segment-exploring-browser-cookies.html#video-segment-exploring-browser-cookies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Notes:</p>
 <ul>
-<li>time stamp 00:14:12 to 00:16:36</li>
-<li>everything after <strong>?</strong> from <strong>/square/new</strong> form and the Parameters <code>Hash</code></li>
+<li>time stamp 00:00:25 to 00:03:30</li>
+<li>in Chrome, visit <a href="https://cookies-intro.matchthetarget.com/">target</a>, “Inspect” &gt; “Application” &gt; “Cookies”, Name/Value pairs 00:00:25 to 00:03:30</li>
 </ul></li>
 </ul>
-<p>If I type in “42” and hit calculate, my form is terrible, it doesn’t really do anything. At least when I click the <code>label</code> “Enter a number” it puts the focus on the <code>input</code> box, so my association is wired up correctly. But when I click the button it doesn’t take me anywhere. Forms are like links, when you click on them they are supposed to take you to another URL, not keep you on the same page. The form is also supposed to put whatever I typed into the address bar after the <strong>?</strong> symbol.</p>
-<p>One of the key problems I have is not naming my <code>input</code>, so let’s do that in our form:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb89-1"><a href="video-segment-query-string-and-parameters-hash.html#cb89-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/calculation_templates/square_form.html.erb --&gt;</span></span>
-<span id="cb89-2"><a href="video-segment-query-string-and-parameters-hash.html#cb89-2" aria-hidden="true"></a></span>
-<span id="cb89-3"><a href="video-segment-query-string-and-parameters-hash.html#cb89-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>howdy!<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb89-4"><a href="video-segment-query-string-and-parameters-hash.html#cb89-4" aria-hidden="true"></a></span>
-<span id="cb89-5"><a href="video-segment-query-string-and-parameters-hash.html#cb89-5" aria-hidden="true"></a><span class="kw">&lt;form&gt;</span></span>
-<span id="cb89-6"><a href="video-segment-query-string-and-parameters-hash.html#cb89-6" aria-hidden="true"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;giraffe&quot;</span><span class="kw">&gt;</span>Enter a number<span class="kw">&lt;/label&gt;</span></span>
-<span id="cb89-7"><a href="video-segment-query-string-and-parameters-hash.html#cb89-7" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;giraffe&quot;</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> placeholder=</span><span class="st">&quot;What number do you want to square?&quot;</span><span class="ot"> name=</span><span class="st">&quot;elephant&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb89-8"><a href="video-segment-query-string-and-parameters-hash.html#cb89-8" aria-hidden="true"></a></span>
-<span id="cb89-9"><a href="video-segment-query-string-and-parameters-hash.html#cb89-9" aria-hidden="true"></a>  <span class="kw">&lt;button&gt;</span>Calculate square<span class="kw">&lt;/button&gt;</span></span>
-<span id="cb89-10"><a href="video-segment-query-string-and-parameters-hash.html#cb89-10" aria-hidden="true"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
-<p>{: mark_lines=“7”}</p>
-<p>Just to be silly <strong>BENP: again, maybe use realistic for, id, name from this point already</strong> we named the <code>input</code> <code>"elephant"</code>. And now when I <strong>refresh</strong> (the <strong>back</strong> arrow won’t change anything) the form at <strong>/square/new</strong>, and enter in 42 again then hit the calculate button, I will see a new URL string: <strong>/square/new?elephant=42</strong>.</p>
-<p>Now even though the form isn’t taking me to another place, at least the value I typed is getting preserved in the <em>query string</em> in the URL. And because of the way that Rails work, that value, if it’s in a query string, Rails is going to parse it and put it in a very special <code>Hash</code>. We can view that <code>Hash</code> in our GitPod terminal (<code>Cmd + J</code> to open or close it):</p>
-<p><img src="/assets/omnicalc-1/params-elephant-gitpod-terminal.png" /></p>
-<p>This <code>Hash</code> with the name <code>Parameters</code> is now available in our entire app: in the view template, the action, we can use it anywhere. That is the crux of how we get information out of forms. All we need to do is <code>name</code> an <code>input</code> in the form, and that will capture the variable in our query string and Rails will put it in a hash that we can access. After all the API work that we’ve done <strong>BENP: wait, did we do API work up to this point?</strong> we are pros at capturing things out of hashes.</p>
-<p>Time for a <code>/git</code> commit (perhaps with the title message “Square form looking pretty good, doesn’t work yet” or something along those lines), and maybe even a <code>rails grade</code> to see what’s left to do.</p>
-<div id="text-companion-query-string-and-parameters-hash" class="section level3 hasAnchor" number="13.4.1">
-<h3><span class="header-section-number">13.4.1</span> Text Companion: Query String and Parameters Hash<a href="video-segment-query-string-and-parameters-hash.html#text-companion-query-string-and-parameters-hash" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is much like Omnicalc, but the difference is, when we type in some values and go back to previous pages, it remembers my previous inputs. Somehow this application is storing information between requests.</p>
+<p>We could have done that with a database and tables, storing the information that was put in the forms. But if we open another browser, navigate to the <a href="https://cookies-intro.matchthetarget.com/" target="_blank">target</a>, and enter some new calculations, then we can see that it remembers the information only from the current browser. So we are not just storing information in a database and retrieving the most recent record to show to everyone.</p>
+<p>Each individual user is seeing their own previous calculation. Now with cookies we have the tools to do this.</p>
+<p><strong>BENP: below is transcription, but really needs a GIF showing it</strong></p>
+<p>If you open your developer tools in Chrome by right-clicking on an element and selecting “Inspect”, you will will see a tab in the toolbar called “Application”.</p>
+<p>The “Application” tab has a navigation menu on the left side, where you can find a section called “Cookies”. The cookies are grouped by domain, and you can see all of the cookies that are being stored by the current domain of the target. These values are being stored by Chrome on your own laptop, so they are unique to each of us on different computers!</p>
+<p>We can see the “Name” column and the “Value” column with things related to our addition, subtraction, multiplication, and division. These are key/value pairs, just like the hashes that we are used to.</p>
+<p>Each domain is able to store about 50 key/value pairs, with some slight variation in the amount by browser (e.g., Chrome vs. Firefox), and use about 4 kb of space. That’s not much space, but plenty for some basic text information.</p>
+<p>What if I select a row from my cookies table and delete it? When I go back to the form associated with that cookie, the memory of the key/value pair I entered will be erased. It resets the memory. Useful if you ever want to force signout of a website (using the “Clear all cookies” button).</p>
+<div id="text-companion-exploring-browser-cookies" class="section level3 hasAnchor" number="33.1.1">
+<h3><span class="header-section-number">33.1.1</span> Text Companion: Exploring Browser Cookies<a href="video-segment-exploring-browser-cookies.html#text-companion-exploring-browser-cookies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
             </section>
@@ -753,8 +744,8 @@ Proudly published with bookdown</a></li>
           </div>
         </div>
       </div>
-<a href="video-segment-squarenew-form.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="video-segment-squareresults-rcav.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cookies-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-cookies-object.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -786,7 +777,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/omnicalc-1.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/cookies-intro.md",
 "text": "Edit"
 },
 "history": {
@@ -794,7 +785,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/omnicalc-1.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/cookies-intro.md",
 "text": null
 },
 "download": null,

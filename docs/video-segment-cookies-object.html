@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>13.4 Video Segment: Query String and Parameters Hash | AD1</title>
+  <title>33.2 Video Segment: cookies Object | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="13.4 Video Segment: Query String and Parameters Hash | AD1" />
+  <meta property="og:title" content="33.2 Video Segment: cookies Object | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="13.4 Video Segment: Query String and Parameters Hash | AD1" />
+  <meta name="twitter:title" content="33.2 Video Segment: cookies Object | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="video-segment-squarenew-form.html"/>
-<link rel="next" href="video-segment-squareresults-rcav.html"/>
+<link rel="prev" href="video-segment-exploring-browser-cookies.html"/>
+<link rel="next" href="finish-and-submit-cookies-intro.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -717,35 +717,118 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="video-segment-query-string-and-parameters-hash" class="section level2 hasAnchor" number="13.4">
-<h2><span class="header-section-number">13.4</span> Video Segment: Query String and Parameters Hash<a href="video-segment-query-string-and-parameters-hash.html#video-segment-query-string-and-parameters-hash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="video-segment-cookies-object" class="section level2 hasAnchor" number="33.2">
+<h2><span class="header-section-number">33.2</span> Video Segment: <code>cookies</code> Object<a href="video-segment-cookies-object.html#video-segment-cookies-object" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Notes:</p>
 <ul>
-<li>time stamp 00:14:12 to 00:16:36</li>
-<li>everything after <strong>?</strong> from <strong>/square/new</strong> form and the Parameters <code>Hash</code></li>
+<li>time stamp 00:03:30 to 00:10:23</li>
+<li>explore <code>&lt;%= cookies %&gt;</code> on <code>app/views/calculation_templates/addition_form.html.erb</code></li>
+<li><code>cookies.store()</code> in <code>add</code> action and show in view template</li>
 </ul></li>
 </ul>
-<p>If I type in “42” and hit calculate, my form is terrible, it doesn’t really do anything. At least when I click the <code>label</code> “Enter a number” it puts the focus on the <code>input</code> box, so my association is wired up correctly. But when I click the button it doesn’t take me anywhere. Forms are like links, when you click on them they are supposed to take you to another URL, not keep you on the same page. The form is also supposed to put whatever I typed into the address bar after the <strong>?</strong> symbol.</p>
-<p>One of the key problems I have is not naming my <code>input</code>, so let’s do that in our form:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb89-1"><a href="video-segment-query-string-and-parameters-hash.html#cb89-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/calculation_templates/square_form.html.erb --&gt;</span></span>
-<span id="cb89-2"><a href="video-segment-query-string-and-parameters-hash.html#cb89-2" aria-hidden="true"></a></span>
-<span id="cb89-3"><a href="video-segment-query-string-and-parameters-hash.html#cb89-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>howdy!<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb89-4"><a href="video-segment-query-string-and-parameters-hash.html#cb89-4" aria-hidden="true"></a></span>
-<span id="cb89-5"><a href="video-segment-query-string-and-parameters-hash.html#cb89-5" aria-hidden="true"></a><span class="kw">&lt;form&gt;</span></span>
-<span id="cb89-6"><a href="video-segment-query-string-and-parameters-hash.html#cb89-6" aria-hidden="true"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;giraffe&quot;</span><span class="kw">&gt;</span>Enter a number<span class="kw">&lt;/label&gt;</span></span>
-<span id="cb89-7"><a href="video-segment-query-string-and-parameters-hash.html#cb89-7" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> id=</span><span class="st">&quot;giraffe&quot;</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> placeholder=</span><span class="st">&quot;What number do you want to square?&quot;</span><span class="ot"> name=</span><span class="st">&quot;elephant&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb89-8"><a href="video-segment-query-string-and-parameters-hash.html#cb89-8" aria-hidden="true"></a></span>
-<span id="cb89-9"><a href="video-segment-query-string-and-parameters-hash.html#cb89-9" aria-hidden="true"></a>  <span class="kw">&lt;button&gt;</span>Calculate square<span class="kw">&lt;/button&gt;</span></span>
-<span id="cb89-10"><a href="video-segment-query-string-and-parameters-hash.html#cb89-10" aria-hidden="true"></a><span class="kw">&lt;/form&gt;</span></span></code></pre></div>
-<p>{: mark_lines=“7”}</p>
-<p>Just to be silly <strong>BENP: again, maybe use realistic for, id, name from this point already</strong> we named the <code>input</code> <code>"elephant"</code>. And now when I <strong>refresh</strong> (the <strong>back</strong> arrow won’t change anything) the form at <strong>/square/new</strong>, and enter in 42 again then hit the calculate button, I will see a new URL string: <strong>/square/new?elephant=42</strong>.</p>
-<p>Now even though the form isn’t taking me to another place, at least the value I typed is getting preserved in the <em>query string</em> in the URL. And because of the way that Rails work, that value, if it’s in a query string, Rails is going to parse it and put it in a very special <code>Hash</code>. We can view that <code>Hash</code> in our GitPod terminal (<code>Cmd + J</code> to open or close it):</p>
-<p><img src="/assets/omnicalc-1/params-elephant-gitpod-terminal.png" /></p>
-<p>This <code>Hash</code> with the name <code>Parameters</code> is now available in our entire app: in the view template, the action, we can use it anywhere. That is the crux of how we get information out of forms. All we need to do is <code>name</code> an <code>input</code> in the form, and that will capture the variable in our query string and Rails will put it in a hash that we can access. After all the API work that we’ve done <strong>BENP: wait, did we do API work up to this point?</strong> we are pros at capturing things out of hashes.</p>
-<p>Time for a <code>/git</code> commit (perhaps with the title message “Square form looking pretty good, doesn’t work yet” or something along those lines), and maybe even a <code>rails grade</code> to see what’s left to do.</p>
-<div id="text-companion-query-string-and-parameters-hash" class="section level3 hasAnchor" number="13.4.1">
-<h3><span class="header-section-number">13.4.1</span> Text Companion: Query String and Parameters Hash<a href="video-segment-query-string-and-parameters-hash.html#text-companion-query-string-and-parameters-hash" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s see how to implement this in our Rails app. If we open our app browser and try some of the calculation forms and go back, we will see there is no memory of my previous interaction being shown.</p>
+<p>First, let’s find the form we want to work on. How about addition? We can begin by embedding a variable called <code>cookies</code>, that we haven’t discussed yet. Rails creates this and gives it to us, just like <code>params</code>. It comes pre-defined for us and puts it into this hash-like object:</p>
+<div class="sourceCode" id="cb385"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb385-1"><a href="video-segment-cookies-object.html#cb385-1" aria-hidden="true"></a><span class="co">&lt;!--- app/views/calculation_templates/addition_form.html.erb ---&gt;</span></span>
+<span id="cb385-2"><a href="video-segment-cookies-object.html#cb385-2" aria-hidden="true"></a></span>
+<span id="cb385-3"><a href="video-segment-cookies-object.html#cb385-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>New addition<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb385-4"><a href="video-segment-cookies-object.html#cb385-4" aria-hidden="true"></a></span>
+<span id="cb385-5"><a href="video-segment-cookies-object.html#cb385-5" aria-hidden="true"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/wizard_add&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb385-6"><a href="video-segment-cookies-object.html#cb385-6" aria-hidden="true"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;first_field&quot;</span><span class="kw">&gt;</span>Add this:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb385-7"><a href="video-segment-cookies-object.html#cb385-7" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;first_field&quot;</span><span class="ot"> name=</span><span class="st">&quot;first_num&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb385-8"><a href="video-segment-cookies-object.html#cb385-8" aria-hidden="true"></a></span>
+<span id="cb385-9"><a href="video-segment-cookies-object.html#cb385-9" aria-hidden="true"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;second_field&quot;</span><span class="kw">&gt;</span>to this:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb385-10"><a href="video-segment-cookies-object.html#cb385-10" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;second_field&quot;</span><span class="ot"> name=</span><span class="st">&quot;second_num&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb385-11"><a href="video-segment-cookies-object.html#cb385-11" aria-hidden="true"></a></span>
+<span id="cb385-12"><a href="video-segment-cookies-object.html#cb385-12" aria-hidden="true"></a>  <span class="kw">&lt;button&gt;</span>Add!<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb385-13"><a href="video-segment-cookies-object.html#cb385-13" aria-hidden="true"></a><span class="kw">&lt;/form&gt;</span></span>
+<span id="cb385-14"><a href="video-segment-cookies-object.html#cb385-14" aria-hidden="true"></a></span>
+<span id="cb385-15"><a href="video-segment-cookies-object.html#cb385-15" aria-hidden="true"></a><span class="er">&lt;</span>%= cookies %&gt;</span></code></pre></div>
+<p>{: mark_lines=“15”}</p>
+<p>Now we can refresh the “Add” page (at the URL path <strong>/muggle_add</strong>), and we will see that where we embedded <code>cookies</code> there is a an <code>ActionDispatch::Cookies::CookieJar</code> class.</p>
+<p>This object behaves just like a hash. So we can do things like <code>.fetch()</code> and <code>.store()</code> key/value pairs in it. If we wanted to store some random pair like <code>apple</code> (key) and <code>banana</code> (value), we could write <code>&lt;%= cookies.store(:apple, "banana") %&gt;</code>.</p>
+<p>If we refresh <strong>/muggle_add</strong>, then open the dev tools and go to our “Application” tab and then the cookies for the current domain, we will see the “Name” and “Value” column have been added to with “apple” and “banana”, respectively. So this information is now stored in the browser on my laptop. And we could go and <code>.fetch</code> it from <code>cookies</code> elsewhere in the app!</p>
+<p>But let’s do something more interesting. Let’s store the results of each addition. We know from our addition form, that the <code>action="/wizard_add"</code> is telling us that this is the route the form will send the input to. That route goes to the <code>app/controllers/calculations_controller.rb</code> action called <code>add</code> (check the <code>config/routes.rb</code> file to see that). This is the action that actually parses information from the query string (supplied by the form), does the calculation and renders a template showing the result. Let’s improve this action by also storing the results in our <code>cookies</code> object:</p>
+<div class="sourceCode" id="cb386"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb386-1"><a href="video-segment-cookies-object.html#cb386-1" aria-hidden="true"></a><span class="co"># app/controllers/calculations_controller.rb</span></span>
+<span id="cb386-2"><a href="video-segment-cookies-object.html#cb386-2" aria-hidden="true"></a></span>
+<span id="cb386-3"><a href="video-segment-cookies-object.html#cb386-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CalculationsController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb386-4"><a href="video-segment-cookies-object.html#cb386-4" aria-hidden="true"></a>...</span>
+<span id="cb386-5"><a href="video-segment-cookies-object.html#cb386-5" aria-hidden="true"></a>  <span class="kw">def</span> add</span>
+<span id="cb386-6"><a href="video-segment-cookies-object.html#cb386-6" aria-hidden="true"></a>    <span class="ot">@first_number</span> = params.fetch(<span class="st">&quot;first_num&quot;</span>).to_f</span>
+<span id="cb386-7"><a href="video-segment-cookies-object.html#cb386-7" aria-hidden="true"></a>    <span class="ot">@second_number</span> = params.fetch(<span class="st">&quot;second_num&quot;</span>).to_f</span>
+<span id="cb386-8"><a href="video-segment-cookies-object.html#cb386-8" aria-hidden="true"></a></span>
+<span id="cb386-9"><a href="video-segment-cookies-object.html#cb386-9" aria-hidden="true"></a>    <span class="ot">@result</span> = <span class="ot">@first_number</span>.to_f + <span class="ot">@second_number</span>.to_f</span>
+<span id="cb386-10"><a href="video-segment-cookies-object.html#cb386-10" aria-hidden="true"></a></span>
+<span id="cb386-11"><a href="video-segment-cookies-object.html#cb386-11" aria-hidden="true"></a>    cookies.store(<span class="st">:addition_result</span>, <span class="ot">@result</span>)</span>
+<span id="cb386-12"><a href="video-segment-cookies-object.html#cb386-12" aria-hidden="true"></a></span>
+<span id="cb386-13"><a href="video-segment-cookies-object.html#cb386-13" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;calculation_templates/add_results.html.erb&quot;</span> })</span>
+<span id="cb386-14"><a href="video-segment-cookies-object.html#cb386-14" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb386-15"><a href="video-segment-cookies-object.html#cb386-15" aria-hidden="true"></a>...</span></code></pre></div>
+<p>{:mark_lines=“11”}</p>
+<p>Now that we stored it in the <code>cookies</code> hash, if we go back to <strong>/muggle_add</strong>, and (with our dev tools cookies tab open!) input some data and click “Add!”, then we will see a new “Name”/“Value” pair appear in our table, the “addition_result” with our <code>@result</code> value from the action.</p>
+<p>And now, back in the form, we can embed the new <code>cookies</code> value using the key that we assigned to it in the action:</p>
+<div class="sourceCode" id="cb387"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb387-1"><a href="video-segment-cookies-object.html#cb387-1" aria-hidden="true"></a><span class="co">&lt;!--- app/views/calculation_templates/addition_form.html.erb ---&gt;</span></span>
+<span id="cb387-2"><a href="video-segment-cookies-object.html#cb387-2" aria-hidden="true"></a></span>
+<span id="cb387-3"><a href="video-segment-cookies-object.html#cb387-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>New addition<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb387-4"><a href="video-segment-cookies-object.html#cb387-4" aria-hidden="true"></a></span>
+<span id="cb387-5"><a href="video-segment-cookies-object.html#cb387-5" aria-hidden="true"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/wizard_add&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb387-6"><a href="video-segment-cookies-object.html#cb387-6" aria-hidden="true"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;first_field&quot;</span><span class="kw">&gt;</span>Add this:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb387-7"><a href="video-segment-cookies-object.html#cb387-7" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;first_field&quot;</span><span class="ot"> name=</span><span class="st">&quot;first_num&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb387-8"><a href="video-segment-cookies-object.html#cb387-8" aria-hidden="true"></a></span>
+<span id="cb387-9"><a href="video-segment-cookies-object.html#cb387-9" aria-hidden="true"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;second_field&quot;</span><span class="kw">&gt;</span>to this:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb387-10"><a href="video-segment-cookies-object.html#cb387-10" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;second_field&quot;</span><span class="ot"> name=</span><span class="st">&quot;second_num&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb387-11"><a href="video-segment-cookies-object.html#cb387-11" aria-hidden="true"></a></span>
+<span id="cb387-12"><a href="video-segment-cookies-object.html#cb387-12" aria-hidden="true"></a>  <span class="kw">&lt;button&gt;</span>Add!<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb387-13"><a href="video-segment-cookies-object.html#cb387-13" aria-hidden="true"></a><span class="kw">&lt;/form&gt;</span></span>
+<span id="cb387-14"><a href="video-segment-cookies-object.html#cb387-14" aria-hidden="true"></a></span>
+<span id="cb387-15"><a href="video-segment-cookies-object.html#cb387-15" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span>Your previous addition was: <span class="er">&lt;</span>%= cookies.fetch(:addition_result) %&gt;<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“15”}</p>
+<p>And now if we enter data in the form, click “Add!”, view the results, and then return to <strong>/muggle_add</strong>, we will see the result of our previous calculation being displayed.</p>
+<p>We can expand this to match the target by storing the other two numbers and displaying the full calculation string on the addition page:</p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb388-1"><a href="video-segment-cookies-object.html#cb388-1" aria-hidden="true"></a><span class="co"># app/controllers/calculations_controller.rb</span></span>
+<span id="cb388-2"><a href="video-segment-cookies-object.html#cb388-2" aria-hidden="true"></a></span>
+<span id="cb388-3"><a href="video-segment-cookies-object.html#cb388-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">CalculationsController</span> &lt; <span class="dt">ApplicationController</span></span>
+<span id="cb388-4"><a href="video-segment-cookies-object.html#cb388-4" aria-hidden="true"></a>...</span>
+<span id="cb388-5"><a href="video-segment-cookies-object.html#cb388-5" aria-hidden="true"></a>  <span class="kw">def</span> add</span>
+<span id="cb388-6"><a href="video-segment-cookies-object.html#cb388-6" aria-hidden="true"></a>    <span class="ot">@first_number</span> = params.fetch(<span class="st">&quot;first_num&quot;</span>).to_f</span>
+<span id="cb388-7"><a href="video-segment-cookies-object.html#cb388-7" aria-hidden="true"></a>    <span class="ot">@second_number</span> = params.fetch(<span class="st">&quot;second_num&quot;</span>).to_f</span>
+<span id="cb388-8"><a href="video-segment-cookies-object.html#cb388-8" aria-hidden="true"></a></span>
+<span id="cb388-9"><a href="video-segment-cookies-object.html#cb388-9" aria-hidden="true"></a>    <span class="ot">@result</span> = <span class="ot">@first_number</span>.to_f + <span class="ot">@second_number</span>.to_f</span>
+<span id="cb388-10"><a href="video-segment-cookies-object.html#cb388-10" aria-hidden="true"></a></span>
+<span id="cb388-11"><a href="video-segment-cookies-object.html#cb388-11" aria-hidden="true"></a>    cookies.store(<span class="st">:addition_result</span>, <span class="ot">@result</span>)</span>
+<span id="cb388-12"><a href="video-segment-cookies-object.html#cb388-12" aria-hidden="true"></a>    cookies.store(<span class="st">:addition_first</span>, <span class="ot">@first_number</span>)</span>
+<span id="cb388-13"><a href="video-segment-cookies-object.html#cb388-13" aria-hidden="true"></a>    cookies.store(<span class="st">:addition_second</span>, <span class="ot">@second_number</span>)</span>
+<span id="cb388-14"><a href="video-segment-cookies-object.html#cb388-14" aria-hidden="true"></a></span>
+<span id="cb388-15"><a href="video-segment-cookies-object.html#cb388-15" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;calculation_templates/add_results.html.erb&quot;</span> })</span>
+<span id="cb388-16"><a href="video-segment-cookies-object.html#cb388-16" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb388-17"><a href="video-segment-cookies-object.html#cb388-17" aria-hidden="true"></a>...</span></code></pre></div>
+<p>{:mark_lines=“12-13”}</p>
+<div class="sourceCode" id="cb389"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb389-1"><a href="video-segment-cookies-object.html#cb389-1" aria-hidden="true"></a><span class="co">&lt;!--- app/views/calculation_templates/addition_form.html.erb ---&gt;</span></span>
+<span id="cb389-2"><a href="video-segment-cookies-object.html#cb389-2" aria-hidden="true"></a></span>
+<span id="cb389-3"><a href="video-segment-cookies-object.html#cb389-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>New addition<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb389-4"><a href="video-segment-cookies-object.html#cb389-4" aria-hidden="true"></a></span>
+<span id="cb389-5"><a href="video-segment-cookies-object.html#cb389-5" aria-hidden="true"></a><span class="kw">&lt;form</span><span class="ot"> action=</span><span class="st">&quot;/wizard_add&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb389-6"><a href="video-segment-cookies-object.html#cb389-6" aria-hidden="true"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;first_field&quot;</span><span class="kw">&gt;</span>Add this:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb389-7"><a href="video-segment-cookies-object.html#cb389-7" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;first_field&quot;</span><span class="ot"> name=</span><span class="st">&quot;first_num&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb389-8"><a href="video-segment-cookies-object.html#cb389-8" aria-hidden="true"></a></span>
+<span id="cb389-9"><a href="video-segment-cookies-object.html#cb389-9" aria-hidden="true"></a>  <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;second_field&quot;</span><span class="kw">&gt;</span>to this:<span class="kw">&lt;/label&gt;</span></span>
+<span id="cb389-10"><a href="video-segment-cookies-object.html#cb389-10" aria-hidden="true"></a>  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;text&quot;</span><span class="ot"> id=</span><span class="st">&quot;second_field&quot;</span><span class="ot"> name=</span><span class="st">&quot;second_num&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb389-11"><a href="video-segment-cookies-object.html#cb389-11" aria-hidden="true"></a></span>
+<span id="cb389-12"><a href="video-segment-cookies-object.html#cb389-12" aria-hidden="true"></a>  <span class="kw">&lt;button&gt;</span>Add!<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb389-13"><a href="video-segment-cookies-object.html#cb389-13" aria-hidden="true"></a><span class="kw">&lt;/form&gt;</span></span>
+<span id="cb389-14"><a href="video-segment-cookies-object.html#cb389-14" aria-hidden="true"></a></span>
+<span id="cb389-15"><a href="video-segment-cookies-object.html#cb389-15" aria-hidden="true"></a><span class="kw">&lt;p&gt;</span></span>
+<span id="cb389-16"><a href="video-segment-cookies-object.html#cb389-16" aria-hidden="true"></a>  Your previous addition was: </span>
+<span id="cb389-17"><a href="video-segment-cookies-object.html#cb389-17" aria-hidden="true"></a>  <span class="er">&lt;</span>%= cookies.fetch(:addition_first) %&gt; + </span>
+<span id="cb389-18"><a href="video-segment-cookies-object.html#cb389-18" aria-hidden="true"></a>  <span class="er">&lt;</span>%= cookies.fetch(:addition_second) %&gt; = </span>
+<span id="cb389-19"><a href="video-segment-cookies-object.html#cb389-19" aria-hidden="true"></a>  <span class="er">&lt;</span>%= cookies.fetch(:addition_result) %&gt;</span>
+<span id="cb389-20"><a href="video-segment-cookies-object.html#cb389-20" aria-hidden="true"></a><span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“15-20”}</p>
+<p>Now the page <strong>/muggle_add</strong> should match the target.</p>
+<p>That’s fundamentally it for cookies! Just a simple key/value object called <code>cookies</code> that we can add to and pull values out of in <em>any</em> action and <em>any</em> view template.</p>
+<p>The cookies that a user stores on their computer will come back to us everytime they visit our app from the same browser and we can fetch to show the user tailored content. Until they clear their cookies, use a new browser, or use a new computer.</p>
+<div id="text-companion-cookies-object" class="section level3 hasAnchor" number="33.2.1">
+<h3><span class="header-section-number">33.2.1</span> Text Companion: <code>cookies</code> Object<a href="video-segment-cookies-object.html#text-companion-cookies-object" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
             </section>
@@ -753,8 +836,8 @@ Proudly published with bookdown</a></li>
           </div>
         </div>
       </div>
-<a href="video-segment-squarenew-form.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="video-segment-squareresults-rcav.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="video-segment-exploring-browser-cookies.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="finish-and-submit-cookies-intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -786,7 +869,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/omnicalc-1.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/cookies-intro.md",
 "text": "Edit"
 },
 "history": {
@@ -794,7 +877,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/omnicalc-1.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/cookies-intro.md",
 "text": null
 },
 "download": null,

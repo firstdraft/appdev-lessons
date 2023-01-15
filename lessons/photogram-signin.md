@@ -1,15 +1,15 @@
-# Photogram Signin
+# Photogram Signin (Intro to Authentication)
 
-(Intro to Authentication)
+- Notes:
 
-  - Transcription `photogram-signin.md` contains time-stamped sections matching the headings here
+  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-signin-intro-to-authentication){target="_blank"} transcription is in [`photogram-signin.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-signin.md){target="_blank"}
 
-  - Chapters (and slides):
-    - `cookies-vs-session.md`
+  - Project (graded): [https://github.com/appdev-projects/photogram-signin](https://github.com/appdev-projects/photogram-signin){target="_blank"}
 
-  - Project: https://github.com/appdev-projects/photogram-signin
+  - Target: [https://photogram-signin.matchthetarget.com/](https://photogram-signin.matchthetarget.com/){target="_blank"}
 
-  - Workspace open, tabs organized, aware of /git committing and rails grade. Link to technical setup.
+  - Useful chapters:
+    - [`cookies-vs-session.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-vs-session.md){target="_blank"}
 
 ### Video Segment: Storing Passwords (da="Tutorial")
 

@@ -353,5 +353,11 @@ text-companion-has_many
 video-segment-other-relationships-and-wizard
 finish-and-submit-refactoring-msm-again
 photogram-associations
+cookies-intro
+video-segment-exploring-browser-cookies
+text-companion-exploring-browser-cookies
+video-segment-cookies-object
+text-companion-cookies-object
+finish-and-submit-cookies-intro
 terminology-technical-reference
 ruby-technical-reference
