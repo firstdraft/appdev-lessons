@@ -44,13 +44,13 @@ rmd_files:
     "lessons/cookies-intro.md",
     "lessons/photogram-signin.md",
     "lessons/starting-from-scratch-with-generators.md",
-    # "lessons/msm-signin.md",
-    # "lessons/bootstrap-intro-with-task-list.md",
+    "lessons/msm-signin.md",
+    "lessons/bootstrap-intro-with-task-list.md",
 
     # # final project
-    # "lessons/photogram-final.md",
-    # "lessons/building-your-own-idea.md",
-    # "lessons/extra-topics.md",
+    "lessons/photogram-final.md",
+    "lessons/building-your-own-idea.md",
+    "lessons/extra-topics.md",
     
     # glossaries
     "glossaries/terminology-technical-reference.md", 
