@@ -8,10 +8,6 @@
   
   - Dedicated video tutorials would be helpful here as well
 
-  - Project: N/A
-
-  - Target: N/A
-
   - Useful chapters:
 
     - [`day-2-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-2-notes.md){target="_blank"}
@@ -28,7 +24,7 @@
 
 - Notes:
 
-  - sections from [`day-2-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-2-notes.md){target="_blank"}
+  - This section copied from [`day-2-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-2-notes.md){target="_blank"}
 
 ### Get a GitHub account
 
@@ -71,7 +67,7 @@ While you're waiting for everyone to finish creating accounts, read up on GitHub
 
 - Notes:
 
-  - sections from [`getting-started-with-gitpod.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/getting-started-with-gitpod.md){target="_blank"}, [`tips-and-tricks.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/tips-and-tricks.md){target="_blank"}, and [`hard-reload.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hard-reload.md){target="_blank"}
+  - This section copied from [`getting-started-with-gitpod.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/getting-started-with-gitpod.md){target="_blank"}, [`tips-and-tricks.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/tips-and-tricks.md){target="_blank"}, and [`hard-reload.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hard-reload.md){target="_blank"}
   - can use [RPS HTML][Rock, Paper, Scissors HTML] as example
   - should include forking, workspace layout, bin/server, tab management
   - could be chance to talk about file structures and terminal
@@ -315,7 +311,7 @@ Windows: <kbd>Ctrl</kbd> + <kbd>~</kbd> (i.e. <kbd>Ctrl</kbd> + <kbd>Shift</kbd>
 
 - Notes:
 
-  - sections from [`using-git-to-experiement-and-save-work.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/using-git-to-experiement-and-save-work.md){target="_blank"}
+  - This section copied from [`using-git-to-experiement-and-save-work.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/using-git-to-experiement-and-save-work.md){target="_blank"}
 
 ### What Git is
 
@@ -403,7 +399,7 @@ Now you should be all set to push your commits to GitHub!
 
 - Notes:
 
-  - sections from [`rails-grade.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rails-grade.md){target="_blank"}, [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){target="_blank"}, and [`gitpod-snapshot.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/gitpod-snapshot.md){target="_blank"}
+  - This section copied from [`rails-grade.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rails-grade.md){target="_blank"}, [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){target="_blank"}, and [`gitpod-snapshot.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/gitpod-snapshot.md){target="_blank"}
   - kind of awkward placement, this video and text could go early in RPS HTML video
   - manually checking work, rails grade, git commiting
 

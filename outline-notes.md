@@ -1,8 +1,8 @@
 # Outline Notes
 
-Although originally based on the chronological assignments on Canvas in ["BUSN 36110 81 (Summer 2022) Application Development"](https://canvas.uchicago.edu/courses/41147){target="_blank"}, this book has some re-ordering. 
+Although originally based on the chronological assignments on Canvas in ["BUSN 36110 81 (Summer 2022) Application Development"](https://canvas.uchicago.edu/courses/41147){target="_blank"}, this book may have some re-ordering. Also the original chapters at [chapters.firstdraft](https://chapters.firstdraft.com/){target="_blank"} were zipped in here.
 
-## Updated Diátaxis
+## Diátaxis
 
 **Update: in the original outline, sections were tagged with the type. We don't need to be so strict, but we should adhere to some rules of thumb**
 

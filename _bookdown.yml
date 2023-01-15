@@ -9,7 +9,7 @@ rmd_files:
     "index.md", 
     "outline-notes.md",
 
-    # lessons
+    # lessons and chapters
     "lessons/course-overview.md", 
     "lessons/technical-setup.md",
     "lessons/rps-html.md", 

@@ -58,7 +58,7 @@
     - 29: Readings
     - 31-34: Basic rules (mixed in with some Replits)
 
-  - sections from [`design-resources.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/design-resources.md){target="_blank"}
+  - This section copied from [`design-resources.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/design-resources.md){target="_blank"}
 
 As you go about designing and coding your application's screens, here are a few things that you may find useful.
 
