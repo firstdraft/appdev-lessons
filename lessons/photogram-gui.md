@@ -10,7 +10,7 @@
 
   - Useful chapters:
 
-    - [`active-record.md#time-to-crud`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/active-record.md#time-to-crud){target="_blank"}
+    - [Time to CRUD][Time to CRUD]
 
 ## Video Segment: CRUD with Forms
 
@@ -1391,7 +1391,7 @@ The remaining tasks you see on the `rails grade` results page are up to you to c
 
 - Notes:
 
-  - copied from README at https://github.com/appdev-projects/photogram-gui#readme
+  - Copied from README at [https://github.com/appdev-projects/photogram-gui#readme](https://github.com/appdev-projects/photogram-gui#readme){target="_blank"}
 
 ### Tasks
 
