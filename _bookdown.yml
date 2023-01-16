@@ -48,6 +48,8 @@ rmd_files:
     "lessons/classroom-domain-modeling.md",
     "lessons/omnicalc-debug.md",
     "lessons/apis-demo.md",
+    "lessons/google-translate.md",
+    "lessons/sending-emails-and-texts.md",
     "lessons/active-record.md",
     "lessons/msm-queries.md",
     "lessons/classroom-queries-debug.md",

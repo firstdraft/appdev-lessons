@@ -14,8 +14,8 @@
 
   - Useful chapters:
     - [Storing credentials securely][Storing credentials securely]
-    - [`google-translate.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/google-translate.md){target="_blank"}
-    - [`sending-emails-and-texts.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/sending-emails-and-texts.md){target="_blank"}
+    - [Google Cloud Translate][Google Cloud Translate]
+    - [Sending emails and text messages][Sending emails and text messages]
 
 ## APIs Demo README
 

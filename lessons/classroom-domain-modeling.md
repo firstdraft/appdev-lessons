@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - This was largely a [Day 5 recording](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=63b66292-17be-4946-96dd-aed1012e999e) classroom exercise and is partially written up in [`day-5-domain-modeling.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-5-domain-modeling.md){target="_blank"}
+  - This was largely a [Day 5 recording](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=63b66292-17be-4946-96dd-aed1012e999e) classroom exercise and is partially transcribed in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-5-domain-modeling.md){target="_blank"}
   
   - Each [ERD and Ideas Slides](https://firstdraft.slides.com/raghubetina/erd-and-ideas?token=B9Lja2V8){target="_blank"} section could be a separate sub-section:
     - 01-09: review MSM tables
