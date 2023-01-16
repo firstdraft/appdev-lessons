@@ -1027,7 +1027,7 @@ The rest of the project is up to you to finish. Visit the **specs** and wire the
 
 - Notes:
 
-  - Refer students to [`rails grade`][`rails grade`], [git][Git], and [Sharing a Gitpod Snapshot][Sharing a Gitpod Snapshot] sections for how to get help
+  - Refer students to [`rails grade`][`rails grade`], [git][Using Git to freely experiment and save work], and [Sharing a Gitpod Snapshot][Sharing a Gitpod Snapshot] sections for how to get help
 
 ## RCAV Addendums
 
