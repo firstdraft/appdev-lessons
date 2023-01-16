@@ -12,8 +12,8 @@
 
   - Useful chapters:
 
-    - [`html-reference.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/html-reference.md){target="_blank"}
-    - [`html-cheatsheet.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/html-cheatsheet.md){target="_blank"}
+    - [HTML Reference][HTML Reference]
+    - [HTML Cheatsheet][HTML Cheatsheet]
 
 ## Video Segment: 1st bite-size chunk of RPS HTML
 

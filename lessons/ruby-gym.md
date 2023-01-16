@@ -10,7 +10,7 @@
 
   - Useful chapters:
     
-    - [`the-one-reference.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/the-one-reference.md){target="_blank"}
+    - [The One Ruby Reference][The One Ruby Reference]
 
 ## Optional Ruby Practice
 

@@ -10,7 +10,7 @@
 
   - Useful chapters:
 
-    - [`active-record.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/active-record.md){target="_blank"}
+    - [ActiveRecord][ActiveRecord]
     - [`our-own-classes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/our-own-classes.md){target="_blank"}
 
 **BENP: MSM should be written out when possible (similar to RPS)**

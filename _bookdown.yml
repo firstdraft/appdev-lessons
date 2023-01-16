@@ -29,6 +29,7 @@ rmd_files:
     "lessons/classroom-domain-modeling.md",
     "lessons/omnicalc-debug.md",
     "lessons/apis-demo.md",
+    "lessons/active-record.md",
     "lessons/msm-queries.md",
     "lessons/classroom-queries-debug.md",
     "lessons/different-ruby-styles.md",
@@ -39,20 +40,26 @@ rmd_files:
     "lessons/msm-validations.md",
     "lessons/very-best-debug.md",
     "lessons/draft-resource-generator.md",
+    "lessons/draft-generators.md",
     "lessons/refactoring-msm-again.md",
     "lessons/photogram-associations.md",
     "lessons/cookies-intro.md",
     "lessons/photogram-signin.md",
     "lessons/starting-from-scratch-with-generators.md",
+    "lessons/draft-account.md",
     "lessons/msm-signin.md",
     "lessons/bootstrap-intro-with-task-list.md",
 
-    # # final project
+    # final project
     "lessons/photogram-final.md",
     "lessons/building-your-own-idea.md",
     "lessons/extra-topics.md",
     
     # glossaries
     "glossaries/terminology-technical-reference.md", 
-    "glossaries/ruby-technical-reference.md"
+    "glossaries/the-one-reference.md",
+    "glossaries/optional-syntaxes-in-ruby.md",
+    "glossaries/html-reference.md",
+    "glossaries/html-cheatsheet.md",
+    "glossaries/classbook.md",
   ]

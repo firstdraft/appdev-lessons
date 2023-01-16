@@ -8,9 +8,9 @@
 
   - Useful chapters:
     - [`starting-a-rails-project-from-scratch.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/starting-a-rails-project-from-scratch.md){target="_blank"}
-    - [`active-record.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/active-record.md){target="_blank"}
-    - [`draft-generators.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-generators.md){target="_blank"}
-    - [`draft-account.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-account.md){target="_blank"}
+    - [ActiveRecord][ActiveRecord]
+    - [draft:resource generator][draft:resource generator]
+    - [draft:account generator][draft:account generator]
     - ideas.firstdraft.com generators with co-pilot
 
 ## Video Segment: Starting from Scratch with Generators

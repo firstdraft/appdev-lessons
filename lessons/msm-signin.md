@@ -9,8 +9,8 @@
   - Target: [https://msm-signin.matchthetarget.com/](https://msm-signin.matchthetarget.com/){target="_blank"}
 
   - Useful chapters:
-    - [`draft-generators.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-generators.md){target="_blank"}
-    - [`draft-account.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-account.md){target="_blank"}
+    - [draft:resource generator][draft:resource generator]
+    - [draft:account generator][draft:account generator]
 
 **BENP: There is a lot of draft generator stuff at the beginning. This is applied examples, so it *is* transcribed. There is still a need for bite-size draft gen videos from thus far un-transcribed content.**
 
