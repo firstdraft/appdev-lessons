@@ -10,7 +10,7 @@
 
   - Useful chapters:
 
-    - [`refactoring-msm-queries-with-methods.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-msm-queries-with-methods.md){target="_blank"}, not yet copied in here
+    - [Refactoring MSM Queries with Methods][Refactoring MSM Queries with Methods]
 
 ## Video Segment: Exploring the Target, What is Refactoring?
 

@@ -55,6 +55,7 @@ rmd_files:
     "lessons/classroom-queries-debug.md",
     "lessons/different-ruby-styles.md",
     "lessons/history-of-ml.md",
+    "lessons/refactoring-msm-queries-with-methods.md"
     "lessons/refactoring-msm-queries.md",
     "lessons/domain-modeling.md",
     "lessons/photogram-gui.md",

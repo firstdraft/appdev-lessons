@@ -1335,7 +1335,7 @@ Now, after a `rails grade` and potentially a `/git` commit if everything is work
 
 - Notes:
 
-  - from [https://github.com/appdev-projects/msm-queries#tasks](https://github.com/appdev-projects/msm-queries#tasks){target="_blank"}
+  - Copied from [https://github.com/appdev-projects/msm-queries#tasks](https://github.com/appdev-projects/msm-queries#tasks){target="_blank"}
 
 #### Finding a movie by title
 

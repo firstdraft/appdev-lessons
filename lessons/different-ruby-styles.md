@@ -1,5 +1,5 @@
-# Different Ruby Styles
+# Different Styles
 
 - Notes:
 
-  - Could be copied in here: [Different Ruby Styles][Different Ruby Styles]
+  - Read this glossary chapter: [Different Ruby Styles][Different Ruby Styles]

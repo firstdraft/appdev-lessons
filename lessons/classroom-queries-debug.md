@@ -2,9 +2,8 @@
 
 - Notes:
 
-  - Chapters (and slides):
-    - README at https://github.com/appdev-projects/classroom-queries-debug#readme
-  
-  - Project: https://github.com/appdev-projects/classroom-queries-debug
+  - No written or video notes
 
-  - Target: https://classroom-queries-debug.matchthetarget.com/
+  - Project: [https://github.com/appdev-projects/classroom-queries-debug](https://github.com/appdev-projects/classroom-queries-debug){target="_blank"}
+
+  - Target: [https://classroom-queries-debug.matchthetarget.com/](https://classroom-queries-debug.matchthetarget.com/){target="_blank"}
