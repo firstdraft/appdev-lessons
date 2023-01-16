@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){target="_blank"} transcription copied below is in [`Omnicalc-Part2.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/Omnicalc-Part2.md){target="_blank"}
+  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/Omnicalc-Part2.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/omnicalc-2](https://github.com/appdev-projects/omnicalc-2){target="_blank"}
 
@@ -13,12 +13,10 @@
   - Useful chapters:
 
     - [Forms, Query Strings, and Params][Forms, Query Strings, and Params]
-    - [`omnicalc-api.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/omnicalc-api.md){target="_blank"}
-    - [`meteorologist-intro-to-apis.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/meteorologist-intro-to-apis.md){target="_blank"}
-    - [`storing-credentials-securely.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/storing-credentials-securely.md){target="_blank"}
-    - [`google-translate.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/google-translate.md){target="_blank"}
-    - [`sending-emails-and-texts.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/sending-emails-and-texts.md){target="_blank"}
-    - **Right now a bunch of this found much later in the Day 5 material on Canvas. See my notes below, APIs might need devoted video (maybe one for each API).**
+    - [Omnicalc API][Omnicalc API]
+    - [Storing credentials securely][Storing credentials securely]
+    - [Meteorologist (Intro to APIs)][Meteorologist (Intro to APIs)]
+    - **Right now a bunch of API stuff is found much later in the Day 5 material on Canvas. See my notes below, APIs might need devoted video.**
 
 ## Video Segment: Exploring the Target 
 
@@ -554,7 +552,7 @@ Now, we hard-coded an address `5807 S Woodlawn Ave` into our `experiment` action
   - API stretch goal should maybe go in a separate place?
 
 
-**BENP: I think all of this additional API stuff needs to go in a separate document with links to `google-translate.md` and `sending-emails-and-texts.md` documents that right now are just linked as optional exercises on the Day 5 material on Canvas**
+**BENP: I think all of this additional API stuff needs to go in a separate document with links to [Google Cloud Translate][Google Cloud Translate] and [Sending emails and text messages][Sending emails and text messages] documents that right now are just linked as optional exercises on the Day 5 material on Canvas**
 
 
 ### Your tasks

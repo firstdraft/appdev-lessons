@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Day 7 video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6da49302-4503-454a-9659-aedf005f678f){target="_blank"} transcription copied below is in [`very-best-debug-video.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/very-best-debug-video.md){target="_blank"}
+  - [Day 7 video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6da49302-4503-454a-9659-aedf005f678f){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/very-best-debug-video.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/very-best-debug](https://github.com/appdev-projects/very-best-debug){target="_blank"}
 

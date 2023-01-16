@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-msm-queries-intro-to-databases){target="_blank"} transcription copied below is in [`MSM-queries.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-queries.md){target="_blank"}
+  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-msm-queries-intro-to-databases){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-queries.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/msm-queries](https://github.com/appdev-projects/msm-queries){target="_blank"}
 

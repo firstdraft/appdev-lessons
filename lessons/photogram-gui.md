@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-gui){target="_blank"} transcription copied below is in [`photogram-gui.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-gui.md){target="_blank"}
+  - [Video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-gui){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-gui.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/photogram-gui](https://github.com/appdev-projects/photogram-gui){target="_blank"}
 
