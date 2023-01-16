@@ -229,7 +229,7 @@ p "Added #{Comment.count} Comments"
 
 Congratulations, with the code you just added, you can run `rails sample_data` to add records into each of your database tables! The problem is that we only have three usernames. What if we want 50 usernames or 100? Do you think you could create an array with all of those usernames? Is there an easier way to get usernames? 
 
-# Adding interesting data with Faker
+## Adding interesting data with Faker
 
 Instead of having to come up with all of this data, let's use the [`faker gem`](https://github.com/faker-ruby/faker). This will let us sample data from a bunch of data sets. To add this to our project, we can install it like any other gem.
 

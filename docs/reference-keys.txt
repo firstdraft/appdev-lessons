@@ -339,6 +339,14 @@ render
 addendum-rendering-json
 addendum-custom-controller-files
 rcav-flowchart
+routing-1
+route-1
+controller
+action-1
+redirect_to-1
+render-1
+view
+erb
 rock-paper-scissors-rcav
 video-segment-dynamic-web-applications-and-urls
 potential-quiz-question

@@ -34,8 +34,8 @@ rmd_files:
     "lessons/our-own-classes.md",
     "lessons/ruby-gym.md", 
     "lessons/adding-routes.md",
-    "lessons/routing.md",
     "lessons/rcav-flowchart.md",
+    "lessons/routing.md",
     "lessons/rps-rcav.md",
     "lessons/forms-query-strings-and-params.md",
     "lessons/omnicalc-1.md",
@@ -109,5 +109,4 @@ rmd_files:
     "glossaries/html-reference.md",
     "glossaries/html-cheatsheet.md",
     "glossaries/classbook.md",
-
   ]
