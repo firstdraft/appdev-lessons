@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){target="_blank"} transcription is in [`Omnicalc-Part2.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/Omnicalc-Part2.md){target="_blank"}
+  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){target="_blank"} transcription copied below is in [`Omnicalc-Part2.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/Omnicalc-Part2.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/omnicalc-2](https://github.com/appdev-projects/omnicalc-2){target="_blank"}
 
@@ -12,7 +12,7 @@
 
   - Useful chapters:
 
-    - [`forms-query-strings-and-params.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/forms-query-strings-and-params.md){target="_blank"}
+    - [Forms, Query Strings, and Params][Forms, Query Strings, and Params]
     - [`omnicalc-api.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/omnicalc-api.md){target="_blank"}
     - [`meteorologist-intro-to-apis.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/meteorologist-intro-to-apis.md){target="_blank"}
     - [`storing-credentials-securely.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/storing-credentials-securely.md){target="_blank"}

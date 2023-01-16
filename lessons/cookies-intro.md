@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-cookies-intro){target="_blank"} transcription is in [`cookies-with-video.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-with-video.md){target="_blank"}
+  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-cookies-intro){target="_blank"} transcription copied below is in [`cookies-with-video.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-with-video.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/cookies-intro](https://github.com/appdev-projects/cookies-intro){target="_blank"}
 

@@ -18,7 +18,6 @@ rmd_files:
     "lessons/relationships.md",
     "lessons/html-css-stylesheets-and-design-recap.md", 
     "lessons/linkinbio.md", 
-
     "lessons/intro-to-ruby.md",
     "lessons/nouns-verbs-and-grammar.md",
     "lessons/program-notes.md",
@@ -33,9 +32,11 @@ rmd_files:
     "lessons/each.md",
     "lessons/hash.md",
     "lessons/our-own-classes.md",
-
     "lessons/ruby-gym.md", 
+    "lessons/adding-routes.md",
+    "lessons/rcav-flowchart.md",
     "lessons/rps-rcav.md",
+    "lessons/forms-query-strings-and-params.md",
     "lessons/omnicalc-1.md",
     "lessons/fortune-teller.md",
     "lessons/omnicalc-2.md", 

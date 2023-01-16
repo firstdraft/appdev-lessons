@@ -329,6 +329,16 @@ ruby-practice-our-own-classes
 class_person.rb
 ruby-gym
 optional-ruby-practice
+adding-routes
+specs
+routing
+route
+action
+redirect_to
+render
+addendum-rendering-json
+addendum-custom-controller-files
+rcav-flowchart
 rock-paper-scissors-rcav
 video-segment-dynamic-web-applications-and-urls
 potential-quiz-question
@@ -359,8 +369,8 @@ video-segment-linking-pages-with-layouts
 text-companion-linking-pages-with-layouts
 finish-and-submit-rps-rcav
 rcav-addendums
-addendum-rendering-json
-addendum-custom-controller-files
+addendum-rendering-json-1
+addendum-custom-controller-files-1
 omnicalc-1-forms-and-query-strings
 video-segment-intro-to-forms-and-exploring-the-target
 text-companion-intro-to-forms-and-exploring-the-target

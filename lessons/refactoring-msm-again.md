@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Day 7 video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6da49302-4503-454a-9659-aedf005f678f){target="_blank"} transcription is in [`refactoring-MSM-queries-again.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-MSM-queries-again.md){target="_blank"}
+  - [Day 7 video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6da49302-4503-454a-9659-aedf005f678f){target="_blank"} transcription copied below is in [`refactoring-MSM-queries-again.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-MSM-queries-again.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/refactoring-msm-queries-2](https://github.com/appdev-projects/refactoring-msm-queries-2){target="_blank"}
 

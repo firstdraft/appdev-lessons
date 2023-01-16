@@ -11,7 +11,7 @@
   - Useful chapters:
 
     - [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
-    - [`rcav-flowchart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rcav-flowchart.md){target="_blank"}
+    - [RCAV Flowchart][RCAV Flowchart]
 
 
 This chapter is the companion to [the refactoring-fortune-teller project](https://github.com/appdev-projects/refactoring-fortune-teller){target="_blank"}, which is the sequel to the [the fortune-teller project](https://github.com/appdev-projects/fortune-teller){target="_blank"}.

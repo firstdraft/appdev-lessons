@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){target="_blank"} transcription is in [`fortune-teller.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fortune-teller.md){target="_blank"}
+  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fortune-teller.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/fortune-teller](https://github.com/appdev-projects/fortune-teller){target="_blank"}
 
@@ -10,8 +10,8 @@
 
   - Useful chapters:
 
-    - [`adding-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/adding-routes.md){target="_blank"}
-    - [`rcav-flowchart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rcav-flowchart.md){target="_blank"}
+    - [Adding Routes][Adding Routes]
+    - [RCAV Flowchart][RCAV Flowchart]
     - [Routing - RCAV Slides](https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q){target="_blank"}
 
 ## Video Segment: Routes and Controllers in Fortune Teller

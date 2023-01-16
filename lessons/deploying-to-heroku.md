@@ -39,7 +39,7 @@
 
 [^mfa]: If you have [Multi-Factor Authentication](https://devcenter.heroku.com/articles/multi-factor-authentication){:target="_blank"} enabled, then instead of your password you'll need to paste an API Key. Generate and copy your API Key under your [Account Settings in the Heroku Dashboard](https://dashboard.heroku.com/account){:target="_blank"}:
 
-    ![](/assets/heroku-api-key.png)
+    ![](/assets/deploying-to-heroku/heroku-api-key.png)
 
 ### Create a production server (once per application)
 
@@ -128,7 +128,9 @@ heroku logs --tail
 
 That will show us what's going over there in California:
 
-![](/assets/heroku log.png)
+**BENP: missing image, not in assets. See source**
+
+![](/assets/deploying-to-heroku/heroku log.png)
 
 You'll notice that the production server log is not as helpful as the development log! What I do is clear the Terminal with <kbd>Cmd</kbd>+<kbd>K</kbd>, and then refresh the request that was causing the error. I then scroll to the top of the mess, and start to look through carefully for the error message.
 

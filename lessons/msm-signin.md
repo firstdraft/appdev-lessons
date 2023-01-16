@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Day 8 long video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0325615f-63d3-473f-be6b-ae4b00eaec85){target="_blank"} transcription is in [`MSM-signin.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-signin.md){target="_blank"}
+  - [Day 8 long video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0325615f-63d3-473f-be6b-ae4b00eaec85){target="_blank"} transcription copied below is in [`MSM-signin.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-signin.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/msm-signin](https://github.com/appdev-projects/msm-signin){target="_blank"}
 

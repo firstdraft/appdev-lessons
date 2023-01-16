@@ -4,7 +4,7 @@
 
   - Forms and Query Strings
 
-  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-omnicalc-1-forms-and-query-strings){target="_blank"} transcription is in [`forms-query-strings-and-params-Omnicalc-Part1.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/forms-query-strings-and-params-Omnicalc-Part1.md){target="_blank"}
+  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-omnicalc-1-forms-and-query-strings){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/forms-query-strings-and-params-Omnicalc-Part1.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/omnicalc-1](https://github.com/appdev-projects/omnicalc-1){target="_blank"}
 
@@ -12,7 +12,7 @@
 
   - Useful chapters:
 
-    - [`forms-query-strings-and-params.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/forms-query-strings-and-params.md){target="_blank"} not 
+    - [Forms, Query Strings, and Params][Forms, Query Strings, and Params]
 
 **BENP: Would be useful here to show the "layouts" folder that is providing the wrapper with the table of buttons. But I am confused because now the wrapper is not pointed out in the application_controller.rb file as in RPS RCAV. In any case, the layouts/application.html.erb is finally brought up in relation to the nav bar in the Day 4 video @ 28'30" for the fortune teller app. Probably good to bring this up earlier. Also because this is where all the html header stuff went that is missing from our .html.erb view templates.**
 
