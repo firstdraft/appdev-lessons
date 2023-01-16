@@ -8,7 +8,7 @@
 
 Assuming that we have a database and a table called "contacts" in it (we'll discuss how to do that in a moment), we would normally have to write Structured Query Language to interact with it.
 
-Instead, we can define a class, e.g. `Contact`, and [inherit](https://chapters.firstdraft.com/chapters/769#inheritance){:target="_blank"} from `ApplicationRecord`:
+Instead, we can define a class, e.g. `Contact`, and [inherit](https://chapters.firstdraft.com/chapters/769#inheritance){target="_blank"} from `ApplicationRecord`:
 
 ```ruby
 class Contact < ApplicationRecord
@@ -458,7 +458,7 @@ The `%` characters are wildcards, which match anything in that position.
 
 So that query would find all rows that have the fragment "bet" anywhere within the `last_name` column.
 
-[^sql_injection]: This is an advanced safety feature of Rails that prevents [SQL injection attacks](https://en.wikipedia.org/wiki/SQL_injection){:target="_blank"}.
+[^sql_injection]: This is an advanced safety feature of Rails that prevents [SQL injection attacks](https://en.wikipedia.org/wiki/SQL_injection){target="_blank"}.
 
 ### Less than or greater than
 

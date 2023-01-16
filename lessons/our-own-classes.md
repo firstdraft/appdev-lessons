@@ -74,7 +74,7 @@ p c.role
 p c.class # => Person
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){target="_blank"}
 
 For each attribute that we declared, we get methods that we can call to assign and retrieve values.
 
@@ -261,7 +261,7 @@ class Student
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){target="_blank"}
 
 
 

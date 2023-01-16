@@ -46,7 +46,7 @@ rails generate draft:resource photo image:string caption:text owner_id:integer
 - Separate column names and datatypes with colons (NO SPACES).
 - Separate name:datatype pairs with spaces (NO COMMAS).
 
-In other words, the format of the command is exactly the same as when you were [generating only a model and table](https://chapters.firstdraft.com/chapters/770#the-quick-way-to-create-a-table){:target="_blank"}, but `draft:model` is replaced with `draft:resource`.
+In other words, the format of the command is exactly the same as when you were [generating only a model and table](https://chapters.firstdraft.com/chapters/770#the-quick-way-to-create-a-table){target="_blank"}, but `draft:model` is replaced with `draft:resource`.
 
 > Note: `rails g` is short for `rails generate`, like  `c` is for `console` and `s` is for `server`.
 

@@ -75,7 +75,7 @@ p person1
 p person1.fetch(:role)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){:target="_blank"}{:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){target="_blank"}{target="_blank"}
 
 Click "run" and see what it looks like to build up a `Hash`. A few things to note:
 
@@ -101,7 +101,7 @@ person1.store(:role, "Instructor")
 p person1.fetch(:last_name)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){target="_blank"}
 
 Beautiful! Now we don't have to remember that position number 1 is last name, position number 2 is role, etc. We can retrieve objects from the list using meaningful labels instead.
 
@@ -122,7 +122,7 @@ p person1.fetch(:first_name) + " is a " + person1.fetch(:role)
 p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){target="_blank"}
 
 A few things to try:
 
@@ -145,7 +145,7 @@ p person1.fetch(:first_name, "None provided")
 p person1.fetch(:middle_name, "None provided")
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){target="_blank"}
 
 ### Hash literals
 
@@ -166,7 +166,7 @@ Movie.where({ :title => "The Shawshank Redemption" })
 
 ### fetch shorthand, []
 
-Much like [`Array`'s shorthand for `.at`](https://chapters.firstdraft.com/chapters/758#at-shorthand-){:target="_blank"}, `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
+Much like [`Array`'s shorthand for `.at`](https://chapters.firstdraft.com/chapters/758#at-shorthand-){target="_blank"}, `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
 
 ```ruby
 person1 = { :first_name => "Raghu", :last_name => "Betina", :role => "Instructor" }
@@ -183,7 +183,7 @@ p person1.fetch(:last_name)
 p person1[:last_name]
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){target="_blank"}
 
 Were you able to find the difference between the two methods?
 

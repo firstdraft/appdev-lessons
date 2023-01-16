@@ -29,7 +29,7 @@ Date.new # => #<Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
 
 By default, the new date is January 1st, of the year -4712 BCE! Interesting[^julian], but not very helpful.
 
-[^julian]: [Julian Period](https://en.wikipedia.org/wiki/Julian_day){:target="_blank"}
+[^julian]: [Julian Period](https://en.wikipedia.org/wiki/Julian_day){target="_blank"}
 
 You can also pass `Date.new` arguments to initialize with a specific year, month, and day:
 
@@ -154,7 +154,7 @@ Time.now.strftime("%b") # => "Sep"
 Time.now.strftime("%a %e, %R %p") # => "Mon, 7 14:35 PM"
 ```
 
-You should **not** try to memorize what these patterns mean. Tools like [strftime.net](http://www.strftime.net){:target="_blank"} and [For a Good Strftime](https://www.foragoodstrftime.com/){:target="_blank"} exist to help compose the formatting string argument.
+You should **not** try to memorize what these patterns mean. Tools like [strftime.net](http://www.strftime.net){target="_blank"} and [For a Good Strftime](https://www.foragoodstrftime.com/){target="_blank"} exist to help compose the formatting string argument.
 
 ## Ruby Practice: Date
 

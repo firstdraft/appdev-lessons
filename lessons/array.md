@@ -23,7 +23,7 @@ cities = Array.new
 
 Try it out and see what you get if you `p cities`:
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/Arraynew){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/Arraynew){target="_blank"}
 
 #### push
 
@@ -85,7 +85,7 @@ p cities
 p cities.at(2)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-at){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-at){target="_blank"}
 
 Whoa! Did you expect `cities.at(2)` to return `"LA"`? I sure didn't, the first time I tried it; I was expecting `"NYC"`.
 
@@ -124,7 +124,7 @@ array = [8, 3, 1, 19, 23, 3]
 p array[2]
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-square-bracket){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-square-bracket){target="_blank"}
 
 #### first, last
 
@@ -140,7 +140,7 @@ cities = ["Chicago", "NYC", "LA", "SF", "NOLA"]
 p cities.index("SF")
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-index){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-index){target="_blank"}
 
 Some further things for you to experiment with:
 
@@ -149,7 +149,7 @@ Some further things for you to experiment with:
 
 #### String#split
 
-Before we proceed with more `Array` methods, I want to go back for a minute and talk about [the `.split` method from the `String` class](https://chapters.firstdraft.com/chapters/757#split){:target="_blank"}. This method, when called on a `String`, will return an `Array` of substrings:
+Before we proceed with more `Array` methods, I want to go back for a minute and talk about [the `.split` method from the `String` class](https://chapters.firstdraft.com/chapters/757#split){target="_blank"}. This method, when called on a `String`, will return an `Array` of substrings:
 
 ```ruby
 "alice bob carol".split # => ["alice", "bob", "carol"]
@@ -183,7 +183,7 @@ p user_numbers
 p "You entered " + length.to_s + " numbers."
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/gets-with-split){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/gets-with-split){target="_blank"}
 
 We'll be using this technique for the remainder of our test REPLs, to make things more interesting.
 
@@ -199,7 +199,7 @@ p a.count
 p a.count(3)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/count){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/count){target="_blank"}
  
 #### include?
 
@@ -229,7 +229,7 @@ array = [8, 3, 1, 19, 23, 3]
 p array.reverse # => [3, 23, 19, 1, 3, 8]
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-reverse){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-reverse){target="_blank"}
 
 #### sort
 
@@ -239,7 +239,7 @@ array = [12, 4, 5, 13, 56, 32]
 p array.sort # => [4, 5, 12, 13, 32, 56]
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/sort){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/sort){target="_blank"}
 
 #### shuffle
 
@@ -249,7 +249,7 @@ array = [1, 2, 3, 4, 5]
 p array.shuffle # Returns a copy of array in random order
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/shuffle){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/shuffle){target="_blank"}
 
 #### sample
 
@@ -259,7 +259,7 @@ array = [8, 3, 1, 19, 23, 3]
 p array.sample # => Returns a single random element from the array
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/sample){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/sample){target="_blank"}
 
 #### min
 
@@ -269,7 +269,7 @@ a = [8, 3, 1, 19, 23, 3]
 p a.min # => 1
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/min){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/min){target="_blank"}
 
 #### max
 
@@ -279,7 +279,7 @@ a = [8, 3, 1, 19, 23, 3]
 p a.max # => 23
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/max){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/max){target="_blank"}
 
 #### sum
 
@@ -289,7 +289,7 @@ a = [8, 3, 1, 19, 23, 3]
 p a.sum # => 57
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/sum){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/sum){target="_blank"}
 
 #### join
 

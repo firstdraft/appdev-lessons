@@ -80,7 +80,7 @@ Here's a real example:
 "hello world!".upcase
 ```
 
-Here, you try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){:target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a Repl will copy the Repl to your own account and allow you to edit it.
+Here, you try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a Repl will copy the Repl to your own account and allow you to edit it.
 
 ![](/assets/nouns-verbs-and-grammar/replit-fork-hd.png)
 
@@ -98,7 +98,7 @@ At the `irb(main)` prompt that appears, you can now try out `"hello world!".upca
 
 If all went well, you should have seen `=> "HELLO WORLD!"` in the black window at the bottom (known as the "terminal"). Yay[^tradition]! What just happened?
 
-[^tradition]: It is [a time-honored tradition](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program){:target="_blank"} that the very first thing a programmer does in a new language is print out "Hello, World!" Congratulations — you're now one of us 🙌🏾
+[^tradition]: It is [a time-honored tradition](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program){target="_blank"} that the very first thing a programmer does in a new language is print out "Hello, World!" Congratulations — you're now one of us 🙌🏾
 
 The primary way to write an expression in Ruby is: `object.method`. We ask the _thing_, or noun, on the left side of the dot to perform the _action_, or the verb, on the right side of the dot.
 
@@ -122,7 +122,7 @@ Different **classes** can perform different **methods**. Here are a few expressi
 "Your Name".swapcase
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){target="_blank"}
 
 What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try it:
 
@@ -172,7 +172,7 @@ Alright, so the **primary syntax** in Ruby is straightforward — `object.method
 "Java is a joy".gsub("Java", "Ruby")
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/arguments-are-inputs){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/arguments-are-inputs){target="_blank"}
 
 `gsub` is short for "globally substitute", because it will replace _all_ occurrences of one _substring_ with another _substring_.
 
@@ -212,7 +212,7 @@ Can you spot the difference? **Don't put a space between the method and the open
 
 It's a very easy mistake to make, so I just wanted to warn you early on so you that can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:
 
-[Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){:target="_blank"}
+[Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){target="_blank"}
 
 #### Seriously: please read the error message
 
@@ -238,7 +238,7 @@ Here's a debate that will rage until the end of time: what do you call this symb
 
 Is it a number sign? Is it a pound sign? Is it a hashtag? Is it a waffle?
 
-In this text, I'm going to refer to it as an [octothorpe](https://en.wiktionary.org/wiki/octothorpe){:target="_blank"}.
+In this text, I'm going to refer to it as an [octothorpe](https://en.wiktionary.org/wiki/octothorpe){target="_blank"}.
 
 The octothorpe is used quite a bit in Ruby. You can see one important way in the example above, where I said `# bad!` after some offending code. That is known as a "code comment". The Ruby interpreter, when it sees the `#`, will ignore it and everything that comes after it; allowing us to leave notes to ourselves and to each other. **Use comments liberally.**
 
@@ -255,7 +255,7 @@ However, so far we haven't been doing much with the **return value** of each exp
 # "hello world".reverse
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-drop-on-the-ground){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-drop-on-the-ground){target="_blank"}
 
 We're not really able to make any forward progress when we only perform one operation at a time. Programs get interesting only when we start to take the return value of one expression and feed it into the _next_ method. That's how we craft our own novel, useful applications from the basic building blocks of Ruby.
 
@@ -268,7 +268,7 @@ s = "hello world!".upcase
 s
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){target="_blank"}
 
 This creates a box, labels it `s`, and stores the string `"HELLO WORLD!"` in it.
 

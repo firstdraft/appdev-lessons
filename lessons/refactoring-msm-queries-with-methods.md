@@ -4,13 +4,13 @@
 
   - Copied from [`refactoring-msm-queries-with-methods.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-msm-queries-with-methods.md){target="_blank"}
 
-This chapter is the companion to [the refactoring-msm-queries-1 project](https://github.com/appdev-projects/refactoring-msm-queries-1){:target="_blank"}, which is the sequel to the [the msm-queries project](https://github.com/appdev-projects/msm-queries){:target="_blank"}.
+This chapter is the companion to [the refactoring-msm-queries-1 project](https://github.com/appdev-projects/refactoring-msm-queries-1){target="_blank"}, which is the sequel to the [the msm-queries project](https://github.com/appdev-projects/msm-queries){target="_blank"}.
 
 ## Objective
 
 Our goal is to keep msm-queries working the same way that it was after we finished building it; we're not going to add much. Therefore, we'll use the same target as before:
 
-[https://msm-queries.matchthetarget.com/](https://msm-queries.matchthetarget.com/){:target="_blank"}
+[https://msm-queries.matchthetarget.com/](https://msm-queries.matchthetarget.com/){target="_blank"}
 
 Our starting point code for this project, refactoring-msm-1, is one possible solution for msm-queries. But we're going to make the code much more modular and re-usable, while keeping the functionality exactly the same. How? By **defining methods** to encapsulate our querying logic.
 
@@ -98,7 +98,7 @@ Unfortunately, if you embed `<%= @the_movie.director %>` in `app/views/movie_tem
 
 ### Naming the method
 
-If you feel very confident about [defining instance methods](https://chapters.firstdraft.com/chapters/769#defining-instance-methods){:target="_blank"}, then you can skip forward to the [Defining "association accessors"](#defining-association-accessors) section. Otherwise, read on.
+If you feel very confident about [defining instance methods](https://chapters.firstdraft.com/chapters/769#defining-instance-methods){target="_blank"}, then you can skip forward to the [Defining "association accessors"](#defining-association-accessors) section. Otherwise, read on.
 
 Recall that, in Ruby, we use the `def` keyword within the `class` definition to add new methods to a class. Here, we're adding the `say_hi` instance method within the definition of the `Person` class:
 
@@ -170,7 +170,7 @@ p jw # => #<Person:0x00007fe0802ca8b8 @first_name="Jelani", @last_name="Woods">
 
 If you're feeling the urge to try out the Ruby that you're reading about — great!
 
-[Click here to create a blank Gitpod workspace](http://gitpod.io/#https://github.com/appdev-projects/helloruby){:target="_blank"}. Then, create a new file, type the Ruby you want to experiment with into it, and run it from a Terminal tab with `ruby YOUR_FILENAME`.
+[Click here to create a blank Gitpod workspace](http://gitpod.io/#https://github.com/appdev-projects/helloruby){target="_blank"}. Then, create a new file, type the Ruby you want to experiment with into it, and run it from a Terminal tab with `ruby YOUR_FILENAME`.
 
 For example, I created a file called `experiment.rb` and am running it with the Terminal command `ruby experiment.rb` to see my output. **Don't forget to turn on Autosave**, and to print your output with the `p` method — it's been a while, I know!
 

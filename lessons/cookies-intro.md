@@ -9,8 +9,8 @@
   - Target: [https://cookies-intro.matchthetarget.com/](https://cookies-intro.matchthetarget.com/){target="_blank"}
 
   - Useful chapters:
-    - [`cookies.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies.md){target="_blank"}
-    - [`cookies-vs-session.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-vs-session.md){target="_blank"}
+    - [Cookies][Cookies]
+    - [More ways of using cookies][More ways of using cookies]
 
 **BENP: note that this assignment is not manadatory, so is there even a rails grade? May need to doublde check this in other optional assignments as well**
 

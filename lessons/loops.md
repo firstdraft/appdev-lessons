@@ -23,7 +23,7 @@ p numbers
 p len
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){target="_blank"}
 
 What do you expect the output of the program to be when you click run? Try to interpret the program yourself before you ask Ruby to.
 
@@ -53,7 +53,7 @@ p numbers
 p len
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){target="_blank"}
 
 `while` works almost exactly like `if` — it evaluates the expression next to it, and if the expression is truthy, it executes the code on the lines between it and it's `end`; if not, it ignores the code on the lines between it and it's `end`.
 
@@ -100,11 +100,11 @@ while mississipis <= 10
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){target="_blank"}
 
 Does the code make sense to you?[^incrementing]
 
-[^incrementing]: If the line `mississipis = missippis + 1` looks a little odd to you, you're not alone. [Remember, this is _variable assignment_](https://chapters.firstdraft.com/chapters/754#updating-variables){:target="_blank"}, not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
+[^incrementing]: If the line `mississipis = missippis + 1` looks a little odd to you, you're not alone. [Remember, this is _variable assignment_](https://chapters.firstdraft.com/chapters/754#updating-variables){target="_blank"}, not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
 
 Or, rather than `while`, I could use `Integer`'s `.times` method, like this:
 
@@ -118,7 +118,7 @@ mississipis = 1
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){target="_blank"}
 
 Notice there's a new keyword here: `do`. This is because the `.times` method, in order to do its job of executing some code 10 times, needs a special argument — _the code to execute_.
 
@@ -136,7 +136,7 @@ But the `.times` method will save us even more trouble than that; we can stop wo
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){target="_blank"}
 
 Try running it. Here's what's going on:
 

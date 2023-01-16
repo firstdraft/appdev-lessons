@@ -42,7 +42,7 @@ Try each of the following:
 12 / 5
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/add-subtract-multiply-divide-exponent){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/add-subtract-multiply-divide-exponent){target="_blank"}
 
 Whoa! Did you get what you expected for that last one?
 
@@ -66,7 +66,7 @@ The `.odd?` and `.even?` methods return `true` or `false` based on whether the n
 p 7.odd?
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/odd){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/odd){target="_blank"}
 
 ### rand
 
@@ -87,7 +87,7 @@ Give it a try:
 p rand(9)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/rand){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/rand){target="_blank"}
 
 ### to_s
 
@@ -98,7 +98,7 @@ lucky_number = rand(100)
 p "Your lucky number is" + lucky_number
 ```
 
-Uh oh! [RTEM!](https://chapters.firstdraft.com/chapters/754#seriously-please-read-the-error-message){:target="_blank"}
+Uh oh! [RTEM!](https://chapters.firstdraft.com/chapters/754#seriously-please-read-the-error-message){target="_blank"}
 
 It turns out that `String`'s `+` method can only add two strings together, not a string and an object of some other class. So, a lot of times we'll need to convert an `Integer` into a `String` prior to output. Fortunately `Integer` has a handy method, `to_s` (or "to string"), that does just that:
 
@@ -106,7 +106,7 @@ It turns out that `String`'s `+` method can only add two strings together, not a
 p 98.to_s
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){target="_blank"}
 
 ### to_f
 

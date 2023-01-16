@@ -16,7 +16,7 @@ display the element to the user with some formatting around it.
 
 ### Iterating over arrays with Integer's times method
 
-Try transforming the words in an Array using what you've learned so far about [loops](https://chapters.firstdraft.com/chapters/764){:target="_blank"}:
+Try transforming the words in an Array using what you've learned so far about [loops](https://chapters.firstdraft.com/chapters/764){target="_blank"}:
 
 Write a program that, given a list of words from the user, would take each word and print it in three forms:
 
@@ -44,11 +44,11 @@ Your program should output the following:
 "ORANGE"
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){target="_blank"}
 
 ---
 
-After you've got it working, examine [the model solution here](https://repl.it/@_jelaniwoods/userwordssolution){:target="_blank"}. You'll see that I chose to use `.times` for this job.
+After you've got it working, examine [the model solution here](https://repl.it/@_jelaniwoods/userwordssolution){target="_blank"}. You'll see that I chose to use `.times` for this job.
 
  - On Line 6, we count the length of the array.
  - On Line 8, we use that length with the `.times` method to kick off a loop with the correct number of iterations.
@@ -73,7 +73,7 @@ user_words.each do |the_word|
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/each-iterating-with-each){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/each-iterating-with-each){target="_blank"}
 
 Click "run" and verify that both programs do the same thing.
 
@@ -138,7 +138,7 @@ user_words.each_with_index do |the_word, the_index|
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/each-each-with-index){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/each-each-with-index){target="_blank"}
 
 As you can see, some methods provide more than one block variable. `.each_with_index` allows you to name two variables within the pipes; the first one will receive the element, and the second one will receive the index of the iteration. Within the block you can use both variables as you see fit. In rare cases, handy.
 

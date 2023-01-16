@@ -9,7 +9,7 @@
   - Target: [https://photogram-signin.matchthetarget.com/](https://photogram-signin.matchthetarget.com/){target="_blank"}
 
   - Useful chapters:
-    - [`cookies-vs-session.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-vs-session.md){target="_blank"}
+    - [More ways of using cookies][More ways of using cookies]
 
 **BENP: signin vs. sign in vs. sign-in (same for signup, signout, signon, etc.), decide and check doc for consistency**
 

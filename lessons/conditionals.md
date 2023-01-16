@@ -20,7 +20,7 @@ if lucky_number.odd?
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/first-conditional){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/first-conditional){target="_blank"}
 
 Try running this program a few times and see how it behaves. These expressions, which conditonally run some code based on the truth or falseness of some condition, are known as **conditionals** or **if statements**.
 
@@ -80,7 +80,7 @@ else
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/multibranch-if){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/multibranch-if){target="_blank"}
 
  - Note that there is **no space** in the `elsif` keyword, and that there is **no `e` in the middle** of the `elsif` keyword. (In other languages, this construct is `elseif`, `else if`, etc; but in Ruby it's just `elsif`.)
  - The conditions are checked in top-down priority, so even if more than one is true, whichever one is first has its branch executed; the rest are ignored.
@@ -110,7 +110,7 @@ else
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){target="_blank"}
 
 For how many of the above did you correctly predict the output? What did you learn about what objects count as truthy and what objects count as falsy in Ruby?
 
@@ -185,7 +185,7 @@ if 3.odd? && 4.even?
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/and-and-or){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/and-and-or){target="_blank"}
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.
 
@@ -193,7 +193,7 @@ Basically, `&&` is stricter than `||`; both comparisons have to be true in order
 
 Can you create a Rock, Paper, Scissors game?
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/rps-2){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/rps-2){target="_blank"}
 
 ## Ruby Practice: Conditionals
 

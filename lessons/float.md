@@ -16,7 +16,7 @@ Ruby calls decimal numbers `Float`s. To create a `Float` rather than an `Integer
 
 #### + - * / ** (math)
 
-The math methods work mostly like you'd expect, and similarly to [the ones for integers](https://chapters.firstdraft.com/chapters/760#-------math){:target="_blank"}.
+The math methods work mostly like you'd expect, and similarly to [the ones for integers](https://chapters.firstdraft.com/chapters/760#-------math){target="_blank"}.
 
 The main difference to keep in mind is with `/`. Division with floats works the way that we're used to — it returns fractional results, as a `Float`:
 
@@ -32,7 +32,7 @@ Try the following and see what you get:
 12 / 5.0
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/Float-math){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/Float-math){target="_blank"}
 
 What did you discover? If _either_ side is a float, float division will be performed.
 
@@ -54,7 +54,7 @@ pi = 3.1415926535897932384626433832795028841976939937510
 p pi.round(3)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/round){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/round){target="_blank"}
 
 #### rand
 
@@ -64,13 +64,13 @@ The `rand` method that we met earlier can also be called with no arguments, in w
 p rand
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/float-rand){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/float-rand){target="_blank"}
 
 **BENP: is below section necessary? Might be info overload with the idea of "gems"**
 
 ### Even more Float methods
 
-Looking for even more Float methods? See [here](https://chapters.firstdraft.com/chapters/853){:target="_blank"} for some additional methods added by the `activesupport` gem (automatically available within Ruby on Rails).
+Looking for even more Float methods? See [here](https://chapters.firstdraft.com/chapters/853){target="_blank"} for some additional methods added by the `activesupport` gem (automatically available within Ruby on Rails).
 
 ## Ruby Practice: Float
 

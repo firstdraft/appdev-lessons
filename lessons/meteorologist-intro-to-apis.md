@@ -20,7 +20,7 @@ For us, that translates to: is there a URL that I can paste into my browser's ad
 
 If you want to, you can install a Chrome Extension called JSONView that makes reading JSON easier:
 
-[https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en){:target="_blank"}
+[https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en){target="_blank"}
 
 This will indent the JSON nicely and allow you to fold and unfold nested elements.
 
@@ -30,13 +30,13 @@ We will provide you with an API key for Google Maps in the assignment page for O
 
 We'll also need to make sure your API key stays hidden, in case your project ever gets pushed to GitHub or another public repository. Unsavory types like to scrape GitHub for sensitive information like API keys and run up huge bills for compromised users.
 
-To keep certain information out of our code, we use **environment variables**. See the [Storing credentials securely](https://chapters.firstdraft.com/chapters/792){:target="_blank"} chapter, and add our GMaps API key to your environment.
+To keep certain information out of our code, we use **environment variables**. See the [Storing credentials securely](https://chapters.firstdraft.com/chapters/792){target="_blank"} chapter, and add our GMaps API key to your environment.
 
 ### Find an example
 
 Now, we have to research the API and find the correct URL to paste into our address bar to get back the JSON that we want. Usually, we have to start at the API Documentation. For the Geocoding API, the full docs are here:
 
-[https://developers.google.com/maps/documentation/geocoding/](https://developers.google.com/maps/documentation/geocoding/){:target="_blank"}
+[https://developers.google.com/maps/documentation/geocoding/](https://developers.google.com/maps/documentation/geocoding/){target="_blank"}
 
 but, as usual with technical documentation, I usually skim the intro and then head straight for the examples:
 
@@ -44,13 +44,13 @@ but, as usual with technical documentation, I usually skim the intro and then he
 
 The first example they give is:
 
-[https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY](https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY){:target="_blank"}
+[https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY](https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY){target="_blank"}
 
 Replace `YOUR_API_KEY` with the one provided on Canvas in the Omnicalc 2 assignment. Paste that URL into a Chrome tab; you should see something like this:
 
 ![](/assets/meteorologist-intro-to-apis/mapsjson.png)
 
-(If your JSON looks like a wall of text instead of the nicely indented version above, then you haven't installed or enabled the [JSONView Chrome extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en){:target="_blank"}.)
+(If your JSON looks like a wall of text instead of the nicely indented version above, then you haven't installed or enabled the [JSONView Chrome extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en){target="_blank"}.)
 
 Try folding away the `address_components` section to make the value of the `geometry` key stand out, since that is where our target information lives:
 
@@ -109,7 +109,7 @@ raw_data = open(url).read
 
 Alright! We just used Ruby to open up a connection over the Internet to Google's servers, placed a request for them to translate our address into a latitude and longitude, received a response, and stored it in a Ruby variable! That's a big deal, folks. However, the response is hideous. How in the world are we going to pull out the latitude and longitude values from that thing?
 
-We could explore the [String](https://chapters.firstdraft.com/chapters/757){:target="_blank"} methods and find something that might help us scan through `raw_data` for `"lat"`, perhaps. But then what? We could probably figure it out, but there's a much better way.
+We could explore the [String](https://chapters.firstdraft.com/chapters/757){target="_blank"} methods and find something that might help us scan through `raw_data` for `"lat"`, perhaps. But then what? We could probably figure it out, but there's a much better way.
 
 Fortunately, Ruby provides a class called `JSON`, similar to the `CSV` class, which makes parsing a string that has data in JSON format a snap:
 
@@ -269,7 +269,7 @@ They released an iOS app, Dark Sky, to demonstrate the power of their API, and i
 
 Step 1 when working with any API is research. What is the URL of the page that has the data we want, preferably in JSON format? Here is an example from their documentation:
 
-[https://api.darksky.net/forecast/YOUR_API_KEY/37.8267,-122.4233](https://api.darksky.net/forecast/YOUR_API_KEY/37.8267,-122.4233){:target="_blank"}
+[https://api.darksky.net/forecast/YOUR_API_KEY/37.8267,-122.4233](https://api.darksky.net/forecast/YOUR_API_KEY/37.8267,-122.4233){target="_blank"}
 
 The Dark Sky API is unfortunately no longer available for new signups, since Apple purchased them recently. You can use my key from Canvas. Here is what their dashboard looks like:
 
@@ -285,7 +285,7 @@ It's pretty amazingly detailed data; it tells us current conditions, along with 
 
 But first, can we customize the example to get data relevant to us? Plug in some coordinates that you fetched in `street_to_coords` and try it out.
 
-Your job is to implement the actions required for the [Coordinates to Weather feature in the target](https://omnicalc-2.matchthetarget.com/coords_to_weather/new){:target="_blank"}.
+Your job is to implement the actions required for the [Coordinates to Weather feature in the target](https://omnicalc-2.matchthetarget.com/coords_to_weather/new){target="_blank"}.
 
 <blockquote>
 <dl>
@@ -324,7 +324,7 @@ rather than
 parsed_results.fetch("minutely").fetch("summary")
 ```
 
-[Read more about `.dig` here](https://tiagoamaro.com.br/2016/08/27/ruby-2-3-dig/){:target="_blank"}.
+[Read more about `.dig` here](https://tiagoamaro.com.br/2016/08/27/ruby-2-3-dig/){target="_blank"}.
 
 ## Part 3: Address to Weather
 
@@ -357,15 +357,15 @@ Finally, pull it all together. Use both the Google Geocoding API and the Forecas
 
 Browse some APIs:
 
-[https://chapters.firstdraft.com/chapters/800](https://chapters.firstdraft.com/chapters/800){:target="_blank"}
+[https://chapters.firstdraft.com/chapters/800](https://chapters.firstdraft.com/chapters/800){target="_blank"}
 
 and get inspired!
 
 ### Bootstrap (Easier)
 
-`<link>` to Bootstrap or a [Bootswatch](https://www.bootstrapcdn.com/bootswatch/){:target="_blank"} in the `<head>` of your pages (located in `app/views/layouts/application.html.erb`), and make things look prettier.
+`<link>` to Bootstrap or a [Bootswatch](https://www.bootstrapcdn.com/bootswatch/){target="_blank"} in the `<head>` of your pages (located in `app/views/layouts/application.html.erb`), and make things look prettier.
 
-You can take [this Bootswatched app](https://omnicalc-bs4-final.herokuapp.com/){:target="_blank"} as inspiration, or create something entirely new.
+You can take [this Bootswatched app](https://omnicalc-bs4-final.herokuapp.com/){target="_blank"} as inspiration, or create something entirely new.
 
 ### Future Forecast (Harder)
 
@@ -379,7 +379,7 @@ Add a feature that shows summaries for the next 14 days.
 
 Embed a Google map in the view, centered on the provided address. Refer to this chapter:
 
-[https://chapters.firstdraft.com/chapters/836](https://chapters.firstdraft.com/chapters/836){:target="blank"}
+[https://chapters.firstdraft.com/chapters/836](https://chapters.firstdraft.com/chapters/836){target="blank"}
 
 The key concept is, just like with Bootstrap, to first paste in the example markup and see if it works.
 

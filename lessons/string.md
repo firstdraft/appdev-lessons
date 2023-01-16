@@ -28,9 +28,9 @@ This will, however, just give us back an empty string `""`. We would then have t
 
 #### ASCII Codes
 
-What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1s`); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){:target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
+What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1s`); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
 
-[^unicode]: Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){:target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
+[^unicode]: Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
 
 **ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**
 :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
@@ -78,7 +78,7 @@ my_string.concat(33)
 p my_string
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
 
 #### String literals
 
@@ -122,13 +122,13 @@ But here's where it gets interesting; Ruby has another bit of nice _syntactic su
 "hi" +(" there") # => "hi there"
 ```
 
-Wild! And, as we learned earlier when we were [introduced](https://chapters.firstdraft.com/chapters/755#make-the-invisible-visible){:target="_blank"} to the `p` method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:
+Wild! And, as we learned earlier when we were [introduced](https://chapters.firstdraft.com/chapters/755#make-the-invisible-visible){target="_blank"} to the `p` method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:
 
 ```ruby
 "hi" + " there" # => "hi there"
 ```
 
-Now this is really starting to look familiar! It's a lot like the calculator language, actually. [Developer happiness](https://chapters.firstdraft.com/chapters/755#developer-happiness){:target="_blank"}, indeed.
+Now this is really starting to look familiar! It's a lot like the calculator language, actually. [Developer happiness](https://chapters.firstdraft.com/chapters/755#developer-happiness){target="_blank"}, indeed.
 
 ```ruby
 a = "Hello"
@@ -136,7 +136,7 @@ b = "World"
 p a + b        # You can add strings together
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
 
 #### String multiplication, a.k.a *
 
@@ -154,7 +154,7 @@ This sort of makes sense, if you think about multiplication as being repeated ad
 p "Hello" * 3
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){target="_blank"}
 
 The order matters, though. See what happens when you try:
 
@@ -162,13 +162,13 @@ The order matters, though. See what happens when you try:
 3 * "Hello"
 ```
 
-Read The Error Message ([RTEM](https://chapters.firstdraft.com/chapters/754#seriously-please-read-the-error-message){:target="_blank"})!
+Read The Error Message ([RTEM](https://chapters.firstdraft.com/chapters/754#seriously-please-read-the-error-message){target="_blank"})!
 
 Does this make sense? `"Hello" * 3` is calling the `String` method `*` with an argument of `3`, which kinda makes sense (add `"Hello"` to itself `3` times).
 
 But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hello"`, which doesn't make much sense (what would it mean to add `3` to itself `"Hello"` times?).
 
-Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line](https://chapters.firstdraft.com/chapters/754#the-bottom-line){:target="_blank"} is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
+Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line](https://chapters.firstdraft.com/chapters/754#the-bottom-line){target="_blank"} is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
 
 #### upcase
 
@@ -178,7 +178,7 @@ The upcase method returns a copy of the `String` with all lowercase letters repl
 p "hello".upcase
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
 
 #### downcase
 
@@ -188,7 +188,7 @@ The downcase method returns a copy of the `String` with all uppercase letters re
 p "I'M NOT YELLING AT YOU".downcase
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
 
 **BENP: maybe overkill on the REPLs here, can we combine all these string methods (below as well) into one?**
 
@@ -208,7 +208,7 @@ The reverse method returns a new `String` with the characters from the `String` 
 p "I can speak in backwords words".reverse
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
 
 #### length
 
@@ -218,7 +218,7 @@ The length method  returns the number of characters (as an `Integer`) that a `St
 p "Supercalifragilisticexpialidocious".length
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/length){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
 
 #### chomp
 
@@ -238,7 +238,7 @@ This seemingly strange task is very common due to the way that getting user inpu
 "1 apple".chomp("s") # => "1 apple"
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
 
 #### gsub
 
@@ -249,7 +249,7 @@ a = "Hello"
 p a.gsub("ll", "ww")  # => "Hewwo"
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
 
 ##### Advanced gsub techniques
 
@@ -261,7 +261,7 @@ In Ruby, we work with regular expressions the way we work with everything else �
 
 For now, we're just going to copy-paste a few simple regexes[^regexone] that come in handy with `gsub`, in particular:
 
-[^regexone]: If your project requires scanning text for patterns, then [RegexOne](https://regexone.com/){:target="_blank"} is a good resource for learning more. [Rubular](https://rubular.com/) is handy for quickly testing your regular expressions against some example strings.
+[^regexone]: If your project requires scanning text for patterns, then [RegexOne](https://regexone.com/){target="_blank"} is a good resource for learning more. [Rubular](https://rubular.com/) is handy for quickly testing your regular expressions against some example strings.
 
  - `/\s+/` matches all whitespace, so we can use it with `gsub` to _remove_ all whitespace:
 
@@ -294,7 +294,7 @@ Sometimes you have a string that contains a number, usually input from a user, a
 p "8".to_i
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
 
 #### strip
 
@@ -304,7 +304,7 @@ p "8".to_i
 p "   This has a lot of space on the outside     ".strip
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
 
 #### capitalize
 
@@ -314,7 +314,7 @@ capitalize returns a `String` with the first character converted to uppercase an
 p "beginning".capitalize
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
 
 #### split
 
@@ -330,7 +330,7 @@ words = sentence.split
 p words
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/split){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/split){target="_blank"}
 
 If you do provide an argument to `.split`, then the string will be chopped up wherever that argument occurs instead of whitespace — for example, use `"4,8,15,16,23,42".split(",")` to split on commas.
 
@@ -354,7 +354,7 @@ p "Happy Days".include?("H")
 p "Happy Days".include?("Z")
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
 
 ### More on adding strings together
 
@@ -365,7 +365,7 @@ number = 6 * 7
 message = "Your lucky number for today is " + number + "."
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){target="_blank"}
 
 You'll see that Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn't feel comfortable with that.
 
@@ -403,7 +403,7 @@ their_name = gets
 p "Hello, " + their_name + "!"
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){:target="_blank"}
+[Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){target="_blank"}
 
 Great! Our first user input. However, you'll notice a couple of things. First of all, there's a `\n` sneaking into the input. `\n` represents a newline character, and it's in there because of the <kbd>return</kbd> that is pressed to submit the input.
 
@@ -429,7 +429,7 @@ Most of the time, we'll stick with `p`, since it provides more details while deb
 
 #### gets.chomp
 
-We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, [the handy `.chomp` method](https://chapters.firstdraft.com/chapters/757#chomp){:target="_blank"} does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
+We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, [the handy `.chomp` method](https://chapters.firstdraft.com/chapters/757#chomp){target="_blank"} does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
 
 ```ruby
 their_name = gets.chomp
