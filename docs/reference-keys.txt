@@ -604,3 +604,13 @@ add-images
 tables-1
 embedding-objects
 styling-with-css
+using-git-to-freely-experiment-and-save-work
+sign-in-to-your-heroku-account-once-per-workspace
+create-a-production-server-once-per-application
+change-the-stack
+deploying-code-to-your-production-server
+set-environment-variables
+optional-set-a-custom-domain
+seeing-error-messages
+running-rake-tasks-automatically
+housekeeping

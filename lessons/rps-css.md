@@ -10,7 +10,7 @@
 
   - Useful chapters:
 
-    - [`classbook.md#styling-with-css`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/classbook.md#styling-with-css){target="_blank"}, but this is outdated?
+    - [Styling with CSS][Styling with CSS], but this is outdated?
 
 ## Video Segment: 1st bite-size chunk of RPS CSS
 

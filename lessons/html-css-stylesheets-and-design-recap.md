@@ -31,7 +31,7 @@
 
   - Useful chapters:
 
-    - [`classbook.md#styling-with-css`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/classbook.md#styling-with-css){target="_blank"}, but this is outdated?
+    - [Styling with CSS][Styling with CSS], but this is outdated?
 
   - [HTML and CSS Recap Slides](https://firstdraft.slides.com/raghubetina/html-and-css-recap?token=8gU8ghvw){target="_blank"}
     - 09-13: CSS Fundamentals
