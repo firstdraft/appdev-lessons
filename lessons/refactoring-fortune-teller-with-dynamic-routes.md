@@ -2,15 +2,14 @@
 
 - Notes:
 
-  - There is no video yet, everything is in the chapter [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}, copied in below
+  - Copied from [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/refactoring-fortune-teller](https://github.com/appdev-projects/refactoring-fortune-teller){target="_blank"}
 
   - Target: [https://refactoring-fortune-teller.matchthetarget.com](https://refactoring-fortune-teller.matchthetarget.com){target="_blank"}
 
   - Useful chapters:
-
-    - [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
+  
     - [RCAV Flowchart][RCAV Flowchart]
 
 

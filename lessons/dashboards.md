@@ -11,7 +11,7 @@
 
   - Useful chapters:
 
-    - [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
+    - [Refactoring Fortune Teller with Dynamic Routes][Refactoring Fortune Teller with Dynamic Routes]
 
 ## Video Segment: URLs and Dynamic Routes
 
@@ -527,7 +527,7 @@ The last step is to build the second currency symbol route, like **/forex/AWG/US
 
 - Notes:
 
-  - covid tracking text at bottom of `dashboards.md` (from README)
+  - covid tracking README text at bottom of [https://github.com/appdev-projects/dashboards](https://github.com/appdev-projects/dashboards){target="_blank"}
 
 ### The COVID Tracking Project
 

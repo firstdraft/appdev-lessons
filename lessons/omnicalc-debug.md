@@ -7,7 +7,7 @@
   - Project (ungraded): [https://github.com/appdev-projects/omnicalc-debug](https://github.com/appdev-projects/omnicalc-debug){target="_blank"}
 
   - Useful chapters:
-    - [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
+    - [Refactoring Fortune Teller with Dynamic Routes][Refactoring Fortune Teller with Dynamic Routes]
     - README text at [https://github.com/appdev-projects/omnicalc-debug#readme](https://github.com/appdev-projects/omnicalc-debug#readme){target="_blank"}
 
 **Reading: [Rubber Duck Debugging](https://www.thoughtfulcode.com/rubber-duck-debugging-psychology/){target="_blank"}**
