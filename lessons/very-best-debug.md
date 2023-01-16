@@ -129,7 +129,7 @@ The REPL is frozen in time right where that error occurred. So it's a very usefu
 
 We have added a lot of third-party gems like this to our Rails app to improve the development experience. When you want to start projects in the future... 
 
-**BENP: this part of the video is just a live walk through of `starting-a-rails-project-from-scratch.md` (https://chapters.firstdraft.com/chapters/851). It was prompted by a student question. Could just copy-paste from there.. or put this whole section elsewhere. NOTE, right now there is a starting from scratch tutorial including draft generators in Day 7 recording from 00:30:00 to 00:50:20. I am not transcribing this yet but can come back for it!**
+**BENP: this part of the video is just a live walk through of [Starting a Rails Project From Scratch][Starting a Rails Project From Scratch]. It was prompted by a student question. Could just copy-paste from there.. or put this whole section elsewhere. NOTE, right now there is a starting from scratch tutorial including draft generators in Day 7 recording from 00:30:00 to 00:50:20. I am not transcribing this yet but can come back for it!**
 
 Back to the current error message on **/**:
 

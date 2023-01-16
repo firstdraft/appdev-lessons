@@ -62,7 +62,6 @@ rmd_files:
     "lessons/data-integrity-with-validations.md",
     "lessons/msm-validations.md",
     "lessons/very-best-debug.md",
-    "lessons/draft-resource-generator.md",
     "lessons/draft-generators.md",
     "lessons/refactoring-msm-again.md",
     "lessons/photogram-associations.md",
