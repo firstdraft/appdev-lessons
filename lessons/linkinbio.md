@@ -2,15 +2,13 @@
 
 - Notes:
 
-   - No video for this, only chapter
-   
-   - Project (graded, submit a link): [https://github.com/appdev-projects/linkinbio](https://github.com/appdev-projects/linkinbio){target="_blank"}
+  - No video for this, only chapter
+  
+  - Project (graded, submit a link): [https://github.com/appdev-projects/linkinbio](https://github.com/appdev-projects/linkinbio){target="_blank"}
 
-   - Target: [https://rag.hu/04-layout](https://rag.hu/04-layout){target="_blank"}
+  - Target: [https://rag.hu/04-layout](https://rag.hu/04-layout){target="_blank"}
 
-   - Useful chapters copied in below:
-
-      - [`linkinbio.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/linkinbio.md){target="_blank"}
+  - Copied from [`linkinbio.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/linkinbio.md){target="_blank"}
 
 
 Some social media apps, in particular Instagram, do not allow you to include links to other pages in posts. The only place you can include a URL is in your bio, and you can only include one. This soon led to a trend of people promoting something with a post, but including "Link in bio!" in the caption. They would then update the solitary link in their bio to the latest thing they wanted to promote.
