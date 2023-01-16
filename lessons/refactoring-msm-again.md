@@ -8,7 +8,7 @@
 
   - Target: [https://github.com/appdev-projects/refactoring-msm-queries-1](https://github.com/appdev-projects/refactoring-msm-queries-1){target="_blank"}
 
-  - Helper application demo'd in video: https://association-accessors.firstdraft.com/
+  - Helper application demo'd in video, in need of its own dedicated tutorial video: [https://association-accessors.firstdraft.com/](https://association-accessors.firstdraft.com/){target="_blank"}
 
 
 ## Video Segment: `belongs_to`
