@@ -9,7 +9,7 @@ rmd_files:
     "index.md", 
     "outline-notes.md",
 
-    # lessons and chapters
+    # lessons (transcripts, readmes, original chapters)
     "lessons/course-overview.md", 
     "lessons/technical-setup.md",
     "lessons/rps-html.md", 
@@ -34,6 +34,7 @@ rmd_files:
     "lessons/our-own-classes.md",
     "lessons/ruby-gym.md", 
     "lessons/adding-routes.md",
+    "lessons/routing.md",
     "lessons/rcav-flowchart.md",
     "lessons/rps-rcav.md",
     "lessons/forms-query-strings-and-params.md",
@@ -57,7 +58,7 @@ rmd_files:
     "lessons/history-of-ml.md",
     "lessons/refactoring-msm-queries-with-methods.md",
     "lessons/refactoring-msm-queries.md",
-    "lessons/domain-modeling.md",
+    "lessons/offerup-domain-modeling.md",
     "lessons/photogram-gui.md",
     "lessons/data-integrity-with-validations.md",
     "lessons/msm-validations.md",
@@ -78,6 +79,8 @@ rmd_files:
     # final project
     "lessons/photogram-final.md",
     "lessons/building-your-own-idea.md",
+
+    # extra topics
     "lessons/extra-topics.md",
     "lessons/ransack.md",
     "lessons/image-uploads.md",
@@ -85,6 +88,19 @@ rmd_files:
     "lessons/exporting-data-into-a-csv.md",
     "lessons/google-map.md",
     "lessons/web-scraping-quickstart.md",
+
+    # extra chapters
+    "lessons/extra-chapters.md",
+    "lessons/planning-your-idea.md",
+    "lessons/diagramming-your-domain-model.md",
+    "lessons/handling-exceptions.md",
+    "lessons/qr-code-ruby.md",
+    "lessons/api-resources.md",
+    "lessons/draft-layout.md",
+    "lessons/towerofbabel.md",
+    "lessons/towerofbabel-hints.md",
+    "lessons/management-readings.md",
+    "lessons/sample_data.md",
     
     # glossaries
     "glossaries/terminology-technical-reference.md", 
@@ -93,4 +109,5 @@ rmd_files:
     "glossaries/html-reference.md",
     "glossaries/html-cheatsheet.md",
     "glossaries/classbook.md",
+
   ]

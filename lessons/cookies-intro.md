@@ -184,4 +184,4 @@ The cookies that a user stores on their computer will come back to us everytime 
 
 ## Finish and Submit Cookies Intro
 
-  - see `cookies.md` for requirements
+  - see [Cookies][Cookies] for requirements

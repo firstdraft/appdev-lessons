@@ -342,7 +342,7 @@ That's how pretty much all database relationships work. If we can do this, we ca
 
   - time stamp 00:15:31 to 00:22:09
   - define `title_with_year` in `app/models/movie.rb`
-  - see `refactoring-msm-queries-with-methods.md` section "Instance method review"
+  - see [Refactoring MSM Queries with Methods][Refactoring MSM Queries with Methods] section "Instance method review"
   - use of `self.` in model method
   - apply new method to `app/views/movie_templates/show.html.erb`
 
@@ -455,7 +455,7 @@ And if you reload the browser page with your movie details, you will see "howdy!
 
 We get the title and year from whichever movie this method is being run on, and that is what the keyword `self.` is for. When you're defining an instance method, and you need to call some other instance method, in order to make this instance method work, the `self.` keyword gives us a way to call the other instance method within the definition of this instance method. 
 
-**BENP: this is somewhat confusing wording. needs to be stated clearly and maybe linked to previous material. Right now there is a very long section called "Instance method review" in `refactoring-msm-queries-with-methods.md` that goes into this.**
+**BENP: this is somewhat confusing wording. needs to be stated clearly and maybe linked to previous material. Right now there is a very long section called [Instance method review][Instance method review] in [Refactoring MSM Queries with Methods][Refactoring MSM Queries with Methods] that goes into this.**
 
 Try to reload the movie details page at **/movies/1**. You should see the title and year instead of "howdy!".
 

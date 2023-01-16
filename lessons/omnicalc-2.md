@@ -352,14 +352,14 @@ In this project any necessary API credentials are made available to you **BENP: 
  - `MAILGUN_SENDING_DOMAIN` : `TODO`
  - `GMAPS_KEY` : `TODO`
  - `DARK_SKY_KEY` : `TODO`
- - `TRANSLATE_PROJECT` : `omnicalc`
+ - `TRANSLATE_PROJECT` : `TODO`
  - `TRANSLATE_CREDENTIALS` :
 
      ```
      { TODO } 
      ```
 
-So you can feel free to play around. But with your own credentials, be careful and protect them. **BENP: could link to `storing-credentials-securely.md` content here**
+So you can feel free to play around. But with your own credentials, be careful and protect them. **BENP: could link to [Storing credentials securely][Storing credentials securely] content here**
 
 How do I begin to think about tackling "Street to Coordinates"?
 

@@ -20,7 +20,6 @@ This chapter is the companion to [the refactoring-fortune-teller project](https:
 - Notes:
 
   - dynamic route segments
-  - Copied from `refactoring-fortune-teller-with-dynamic-routes.md` chapter section
   - `get("/roll/:number_of_dice/:how_many_sides", { :controller => "dice", :action => "infinity_and_beyond" })`
   - `params.fetch("number_of_dice")` and `params.fetch("how_many_sides")`
 
@@ -208,7 +207,6 @@ A question to ponder.
 - Notes:
 
   - dynamic route segments, our own classes
-  - Copied from `refactoring-fortune-teller-with-dynamic-routes.md` chapter section
   - `Zodiac` class in `app/models/`
   - `get("/zodiacs/:the_sign", { :controller => "fortunes", :action => "horoscopes" })`
   - `String#to_sym`

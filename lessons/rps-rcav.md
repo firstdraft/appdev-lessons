@@ -1033,7 +1033,7 @@ The rest of the project is up to you to finish. Visit the **specs** and wire the
 
 - Notes:
 
-  - Stuff that I did not zip in from the chapter `adding-routes.md`:
+  - Stuff that I did not zip in from the chapter [Adding Routes][Adding Routes]:
 
 ### Addendum: Rendering JSON
 
