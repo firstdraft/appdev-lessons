@@ -31,7 +31,7 @@ Here is a practical guide for how to edit and compile the book. A lot more detai
     └── README.md
     ```                   
 
-1. Add a lesson (chapter) by creating a `.md` file in `lessons/` or `glossaries/`. The file needs to start with `# My File!`, which will be the chapter heading. By convention, I name the file `my-file.md` (lower case, hyphens, remove punctuation). This makes cross-referencing the chapter easier. The file should only contain *one* `<h1>` heading (I think it can contain more, but we may just want to follow this convention to keep things separated):
+1. Add a lesson (video transcript or original chapter from chapters.firstdraft) by creating a `.md` file in `lessons/` or `glossaries/`. The file needs to start with `# My File!`, which will be the chapter heading. By convention, I name the file `my-file.md` (lower case, hyphens, remove punctuation). This makes cross-referencing the chapter easier. The file should only contain *one* `<h1>` heading (I think it can contain more, but we may just want to follow this convention to keep things separated):
 
       ```
       # My File!
@@ -52,7 +52,7 @@ Here is a practical guide for how to edit and compile the book. A lot more detai
           "index.md", 
           "outline-notes.md",
 
-          # lessons
+          # lessons and chapters
           "lessons/course-overview.md", 
           =====> "lessons/my-file.md", <=====
           "lessons/technical-setup.md",

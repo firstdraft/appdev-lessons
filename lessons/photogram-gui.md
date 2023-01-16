@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-gui){target="_blank"} transcription is in [`photogram-gui.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-gui.md){target="_blank"}
+  - [Video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-gui){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-gui.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/photogram-gui](https://github.com/appdev-projects/photogram-gui){target="_blank"}
 
@@ -10,7 +10,7 @@
 
   - Useful chapters:
 
-    - [`active-record.md#time-to-crud`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/active-record.md#time-to-crud){target="_blank"}
+    - [Time to CRUD][Time to CRUD]
 
 ## Video Segment: CRUD with Forms
 
@@ -63,7 +63,7 @@ Now, similarly, you've got **/photos**, and you can go to the details page of on
 
 If I scroll down farther on the photo details page, there's a section for "Comments", and I can add a new comment. Now, when I'm adding a new comment, I have to type in an "Author ID", which is kind of annoying. You have to provide a valid ID number, or it's not going to work. So there's a new concept of *validation*. 
 
-**BENP: `validates` is used in this project and there are notes and examples below, but this is covered in much more detail in `data-integrity-with-validations.md` chapter: https://chapters.firstdraft.com/chapters/845, and optional project: https://github.com/appdev-projects/msm-validations**
+**BENP: `validates` is used in this project and there are notes and examples below, but this is covered in much more detail in [Data integrity with Validations][Data integrity with Validations]**
 
 Okay, so there's some work to be done to get here to this target. Believe it or not, little of this is new. We've done forms, we've done `params`, we've done dynamic routes, we've done `ActiveRecord`, and we've done CRUD at the `rails console` (e.g., with `.new`, then add attribute values, then `.save`). 
 
@@ -132,7 +132,7 @@ This means we're going to have to do a lot of RCAV to set everything up.
   - time stamp 00:18:15 to 00:20:58
   - examine `app/models/user.rb`
   - association accessor instance methods there and in other models
-  - `validates` (first mention, only detailed later in https://github.com/appdev-projects/msm-validations and `data-integrity-with-validations.md`)
+  - `validates` (first mention, only detailed later in https://github.com/appdev-projects/msm-validations and [Data integrity with Validations][Data integrity with Validations])
 
 But we actually have even more in our starting point that will help us. The model files are already in the project, for instance, you can find:
 
@@ -1391,7 +1391,7 @@ The remaining tasks you see on the `rails grade` results page are up to you to c
 
 - Notes:
 
-  - copied from README at https://github.com/appdev-projects/photogram-gui#readme
+  - Copied from README at [https://github.com/appdev-projects/photogram-gui#readme](https://github.com/appdev-projects/photogram-gui#readme){target="_blank"}
 
 ### Tasks
 

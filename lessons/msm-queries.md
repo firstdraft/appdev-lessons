@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-msm-queries-intro-to-databases){target="_blank"} transcription is in [`MSM-queries.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-queries.md){target="_blank"}
+  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-msm-queries-intro-to-databases){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-queries.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/msm-queries](https://github.com/appdev-projects/msm-queries){target="_blank"}
 
@@ -10,8 +10,8 @@
 
   - Useful chapters:
 
-    - [`active-record.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/active-record.md){target="_blank"}
-    - [`our-own-classes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/our-own-classes.md){target="_blank"}
+    - [ActiveRecord][ActiveRecord]
+    - [Our own classes][Our own classes]
 
 **BENP: MSM should be written out when possible (similar to RPS)**
 
@@ -80,7 +80,7 @@ Moving away from the target, let's get going now in our Rails app on GitPod. We 
 
 How do we create a database table? How do we put data into the table? How do we get it back out? How do we get that data into controller action? How do we get it into a view template?
 
-Here's a couple things that are going to make our job easier, the README and a chapter `active-record.md`. **BENP: these two items need to be zipped in to this doc**
+Here's a couple things that are going to make our job easier, the README and a chapter [ActiveRecord][ActiveRecord]. **BENP: these two items need to be zipped in to this doc**
 
 There's also a couple of tools included in this (and every other) GitPod Rails project:
 
@@ -101,7 +101,7 @@ Rails includes a development database called *SQLite* (often pronounced as *Sequ
 
 If you click on `actors`, you will be brought to the URL **/rails/db/tables/actors/data**, and you will see a blank table with columns *Name*, *Dob*, *Bio*, *Image*, *Created at*, and *Updated at*. These were already put together for you. In the next project you will create your own tables.
 
-Creating your own tables is also covered in the `active-record.md` chapter. **BENP: probably zip this part of the chapter into the next project when it is actually relevant. At 00:07:51 in this video, there is a teaser of the commands, but this should be left out at this point.**
+Creating your own tables is also covered in the [ActiveRecord][ActiveRecord] chapter. **BENP: probably zip this part of the chapter into the next project when it is actually relevant. At 00:07:51 in this video, there is a teaser of the commands, but this should be left out at this point.**
 
 
 
@@ -163,7 +163,7 @@ So `ActiveRecord`, called an *object relational mapper*, is a perfect, elegant m
   - time stamp 00:12:03 to 00:14:35
   - just showing off `app/models/` files for the four tables that we would like to have
   - not actually creating these yet
-  - review `our-own-classes.md`
+  - review [Our own classes][Our own classes]
   - inheritance from `ApplicationRecord`
 
 Okay, so let's do this. First we'll go back to our Rails application and create Ruby classes for the four tables in our database. We need to create four files, each containing a new class in the GitPod folder `app/models/`:
@@ -862,7 +862,7 @@ pry(main)> Director
 
 Now, how are we going to find the oldest director? What methods do we have at our disposal?
 
-We have many wonderful methods avaiable from `ActiveRecord`, so let's familiarize ourselves with some of them. **BENP: some of these notes come directly from zipping in `active-record.md` chapter content, could just be linked here.**
+We have many wonderful methods avaiable from `ActiveRecord`, so let's familiarize ourselves with some of them. **BENP: some of these notes come directly from zipping in [ActiveRecord][ActiveRecord] chapter content, could just be linked here.**
 
 We will use the ["Time to CRUD" section of this chapter](https://chapters.firstdraft.com/chapters/770#time-to-crud){target="_blank"} as reference. We see much of the things we have already discussed in this section: how to use the console, how to create records and save them, and how to read. Please read the section, so you can see some of the methods you have available that we haven't covered.
 
@@ -1335,7 +1335,7 @@ Now, after a `rails grade` and potentially a `/git` commit if everything is work
 
 - Notes:
 
-  - from [https://github.com/appdev-projects/msm-queries#tasks](https://github.com/appdev-projects/msm-queries#tasks){target="_blank"}
+  - Copied from [https://github.com/appdev-projects/msm-queries#tasks](https://github.com/appdev-projects/msm-queries#tasks){target="_blank"}
 
 #### Finding a movie by title
 

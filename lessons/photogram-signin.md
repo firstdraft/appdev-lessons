@@ -2,14 +2,14 @@
 
 - Notes:
 
-  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-signin-intro-to-authentication){target="_blank"} transcription is in [`photogram-signin.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-signin.md){target="_blank"}
+  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-signin-intro-to-authentication){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-signin.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/photogram-signin](https://github.com/appdev-projects/photogram-signin){target="_blank"}
 
   - Target: [https://photogram-signin.matchthetarget.com/](https://photogram-signin.matchthetarget.com/){target="_blank"}
 
   - Useful chapters:
-    - [`cookies-vs-session.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-vs-session.md){target="_blank"}
+    - [More ways of using cookies][More ways of using cookies]
 
 **BENP: signin vs. sign in vs. sign-in (same for signup, signout, signon, etc.), decide and check doc for consistency**
 
@@ -332,7 +332,7 @@ And this error was occurring when, in the user details view template, we got to:
 
 In other words, the new user is *not* being added to the database with our sign up form. The validation failed, and if we look in the `app/controllers/users_controller.rb` file, then we see the only validation is for a `username` being `present` and unique. But we also put in the `has_secure_password` declaration. And this is the line that is preventing the user from being added without a password! Let's fix our `create` action.
 
-The `.save` method returns `true` (if it worked) or `false` (if it didn't), so we can store that in a variable and use it to decide the next step in a conditional. To give the user more information about what is going on, we can also use the `notice` and `alert` feature, as a second argument to `redirect_to`. Remember, when the save doesn't work there is the collection called `user.errors.full_messages`, which is an array containing everything that went wrong. **BENP: when was notice and alert introduced? Could link to [here](https://chapters.firstdraft.com/chapters/850#flash-messages)**
+The `.save` method returns `true` (if it worked) or `false` (if it didn't), so we can store that in a variable and use it to decide the next step in a conditional. To give the user more information about what is going on, we can also use the `notice` and `alert` feature, as a second argument to `redirect_to`. Remember, when the save doesn't work there is the collection called `user.errors.full_messages`, which is an array containing everything that went wrong. **BENP: when was notice and alert introduced? Could link to [Flash messages][Flash messages]**
 
 But, most importantly, we need to assign a password field to our new user with our new `User` methods `.password` and `.password_confirmation`:
 

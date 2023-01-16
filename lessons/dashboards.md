@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-dashboards-dynamic-route-segments){target="_blank"} transcription is in [`dashboards.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/dashboards.md){target="_blank"}
+  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-dashboards-dynamic-route-segments){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/dashboards.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/dashboards](https://github.com/appdev-projects/dashboards){target="_blank"}
     - And [here](https://gitpod.io/#snapshot/f960df8d-c502-40c4-a9bb-f224196aa028){target="_blank"} is a snapshot of the Omnicalc 2 workspace, which may be useful as reference.
@@ -11,7 +11,7 @@
 
   - Useful chapters:
 
-    - [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
+    - [Refactoring Fortune Teller with Dynamic Routes][Refactoring Fortune Teller with Dynamic Routes]
 
 ## Video Segment: URLs and Dynamic Routes
 
@@ -527,7 +527,7 @@ The last step is to build the second currency symbol route, like **/forex/AWG/US
 
 - Notes:
 
-  - covid tracking text at bottom of `dashboards.md` (from README)
+  - covid tracking README text at bottom of [https://github.com/appdev-projects/dashboards](https://github.com/appdev-projects/dashboards){target="_blank"}
 
 ### The COVID Tracking Project
 

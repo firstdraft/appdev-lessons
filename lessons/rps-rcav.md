@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-rps-rcav-intro-to-routing){target="_blank"} transcription is in [`adding-routes-RPS-RCAV.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/adding-routes-RPS-RCAV.md){target="_blank"}
+  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-rps-rcav-intro-to-routing){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/adding-routes-RPS-RCAV.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/rps-rcav](https://github.com/appdev-projects/rps-rcav){target="_blank"}
 
@@ -10,8 +10,8 @@
 
   - Useful chapters:
 
-    - [`adding-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/adding-routes.md){target="_blank"}
-    - [`rcav-flowchart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rcav-flowchart.md){target="_blank"}, not actually zipped in here yet
+    - [Adding Routes][Adding Routes]
+    - [RCAV Flowchart][RCAV Flowchart]
     - [Routing - RCAV Slides](https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q){target="_blank"}
 
 
@@ -1027,13 +1027,13 @@ The rest of the project is up to you to finish. Visit the **specs** and wire the
 
 - Notes:
 
-  - Refer students to [`rails grade`][`rails grade`], [git][Git], and [Sharing a Gitpod Snapshot][Sharing a Gitpod Snapshot] sections for how to get help
+  - Refer students to [`rails grade`][`rails grade`], [git][Using Git to freely experiment and save work], and [Sharing a Gitpod Snapshot][Sharing a Gitpod Snapshot] sections for how to get help
 
 ## RCAV Addendums
 
 - Notes:
 
-  - Stuff that I did not zip in from the chapter `adding-routes.md`:
+  - Stuff that I did not zip in from the chapter [Adding Routes][Adding Routes]:
 
 ### Addendum: Rendering JSON
 

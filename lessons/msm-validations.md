@@ -6,6 +6,6 @@
 
   - Useful chapters:
 
-    - [`data-integrity-with-validations.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/data-integrity-with-validations.md){target="_blank"}, not yet copied here
+    - [Data integrity with Validations][Data integrity with Validations]
 
   

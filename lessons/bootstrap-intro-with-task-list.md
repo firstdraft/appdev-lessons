@@ -8,7 +8,7 @@
 
     - **00:19:00 to 00:30:49**: useful `validates`, `has_many`, `reset_session`, new stuff and review
 
-    - **00:31:40 to 00:42:45**: `sample_data` task (already chapter `sample-data.md`, but chapter uses Photogram and here done with Task List)
+    - **00:31:40 to 00:42:45**: `sample_data` task (already chapter [Adding a sample_data rake task][Adding a sample_data rake task], but chapter uses Photogram and here done with Task List)
 
     - **00:51:06 to 00:53:28**: `force_user_sign_in` and `skip_before_action` is covered for the first time.   
 

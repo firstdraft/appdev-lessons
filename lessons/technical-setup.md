@@ -2,33 +2,17 @@
 
 - Notes:
 
-  - These steps are done in the [RPS HTML][Rock, Paper, Scissors HTML] content (original [video](https://canvas.uchicago.edu/courses/41147/pages/video-rps-html-intro-to-gitpod-and-html){target="_blank"}), and [String][String] exercise (original [video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=0){target="_blank"})
+  - These steps are done in [RPS HTML][Rock, Paper, Scissors HTML] and [String][String]
 
   - This is a place to collect dedicated how-to-guides to refer students back to
   
   - Dedicated video tutorials would be helpful here as well
 
-  - Project: N/A
-
-  - Target: N/A
-
-  - Useful chapters:
-
-    - [`day-2-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-2-notes.md){target="_blank"}
-    - [`getting-started-with-gitpod.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/getting-started-with-gitpod.md){target="_blank"}
-    - [`rails-grade.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rails-grade.md){target="_blank"}
-    - [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){target="_blank"}
-    - [`gitpod-snapshot.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/gitpod-snapshot.md){target="_blank"}
-    - [`hard-reload.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hard-reload.md){target="_blank"}
-    - [`using-git-to-experiement-and-save-work.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/using-git-to-experiement-and-save-work.md){target="_blank"}
-    - [`tips-and-tricks.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/tips-and-tricks.md){target="_blank"}
-
-
 ## Setting Up Accounts 
 
 - Notes:
 
-  - sections from [`day-2-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-2-notes.md){target="_blank"}
+  - Copied from [`day-2-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-2-notes.md){target="_blank"}
 
 ### Get a GitHub account
 
@@ -71,12 +55,15 @@ While you're waiting for everyone to finish creating accounts, read up on GitHub
 
 - Notes:
 
-  - sections from [`getting-started-with-gitpod.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/getting-started-with-gitpod.md){target="_blank"}, [`tips-and-tricks.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/tips-and-tricks.md){target="_blank"}, and [`hard-reload.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hard-reload.md){target="_blank"}
   - can use [RPS HTML][Rock, Paper, Scissors HTML] as example
   - should include forking, workspace layout, bin/server, tab management
   - could be chance to talk about file structures and terminal
 
 ### Getting Started With Gitpod
+
+- Notes:
+
+  - Copied from [`getting-started-with-gitpod.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/getting-started-with-gitpod.md){target="_blank"}
 
 One of the most painful parts of learning how to program, in the old days, was simply setting up your computer to be able to write and run code. At a minimum, we needed to install:
 
@@ -118,6 +105,10 @@ Gitpod.io is a great new service that provides instantaneous, full-fledged cloud
 
 ### Forcing Chrome to "Hard" Refresh
 
+- Notes: 
+
+  - Copied from [`hard-reload.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hard-reload.md){target="_blank"}
+
 Sometimes, when we update a CSS stylesheet, our page appears not to change. This is especially frequent when we're working on static HTML files in the `public/` folder.
 
 The cause is usually Chrome's aggressive "caching", i.e. re-using static assets that it has already downloaded (for performance reasons). If we refresh an HTML page that we've updated, Chrome won't necessarily also refresh all `<link>`ed CSS files — unless we ask it to by "hard" refreshing.
@@ -143,6 +134,10 @@ With Dev Tools open, "hard" refresh:
 Your HTML document should now have the latest CSS and any other linked assets (like images or javascripts).
 
 ### Gitpod keyboard shortcuts and other productivity tips
+
+- Notes:
+
+  - Copied from [`tips-and-tricks.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/tips-and-tricks.md){target="_blank"}
 
 #### Important Terminal keystrokes to know
 
@@ -311,11 +306,11 @@ Windows: <kbd>Ctrl</kbd> + <kbd>~</kbd> (i.e. <kbd>Ctrl</kbd> + <kbd>Shift</kbd>
 
 
 
-## Git 
+## Using Git to freely experiment and save work
 
 - Notes:
 
-  - sections from [`using-git-to-experiement-and-save-work.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/using-git-to-experiement-and-save-work.md){target="_blank"}
+  - Copied from [`using-git-to-experiement-and-save-work.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/using-git-to-experiement-and-save-work.md){target="_blank"}
 
 ### What Git is
 
@@ -403,11 +398,13 @@ Now you should be all set to push your commits to GitHub!
 
 - Notes:
 
-  - sections from [`rails-grade.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rails-grade.md){target="_blank"}, [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){target="_blank"}, and [`gitpod-snapshot.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/gitpod-snapshot.md){target="_blank"}
-  - kind of awkward placement, this video and text could go early in RPS HTML video
   - manually checking work, rails grade, git commiting
 
 ### Getting automated feedback with rails grade
+
+- Notes:
+
+  - Copied from [`rails-grade.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rails-grade.md){target="_blank"}
 
 #### Join GitHub
 
@@ -503,6 +500,10 @@ You can run `rails grade` in your Terminal as many times as you want, and you wi
 
 ### Fixing your organization permissions
 
+- Notes:
+
+  - Copied from [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){target="_blank"}
+
 Once upon a time, we all [created our own GitHub organizations](https://chapters.firstdraft.com/chapters/777#create-github-organization) to keep our classwork separate from our personal projects.
 
 Since then, whenever we gave permission to a third-party (like Gitpod or grades.firstdraft.com) to access our GitHub accounts, we were supposed to remember to grant access to our organization too. **If you forgot to click "Grant" next to the organization that you created before you clicked "Authorize", you're going to run into problems.** Let's fix it.
@@ -571,6 +572,10 @@ Then, return to the third-party app and "Sign in with..." again to start over fr
 
 
 ### Sharing a Gitpod Snapshot
+
+- Notes:
+
+  - Copied from [`gitpod-snapshot.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/gitpod-snapshot.md){target="_blank"}
 
 It's often helpful to share a snapshot of the state of your entire Gitpod workspace with someone else.
 

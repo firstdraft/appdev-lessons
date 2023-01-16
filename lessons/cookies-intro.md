@@ -2,15 +2,15 @@
 
 - Notes:
 
-  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-cookies-intro){target="_blank"} transcription is in [`cookies-with-video.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-with-video.md){target="_blank"}
+  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-cookies-intro){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-with-video.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/cookies-intro](https://github.com/appdev-projects/cookies-intro){target="_blank"}
 
   - Target: [https://cookies-intro.matchthetarget.com/](https://cookies-intro.matchthetarget.com/){target="_blank"}
 
   - Useful chapters:
-    - [`cookies.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies.md){target="_blank"}
-    - [`cookies-vs-session.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-vs-session.md){target="_blank"}
+    - [Cookies][Cookies]
+    - [More ways of using cookies][More ways of using cookies]
 
 **BENP: note that this assignment is not manadatory, so is there even a rails grade? May need to doublde check this in other optional assignments as well**
 
@@ -184,4 +184,4 @@ The cookies that a user stores on their computer will come back to us everytime 
 
 ## Finish and Submit Cookies Intro
 
-  - see `cookies.md` for requirements
+  - see [Cookies][Cookies] for requirements

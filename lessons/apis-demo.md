@@ -13,9 +13,9 @@
   - Target: [https://omnicalc-2.matchthetarget.com/](https://omnicalc-2.matchthetarget.com/){target="_blank"}
 
   - Useful chapters:
-    - [`storing-credentials-securely.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/storing-credentials-securely.md){target="_blank"}
-    - [`google-translate.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/google-translate.md){target="_blank"}
-    - [`sending-emails-and-texts.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/sending-emails-and-texts.md){target="_blank"}
+    - [Storing credentials securely][Storing credentials securely]
+    - [Google Cloud Translate][Google Cloud Translate]
+    - [Sending emails and text messages][Sending emails and text messages]
 
 ## APIs Demo README
 

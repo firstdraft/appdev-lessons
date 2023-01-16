@@ -2,15 +2,15 @@
 
 - Notes:
 
-  - [Day 8 long video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0325615f-63d3-473f-be6b-ae4b00eaec85){target="_blank"} transcription is in [`MSM-signin.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-signin.md){target="_blank"}
+  - [Day 8 long video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0325615f-63d3-473f-be6b-ae4b00eaec85){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-signin.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/msm-signin](https://github.com/appdev-projects/msm-signin){target="_blank"}
 
   - Target: [https://msm-signin.matchthetarget.com/](https://msm-signin.matchthetarget.com/){target="_blank"}
 
   - Useful chapters:
-    - [`draft-generators.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-generators.md){target="_blank"}
-    - [`draft-account.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-account.md){target="_blank"}
+    - [draft:resource generator][draft:resource generator]
+    - [draft:account generator][draft:account generator]
 
 **BENP: There is a lot of draft generator stuff at the beginning. This is applied examples, so it *is* transcribed. There is still a need for bite-size draft gen videos from thus far un-transcribed content.**
 

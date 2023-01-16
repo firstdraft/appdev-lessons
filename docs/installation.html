@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>42.1 Installation | AD1</title>
+  <meta name="description" content="This book covers the AD1 course at UChicago" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="42.1 Installation | AD1" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book covers the AD1 course at UChicago" />
+  <meta name="github-repo" content="firstdraft/appdev-textbook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="42.1 Installation | AD1" />
+  
+  <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
+  
+
+<meta name="author" content="Ben + Raghu" />
+
+
+<meta name="date" content="2023-01-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="draftresource-generator.html"/>
+<link rel="next" href="generating-a-resource.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li>AppDev</li>
+<li>Raghu + Ben</li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html"><i class="fa fa-check"></i>Planned LMS</a>
+<ul>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html#choose-one"><i class="fa fa-check"></i>Choose one</a></li>
+<li class="chapter" data-level="" data-path="planned-lms.html"><a href="planned-lms.html#choose-all-that-apply"><i class="fa fa-check"></i>Choose all that apply</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="outline-notes.html"><a href="outline-notes.html"><i class="fa fa-check"></i><b>1</b> Outline Notes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="diátaxis.html"><a href="diátaxis.html"><i class="fa fa-check"></i><b>1.1</b> Diátaxis</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="diátaxis.html"><a href="diátaxis.html#original-outline-diátaxis"><i class="fa fa-check"></i><b>1.1.1</b> Original Outline Diátaxis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="technical-references-code-vs.-terminology.html"><a href="technical-references-code-vs.-terminology.html"><i class="fa fa-check"></i><b>1.2</b> Technical References: Code vs. Terminology</a></li>
+<li class="chapter" data-level="1.3" data-path="whats-missing.html"><a href="whats-missing.html"><i class="fa fa-check"></i><b>1.3</b> What’s missing?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="course-overview.html"><a href="course-overview.html"><i class="fa fa-check"></i><b>2</b> Course Overview</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="course-intro.html"><a href="course-intro.html"><i class="fa fa-check"></i><b>2.1</b> Course intro</a></li>
+<li class="chapter" data-level="2.2" data-path="what-does-it-mean-to-know-how-to-code.html"><a href="what-does-it-mean-to-know-how-to-code.html"><i class="fa fa-check"></i><b>2.2</b> What does it mean to know how to code?</a></li>
+<li class="chapter" data-level="2.3" data-path="saas.html"><a href="saas.html"><i class="fa fa-check"></i><b>2.3</b> SaaS</a></li>
+<li class="chapter" data-level="2.4" data-path="urls.html"><a href="urls.html"><i class="fa fa-check"></i><b>2.4</b> URLs</a></li>
+<li class="chapter" data-level="2.5" data-path="etc.-from-slides.html"><a href="etc.-from-slides.html"><i class="fa fa-check"></i><b>2.5</b> etc. from slides</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="technical-setup.html"><a href="technical-setup.html"><i class="fa fa-check"></i><b>3</b> Technical Setup</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="setting-up-accounts.html"><a href="setting-up-accounts.html"><i class="fa fa-check"></i><b>3.1</b> Setting Up Accounts</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="setting-up-accounts.html"><a href="setting-up-accounts.html#get-a-github-account"><i class="fa fa-check"></i><b>3.1.1</b> Get a GitHub account</a></li>
+<li class="chapter" data-level="3.1.2" data-path="setting-up-accounts.html"><a href="setting-up-accounts.html#get-a-heroku-account"><i class="fa fa-check"></i><b>3.1.2</b> Get a Heroku account</a></li>
+<li class="chapter" data-level="3.1.3" data-path="setting-up-accounts.html"><a href="setting-up-accounts.html#github-and-heroku-readings"><i class="fa fa-check"></i><b>3.1.3</b> GitHub and Heroku readings</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="gitpod.html"><a href="gitpod.html"><i class="fa fa-check"></i><b>3.2</b> GitPod</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="gitpod.html"><a href="gitpod.html#getting-started-with-gitpod"><i class="fa fa-check"></i><b>3.2.1</b> Getting Started With Gitpod</a></li>
+<li class="chapter" data-level="3.2.2" data-path="gitpod.html"><a href="gitpod.html#forcing-chrome-to-hard-refresh"><i class="fa fa-check"></i><b>3.2.2</b> Forcing Chrome to “Hard” Refresh</a></li>
+<li class="chapter" data-level="3.2.3" data-path="gitpod.html"><a href="gitpod.html#gitpod-keyboard-shortcuts-and-other-productivity-tips"><i class="fa fa-check"></i><b>3.2.3</b> Gitpod keyboard shortcuts and other productivity tips</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="using-git-to-freely-experiment-and-save-work.html"><a href="using-git-to-freely-experiment-and-save-work.html"><i class="fa fa-check"></i><b>3.3</b> Using Git to freely experiment and save work</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="using-git-to-freely-experiment-and-save-work.html"><a href="using-git-to-freely-experiment-and-save-work.html#what-git-is"><i class="fa fa-check"></i><b>3.3.1</b> What Git is</a></li>
+<li class="chapter" data-level="3.3.2" data-path="using-git-to-freely-experiment-and-save-work.html"><a href="using-git-to-freely-experiment-and-save-work.html#why-we-care"><i class="fa fa-check"></i><b>3.3.2</b> Why we care</a></li>
+<li class="chapter" data-level="3.3.3" data-path="using-git-to-freely-experiment-and-save-work.html"><a href="using-git-to-freely-experiment-and-save-work.html#jumping-back-in-time"><i class="fa fa-check"></i><b>3.3.3</b> Jumping back in time</a></li>
+<li class="chapter" data-level="3.3.4" data-path="using-git-to-freely-experiment-and-save-work.html"><a href="using-git-to-freely-experiment-and-save-work.html#switch-to-a-different-branch"><i class="fa fa-check"></i><b>3.3.4</b> Switch to a Different Branch</a></li>
+<li class="chapter" data-level="3.3.5" data-path="using-git-to-freely-experiment-and-save-work.html"><a href="using-git-to-freely-experiment-and-save-work.html#push-to-github"><i class="fa fa-check"></i><b>3.3.5</b> Push to GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="rails-grade.html"><a href="rails-grade.html"><i class="fa fa-check"></i><b>3.4</b> <code>rails grade</code></a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="rails-grade.html"><a href="rails-grade.html#getting-automated-feedback-with-rails-grade"><i class="fa fa-check"></i><b>3.4.1</b> Getting automated feedback with rails grade</a></li>
+<li class="chapter" data-level="3.4.2" data-path="rails-grade.html"><a href="rails-grade.html#fixing-your-organization-permissions"><i class="fa fa-check"></i><b>3.4.2</b> Fixing your organization permissions</a></li>
+<li class="chapter" data-level="3.4.3" data-path="rails-grade.html"><a href="rails-grade.html#sharing-a-gitpod-snapshot"><i class="fa fa-check"></i><b>3.4.3</b> Sharing a Gitpod Snapshot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rock-paper-scissors-html.html"><a href="rock-paper-scissors-html.html"><i class="fa fa-check"></i><b>4</b> Rock, Paper, Scissors HTML</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="video-segment-1st-bite-size-chunk-of-rps-html.html"><a href="video-segment-1st-bite-size-chunk-of-rps-html.html"><i class="fa fa-check"></i><b>4.1</b> Video Segment: 1st bite-size chunk of RPS HTML</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="video-segment-1st-bite-size-chunk-of-rps-html.html"><a href="video-segment-1st-bite-size-chunk-of-rps-html.html#text-companion-1st-bite-size-chunk-of-rps-html"><i class="fa fa-check"></i><b>4.1.1</b> Text Companion: 1st bite-size chunk of RPS HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="video-segment-nth-bite-size-chunk-of-rps-html.html"><a href="video-segment-nth-bite-size-chunk-of-rps-html.html"><i class="fa fa-check"></i><b>4.2</b> Video Segment: Nth bite-size chunk of RPS HTML</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="video-segment-nth-bite-size-chunk-of-rps-html.html"><a href="video-segment-nth-bite-size-chunk-of-rps-html.html#text-companion-nth-bite-size-chunk-of-rps-html"><i class="fa fa-check"></i><b>4.2.1</b> Text Companion: Nth bite-size chunk of RPS HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="finish-and-submit-rps-html.html"><a href="finish-and-submit-rps-html.html"><i class="fa fa-check"></i><b>4.3</b> Finish and Submit RPS HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html"><i class="fa fa-check"></i><b>5</b> Deploying to Heroku</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html#sign-in-to-your-heroku-account-once-per-workspace"><i class="fa fa-check"></i><b>5.0.1</b> Sign in to your Heroku account (once per workspace)</a></li>
+<li class="chapter" data-level="5.0.2" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html#create-a-production-server-once-per-application"><i class="fa fa-check"></i><b>5.0.2</b> Create a production server (once per application)</a></li>
+<li class="chapter" data-level="5.0.3" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html#change-the-stack"><i class="fa fa-check"></i><b>5.0.3</b> Change the stack</a></li>
+<li class="chapter" data-level="5.0.4" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html#deploying-code-to-your-production-server"><i class="fa fa-check"></i><b>5.0.4</b> Deploying code to your production server</a></li>
+<li class="chapter" data-level="5.0.5" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html#set-environment-variables"><i class="fa fa-check"></i><b>5.0.5</b> Set environment variables</a></li>
+<li class="chapter" data-level="5.0.6" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html#optional-set-a-custom-domain"><i class="fa fa-check"></i><b>5.0.6</b> Optional: set a custom domain</a></li>
+<li class="chapter" data-level="5.0.7" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html#seeing-error-messages"><i class="fa fa-check"></i><b>5.0.7</b> Seeing error messages</a></li>
+<li class="chapter" data-level="5.0.8" data-path="deploying-to-heroku.html"><a href="deploying-to-heroku.html#running-rake-tasks-automatically"><i class="fa fa-check"></i><b>5.0.8</b> Running rake tasks automatically</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="rock-paper-scissors-css.html"><a href="rock-paper-scissors-css.html"><i class="fa fa-check"></i><b>6</b> Rock, Paper, Scissors CSS</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="video-segment-1st-bite-size-chunk-of-rps-css.html"><a href="video-segment-1st-bite-size-chunk-of-rps-css.html"><i class="fa fa-check"></i><b>6.1</b> Video Segment: 1st bite-size chunk of RPS CSS</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="video-segment-1st-bite-size-chunk-of-rps-css.html"><a href="video-segment-1st-bite-size-chunk-of-rps-css.html#text-companion-1st-bite-size-chunk-of-rps-css"><i class="fa fa-check"></i><b>6.1.1</b> Text Companion: 1st bite-size chunk of RPS CSS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="video-segment-nth-bite-size-chunk-of-rps-css.html"><a href="video-segment-nth-bite-size-chunk-of-rps-css.html"><i class="fa fa-check"></i><b>6.2</b> Video Segment: Nth bite-size chunk of RPS CSS</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="video-segment-nth-bite-size-chunk-of-rps-css.html"><a href="video-segment-nth-bite-size-chunk-of-rps-css.html#text-companion-nth-bite-size-chunk-of-rps-css"><i class="fa fa-check"></i><b>6.2.1</b> Text Companion: Nth bite-size chunk of RPS CSS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="relationships.html"><a href="relationships.html"><i class="fa fa-check"></i><b>7</b> Relationships</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="practice-identifying-relationships.html"><a href="practice-identifying-relationships.html"><i class="fa fa-check"></i><b>7.1</b> Practice Identifying Relationships</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="html-css-stylesheets-and-design-recap.html"><a href="html-css-stylesheets-and-design-recap.html"><i class="fa fa-check"></i><b>8</b> HTML, CSS, Stylesheets, and Design Recap</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="html-recap-and-replits.html"><a href="html-recap-and-replits.html"><i class="fa fa-check"></i><b>8.1</b> HTML Recap and Replits</a></li>
+<li class="chapter" data-level="8.2" data-path="css-recap-and-replits.html"><a href="css-recap-and-replits.html"><i class="fa fa-check"></i><b>8.2</b> CSS Recap and Replits</a></li>
+<li class="chapter" data-level="8.3" data-path="stylesheets-recap-and-replits.html"><a href="stylesheets-recap-and-replits.html"><i class="fa fa-check"></i><b>8.3</b> Stylesheets Recap and Replits</a></li>
+<li class="chapter" data-level="8.4" data-path="design-resources.html"><a href="design-resources.html"><i class="fa fa-check"></i><b>8.4</b> Design Resources</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="design-resources.html"><a href="design-resources.html#readings"><i class="fa fa-check"></i><b>8.4.1</b> Readings</a></li>
+<li class="chapter" data-level="8.4.2" data-path="design-resources.html"><a href="design-resources.html#resources"><i class="fa fa-check"></i><b>8.4.2</b> Resources</a></li>
+<li class="chapter" data-level="8.4.3" data-path="design-resources.html"><a href="design-resources.html#quick-links-to-assets"><i class="fa fa-check"></i><b>8.4.3</b> Quick links to assets</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="linkinbio.html"><a href="linkinbio.html"><i class="fa fa-check"></i><b>9</b> Linkinbio</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>9.1</b> Getting started</a></li>
+<li class="chapter" data-level="9.2" data-path="first-things-first-the-content.html"><a href="first-things-first-the-content.html"><i class="fa fa-check"></i><b>9.2</b> First things first — the content</a></li>
+<li class="chapter" data-level="9.3" data-path="basic-html-structure.html"><a href="basic-html-structure.html"><i class="fa fa-check"></i><b>9.3</b> Basic HTML Structure</a></li>
+<li class="chapter" data-level="9.4" data-path="html-validator.html"><a href="html-validator.html"><i class="fa fa-check"></i><b>9.4</b> HTML Validator</a></li>
+<li class="chapter" data-level="9.5" data-path="view-source.html"><a href="view-source.html"><i class="fa fa-check"></i><b>9.5</b> View Source</a></li>
+<li class="chapter" data-level="9.6" data-path="sizing-images.html"><a href="sizing-images.html"><i class="fa fa-check"></i><b>9.6</b> Sizing images</a></li>
+<li class="chapter" data-level="9.7" data-path="basic-colors.html"><a href="basic-colors.html"><i class="fa fa-check"></i><b>9.7</b> Basic colors</a></li>
+<li class="chapter" data-level="9.8" data-path="layout.html"><a href="layout.html"><i class="fa fa-check"></i><b>9.8</b> Layout</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="layout.html"><a href="layout.html#overall-page-layout"><i class="fa fa-check"></i><b>9.8.1</b> Overall page layout</a></li>
+<li class="chapter" data-level="9.8.2" data-path="layout.html"><a href="layout.html#layout-for-each-link"><i class="fa fa-check"></i><b>9.8.2</b> Layout for each link</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="deploy.html"><a href="deploy.html"><i class="fa fa-check"></i><b>9.9</b> Deploy!</a></li>
+<li class="chapter" data-level="9.10" data-path="this-is-the-end-of-the-required-portion.html"><a href="this-is-the-end-of-the-required-portion.html"><i class="fa fa-check"></i><b>9.10</b> This is the end of the required portion</a></li>
+<li class="chapter" data-level="9.11" data-path="make-it-your-own.html"><a href="make-it-your-own.html"><i class="fa fa-check"></i><b>9.11</b> Make it your own</a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="make-it-your-own.html"><a href="make-it-your-own.html#fun-design-resources"><i class="fa fa-check"></i><b>9.11.1</b> Fun design resources</a></li>
+<li class="chapter" data-level="9.11.2" data-path="make-it-your-own.html"><a href="make-it-your-own.html#always-be-committing"><i class="fa fa-check"></i><b>9.11.2</b> Always be committing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="intro-to-ruby.html"><a href="intro-to-ruby.html"><i class="fa fa-check"></i><b>10</b> Intro to Ruby</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html"><i class="fa fa-check"></i><b>10.1</b> Nouns, verbs, and grammar</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#you-already-know-how-to-program"><i class="fa fa-check"></i><b>10.1.1</b> You already know how to program</a></li>
+<li class="chapter" data-level="10.1.2" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#rubys-vocabulary"><i class="fa fa-check"></i><b>10.1.2</b> Ruby’s vocabulary</a></li>
+<li class="chapter" data-level="10.1.3" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#rubys-primary-syntax"><i class="fa fa-check"></i><b>10.1.3</b> Ruby’s primary syntax</a></li>
+<li class="chapter" data-level="10.1.4" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#every-class-has-different-methods"><i class="fa fa-check"></i><b>10.1.4</b> Every class has different methods</a></li>
+<li class="chapter" data-level="10.1.5" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#arguments-are-inputs"><i class="fa fa-check"></i><b>10.1.5</b> Arguments are inputs</a></li>
+<li class="chapter" data-level="10.1.6" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#an-aside-code-comments"><i class="fa fa-check"></i><b>10.1.6</b> An aside: Code comments</a></li>
+<li class="chapter" data-level="10.1.7" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#variables-are-boxes"><i class="fa fa-check"></i><b>10.1.7</b> Variables are boxes</a></li>
+<li class="chapter" data-level="10.1.8" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#thats-it"><i class="fa fa-check"></i><b>10.1.8</b> That’s it</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html"><i class="fa fa-check"></i><b>10.2</b> A few program notes</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html#whats-our-goal"><i class="fa fa-check"></i><b>10.2.1</b> What’s our goal?</a></li>
+<li class="chapter" data-level="10.2.2" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html#why-ruby"><i class="fa fa-check"></i><b>10.2.2</b> Why Ruby?</a></li>
+<li class="chapter" data-level="10.2.3" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html#how-are-we-going-to-go-from-zero-to-heroku"><i class="fa fa-check"></i><b>10.2.3</b> How are we going to go from zero to Hero(ku)?</a></li>
+<li class="chapter" data-level="10.2.4" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html#onwards"><i class="fa fa-check"></i><b>10.2.4</b> Onwards</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="string.html"><a href="string.html"><i class="fa fa-check"></i><b>10.3</b> String</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="string.html"><a href="string.html#creating-strings"><i class="fa fa-check"></i><b>10.3.1</b> Creating strings</a></li>
+<li class="chapter" data-level="10.3.2" data-path="string.html"><a href="string.html#methods"><i class="fa fa-check"></i><b>10.3.2</b> Methods</a></li>
+<li class="chapter" data-level="10.3.3" data-path="string.html"><a href="string.html#more-on-adding-strings-together"><i class="fa fa-check"></i><b>10.3.3</b> More on adding strings together</a></li>
+<li class="chapter" data-level="10.3.4" data-path="string.html"><a href="string.html#getting-strings-from-users-with-gets"><i class="fa fa-check"></i><b>10.3.4</b> Getting strings from users with gets</a></li>
+<li class="chapter" data-level="10.3.5" data-path="string.html"><a href="string.html#conclusion"><i class="fa fa-check"></i><b>10.3.5</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ruby-practice-string.html"><a href="ruby-practice-string.html"><i class="fa fa-check"></i><b>10.4</b> Ruby Practice: String</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ruby-practice-string.html"><a href="ruby-practice-string.html#string_multiplication.rb"><i class="fa fa-check"></i><b>10.4.1</b> string_multiplication.rb</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ruby-practice-string.html"><a href="ruby-practice-string.html#string_case.rb"><i class="fa fa-check"></i><b>10.4.2</b> string_case.rb</a></li>
+<li class="chapter" data-level="10.4.3" data-path="ruby-practice-string.html"><a href="ruby-practice-string.html#string_chomp.rb"><i class="fa fa-check"></i><b>10.4.3</b> string_chomp.rb</a></li>
+<li class="chapter" data-level="10.4.4" data-path="ruby-practice-string.html"><a href="ruby-practice-string.html#string_gsub.rb"><i class="fa fa-check"></i><b>10.4.4</b> string_gsub.rb</a></li>
+<li class="chapter" data-level="10.4.5" data-path="ruby-practice-string.html"><a href="ruby-practice-string.html#string_strip.rb"><i class="fa fa-check"></i><b>10.4.5</b> string_strip.rb</a></li>
+<li class="chapter" data-level="10.4.6" data-path="ruby-practice-string.html"><a href="ruby-practice-string.html#string_gets.rb"><i class="fa fa-check"></i><b>10.4.6</b> string_gets.rb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="integer.html"><a href="integer.html"><i class="fa fa-check"></i><b>10.5</b> Integer</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="integer.html"><a href="integer.html#syntax"><i class="fa fa-check"></i><b>10.5.1</b> Syntax</a></li>
+<li class="chapter" data-level="10.5.2" data-path="integer.html"><a href="integer.html#methods-1"><i class="fa fa-check"></i><b>10.5.2</b> Methods</a></li>
+<li class="chapter" data-level="10.5.3" data-path="integer.html"><a href="integer.html#math"><i class="fa fa-check"></i><b>10.5.3</b> + - * / % ** (math)</a></li>
+<li class="chapter" data-level="10.5.4" data-path="integer.html"><a href="integer.html#odd-and-even"><i class="fa fa-check"></i><b>10.5.4</b> odd? and even?</a></li>
+<li class="chapter" data-level="10.5.5" data-path="integer.html"><a href="integer.html#rand"><i class="fa fa-check"></i><b>10.5.5</b> rand</a></li>
+<li class="chapter" data-level="10.5.6" data-path="integer.html"><a href="integer.html#to_s"><i class="fa fa-check"></i><b>10.5.6</b> to_s</a></li>
+<li class="chapter" data-level="10.5.7" data-path="integer.html"><a href="integer.html#to_f"><i class="fa fa-check"></i><b>10.5.7</b> to_f</a></li>
+<li class="chapter" data-level="10.5.8" data-path="integer.html"><a href="integer.html#conclusion-1"><i class="fa fa-check"></i><b>10.5.8</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="ruby-practice-integer.html"><a href="ruby-practice-integer.html"><i class="fa fa-check"></i><b>10.6</b> Ruby Practice: Integer</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="ruby-practice-integer.html"><a href="ruby-practice-integer.html#integer_math.rb"><i class="fa fa-check"></i><b>10.6.1</b> integer_math.rb</a></li>
+<li class="chapter" data-level="10.6.2" data-path="ruby-practice-integer.html"><a href="ruby-practice-integer.html#integer_odd.rb"><i class="fa fa-check"></i><b>10.6.2</b> integer_odd.rb</a></li>
+<li class="chapter" data-level="10.6.3" data-path="ruby-practice-integer.html"><a href="ruby-practice-integer.html#integer_birth_year.rb"><i class="fa fa-check"></i><b>10.6.3</b> integer_birth_year.rb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="float.html"><a href="float.html"><i class="fa fa-check"></i><b>10.7</b> Float</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="float.html"><a href="float.html#methods-2"><i class="fa fa-check"></i><b>10.7.1</b> Methods</a></li>
+<li class="chapter" data-level="10.7.2" data-path="float.html"><a href="float.html#even-more-float-methods"><i class="fa fa-check"></i><b>10.7.2</b> Even more Float methods</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="ruby-practice-float.html"><a href="ruby-practice-float.html"><i class="fa fa-check"></i><b>10.8</b> Ruby Practice: Float</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="ruby-practice-float.html"><a href="ruby-practice-float.html#float_find_hypotenuse.rb"><i class="fa fa-check"></i><b>10.8.1</b> float_find_hypotenuse.rb</a></li>
+<li class="chapter" data-level="10.8.2" data-path="ruby-practice-float.html"><a href="ruby-practice-float.html#float_rounding.rb"><i class="fa fa-check"></i><b>10.8.2</b> float_rounding.rb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="more-float-methods.html"><a href="more-float-methods.html"><i class="fa fa-check"></i><b>10.9</b> More Float methods</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="more-float-methods.html"><a href="more-float-methods.html#formatting-floats-as-strings"><i class="fa fa-check"></i><b>10.9.1</b> Formatting Floats as Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="10.10" data-path="date.html"><a href="date.html"><i class="fa fa-check"></i><b>10.10</b> Date</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="date.html"><a href="date.html#creating-a-date"><i class="fa fa-check"></i><b>10.10.1</b> Creating a date</a></li>
+<li class="chapter" data-level="10.10.2" data-path="date.html"><a href="date.html#date.today"><i class="fa fa-check"></i><b>10.10.2</b> Date.today</a></li>
+<li class="chapter" data-level="10.10.3" data-path="date.html"><a href="date.html#year"><i class="fa fa-check"></i><b>10.10.3</b> year</a></li>
+<li class="chapter" data-level="10.10.4" data-path="date.html"><a href="date.html#month"><i class="fa fa-check"></i><b>10.10.4</b> month</a></li>
+<li class="chapter" data-level="10.10.5" data-path="date.html"><a href="date.html#day"><i class="fa fa-check"></i><b>10.10.5</b> day</a></li>
+<li class="chapter" data-level="10.10.6" data-path="date.html"><a href="date.html#date.parse"><i class="fa fa-check"></i><b>10.10.6</b> Date.parse</a></li>
+<li class="chapter" data-level="10.10.7" data-path="date.html"><a href="date.html#subtraction"><i class="fa fa-check"></i><b>10.10.7</b> Subtraction</a></li>
+<li class="chapter" data-level="10.10.8" data-path="date.html"><a href="date.html#monday"><i class="fa fa-check"></i><b>10.10.8</b> monday?</a></li>
+<li class="chapter" data-level="10.10.9" data-path="date.html"><a href="date.html#tuesday"><i class="fa fa-check"></i><b>10.10.9</b> tuesday?</a></li>
+<li class="chapter" data-level="10.10.10" data-path="date.html"><a href="date.html#wednesday"><i class="fa fa-check"></i><b>10.10.10</b> wednesday?</a></li>
+<li class="chapter" data-level="10.10.11" data-path="date.html"><a href="date.html#thursday"><i class="fa fa-check"></i><b>10.10.11</b> thursday?</a></li>
+<li class="chapter" data-level="10.10.12" data-path="date.html"><a href="date.html#friday"><i class="fa fa-check"></i><b>10.10.12</b> friday?</a></li>
+<li class="chapter" data-level="10.10.13" data-path="date.html"><a href="date.html#saturday"><i class="fa fa-check"></i><b>10.10.13</b> saturday?</a></li>
+<li class="chapter" data-level="10.10.14" data-path="date.html"><a href="date.html#sunday"><i class="fa fa-check"></i><b>10.10.14</b> sunday?</a></li>
+<li class="chapter" data-level="10.10.15" data-path="date.html"><a href="date.html#wday"><i class="fa fa-check"></i><b>10.10.15</b> wday</a></li>
+<li class="chapter" data-level="10.10.16" data-path="date.html"><a href="date.html#time"><i class="fa fa-check"></i><b>10.10.16</b> Time</a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html"><i class="fa fa-check"></i><b>10.11</b> Ruby Practice: Date</a>
+<ul>
+<li class="chapter" data-level="10.11.1" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html#date_formatted.rb"><i class="fa fa-check"></i><b>10.11.1</b> date_formatted.rb</a></li>
+<li class="chapter" data-level="10.11.2" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html#date_math.rb"><i class="fa fa-check"></i><b>10.11.2</b> date_math.rb</a></li>
+<li class="chapter" data-level="10.11.3" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html#date_monday.rb"><i class="fa fa-check"></i><b>10.11.3</b> date_monday.rb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.12" data-path="array.html"><a href="array.html"><i class="fa fa-check"></i><b>10.12</b> Array</a>
+<ul>
+<li class="chapter" data-level="10.12.1" data-path="array.html"><a href="array.html#creating-arrays"><i class="fa fa-check"></i><b>10.12.1</b> Creating arrays</a></li>
+<li class="chapter" data-level="10.12.2" data-path="array.html"><a href="array.html#methods-3"><i class="fa fa-check"></i><b>10.12.2</b> Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="10.13" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html"><i class="fa fa-check"></i><b>10.13</b> Ruby Practice: Array</a>
+<ul>
+<li class="chapter" data-level="10.13.1" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_element_square.rb"><i class="fa fa-check"></i><b>10.13.1</b> array_element_square.rb</a></li>
+<li class="chapter" data-level="10.13.2" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_count.rb"><i class="fa fa-check"></i><b>10.13.2</b> array_count.rb</a></li>
+<li class="chapter" data-level="10.13.3" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_reverse.rb"><i class="fa fa-check"></i><b>10.13.3</b> array_reverse.rb</a></li>
+<li class="chapter" data-level="10.13.4" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_min_max_difference.rb"><i class="fa fa-check"></i><b>10.13.4</b> array_min_max_difference.rb</a></li>
+<li class="chapter" data-level="10.13.5" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_sum_elements.rb"><i class="fa fa-check"></i><b>10.13.5</b> array_sum_elements.rb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.14" data-path="if-statements.html"><a href="if-statements.html"><i class="fa fa-check"></i><b>10.14</b> If statements</a>
+<ul>
+<li class="chapter" data-level="10.14.1" data-path="if-statements.html"><a href="if-statements.html#the-basic-anatomy-of-if-statements"><i class="fa fa-check"></i><b>10.14.1</b> The basic anatomy of if statements</a></li>
+<li class="chapter" data-level="10.14.2" data-path="if-statements.html"><a href="if-statements.html#multibranch-if-statements"><i class="fa fa-check"></i><b>10.14.2</b> Multibranch if statements</a></li>
+<li class="chapter" data-level="10.14.3" data-path="if-statements.html"><a href="if-statements.html#truthiness-and-falsiness"><i class="fa fa-check"></i><b>10.14.3</b> truthiness and falsiness</a></li>
+<li class="chapter" data-level="10.14.4" data-path="if-statements.html"><a href="if-statements.html#comparisons"><i class="fa fa-check"></i><b>10.14.4</b> Comparisons</a></li>
+<li class="chapter" data-level="10.14.5" data-path="if-statements.html"><a href="if-statements.html#combining-conditions-with-and-and-or"><i class="fa fa-check"></i><b>10.14.5</b> Combining conditions with AND and OR</a></li>
+<li class="chapter" data-level="10.14.6" data-path="if-statements.html"><a href="if-statements.html#challenge"><i class="fa fa-check"></i><b>10.14.6</b> Challenge</a></li>
+</ul></li>
+<li class="chapter" data-level="10.15" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html"><i class="fa fa-check"></i><b>10.15</b> Ruby Practice: Conditionals</a>
+<ul>
+<li class="chapter" data-level="10.15.1" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_rps.rb"><i class="fa fa-check"></i><b>10.15.1</b> conditionals_rps.rb</a></li>
+<li class="chapter" data-level="10.15.2" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_palindrome.rb"><i class="fa fa-check"></i><b>10.15.2</b> conditionals_palindrome.rb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.16" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html"><i class="fa fa-check"></i><b>10.16</b> Loops in Ruby</a>
+<ul>
+<li class="chapter" data-level="10.16.1" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#if-conditionally-doing-something-once"><i class="fa fa-check"></i><b>10.16.1</b> if: conditionally doing something once</a></li>
+<li class="chapter" data-level="10.16.2" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#while-conditionally-doing-something-multiple-times"><i class="fa fa-check"></i><b>10.16.2</b> while: conditionally doing something multiple times</a></li>
+<li class="chapter" data-level="10.16.3" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#blocks"><i class="fa fa-check"></i><b>10.16.3</b> Blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="10.17" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html"><i class="fa fa-check"></i><b>10.17</b> Ruby Practice: Loops</a>
+<ul>
+<li class="chapter" data-level="10.17.1" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_letter_count.rb"><i class="fa fa-check"></i><b>10.17.1</b> loops_letter_count.rb</a></li>
+<li class="chapter" data-level="10.17.2" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_multiples.rb"><i class="fa fa-check"></i><b>10.17.2</b> loops_multiples.rb</a></li>
+<li class="chapter" data-level="10.17.3" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_fizzbuzz.rb"><i class="fa fa-check"></i><b>10.17.3</b> loops_fizzbuzz.rb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.18" data-path="each.html"><a href="each.html"><i class="fa fa-check"></i><b>10.18</b> Each</a>
+<ul>
+<li class="chapter" data-level="10.18.1" data-path="each.html"><a href="each.html#iterating-over-arrays-with-integers-times-method"><i class="fa fa-check"></i><b>10.18.1</b> Iterating over arrays with Integer’s times method</a></li>
+<li class="chapter" data-level="10.18.2" data-path="each.html"><a href="each.html#arrays-each-method"><i class="fa fa-check"></i><b>10.18.2</b> Array’s each method</a></li>
+<li class="chapter" data-level="10.18.3" data-path="each.html"><a href="each.html#sneak-peek"><i class="fa fa-check"></i><b>10.18.3</b> Sneak peek</a></li>
+<li class="chapter" data-level="10.18.4" data-path="each.html"><a href="each.html#each_with_index"><i class="fa fa-check"></i><b>10.18.4</b> each_with_index</a></li>
+</ul></li>
+<li class="chapter" data-level="10.19" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html"><i class="fa fa-check"></i><b>10.19</b> Ruby Practice: Each</a>
+<ul>
+<li class="chapter" data-level="10.19.1" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_spell_word.rb"><i class="fa fa-check"></i><b>10.19.1</b> each_spell_word.rb</a></li>
+<li class="chapter" data-level="10.19.2" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_even_word.rb"><i class="fa fa-check"></i><b>10.19.2</b> each_even_word.rb</a></li>
+<li class="chapter" data-level="10.19.3" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_letter_count.rb"><i class="fa fa-check"></i><b>10.19.3</b> each_letter_count.rb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.20" data-path="hash.html"><a href="hash.html"><i class="fa fa-check"></i><b>10.20</b> Hash</a>
+<ul>
+<li class="chapter" data-level="10.20.1" data-path="hash.html"><a href="hash.html#a-brief-interlude-symbols"><i class="fa fa-check"></i><b>10.20.1</b> A brief interlude: Symbols</a></li>
+<li class="chapter" data-level="10.20.2" data-path="hash.html"><a href="hash.html#creating-hashes-and-storing-values"><i class="fa fa-check"></i><b>10.20.2</b> Creating hashes and storing values</a></li>
+<li class="chapter" data-level="10.20.3" data-path="hash.html"><a href="hash.html#fetch"><i class="fa fa-check"></i><b>10.20.3</b> fetch</a></li>
+<li class="chapter" data-level="10.20.4" data-path="hash.html"><a href="hash.html#hash-literals"><i class="fa fa-check"></i><b>10.20.4</b> Hash literals</a></li>
+<li class="chapter" data-level="10.20.5" data-path="hash.html"><a href="hash.html#fetch-shorthand"><i class="fa fa-check"></i><b>10.20.5</b> fetch shorthand, []</a></li>
+<li class="chapter" data-level="10.20.6" data-path="hash.html"><a href="hash.html#store-shorthand"><i class="fa fa-check"></i><b>10.20.6</b> store shorthand, []=</a></li>
+<li class="chapter" data-level="10.20.7" data-path="hash.html"><a href="hash.html#use-.keys-to-explore"><i class="fa fa-check"></i><b>10.20.7</b> Use .keys to explore</a></li>
+<li class="chapter" data-level="10.20.8" data-path="hash.html"><a href="hash.html#keys-can-be-anything"><i class="fa fa-check"></i><b>10.20.8</b> keys can be anything</a></li>
+<li class="chapter" data-level="10.20.9" data-path="hash.html"><a href="hash.html#values-can-be-anything"><i class="fa fa-check"></i><b>10.20.9</b> values can be anything</a></li>
+<li class="chapter" data-level="10.20.10" data-path="hash.html"><a href="hash.html#key"><i class="fa fa-check"></i><b>10.20.10</b> key</a></li>
+<li class="chapter" data-level="10.20.11" data-path="hash.html"><a href="hash.html#the-bottom-line-1"><i class="fa fa-check"></i><b>10.20.11</b> The bottom line</a></li>
+</ul></li>
+<li class="chapter" data-level="10.21" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html"><i class="fa fa-check"></i><b>10.21</b> Ruby Practice: Hash</a>
+<ul>
+<li class="chapter" data-level="10.21.1" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_person.rb"><i class="fa fa-check"></i><b>10.21.1</b> hash_person.rb</a></li>
+<li class="chapter" data-level="10.21.2" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_dig.rb"><i class="fa fa-check"></i><b>10.21.2</b> hash_dig.rb</a></li>
+<li class="chapter" data-level="10.21.3" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_find_value.rb"><i class="fa fa-check"></i><b>10.21.3</b> hash_find_value.rb</a></li>
+<li class="chapter" data-level="10.21.4" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_list.rb"><i class="fa fa-check"></i><b>10.21.4</b> hash_list.rb</a></li>
+</ul></li>
+<li class="chapter" data-level="10.22" data-path="our-own-classes.html"><a href="our-own-classes.html"><i class="fa fa-check"></i><b>10.22</b> Our own classes</a>
+<ul>
+<li class="chapter" data-level="10.22.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>10.22.1</b> Modeling real world things</a></li>
+<li class="chapter" data-level="10.22.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>10.22.2</b> Inheritance</a></li>
+</ul></li>
+<li class="chapter" data-level="10.23" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>10.23</b> Ruby Practice: Our own classes</a>
+<ul>
+<li class="chapter" data-level="10.23.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>10.23.1</b> class_person.rb</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>11</b> Ruby Gym</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="optional-ruby-practice.html"><a href="optional-ruby-practice.html"><i class="fa fa-check"></i><b>11.1</b> Optional Ruby Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="adding-routes.html"><a href="adding-routes.html"><i class="fa fa-check"></i><b>12</b> Adding Routes</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="specs.html"><a href="specs.html"><i class="fa fa-check"></i><b>12.1</b> Specs</a></li>
+<li class="chapter" data-level="12.2" data-path="routing.html"><a href="routing.html"><i class="fa fa-check"></i><b>12.2</b> Routing</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="routing.html"><a href="routing.html#route"><i class="fa fa-check"></i><b>12.2.1</b> Route</a></li>
+<li class="chapter" data-level="12.2.2" data-path="routing.html"><a href="routing.html#action"><i class="fa fa-check"></i><b>12.2.2</b> Action</a></li>
+<li class="chapter" data-level="12.2.3" data-path="routing.html"><a href="routing.html#addendum-rendering-json"><i class="fa fa-check"></i><b>12.2.3</b> Addendum: Rendering JSON</a></li>
+<li class="chapter" data-level="12.2.4" data-path="routing.html"><a href="routing.html#addendum-custom-controller-files"><i class="fa fa-check"></i><b>12.2.4</b> Addendum: Custom Controller Files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="rcav-flowchart.html"><a href="rcav-flowchart.html"><i class="fa fa-check"></i><b>13</b> RCAV Flowchart</a></li>
+<li class="chapter" data-level="14" data-path="routing-1.html"><a href="routing-1.html"><i class="fa fa-check"></i><b>14</b> Routing</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="route-1.html"><a href="route-1.html"><i class="fa fa-check"></i><b>14.1</b> Route</a></li>
+<li class="chapter" data-level="14.2" data-path="controller.html"><a href="controller.html"><i class="fa fa-check"></i><b>14.2</b> Controller</a></li>
+<li class="chapter" data-level="14.3" data-path="action-1.html"><a href="action-1.html"><i class="fa fa-check"></i><b>14.3</b> Action</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="action-1.html"><a href="action-1.html#redirect_to-1"><i class="fa fa-check"></i><b>14.3.1</b> redirect_to</a></li>
+<li class="chapter" data-level="14.3.2" data-path="action-1.html"><a href="action-1.html#render-1"><i class="fa fa-check"></i><b>14.3.2</b> render</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="view.html"><a href="view.html"><i class="fa fa-check"></i><b>14.4</b> View</a></li>
+<li class="chapter" data-level="14.5" data-path="erb.html"><a href="erb.html"><i class="fa fa-check"></i><b>14.5</b> ERB</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="rock-paper-scissors-rcav.html"><a href="rock-paper-scissors-rcav.html"><i class="fa fa-check"></i><b>15</b> Rock, Paper, Scissors RCAV</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="video-segment-dynamic-web-applications-and-urls.html"><a href="video-segment-dynamic-web-applications-and-urls.html"><i class="fa fa-check"></i><b>15.1</b> Video Segment: Dynamic Web Applications and URLs</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="video-segment-dynamic-web-applications-and-urls.html"><a href="video-segment-dynamic-web-applications-and-urls.html#potential-quiz-question"><i class="fa fa-check"></i><b>15.1.1</b> Potential Quiz Question</a></li>
+<li class="chapter" data-level="15.1.2" data-path="video-segment-dynamic-web-applications-and-urls.html"><a href="video-segment-dynamic-web-applications-and-urls.html#text-companion-dynamic-web-applications-and-urls"><i class="fa fa-check"></i><b>15.1.2</b> Text Companion: Dynamic Web Applications and URLs</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="video-segment-route.html"><a href="video-segment-route.html"><i class="fa fa-check"></i><b>15.2</b> Video Segment: Route</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="video-segment-route.html"><a href="video-segment-route.html#text-companion-route"><i class="fa fa-check"></i><b>15.2.1</b> Text Companion: Route</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html"><i class="fa fa-check"></i><b>15.3</b> Video Segment: Controller, Action, View</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>15.3.1</b> Text Companion: Controller, Action, View</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html"><i class="fa fa-check"></i><b>15.4</b> Video Segment: Dropping <code>self.</code></a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html#text-companion-dropping-.self"><i class="fa fa-check"></i><b>15.4.1</b> Text Companion: Dropping <code>.self</code></a></li>
+</ul></li>
+<li class="chapter" data-level="15.5" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>15.5</b> Video Segment: Starting Our GitPod Workspace</a>
+<ul>
+<li class="chapter" data-level="15.5.1" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html#text-companion-starting-our-gitpod-workspace"><i class="fa fa-check"></i><b>15.5.1</b> Text Companion: Starting Our GitPod Workspace</a></li>
+</ul></li>
+<li class="chapter" data-level="15.6" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html"><i class="fa fa-check"></i><b>15.6</b> Video Segment: Our First RCAV</a>
+<ul>
+<li class="chapter" data-level="15.6.1" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html#text-companion-our-first-rcav"><i class="fa fa-check"></i><b>15.6.1</b> Text Companion: Our First RCAV</a></li>
+</ul></li>
+<li class="chapter" data-level="15.7" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html"><i class="fa fa-check"></i><b>15.7</b> Video Segment: Render HTML</a>
+<ul>
+<li class="chapter" data-level="15.7.1" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html#text-companion-render-html"><i class="fa fa-check"></i><b>15.7.1</b> Text Companion: Render HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="15.8" data-path="video-segment-embedded-ruby-tags.html"><a href="video-segment-embedded-ruby-tags.html"><i class="fa fa-check"></i><b>15.8</b> Video Segment: Embedded Ruby Tags</a>
+<ul>
+<li class="chapter" data-level="15.8.1" data-path="video-segment-embedded-ruby-tags.html"><a href="video-segment-embedded-ruby-tags.html#text-companion-embedded-ruby-tags"><i class="fa fa-check"></i><b>15.8.1</b> Text Companion: Embedded Ruby Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="15.9" data-path="video-segment-control-flow-with-embedded-ruby.html"><a href="video-segment-control-flow-with-embedded-ruby.html"><i class="fa fa-check"></i><b>15.9</b> Video Segment: Control Flow with Embedded Ruby</a>
+<ul>
+<li class="chapter" data-level="15.9.1" data-path="video-segment-control-flow-with-embedded-ruby.html"><a href="video-segment-control-flow-with-embedded-ruby.html#text-companion-control-flow-with-embedded-ruby"><i class="fa fa-check"></i><b>15.9.1</b> Text Companion: Control Flow with Embedded Ruby</a></li>
+</ul></li>
+<li class="chapter" data-level="15.10" data-path="video-segment-homepage.html"><a href="video-segment-homepage.html"><i class="fa fa-check"></i><b>15.10</b> Video Segment: Homepage</a>
+<ul>
+<li class="chapter" data-level="15.10.1" data-path="video-segment-homepage.html"><a href="video-segment-homepage.html#text-companion-homepage"><i class="fa fa-check"></i><b>15.10.1</b> Text Companion: Homepage</a></li>
+</ul></li>
+<li class="chapter" data-level="15.11" data-path="video-segment-reinforce-rcav-with-paper.html"><a href="video-segment-reinforce-rcav-with-paper.html"><i class="fa fa-check"></i><b>15.11</b> Video Segment: Reinforce RCAV with /paper</a>
+<ul>
+<li class="chapter" data-level="15.11.1" data-path="video-segment-reinforce-rcav-with-paper.html"><a href="video-segment-reinforce-rcav-with-paper.html#text-companion-reinforce-rcav-with-paper"><i class="fa fa-check"></i><b>15.11.1</b> Text Companion: Reinforce RCAV with /paper</a></li>
+</ul></li>
+<li class="chapter" data-level="15.12" data-path="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html"><i class="fa fa-check"></i><b>15.12</b> Video Segment: Embedded Ruby in the Controller with Instance Variables</a>
+<ul>
+<li class="chapter" data-level="15.12.1" data-path="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#text-companion-embedded-ruby-in-the-controller-with-instance-variables"><i class="fa fa-check"></i><b>15.12.1</b> Text Companion: Embedded Ruby in the Controller with Instance Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="15.13" data-path="video-segment-linking-pages-with-layouts.html"><a href="video-segment-linking-pages-with-layouts.html"><i class="fa fa-check"></i><b>15.13</b> Video Segment: Linking Pages with Layouts</a>
+<ul>
+<li class="chapter" data-level="15.13.1" data-path="video-segment-linking-pages-with-layouts.html"><a href="video-segment-linking-pages-with-layouts.html#text-companion-linking-pages-with-layouts"><i class="fa fa-check"></i><b>15.13.1</b> Text Companion: Linking Pages with Layouts</a></li>
+</ul></li>
+<li class="chapter" data-level="15.14" data-path="finish-and-submit-rps-rcav.html"><a href="finish-and-submit-rps-rcav.html"><i class="fa fa-check"></i><b>15.14</b> Finish and Submit RPS RCAV</a></li>
+<li class="chapter" data-level="15.15" data-path="rcav-addendums.html"><a href="rcav-addendums.html"><i class="fa fa-check"></i><b>15.15</b> RCAV Addendums</a>
+<ul>
+<li class="chapter" data-level="15.15.1" data-path="rcav-addendums.html"><a href="rcav-addendums.html#addendum-rendering-json-1"><i class="fa fa-check"></i><b>15.15.1</b> Addendum: Rendering JSON</a></li>
+<li class="chapter" data-level="15.15.2" data-path="rcav-addendums.html"><a href="rcav-addendums.html#addendum-custom-controller-files-1"><i class="fa fa-check"></i><b>15.15.2</b> Addendum: Custom Controller Files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="forms-query-strings-and-params.html"><a href="forms-query-strings-and-params.html"><i class="fa fa-check"></i><b>16</b> Forms, Query Strings, and Params</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="a-bare-bones-html-form.html"><a href="a-bare-bones-html-form.html"><i class="fa fa-check"></i><b>16.1</b> A bare bones HTML form</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="a-bare-bones-html-form.html"><a href="a-bare-bones-html-form.html#required-elements-and-attributes"><i class="fa fa-check"></i><b>16.1.1</b> Required elements and attributes</a></li>
+<li class="chapter" data-level="16.1.2" data-path="a-bare-bones-html-form.html"><a href="a-bare-bones-html-form.html#input-attributes"><i class="fa fa-check"></i><b>16.1.2</b> <code>&lt;input&gt;</code> attributes</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="submitting-a-form.html"><a href="submitting-a-form.html"><i class="fa fa-check"></i><b>16.2</b> Submitting a form</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="submitting-a-form.html"><a href="submitting-a-form.html#query-string"><i class="fa fa-check"></i><b>16.2.1</b> Query string</a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="demo.html"><a href="demo.html"><i class="fa fa-check"></i><b>16.3</b> Demo</a></li>
+<li class="chapter" data-level="16.4" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>16.4</b> params</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="params.html"><a href="params.html#params-demo"><i class="fa fa-check"></i><b>16.4.1</b> params Demo</a></li>
+</ul></li>
+<li class="chapter" data-level="16.5" data-path="valid-forms.html"><a href="valid-forms.html"><i class="fa fa-check"></i><b>16.5</b> Valid forms</a>
+<ul>
+<li class="chapter" data-level="16.5.1" data-path="valid-forms.html"><a href="valid-forms.html#why-use-valid-forms"><i class="fa fa-check"></i><b>16.5.1</b> Why use valid forms?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="omnicalc-1-forms-and-query-strings.html"><a href="omnicalc-1-forms-and-query-strings.html"><i class="fa fa-check"></i><b>17</b> Omnicalc 1 (Forms and Query Strings)</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="video-segment-intro-to-forms-and-exploring-the-target.html"><a href="video-segment-intro-to-forms-and-exploring-the-target.html"><i class="fa fa-check"></i><b>17.1</b> Video Segment: Intro to Forms and Exploring the Target</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="video-segment-intro-to-forms-and-exploring-the-target.html"><a href="video-segment-intro-to-forms-and-exploring-the-target.html#text-companion-intro-to-forms-and-exploring-the-target"><i class="fa fa-check"></i><b>17.1.1</b> Text Companion: Intro to Forms and Exploring the Target</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="video-segment-squarenew-rcav.html"><a href="video-segment-squarenew-rcav.html"><i class="fa fa-check"></i><b>17.2</b> Video Segment: /square/new RCAV</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="video-segment-squarenew-rcav.html"><a href="video-segment-squarenew-rcav.html#text-companion-squarenew-rcav"><i class="fa fa-check"></i><b>17.2.1</b> Text Companion: /square/new RCAV</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="video-segment-squarenew-form.html"><a href="video-segment-squarenew-form.html"><i class="fa fa-check"></i><b>17.3</b> Video Segment: /square/new Form</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="video-segment-squarenew-form.html"><a href="video-segment-squarenew-form.html#text-companion-squarenew-form"><i class="fa fa-check"></i><b>17.3.1</b> Text Companion: /square/new Form</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="video-segment-query-string-and-parameters-hash.html"><a href="video-segment-query-string-and-parameters-hash.html"><i class="fa fa-check"></i><b>17.4</b> Video Segment: Query String and Parameters Hash</a>
+<ul>
+<li class="chapter" data-level="17.4.1" data-path="video-segment-query-string-and-parameters-hash.html"><a href="video-segment-query-string-and-parameters-hash.html#text-companion-query-string-and-parameters-hash"><i class="fa fa-check"></i><b>17.4.1</b> Text Companion: Query String and Parameters Hash</a></li>
+</ul></li>
+<li class="chapter" data-level="17.5" data-path="video-segment-squareresults-rcav.html"><a href="video-segment-squareresults-rcav.html"><i class="fa fa-check"></i><b>17.5</b> Video Segment: /square/results RCAV</a>
+<ul>
+<li class="chapter" data-level="17.5.1" data-path="video-segment-squareresults-rcav.html"><a href="video-segment-squareresults-rcav.html#text-companion-squareresults-rcav"><i class="fa fa-check"></i><b>17.5.1</b> Text Companion: /square/results RCAV</a></li>
+</ul></li>
+<li class="chapter" data-level="17.6" data-path="video-segment-form-action-and-params.html"><a href="video-segment-form-action-and-params.html"><i class="fa fa-check"></i><b>17.6</b> Video Segment: Form Action and <code>params</code></a>
+<ul>
+<li class="chapter" data-level="17.6.1" data-path="video-segment-form-action-and-params.html"><a href="video-segment-form-action-and-params.html#text-companion-form-action-and-params"><i class="fa fa-check"></i><b>17.6.1</b> Text Companion: Form Action and <code>params</code></a></li>
+</ul></li>
+<li class="chapter" data-level="17.7" data-path="video-segment-independence-of-routes.html"><a href="video-segment-independence-of-routes.html"><i class="fa fa-check"></i><b>17.7</b> Video Segment: Independence of Routes</a>
+<ul>
+<li class="chapter" data-level="17.7.1" data-path="video-segment-independence-of-routes.html"><a href="video-segment-independence-of-routes.html#text-companion-independence-of-routes"><i class="fa fa-check"></i><b>17.7.1</b> Text Companion: Independence of Routes</a></li>
+</ul></li>
+<li class="chapter" data-level="17.8" data-path="finish-and-submit-omnicalc-1.html"><a href="finish-and-submit-omnicalc-1.html"><i class="fa fa-check"></i><b>17.8</b> Finish and Submit Omnicalc 1</a>
+<ul>
+<li class="chapter" data-level="17.8.1" data-path="finish-and-submit-omnicalc-1.html"><a href="finish-and-submit-omnicalc-1.html#the-target"><i class="fa fa-check"></i><b>17.8.1</b> The Target</a></li>
+<li class="chapter" data-level="17.8.2" data-path="finish-and-submit-omnicalc-1.html"><a href="finish-and-submit-omnicalc-1.html#valid-accessible-forms"><i class="fa fa-check"></i><b>17.8.2</b> Valid, Accessible Forms</a></li>
+<li class="chapter" data-level="17.8.3" data-path="finish-and-submit-omnicalc-1.html"><a href="finish-and-submit-omnicalc-1.html#additional-hints"><i class="fa fa-check"></i><b>17.8.3</b> Additional Hints</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="fortune-teller.html"><a href="fortune-teller.html"><i class="fa fa-check"></i><b>18</b> Fortune Teller</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="video-segment-routes-and-controllers-in-fortune-teller.html"><a href="video-segment-routes-and-controllers-in-fortune-teller.html"><i class="fa fa-check"></i><b>18.1</b> Video Segment: Routes and Controllers in Fortune Teller</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="video-segment-routes-and-controllers-in-fortune-teller.html"><a href="video-segment-routes-and-controllers-in-fortune-teller.html#text-companion-routes-and-controllers-in-fortune-teller"><i class="fa fa-check"></i><b>18.1.1</b> Text Companion: Routes and Controllers in Fortune Teller</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="video-segment-.each-loop-on-instance-variable.html"><a href="video-segment-.each-loop-on-instance-variable.html"><i class="fa fa-check"></i><b>18.2</b> Video Segment: <code>.each</code> Loop on <code>@</code> Instance Variable</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="video-segment-.each-loop-on-instance-variable.html"><a href="video-segment-.each-loop-on-instance-variable.html#text-companion-.each-loop-on-instance-variable"><i class="fa fa-check"></i><b>18.2.1</b> Text Companion: <code>.each</code> Loop on <code>@</code> Instance Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="video-segment-rcav-lotteryunlucky.html"><a href="video-segment-rcav-lotteryunlucky.html"><i class="fa fa-check"></i><b>18.3</b> Video Segment: RCAV /lottery/unlucky</a>
+<ul>
+<li class="chapter" data-level="18.3.1" data-path="video-segment-rcav-lotteryunlucky.html"><a href="video-segment-rcav-lotteryunlucky.html#text-companion-rcav-lotteryunlucky"><i class="fa fa-check"></i><b>18.3.1</b> Text Companion: RCAV /lottery/unlucky</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="video-segment-navbar-and-zodiac-debugging.html"><a href="video-segment-navbar-and-zodiac-debugging.html"><i class="fa fa-check"></i><b>18.4</b> Video Segment: Navbar and Zodiac Debugging</a>
+<ul>
+<li class="chapter" data-level="18.4.1" data-path="video-segment-navbar-and-zodiac-debugging.html"><a href="video-segment-navbar-and-zodiac-debugging.html#text-companion-navbar-and-zodiac-debugging"><i class="fa fa-check"></i><b>18.4.1</b> Text Companion: Navbar and Zodiac Debugging</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="finish-and-submit-fortune-teller.html"><a href="finish-and-submit-fortune-teller.html"><i class="fa fa-check"></i><b>18.5</b> Finish and Submit Fortune Teller</a>
+<ul>
+<li class="chapter" data-level="18.5.1" data-path="finish-and-submit-fortune-teller.html"><a href="finish-and-submit-fortune-teller.html#debugging-checklist"><i class="fa fa-check"></i><b>18.5.1</b> Debugging checklist</a></li>
+<li class="chapter" data-level="18.5.2" data-path="finish-and-submit-fortune-teller.html"><a href="finish-and-submit-fortune-teller.html#more-rcav-practice"><i class="fa fa-check"></i><b>18.5.2</b> More RCAV Practice</a></li>
+<li class="chapter" data-level="18.5.3" data-path="finish-and-submit-fortune-teller.html"><a href="finish-and-submit-fortune-teller.html#reflections"><i class="fa fa-check"></i><b>18.5.3</b> Reflections</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="omnicalc-api.html"><a href="omnicalc-api.html"><i class="fa fa-check"></i><b>19</b> Omnicalc API</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="part-i-flexible-path-segments.html"><a href="part-i-flexible-path-segments.html"><i class="fa fa-check"></i><b>19.1</b> Part I: Flexible Path Segments</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="part-i-flexible-path-segments.html"><a href="part-i-flexible-path-segments.html#square-with-flexible-path-segment"><i class="fa fa-check"></i><b>19.1.1</b> Square with flexible path segment</a></li>
+<li class="chapter" data-level="19.1.2" data-path="part-i-flexible-path-segments.html"><a href="part-i-flexible-path-segments.html#square-root-with-flexible-path-segment"><i class="fa fa-check"></i><b>19.1.2</b> Square Root with flexible path segment</a></li>
+<li class="chapter" data-level="19.1.3" data-path="part-i-flexible-path-segments.html"><a href="part-i-flexible-path-segments.html#random-with-flexible-path-segments"><i class="fa fa-check"></i><b>19.1.3</b> Random with flexible path segments</a></li>
+<li class="chapter" data-level="19.1.4" data-path="part-i-flexible-path-segments.html"><a href="part-i-flexible-path-segments.html#notes-for-flexible-path-segment-tasks"><i class="fa fa-check"></i><b>19.1.4</b> Notes for flexible path segment tasks</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="part-ii-query-strings.html"><a href="part-ii-query-strings.html"><i class="fa fa-check"></i><b>19.2</b> Part II: Query Strings</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="part-ii-query-strings.html"><a href="part-ii-query-strings.html#square"><i class="fa fa-check"></i><b>19.2.1</b> Square</a></li>
+<li class="chapter" data-level="19.2.2" data-path="part-ii-query-strings.html"><a href="part-ii-query-strings.html#square-root"><i class="fa fa-check"></i><b>19.2.2</b> Square root</a></li>
+<li class="chapter" data-level="19.2.3" data-path="part-ii-query-strings.html"><a href="part-ii-query-strings.html#random"><i class="fa fa-check"></i><b>19.2.3</b> Random</a></li>
+<li class="chapter" data-level="19.2.4" data-path="part-ii-query-strings.html"><a href="part-ii-query-strings.html#monthly-payment"><i class="fa fa-check"></i><b>19.2.4</b> Monthly Payment</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="storing-credentials-securely.html"><a href="storing-credentials-securely.html"><i class="fa fa-check"></i><b>20</b> Storing credentials securely</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="creating-environment-variables.html"><a href="creating-environment-variables.html"><i class="fa fa-check"></i><b>20.1</b> Creating environment variables</a>
+<ul>
+<li class="chapter" data-level="20.1.1" data-path="creating-environment-variables.html"><a href="creating-environment-variables.html#gitpod-1"><i class="fa fa-check"></i><b>20.1.1</b> Gitpod</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="dotenv.html"><a href="dotenv.html"><i class="fa fa-check"></i><b>20.2</b> dotenv</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="meteorologist-intro-to-apis.html"><a href="meteorologist-intro-to-apis.html"><i class="fa fa-check"></i><b>21</b> Meteorologist (Intro to APIs)</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>21.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="introduction.html"><a href="introduction.html#getting-started-1"><i class="fa fa-check"></i><b>21.1.1</b> Getting Started</a></li>
+<li class="chapter" data-level="21.1.2" data-path="introduction.html"><a href="introduction.html#api-setup"><i class="fa fa-check"></i><b>21.1.2</b> API Setup</a></li>
+<li class="chapter" data-level="21.1.3" data-path="introduction.html"><a href="introduction.html#find-an-example"><i class="fa fa-check"></i><b>21.1.3</b> Find an example</a></li>
+<li class="chapter" data-level="21.1.4" data-path="introduction.html"><a href="introduction.html#ruby"><i class="fa fa-check"></i><b>21.1.4</b> Ruby</a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="part-1-street-to-coordinatess.html"><a href="part-1-street-to-coordinatess.html"><i class="fa fa-check"></i><b>21.2</b> Part 1: Street to Coordinatess</a></li>
+<li class="chapter" data-level="21.3" data-path="part-2-coordinates-to-weather.html"><a href="part-2-coordinates-to-weather.html"><i class="fa fa-check"></i><b>21.3</b> Part 2: Coordinates to Weather</a></li>
+<li class="chapter" data-level="21.4" data-path="part-3-address-to-weather.html"><a href="part-3-address-to-weather.html"><i class="fa fa-check"></i><b>21.4</b> Part 3: Address to Weather</a></li>
+<li class="chapter" data-level="21.5" data-path="optional-extra-exercises-for-fun.html"><a href="optional-extra-exercises-for-fun.html"><i class="fa fa-check"></i><b>21.5</b> Optional Extra Exercises, for fun</a>
+<ul>
+<li class="chapter" data-level="21.5.1" data-path="optional-extra-exercises-for-fun.html"><a href="optional-extra-exercises-for-fun.html#explore-apis-easier"><i class="fa fa-check"></i><b>21.5.1</b> Explore APIs (Easier)</a></li>
+<li class="chapter" data-level="21.5.2" data-path="optional-extra-exercises-for-fun.html"><a href="optional-extra-exercises-for-fun.html#bootstrap-easier"><i class="fa fa-check"></i><b>21.5.2</b> Bootstrap (Easier)</a></li>
+<li class="chapter" data-level="21.5.3" data-path="optional-extra-exercises-for-fun.html"><a href="optional-extra-exercises-for-fun.html#future-forecast-harder"><i class="fa fa-check"></i><b>21.5.3</b> Future Forecast (Harder)</a></li>
+<li class="chapter" data-level="21.5.4" data-path="optional-extra-exercises-for-fun.html"><a href="optional-extra-exercises-for-fun.html#google-map-harder"><i class="fa fa-check"></i><b>21.5.4</b> Google Map (Harder)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="omnicalc-2-forms-params-apis.html"><a href="omnicalc-2-forms-params-apis.html"><i class="fa fa-check"></i><b>22</b> Omnicalc 2 (Forms, Params, APIs)</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="video-segment-exploring-the-target.html"><a href="video-segment-exploring-the-target.html"><i class="fa fa-check"></i><b>22.1</b> Video Segment: Exploring the Target</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="video-segment-exploring-the-target.html"><a href="video-segment-exploring-the-target.html#text-companion-exploring-the-target"><i class="fa fa-check"></i><b>22.1.1</b> Text Companion: Exploring the Target</a></li>
+</ul></li>
+<li class="chapter" data-level="22.2" data-path="video-segment-reviewing-query-strings.html"><a href="video-segment-reviewing-query-strings.html"><i class="fa fa-check"></i><b>22.2</b> Video Segment: Reviewing Query Strings</a>
+<ul>
+<li class="chapter" data-level="22.2.1" data-path="video-segment-reviewing-query-strings.html"><a href="video-segment-reviewing-query-strings.html#text-companion-reviewing-query-strings"><i class="fa fa-check"></i><b>22.2.1</b> Text Companion: Reviewing Query Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="22.3" data-path="video-segment-reviewing-forms.html"><a href="video-segment-reviewing-forms.html"><i class="fa fa-check"></i><b>22.3</b> Video Segment: Reviewing Forms</a>
+<ul>
+<li class="chapter" data-level="22.3.1" data-path="video-segment-reviewing-forms.html"><a href="video-segment-reviewing-forms.html#text-companion-reviewing-forms"><i class="fa fa-check"></i><b>22.3.1</b> Text Companion: Reviewing Forms</a></li>
+</ul></li>
+<li class="chapter" data-level="22.4" data-path="video-segment-intro-to-apis-with-street-to-coordinates.html"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html"><i class="fa fa-check"></i><b>22.4</b> Video Segment: Intro to APIs with Street to Coordinates</a>
+<ul>
+<li class="chapter" data-level="22.4.1" data-path="video-segment-intro-to-apis-with-street-to-coordinates.html"><a href="video-segment-intro-to-apis-with-street-to-coordinates.html#text-companion-intro-to-apis-with-street-to-coordinates"><i class="fa fa-check"></i><b>22.4.1</b> Text Companion: Intro to APIs with Street to Coordinates</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="finish-and-submit-omnicalc-2.html"><a href="finish-and-submit-omnicalc-2.html"><i class="fa fa-check"></i><b>22.5</b> Finish and Submit Omnicalc 2</a>
+<ul>
+<li class="chapter" data-level="22.5.1" data-path="finish-and-submit-omnicalc-2.html"><a href="finish-and-submit-omnicalc-2.html#your-tasks"><i class="fa fa-check"></i><b>22.5.1</b> Your tasks</a></li>
+<li class="chapter" data-level="22.5.2" data-path="finish-and-submit-omnicalc-2.html"><a href="finish-and-submit-omnicalc-2.html#stretch-goal"><i class="fa fa-check"></i><b>22.5.2</b> Stretch goal</a></li>
+<li class="chapter" data-level="22.5.3" data-path="finish-and-submit-omnicalc-2.html"><a href="finish-and-submit-omnicalc-2.html#using-gems-to-interact-with-apis"><i class="fa fa-check"></i><b>22.5.3</b> Using gems to interact with APIs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="refactoring-fortune-teller-with-dynamic-routes.html"><a href="refactoring-fortune-teller-with-dynamic-routes.html"><i class="fa fa-check"></i><b>23</b> Refactoring Fortune Teller with Dynamic Routes</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="part-1-dice.html"><a href="part-1-dice.html"><i class="fa fa-check"></i><b>23.1</b> Part 1: Dice</a></li>
+<li class="chapter" data-level="23.2" data-path="part-2-horoscopes.html"><a href="part-2-horoscopes.html"><i class="fa fa-check"></i><b>23.2</b> Part 2: Horoscopes</a>
+<ul>
+<li class="chapter" data-level="23.2.1" data-path="part-2-horoscopes.html"><a href="part-2-horoscopes.html#stringto_sym"><i class="fa fa-check"></i><b>23.2.1</b> String#to_sym</a></li>
+</ul></li>
+<li class="chapter" data-level="23.3" data-path="regressions.html"><a href="regressions.html"><i class="fa fa-check"></i><b>23.3</b> Regressions</a></li>
+<li class="chapter" data-level="23.4" data-path="refactoring.html"><a href="refactoring.html"><i class="fa fa-check"></i><b>23.4</b> Refactoring</a></li>
+<li class="chapter" data-level="23.5" data-path="finish-and-submit-refactoring-fortune-teller.html"><a href="finish-and-submit-refactoring-fortune-teller.html"><i class="fa fa-check"></i><b>23.5</b> Finish and Submit Refactoring Fortune Teller</a>
+<ul>
+<li class="chapter" data-level="23.5.1" data-path="finish-and-submit-refactoring-fortune-teller.html"><a href="finish-and-submit-refactoring-fortune-teller.html#optional-extra-challenge"><i class="fa fa-check"></i><b>23.5.1</b> Optional extra challenge</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="dashboards-dynamic-route-segments.html"><a href="dashboards-dynamic-route-segments.html"><i class="fa fa-check"></i><b>24</b> Dashboards (Dynamic Route Segments)</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="video-segment-urls-and-dynamic-routes.html"><a href="video-segment-urls-and-dynamic-routes.html"><i class="fa fa-check"></i><b>24.1</b> Video Segment: URLs and Dynamic Routes</a>
+<ul>
+<li class="chapter" data-level="24.1.1" data-path="video-segment-urls-and-dynamic-routes.html"><a href="video-segment-urls-and-dynamic-routes.html#text-companion-urls-and-dynamic-routes"><i class="fa fa-check"></i><b>24.1.1</b> Text Companion: URLs and Dynamic Routes</a></li>
+</ul></li>
+<li class="chapter" data-level="24.2" data-path="video-segment-exchange-rate-api-intro.html"><a href="video-segment-exchange-rate-api-intro.html"><i class="fa fa-check"></i><b>24.2</b> Video Segment: Exchange Rate API Intro</a>
+<ul>
+<li class="chapter" data-level="24.2.1" data-path="video-segment-exchange-rate-api-intro.html"><a href="video-segment-exchange-rate-api-intro.html#text-companion-exchange-rate-api-intro"><i class="fa fa-check"></i><b>24.2.1</b> Text Companion: Exchange Rate API Intro</a></li>
+</ul></li>
+<li class="chapter" data-level="24.3" data-path="video-segment-building-forex.html"><a href="video-segment-building-forex.html"><i class="fa fa-check"></i><b>24.3</b> Video Segment: Building /forex</a>
+<ul>
+<li class="chapter" data-level="24.3.1" data-path="video-segment-building-forex.html"><a href="video-segment-building-forex.html#text-companion-building-forex"><i class="fa fa-check"></i><b>24.3.1</b> Text Companion: Building /forex</a></li>
+</ul></li>
+<li class="chapter" data-level="24.4" data-path="video-segment-building-forexsymbolsymbol.html"><a href="video-segment-building-forexsymbolsymbol.html"><i class="fa fa-check"></i><b>24.4</b> Video Segment: Building /forex/SYMBOL/SYMBOL</a>
+<ul>
+<li class="chapter" data-level="24.4.1" data-path="video-segment-building-forexsymbolsymbol.html"><a href="video-segment-building-forexsymbolsymbol.html#text-companion-building-forexsymbolsymbol"><i class="fa fa-check"></i><b>24.4.1</b> Text Companion: Building /forex/SYMBOL/SYMBOL</a></li>
+</ul></li>
+<li class="chapter" data-level="24.5" data-path="finish-and-submit-dashboards.html"><a href="finish-and-submit-dashboards.html"><i class="fa fa-check"></i><b>24.5</b> Finish and Submit Dashboards</a>
+<ul>
+<li class="chapter" data-level="24.5.1" data-path="finish-and-submit-dashboards.html"><a href="finish-and-submit-dashboards.html#the-covid-tracking-project"><i class="fa fa-check"></i><b>24.5.1</b> The COVID Tracking Project</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="classroom-domain-modeling.html"><a href="classroom-domain-modeling.html"><i class="fa fa-check"></i><b>25</b> Classroom Domain Modeling</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="review-msm-tables.html"><a href="review-msm-tables.html"><i class="fa fa-check"></i><b>25.1</b> Review MSM Tables</a></li>
+<li class="chapter" data-level="25.2" data-path="yap-model.html"><a href="yap-model.html"><i class="fa fa-check"></i><b>25.2</b> Yap Model</a></li>
+<li class="chapter" data-level="25.3" data-path="photogram-model.html"><a href="photogram-model.html"><i class="fa fa-check"></i><b>25.3</b> Photogram Model</a></li>
+<li class="chapter" data-level="25.4" data-path="very-best-model.html"><a href="very-best-model.html"><i class="fa fa-check"></i><b>25.4</b> Very Best Model</a></li>
+<li class="chapter" data-level="25.5" data-path="erds.html"><a href="erds.html"><i class="fa fa-check"></i><b>25.5</b> ERDs</a></li>
+<li class="chapter" data-level="25.6" data-path="additional-models.html"><a href="additional-models.html"><i class="fa fa-check"></i><b>25.6</b> Additional Models</a></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="omnicalc-debug.html"><a href="omnicalc-debug.html"><i class="fa fa-check"></i><b>26</b> Omnicalc Debug</a>
+<ul>
+<li class="chapter" data-level="26.1" data-path="omnicalc-debug-readme.html"><a href="omnicalc-debug-readme.html"><i class="fa fa-check"></i><b>26.1</b> Omnicalc Debug README</a></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="apis-demo.html"><a href="apis-demo.html"><i class="fa fa-check"></i><b>27</b> APIs Demo</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="apis-demo-readme.html"><a href="apis-demo-readme.html"><i class="fa fa-check"></i><b>27.1</b> APIs Demo README</a></li>
+</ul></li>
+<li class="chapter" data-level="28" data-path="google-cloud-translate-1.html"><a href="google-cloud-translate-1.html"><i class="fa fa-check"></i><b>28</b> Google Cloud Translate</a></li>
+<li class="chapter" data-level="29" data-path="sending-emails-and-text-messages.html"><a href="sending-emails-and-text-messages.html"><i class="fa fa-check"></i><b>29</b> Sending emails and text messages</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="example-of-how-to-send-an-email-with-the-mailgun-gem.html"><a href="example-of-how-to-send-an-email-with-the-mailgun-gem.html"><i class="fa fa-check"></i><b>29.1</b> Example of how to send an email with the Mailgun gem</a>
+<ul>
+<li class="chapter" data-level="29.1.1" data-path="example-of-how-to-send-an-email-with-the-mailgun-gem.html"><a href="example-of-how-to-send-an-email-with-the-mailgun-gem.html#add-the-gem"><i class="fa fa-check"></i><b>29.1.1</b> Add the gem</a></li>
+<li class="chapter" data-level="29.1.2" data-path="example-of-how-to-send-an-email-with-the-mailgun-gem.html"><a href="example-of-how-to-send-an-email-with-the-mailgun-gem.html#usage"><i class="fa fa-check"></i><b>29.1.2</b> Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="29.2" data-path="example-of-how-to-send-an-sms-with-the-twilio-gem.html"><a href="example-of-how-to-send-an-sms-with-the-twilio-gem.html"><i class="fa fa-check"></i><b>29.2</b> Example of how to send an SMS with the Twilio gem</a>
+<ul>
+<li class="chapter" data-level="29.2.1" data-path="example-of-how-to-send-an-sms-with-the-twilio-gem.html"><a href="example-of-how-to-send-an-sms-with-the-twilio-gem.html#add-the-gem-1"><i class="fa fa-check"></i><b>29.2.1</b> Add the gem</a></li>
+<li class="chapter" data-level="29.2.2" data-path="example-of-how-to-send-an-sms-with-the-twilio-gem.html"><a href="example-of-how-to-send-an-sms-with-the-twilio-gem.html#usage-1"><i class="fa fa-check"></i><b>29.2.2</b> Usage</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="activerecord.html"><a href="activerecord.html"><i class="fa fa-check"></i><b>30</b> ActiveRecord</a>
+<ul>
+<li class="chapter" data-level="30.1" data-path="the-quick-way-to-create-a-table.html"><a href="the-quick-way-to-create-a-table.html"><i class="fa fa-check"></i><b>30.1</b> The quick way to create a table</a></li>
+<li class="chapter" data-level="30.2" data-path="time-to-crud.html"><a href="time-to-crud.html"><i class="fa fa-check"></i><b>30.2</b> Time to CRUD</a>
+<ul>
+<li class="chapter" data-level="30.2.1" data-path="time-to-crud.html"><a href="time-to-crud.html#command-prompt-vs-rails-console"><i class="fa fa-check"></i><b>30.2.1</b> Command prompt vs rails console</a></li>
+</ul></li>
+<li class="chapter" data-level="30.3" data-path="create.html"><a href="create.html"><i class="fa fa-check"></i><b>30.3</b> CREATE</a>
+<ul>
+<li class="chapter" data-level="30.3.1" data-path="create.html"><a href="create.html#new"><i class="fa fa-check"></i><b>30.3.1</b> new</a></li>
+<li class="chapter" data-level="30.3.2" data-path="create.html"><a href="create.html#save"><i class="fa fa-check"></i><b>30.3.2</b> save</a></li>
+</ul></li>
+<li class="chapter" data-level="30.4" data-path="read.html"><a href="read.html"><i class="fa fa-check"></i><b>30.4</b> READ</a>
+<ul>
+<li class="chapter" data-level="30.4.1" data-path="read.html"><a href="read.html#all"><i class="fa fa-check"></i><b>30.4.1</b> all</a></li>
+<li class="chapter" data-level="30.4.2" data-path="read.html"><a href="read.html#count-1"><i class="fa fa-check"></i><b>30.4.2</b> count</a></li>
+<li class="chapter" data-level="30.4.3" data-path="read.html"><a href="read.html#first"><i class="fa fa-check"></i><b>30.4.3</b> first</a></li>
+<li class="chapter" data-level="30.4.4" data-path="read.html"><a href="read.html#last"><i class="fa fa-check"></i><b>30.4.4</b> last</a></li>
+<li class="chapter" data-level="30.4.5" data-path="read.html"><a href="read.html#attribute-accessor-methods"><i class="fa fa-check"></i><b>30.4.5</b> Attribute accessor methods</a></li>
+<li class="chapter" data-level="30.4.6" data-path="read.html"><a href="read.html#order"><i class="fa fa-check"></i><b>30.4.6</b> order</a></li>
+<li class="chapter" data-level="30.4.7" data-path="read.html"><a href="read.html#reverse-2"><i class="fa fa-check"></i><b>30.4.7</b> reverse</a></li>
+<li class="chapter" data-level="30.4.8" data-path="read.html"><a href="read.html#where"><i class="fa fa-check"></i><b>30.4.8</b> where</a></li>
+<li class="chapter" data-level="30.4.9" data-path="read.html"><a href="read.html#where-always-returns-a-collection-not-a-single-row"><i class="fa fa-check"></i><b>30.4.9</b> where always returns a collection, not a single row</a></li>
+<li class="chapter" data-level="30.4.10" data-path="read.html"><a href="read.html#using-where-with-an-array-of-criteria"><i class="fa fa-check"></i><b>30.4.10</b> Using where with an array of criteria</a></li>
+<li class="chapter" data-level="30.4.11" data-path="read.html"><a href="read.html#chaining-wheres"><i class="fa fa-check"></i><b>30.4.11</b> Chaining wheres</a></li>
+<li class="chapter" data-level="30.4.12" data-path="read.html"><a href="read.html#wherethis.orthat"><i class="fa fa-check"></i><b>30.4.12</b> where(this).or(that)</a></li>
+<li class="chapter" data-level="30.4.13" data-path="read.html"><a href="read.html#where.notthis"><i class="fa fa-check"></i><b>30.4.13</b> where.not(this)</a></li>
+<li class="chapter" data-level="30.4.14" data-path="read.html"><a href="read.html#where-is-everything"><i class="fa fa-check"></i><b>30.4.14</b> Where is everything</a></li>
+<li class="chapter" data-level="30.4.15" data-path="read.html"><a href="read.html#map_relation_to_array"><i class="fa fa-check"></i><b>30.4.15</b> map_relation_to_array</a></li>
+<li class="chapter" data-level="30.4.16" data-path="read.html"><a href="read.html#distinct"><i class="fa fa-check"></i><b>30.4.16</b> distinct</a></li>
+</ul></li>
+<li class="chapter" data-level="30.5" data-path="update.html"><a href="update.html"><i class="fa fa-check"></i><b>30.5</b> UPDATE</a></li>
+<li class="chapter" data-level="30.6" data-path="delete.html"><a href="delete.html"><i class="fa fa-check"></i><b>30.6</b> DELETE</a></li>
+<li class="chapter" data-level="30.7" data-path="less-commonly-used-queries.html"><a href="less-commonly-used-queries.html"><i class="fa fa-check"></i><b>30.7</b> Less commonly used queries</a>
+<ul>
+<li class="chapter" data-level="30.7.1" data-path="less-commonly-used-queries.html"><a href="less-commonly-used-queries.html#fuzzy-criteria"><i class="fa fa-check"></i><b>30.7.1</b> Fuzzy criteria</a></li>
+<li class="chapter" data-level="30.7.2" data-path="less-commonly-used-queries.html"><a href="less-commonly-used-queries.html#less-than-or-greater-than"><i class="fa fa-check"></i><b>30.7.2</b> Less than or greater than</a></li>
+<li class="chapter" data-level="30.7.3" data-path="less-commonly-used-queries.html"><a href="less-commonly-used-queries.html#limit"><i class="fa fa-check"></i><b>30.7.3</b> limit</a></li>
+<li class="chapter" data-level="30.7.4" data-path="less-commonly-used-queries.html"><a href="less-commonly-used-queries.html#offset"><i class="fa fa-check"></i><b>30.7.4</b> offset</a></li>
+<li class="chapter" data-level="30.7.5" data-path="less-commonly-used-queries.html"><a href="less-commonly-used-queries.html#maximum"><i class="fa fa-check"></i><b>30.7.5</b> maximum</a></li>
+<li class="chapter" data-level="30.7.6" data-path="less-commonly-used-queries.html"><a href="less-commonly-used-queries.html#minimum"><i class="fa fa-check"></i><b>30.7.6</b> minimum</a></li>
+<li class="chapter" data-level="30.7.7" data-path="less-commonly-used-queries.html"><a href="less-commonly-used-queries.html#average"><i class="fa fa-check"></i><b>30.7.7</b> average</a></li>
+</ul></li>
+<li class="chapter" data-level="30.8" data-path="adding-or-removing-columns-from-your-table.html"><a href="adding-or-removing-columns-from-your-table.html"><i class="fa fa-check"></i><b>30.8</b> Adding or removing columns from your table</a></li>
+<li class="chapter" data-level="30.9" data-path="conclusion-2.html"><a href="conclusion-2.html"><i class="fa fa-check"></i><b>30.9</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="31" data-path="must-see-movies-queries-intro-to-databases.html"><a href="must-see-movies-queries-intro-to-databases.html"><i class="fa fa-check"></i><b>31</b> Must See Movies Queries (Intro to Databases)</a>
+<ul>
+<li class="chapter" data-level="31.1" data-path="video-segment-recordkeeping-review-exploring-the-target.html"><a href="video-segment-recordkeeping-review-exploring-the-target.html"><i class="fa fa-check"></i><b>31.1</b> Video Segment: Recordkeeping Review, Exploring the Target</a>
+<ul>
+<li class="chapter" data-level="31.1.1" data-path="video-segment-recordkeeping-review-exploring-the-target.html"><a href="video-segment-recordkeeping-review-exploring-the-target.html#text-companion-recordkeeping-review-exploring-the-target"><i class="fa fa-check"></i><b>31.1.1</b> Text Companion: Recordkeeping Review, Exploring the Target</a></li>
+</ul></li>
+<li class="chapter" data-level="31.2" data-path="video-segment-exploring-railsdb.html"><a href="video-segment-exploring-railsdb.html"><i class="fa fa-check"></i><b>31.2</b> Video Segment: Exploring /rails/db</a>
+<ul>
+<li class="chapter" data-level="31.2.1" data-path="video-segment-exploring-railsdb.html"><a href="video-segment-exploring-railsdb.html#text-companion-exploring-railsdb"><i class="fa fa-check"></i><b>31.2.1</b> Text Companion: Exploring /rails/db</a></li>
+</ul></li>
+<li class="chapter" data-level="31.3" data-path="video-segment-sql-and-activerecord-intro.html"><a href="video-segment-sql-and-activerecord-intro.html"><i class="fa fa-check"></i><b>31.3</b> Video Segment: SQL and <code>ActiveRecord</code> Intro</a>
+<ul>
+<li class="chapter" data-level="31.3.1" data-path="video-segment-sql-and-activerecord-intro.html"><a href="video-segment-sql-and-activerecord-intro.html#text-companion-sql-and-activerecord-intro"><i class="fa fa-check"></i><b>31.3.1</b> Text Companion: SQL and <code>ActiveRecord</code> Intro</a></li>
+</ul></li>
+<li class="chapter" data-level="31.4" data-path="video-segment-creating-appmodels-classes.html"><a href="video-segment-creating-appmodels-classes.html"><i class="fa fa-check"></i><b>31.4</b> Video Segment: Creating <code>app/models/</code> Classes</a>
+<ul>
+<li class="chapter" data-level="31.4.1" data-path="video-segment-creating-appmodels-classes.html"><a href="video-segment-creating-appmodels-classes.html#text-companion-creating-appmodels-classes"><i class="fa fa-check"></i><b>31.4.1</b> Text Companion: Creating <code>app/models/</code> Classes</a></li>
+</ul></li>
+<li class="chapter" data-level="31.5" data-path="video-segment-rcav-directors-and-director-class.html"><a href="video-segment-rcav-directors-and-director-class.html"><i class="fa fa-check"></i><b>31.5</b> Video Segment: RCAV /directors and <code>Director</code> Class</a>
+<ul>
+<li class="chapter" data-level="31.5.1" data-path="video-segment-rcav-directors-and-director-class.html"><a href="video-segment-rcav-directors-and-director-class.html#text-companion-rcav-directors-and-director-class"><i class="fa fa-check"></i><b>31.5.1</b> Text Companion: RCAV /directors and <code>Director</code> Class</a></li>
+</ul></li>
+<li class="chapter" data-level="31.6" data-path="video-segment-rails-console.html"><a href="video-segment-rails-console.html"><i class="fa fa-check"></i><b>31.6</b> Video Segment: Rails Console</a>
+<ul>
+<li class="chapter" data-level="31.6.1" data-path="video-segment-rails-console.html"><a href="video-segment-rails-console.html#text-companion-rails-console"><i class="fa fa-check"></i><b>31.6.1</b> Text Companion: Rails Console</a></li>
+</ul></li>
+<li class="chapter" data-level="31.7" data-path="video-segment-reading-and-creating-records.html"><a href="video-segment-reading-and-creating-records.html"><i class="fa fa-check"></i><b>31.7</b> Video Segment: Reading and Creating Records</a>
+<ul>
+<li class="chapter" data-level="31.7.1" data-path="video-segment-reading-and-creating-records.html"><a href="video-segment-reading-and-creating-records.html#text-companion-reading-and-creating-records"><i class="fa fa-check"></i><b>31.7.1</b> Text Companion: Reading and Creating Records</a></li>
+</ul></li>
+<li class="chapter" data-level="31.8" data-path="video-segment-sample_data.html"><a href="video-segment-sample_data.html"><i class="fa fa-check"></i><b>31.8</b> Video Segment: <code>sample_data</code></a>
+<ul>
+<li class="chapter" data-level="31.8.1" data-path="video-segment-sample_data.html"><a href="video-segment-sample_data.html#text-companion-sample_data"><i class="fa fa-check"></i><b>31.8.1</b> Text Companion: <code>sample_data</code></a></li>
+</ul></li>
+<li class="chapter" data-level="31.9" data-path="video-segment-finishing-directors-index.html"><a href="video-segment-finishing-directors-index.html"><i class="fa fa-check"></i><b>31.9</b> Video Segment: Finishing /directors <code>index</code></a>
+<ul>
+<li class="chapter" data-level="31.9.1" data-path="video-segment-finishing-directors-index.html"><a href="video-segment-finishing-directors-index.html#text-companion-finishing-directors-index"><i class="fa fa-check"></i><b>31.9.1</b> Text Companion: Finishing /directors Index</a></li>
+</ul></li>
+<li class="chapter" data-level="31.10" data-path="video-segment-database-query-with-.html"><a href="video-segment-database-query-with-.html"><i class="fa fa-check"></i><b>31.10</b> Video Segment: Database Query with <code>.where</code></a>
+<ul>
+<li class="chapter" data-level="31.10.1" data-path="video-segment-database-query-with-.html"><a href="video-segment-database-query-with-.html#text-companion-database-query-with-.where"><i class="fa fa-check"></i><b>31.10.1</b> Text Companion: Database Query with <code>.where</code></a></li>
+</ul></li>
+<li class="chapter" data-level="31.11" data-path="video-segment-flexible-routes-for-director-details.html"><a href="video-segment-flexible-routes-for-director-details.html"><i class="fa fa-check"></i><b>31.11</b> Video Segment: Flexible Routes for Director Details</a>
+<ul>
+<li class="chapter" data-level="31.11.1" data-path="video-segment-flexible-routes-for-director-details.html"><a href="video-segment-flexible-routes-for-director-details.html#text-companion-flexible-routes-for-director-details"><i class="fa fa-check"></i><b>31.11.1</b> Text Companion: Flexible Routes for Director Details</a></li>
+</ul></li>
+<li class="chapter" data-level="31.12" data-path="video-segment-filmography.html"><a href="video-segment-filmography.html"><i class="fa fa-check"></i><b>31.12</b> Video Segment: Filmography</a>
+<ul>
+<li class="chapter" data-level="31.12.1" data-path="video-segment-filmography.html"><a href="video-segment-filmography.html#text-companion-filmography"><i class="fa fa-check"></i><b>31.12.1</b> Text Companion: Filmography</a></li>
+</ul></li>
+<li class="chapter" data-level="31.13" data-path="finish-and-submit-msm-queries.html"><a href="finish-and-submit-msm-queries.html"><i class="fa fa-check"></i><b>31.13</b> Finish and Submit MSM Queries</a>
+<ul>
+<li class="chapter" data-level="31.13.1" data-path="finish-and-submit-msm-queries.html"><a href="finish-and-submit-msm-queries.html#additional-query-tasks-for-practice"><i class="fa fa-check"></i><b>31.13.1</b> Additional Query Tasks for Practice</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="classroom-queries-debug.html"><a href="classroom-queries-debug.html"><i class="fa fa-check"></i><b>32</b> Classroom Queries Debug</a></li>
+<li class="chapter" data-level="33" data-path="different-styles.html"><a href="different-styles.html"><i class="fa fa-check"></i><b>33</b> Different Styles</a></li>
+<li class="chapter" data-level="34" data-path="history-of-machine-learning.html"><a href="history-of-machine-learning.html"><i class="fa fa-check"></i><b>34</b> History of Machine Learning</a></li>
+<li class="chapter" data-level="35" data-path="refactoring-msm-queries-with-methods.html"><a href="refactoring-msm-queries-with-methods.html"><i class="fa fa-check"></i><b>35</b> Refactoring MSM Queries with Methods</a>
+<ul>
+<li class="chapter" data-level="35.1" data-path="objective.html"><a href="objective.html"><i class="fa fa-check"></i><b>35.1</b> Objective</a></li>
+<li class="chapter" data-level="35.2" data-path="the-problem-queries-all-over-the-place.html"><a href="the-problem-queries-all-over-the-place.html"><i class="fa fa-check"></i><b>35.2</b> The problem: queries all over the place</a></li>
+<li class="chapter" data-level="35.3" data-path="the-solution-encapsulate-queries-in-methods.html"><a href="the-solution-encapsulate-queries-in-methods.html"><i class="fa fa-check"></i><b>35.3</b> The solution: encapsulate queries in methods</a></li>
+<li class="chapter" data-level="35.4" data-path="instance-method-review.html"><a href="instance-method-review.html"><i class="fa fa-check"></i><b>35.4</b> Instance method review</a>
+<ul>
+<li class="chapter" data-level="35.4.1" data-path="instance-method-review.html"><a href="instance-method-review.html#naming-the-method"><i class="fa fa-check"></i><b>35.4.1</b> Naming the method</a></li>
+<li class="chapter" data-level="35.4.2" data-path="instance-method-review.html"><a href="instance-method-review.html#returning-a-value"><i class="fa fa-check"></i><b>35.4.2</b> Returning a value</a></li>
+<li class="chapter" data-level="35.4.3" data-path="instance-method-review.html"><a href="instance-method-review.html#composing-methods-to-build-more-powerful-methods"><i class="fa fa-check"></i><b>35.4.3</b> Composing methods to build more powerful methods</a></li>
+<li class="chapter" data-level="35.4.4" data-path="instance-method-review.html"><a href="instance-method-review.html#using-existing-instance-methods-when-defining-new-instance-methods"><i class="fa fa-check"></i><b>35.4.4</b> Using existing instance methods when defining new instance methods</a></li>
+</ul></li>
+<li class="chapter" data-level="35.5" data-path="defining-association-accessors.html"><a href="defining-association-accessors.html"><i class="fa fa-check"></i><b>35.5</b> Defining “association accessors”</a>
+<ul>
+<li class="chapter" data-level="35.5.1" data-path="defining-association-accessors.html"><a href="defining-association-accessors.html#the-goal"><i class="fa fa-check"></i><b>35.5.1</b> The goal</a></li>
+<li class="chapter" data-level="35.5.2" data-path="defining-association-accessors.html"><a href="defining-association-accessors.html#define-the-method"><i class="fa fa-check"></i><b>35.5.2</b> Define the method</a></li>
+<li class="chapter" data-level="35.5.3" data-path="defining-association-accessors.html"><a href="defining-association-accessors.html#make-it-return-the-right-thing"><i class="fa fa-check"></i><b>35.5.3</b> Make it return the right thing</a></li>
+</ul></li>
+<li class="chapter" data-level="35.6" data-path="re-using-the-moviedirector-method.html"><a href="re-using-the-moviedirector-method.html"><i class="fa fa-check"></i><b>35.6</b> Re-using the Movie#director method</a></li>
+<li class="chapter" data-level="35.7" data-path="the-other-side-of-the-one-to-many.html"><a href="the-other-side-of-the-one-to-many.html"><i class="fa fa-check"></i><b>35.7</b> The other side of the one-to-many</a></li>
+<li class="chapter" data-level="35.8" data-path="other-refactorings.html"><a href="other-refactorings.html"><i class="fa fa-check"></i><b>35.8</b> Other refactorings</a></li>
+<li class="chapter" data-level="35.9" data-path="conclusion-3.html"><a href="conclusion-3.html"><i class="fa fa-check"></i><b>35.9</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="36" data-path="refactoring-must-see-movies.html"><a href="refactoring-must-see-movies.html"><i class="fa fa-check"></i><b>36</b> Refactoring Must See Movies</a>
+<ul>
+<li class="chapter" data-level="36.1" data-path="video-segment-exploring-the-target-what-is-refactoring.html"><a href="video-segment-exploring-the-target-what-is-refactoring.html"><i class="fa fa-check"></i><b>36.1</b> Video Segment: Exploring the Target, What is Refactoring?</a>
+<ul>
+<li class="chapter" data-level="36.1.1" data-path="video-segment-exploring-the-target-what-is-refactoring.html"><a href="video-segment-exploring-the-target-what-is-refactoring.html#text-companion-exploring-the-target-what-is-refactoring"><i class="fa fa-check"></i><b>36.1.1</b> Text Companion: Exploring the Target, What is Refactoring?</a></li>
+</ul></li>
+<li class="chapter" data-level="36.2" data-path="video-segment-actor-details-show-page.html"><a href="video-segment-actor-details-show-page.html"><i class="fa fa-check"></i><b>36.2</b> Video Segment: Actor Details <code>show</code> Page</a>
+<ul>
+<li class="chapter" data-level="36.2.1" data-path="video-segment-actor-details-show-page.html"><a href="video-segment-actor-details-show-page.html#text-companion-actor-details-show-page"><i class="fa fa-check"></i><b>36.2.1</b> Text Companion: Actor Details <code>show</code> Page</a></li>
+</ul></li>
+<li class="chapter" data-level="36.3" data-path="video-segment-activerecordrelation-review.html"><a href="video-segment-activerecordrelation-review.html"><i class="fa fa-check"></i><b>36.3</b> Video Segment: <code>ActiveRecord::Relation</code> Review</a>
+<ul>
+<li class="chapter" data-level="36.3.1" data-path="video-segment-activerecordrelation-review.html"><a href="video-segment-activerecordrelation-review.html#text-companion-activerecordrelation-review"><i class="fa fa-check"></i><b>36.3.1</b> Text Companion: <code>ActiveRecord::Relation</code> Review</a></li>
+</ul></li>
+<li class="chapter" data-level="36.4" data-path="video-segment-actor-details-filmography.html"><a href="video-segment-actor-details-filmography.html"><i class="fa fa-check"></i><b>36.4</b> Video Segment: Actor Details Filmography</a>
+<ul>
+<li class="chapter" data-level="36.4.1" data-path="video-segment-actor-details-filmography.html"><a href="video-segment-actor-details-filmography.html#text-companion-actor-details-filmography"><i class="fa fa-check"></i><b>36.4.1</b> Text Companion: Actor Details Filmography</a></li>
+</ul></li>
+<li class="chapter" data-level="36.5" data-path="video-segment-defining-instance-methods-in-the-model.html"><a href="video-segment-defining-instance-methods-in-the-model.html"><i class="fa fa-check"></i><b>36.5</b> Video Segment: Defining Instance Methods in the Model</a>
+<ul>
+<li class="chapter" data-level="36.5.1" data-path="video-segment-defining-instance-methods-in-the-model.html"><a href="video-segment-defining-instance-methods-in-the-model.html#text-companion-defining-instance-methods-in-the-model"><i class="fa fa-check"></i><b>36.5.1</b> Text Companion: Defining Instance Methods in the Model</a></li>
+</ul></li>
+<li class="chapter" data-level="36.6" data-path="video-segment-moviedirector.html"><a href="video-segment-moviedirector.html"><i class="fa fa-check"></i><b>36.6</b> Video Segment: <code>Movie#director</code></a>
+<ul>
+<li class="chapter" data-level="36.6.1" data-path="video-segment-moviedirector.html"><a href="video-segment-moviedirector.html#text-companion-moviedirector"><i class="fa fa-check"></i><b>36.6.1</b> Text Companion: <code>Movie#director</code></a></li>
+</ul></li>
+<li class="chapter" data-level="36.7" data-path="video-segment-directorfilmography.html"><a href="video-segment-directorfilmography.html"><i class="fa fa-check"></i><b>36.7</b> Video Segment: <code>Director#filmography</code></a>
+<ul>
+<li class="chapter" data-level="36.7.1" data-path="video-segment-directorfilmography.html"><a href="video-segment-directorfilmography.html#text-companion-directorfilmography"><i class="fa fa-check"></i><b>36.7.1</b> Text Companion: <code>Director#filmography</code></a></li>
+</ul></li>
+<li class="chapter" data-level="36.8" data-path="video-segment-additional-association-accessor-methods.html"><a href="video-segment-additional-association-accessor-methods.html"><i class="fa fa-check"></i><b>36.8</b> Video Segment: Additional Association Accessor Methods</a>
+<ul>
+<li class="chapter" data-level="36.8.1" data-path="video-segment-additional-association-accessor-methods.html"><a href="video-segment-additional-association-accessor-methods.html#text-companion-additional-association-accessor-methods"><i class="fa fa-check"></i><b>36.8.1</b> Text Companion: Additional Association Accessor Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="36.9" data-path="video-segment-additional-association-accessor-methods-solved.html"><a href="video-segment-additional-association-accessor-methods-solved.html"><i class="fa fa-check"></i><b>36.9</b> Video Segment: Additional Association Accessor Methods Solved</a>
+<ul>
+<li class="chapter" data-level="36.9.1" data-path="video-segment-additional-association-accessor-methods-solved.html"><a href="video-segment-additional-association-accessor-methods-solved.html#text-companion-additional-association-accessor-methods-solved"><i class="fa fa-check"></i><b>36.9.1</b> Text Companion: Additional Association Accessor Methods Solved</a></li>
+</ul></li>
+<li class="chapter" data-level="36.10" data-path="video-segment-applying-association-accessor-methods.html"><a href="video-segment-applying-association-accessor-methods.html"><i class="fa fa-check"></i><b>36.10</b> Video Segment: Applying Association Accessor Methods</a>
+<ul>
+<li class="chapter" data-level="36.10.1" data-path="video-segment-applying-association-accessor-methods.html"><a href="video-segment-applying-association-accessor-methods.html#text-companion-applying-association-accessor-methods"><i class="fa fa-check"></i><b>36.10.1</b> Text Companion: Applying Association Accessor Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="36.11" data-path="finish-and-submit-refactoring-msm-queries.html"><a href="finish-and-submit-refactoring-msm-queries.html"><i class="fa fa-check"></i><b>36.11</b> Finish and Submit Refactoring MSM Queries</a></li>
+</ul></li>
+<li class="chapter" data-level="37" data-path="offerup-domain-modeling.html"><a href="offerup-domain-modeling.html"><i class="fa fa-check"></i><b>37</b> OfferUp Domain Modeling</a>
+<ul>
+<li class="chapter" data-level="37.1" data-path="data-model-for-offerup.html"><a href="data-model-for-offerup.html"><i class="fa fa-check"></i><b>37.1</b> Data model for OfferUp</a></li>
+<li class="chapter" data-level="37.2" data-path="video-segment-ideas-tutorial.html"><a href="video-segment-ideas-tutorial.html"><i class="fa fa-check"></i><b>37.2</b> Video Segment: Ideas Tutorial</a></li>
+</ul></li>
+<li class="chapter" data-level="38" data-path="photogram-gui.html"><a href="photogram-gui.html"><i class="fa fa-check"></i><b>38</b> Photogram GUI</a>
+<ul>
+<li class="chapter" data-level="38.1" data-path="video-segment-crud-with-forms.html"><a href="video-segment-crud-with-forms.html"><i class="fa fa-check"></i><b>38.1</b> Video Segment: CRUD with Forms</a>
+<ul>
+<li class="chapter" data-level="38.1.1" data-path="video-segment-crud-with-forms.html"><a href="video-segment-crud-with-forms.html#text-companion-crud-with-forms"><i class="fa fa-check"></i><b>38.1.1</b> Text Companion: CRUD with Forms</a></li>
+</ul></li>
+<li class="chapter" data-level="38.2" data-path="video-segment-explore-the-target.html"><a href="video-segment-explore-the-target.html"><i class="fa fa-check"></i><b>38.2</b> Video Segment: Explore the Target</a>
+<ul>
+<li class="chapter" data-level="38.2.1" data-path="video-segment-explore-the-target.html"><a href="video-segment-explore-the-target.html#text-companion-explore-the-target"><i class="fa fa-check"></i><b>38.2.1</b> Text Companion: Explore the Target</a></li>
+</ul></li>
+<li class="chapter" data-level="38.3" data-path="video-segment-explore-the-erd.html"><a href="video-segment-explore-the-erd.html"><i class="fa fa-check"></i><b>38.3</b> Video Segment: Explore the ERD</a>
+<ul>
+<li class="chapter" data-level="38.3.1" data-path="video-segment-explore-the-erd.html"><a href="video-segment-explore-the-erd.html#text-companion-explore-the-erd"><i class="fa fa-check"></i><b>38.3.1</b> Text Companion: Explore the ERD</a></li>
+</ul></li>
+<li class="chapter" data-level="38.4" data-path="video-segment-explore-model-classes.html"><a href="video-segment-explore-model-classes.html"><i class="fa fa-check"></i><b>38.4</b> Video Segment: Explore Model Classes</a>
+<ul>
+<li class="chapter" data-level="38.4.1" data-path="video-segment-explore-model-classes.html"><a href="video-segment-explore-model-classes.html#text-companion-explore-model-classes"><i class="fa fa-check"></i><b>38.4.1</b> Text Companion: Explore Model Classes</a></li>
+</ul></li>
+<li class="chapter" data-level="38.5" data-path="video-segment-users-index.html"><a href="video-segment-users-index.html"><i class="fa fa-check"></i><b>38.5</b> Video Segment: Users <code>index</code></a>
+<ul>
+<li class="chapter" data-level="38.5.1" data-path="video-segment-users-index.html"><a href="video-segment-users-index.html#text-companion-users-index"><i class="fa fa-check"></i><b>38.5.1</b> Text Companion: Users <code>index</code></a></li>
+</ul></li>
+<li class="chapter" data-level="38.6" data-path="video-segment-user-details-show.html"><a href="video-segment-user-details-show.html"><i class="fa fa-check"></i><b>38.6</b> Video Segment: User Details <code>show</code></a>
+<ul>
+<li class="chapter" data-level="38.6.1" data-path="video-segment-user-details-show.html"><a href="video-segment-user-details-show.html#text-companion-user-details-show"><i class="fa fa-check"></i><b>38.6.1</b> Text Companion: User Details <code>show</code></a></li>
+</ul></li>
+<li class="chapter" data-level="38.7" data-path="video-segment-adding-navigation-links.html"><a href="video-segment-adding-navigation-links.html"><i class="fa fa-check"></i><b>38.7</b> Video Segment: Adding Navigation Links</a>
+<ul>
+<li class="chapter" data-level="38.7.1" data-path="video-segment-adding-navigation-links.html"><a href="video-segment-adding-navigation-links.html#text-companion-adding-navigation-links"><i class="fa fa-check"></i><b>38.7.1</b> Text Companion: Adding Navigation Links</a></li>
+</ul></li>
+<li class="chapter" data-level="38.8" data-path="video-segment-users-show-details-link.html"><a href="video-segment-users-show-details-link.html"><i class="fa fa-check"></i><b>38.8</b> Video Segment: Users Show Details Link</a>
+<ul>
+<li class="chapter" data-level="38.8.1" data-path="video-segment-users-show-details-link.html"><a href="video-segment-users-show-details-link.html#text-companion-users-show-details-link"><i class="fa fa-check"></i><b>38.8.1</b> Text Companion: Users Show Details Link</a></li>
+</ul></li>
+<li class="chapter" data-level="38.9" data-path="video-segment-photos-index.html"><a href="video-segment-photos-index.html"><i class="fa fa-check"></i><b>38.9</b> Video Segment: Photos <code>index</code></a>
+<ul>
+<li class="chapter" data-level="38.9.1" data-path="video-segment-photos-index.html"><a href="video-segment-photos-index.html#text-companion-photos-index"><i class="fa fa-check"></i><b>38.9.1</b> Text Companion: Photos <code>index</code></a></li>
+</ul></li>
+<li class="chapter" data-level="38.10" data-path="video-segment-photo-details-show.html"><a href="video-segment-photo-details-show.html"><i class="fa fa-check"></i><b>38.10</b> Video Segment: Photo Details <code>show</code></a>
+<ul>
+<li class="chapter" data-level="38.10.1" data-path="video-segment-photo-details-show.html"><a href="video-segment-photo-details-show.html#text-companion-photo-details-page"><i class="fa fa-check"></i><b>38.10.1</b> Text Companion: Photo Details Page</a></li>
+</ul></li>
+<li class="chapter" data-level="38.11" data-path="video-segment-photo-comments-with-association-accessors.html"><a href="video-segment-photo-comments-with-association-accessors.html"><i class="fa fa-check"></i><b>38.11</b> Video Segment: Photo Comments with Association Accessors</a>
+<ul>
+<li class="chapter" data-level="38.11.1" data-path="video-segment-photo-comments-with-association-accessors.html"><a href="video-segment-photo-comments-with-association-accessors.html#text-companion-photo-comments-with-association-accessors"><i class="fa fa-check"></i><b>38.11.1</b> Text Companion: Photo Comments with Association Accessors</a></li>
+</ul></li>
+<li class="chapter" data-level="38.12" data-path="video-segment-delete-photo-link.html"><a href="video-segment-delete-photo-link.html"><i class="fa fa-check"></i><b>38.12</b> Video Segment: Delete Photo Link</a>
+<ul>
+<li class="chapter" data-level="38.12.1" data-path="video-segment-delete-photo-link.html"><a href="video-segment-delete-photo-link.html#text-companion-delete-photo-link"><i class="fa fa-check"></i><b>38.12.1</b> Text Companion: Delete Photo Link</a></li>
+</ul></li>
+<li class="chapter" data-level="38.13" data-path="video-segment-create-photo-form.html"><a href="video-segment-create-photo-form.html"><i class="fa fa-check"></i><b>38.13</b> Video Segment: Create Photo Form</a>
+<ul>
+<li class="chapter" data-level="38.13.1" data-path="video-segment-create-photo-form.html"><a href="video-segment-create-photo-form.html#text-companion-create-photo-form"><i class="fa fa-check"></i><b>38.13.1</b> Text Companion: Create Photo Form</a></li>
+</ul></li>
+<li class="chapter" data-level="38.14" data-path="video-segment-update-photo-form.html"><a href="video-segment-update-photo-form.html"><i class="fa fa-check"></i><b>38.14</b> Video Segment: Update Photo Form</a>
+<ul>
+<li class="chapter" data-level="38.14.1" data-path="video-segment-update-photo-form.html"><a href="video-segment-update-photo-form.html#text-companion-update-photo-form"><i class="fa fa-check"></i><b>38.14.1</b> Text Companion: Update Photo Form</a></li>
+</ul></li>
+<li class="chapter" data-level="38.15" data-path="finish-and-submit-photogram-gui.html"><a href="finish-and-submit-photogram-gui.html"><i class="fa fa-check"></i><b>38.15</b> Finish and Submit Photogram GUI</a>
+<ul>
+<li class="chapter" data-level="38.15.1" data-path="finish-and-submit-photogram-gui.html"><a href="finish-and-submit-photogram-gui.html#tasks"><i class="fa fa-check"></i><b>38.15.1</b> Tasks</a></li>
+<li class="chapter" data-level="38.15.2" data-path="finish-and-submit-photogram-gui.html"><a href="finish-and-submit-photogram-gui.html#workflow"><i class="fa fa-check"></i><b>38.15.2</b> Workflow</a></li>
+<li class="chapter" data-level="38.15.3" data-path="finish-and-submit-photogram-gui.html"><a href="finish-and-submit-photogram-gui.html#things-to-keep-in-mind"><i class="fa fa-check"></i><b>38.15.3</b> Things to keep in mind</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="39" data-path="data-integrity-with-validations.html"><a href="data-integrity-with-validations.html"><i class="fa fa-check"></i><b>39</b> Data integrity with Validations</a>
+<ul>
+<li class="chapter" data-level="39.1" data-path="defensive-code.html"><a href="defensive-code.html"><i class="fa fa-check"></i><b>39.1</b> Defensive code</a></li>
+<li class="chapter" data-level="39.2" data-path="data-integrity-with-validations-1.html"><a href="data-integrity-with-validations-1.html"><i class="fa fa-check"></i><b>39.2</b> Data integrity with validations</a>
+<ul>
+<li class="chapter" data-level="39.2.1" data-path="data-integrity-with-validations-1.html"><a href="data-integrity-with-validations-1.html#the-errors-collection"><i class="fa fa-check"></i><b>39.2.1</b> The Errors collection</a></li>
+</ul></li>
+<li class="chapter" data-level="39.3" data-path="commonly-used-built-in-validators.html"><a href="commonly-used-built-in-validators.html"><i class="fa fa-check"></i><b>39.3</b> Commonly used built-in validators</a></li>
+<li class="chapter" data-level="39.4" data-path="further-reading.html"><a href="further-reading.html"><i class="fa fa-check"></i><b>39.4</b> Further reading</a></li>
+</ul></li>
+<li class="chapter" data-level="40" data-path="must-see-movies-validations.html"><a href="must-see-movies-validations.html"><i class="fa fa-check"></i><b>40</b> Must See Movies Validations</a></li>
+<li class="chapter" data-level="41" data-path="very-best-debug.html"><a href="very-best-debug.html"><i class="fa fa-check"></i><b>41</b> Very Best Debug</a>
+<ul>
+<li class="chapter" data-level="41.1" data-path="video-segment-homepage-debugging.html"><a href="video-segment-homepage-debugging.html"><i class="fa fa-check"></i><b>41.1</b> Video Segment: Homepage Debugging</a>
+<ul>
+<li class="chapter" data-level="41.1.1" data-path="video-segment-homepage-debugging.html"><a href="video-segment-homepage-debugging.html#text-companion-homepage-debugging"><i class="fa fa-check"></i><b>41.1.1</b> Text Companion: Homepage Debugging</a></li>
+</ul></li>
+<li class="chapter" data-level="41.2" data-path="video-segment-typos-and-nilclass-bug.html"><a href="video-segment-typos-and-nilclass-bug.html"><i class="fa fa-check"></i><b>41.2</b> Video Segment: Typos and <code>NilClass</code> Bug</a>
+<ul>
+<li class="chapter" data-level="41.2.1" data-path="video-segment-typos-and-nilclass-bug.html"><a href="video-segment-typos-and-nilclass-bug.html#text-companion-typos-and-nilclass-bug"><i class="fa fa-check"></i><b>41.2.1</b> Text Companion: Typos and <code>NilClass</code> Bug</a></li>
+</ul></li>
+<li class="chapter" data-level="41.3" data-path="video-segment-association-accessor-self.id-bug.html"><a href="video-segment-association-accessor-self.id-bug.html"><i class="fa fa-check"></i><b>41.3</b> Video Segment: Association Accessor <code>self.id</code> Bug</a>
+<ul>
+<li class="chapter" data-level="41.3.1" data-path="video-segment-association-accessor-self.id-bug.html"><a href="video-segment-association-accessor-self.id-bug.html#text-companion-association-accessor-self.id-bug"><i class="fa fa-check"></i><b>41.3.1</b> Text Companion: Association Accessor <code>self.id</code> Bug</a></li>
+</ul></li>
+<li class="chapter" data-level="41.4" data-path="finish-and-submit-very-best-debug.html"><a href="finish-and-submit-very-best-debug.html"><i class="fa fa-check"></i><b>41.4</b> Finish and Submit Very Best Debug</a>
+<ul>
+<li class="chapter" data-level="41.4.1" data-path="finish-and-submit-very-best-debug.html"><a href="finish-and-submit-very-best-debug.html#standard-workflow"><i class="fa fa-check"></i><b>41.4.1</b> Standard Workflow</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="42" data-path="draftresource-generator.html"><a href="draftresource-generator.html"><i class="fa fa-check"></i><b>42</b> draft:resource generator</a>
+<ul>
+<li class="chapter" data-level="42.1" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>42.1</b> Installation</a></li>
+<li class="chapter" data-level="42.2" data-path="generating-a-resource.html"><a href="generating-a-resource.html"><i class="fa fa-check"></i><b>42.2</b> Generating a resource</a>
+<ul>
+<li class="chapter" data-level="42.2.1" data-path="generating-a-resource.html"><a href="generating-a-resource.html#what-just-happened"><i class="fa fa-check"></i><b>42.2.1</b> What just happened?</a></li>
+</ul></li>
+<li class="chapter" data-level="42.3" data-path="what-if-i-made-a-mistake-when-i-generated-a-resource.html"><a href="what-if-i-made-a-mistake-when-i-generated-a-resource.html"><i class="fa fa-check"></i><b>42.3</b> What if I made a mistake when I generated a resource?</a>
+<ul>
+<li class="chapter" data-level="42.3.1" data-path="what-if-i-made-a-mistake-when-i-generated-a-resource.html"><a href="what-if-i-made-a-mistake-when-i-generated-a-resource.html#go-back-to-an-earlier-git-commit"><i class="fa fa-check"></i><b>42.3.1</b> Go back to an earlier git commit</a></li>
+<li class="chapter" data-level="42.3.2" data-path="what-if-i-made-a-mistake-when-i-generated-a-resource.html"><a href="what-if-i-made-a-mistake-when-i-generated-a-resource.html#if-youve-already-run-rails-dbmigrate"><i class="fa fa-check"></i><b>42.3.2</b> If you’ve already run rails db:migrate</a></li>
+<li class="chapter" data-level="42.3.3" data-path="what-if-i-made-a-mistake-when-i-generated-a-resource.html"><a href="what-if-i-made-a-mistake-when-i-generated-a-resource.html#rails-destroy-draftresource"><i class="fa fa-check"></i><b>42.3.3</b> rails destroy draft:resource</a></li>
+</ul></li>
+<li class="chapter" data-level="42.4" data-path="with-great-power.html"><a href="with-great-power.html"><i class="fa fa-check"></i><b>42.4</b> With great power…</a></li>
+</ul></li>
+<li class="chapter" data-level="43" data-path="refactoring-msm-again.html"><a href="refactoring-msm-again.html"><i class="fa fa-check"></i><b>43</b> Refactoring MSM Again</a>
+<ul>
+<li class="chapter" data-level="43.1" data-path="video-segment-belongs_to.html"><a href="video-segment-belongs_to.html"><i class="fa fa-check"></i><b>43.1</b> Video Segment: <code>belongs_to</code></a>
+<ul>
+<li class="chapter" data-level="43.1.1" data-path="video-segment-belongs_to.html"><a href="video-segment-belongs_to.html#text-companion-belongs_to"><i class="fa fa-check"></i><b>43.1.1</b> Text Companion: <code>belongs_to</code></a></li>
+</ul></li>
+<li class="chapter" data-level="43.2" data-path="video-segment-has_many.html"><a href="video-segment-has_many.html"><i class="fa fa-check"></i><b>43.2</b> Video Segment: <code>has_many</code></a>
+<ul>
+<li class="chapter" data-level="43.2.1" data-path="video-segment-has_many.html"><a href="video-segment-has_many.html#text-companion-has_many"><i class="fa fa-check"></i><b>43.2.1</b> Text Companion: <code>has_many</code></a></li>
+</ul></li>
+<li class="chapter" data-level="43.3" data-path="video-segment-other-relationships-and-wizard.html"><a href="video-segment-other-relationships-and-wizard.html"><i class="fa fa-check"></i><b>43.3</b> Video Segment: Other Relationships and Wizard</a></li>
+<li class="chapter" data-level="43.4" data-path="finish-and-submit-refactoring-msm-again.html"><a href="finish-and-submit-refactoring-msm-again.html"><i class="fa fa-check"></i><b>43.4</b> Finish and Submit Refactoring MSM – Again!</a></li>
+</ul></li>
+<li class="chapter" data-level="44" data-path="photogram-associations.html"><a href="photogram-associations.html"><i class="fa fa-check"></i><b>44</b> Photogram Associations</a></li>
+<li class="chapter" data-level="45" data-path="cookies-intro.html"><a href="cookies-intro.html"><i class="fa fa-check"></i><b>45</b> Cookies Intro</a>
+<ul>
+<li class="chapter" data-level="45.1" data-path="video-segment-exploring-browser-cookies.html"><a href="video-segment-exploring-browser-cookies.html"><i class="fa fa-check"></i><b>45.1</b> Video Segment: Exploring Browser Cookies</a>
+<ul>
+<li class="chapter" data-level="45.1.1" data-path="video-segment-exploring-browser-cookies.html"><a href="video-segment-exploring-browser-cookies.html#text-companion-exploring-browser-cookies"><i class="fa fa-check"></i><b>45.1.1</b> Text Companion: Exploring Browser Cookies</a></li>
+</ul></li>
+<li class="chapter" data-level="45.2" data-path="video-segment-cookies-object.html"><a href="video-segment-cookies-object.html"><i class="fa fa-check"></i><b>45.2</b> Video Segment: <code>cookies</code> Object</a>
+<ul>
+<li class="chapter" data-level="45.2.1" data-path="video-segment-cookies-object.html"><a href="video-segment-cookies-object.html#text-companion-cookies-object"><i class="fa fa-check"></i><b>45.2.1</b> Text Companion: <code>cookies</code> Object</a></li>
+</ul></li>
+<li class="chapter" data-level="45.3" data-path="finish-and-submit-cookies-intro.html"><a href="finish-and-submit-cookies-intro.html"><i class="fa fa-check"></i><b>45.3</b> Finish and Submit Cookies Intro</a></li>
+</ul></li>
+<li class="chapter" data-level="46" data-path="cookies.html"><a href="cookies.html"><i class="fa fa-check"></i><b>46</b> Cookies</a>
+<ul>
+<li class="chapter" data-level="46.1" data-path="cookies-are-placed-in-the-visitors-browser.html"><a href="cookies-are-placed-in-the-visitors-browser.html"><i class="fa fa-check"></i><b>46.1</b> Cookies are placed in the visitor’s browser</a></li>
+<li class="chapter" data-level="46.2" data-path="cookies-are-sent-back-to-the-server-with-every-subsequent-request.html"><a href="cookies-are-sent-back-to-the-server-with-every-subsequent-request.html"><i class="fa fa-check"></i><b>46.2</b> Cookies are sent back to the server with every subsequent request</a></li>
+<li class="chapter" data-level="46.3" data-path="storing-cookies.html"><a href="storing-cookies.html"><i class="fa fa-check"></i><b>46.3</b> Storing cookies</a>
+<ul>
+<li class="chapter" data-level="46.3.1" data-path="storing-cookies.html"><a href="storing-cookies.html#study-the-existing-code"><i class="fa fa-check"></i><b>46.3.1</b> Study the existing code</a></li>
+<li class="chapter" data-level="46.3.2" data-path="storing-cookies.html"><a href="storing-cookies.html#refresh-your-hash-skills"><i class="fa fa-check"></i><b>46.3.2</b> Refresh your Hash skills</a></li>
+<li class="chapter" data-level="46.3.3" data-path="storing-cookies.html"><a href="storing-cookies.html#the-cookies-hash"><i class="fa fa-check"></i><b>46.3.3</b> The cookies hash</a></li>
+</ul></li>
+<li class="chapter" data-level="46.4" data-path="retrieving-cookies.html"><a href="retrieving-cookies.html"><i class="fa fa-check"></i><b>46.4</b> Retrieving cookies</a></li>
+<li class="chapter" data-level="46.5" data-path="rinse-and-repeat.html"><a href="rinse-and-repeat.html"><i class="fa fa-check"></i><b>46.5</b> Rinse and repeat</a></li>
+<li class="chapter" data-level="46.6" data-path="conclusion-4.html"><a href="conclusion-4.html"><i class="fa fa-check"></i><b>46.6</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="47" data-path="more-ways-of-using-cookies.html"><a href="more-ways-of-using-cookies.html"><i class="fa fa-check"></i><b>47</b> More ways of using cookies</a>
+<ul>
+<li class="chapter" data-level="47.1" data-path="flash-messages.html"><a href="flash-messages.html"><i class="fa fa-check"></i><b>47.1</b> Flash messages</a></li>
+<li class="chapter" data-level="47.2" data-path="session.html"><a href="session.html"><i class="fa fa-check"></i><b>47.2</b> Session</a></li>
+</ul></li>
+<li class="chapter" data-level="48" data-path="photogram-signin-intro-to-authentication.html"><a href="photogram-signin-intro-to-authentication.html"><i class="fa fa-check"></i><b>48</b> Photogram Signin (Intro to Authentication)</a>
+<ul>
+<li class="chapter" data-level="48.1" data-path="video-segment-intro-and-exploring-our-starting-point.html"><a href="video-segment-intro-and-exploring-our-starting-point.html"><i class="fa fa-check"></i><b>48.1</b> Video Segment: Intro and Exploring Our Starting Point</a>
+<ul>
+<li class="chapter" data-level="48.1.1" data-path="video-segment-intro-and-exploring-our-starting-point.html"><a href="video-segment-intro-and-exploring-our-starting-point.html#text-companion-intro-and-exploring-our-starting-point"><i class="fa fa-check"></i><b>48.1.1</b> Text Companion: Intro and Exploring Our Starting Point</a></li>
+</ul></li>
+<li class="chapter" data-level="48.2" data-path="video-segment-storing-passwords.html"><a href="video-segment-storing-passwords.html"><i class="fa fa-check"></i><b>48.2</b> Video Segment: Storing Passwords</a>
+<ul>
+<li class="chapter" data-level="48.2.1" data-path="video-segment-storing-passwords.html"><a href="video-segment-storing-passwords.html#text-companion-storing-passwords"><i class="fa fa-check"></i><b>48.2.1</b> Text Companion: Storing Passwords</a></li>
+</ul></li>
+<li class="chapter" data-level="48.3" data-path="video-segment-signup-form.html"><a href="video-segment-signup-form.html"><i class="fa fa-check"></i><b>48.3</b> Video Segment: Signup Form</a>
+<ul>
+<li class="chapter" data-level="48.3.1" data-path="video-segment-signup-form.html"><a href="video-segment-signup-form.html#text-companion-signup-form"><i class="fa fa-check"></i><b>48.3.1</b> Text Companion: Signup Form</a></li>
+</ul></li>
+<li class="chapter" data-level="48.4" data-path="video-segment-notices-and-alerts.html"><a href="video-segment-notices-and-alerts.html"><i class="fa fa-check"></i><b>48.4</b> Video Segment: Notices and Alerts</a>
+<ul>
+<li class="chapter" data-level="48.4.1" data-path="video-segment-notices-and-alerts.html"><a href="video-segment-notices-and-alerts.html#text-companion-notices-and-alerts"><i class="fa fa-check"></i><b>48.4.1</b> Text Companion: Notices and Alerts</a></li>
+</ul></li>
+<li class="chapter" data-level="48.5" data-path="video-segment-signout-with-reset_session.html"><a href="video-segment-signout-with-reset_session.html"><i class="fa fa-check"></i><b>48.5</b> Video Segment: Signout with <code>reset_session</code></a>
+<ul>
+<li class="chapter" data-level="48.5.1" data-path="video-segment-signout-with-reset_session.html"><a href="video-segment-signout-with-reset_session.html#text-companion-signout-with-reset_session"><i class="fa fa-check"></i><b>48.5.1</b> Text Companion: Signout with <code>reset_session</code></a></li>
+</ul></li>
+<li class="chapter" data-level="48.6" data-path="video-segment-signin-with-post-and-authenticate.html"><a href="video-segment-signin-with-post-and-authenticate.html"><i class="fa fa-check"></i><b>48.6</b> Video Segment: Signin with <code>post</code> and <code>authenticate</code></a>
+<ul>
+<li class="chapter" data-level="48.6.1" data-path="video-segment-signin-with-post-and-authenticate.html"><a href="video-segment-signin-with-post-and-authenticate.html#text-companion-signin-with-post-and-authenticate"><i class="fa fa-check"></i><b>48.6.1</b> Text Companion: Signin with <code>post</code> and <code>authenticate</code></a></li>
+</ul></li>
+<li class="chapter" data-level="48.7" data-path="video-segment-git.html"><a href="video-segment-git.html"><i class="fa fa-check"></i><b>48.7</b> Video Segment: <code>git</code></a>
+<ul>
+<li class="chapter" data-level="48.7.1" data-path="video-segment-git.html"><a href="video-segment-git.html#text-companion-git"><i class="fa fa-check"></i><b>48.7.1</b> Text Companion: <code>git</code></a></li>
+</ul></li>
+<li class="chapter" data-level="48.8" data-path="video-segment-remove-user-facing-ids.html"><a href="video-segment-remove-user-facing-ids.html"><i class="fa fa-check"></i><b>48.8</b> Video Segment: Remove User-Facing IDs</a>
+<ul>
+<li class="chapter" data-level="48.8.1" data-path="video-segment-remove-user-facing-ids.html"><a href="video-segment-remove-user-facing-ids.html#text-companion-remove-user-facing-ids"><i class="fa fa-check"></i><b>48.8.1</b> Text Companion: Remove User-Facing IDs</a></li>
+</ul></li>
+<li class="chapter" data-level="48.9" data-path="finish-and-submit-photogram-signin.html"><a href="finish-and-submit-photogram-signin.html"><i class="fa fa-check"></i><b>48.9</b> Finish and Submit Photogram Signin</a></li>
+</ul></li>
+<li class="chapter" data-level="49" data-path="starting-from-scratch-with-generators.html"><a href="starting-from-scratch-with-generators.html"><i class="fa fa-check"></i><b>49</b> Starting from Scratch with Generators</a>
+<ul>
+<li class="chapter" data-level="49.1" data-path="video-segment-starting-from-scratch-with-generators.html"><a href="video-segment-starting-from-scratch-with-generators.html"><i class="fa fa-check"></i><b>49.1</b> Video Segment: Starting from Scratch with Generators</a>
+<ul>
+<li class="chapter" data-level="49.1.1" data-path="video-segment-starting-from-scratch-with-generators.html"><a href="video-segment-starting-from-scratch-with-generators.html#text-companion-starting-from-scratch-with-generators"><i class="fa fa-check"></i><b>49.1.1</b> Text Companion: Starting from Scratch with Generators</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="50" data-path="starting-a-rails-project-from-scratch.html"><a href="starting-a-rails-project-from-scratch.html"><i class="fa fa-check"></i><b>50</b> Starting a Rails Project From Scratch</a>
+<ul>
+<li class="chapter" data-level="50.1" data-path="create-your-github-repository.html"><a href="create-your-github-repository.html"><i class="fa fa-check"></i><b>50.1</b> Create your GitHub repository</a></li>
+<li class="chapter" data-level="50.2" data-path="create-a-gitpod-workspace-off-of-your-github-repository.html"><a href="create-a-gitpod-workspace-off-of-your-github-repository.html"><i class="fa fa-check"></i><b>50.2</b> Create a Gitpod workspace off of your GitHub repository</a></li>
+<li class="chapter" data-level="50.3" data-path="differences-between-base-rails-and-a-plain-new-rails-app.html"><a href="differences-between-base-rails-and-a-plain-new-rails-app.html"><i class="fa fa-check"></i><b>50.3</b> Differences between base-rails and a plain new Rails app</a>
+<ul>
+<li class="chapter" data-level="50.3.1" data-path="differences-between-base-rails-and-a-plain-new-rails-app.html"><a href="differences-between-base-rails-and-a-plain-new-rails-app.html#gems"><i class="fa fa-check"></i><b>50.3.1</b> Gems</a></li>
+<li class="chapter" data-level="50.3.2" data-path="differences-between-base-rails-and-a-plain-new-rails-app.html"><a href="differences-between-base-rails-and-a-plain-new-rails-app.html#configuration-files"><i class="fa fa-check"></i><b>50.3.2</b> Configuration files</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="51" data-path="draftaccount-generator.html"><a href="draftaccount-generator.html"><i class="fa fa-check"></i><b>51</b> draft:account generator</a>
+<ul>
+<li class="chapter" data-level="51.1" data-path="a-special-sort-of-table-user-accounts.html"><a href="a-special-sort-of-table-user-accounts.html"><i class="fa fa-check"></i><b>51.1</b> A special sort of table: user accounts</a>
+<ul>
+<li class="chapter" data-level="51.1.1" data-path="a-special-sort-of-table-user-accounts.html"><a href="a-special-sort-of-table-user-accounts.html#current_user"><i class="fa fa-check"></i><b>51.1.1</b> <span class="citation">@current_user</span></a></li>
+<li class="chapter" data-level="51.1.2" data-path="a-special-sort-of-table-user-accounts.html"><a href="a-special-sort-of-table-user-accounts.html#forcing-sign-in"><i class="fa fa-check"></i><b>51.1.2</b> Forcing sign in</a></li>
+</ul></li>
+<li class="chapter" data-level="51.2" data-path="making-changes.html"><a href="making-changes.html"><i class="fa fa-check"></i><b>51.2</b> Making Changes</a></li>
+</ul></li>
+<li class="chapter" data-level="52" data-path="must-see-movies-signin.html"><a href="must-see-movies-signin.html"><i class="fa fa-check"></i><b>52</b> Must See Movies Signin</a>
+<ul>
+<li class="chapter" data-level="52.1" data-path="video-segment-exploring-the-target-1.html"><a href="video-segment-exploring-the-target-1.html"><i class="fa fa-check"></i><b>52.1</b> Video Segment: Exploring the Target</a>
+<ul>
+<li class="chapter" data-level="52.1.1" data-path="video-segment-exploring-the-target-1.html"><a href="video-segment-exploring-the-target-1.html#text-companion-exploring-the-target-1"><i class="fa fa-check"></i><b>52.1.1</b> Text Companion: Exploring the Target</a></li>
+</ul></li>
+<li class="chapter" data-level="52.2" data-path="video-segment-creating-movies-with-generate-model.html"><a href="video-segment-creating-movies-with-generate-model.html"><i class="fa fa-check"></i><b>52.2</b> Video Segment: Creating <code>movies</code> with <code>generate model</code></a>
+<ul>
+<li class="chapter" data-level="52.2.1" data-path="video-segment-creating-movies-with-generate-model.html"><a href="video-segment-creating-movies-with-generate-model.html#text-companion-creating-movies-with-generate-model"><i class="fa fa-check"></i><b>52.2.1</b> Text Companion: Creating <code>movies</code> with <code>generate model</code></a></li>
+</ul></li>
+<li class="chapter" data-level="52.3" data-path="video-segment-creating-movies-with-generate-draftresource.html"><a href="video-segment-creating-movies-with-generate-draftresource.html"><i class="fa fa-check"></i><b>52.3</b> Video Segment: Creating <code>movies</code> with <code>generate draft:resource</code></a>
+<ul>
+<li class="chapter" data-level="52.3.1" data-path="video-segment-creating-movies-with-generate-draftresource.html"><a href="video-segment-creating-movies-with-generate-draftresource.html#text-companion-creating-movies-with-generate-draftresource"><i class="fa fa-check"></i><b>52.3.1</b> Text Companion: Creating <code>movies</code> with <code>generate draft:resource</code></a></li>
+</ul></li>
+<li class="chapter" data-level="52.4" data-path="video-segment-generate-draftresource-for-entire-database.html"><a href="video-segment-generate-draftresource-for-entire-database.html"><i class="fa fa-check"></i><b>52.4</b> Video Segment: <code>generate draft:resource</code> for Entire Database</a>
+<ul>
+<li class="chapter" data-level="52.4.1" data-path="video-segment-generate-draftresource-for-entire-database.html"><a href="video-segment-generate-draftresource-for-entire-database.html#text-companion-generate-draftresource-for-entire-database"><i class="fa fa-check"></i><b>52.4.1</b> Text Companion: <code>generate draft:resource</code> for Entire Database</a></li>
+</ul></li>
+<li class="chapter" data-level="52.5" data-path="video-segment-association-accessor-methods.html"><a href="video-segment-association-accessor-methods.html"><i class="fa fa-check"></i><b>52.5</b> Video Segment: Association Accessor Methods</a>
+<ul>
+<li class="chapter" data-level="52.5.1" data-path="video-segment-association-accessor-methods.html"><a href="video-segment-association-accessor-methods.html#text-companion-association-accessor-methods"><i class="fa fa-check"></i><b>52.5.1</b> Text Companion: Association Accessor Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="52.6" data-path="video-segment-nav-links-and-sample_data.html"><a href="video-segment-nav-links-and-sample_data.html"><i class="fa fa-check"></i><b>52.6</b> Video Segment: Nav Links and <code>sample_data</code></a>
+<ul>
+<li class="chapter" data-level="52.6.1" data-path="video-segment-nav-links-and-sample_data.html"><a href="video-segment-nav-links-and-sample_data.html#text-companion-nav-links-and-sample_data"><i class="fa fa-check"></i><b>52.6.1</b> Text Companion: Nav Links and <code>sample_data</code></a></li>
+</ul></li>
+<li class="chapter" data-level="52.7" data-path="video-segment-validates-and-summarize-startup.html"><a href="video-segment-validates-and-summarize-startup.html"><i class="fa fa-check"></i><b>52.7</b> Video Segment: <code>validates</code> and Summarize Startup</a>
+<ul>
+<li class="chapter" data-level="52.7.1" data-path="video-segment-validates-and-summarize-startup.html"><a href="video-segment-validates-and-summarize-startup.html#text-companion-validates-and-summarize-startup"><i class="fa fa-check"></i><b>52.7.1</b> Text Companion: <code>validates</code> and Summarize Startup</a></li>
+</ul></li>
+<li class="chapter" data-level="52.8" data-path="video-segment-generate-draftaccount.html"><a href="video-segment-generate-draftaccount.html"><i class="fa fa-check"></i><b>52.8</b> Video Segment: <code>generate draft:account</code></a>
+<ul>
+<li class="chapter" data-level="52.8.1" data-path="video-segment-generate-draftaccount.html"><a href="video-segment-generate-draftaccount.html#text-companion-generate-draftaccount"><i class="fa fa-check"></i><b>52.8.1</b> Text Companion: <code>generate draft:account</code></a></li>
+</ul></li>
+<li class="chapter" data-level="52.9" data-path="video-segment-conditional-links-alerts-and-notices.html"><a href="video-segment-conditional-links-alerts-and-notices.html"><i class="fa fa-check"></i><b>52.9</b> Video Segment: Conditional Links, Alerts, and Notices</a>
+<ul>
+<li class="chapter" data-level="52.9.1" data-path="video-segment-conditional-links-alerts-and-notices.html"><a href="video-segment-conditional-links-alerts-and-notices.html#text-companion-conditional-links-alerts-and-notices"><i class="fa fa-check"></i><b>52.9.1</b> Text Companion: Conditional Links, Alerts, and Notices</a></li>
+</ul></li>
+<li class="chapter" data-level="52.10" data-path="video-segment-bookmark.html"><a href="video-segment-bookmark.html"><i class="fa fa-check"></i><b>52.10</b> Video Segment: Bookmark</a>
+<ul>
+<li class="chapter" data-level="52.10.1" data-path="video-segment-bookmark.html"><a href="video-segment-bookmark.html#text-companion-bookmark"><i class="fa fa-check"></i><b>52.10.1</b> Text Companion: Bookmark</a></li>
+</ul></li>
+<li class="chapter" data-level="52.11" data-path="video-segment-un-bookmark.html"><a href="video-segment-un-bookmark.html"><i class="fa fa-check"></i><b>52.11</b> Video Segment: Un-Bookmark</a>
+<ul>
+<li class="chapter" data-level="52.11.1" data-path="video-segment-un-bookmark.html"><a href="video-segment-un-bookmark.html#text-companion-un-bookmark"><i class="fa fa-check"></i><b>52.11.1</b> Text Companion: Un-Bookmark</a></li>
+</ul></li>
+<li class="chapter" data-level="52.12" data-path="video-segment-bookmark-index-for-current-user.html"><a href="video-segment-bookmark-index-for-current-user.html"><i class="fa fa-check"></i><b>52.12</b> Video Segment: Bookmark Index for Current User</a>
+<ul>
+<li class="chapter" data-level="52.12.1" data-path="video-segment-bookmark-index-for-current-user.html"><a href="video-segment-bookmark-index-for-current-user.html#text-companion-bookmark-index-for-current-user"><i class="fa fa-check"></i><b>52.12.1</b> Text Companion: Bookmark Index for Current User</a></li>
+</ul></li>
+<li class="chapter" data-level="52.13" data-path="video-segment-current_user.html"><a href="video-segment-current_user.html"><i class="fa fa-check"></i><b>52.13</b> Video Segment: <code>@current_user</code></a>
+<ul>
+<li class="chapter" data-level="52.13.1" data-path="video-segment-current_user.html"><a href="video-segment-current_user.html#text-companion-current_user"><i class="fa fa-check"></i><b>52.13.1</b> Text Companion: <code>@current_user</code></a></li>
+</ul></li>
+<li class="chapter" data-level="52.14" data-path="video-segment-bookmark-drop-down-form.html"><a href="video-segment-bookmark-drop-down-form.html"><i class="fa fa-check"></i><b>52.14</b> Video Segment: Bookmark Drop-Down Form</a>
+<ul>
+<li class="chapter" data-level="52.14.1" data-path="video-segment-bookmark-drop-down-form.html"><a href="video-segment-bookmark-drop-down-form.html#text-companion-bookmark-drop-down-form"><i class="fa fa-check"></i><b>52.14.1</b> Text Companion: Bookmark Drop-Down Form</a></li>
+</ul></li>
+<li class="chapter" data-level="52.15" data-path="finish-and-submit-msm-signin.html"><a href="finish-and-submit-msm-signin.html"><i class="fa fa-check"></i><b>52.15</b> Finish and Submit MSM Signin</a></li>
+</ul></li>
+<li class="chapter" data-level="53" data-path="bootstrap-intro-with-task-list.html"><a href="bootstrap-intro-with-task-list.html"><i class="fa fa-check"></i><b>53</b> Bootstrap Intro with Task List</a></li>
+<li class="chapter" data-level="54" data-path="photogram-final.html"><a href="photogram-final.html"><i class="fa fa-check"></i><b>54</b> Photogram Final</a>
+<ul>
+<li class="chapter" data-level="54.1" data-path="hints.html"><a href="hints.html"><i class="fa fa-check"></i><b>54.1</b> Hints</a>
+<ul>
+<li class="chapter" data-level="54.1.1" data-path="hints.html"><a href="hints.html#important-notes-on-generating"><i class="fa fa-check"></i><b>54.1.1</b> Important notes on generating:</a></li>
+</ul></li>
+<li class="chapter" data-level="54.2" data-path="more-notes.html"><a href="more-notes.html"><i class="fa fa-check"></i><b>54.2</b> More notes</a>
+<ul>
+<li class="chapter" data-level="54.2.1" data-path="more-notes.html"><a href="more-notes.html#image-uploads"><i class="fa fa-check"></i><b>54.2.1</b> Image Uploads</a></li>
+<li class="chapter" data-level="54.2.2" data-path="more-notes.html"><a href="more-notes.html#follow-requests"><i class="fa fa-check"></i><b>54.2.2</b> Follow Requests</a></li>
+<li class="chapter" data-level="54.2.3" data-path="more-notes.html"><a href="more-notes.html#feed"><i class="fa fa-check"></i><b>54.2.3</b> Feed</a></li>
+<li class="chapter" data-level="54.2.4" data-path="more-notes.html"><a href="more-notes.html#discovery"><i class="fa fa-check"></i><b>54.2.4</b> Discovery</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="55" data-path="building-your-own-idea.html"><a href="building-your-own-idea.html"><i class="fa fa-check"></i><b>55</b> Building Your Own Idea</a></li>
+<li class="chapter" data-level="56" data-path="extra-topics.html"><a href="extra-topics.html"><i class="fa fa-check"></i><b>56</b> Extra Topics</a></li>
+<li class="chapter" data-level="57" data-path="ransack-cheatsheet.html"><a href="ransack-cheatsheet.html"><i class="fa fa-check"></i><b>57</b> Ransack Cheatsheet</a>
+<ul>
+<li class="chapter" data-level="57.1" data-path="installation-1.html"><a href="installation-1.html"><i class="fa fa-check"></i><b>57.1</b> Installation</a></li>
+<li class="chapter" data-level="57.2" data-path="simple-single-table-filtering.html"><a href="simple-single-table-filtering.html"><i class="fa fa-check"></i><b>57.2</b> Simple, single-table filtering</a></li>
+<li class="chapter" data-level="57.3" data-path="filtering-by-associated-tables.html"><a href="filtering-by-associated-tables.html"><i class="fa fa-check"></i><b>57.3</b> Filtering by associated tables</a>
+<ul>
+<li class="chapter" data-level="57.3.1" data-path="filtering-by-associated-tables.html"><a href="filtering-by-associated-tables.html#further-reading-1"><i class="fa fa-check"></i><b>57.3.1</b> Further Reading</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="58" data-path="image-uploads-cheatsheet.html"><a href="image-uploads-cheatsheet.html"><i class="fa fa-check"></i><b>58</b> Image Uploads Cheatsheet</a>
+<ul>
+<li class="chapter" data-level="58.1" data-path="installation-2.html"><a href="installation-2.html"><i class="fa fa-check"></i><b>58.1</b> Installation</a></li>
+<li class="chapter" data-level="58.2" data-path="getting-started-with-carrierwave.html"><a href="getting-started-with-carrierwave.html"><i class="fa fa-check"></i><b>58.2</b> Getting started with Carrierwave</a>
+<ul>
+<li class="chapter" data-level="58.2.1" data-path="getting-started-with-carrierwave.html"><a href="getting-started-with-carrierwave.html#add-a-column-to-store-the-files-url"><i class="fa fa-check"></i><b>58.2.1</b> Add a column to store the file’s URL</a></li>
+<li class="chapter" data-level="58.2.2" data-path="getting-started-with-carrierwave.html"><a href="getting-started-with-carrierwave.html#generate-an-uploader"><i class="fa fa-check"></i><b>58.2.2</b> Generate an uploader</a></li>
+<li class="chapter" data-level="58.2.3" data-path="getting-started-with-carrierwave.html"><a href="getting-started-with-carrierwave.html#mount-the-uploader-in-the-model"><i class="fa fa-check"></i><b>58.2.3</b> Mount the uploader in the model</a></li>
+<li class="chapter" data-level="58.2.4" data-path="getting-started-with-carrierwave.html"><a href="getting-started-with-carrierwave.html#enhance-the-form"><i class="fa fa-check"></i><b>58.2.4</b> Enhance the form</a></li>
+</ul></li>
+<li class="chapter" data-level="58.3" data-path="assign-the-file-just-like-any-other-params.html"><a href="assign-the-file-just-like-any-other-params.html"><i class="fa fa-check"></i><b>58.3</b> Assign the file just like any other params</a></li>
+<li class="chapter" data-level="58.4" data-path="retrieving-the-upload.html"><a href="retrieving-the-upload.html"><i class="fa fa-check"></i><b>58.4</b> Retrieving the upload</a></li>
+<li class="chapter" data-level="58.5" data-path="adding-cloudinary-for-storage.html"><a href="adding-cloudinary-for-storage.html"><i class="fa fa-check"></i><b>58.5</b> Adding Cloudinary for storage</a>
+<ul>
+<li class="chapter" data-level="58.5.1" data-path="adding-cloudinary-for-storage.html"><a href="adding-cloudinary-for-storage.html#update-your-imageuploader"><i class="fa fa-check"></i><b>58.5.1</b> Update your ImageUploader</a></li>
+<li class="chapter" data-level="58.5.2" data-path="adding-cloudinary-for-storage.html"><a href="adding-cloudinary-for-storage.html#configure-temporary-storage-for-carrierwave"><i class="fa fa-check"></i><b>58.5.2</b> Configure Temporary Storage for CarrierWave</a></li>
+<li class="chapter" data-level="58.5.3" data-path="adding-cloudinary-for-storage.html"><a href="adding-cloudinary-for-storage.html#retrieve-cloudinary-api-info"><i class="fa fa-check"></i><b>58.5.3</b> Retrieve Cloudinary API info</a></li>
+<li class="chapter" data-level="58.5.4" data-path="adding-cloudinary-for-storage.html"><a href="adding-cloudinary-for-storage.html#add-cloudinary-api-info-in-environment-variables"><i class="fa fa-check"></i><b>58.5.4</b> Add Cloudinary API info in Environment Variables</a></li>
+<li class="chapter" data-level="58.5.5" data-path="adding-cloudinary-for-storage.html"><a href="adding-cloudinary-for-storage.html#store-cloudinairy-api-info-in-an-intializer"><i class="fa fa-check"></i><b>58.5.5</b> Store Cloudinairy API info in an intializer</a></li>
+</ul></li>
+<li class="chapter" data-level="58.6" data-path="further-reading-2.html"><a href="further-reading-2.html"><i class="fa fa-check"></i><b>58.6</b> Further Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="59" data-path="loading-data-from-a-csv-file-into-your-database.html"><a href="loading-data-from-a-csv-file-into-your-database.html"><i class="fa fa-check"></i><b>59</b> Loading data from a CSV file into your database</a>
+<ul>
+<li class="chapter" data-level="59.1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>59.1</b> 1. Setup</a></li>
+<li class="chapter" data-level="59.2" data-path="read-in-a-csv-file.html"><a href="read-in-a-csv-file.html"><i class="fa fa-check"></i><b>59.2</b> 2. Read in a CSV file</a></li>
+<li class="chapter" data-level="59.3" data-path="parse-the-csv.html"><a href="parse-the-csv.html"><i class="fa fa-check"></i><b>59.3</b> 3. Parse the CSV</a></li>
+<li class="chapter" data-level="59.4" data-path="looping-through-the-parsed-data.html"><a href="looping-through-the-parsed-data.html"><i class="fa fa-check"></i><b>59.4</b> 4. Looping through the parsed data</a></li>
+<li class="chapter" data-level="59.5" data-path="create-a-database-object-from-each-row.html"><a href="create-a-database-object-from-each-row.html"><i class="fa fa-check"></i><b>59.5</b> 5. Create a database object from each row</a></li>
+</ul></li>
+<li class="chapter" data-level="60" data-path="exporting-data-as-csv.html"><a href="exporting-data-as-csv.html"><i class="fa fa-check"></i><b>60</b> Exporting Data as CSV</a>
+<ul>
+<li class="chapter" data-level="60.1" data-path="define-a-class-method.html"><a href="define-a-class-method.html"><i class="fa fa-check"></i><b>60.1</b> Define a Class method</a>
+<ul>
+<li class="chapter" data-level="60.1.1" data-path="define-a-class-method.html"><a href="define-a-class-method.html#choose-the-headers"><i class="fa fa-check"></i><b>60.1.1</b> Choose the headers</a></li>
+<li class="chapter" data-level="60.1.2" data-path="define-a-class-method.html"><a href="define-a-class-method.html#choose-the-value-for-each-row-in-the-csv"><i class="fa fa-check"></i><b>60.1.2</b> Choose the value for each row in the CSV</a></li>
+</ul></li>
+<li class="chapter" data-level="60.2" data-path="create-a-route-to-download-the-file.html"><a href="create-a-route-to-download-the-file.html"><i class="fa fa-check"></i><b>60.2</b> Create a route to download the file</a></li>
+<li class="chapter" data-level="60.3" data-path="add-download-link-to-view-template.html"><a href="add-download-link-to-view-template.html"><i class="fa fa-check"></i><b>60.3</b> Add download link to View template</a></li>
+</ul></li>
+<li class="chapter" data-level="61" data-path="embedding-a-google-map-in-a-view-template.html"><a href="embedding-a-google-map-in-a-view-template.html"><i class="fa fa-check"></i><b>61</b> Embedding a Google Map in a View template</a>
+<ul>
+<li class="chapter" data-level="61.1" data-path="step-1.html"><a href="step-1.html"><i class="fa fa-check"></i><b>61.1</b> Step 1</a></li>
+<li class="chapter" data-level="61.2" data-path="step-2.html"><a href="step-2.html"><i class="fa fa-check"></i><b>61.2</b> Step 2</a></li>
+<li class="chapter" data-level="61.3" data-path="step-3.html"><a href="step-3.html"><i class="fa fa-check"></i><b>61.3</b> Step 3</a></li>
+</ul></li>
+<li class="chapter" data-level="62" data-path="web-scraping.html"><a href="web-scraping.html"><i class="fa fa-check"></i><b>62</b> Web Scraping</a>
+<ul>
+<li class="chapter" data-level="62.0.1" data-path="web-scraping.html"><a href="web-scraping.html#step-1-1"><i class="fa fa-check"></i><b>62.0.1</b> Step 1</a></li>
+<li class="chapter" data-level="62.0.2" data-path="web-scraping.html"><a href="web-scraping.html#step-2-1"><i class="fa fa-check"></i><b>62.0.2</b> Step 2</a></li>
+<li class="chapter" data-level="62.0.3" data-path="web-scraping.html"><a href="web-scraping.html#step-3-1"><i class="fa fa-check"></i><b>62.0.3</b> Step 3</a></li>
+<li class="chapter" data-level="62.0.4" data-path="web-scraping.html"><a href="web-scraping.html#step-4"><i class="fa fa-check"></i><b>62.0.4</b> Step 4</a></li>
+<li class="chapter" data-level="62.0.5" data-path="web-scraping.html"><a href="web-scraping.html#step-5"><i class="fa fa-check"></i><b>62.0.5</b> Step 5</a></li>
+<li class="chapter" data-level="62.1" data-path="css-resources.html"><a href="css-resources.html"><i class="fa fa-check"></i><b>62.1</b> CSS Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="63" data-path="extra-chapters.html"><a href="extra-chapters.html"><i class="fa fa-check"></i><b>63</b> Extra Chapters</a></li>
+<li class="chapter" data-level="64" data-path="planning-your-idea.html"><a href="planning-your-idea.html"><i class="fa fa-check"></i><b>64</b> Planning Your Idea</a>
+<ul>
+<li class="chapter" data-level="64.1" data-path="coming-up-with-an-idea.html"><a href="coming-up-with-an-idea.html"><i class="fa fa-check"></i><b>64.1</b> Coming up with an idea</a>
+<ul>
+<li class="chapter" data-level="64.1.1" data-path="coming-up-with-an-idea.html"><a href="coming-up-with-an-idea.html#pain-points"><i class="fa fa-check"></i><b>64.1.1</b> Pain Points</a></li>
+</ul></li>
+<li class="chapter" data-level="64.2" data-path="sketches.html"><a href="sketches.html"><i class="fa fa-check"></i><b>64.2</b> Sketches</a>
+<ul>
+<li class="chapter" data-level="64.2.1" data-path="sketches.html"><a href="sketches.html#speedy-eights"><i class="fa fa-check"></i><b>64.2.1</b> Speedy Eights</a></li>
+<li class="chapter" data-level="64.2.2" data-path="sketches.html"><a href="sketches.html#wireframe"><i class="fa fa-check"></i><b>64.2.2</b> Wireframe</a></li>
+</ul></li>
+<li class="chapter" data-level="64.3" data-path="user-stories.html"><a href="user-stories.html"><i class="fa fa-check"></i><b>64.3</b> User Stories</a></li>
+</ul></li>
+<li class="chapter" data-level="65" data-path="diagramming-your-domain-model.html"><a href="diagramming-your-domain-model.html"><i class="fa fa-check"></i><b>65</b> Diagramming your domain model</a>
+<ul>
+<li class="chapter" data-level="65.1" data-path="domain-modeling.html"><a href="domain-modeling.html"><i class="fa fa-check"></i><b>65.1</b> Domain Modeling</a>
+<ul>
+<li class="chapter" data-level="65.1.1" data-path="domain-modeling.html"><a href="domain-modeling.html#have-fun"><i class="fa fa-check"></i><b>65.1.1</b> Have fun!</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="66" data-path="handling-exceptions-with-beginrescueend.html"><a href="handling-exceptions-with-beginrescueend.html"><i class="fa fa-check"></i><b>66</b> Handling exceptions with begin/rescue/end</a>
+<ul>
+<li class="chapter" data-level="66.1" data-path="more-details-about-the-exception.html"><a href="more-details-about-the-exception.html"><i class="fa fa-check"></i><b>66.1</b> More details about the exception</a></li>
+<li class="chapter" data-level="66.2" data-path="further-reading-3.html"><a href="further-reading-3.html"><i class="fa fa-check"></i><b>66.2</b> Further reading</a></li>
+</ul></li>
+<li class="chapter" data-level="67" data-path="qr-code-ruby.html"><a href="qr-code-ruby.html"><i class="fa fa-check"></i><b>67</b> QR Code Ruby</a>
+<ul>
+<li class="chapter" data-level="67.1" data-path="explore-the-target.html"><a href="explore-the-target.html"><i class="fa fa-check"></i><b>67.1</b> Explore the target</a></li>
+<li class="chapter" data-level="67.2" data-path="hello-world.html"><a href="hello-world.html"><i class="fa fa-check"></i><b>67.2</b> Hello world</a></li>
+<li class="chapter" data-level="67.3" data-path="install-the-rqrcode-gem.html"><a href="install-the-rqrcode-gem.html"><i class="fa fa-check"></i><b>67.3</b> Install the rqrcode gem</a></li>
+<li class="chapter" data-level="67.4" data-path="using-the-rqrcode-gem.html"><a href="using-the-rqrcode-gem.html"><i class="fa fa-check"></i><b>67.4</b> Using the rqrcode gem</a></li>
+<li class="chapter" data-level="67.5" data-path="encoding-urls.html"><a href="encoding-urls.html"><i class="fa fa-check"></i><b>67.5</b> Encoding URLs</a></li>
+<li class="chapter" data-level="67.6" data-path="join-a-wifi-network.html"><a href="join-a-wifi-network.html"><i class="fa fa-check"></i><b>67.6</b> Join a wifi network</a></li>
+<li class="chapter" data-level="67.7" data-path="send-a-text-message.html"><a href="send-a-text-message.html"><i class="fa fa-check"></i><b>67.7</b> Send a text message</a></li>
+<li class="chapter" data-level="67.8" data-path="suggested-steps.html"><a href="suggested-steps.html"><i class="fa fa-check"></i><b>67.8</b> Suggested steps</a>
+<ul>
+<li class="chapter" data-level="67.8.1" data-path="suggested-steps.html"><a href="suggested-steps.html#make-the-program-interactive"><i class="fa fa-check"></i><b>67.8.1</b> Make the program interactive</a></li>
+<li class="chapter" data-level="67.8.2" data-path="suggested-steps.html"><a href="suggested-steps.html#give-your-user-options"><i class="fa fa-check"></i><b>67.8.2</b> Give your user options</a></li>
+<li class="chapter" data-level="67.8.3" data-path="suggested-steps.html"><a href="suggested-steps.html#stretch-goal-make-the-program-loop-until-exited"><i class="fa fa-check"></i><b>67.8.3</b> Stretch goal: make the program loop until exited</a></li>
+</ul></li>
+<li class="chapter" data-level="67.9" data-path="to-submit.html"><a href="to-submit.html"><i class="fa fa-check"></i><b>67.9</b> To submit</a></li>
+</ul></li>
+<li class="chapter" data-level="68" data-path="api-resources.html"><a href="api-resources.html"><i class="fa fa-check"></i><b>68</b> API Resources</a>
+<ul>
+<li class="chapter" data-level="68.1" data-path="a-better-application-layout-file.html"><a href="a-better-application-layout-file.html"><i class="fa fa-check"></i><b>68.1</b> A better Application Layout file</a></li>
+</ul></li>
+<li class="chapter" data-level="69" data-path="tower-of-babel.html"><a href="tower-of-babel.html"><i class="fa fa-check"></i><b>69</b> Tower of Babel</a>
+<ul>
+<li class="chapter" data-level="69.1" data-path="getting-started-2.html"><a href="getting-started-2.html"><i class="fa fa-check"></i><b>69.1</b> Getting started</a></li>
+</ul></li>
+<li class="chapter" data-level="70" data-path="tower-of-babel-hints.html"><a href="tower-of-babel-hints.html"><i class="fa fa-check"></i><b>70</b> Tower of Babel Hints</a>
+<ul>
+<li class="chapter" data-level="70.1" data-path="erd.html"><a href="erd.html"><i class="fa fa-check"></i><b>70.1</b> ERD</a></li>
+<li class="chapter" data-level="70.2" data-path="steps-for-setting-up-the-crud-infrastructure.html"><a href="steps-for-setting-up-the-crud-infrastructure.html"><i class="fa fa-check"></i><b>70.2</b> Steps for setting up the CRUD infrastructure</a>
+<ul>
+<li class="chapter" data-level="70.2.1" data-path="steps-for-setting-up-the-crud-infrastructure.html"><a href="steps-for-setting-up-the-crud-infrastructure.html#the-crux-of-it"><i class="fa fa-check"></i><b>70.2.1</b> The crux of it</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="71" data-path="a-few-readings-on-managing-software-products.html"><a href="a-few-readings-on-managing-software-products.html"><i class="fa fa-check"></i><b>71</b> A few readings on managing software products</a>
+<ul>
+<li class="chapter" data-level="71.1" data-path="workflows.html"><a href="workflows.html"><i class="fa fa-check"></i><b>71.1</b> Workflows</a>
+<ul>
+<li class="chapter" data-level="71.1.1" data-path="workflows.html"><a href="workflows.html#kanbantrello-workflow"><i class="fa fa-check"></i><b>71.1.1</b> Kanban/Trello Workflow</a></li>
+<li class="chapter" data-level="71.1.2" data-path="workflows.html"><a href="workflows.html#a-very-powerful-git-flow"><i class="fa fa-check"></i><b>71.1.2</b> A very powerful Git flow</a></li>
+<li class="chapter" data-level="71.1.3" data-path="workflows.html"><a href="workflows.html#code-review"><i class="fa fa-check"></i><b>71.1.3</b> Code Review</a></li>
+<li class="chapter" data-level="71.1.4" data-path="workflows.html"><a href="workflows.html#playbook"><i class="fa fa-check"></i><b>71.1.4</b> Playbook</a></li>
+</ul></li>
+<li class="chapter" data-level="71.2" data-path="technology-choices.html"><a href="technology-choices.html"><i class="fa fa-check"></i><b>71.2</b> Technology Choices</a>
+<ul>
+<li class="chapter" data-level="71.2.1" data-path="technology-choices.html"><a href="technology-choices.html#platforms-as-a-service"><i class="fa fa-check"></i><b>71.2.1</b> Platforms-as-a-service</a></li>
+<li class="chapter" data-level="71.2.2" data-path="technology-choices.html"><a href="technology-choices.html#cutting-edge-vs-boring-tech"><i class="fa fa-check"></i><b>71.2.2</b> Cutting edge vs boring tech</a></li>
+</ul></li>
+<li class="chapter" data-level="71.3" data-path="estimations.html"><a href="estimations.html"><i class="fa fa-check"></i><b>71.3</b> Estimations</a></li>
+<li class="chapter" data-level="71.4" data-path="hiring.html"><a href="hiring.html"><i class="fa fa-check"></i><b>71.4</b> Hiring</a></li>
+</ul></li>
+<li class="chapter" data-level="72" data-path="adding-a-sample_data-rake-task.html"><a href="adding-a-sample_data-rake-task.html"><i class="fa fa-check"></i><b>72</b> Adding a sample_data rake task</a>
+<ul>
+<li class="chapter" data-level="72.1" data-path="getting-started-3.html"><a href="getting-started-3.html"><i class="fa fa-check"></i><b>72.1</b> Getting started</a></li>
+<li class="chapter" data-level="72.2" data-path="where-do-we-write-our-sample-data-task.html"><a href="where-do-we-write-our-sample-data-task.html"><i class="fa fa-check"></i><b>72.2</b> Where do we write our sample data task?</a>
+<ul>
+<li class="chapter" data-level="72.2.1" data-path="where-do-we-write-our-sample-data-task.html"><a href="where-do-we-write-our-sample-data-task.html#the-start"><i class="fa fa-check"></i><b>72.2.1</b> The start</a></li>
+<li class="chapter" data-level="72.2.2" data-path="where-do-we-write-our-sample-data-task.html"><a href="where-do-we-write-our-sample-data-task.html#adding-users"><i class="fa fa-check"></i><b>72.2.2</b> Adding Users</a></li>
+<li class="chapter" data-level="72.2.3" data-path="where-do-we-write-our-sample-data-task.html"><a href="where-do-we-write-our-sample-data-task.html#how-do-we-know-if-records-are-getting-into-the-database"><i class="fa fa-check"></i><b>72.2.3</b> How do we know if records are getting into the database?</a></li>
+<li class="chapter" data-level="72.2.4" data-path="where-do-we-write-our-sample-data-task.html"><a href="where-do-we-write-our-sample-data-task.html#adding-follow-requests"><i class="fa fa-check"></i><b>72.2.4</b> Adding Follow Requests</a></li>
+<li class="chapter" data-level="72.2.5" data-path="where-do-we-write-our-sample-data-task.html"><a href="where-do-we-write-our-sample-data-task.html#adding-the-remainder-of-the-data"><i class="fa fa-check"></i><b>72.2.5</b> Adding the remainder of the data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="73" data-path="adding-interesting-data-with-faker.html"><a href="adding-interesting-data-with-faker.html"><i class="fa fa-check"></i><b>73</b> Adding interesting data with Faker</a>
+<ul>
+<li class="chapter" data-level="73.0.1" data-path="adding-interesting-data-with-faker.html"><a href="adding-interesting-data-with-faker.html#remove-old-data"><i class="fa fa-check"></i><b>73.0.1</b> Remove old data</a></li>
+</ul></li>
+<li class="appendix"><span><b>Glossaries</b></span></li>
+<li class="chapter" data-level="A" data-path="terminology-technical-reference.html"><a href="terminology-technical-reference.html"><i class="fa fa-check"></i><b>A</b> Terminology Technical Reference</a></li>
+<li class="chapter" data-level="B" data-path="the-one-ruby-reference.html"><a href="the-one-ruby-reference.html"><i class="fa fa-check"></i><b>B</b> The One Ruby Reference</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="how-to-interpret-this-reference.html"><a href="how-to-interpret-this-reference.html"><i class="fa fa-check"></i><b>B.1</b> How to interpret this reference</a></li>
+<li class="chapter" data-level="B.2" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html"><i class="fa fa-check"></i><b>B.2</b> ActiveRecord_Relation (array of records)</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#all-array-methods"><i class="fa fa-check"></i><b>B.2.1</b> All Array methods</a></li>
+<li class="chapter" data-level="B.2.2" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#where-1"><i class="fa fa-check"></i><b>B.2.2</b> .where</a></li>
+<li class="chapter" data-level="B.2.3" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#where.not"><i class="fa fa-check"></i><b>B.2.3</b> where.not</a></li>
+<li class="chapter" data-level="B.2.4" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#or"><i class="fa fa-check"></i><b>B.2.4</b> .or</a></li>
+<li class="chapter" data-level="B.2.5" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#order-1"><i class="fa fa-check"></i><b>B.2.5</b> .order</a></li>
+<li class="chapter" data-level="B.2.6" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#limit-1"><i class="fa fa-check"></i><b>B.2.6</b> .limit</a></li>
+<li class="chapter" data-level="B.2.7" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#offset-1"><i class="fa fa-check"></i><b>B.2.7</b> .offset</a></li>
+<li class="chapter" data-level="B.2.8" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#map_relation_to_array-1"><i class="fa fa-check"></i><b>B.2.8</b> .map_relation_to_array</a></li>
+<li class="chapter" data-level="B.2.9" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#maximum-1"><i class="fa fa-check"></i><b>B.2.9</b> .maximum</a></li>
+<li class="chapter" data-level="B.2.10" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#minimum-1"><i class="fa fa-check"></i><b>B.2.10</b> .minimum</a></li>
+<li class="chapter" data-level="B.2.11" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#sum-1"><i class="fa fa-check"></i><b>B.2.11</b> .sum</a></li>
+<li class="chapter" data-level="B.2.12" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#average-1"><i class="fa fa-check"></i><b>B.2.12</b> .average</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="activerecord-a-single-record.html"><a href="activerecord-a-single-record.html"><i class="fa fa-check"></i><b>B.3</b> <code>ActiveRecord</code> (A single record)</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="activerecord-a-single-record.html"><a href="activerecord-a-single-record.html#all-column-names"><i class="fa fa-check"></i><b>B.3.1</b> All column names</a></li>
+<li class="chapter" data-level="B.3.2" data-path="activerecord-a-single-record.html"><a href="activerecord-a-single-record.html#any-other-instance-methods-you-define-in-the-class"><i class="fa fa-check"></i><b>B.3.2</b> Any other instance methods you define in the class</a></li>
+</ul></li>
+<li class="chapter" data-level="B.4" data-path="association-helper-methods.html"><a href="association-helper-methods.html"><i class="fa fa-check"></i><b>B.4</b> Association Helper Methods</a>
+<ul>
+<li class="chapter" data-level="B.4.1" data-path="association-helper-methods.html"><a href="association-helper-methods.html#belongs_to"><i class="fa fa-check"></i><b>B.4.1</b> belongs_to</a></li>
+<li class="chapter" data-level="B.4.2" data-path="association-helper-methods.html"><a href="association-helper-methods.html#has_many"><i class="fa fa-check"></i><b>B.4.2</b> has_many</a></li>
+<li class="chapter" data-level="B.4.3" data-path="association-helper-methods.html"><a href="association-helper-methods.html#has_manythrough"><i class="fa fa-check"></i><b>B.4.3</b> has_many/through</a></li>
+</ul></li>
+<li class="chapter" data-level="B.5" data-path="string-1.html"><a href="string-1.html"><i class="fa fa-check"></i><b>B.5</b> String</a>
+<ul>
+<li class="chapter" data-level="B.5.1" data-path="string-1.html"><a href="string-1.html#concat-."><i class="fa fa-check"></i><b>B.5.1</b> .concat (.+)</a></li>
+<li class="chapter" data-level="B.5.2" data-path="string-1.html"><a href="string-1.html#method"><i class="fa fa-check"></i><b>B.5.2</b> * method</a></li>
+<li class="chapter" data-level="B.5.3" data-path="string-1.html"><a href="string-1.html#upcase-1"><i class="fa fa-check"></i><b>B.5.3</b> .upcase</a></li>
+<li class="chapter" data-level="B.5.4" data-path="string-1.html"><a href="string-1.html#downcase-1"><i class="fa fa-check"></i><b>B.5.4</b> .downcase</a></li>
+<li class="chapter" data-level="B.5.5" data-path="string-1.html"><a href="string-1.html#swapcase-1"><i class="fa fa-check"></i><b>B.5.5</b> .swapcase</a></li>
+<li class="chapter" data-level="B.5.6" data-path="string-1.html"><a href="string-1.html#reverse-string"><i class="fa fa-check"></i><b>B.5.6</b> .reverse (String)</a></li>
+<li class="chapter" data-level="B.5.7" data-path="string-1.html"><a href="string-1.html#length-1"><i class="fa fa-check"></i><b>B.5.7</b> .length</a></li>
+<li class="chapter" data-level="B.5.8" data-path="string-1.html"><a href="string-1.html#chomp-1"><i class="fa fa-check"></i><b>B.5.8</b> .chomp</a></li>
+<li class="chapter" data-level="B.5.9" data-path="string-1.html"><a href="string-1.html#gsub-1"><i class="fa fa-check"></i><b>B.5.9</b> .gsub</a></li>
+<li class="chapter" data-level="B.5.10" data-path="string-1.html"><a href="string-1.html#to_i-string"><i class="fa fa-check"></i><b>B.5.10</b> .to_i (String)</a></li>
+<li class="chapter" data-level="B.5.11" data-path="string-1.html"><a href="string-1.html#strip-1"><i class="fa fa-check"></i><b>B.5.11</b> .strip</a></li>
+<li class="chapter" data-level="B.5.12" data-path="string-1.html"><a href="string-1.html#capitalize-1"><i class="fa fa-check"></i><b>B.5.12</b> .capitalize</a></li>
+<li class="chapter" data-level="B.5.13" data-path="string-1.html"><a href="string-1.html#split-1"><i class="fa fa-check"></i><b>B.5.13</b> .split</a></li>
+<li class="chapter" data-level="B.5.14" data-path="string-1.html"><a href="string-1.html#include-2"><i class="fa fa-check"></i><b>B.5.14</b> .include?</a></li>
+</ul></li>
+<li class="chapter" data-level="B.6" data-path="integer-1.html"><a href="integer-1.html"><i class="fa fa-check"></i><b>B.6</b> Integer</a>
+<ul>
+<li class="chapter" data-level="B.6.1" data-path="integer-1.html"><a href="integer-1.html#math-operations-for-the-integer-class"><i class="fa fa-check"></i><b>B.6.1</b> Math Operations for the Integer Class</a></li>
+<li class="chapter" data-level="B.6.2" data-path="integer-1.html"><a href="integer-1.html#modulus-operator"><i class="fa fa-check"></i><b>B.6.2</b> <code>%</code> (modulus) operator</a></li>
+<li class="chapter" data-level="B.6.3" data-path="integer-1.html"><a href="integer-1.html#operator-integer"><i class="fa fa-check"></i><b>B.6.3</b> <code>**</code> operator Integer</a></li>
+<li class="chapter" data-level="B.6.4" data-path="integer-1.html"><a href="integer-1.html#odd-and-.even-method"><i class="fa fa-check"></i><b>B.6.4</b> .odd? and .even? method</a></li>
+<li class="chapter" data-level="B.6.5" data-path="integer-1.html"><a href="integer-1.html#rand-2"><i class="fa fa-check"></i><b>B.6.5</b> rand</a></li>
+<li class="chapter" data-level="B.6.6" data-path="integer-1.html"><a href="integer-1.html#to_s-1"><i class="fa fa-check"></i><b>B.6.6</b> .to_s</a></li>
+<li class="chapter" data-level="B.6.7" data-path="integer-1.html"><a href="integer-1.html#to_f-1"><i class="fa fa-check"></i><b>B.6.7</b> .to_f</a></li>
+</ul></li>
+<li class="chapter" data-level="B.7" data-path="float-1.html"><a href="float-1.html"><i class="fa fa-check"></i><b>B.7</b> Float</a>
+<ul>
+<li class="chapter" data-level="B.7.1" data-path="float-1.html"><a href="float-1.html#math-operations-for-the-float-class"><i class="fa fa-check"></i><b>B.7.1</b> Math Operations for the Float Class</a></li>
+<li class="chapter" data-level="B.7.2" data-path="float-1.html"><a href="float-1.html#float-operator"><i class="fa fa-check"></i><b>B.7.2</b> <code>**</code> Float operator</a></li>
+<li class="chapter" data-level="B.7.3" data-path="float-1.html"><a href="float-1.html#round-1"><i class="fa fa-check"></i><b>B.7.3</b> .round</a></li>
+<li class="chapter" data-level="B.7.4" data-path="float-1.html"><a href="float-1.html#to_i-float"><i class="fa fa-check"></i><b>B.7.4</b> .to_i (Float)</a></li>
+</ul></li>
+<li class="chapter" data-level="B.8" data-path="date-1.html"><a href="date-1.html"><i class="fa fa-check"></i><b>B.8</b> Date</a>
+<ul>
+<li class="chapter" data-level="B.8.1" data-path="date-1.html"><a href="date-1.html#creating-a-date-1"><i class="fa fa-check"></i><b>B.8.1</b> Creating a Date</a></li>
+<li class="chapter" data-level="B.8.2" data-path="date-1.html"><a href="date-1.html#date.new-1"><i class="fa fa-check"></i><b>B.8.2</b> Date.new</a></li>
+<li class="chapter" data-level="B.8.3" data-path="date-1.html"><a href="date-1.html#date.today-1"><i class="fa fa-check"></i><b>B.8.3</b> Date.today</a></li>
+<li class="chapter" data-level="B.8.4" data-path="date-1.html"><a href="date-1.html#date.parse-1"><i class="fa fa-check"></i><b>B.8.4</b> Date.parse()</a></li>
+<li class="chapter" data-level="B.8.5" data-path="date-1.html"><a href="date-1.html#subtraction-1"><i class="fa fa-check"></i><b>B.8.5</b> Subtraction</a></li>
+<li class="chapter" data-level="B.8.6" data-path="date-1.html"><a href="date-1.html#date.mday"><i class="fa fa-check"></i><b>B.8.6</b> Date.mday</a></li>
+<li class="chapter" data-level="B.8.7" data-path="date-1.html"><a href="date-1.html#date.wday"><i class="fa fa-check"></i><b>B.8.7</b> Date.wday</a></li>
+<li class="chapter" data-level="B.8.8" data-path="date-1.html"><a href="date-1.html#days-of-the-week"><i class="fa fa-check"></i><b>B.8.8</b> Days of the Week</a></li>
+</ul></li>
+<li class="chapter" data-level="B.9" data-path="array-1.html"><a href="array-1.html"><i class="fa fa-check"></i><b>B.9</b> Array</a>
+<ul>
+<li class="chapter" data-level="B.9.1" data-path="array-1.html"><a href="array-1.html#creating-an-array"><i class="fa fa-check"></i><b>B.9.1</b> Creating an Array</a></li>
+<li class="chapter" data-level="B.9.2" data-path="array-1.html"><a href="array-1.html#push-1"><i class="fa fa-check"></i><b>B.9.2</b> .push</a></li>
+<li class="chapter" data-level="B.9.3" data-path="array-1.html"><a href="array-1.html#at-1"><i class="fa fa-check"></i><b>B.9.3</b> .at()</a></li>
+<li class="chapter" data-level="B.9.4" data-path="array-1.html"><a href="array-1.html#first-and-.last"><i class="fa fa-check"></i><b>B.9.4</b> .first and .last</a></li>
+<li class="chapter" data-level="B.9.5" data-path="array-1.html"><a href="array-1.html#index-1"><i class="fa fa-check"></i><b>B.9.5</b> .index</a></li>
+<li class="chapter" data-level="B.9.6" data-path="array-1.html"><a href="array-1.html#count-2"><i class="fa fa-check"></i><b>B.9.6</b> .count</a></li>
+<li class="chapter" data-level="B.9.7" data-path="array-1.html"><a href="array-1.html#reverse-array"><i class="fa fa-check"></i><b>B.9.7</b> .reverse (Array)</a></li>
+<li class="chapter" data-level="B.9.8" data-path="array-1.html"><a href="array-1.html#sort-1"><i class="fa fa-check"></i><b>B.9.8</b> .sort</a></li>
+<li class="chapter" data-level="B.9.9" data-path="array-1.html"><a href="array-1.html#shuffle-1"><i class="fa fa-check"></i><b>B.9.9</b> .shuffle</a></li>
+<li class="chapter" data-level="B.9.10" data-path="array-1.html"><a href="array-1.html#sample-1"><i class="fa fa-check"></i><b>B.9.10</b> .sample</a></li>
+<li class="chapter" data-level="B.9.11" data-path="array-1.html"><a href="array-1.html#min-and-.max"><i class="fa fa-check"></i><b>B.9.11</b> .min and .max</a></li>
+<li class="chapter" data-level="B.9.12" data-path="array-1.html"><a href="array-1.html#sum-array"><i class="fa fa-check"></i><b>B.9.12</b> .sum (Array)</a></li>
+</ul></li>
+<li class="chapter" data-level="B.10" data-path="hash-1.html"><a href="hash-1.html"><i class="fa fa-check"></i><b>B.10</b> Hash</a>
+<ul>
+<li class="chapter" data-level="B.10.1" data-path="hash-1.html"><a href="hash-1.html#interlude-symbol"><i class="fa fa-check"></i><b>B.10.1</b> Interlude: Symbol</a></li>
+<li class="chapter" data-level="B.10.2" data-path="hash-1.html"><a href="hash-1.html#creating-a-hash"><i class="fa fa-check"></i><b>B.10.2</b> Creating a Hash</a></li>
+<li class="chapter" data-level="B.10.3" data-path="hash-1.html"><a href="hash-1.html#store"><i class="fa fa-check"></i><b>B.10.3</b> .store</a></li>
+<li class="chapter" data-level="B.10.4" data-path="hash-1.html"><a href="hash-1.html#fetch-1"><i class="fa fa-check"></i><b>B.10.4</b> .fetch</a></li>
+</ul></li>
+<li class="chapter" data-level="B.11" data-path="conditionals.html"><a href="conditionals.html"><i class="fa fa-check"></i><b>B.11</b> Conditionals</a></li>
+<li class="chapter" data-level="B.12" data-path="loops.html"><a href="loops.html"><i class="fa fa-check"></i><b>B.12</b> Loops</a></li>
+<li class="chapter" data-level="B.13" data-path="blocks-1.html"><a href="blocks-1.html"><i class="fa fa-check"></i><b>B.13</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="B.13.1" data-path="blocks-1.html"><a href="blocks-1.html#times"><i class="fa fa-check"></i><b>B.13.1</b> .times</a></li>
+<li class="chapter" data-level="B.13.2" data-path="blocks-1.html"><a href="blocks-1.html#upto"><i class="fa fa-check"></i><b>B.13.2</b> .upto</a></li>
+<li class="chapter" data-level="B.13.3" data-path="blocks-1.html"><a href="blocks-1.html#downto"><i class="fa fa-check"></i><b>B.13.3</b> .downto</a></li>
+<li class="chapter" data-level="B.13.4" data-path="blocks-1.html"><a href="blocks-1.html#step"><i class="fa fa-check"></i><b>B.13.4</b> .step</a></li>
+</ul></li>
+<li class="chapter" data-level="B.14" data-path="looping-through-arrays.html"><a href="looping-through-arrays.html"><i class="fa fa-check"></i><b>B.14</b> Looping through Arrays</a>
+<ul>
+<li class="chapter" data-level="B.14.1" data-path="looping-through-arrays.html"><a href="looping-through-arrays.html#each-1"><i class="fa fa-check"></i><b>B.14.1</b> .each</a></li>
+<li class="chapter" data-level="B.14.2" data-path="looping-through-arrays.html"><a href="looping-through-arrays.html#each_with_index-1"><i class="fa fa-check"></i><b>B.14.2</b> .each_with_index</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="different-ruby-styles.html"><a href="different-ruby-styles.html"><i class="fa fa-check"></i><b>C</b> Different Ruby Styles</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="no-parentheses-around-arguments.html"><a href="no-parentheses-around-arguments.html"><i class="fa fa-check"></i><b>C.1</b> No parentheses around arguments</a></li>
+<li class="chapter" data-level="C.2" data-path="curly-braces-around-hash-arguments.html"><a href="curly-braces-around-hash-arguments.html"><i class="fa fa-check"></i><b>C.2</b> Curly braces around hash arguments</a></li>
+<li class="chapter" data-level="C.3" data-path="new-hash-syntax.html"><a href="new-hash-syntax.html"><i class="fa fa-check"></i><b>C.3</b> New Hash Syntax</a></li>
+<li class="chapter" data-level="C.4" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html"><i class="fa fa-check"></i><b>C.4</b> Putting it all together</a></li>
+<li class="chapter" data-level="C.5" data-path="single-line-blocks.html"><a href="single-line-blocks.html"><i class="fa fa-check"></i><b>C.5</b> Single line blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="html-reference.html"><a href="html-reference.html"><i class="fa fa-check"></i><b>D</b> HTML Reference</a>
+<ul>
+<li class="chapter" data-level="D.1" data-path="the-very-basics.html"><a href="the-very-basics.html"><i class="fa fa-check"></i><b>D.1</b> The very basics</a>
+<ul>
+<li class="chapter" data-level="D.1.1" data-path="the-very-basics.html"><a href="the-very-basics.html#p-a-paragraph"><i class="fa fa-check"></i><b>D.1.1</b> p — a paragraph</a></li>
+<li class="chapter" data-level="D.1.2" data-path="the-very-basics.html"><a href="the-very-basics.html#h1-h2-h3-h4-h5-h6-a-heading-for-any-occasion"><i class="fa fa-check"></i><b>D.1.2</b> h1, h2, h3, h4, h5, h6 — a heading for any occasion</a></li>
+<li class="chapter" data-level="D.1.3" data-path="the-very-basics.html"><a href="the-very-basics.html#img-images"><i class="fa fa-check"></i><b>D.1.3</b> img — images</a></li>
+<li class="chapter" data-level="D.1.4" data-path="the-very-basics.html"><a href="the-very-basics.html#a-a-link"><i class="fa fa-check"></i><b>D.1.4</b> a — a link</a></li>
+</ul></li>
+<li class="chapter" data-level="D.2" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>D.2</b> Lists</a>
+<ul>
+<li class="chapter" data-level="D.2.1" data-path="lists.html"><a href="lists.html#unordered-and-ordered-lists"><i class="fa fa-check"></i><b>D.2.1</b> Unordered and ordered lists</a></li>
+<li class="chapter" data-level="D.2.2" data-path="lists.html"><a href="lists.html#definition-lists"><i class="fa fa-check"></i><b>D.2.2</b> Definition lists</a></li>
+</ul></li>
+<li class="chapter" data-level="D.3" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>D.3</b> Tables</a></li>
+<li class="chapter" data-level="D.4" data-path="generic-elements.html"><a href="generic-elements.html"><i class="fa fa-check"></i><b>D.4</b> Generic elements</a>
+<ul>
+<li class="chapter" data-level="D.4.1" data-path="generic-elements.html"><a href="generic-elements.html#div-a-generic-block-level-container"><i class="fa fa-check"></i><b>D.4.1</b> div — a generic block level container</a></li>
+<li class="chapter" data-level="D.4.2" data-path="generic-elements.html"><a href="generic-elements.html#span-a-generic-in-line-container"><i class="fa fa-check"></i><b>D.4.2</b> span — a generic in-line container</a></li>
+<li class="chapter" data-level="D.4.3" data-path="generic-elements.html"><a href="generic-elements.html#html"><i class="fa fa-check"></i><b>D.4.3</b> html</a></li>
+<li class="chapter" data-level="D.4.4" data-path="generic-elements.html"><a href="generic-elements.html#head"><i class="fa fa-check"></i><b>D.4.4</b> head</a></li>
+<li class="chapter" data-level="D.4.5" data-path="generic-elements.html"><a href="generic-elements.html#body"><i class="fa fa-check"></i><b>D.4.5</b> body</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="html-cheatsheet.html"><a href="html-cheatsheet.html"><i class="fa fa-check"></i><b>E</b> HTML Cheatsheet</a>
+<ul>
+<li class="chapter" data-level="E.1" data-path="basic-syntax.html"><a href="basic-syntax.html"><i class="fa fa-check"></i><b>E.1</b> Basic Syntax</a>
+<ul>
+<li class="chapter" data-level="E.1.1" data-path="basic-syntax.html"><a href="basic-syntax.html#attributes"><i class="fa fa-check"></i><b>E.1.1</b> Attributes</a></li>
+<li class="chapter" data-level="E.1.2" data-path="basic-syntax.html"><a href="basic-syntax.html#exceptions"><i class="fa fa-check"></i><b>E.1.2</b> Exceptions</a></li>
+<li class="chapter" data-level="E.1.3" data-path="basic-syntax.html"><a href="basic-syntax.html#nesting-elements"><i class="fa fa-check"></i><b>E.1.3</b> Nesting Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="E.2" data-path="required-elements.html"><a href="required-elements.html"><i class="fa fa-check"></i><b>E.2</b> Required Elements</a>
+<ul>
+<li class="chapter" data-level="E.2.1" data-path="required-elements.html"><a href="required-elements.html#doctype-declaration"><i class="fa fa-check"></i><b>E.2.1</b> Doctype Declaration</a></li>
+<li class="chapter" data-level="E.2.2" data-path="required-elements.html"><a href="required-elements.html#html-element"><i class="fa fa-check"></i><b>E.2.2</b> <code>&lt;html&gt;</code> element</a></li>
+<li class="chapter" data-level="E.2.3" data-path="required-elements.html"><a href="required-elements.html#head-element"><i class="fa fa-check"></i><b>E.2.3</b> <code>&lt;head&gt;</code> element</a></li>
+<li class="chapter" data-level="E.2.4" data-path="required-elements.html"><a href="required-elements.html#title-element"><i class="fa fa-check"></i><b>E.2.4</b> <code>&lt;title&gt;</code> element</a></li>
+<li class="chapter" data-level="E.2.5" data-path="required-elements.html"><a href="required-elements.html#body-element"><i class="fa fa-check"></i><b>E.2.5</b> <code>&lt;body&gt;</code> element</a></li>
+</ul></li>
+<li class="chapter" data-level="E.3" data-path="types-of-elements.html"><a href="types-of-elements.html"><i class="fa fa-check"></i><b>E.3</b> Types of Elements</a>
+<ul>
+<li class="chapter" data-level="E.3.1" data-path="types-of-elements.html"><a href="types-of-elements.html#block-level"><i class="fa fa-check"></i><b>E.3.1</b> Block-level</a></li>
+<li class="chapter" data-level="E.3.2" data-path="types-of-elements.html"><a href="types-of-elements.html#inline"><i class="fa fa-check"></i><b>E.3.2</b> Inline</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="F" data-path="classbook.html"><a href="classbook.html"><i class="fa fa-check"></i><b>F</b> Classbook</a>
+<ul>
+<li class="chapter" data-level="F.1" data-path="target.html"><a href="target.html"><i class="fa fa-check"></i><b>F.1</b> Target</a></li>
+<li class="chapter" data-level="F.2" data-path="structure-with-html.html"><a href="structure-with-html.html"><i class="fa fa-check"></i><b>F.2</b> Structure with HTML</a>
+<ul>
+<li class="chapter" data-level="F.2.1" data-path="structure-with-html.html"><a href="structure-with-html.html#raw-content"><i class="fa fa-check"></i><b>F.2.1</b> Raw Content</a></li>
+<li class="chapter" data-level="F.2.2" data-path="structure-with-html.html"><a href="structure-with-html.html#add-semantic-markup"><i class="fa fa-check"></i><b>F.2.2</b> Add Semantic Markup</a></li>
+<li class="chapter" data-level="F.2.3" data-path="structure-with-html.html"><a href="structure-with-html.html#add-images"><i class="fa fa-check"></i><b>F.2.3</b> Add Images</a></li>
+<li class="chapter" data-level="F.2.4" data-path="structure-with-html.html"><a href="structure-with-html.html#tables-1"><i class="fa fa-check"></i><b>F.2.4</b> Tables</a></li>
+<li class="chapter" data-level="F.2.5" data-path="structure-with-html.html"><a href="structure-with-html.html#embedding-objects"><i class="fa fa-check"></i><b>F.2.5</b> Embedding Objects</a></li>
+</ul></li>
+<li class="chapter" data-level="F.3" data-path="styling-with-css.html"><a href="styling-with-css.html"><i class="fa fa-check"></i><b>F.3</b> Styling with CSS</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="_blank">
+Proudly published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AD1</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="installation" class="section level2 hasAnchor" number="42.1">
+<h2><span class="header-section-number">42.1</span> Installation<a href="installation.html#installation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Make sure this line is in your <code>Gemfile</code>:</p>
+<div class="sourceCode" id="cb808"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb808-1"><a href="installation.html#cb808-1" aria-hidden="true"></a><span class="co"># /Gemfile</span></span>
+<span id="cb808-2"><a href="installation.html#cb808-2" aria-hidden="true"></a></span>
+<span id="cb808-3"><a href="installation.html#cb808-3" aria-hidden="true"></a>gem <span class="st">&quot;draft_generators&quot;</span>, <span class="st">:git</span> =&gt; <span class="st">&quot;https://github.com/firstdraft/draft_generators&quot;</span></span></code></pre></div>
+<p>Then, at a Terminal prompt:</p>
+<div class="sourceCode" id="cb809"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb809-1"><a href="installation.html#cb809-1" aria-hidden="true"></a><span class="ex">bundle</span> install</span></code></pre></div>
+<p>Or make sure it is up to date with:</p>
+<div class="sourceCode" id="cb810"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb810-1"><a href="installation.html#cb810-1" aria-hidden="true"></a><span class="ex">bundle</span> update draft_generators</span></code></pre></div>
+<p>If you are starting with our <a href="https://github.com/appdev-projects/base-rails">base-rails repository</a>, then you’ve already got the gem included.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="draftresource-generator.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="generating-a-resource.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/draft-generators.md",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/draft-generators.md",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

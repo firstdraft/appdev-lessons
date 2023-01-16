@@ -16,8 +16,8 @@
 
   - Useful chapters:
 
-    - [`html-reference.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/html-reference.md){target="_blank"}
-    - [`html-cheatsheet.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/html-cheatsheet.md){target="_blank"}
+    - [HTML Reference][HTML Reference]
+    - [HTML Cheatsheet][HTML Cheatsheet]
 
   - [HTML and CSS Recap Slides](https://firstdraft.slides.com/raghubetina/html-and-css-recap?token=8gU8ghvw){target="_blank"}
     - 01-05: HTML basics
@@ -31,7 +31,7 @@
 
   - Useful chapters:
 
-    - [`classbook.md#styling-with-css`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/classbook.md#styling-with-css){target="_blank"}, but this is outdated?
+    - [Styling with CSS][Styling with CSS], but this is outdated?
 
   - [HTML and CSS Recap Slides](https://firstdraft.slides.com/raghubetina/html-and-css-recap?token=8gU8ghvw){target="_blank"}
     - 09-13: CSS Fundamentals
@@ -58,7 +58,7 @@
     - 29: Readings
     - 31-34: Basic rules (mixed in with some Replits)
 
-  - sections from [`design-resources.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/design-resources.md){target="_blank"}
+  - Copied from [`design-resources.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/design-resources.md){target="_blank"}
 
 As you go about designing and coding your application's screens, here are a few things that you may find useful.
 

@@ -2,16 +2,15 @@
 
 - Notes:
 
-  - There is no video yet, everything is in the chapter [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}, copied in below
+  - Copied from [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
 
   - Project (graded): [https://github.com/appdev-projects/refactoring-fortune-teller](https://github.com/appdev-projects/refactoring-fortune-teller){target="_blank"}
 
   - Target: [https://refactoring-fortune-teller.matchthetarget.com](https://refactoring-fortune-teller.matchthetarget.com){target="_blank"}
 
   - Useful chapters:
-
-    - [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
-    - [`rcav-flowchart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rcav-flowchart.md){target="_blank"}
+  
+    - [RCAV Flowchart][RCAV Flowchart]
 
 
 This chapter is the companion to [the refactoring-fortune-teller project](https://github.com/appdev-projects/refactoring-fortune-teller){target="_blank"}, which is the sequel to the [the fortune-teller project](https://github.com/appdev-projects/fortune-teller){target="_blank"}.
@@ -21,7 +20,6 @@ This chapter is the companion to [the refactoring-fortune-teller project](https:
 - Notes:
 
   - dynamic route segments
-  - Copied from `refactoring-fortune-teller-with-dynamic-routes.md` chapter section
   - `get("/roll/:number_of_dice/:how_many_sides", { :controller => "dice", :action => "infinity_and_beyond" })`
   - `params.fetch("number_of_dice")` and `params.fetch("how_many_sides")`
 
@@ -209,7 +207,6 @@ A question to ponder.
 - Notes:
 
   - dynamic route segments, our own classes
-  - Copied from `refactoring-fortune-teller-with-dynamic-routes.md` chapter section
   - `Zodiac` class in `app/models/`
   - `get("/zodiacs/:the_sign", { :controller => "fortunes", :action => "horoscopes" })`
   - `String#to_sym`

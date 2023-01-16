@@ -7,12 +7,15 @@
   - Project (ungraded): [https://github.com/appdev-projects/omnicalc-debug](https://github.com/appdev-projects/omnicalc-debug){target="_blank"}
 
   - Useful chapters:
-    - [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
-    - README text at [https://github.com/appdev-projects/omnicalc-debug#readme](https://github.com/appdev-projects/omnicalc-debug#readme){target="_blank"}
+    - [Refactoring Fortune Teller with Dynamic Routes][Refactoring Fortune Teller with Dynamic Routes]
 
-**Reading: [Rubber Duck Debugging](https://www.thoughtfulcode.com/rubber-duck-debugging-psychology/){target="_blank"}**
+**Reading to insert around here: [Rubber Duck Debugging](https://www.thoughtfulcode.com/rubber-duck-debugging-psychology/){target="_blank"}**
 
 ## Omnicalc Debug README
+
+- Notes:
+
+  - Copied from [https://github.com/appdev-projects/omnicalc-debug#readme](https://github.com/appdev-projects/omnicalc-debug#readme){target="_blank"}
 
 Here is your [target](https://omnicalc-debug.matchthetarget.com/) 
 
