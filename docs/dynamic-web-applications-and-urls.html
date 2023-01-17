@@ -485,13 +485,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.1.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#quiz-question"><i class="fa fa-check"></i><b>16.1.1</b> Quiz Question</a></li>
 </ul></li>
 <li class="chapter" data-level="16.2" data-path="rcav-route.html"><a href="rcav-route.html"><i class="fa fa-check"></i><b>16.2</b> RCAV: Route</a></li>
-<li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a>
+<li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a></li>
+<li class="chapter" data-level="16.4" data-path="dropping-self..html"><a href="dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Dropping <code>self.</code></a>
 <ul>
-<li class="chapter" data-level="16.3.1" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>16.3.1</b> Text Companion: Controller, Action, View</a></li>
-</ul></li>
-<li class="chapter" data-level="16.4" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Video Segment: Dropping <code>self.</code></a>
-<ul>
-<li class="chapter" data-level="16.4.1" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html#text-companion-dropping-.self"><i class="fa fa-check"></i><b>16.4.1</b> Text Companion: Dropping <code>.self</code></a></li>
+<li class="chapter" data-level="16.4.1" data-path="dropping-self..html"><a href="dropping-self..html#text-companion-dropping-.self"><i class="fa fa-check"></i><b>16.4.1</b> Text Companion: Dropping <code>.self</code></a></li>
 </ul></li>
 <li class="chapter" data-level="16.5" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>16.5</b> Video Segment: Starting Our GitPod Workspace</a>
 <ul>
@@ -1617,48 +1614,40 @@ Notes:
 <li>or some combination of the above</li>
 </ul>
 <p>Most obviously, the user might be visiting the URLs in their browser by typing into the address bar or clicking on links. Or, more and more commonly, users might be visiting from native iPhone or Android apps without even knowing that, behind the scenes, they are visiting URLs to store and retrieve the information they need.</p>
-<p>But make no mistake: if there is information being stored in a central database, then there’s a <mark>web server</mark> running somewhere and URLs are being visited with each <em>action</em> a user takes. When somebody puts that URL into the address bar and hits <kbd>Enter</kbd>, they are triggering a specific Ruby <code>method</code>.</p>
-<p>In the background, there is a a <em>noun</em> (the object) and a <em>verb</em> (the instance <code>method</code>): <code>Object#method</code><span id="fn-1"><!--
+<p>But make no mistake: if there is information being stored in a central database, then there’s a <mark>web server</mark> running somewhere and URLs are being visited with each <em>action</em> a user takes. When somebody puts that URL into the address bar and hits <kbd>Enter</kbd>, they are triggering a specific Ruby method.</p>
+<p>In the background, there is a a <em>noun</em> (the object) and a <em>verb</em> (the instance method): <code>Object#method</code><span id="fn-1"><!--
 --><label for="fn-1-toggle"><sup>1</sup></label><!--
 --><input type="checkbox" hidden id="fn-1-toggle"/>
-<span id="fn-content">Recall from <a href="our-own-classes.html#our-own-classes">Our own classes</a>, that <code>Object#method</code> notation symbolizes an <mark><em>instance</em> <code>method</code></mark>, while <code>Object.method</code> notation symbolizes a <mark><em>class</em> <code>method</code></mark>.</span></span>. This <code>method</code> does the work of drawing the correct page of information for the user. Our job is to write those Ruby <code>method</code>s (called <em>actions</em>), and allow users to trigger them when they visit each URL.</p>
-<p>We can write any Ruby we want in those <mark>action <code>method</code>s</mark>. We can generate random numbers, read from <mark>API</mark>s, calculate things, send text messages, and more. But every action must do one of two things:</p>
+<span id="fn-content"><a href="our-own-classes.html#our-own-classes">Recall</a> that <code>Object#method</code> notation symbolizes an <mark><em>instance</em> method</mark>, while <code>Object.method</code> notation symbolizes a <mark><em>class</em> method</mark>.</span></span>. This method does the work of drawing the correct page of information for the user. Our job is to write those Ruby methods (called <em>actions</em>), and allow users to trigger them when they visit each URL.</p>
+<p>We can write any Ruby we want in those <mark>action methods</mark>. We can generate random numbers, read from <mark>API</mark>s, calculate things, send text messages, and more. But every action must do one of two things:</p>
 <ol style="list-style-type: decimal">
 <li><p><mark><em>Render</em></mark> a response, by sending back some HTML and displaying a new page</p></li>
 <li><p><mark><em>Redirect</em></mark>, or forward the user onward to another URL.</p></li>
 </ol>
-<p>And that’s <em>everything</em> that happens between the user visiting a URL and getting a response, it is a complete <mark><em>request lifecycle</em></mark>. Every URL is mapped to one Ruby <code>method</code>, and then we wire everything together so that Rails will listen for user visits. When someone visits a particular URL, then Rails will call the <code>method</code> we prepared, which will handle getting any database information, wrapping it in bootstrapped markup, and sending the HTML to the user’s browser.</p>
+<p>And that’s <em>everything</em> that happens between the user visiting a URL and getting a response, it is a complete <mark><em>request lifecycle</em></mark>. Every URL is mapped to one Ruby method, and then we wire everything together so that Rails will listen for user visits. When someone visits a particular URL, then Rails will call the method we prepared, which will handle getting any database information, wrapping it in bootstrapped markup, and sending the HTML to the user’s browser.</p>
 <p>You can fully <em>specify</em> a web application by listing out the URLs that users can visit, and what happens when each URL is visited. For example, let’s say we wanted to build an interactive game of Rock, Paper, Scissors. The complete specifications (or <mark><em>specs</em></mark>, for short) for this app might look like this:</p>
 <ul>
 <li><strong>http://[APP DOMAIN]/rock</strong> — Should display “You played rock.”, a random move by the computer, and the outcome.</li>
 <li><strong>http://[APP DOMAIN]/paper</strong> — Should display “You played paper.”, a random move by the computer, and the outcome.</li>
-<li><strong>http://[APP DOMAIN]/scissors</strong> — Should display “You played scissors.”, a random move by the computer, and the outcome .</li>
-<li><strong>http://[APP DOMAIN]/</strong> — A welcome page that displays
-<ul>
-<li><p>“Happy Monday!” (or whatever day it is).</p></li>
-<li><p>The rules of the game.</p></li>
-<li><p>For example,</p>
-<pre><code>Happy Tuesday!
-Rock beats Scissors, Paper beats Rock, Scissors beats Paper.
-Point your browser at /rock, /paper, or /scissors to play the game.</code></pre></li>
-</ul></li>
+<li><strong>http://[APP DOMAIN]/scissors</strong> — Should display “You played scissors.”, a random move by the computer, and the outcome.</li>
+<li><strong>http://[APP DOMAIN]/</strong> — A welcome page that displays some information and the rules of the game.</li>
 </ul>
 <p>Now — how do we get our web server to perform the above tasks when users visit the above URLs?</p>
 <div id="quiz-question" class="section level3 hasAnchor" number="16.1.1">
 <h3><span class="header-section-number">16.1.1</span> Quiz Question<a href="dynamic-web-applications-and-urls.html#quiz-question" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>What happens when a user in our app visits a URL from their address bar?</li>
-<li>A Ruby <code>Class</code> is created for the page
+<li>A Ruby Class is created for the page
 <ul>
-<li>Not quite, recall the term <mark>instance <code>method</code></mark></li>
+<li>Not quite, recall the term <mark>instance method</mark></li>
 </ul></li>
 <li>This URL is added to our specs
 <ul>
 <li>No, because we the developers specify the available URLs</li>
 </ul></li>
-<li>A Ruby <code>method</code> connected to the URL is called
+<li>A Ruby method connected to the URL is called
 <ul>
-<li>That’s right! This is the <em>action <code>method</code></em> that does the work of rendering or redirecting
+<li>That’s right! This is the <em>action method</em> that does the work of rendering or redirecting
 {: .choose_best #bin points=“30” answer=“3” }</li>
 </ul></li>
 </ul>

@@ -428,5 +428,5 @@ We are taking the `self.id`! But what we want is the `author_id` foreign key col
   1. Refer to the [routing chapter](https://chapters.firstdraft.com/chapters/772) if you are stuck on the RCAV
   1. Once you have `/users` working correctly, check the routes file and get each working the same as the target
   1. Run `rails grade` once all the routes are working to see what else still does not match the target
- 1. As you work, remember to navigate to `/git` and **commit often as you work.**
+ 1. As you work, remember to navigate to **/git** and **commit often as you work.**
  1. **Be sure you test the behavior of your app manually to make sure it matches the target's behavior**. Don't use `rails grade` to debug.

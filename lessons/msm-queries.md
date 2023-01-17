@@ -984,7 +984,7 @@ You never need to memorize these odd string formating characters for dates. Just
 
 And our page is up and running like the target. 
 
-By the way, have you been using `rails grade` to check your progress and `/git` committing when you get things working?!?! Do it now if you haven't.
+By the way, have you been using `rails grade` to check your progress and **/git** committing when you get things working?!?! Do it now if you haven't.
 
 
 
@@ -1170,7 +1170,7 @@ And we can use this director record `@the_director` instance variable in our vie
 
 And just to note, the target has some nice formatting for the "Created at" and "Updated at" information. The way this is done is simply wrapping the instance variable attribute, which come out as `Time` classes, in the inherited Rails function `time_ago_in_words()`, like: `<%= time_ago_in_words(@the_director.created_at) %>`. 
 
-The "Show details" pages on **/directors** now appear to be working (test is manually yourself), so we can `rails grade` and `/git` commit, then move on to the next thing.
+The "Show details" pages on **/directors** now appear to be working (test is manually yourself), so we can `rails grade` and **/git** commit, then move on to the next thing.
 
 
 
@@ -1323,7 +1323,7 @@ We could use the `@the_director.name` from above since we are on this page, but 
 
 Okay, now that we have a filmography we've really circled back on all of the early stuff we talked about with one-to-many and many-to-many relationships. This is what makes our applications powerful!
 
-Now, after a `rails grade` and potentially a `/git` commit if everything is work, the rest of the project to match the target is up to you.
+Now, after a `rails grade` and potentially a **/git** commit if everything is work, the rest of the project to match the target is up to you.
 
 
 

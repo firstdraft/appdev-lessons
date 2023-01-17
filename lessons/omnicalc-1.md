@@ -243,7 +243,7 @@ Now even though the form isn't taking me to another place, at least the value I 
 
 This `Hash` with the name `Parameters` is now available in our entire app: in the view template, the action, we can use it anywhere. That is the crux of how we get information out of forms. All we need to do is `name` an `input` in the form, and that will capture the variable in our query string and Rails will put it in a hash that we can access. After all the API work that we've done **BENP: wait, did we do API work up to this point?** we are pros at capturing things out of hashes.
 
-Time for a `/git` commit (perhaps with the title message "Square form looking pretty good, doesn't work yet" or something along those lines), and maybe even a `rails grade` to see what's left to do.
+Time for a **/git** commit (perhaps with the title message "Square form looking pretty good, doesn't work yet" or something along those lines), and maybe even a `rails grade` to see what's left to do.
 
 ### Text Companion: Query String and Parameters Hash
 
@@ -449,7 +449,7 @@ end
 
 We use a `.to_f`, since we want a `float` so the user can enter a decimal number (like "42.01") and get the exact (not integer rounded) result. Now we can try once more, and everything should be up and running.
 
-Time for a `/git` commit (perhaps with the title message "Square form and calculation done" or something along those lines), and a `rails grade` to see what's left to do. **Do not use `rails grade` to debug, always test your app manually before running `rails grade` as the last check.**
+Time for a **/git** commit (perhaps with the title message "Square form and calculation done" or something along those lines), and a `rails grade` to see what's left to do. **Do not use `rails grade` to debug, always test your app manually before running `rails grade` as the last check.**
 
 ### Text Companion: Form Action and `params`
 
@@ -589,7 +589,7 @@ Try and just manually change the URL to **/random/results?user_min=0&user_max=2*
 
 So the two routes are **independent**. In theory, the savvy user could manually change the URL to get new results, but this isn't so nice and we can't expect our users to know how to do this. That's why we use forms and wire things together. But remember: **during the lifecycle of a given RCAV, only that route, action, and view template exist**.
 
-Time for a `/git` commit, and a `rails grade` to see what's left for you to do.
+Time for a **/git** commit, and a `rails grade` to see what's left for you to do.
 
 ### Text Companion: Independence of Routes
 

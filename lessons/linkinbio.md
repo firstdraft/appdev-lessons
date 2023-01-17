@@ -484,7 +484,7 @@ Today, I want to show you GitHub's offering for hosting static websites: GitHub 
 
 Here's what to do to get your first GitHub Pages site going:
 
-- Visit `/git`.
+- Visit **/git**.
 - Make a commit and then push the changes you've made so far to your GitHub repository.
 - That's it! In a few minutes, your site should be live at `https://your-username.github.io`!
 - Eventually, consider adding some other pages to your site besides just `index.html` --- a list of projects that you've built, for example.

@@ -264,7 +264,7 @@ And when we see our URL **/add** loads with no error, we can put together our fo
 
 The all important `action="/wizard_add"` attribute in the opening `<form>` tag, tells the form that when we click the `<button>`, then route to **/wizard_add**, which activates the first RCAV we built to do the computation. This is the most basic, working version of the form, but you will need to add a lot more like the input labels. Of course, we want a valid form, so you will need to include the matching `for=""` and `id=""` attributes for each `<label>` and associated `<input>`, and make sure everything matches the target. **BENP: could link to forms-query-strings-and-params.md chapter or whatever that content becomes**
 
-Complete the rest of the assignment on your own and make sure to be `/git` committing anytime you get something working with `rails grade`.
+Complete the rest of the assignment on your own and make sure to be **/git** committing anytime you get something working with `rails grade`.
 
 You will need to wire up all RCAVs and the associated forms for "Add", "Subtract", "Divide", and "Mulitply".
 

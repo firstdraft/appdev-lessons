@@ -485,13 +485,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.1.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#quiz-question"><i class="fa fa-check"></i><b>16.1.1</b> Quiz Question</a></li>
 </ul></li>
 <li class="chapter" data-level="16.2" data-path="rcav-route.html"><a href="rcav-route.html"><i class="fa fa-check"></i><b>16.2</b> RCAV: Route</a></li>
-<li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a>
+<li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a></li>
+<li class="chapter" data-level="16.4" data-path="dropping-self..html"><a href="dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Dropping <code>self.</code></a>
 <ul>
-<li class="chapter" data-level="16.3.1" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>16.3.1</b> Text Companion: Controller, Action, View</a></li>
-</ul></li>
-<li class="chapter" data-level="16.4" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Video Segment: Dropping <code>self.</code></a>
-<ul>
-<li class="chapter" data-level="16.4.1" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html#text-companion-dropping-.self"><i class="fa fa-check"></i><b>16.4.1</b> Text Companion: Dropping <code>.self</code></a></li>
+<li class="chapter" data-level="16.4.1" data-path="dropping-self..html"><a href="dropping-self..html#text-companion-dropping-.self"><i class="fa fa-check"></i><b>16.4.1</b> Text Companion: Dropping <code>.self</code></a></li>
 </ul></li>
 <li class="chapter" data-level="16.5" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>16.5</b> Video Segment: Starting Our GitPod Workspace</a>
 <ul>
@@ -1597,48 +1594,48 @@ Proudly published with bookdown</a></li>
 </ul></li>
 </ul>
 <p>The <a href="https://rps-rcav.matchthetarget.com/" target="_blank">target</a> has a homepage at the root URL, <strong>/</strong>. In the old days, we would create a file in <code>public/</code> called <code>index.html</code>, but now we are pretty much done with <code>public/</code> except maybe for static assets like images or css files, but we won’t put any more user-facing URL pages there. Those will be connected up with routes from here on. Let’s go to our <code>config/routes.rb</code> and add a homepage route:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb22-1"><a href="video-segment-homepage.html#cb22-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb22-2"><a href="video-segment-homepage.html#cb22-2" aria-hidden="true"></a></span>
-<span id="cb22-3"><a href="video-segment-homepage.html#cb22-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
-<span id="cb22-4"><a href="video-segment-homepage.html#cb22-4" aria-hidden="true"></a>  </span>
-<span id="cb22-5"><a href="video-segment-homepage.html#cb22-5" aria-hidden="true"></a>  get(<span class="st">&quot;/&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;homepage&quot;</span> })</span>
-<span id="cb22-6"><a href="video-segment-homepage.html#cb22-6" aria-hidden="true"></a></span>
-<span id="cb22-7"><a href="video-segment-homepage.html#cb22-7" aria-hidden="true"></a>  get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span>
-<span id="cb22-8"><a href="video-segment-homepage.html#cb22-8" aria-hidden="true"></a></span>
-<span id="cb22-9"><a href="video-segment-homepage.html#cb22-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb21-1"><a href="video-segment-homepage.html#cb21-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb21-2"><a href="video-segment-homepage.html#cb21-2" aria-hidden="true"></a></span>
+<span id="cb21-3"><a href="video-segment-homepage.html#cb21-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb21-4"><a href="video-segment-homepage.html#cb21-4" aria-hidden="true"></a>  </span>
+<span id="cb21-5"><a href="video-segment-homepage.html#cb21-5" aria-hidden="true"></a>  get(<span class="st">&quot;/&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;homepage&quot;</span> })</span>
+<span id="cb21-6"><a href="video-segment-homepage.html#cb21-6" aria-hidden="true"></a></span>
+<span id="cb21-7"><a href="video-segment-homepage.html#cb21-7" aria-hidden="true"></a>  get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span>
+<span id="cb21-8"><a href="video-segment-homepage.html#cb21-8" aria-hidden="true"></a></span>
+<span id="cb21-9"><a href="video-segment-homepage.html#cb21-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“5” }</p>
-<p>We are adding the <code>"/"</code> homepage route, we are using the <code>application_controller.rb</code> file, and we are using the action (or the <code>method</code> within the <code>ApplicationController</code>) that we call <code>homepage</code>.</p>
+<p>We are adding the <code>"/"</code> homepage route, we are using the <code>application_controller.rb</code> file, and we are using the action (or the method within the <code>ApplicationController</code>) that we call <code>homepage</code>.</p>
 <p>Now if I refresh the <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/</strong> page, I get an error message that the <code>homepage</code> action cannot be found in <code>ApplicationController</code>:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb23-1"><a href="video-segment-homepage.html#cb23-1" aria-hidden="true"></a><span class="dt">The</span> action <span class="st">&#39;play_rock&#39;</span> could <span class="kw">not</span> be found <span class="kw">for</span> <span class="dt">ApplicationController</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb22-1"><a href="video-segment-homepage.html#cb22-1" aria-hidden="true"></a><span class="dt">The</span> action <span class="st">&#39;play_rock&#39;</span> could <span class="kw">not</span> be found <span class="kw">for</span> <span class="dt">ApplicationController</span></span></code></pre></div>
 <p><img src="/assets/rps-rcav/err-action-not-in-contoller.png" /></p>
 <p>This is good! That means we defined the route correctly. If you still see a “No route matches” error, then double-check your route syntax and get that error to go away before you proceed further. The error occurs because we did not yet define the action. So we need to go to our <code>app/controllers/application_controller.rb</code> file and add:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb24-1"><a href="video-segment-homepage.html#cb24-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
-<span id="cb24-2"><a href="video-segment-homepage.html#cb24-2" aria-hidden="true"></a></span>
-<span id="cb24-3"><a href="video-segment-homepage.html#cb24-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
-<span id="cb24-4"><a href="video-segment-homepage.html#cb24-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
-<span id="cb24-5"><a href="video-segment-homepage.html#cb24-5" aria-hidden="true"></a></span>
-<span id="cb24-6"><a href="video-segment-homepage.html#cb24-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
-<span id="cb24-7"><a href="video-segment-homepage.html#cb24-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
-<span id="cb24-8"><a href="video-segment-homepage.html#cb24-8" aria-hidden="true"></a>  </span>
-<span id="cb24-9"><a href="video-segment-homepage.html#cb24-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
-<span id="cb24-10"><a href="video-segment-homepage.html#cb24-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
-<span id="cb24-11"><a href="video-segment-homepage.html#cb24-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb24-12"><a href="video-segment-homepage.html#cb24-12" aria-hidden="true"></a></span>
-<span id="cb24-13"><a href="video-segment-homepage.html#cb24-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
-<span id="cb24-14"><a href="video-segment-homepage.html#cb24-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
-<span id="cb24-15"><a href="video-segment-homepage.html#cb24-15" aria-hidden="true"></a>    </span>
-<span id="cb24-16"><a href="video-segment-homepage.html#cb24-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
-<span id="cb24-17"><a href="video-segment-homepage.html#cb24-17" aria-hidden="true"></a>    </span>
-<span id="cb24-18"><a href="video-segment-homepage.html#cb24-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
-<span id="cb24-19"><a href="video-segment-homepage.html#cb24-19" aria-hidden="true"></a></span>
-<span id="cb24-20"><a href="video-segment-homepage.html#cb24-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
-<span id="cb24-21"><a href="video-segment-homepage.html#cb24-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb24-22"><a href="video-segment-homepage.html#cb24-22" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb23-1"><a href="video-segment-homepage.html#cb23-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb23-2"><a href="video-segment-homepage.html#cb23-2" aria-hidden="true"></a></span>
+<span id="cb23-3"><a href="video-segment-homepage.html#cb23-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb23-4"><a href="video-segment-homepage.html#cb23-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb23-5"><a href="video-segment-homepage.html#cb23-5" aria-hidden="true"></a></span>
+<span id="cb23-6"><a href="video-segment-homepage.html#cb23-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb23-7"><a href="video-segment-homepage.html#cb23-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb23-8"><a href="video-segment-homepage.html#cb23-8" aria-hidden="true"></a>  </span>
+<span id="cb23-9"><a href="video-segment-homepage.html#cb23-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
+<span id="cb23-10"><a href="video-segment-homepage.html#cb23-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
+<span id="cb23-11"><a href="video-segment-homepage.html#cb23-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb23-12"><a href="video-segment-homepage.html#cb23-12" aria-hidden="true"></a></span>
+<span id="cb23-13"><a href="video-segment-homepage.html#cb23-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb23-14"><a href="video-segment-homepage.html#cb23-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb23-15"><a href="video-segment-homepage.html#cb23-15" aria-hidden="true"></a>    </span>
+<span id="cb23-16"><a href="video-segment-homepage.html#cb23-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb23-17"><a href="video-segment-homepage.html#cb23-17" aria-hidden="true"></a>    </span>
+<span id="cb23-18"><a href="video-segment-homepage.html#cb23-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
+<span id="cb23-19"><a href="video-segment-homepage.html#cb23-19" aria-hidden="true"></a></span>
+<span id="cb23-20"><a href="video-segment-homepage.html#cb23-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
+<span id="cb23-21"><a href="video-segment-homepage.html#cb23-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb23-22"><a href="video-segment-homepage.html#cb23-22" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“9-11”}</p>
 <p>And now we can create that new file <code>game_templates/rules.html.erb</code>, and add to it:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb25-1"><a href="video-segment-homepage.html#cb25-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/rules.html.erb --&gt;</span></span>
-<span id="cb25-2"><a href="video-segment-homepage.html#cb25-2" aria-hidden="true"></a></span>
-<span id="cb25-3"><a href="video-segment-homepage.html#cb25-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Welcome to RPS<span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb24-1"><a href="video-segment-homepage.html#cb24-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/rules.html.erb --&gt;</span></span>
+<span id="cb24-2"><a href="video-segment-homepage.html#cb24-2" aria-hidden="true"></a></span>
+<span id="cb24-3"><a href="video-segment-homepage.html#cb24-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Welcome to RPS<span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
 <p>Now when we refresh <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/</strong>, there is no error and our HTML template is rendered. And we did not put any HTML in the public folder! You will almost always want some kind of dynamic behavior on every page. So our new workflow is always RCAV: Define a route, assign a controller, create an action in that controller, and view the result.</p>
 <div id="text-companion-homepage" class="section level3 hasAnchor" number="16.10.1">
 <h3><span class="header-section-number">16.10.1</span> Text Companion: Homepage<a href="video-segment-homepage.html#text-companion-homepage" class="anchor-section" aria-label="Anchor link to header"></a></h3>

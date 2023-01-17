@@ -644,7 +644,7 @@ You should try to define the six methods needed:
 # Character#actor
 ```
 
-Defining these last four is your job. Try and do this on your own based on the two sides of the 1-N that we defined, and run `rails grade` and `/git` commit as you get things working!
+Defining these last four is your job. Try and do this on your own based on the two sides of the 1-N that we defined, and run `rails grade` and **/git** commit as you get things working!
 
 Keep in mind there is some reference (written notes) for this project [here](https://chapters.firstdraft.com/chapters/843){target="_blank"}, including a section [reviewing instance methods](https://chapters.firstdraft.com/chapters/843#instance-method-review){target="_blank"}.
 

@@ -310,7 +310,7 @@ In the above, we included embedded Ruby in our HTML tag attribute (`href=""`). T
 
 And now the page **/forex** should behave like the target.
 
-Time for a `rails grade` and `/git` commit.
+Time for a `rails grade` and **/git** commit.
 
 Try to tackle the next route **/forex/SYMBOL**, and maybe even **/forex/SYMBOL/SYMBOL**, on your own. How can you build a *dynamic route* to support every possibility here, so you don't need to hard-code hundreds of individual routes?
 
@@ -517,7 +517,7 @@ And back on our template we embed the new instance variable in our previous `AWG
 ```
 {: mark_lines="3 10-11"}
 
-And we have a dynamic route setup for the list of currency conversions! Test it manually, do a `rails grade`, and be sure to `/git` commit if everything looks good.
+And we have a dynamic route setup for the list of currency conversions! Test it manually, do a `rails grade`, and be sure to **/git** commit if everything looks good.
 
 The last step is to build the second currency symbol route, like **/forex/AWG/USD**. So you need to get two pieces of data out. You need to write a route that can accept two dynamic segments, fetch both of those segments from the params hash, and then use that to call the API: **https://api.exchangerate.host/convert?from=AWG&to=EUR**, and finally extract the exchange rate from the JSON returned. 
 

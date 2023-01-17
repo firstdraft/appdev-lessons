@@ -322,7 +322,7 @@ Bitbucket, GitLab, and especially GitHub (all private companies) rode the rise o
 
 In this course, we're going to use one simple but effective Git-based workflow to save versions of our work. This will allow us to freely experiment with different approaches, while never having to throw away code.
 
-In all of our Rails apps, after you start the server, you can navigate to the address `/git` in your live application. If you're using Gitpod, the URL will look like:
+In all of our Rails apps, after you start the server, you can navigate to the address **/git** in your live application. If you're using Gitpod, the URL will look like:
 
     https://[YOUR GITPOD WORKSPACE URL].gitpod.io/git
 
