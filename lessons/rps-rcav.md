@@ -15,7 +15,7 @@
     - [Routing - RCAV Slides](https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q){target="_blank"}
 
 
-## Video Segment: Dynamic Web Applications and URLs
+## Dynamic Web Applications and URLs
 
 - Notes:
   
@@ -25,11 +25,9 @@
   - actions
   - render and redirect
 
-We have worked hard and learned HTML, CSS, and Ruby. We're now especially proficient in writing Ruby programs, especially with the aid of gems and APIs. **BENP: have we discussed gems and APIs up to this point though?** 
+We now have some proficiency in HTML and CSS for designing web pages, and Ruby for writing programs. However, if we (the developers) are the only ones that can _run_ these programs (from the command line through the `ruby` interpreter), then they aren't much use. It's time to start adding a <u>web interface</u> on top of our Ruby programs so that external users can interact with and benefit from them.
 
-However, if we (the developers) are the only ones that can _run_ these programs (from the command line through the `ruby` interpreter), then they aren't much use. It's time to start adding a **web interface** on top of our Ruby programs so that external users can interact with and benefit from them.
-
-We already have all the tools to build our first dynamic web application. **BENP: need to clearly define RCAV early in any video or document now so we aren't left wondering, added next sentence**. Before we begin building, we need to understand the URL *request lifecycle* of Route, Controller, Action, View (RCAV).
+We already have all the tools to build our first <u>dynamic web application</u>. Before we begin building, we need to understand the URL <u>request lifecycle</u> of *Route, Controller, Action, View (<u>RCAV</u>)*.
 
 Let's recall that Software as a Service (SaaS) has eaten the world. What does this mean? For an application that runs on a server and transmits information across the internet, the **interface** consists of a set of URLs that a user can visit. People can type in a URL, click a link, or submit a form, and then get back some information relevant and valuable to them.
 

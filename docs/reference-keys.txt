@@ -194,6 +194,7 @@ string_chomp.rb
 string_gsub.rb
 string_strip.rb
 string_gets.rb
+random-number-between-0-and-8
 integer
 syntax
 methods-1
@@ -348,7 +349,7 @@ render-1
 view
 erb
 rock-paper-scissors-rcav
-video-segment-dynamic-web-applications-and-urls
+dynamic-web-applications-and-urls
 potential-quiz-question
 text-companion-dynamic-web-applications-and-urls
 video-segment-route
@@ -1008,6 +1009,7 @@ tables
 generic-elements
 div-a-generic-block-level-container
 span-a-generic-in-line-container
+housekeeping
 html
 head
 body
