@@ -482,16 +482,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="16.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html"><i class="fa fa-check"></i><b>16.1</b> Dynamic Web Applications and URLs</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#potential-quiz-question"><i class="fa fa-check"></i><b>16.1.1</b> Potential Quiz Question</a></li>
-<li class="chapter" data-level="16.1.2" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#text-companion-dynamic-web-applications-and-urls"><i class="fa fa-check"></i><b>16.1.2</b> Text Companion: Dynamic Web Applications and URLs</a></li>
+<li class="chapter" data-level="16.1.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#quiz-question"><i class="fa fa-check"></i><b>16.1.1</b> Quiz Question</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="video-segment-route.html"><a href="video-segment-route.html"><i class="fa fa-check"></i><b>16.2</b> Video Segment: Route</a>
+<li class="chapter" data-level="16.2" data-path="rcav-route.html"><a href="rcav-route.html"><i class="fa fa-check"></i><b>16.2</b> RCAV: Route</a></li>
+<li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="video-segment-route.html"><a href="video-segment-route.html#text-companion-route"><i class="fa fa-check"></i><b>16.2.1</b> Text Companion: Route</a></li>
-</ul></li>
-<li class="chapter" data-level="16.3" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> Video Segment: Controller, Action, View</a>
-<ul>
-<li class="chapter" data-level="16.3.1" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>16.3.1</b> Text Companion: Controller, Action, View</a></li>
+<li class="chapter" data-level="16.3.1" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>16.3.1</b> Text Companion: Controller, Action, View</a></li>
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Video Segment: Dropping <code>self.</code></a>
 <ul>
@@ -1607,18 +1603,31 @@ Proudly published with bookdown</a></li>
 <p><img src="/assets/rps-rcav/err-no-routes-match.png" /></p>
 <p>We need to <em>Read The Error Message</em> (RTEM) and define the first route that will allow us to support a request of the form for our users.</p>
 <p>Let’s open the file <code>config/routes.rb</code> and define the route by adding the following code:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb10-1"><a href="video-segment-our-first-rcav.html#cb10-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb10-2"><a href="video-segment-our-first-rcav.html#cb10-2" aria-hidden="true"></a></span>
-<span id="cb10-3"><a href="video-segment-our-first-rcav.html#cb10-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
-<span id="cb10-4"><a href="video-segment-our-first-rcav.html#cb10-4" aria-hidden="true"></a></span>
-<span id="cb10-5"><a href="video-segment-our-first-rcav.html#cb10-5" aria-hidden="true"></a>  get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span>
-<span id="cb10-6"><a href="video-segment-our-first-rcav.html#cb10-6" aria-hidden="true"></a></span>
-<span id="cb10-7"><a href="video-segment-our-first-rcav.html#cb10-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb9-1"><a href="video-segment-our-first-rcav.html#cb9-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb9-2"><a href="video-segment-our-first-rcav.html#cb9-2" aria-hidden="true"></a></span>
+<span id="cb9-3"><a href="video-segment-our-first-rcav.html#cb9-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb9-4"><a href="video-segment-our-first-rcav.html#cb9-4" aria-hidden="true"></a></span>
+<span id="cb9-5"><a href="video-segment-our-first-rcav.html#cb9-5" aria-hidden="true"></a>  get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span>
+<span id="cb9-6"><a href="video-segment-our-first-rcav.html#cb9-6" aria-hidden="true"></a></span>
+<span id="cb9-7"><a href="video-segment-our-first-rcav.html#cb9-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“5” }</p>
 <p>(All of our routes must be contained within the block following <code>Rails.application.routes.draw</code>. A new Rails app will already come with this code pre-written in <code>routes.rb</code>.)</p>
 <p>Again, we have our route <code>"/rock"</code> and our key/value pairs for the <code>:controller</code> (or <code>Class</code>) and <code>:action</code> (or <code>method</code>). We need to choose values for the <code>:controller</code> that Rails will use and the <code>:action</code> within the controller that will be called. For now we are just using the <code>app/controllers/application_controller.rb</code> for the controller, and we will define our action <code>play_rock</code> in there.</p>
 <p>We now need to open <code>app/controllers/application_controller.rb</code> to add some code. Note that Rails is smart and will add <code>_controller.rb</code> to our <code>:controller</code> argument in <code>get</code>, and within that controller file you will see the class has the underscores removed and is capitalized as <code>ApplicationController</code>. These are helpful conventions, and are best followed. <strong>BENP: is that last thing a fair statment?</strong></p>
 <p>In this file we will add the following:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb10-1"><a href="video-segment-our-first-rcav.html#cb10-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb10-2"><a href="video-segment-our-first-rcav.html#cb10-2" aria-hidden="true"></a></span>
+<span id="cb10-3"><a href="video-segment-our-first-rcav.html#cb10-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb10-4"><a href="video-segment-our-first-rcav.html#cb10-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb10-5"><a href="video-segment-our-first-rcav.html#cb10-5" aria-hidden="true"></a></span>
+<span id="cb10-6"><a href="video-segment-our-first-rcav.html#cb10-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb10-7"><a href="video-segment-our-first-rcav.html#cb10-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb10-8"><a href="video-segment-our-first-rcav.html#cb10-8" aria-hidden="true"></a></span>
+<span id="cb10-9"><a href="video-segment-our-first-rcav.html#cb10-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb10-10"><a href="video-segment-our-first-rcav.html#cb10-10" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb10-11"><a href="video-segment-our-first-rcav.html#cb10-11" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“9-10”}</p>
+<p>We need our action to exactly match what we wrote in the <code>config/routes.rb</code> file, here <code>play_rock</code>. Between the <code>def play_rock</code> and <code>end</code> that we added, we could put whatever and however much code we would like to execute in that action for the user. In the end we will need to either <em>render</em> some HTML back to the user or <em>redirect</em> the user to another place. Let’s begin by just redirecting to some other URL:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb11-1"><a href="video-segment-our-first-rcav.html#cb11-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
 <span id="cb11-2"><a href="video-segment-our-first-rcav.html#cb11-2" aria-hidden="true"></a></span>
 <span id="cb11-3"><a href="video-segment-our-first-rcav.html#cb11-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
@@ -1626,26 +1635,13 @@ Proudly published with bookdown</a></li>
 <span id="cb11-5"><a href="video-segment-our-first-rcav.html#cb11-5" aria-hidden="true"></a></span>
 <span id="cb11-6"><a href="video-segment-our-first-rcav.html#cb11-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
 <span id="cb11-7"><a href="video-segment-our-first-rcav.html#cb11-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
-<span id="cb11-8"><a href="video-segment-our-first-rcav.html#cb11-8" aria-hidden="true"></a></span>
+<span id="cb11-8"><a href="video-segment-our-first-rcav.html#cb11-8" aria-hidden="true"></a>  </span>
 <span id="cb11-9"><a href="video-segment-our-first-rcav.html#cb11-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
-<span id="cb11-10"><a href="video-segment-our-first-rcav.html#cb11-10" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb11-11"><a href="video-segment-our-first-rcav.html#cb11-11" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>{: mark_lines=“9-10”}</p>
-<p>We need our action to exactly match what we wrote in the <code>config/routes.rb</code> file, here <code>play_rock</code>. Between the <code>def play_rock</code> and <code>end</code> that we added, we could put whatever and however much code we would like to execute in that action for the user. In the end we will need to either <em>render</em> some HTML back to the user or <em>redirect</em> the user to another place. Let’s begin by just redirecting to some other URL:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb12-1"><a href="video-segment-our-first-rcav.html#cb12-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
-<span id="cb12-2"><a href="video-segment-our-first-rcav.html#cb12-2" aria-hidden="true"></a></span>
-<span id="cb12-3"><a href="video-segment-our-first-rcav.html#cb12-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
-<span id="cb12-4"><a href="video-segment-our-first-rcav.html#cb12-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
-<span id="cb12-5"><a href="video-segment-our-first-rcav.html#cb12-5" aria-hidden="true"></a></span>
-<span id="cb12-6"><a href="video-segment-our-first-rcav.html#cb12-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
-<span id="cb12-7"><a href="video-segment-our-first-rcav.html#cb12-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
-<span id="cb12-8"><a href="video-segment-our-first-rcav.html#cb12-8" aria-hidden="true"></a>  </span>
-<span id="cb12-9"><a href="video-segment-our-first-rcav.html#cb12-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
-<span id="cb12-10"><a href="video-segment-our-first-rcav.html#cb12-10" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
-<span id="cb12-11"><a href="video-segment-our-first-rcav.html#cb12-11" aria-hidden="true"></a></span>
-<span id="cb12-12"><a href="video-segment-our-first-rcav.html#cb12-12" aria-hidden="true"></a>    redirect_to(<span class="st">&quot;https://www.wikipedia.org&quot;</span>)</span>
-<span id="cb12-13"><a href="video-segment-our-first-rcav.html#cb12-13" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb12-14"><a href="video-segment-our-first-rcav.html#cb12-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<span id="cb11-10"><a href="video-segment-our-first-rcav.html#cb11-10" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb11-11"><a href="video-segment-our-first-rcav.html#cb11-11" aria-hidden="true"></a></span>
+<span id="cb11-12"><a href="video-segment-our-first-rcav.html#cb11-12" aria-hidden="true"></a>    redirect_to(<span class="st">&quot;https://www.wikipedia.org&quot;</span>)</span>
+<span id="cb11-13"><a href="video-segment-our-first-rcav.html#cb11-13" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb11-14"><a href="video-segment-our-first-rcav.html#cb11-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“10-12”}</p>
 <p>And we just created a full RCAV request lifecycle. If we go back to the browser and refresh the URL: <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/rock</strong>, then we will end up on Wikipedia.</p>
 <p>If I go back to GitPod and look in my server log (use <code>Cmd + J</code> to open and close the log, <code>Cmd + K</code> to clear the log), then I will see something like:</p>

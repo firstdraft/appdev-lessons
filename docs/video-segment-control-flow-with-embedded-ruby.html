@@ -482,16 +482,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="16.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html"><i class="fa fa-check"></i><b>16.1</b> Dynamic Web Applications and URLs</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#potential-quiz-question"><i class="fa fa-check"></i><b>16.1.1</b> Potential Quiz Question</a></li>
-<li class="chapter" data-level="16.1.2" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#text-companion-dynamic-web-applications-and-urls"><i class="fa fa-check"></i><b>16.1.2</b> Text Companion: Dynamic Web Applications and URLs</a></li>
+<li class="chapter" data-level="16.1.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#quiz-question"><i class="fa fa-check"></i><b>16.1.1</b> Quiz Question</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="video-segment-route.html"><a href="video-segment-route.html"><i class="fa fa-check"></i><b>16.2</b> Video Segment: Route</a>
+<li class="chapter" data-level="16.2" data-path="rcav-route.html"><a href="rcav-route.html"><i class="fa fa-check"></i><b>16.2</b> RCAV: Route</a></li>
+<li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="video-segment-route.html"><a href="video-segment-route.html#text-companion-route"><i class="fa fa-check"></i><b>16.2.1</b> Text Companion: Route</a></li>
-</ul></li>
-<li class="chapter" data-level="16.3" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> Video Segment: Controller, Action, View</a>
-<ul>
-<li class="chapter" data-level="16.3.1" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>16.3.1</b> Text Companion: Controller, Action, View</a></li>
+<li class="chapter" data-level="16.3.1" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>16.3.1</b> Text Companion: Controller, Action, View</a></li>
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Video Segment: Dropping <code>self.</code></a>
 <ul>
@@ -1602,23 +1598,23 @@ Proudly published with bookdown</a></li>
 </ul></li>
 </ul>
 <p>Now we can actually compute who won or lost our Rock Paper Scissors match. Let’s add this long <code>if-else</code> Ruby code to our <code>game_templates/</code> file:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb22-1"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
-<span id="cb22-2"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-2" aria-hidden="true"></a></span>
-<span id="cb22-3"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb22-4"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-4" aria-hidden="true"></a></span>
-<span id="cb22-5"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
-<span id="cb22-6"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-6" aria-hidden="true"></a></span>
-<span id="cb22-7"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb22-8"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
-<span id="cb22-9"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb22-10"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-10" aria-hidden="true"></a></span>
-<span id="cb22-11"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-11" aria-hidden="true"></a><span class="er">&lt;</span>% if comp_move == &quot;rock&quot; %&gt;</span>
-<span id="cb22-12"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-12" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We tied!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb22-13"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-13" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
-<span id="cb22-14"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-14" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We lost!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb22-15"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-15" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
-<span id="cb22-16"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-16" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We won!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb22-17"><a href="video-segment-control-flow-with-embedded-ruby.html#cb22-17" aria-hidden="true"></a><span class="er">&lt;</span>% end %&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb21-1"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
+<span id="cb21-2"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-2" aria-hidden="true"></a></span>
+<span id="cb21-3"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb21-4"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-4" aria-hidden="true"></a></span>
+<span id="cb21-5"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
+<span id="cb21-6"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-6" aria-hidden="true"></a></span>
+<span id="cb21-7"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb21-8"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb21-9"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb21-10"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-10" aria-hidden="true"></a></span>
+<span id="cb21-11"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-11" aria-hidden="true"></a><span class="er">&lt;</span>% if comp_move == &quot;rock&quot; %&gt;</span>
+<span id="cb21-12"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-12" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We tied!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb21-13"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-13" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
+<span id="cb21-14"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-14" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We lost!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb21-15"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-15" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
+<span id="cb21-16"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-16" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We won!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb21-17"><a href="video-segment-control-flow-with-embedded-ruby.html#cb21-17" aria-hidden="true"></a><span class="er">&lt;</span>% end %&gt;</span></code></pre></div>
 <p>{: mark_lines=“11-17”}</p>
 <p>Above, we used hidden <code>&lt;% %&gt;</code> embedded Ruby tags in our control flow on each line we wanted to hide, so none of this will be rendered to the user. Only the result of this control flow <code>&lt;h2&gt;We tied!&lt;/h2&gt;</code>, <code>&lt;h2&gt;We lost!&lt;/h2&gt;</code>, <code>&lt;h2&gt;We won!&lt;/h2&gt;</code> will be rendered, depending on the randomly sampled <code>comp_move</code> variable. Refresh <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/rock</strong> to see.</p>
 <p>And now would be a good time to run <code>rails grade</code> at the GitPod console to check our progress. And remember to <strong>A</strong>lways <strong>B</strong>e <strong>C</strong>ommitting, by making a <code>/git</code> commit. We have a lot done, but we still have a lot to do.</p>

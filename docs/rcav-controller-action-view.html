@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>16.10 Video Segment: Homepage | AD1</title>
+  <title>16.3 RCAV: Controller, Action, View | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="16.10 Video Segment: Homepage | AD1" />
+  <meta property="og:title" content="16.3 RCAV: Controller, Action, View | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="16.10 Video Segment: Homepage | AD1" />
+  <meta name="twitter:title" content="16.3 RCAV: Controller, Action, View | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="video-segment-control-flow-with-embedded-ruby.html"/>
-<link rel="next" href="video-segment-reinforce-rcav-with-paper.html"/>
+<link rel="prev" href="rcav-route.html"/>
+<link rel="next" href="video-segment-dropping-self..html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -1587,61 +1587,52 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="video-segment-homepage" class="section level2 hasAnchor" number="16.10">
-<h2><span class="header-section-number">16.10</span> Video Segment: Homepage<a href="video-segment-homepage.html#video-segment-homepage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="rcav-controller-action-view" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> RCAV: Controller, Action, View<a href="rcav-controller-action-view.html#rcav-controller-action-view" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<details>
+<summary>
+Notes:
+</summary>
 <ul>
-<li><p>Notes:</p>
+<li>time stamp 00:07:10 to 00:08:30
 <ul>
-<li>time stamp 00:37:10 to 00:40:18</li>
-<li>RCAV with <code>render</code> for <strong>/</strong></li>
+<li>all about <code>app/controllers/</code></li>
+<li><code>ApplicationController</code> inheritance</li>
 </ul></li>
 </ul>
-<p>The <a href="https://rps-rcav.matchthetarget.com/" target="_blank">target</a> has a homepage at the root URL, <strong>/</strong>. In the old days, we would create a file in <code>public/</code> called <code>index.html</code>, but now we are pretty much done with <code>public/</code> except maybe for static assets like images or css files, but we won’t put any more user-facing URL pages there. Those will be connected up with routes from here on. Let’s go to our <code>config/routes.rb</code> and add a homepage route:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb22-1"><a href="video-segment-homepage.html#cb22-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb22-2"><a href="video-segment-homepage.html#cb22-2" aria-hidden="true"></a></span>
-<span id="cb22-3"><a href="video-segment-homepage.html#cb22-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
-<span id="cb22-4"><a href="video-segment-homepage.html#cb22-4" aria-hidden="true"></a>  </span>
-<span id="cb22-5"><a href="video-segment-homepage.html#cb22-5" aria-hidden="true"></a>  get(<span class="st">&quot;/&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;homepage&quot;</span> })</span>
-<span id="cb22-6"><a href="video-segment-homepage.html#cb22-6" aria-hidden="true"></a></span>
-<span id="cb22-7"><a href="video-segment-homepage.html#cb22-7" aria-hidden="true"></a>  get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span>
-<span id="cb22-8"><a href="video-segment-homepage.html#cb22-8" aria-hidden="true"></a></span>
-<span id="cb22-9"><a href="video-segment-homepage.html#cb22-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>{: mark_lines=“5” }</p>
-<p>We are adding the <code>"/"</code> homepage route, we are using the <code>application_controller.rb</code> file, and we are using the action (or the <code>method</code> within the <code>ApplicationController</code>) that we call <code>homepage</code>.</p>
-<p>Now if I refresh the <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/</strong> page, I get an error message that the <code>homepage</code> action cannot be found in <code>ApplicationController</code>:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb23-1"><a href="video-segment-homepage.html#cb23-1" aria-hidden="true"></a><span class="dt">The</span> action <span class="st">&#39;play_rock&#39;</span> could <span class="kw">not</span> be found <span class="kw">for</span> <span class="dt">ApplicationController</span></span></code></pre></div>
-<p><img src="/assets/rps-rcav/err-action-not-in-contoller.png" /></p>
-<p>This is good! That means we defined the route correctly. If you still see a “No route matches” error, then double-check your route syntax and get that error to go away before you proceed further. The error occurs because we did not yet define the action. So we need to go to our <code>app/controllers/application_controller.rb</code> file and add:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb24-1"><a href="video-segment-homepage.html#cb24-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
-<span id="cb24-2"><a href="video-segment-homepage.html#cb24-2" aria-hidden="true"></a></span>
-<span id="cb24-3"><a href="video-segment-homepage.html#cb24-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
-<span id="cb24-4"><a href="video-segment-homepage.html#cb24-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
-<span id="cb24-5"><a href="video-segment-homepage.html#cb24-5" aria-hidden="true"></a></span>
-<span id="cb24-6"><a href="video-segment-homepage.html#cb24-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
-<span id="cb24-7"><a href="video-segment-homepage.html#cb24-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
-<span id="cb24-8"><a href="video-segment-homepage.html#cb24-8" aria-hidden="true"></a>  </span>
-<span id="cb24-9"><a href="video-segment-homepage.html#cb24-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
-<span id="cb24-10"><a href="video-segment-homepage.html#cb24-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
-<span id="cb24-11"><a href="video-segment-homepage.html#cb24-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb24-12"><a href="video-segment-homepage.html#cb24-12" aria-hidden="true"></a></span>
-<span id="cb24-13"><a href="video-segment-homepage.html#cb24-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
-<span id="cb24-14"><a href="video-segment-homepage.html#cb24-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
-<span id="cb24-15"><a href="video-segment-homepage.html#cb24-15" aria-hidden="true"></a>    </span>
-<span id="cb24-16"><a href="video-segment-homepage.html#cb24-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
-<span id="cb24-17"><a href="video-segment-homepage.html#cb24-17" aria-hidden="true"></a>    </span>
-<span id="cb24-18"><a href="video-segment-homepage.html#cb24-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
-<span id="cb24-19"><a href="video-segment-homepage.html#cb24-19" aria-hidden="true"></a></span>
-<span id="cb24-20"><a href="video-segment-homepage.html#cb24-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
-<span id="cb24-21"><a href="video-segment-homepage.html#cb24-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb24-22"><a href="video-segment-homepage.html#cb24-22" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>{: mark_lines=“9-11”}</p>
-<p>And now we can create that new file <code>game_templates/rules.html.erb</code>, and add to it:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb25-1"><a href="video-segment-homepage.html#cb25-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/rules.html.erb --&gt;</span></span>
-<span id="cb25-2"><a href="video-segment-homepage.html#cb25-2" aria-hidden="true"></a></span>
-<span id="cb25-3"><a href="video-segment-homepage.html#cb25-3" aria-hidden="true"></a><span class="kw">&lt;h1&gt;</span>Welcome to RPS<span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
-<p>Now when we refresh <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/</strong>, there is no error and our HTML template is rendered. And we did not put any HTML in the public folder! You will almost always want some kind of dynamic behavior on every page. So our new workflow is always RCAV: Define a route, assign a controller, create an action in that controller, and view the result.</p>
-<div id="text-companion-homepage" class="section level3 hasAnchor" number="16.10.1">
-<h3><span class="header-section-number">16.10.1</span> Text Companion: Homepage<a href="video-segment-homepage.html#text-companion-homepage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</details>
+<p>All of our <mark>controller</mark> <code>Class</code>es will be in the <code>app/controllers/</code> folder. There’s already one controller that comes with every Rails app: <code>ApplicationController</code>, found in <code>app/controllers/application_controller.rb</code><span id="fn-4"><!--
+--><label for="fn-4-toggle"><sup>4</sup></label><!--
+--><input type="checkbox" hidden id="fn-4-toggle"/>
+<span id="fn-content">In <code>get()</code>, the controller is <code>application</code>. That refers to the <code>snake_case</code> controller <code>application_controller</code>, which contains the <code>ApplicationController</code>, the <code>CamelCase</code> <code>Class</code>.</span></span>. <em>This</em> is the controller that the above route is referring to. We will just use this controller for now. Later we will make separate controllers to keep our code organized.</p>
+<p>An example of an action looks like this:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb3-1"><a href="rcav-controller-action-view.html#cb3-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb3-2"><a href="rcav-controller-action-view.html#cb3-2" aria-hidden="true"></a></span>
+<span id="cb3-3"><a href="rcav-controller-action-view.html#cb3-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb3-4"><a href="rcav-controller-action-view.html#cb3-4" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb3-5"><a href="rcav-controller-action-view.html#cb3-5" aria-hidden="true"></a>    <span class="dv">self</span>.redirect_to(<span class="st">&quot;https://www.wikipedia.org&quot;</span>)</span>
+<span id="cb3-6"><a href="rcav-controller-action-view.html#cb3-6" aria-hidden="true"></a>  <span class="kw">end</span> </span>
+<span id="cb3-7"><a href="rcav-controller-action-view.html#cb3-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>We get the first line class definition for “free”:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb4-1"><a href="rcav-controller-action-view.html#cb4-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span></code></pre></div>
+<p>It comes with Rails. It inherits <code>&lt;</code> from the <code>Base</code> class which is inside the Rails gem, so we would need to go into the Rails gem on GitHub to actually look at it. <strong>BENP: gem has maybe not be defined or discussed yet. possible footnote here. Also this is our first time talking about inheritence, so may need some expansion</strong></p>
+<p>Then we define a <code>method</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb5-1"><a href="rcav-controller-action-view.html#cb5-1" aria-hidden="true"></a><span class="kw">def</span> play_rock</span></code></pre></div>
+<p>And inside of that we could write whatever steps we want (like calls to GoogleMaps or weather services from DarkSky <strong>BENP: I don’t think either of these have been presented at this point in the class</strong>). At the end of the day, the job of an <em>action</em> is to send back a response to the user. A response can be either:</p>
+<ul>
+<li><strong>Rendering</strong> some data, in any one of many formats:</li>
+<li>Plain text.</li>
+<li>JSON for an application to consume — we’ve seen JSON before (in APIs), and consumed it ourselves with our Ruby scripts.</li>
+<li>HTML for their browser to draw — we’ll learn this soon.</li>
+<li>Less commonly, any other format: CSV, PDF, XML, etc.</li>
+<li>Or, the action can forward the user to <em>another</em> URL. This is known as <strong>redirecting</strong>.</li>
+</ul>
+<p>We get a <code>method</code> for each of these two: <code>render</code> for the first, and <code>redirect_to</code> for the second.</p>
+<p>In this case, we <em>redirect</em> to another URL:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb6-1"><a href="rcav-controller-action-view.html#cb6-1" aria-hidden="true"></a><span class="dv">self</span>.redirect_to(<span class="st">&quot;https://www.wikipedia.org&quot;</span>)</span></code></pre></div>
+<p>As you can see, the argument to <code>redirect_to</code> is a <code>String</code> which contains some URL that you want the user to simply be forwarded to. This will come in handy later when, for example, we want to send the user directly back to a list of all photos after they’ve deleted a photo.</p>
+<div id="text-companion-controller-action-view" class="section level3 hasAnchor" number="16.3.1">
+<h3><span class="header-section-number">16.3.1</span> Text Companion: Controller, Action, View<a href="rcav-controller-action-view.html#text-companion-controller-action-view" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
             </section>
@@ -1649,8 +1640,8 @@ Proudly published with bookdown</a></li>
           </div>
         </div>
       </div>
-<a href="video-segment-control-flow-with-embedded-ruby.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="video-segment-reinforce-rcav-with-paper.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rcav-route.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-dropping-self..html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

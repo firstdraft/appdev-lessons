@@ -17,19 +17,20 @@
 
 ## Dynamic Web Applications and URLs
 
-- Notes:
-  
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:00:00 to 00:03:30
   - request lifecycle of Route, Controller, Action, View
   - web interface and URLs
   - actions
   - render and redirect
+</details>
 
-We now have some proficiency in HTML and CSS for designing web pages, and Ruby for writing programs. However, if we (the developers) are the only ones that can _run_ these programs (from the command line through the `ruby` interpreter), then they aren't much use. It's time to start adding a <mark>web interface</mark> on top of our Ruby programs so that external users can interact with and benefit from them.
+We can now use HTML and CSS for designing web pages, and Ruby for writing programs. However, if we (the developers) are the only ones that can _run_ these programs (through the `ruby` interpreter), then they aren't much use. It's time to start adding an _interface_ on top of our Ruby programs so that external users can interact with them.
 
-We already have all the tools to build our first <mark>dynamic web application</mark>. But, before we begin building, we need to understand the URL <mark>request lifecycle</mark> of _Route, Controller, Action, View (<mark>RCAV</mark>)_.
+We already have all the tools to build our first <mark>dynamic web application</mark>. But, before we begin building, we need to understand the URL request lifecycle of _Route, Controller, Action, View (RCAV)_.
 
-Recall that Software as a Service (<mark>SaaS</mark>) has *eaten the world*. For an application that runs on a server and transmits information across the internet, the interface consists of a set of Uniform Resource Locators (<mark>URL</mark>s) that a user can visit, and receive some information relevant and valuable to them.
+For an application that runs on a server and transmits information across the internet (i.e. Software as a Service, <mark>SaaS</mark>), the interface consists of a set of Uniform Resource Locators (<mark>URL</mark>s) that a user can visit, and receive some information relevant and valuable to them.
 
 ![](/assets/rps-rcav/airbnb-url.png)
 
@@ -44,26 +45,26 @@ Each URL will either:
 
 Most obviously, the user might be visiting the URLs in their browser by typing into the address bar or clicking on links. Or, more and more commonly, users might be visiting from native iPhone or Android apps without even knowing that, behind the scenes, they are visiting URLs to store and retrieve the information they need. 
 
-But make no mistake: if there is information being stored in a central database, then there's a <mark>web server</mark> running somewhere and URLs are being visited with each *action* a user takes. When somebody puts that URL into the address bar and hits enter, they are actually triggering a specific Ruby method.
+But make no mistake: if there is information being stored in a central database, then there's a <mark>web server</mark> running somewhere and URLs are being visited with each _action_ a user takes. When somebody puts that URL into the address bar and hits <kbd>Enter</kbd>, they are triggering a specific Ruby `method`.
 
-In the background, there is a a *noun* (the object) and a *verb* (the instance method), `Object#method`[^dot_vs_octo]. That method is actually going to do the work of drawing the correct page of information with exactly the right information for that user and outputting it in the right format (almost alway HTML). So our job is to write those Ruby methods (called "actions") and allow users to trigger those methods when they visit each URL. 
+In the background, there is a a _noun_ (the object) and a _verb_ (the instance `method`): `Object#method`[^dot_vs_octo]. This `method` does the work of drawing the correct page of information for the user. Our job is to write those Ruby `method`s (called _actions_), and allow users to trigger them when they visit each URL. 
 
-[^dot_vs_octo]: Recall from [Our own classes][Our own classes], that `Object#method` notation symbolizes an <mark>*instance* method</mark>, while `Object.method` notation symbolizes a <mark>*class* method</mark>.
+[^dot_vs_octo]: Recall from [Our own classes][Our own classes], that `Object#method` notation symbolizes an <mark>_instance_ `method`</mark>, while `Object.method` notation symbolizes a <mark>_class_ `method`</mark>.
 
-So we can write any Ruby we want in those action methods. We can generate random numbers, read from APIs, calculate things, send text messages, and more. But every action must do one of two things:
+We can write any Ruby we want in those <mark>action `method`s</mark>. We can generate random numbers, read from <mark>API</mark>s, calculate things, send text messages, and more. But every action must do one of two things:
 
-1. *Render* a response, by sending back some HTML and displaying a new page
+1. <mark>*Render*</mark> a response, by sending back some HTML and displaying a new page
 
-2. *Redirect*, or forward the user onward to another URL.
+2. <mark>*Redirect*</mark>, or forward the user onward to another URL.
 
-And that's everything that happens between the user visiting a URL and getting a response, and it is now a complete Route + Controller + Action + Response *request lifecycle*. We map every URL to one Ruby method that we write in advance and then we wire everything together so that Rails will listen for user visits and when someone visits a particular URL, then Rails will call the method we prepared that will handle getting the database information and wrapping it in bootstrapped markup and sending the HTML to the user's browser. 
+And that's _everything_ that happens between the user visiting a URL and getting a response, it is a complete <mark>_request lifecycle_</mark>. Every URL is mapped to one Ruby `method`, and then we wire everything together so that Rails will listen for user visits. When someone visits a particular URL, then Rails will call the `method` we prepared, which will handle getting any database information, wrapping it in bootstrapped markup, and sending the HTML to the user's browser. 
 
-You can fully _specify_ a web application by listing out the URLs that users can visit, and what happens when each URL is visited. For example, let's say we wanted to build an interactive game of Rock, Paper, Scissors. The complete specifications (or **specs**, for short) for this app might look like this:
+You can fully _specify_ a web application by listing out the URLs that users can visit, and what happens when each URL is visited. For example, let's say we wanted to build an interactive game of Rock, Paper, Scissors. The complete specifications (or <mark>_specs_</mark>, for short) for this app might look like this:
 
- - **http://[OUR APP DOMAIN]/rock** — Should display "You played rock.", a random move by the computer, and the outcome.
- - **http://[OUR APP DOMAIN]/paper** — Should display "You played paper.", a random move by the computer, and the outcome.
- - **http://[OUR APP DOMAIN]/scissors** — Should display "You played scissors.", a random move by the computer, and the outcome .
- - **http://[OUR APP DOMAIN]/** — A welcome page that displays
+ - **http\://[APP DOMAIN]/rock** — Should display "You played rock.", a random move by the computer, and the outcome.
+ - **http\://[APP DOMAIN]/paper** — Should display "You played paper.", a random move by the computer, and the outcome.
+ - **http\://[APP DOMAIN]/scissors** — Should display "You played scissors.", a random move by the computer, and the outcome .
+ - **http\://[APP DOMAIN]/** — A welcome page that displays
     - "Happy Monday!" (or whatever day it is).
     - The rules of the game.
     - For example,
@@ -76,34 +77,31 @@ You can fully _specify_ a web application by listing out the URLs that users can
 
 Now — how do we get our web server to perform the above tasks when users visit the above URLs?
 
-### Potential Quiz Question
+### Quiz Question
 
-- First bullet point is the question itself?
-- First option
-    - This is not correct because of xyz reason
-- Second option
-    - This is not correct because of xyz reason
-    - Also not correct because of abc reason
-- Third option
-    - That's right! Because of xyz reason
-- Fourth option
-    - This is not correct because of xyz reason
+- What happens when a user in our app visits a URL from their address bar?
+- A Ruby `Class` is created for the page
+    - Not quite, recall the term <mark>instance `method`</mark>
+- This URL is added to our specs
+    - No, because we the developers specify the available URLs
+- A Ruby `method` connected to the URL is called
+    - That's right! This is the _action `method`_ that does the work of rendering or redirecting
 {: .choose_best #bin points="30" answer="3" }
 
+## RCAV: Route
 
-### Text Companion: Dynamic Web Applications and URLs
-
-## Video Segment: Route
-
-- Notes:
-
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:03:30 to 00:07:10
   - all about routing and `config/routes.rb`
   - `get()`
+</details>
 
-The key thing is *routes*. *Routes* are how to connect a URL to an *action*. The very important file `config/routes.rb` contains all of our routes. This is a list of everything our application can do. We're moving out of our `public/` and `tasks/` folder, and using more of our Rails application, by working in the `app/` folder, where most of our code goes, and with this one file `routes.rb` that is in the `config/` folder.
+The key is _routes_. _Routes_ are how we connect a URL to an _action_. 
 
-The super important `config/routes.rb` file included in every Rails app says all the URLs (*routes*) that a user can visit and when someone visits the URL we say which class and which method Rails should execute to handle the request. Here is an example of a route:
+The `config/routes.rb`[^no_more_public] file included in every Rails app lists all of the URLs (_routes_) that a user can visit. When someone visits the URL we say which class and which `method` Rails should execute to handle the request. Here is an example of a route:
+
+[^no_more_public]: It's finally time to move out of our `public/` and `tasks/` folders, and use more of our Rails application by working in the `app/` folder, where most of our code goes, and with this one file `routes.rb` that is in the `config/` folder.
 
 ```ruby
 # config/routes.rb
@@ -111,35 +109,43 @@ The super important `config/routes.rb` file included in every Rails app says all
 self.get("/rock", { :controller => "application", :action => "play_rock" })
 ```
 
-The method here is `get`[^other_verbs] and there are parentheses for its **two arguments**: 
-  - **The first argument to `get` is a `String`**: the _path_ that we want users to be able to visit (the path is the portion of the URL that comes after the domain name). Here it is `"/rock"`
-  - **The second argument to `get` is a `Hash`**: this is where we tell Rails which method to call when a user visits the path in the first argument. (We'll have to actually write this method in the next step, after we write the route.)
+The `method` here is `get()`[^other_verbs] and there are parentheses for its _two arguments_: 
 
-    The `Hash` must have two key/value pairs:
+[^other_verbs]: Later we'll use other `method`s, like `post()`, if we want to support requests using the other HTTP verbs.
 
-    - `:controller`: The value for this key is what we're going to name the _class_ that contains the method we want Rails to call when the user visits the path. For now we're going to default this value to `"application"` — you'll see why in a minute.
-    - `:action`: The value for this key is the what we're going to name the method itself. "Action" is the term used to refer to Ruby methods that are triggered by users visiting URLs.
-    - The `Hash` is saying: "Use a `Class` (controller) called `application_controller`, and in that `Class` use a `method` (action) called `play_rock` to generate a response for the user."
+  1. A `String`: the _path_ that we want users to be able to visit (the <mark>path</mark> is the portion of the URL that comes after the <mark>domain name</mark>). Here it is `"/rock"`.
+
+  2. A `Hash`: this is where we tell Rails which `method` to call when a user visits the path in the first argument. (We'll have to actually write this `method` in the next step, after we write the route.)
+
+The `Hash` must have two key/value pairs:
+
+  - `:controller`: The value for this key is what we're going to name the `Class` that _contains_ the `method` we want Rails to call when the user visits the path. For now we're going to default this value to `"application"`.
+
+  - `:action`: The value for this key is what we're going to name the `method` itself. _Action_ is the term used to refer to Ruby `method`s that are triggered by users visiting URLs.
+
+The `Hash` is saying: "Use a `Class` (controller) called `application_controller`, and in that `Class` use a `method` (action) called `play_rock` to generate a response for the user."
 
 Don't be confused by the key names `:controller` and `:action`, these are equivalent to a Ruby `Class` and `method`. They just have special names in the lingo of web applications.
 
-The `get` method is *inherited*, we don't need to build this method ourselves, which saves us a lot of time. We get the plumbing for free and we just need to tell Rails how we want each request to be handled by declaring our routes. 
+The `get()` `method` is _inherited_, we don't need to build this `method` ourselves, which saves us a lot of time. We get the plumbing for free and we just need to tell Rails how we want each request to be handled by declaring our routes. 
 
-[^other_verbs]: Later we'll use other methods, `post()`, etc, if we want to support requests using the other HTTP verbs.
 
-### Text Companion: Route
+## RCAV: Controller, Action, View
 
-## Video Segment: Controller, Action, View
-
-- Notes:
-
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:07:10 to 00:08:30
   - all about `app/controllers/`
   - `ApplicationController` inheritance
+</details>
 
-All of our controller classes will be in the `app/controllers/` folder. There's already one controller that comes with every Rails app out-of-the-box: `ApplicationController`, found in `app/controllers/application_controller.rb`. This is the controller that the above route is referring to. We will just use this controller for now. Later we will make separate controllers to keep our code organized.
+All of our <mark>controller</mark> `Class`es will be in the `app/controllers/` folder. There's already one controller that comes with every Rails app: `ApplicationController`, found in `app/controllers/application_controller.rb`[^snake_camel]. 
 
-An example of an action looks like this:
+_This_ is the controller that the `get("/rock")` route is referring to. We will just use this default controller for now. Later we will make separate controllers to keep our code organized.
+
+[^snake_camel]: In `get()`, the controller is `application`. That refers to the `snake_case` controller `application_controller`, which contains `ApplicationController`, the `CamelCase` `Class`. 
+
+Here is an example of an action in the controller:
 
 ```ruby
 # app/controllers/application_controller.rb
@@ -151,7 +157,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-We get the first line class definition for "free":
+We get the first line class definition "for free":
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -159,7 +165,7 @@ class ApplicationController < ActionController::Base
 
 It comes with Rails. It inherits `<` from the `Base` class which is inside the Rails gem, so we would need to go into the Rails gem on GitHub to actually look at it. **BENP: gem has maybe not be defined or discussed yet. possible footnote here. Also this is our first time talking about inheritence, so may need some expansion**
 
-Then we define a method:
+Then we define a `method`:
 
 ```ruby
 def play_rock
@@ -174,7 +180,7 @@ And inside of that we could write whatever steps we want (like calls to GoogleMa
   - Less commonly, any other format: CSV, PDF, XML, etc.
  - Or, the action can forward the user to _another_ URL. This is known as **redirecting**. 
 
- We get a method for each of these two: `render` for the first, and `redirect_to` for the second.
+ We get a `method` for each of these two: `render` for the first, and `redirect_to` for the second.
  
  In this case, we *redirect* to another URL:
 
@@ -193,7 +199,7 @@ As you can see, the argument to `redirect_to` is a `String` which contains some 
   - time stamp 00:08:30 to 00:11:00
   - why we drop `self.`
 
-Just to get something out of the way: Usually we always call `object.method`, and we are using the `self` keyword above because we are calling these methods on the instance of the class (`ApplicationController`) that we are defining the method (`play_rock`) for. Kind of like when we learned about the `Person` class and there is `first_name` and `last_name`, and if we wanted a `full_name` method we called `self.first_name + self.last_name`. In this case we're defining `play_rock` and we want use the method `redirect` which already exists on `ApplicationController`, since it's inherited via `< ActionController::Base`. The point is, we are using a method that already exists to build our new method, hence `self.redirect_to`. In Ruby, when you're calling a method on `self`, you can drop the `self.`, and Ruby will figure it out, so we can rewrite the route, controller, action steps to:
+Just to get something out of the way: Usually we always call `object.method`, and we are using the `self` keyword above because we are calling these `method`s on the instance of the class (`ApplicationController`) that we are defining the `method` (`play_rock`) for. Kind of like when we learned about the `Person` class and there is `first_name` and `last_name`, and if we wanted a `full_name` `method` we called `self.first_name + self.last_name`. In this case we're defining `play_rock` and we want use the `method` `redirect` which already exists on `ApplicationController`, since it's inherited via `< ActionController::Base`. The point is, we are using a `method` that already exists to build our new `method`, hence `self.redirect_to`. In Ruby, when you're calling a `method` on `self`, you can drop the `self.`, and Ruby will figure it out, so we can rewrite the route, controller, action steps to:
 
 ```ruby
 # config/routes.rb
@@ -355,9 +361,9 @@ end
 ```
 {: mark_lines="12-14"}
 
-Rather than using `redirect_to()`, which we inherited `<` from the Rails `Base` class, we'll use another inherited method to complete the request lifecycle: `render()`. 
+Rather than using `redirect_to()`, which we inherited `<` from the Rails `Base` class, we'll use another inherited `method` to complete the request lifecycle: `render()`. 
 
-This method, takes a `Hash` as an argument with a key/value pair. The key has many options, here we will use `:plain`, which will just send back plain text. A boring response, but good to start with.
+This `method`, takes a `Hash` as an argument with a key/value pair. The key has many options, here we will use `:plain`, which will just send back plain text. A boring response, but good to start with.
 
 Now if I pretend I'm a user and visit **http://[YOUR APP DOMAIN]/rock**, then I get a page with my `"Hello, world!"` rendered. 
 
@@ -387,7 +393,7 @@ end
 
 Now everytime we refresh **http://[YOUR APP DOMAIN]/rock**, we get a different random number, generated automatically by Ruby. This is a dynamic response, not just a static page that we placed in the public folder. 
 
-This is a simple example, but fundamentally that's it. We connected a URL to a method that can do *anything*. It can call APIs, parse CSVs, compute whatever you want, run machine learning models. With this we can do anything. Of course, there is a lot more to learn, but fundamentally this is it. 
+This is a simple example, but fundamentally that's it. We connected a URL to a `method` that can do *anything*. It can call APIs, parse CSVs, compute whatever you want, run machine learning models. With this we can do anything. Of course, there is a lot more to learn, but fundamentally this is it. 
 
 Now let's send back some actual HTML:
 
@@ -595,7 +601,7 @@ end
 ```
 {: mark_lines="5" }
 
-We are adding the `"/"` homepage route, we are using the `application_controller.rb` file, and we are using the action (or the method within the `ApplicationController`) that we call `homepage`. 
+We are adding the `"/"` homepage route, we are using the `application_controller.rb` file, and we are using the action (or the `method` within the `ApplicationController`) that we call `homepage`. 
 
 Now if I refresh the **http://[YOUR APP DOMAIN]/** page, I get an error message that the `homepage` action cannot be found in `ApplicationController`:
 
@@ -669,7 +675,7 @@ end
 ```
 {: mark_lines="9" }
 
-Again, we use the `application_controller.rb`. If we pretend we are a user now and go to **http://[YOUR APP DOMAIN]/paper**, we again get the "action not found" error. The helpful error message (RTEM!) tells us we need to define another method for the action in our controller called `play_paper`. 
+Again, we use the `application_controller.rb`. If we pretend we are a user now and go to **http://[YOUR APP DOMAIN]/paper**, we again get the "action not found" error. The helpful error message (RTEM!) tells us we need to define another `method` for the action in our controller called `play_paper`. 
 
 We are in our **Route, Controller, Action, View** sequence that makes Rails so useful! It's the same flow, over and over again. All we need to do is keep visiting the route and RTEM to find the next step.
 
@@ -851,7 +857,7 @@ In our `game_templates/user_paper.html.erb` view template, when we get to the fi
 ```
 {: mark_lines="8"}
 
-That *local variable* `comp_move` is undefined! A *local variable* only exists in the scope it was defined. If I create a local variable in a loop, it will only exist in that loop. If I want some variable available outside the loop, then I would need to create it outside the loop and modify it in the loop. So there's a scope to local variables and I can't just use it in my template if I created it in the `play_paper` method (action). The variable is effectively "dead" after `play_paper` executes. 
+That *local variable* `comp_move` is undefined! A *local variable* only exists in the scope it was defined. If I create a local variable in a loop, it will only exist in that loop. If I want some variable available outside the loop, then I would need to create it outside the loop and modify it in the loop. So there's a scope to local variables and I can't just use it in my template if I created it in the `play_paper` `method` (action). The variable is effectively "dead" after `play_paper` executes. 
 
 So how do we make the controller variables available in the view template? Let's modify our `app/controllers/application_controller.rb`:
 
@@ -896,7 +902,7 @@ end
 ```
 {: mark_lines="23 25-30"}
 
-All we did was place an `@` symbol before any variable that we want access to in our view template. This is a new kind of variable called an *instance variable*. This type of variable will survive as long as the instance the object in which its created survives **BENP: last sentence a bit confusing**. In this case when someone visits **/paper**, Rails is going to create an instance of the `ApplicationController` class and then run the `play_paper` method. So as long as the `ApplicationController` instance is alive (Rails keeps it until the response is sent to the user), the variables produced by `play_paper` will exist. 
+All we did was place an `@` symbol before any variable that we want access to in our view template. This is a new kind of variable called an *instance variable*. This type of variable will survive as long as the instance the object in which its created survives **BENP: last sentence a bit confusing**. In this case when someone visits **/paper**, Rails is going to create an instance of the `ApplicationController` class and then run the `play_paper` `method`. So as long as the `ApplicationController` instance is alive (Rails keeps it until the response is sent to the user), the variables produced by `play_paper` will exist. 
 
 When someone visits **/paper**, we now have `@comp_move` and `@outcome` available for our template. We just need to make sure those instance variables are also properly referenced in `game_templates/user_paper.html.erb`:
 
@@ -1001,11 +1007,11 @@ class ApplicationController < ActionController::Base
 ```
 {: mark_lines="4"}
 
-This `layout` method takes one argument and it already knows to look in the folder `app/views/layouts/` for the file that we created.
+This `layout` `method` takes one argument and it already knows to look in the folder `app/views/layouts/` for the file that we created.
 
 After this change, try visiting your pages using the links on every page. It should work (except for **/scissors** because we haven't done the RCAV for that page yet).
 
-If we only wanted the layout to apply on a per-page basis we could also leave `layout(false)` in the previous code, and we could in the `play_rock` method (action) change our render statement to:
+If we only wanted the layout to apply on a per-page basis we could also leave `layout(false)` in the previous code, and we could in the `play_rock` `method` (action) change our render statement to:
 
 ```ruby
 render({ :template => "game_templates/user_rock.html.erb", :layout => "wrapper.html.erb" })
@@ -1045,7 +1051,7 @@ Here is some JSON that would be convenient for an external application to parse:
 
 Notice that JSON uses strings as keys — this is because JavaScript doesn't have the equivalent of Ruby's `Symbol` class. Also, there are no hash rockets; JSON just uses colons to separate keys and values.
 
-Fortunately, just as it was easy for us to convert a `String` containing JSON into Ruby `Array`s/`Hash`es using the `JSON.parse` method, it is also easy for us to go in the other direction: both `Array` and `Hash` have methods called `.to_json`. Let's create a Ruby `Hash` that resembles the JSON above:
+Fortunately, just as it was easy for us to convert a `String` containing JSON into Ruby `Array`s/`Hash`es using the `JSON.parse` `method`, it is also easy for us to go in the other direction: both `Array` and `Hash` have `method`s called `.to_json`. Let's create a Ruby `Hash` that resembles the JSON above:
 
 ```ruby
 response_hash = { :player_move => "rock", :comp_move => "paper", :outcome => "lost" }
@@ -1119,7 +1125,7 @@ So, what's going on here? When we said `:controller => "game"` in the route, we 
 
  - All of the controller class names will end in `...Controller`, and they will begin with whatever value we provided for the key `:controller` in the route.
  - Like all Ruby classes, the name must be `CamelCase` (not `snake_case` or `Some_Hybrid`). So in this case, it will be `GameController`.
- - The class must be defined in a Ruby file that is the `snake_cased` version of its name. Rails will itself use the `.underscore` method to figure out the name; we can try it ourselves in `rails console`:
+ - The class must be defined in a Ruby file that is the `snake_cased` version of its name. Rails will itself use the `.underscore` `method` to figure out the name; we can try it ourselves in `rails console`:
 
     ```ruby
     [2] pry(main)> "GameController".underscore
@@ -1134,7 +1140,7 @@ So, what's going on here? When we said `:controller => "game"` in the route, we 
     ```
  - We inherit from `ApplicationController`, which in turn inherits from `ActionController::Base`; much like our models inherited from `ActiveRecord::Base` via `ApplicationRecord`.
  
-    Our models inherited `.save`, `.where`, and a bunch of other awesome database-related methods from `ActiveRecord::Base`; whereas our controllers are going to inherit a bunch of methods like `render`, `redirect_to`, and a bunch of other awesome interface-related methods from `ActionController::Base`.
+    Our models inherited `.save`, `.where`, and a bunch of other awesome database-related `method`s from `ActiveRecord::Base`; whereas our controllers are going to inherit a bunch of `method`s like `render`, `redirect_to`, and a bunch of other awesome interface-related `method`s from `ActionController::Base`.
  - Don't forget the `end` that goes with the `class`; type it before you forget it.
  - Move your `play_rock` action over from `application_controller.rb` into this new class.
  - Now, when a user visits the path **/rock**, the "uninitialized constant" error should go away and you should see a response as before.

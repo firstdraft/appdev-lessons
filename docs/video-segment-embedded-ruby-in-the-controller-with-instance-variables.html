@@ -482,16 +482,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="16.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html"><i class="fa fa-check"></i><b>16.1</b> Dynamic Web Applications and URLs</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#potential-quiz-question"><i class="fa fa-check"></i><b>16.1.1</b> Potential Quiz Question</a></li>
-<li class="chapter" data-level="16.1.2" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#text-companion-dynamic-web-applications-and-urls"><i class="fa fa-check"></i><b>16.1.2</b> Text Companion: Dynamic Web Applications and URLs</a></li>
+<li class="chapter" data-level="16.1.1" data-path="dynamic-web-applications-and-urls.html"><a href="dynamic-web-applications-and-urls.html#quiz-question"><i class="fa fa-check"></i><b>16.1.1</b> Quiz Question</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="video-segment-route.html"><a href="video-segment-route.html"><i class="fa fa-check"></i><b>16.2</b> Video Segment: Route</a>
+<li class="chapter" data-level="16.2" data-path="rcav-route.html"><a href="rcav-route.html"><i class="fa fa-check"></i><b>16.2</b> RCAV: Route</a></li>
+<li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a>
 <ul>
-<li class="chapter" data-level="16.2.1" data-path="video-segment-route.html"><a href="video-segment-route.html#text-companion-route"><i class="fa fa-check"></i><b>16.2.1</b> Text Companion: Route</a></li>
-</ul></li>
-<li class="chapter" data-level="16.3" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> Video Segment: Controller, Action, View</a>
-<ul>
-<li class="chapter" data-level="16.3.1" data-path="video-segment-controller-action-view.html"><a href="video-segment-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>16.3.1</b> Text Companion: Controller, Action, View</a></li>
+<li class="chapter" data-level="16.3.1" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html#text-companion-controller-action-view"><i class="fa fa-check"></i><b>16.3.1</b> Text Companion: Controller, Action, View</a></li>
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="video-segment-dropping-self..html"><a href="video-segment-dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Video Segment: Dropping <code>self.</code></a>
 <ul>
@@ -1602,154 +1598,154 @@ Proudly published with bookdown</a></li>
 </ul></li>
 </ul>
 <p>Now that we are RCAV pros, let me show you another (perhaps better, depending on your taste) way of writing our embedded Ruby code. Let’s return to the <code>game_templates/user_rock.html.erb</code> file:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb30-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
-<span id="cb30-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-2" aria-hidden="true"></a></span>
-<span id="cb30-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb30-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-4" aria-hidden="true"></a></span>
-<span id="cb30-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
-<span id="cb30-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-6" aria-hidden="true"></a></span>
-<span id="cb30-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb30-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
-<span id="cb30-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb30-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-10" aria-hidden="true"></a></span>
-<span id="cb30-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-11" aria-hidden="true"></a><span class="er">&lt;</span>% if comp_move == &quot;rock&quot; %&gt;</span>
-<span id="cb30-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-12" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We tied!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb30-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-13" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
-<span id="cb30-14"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-14" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We lost!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb30-15"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-15" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
-<span id="cb30-16"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-16" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We won!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb30-17"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-17" aria-hidden="true"></a><span class="er">&lt;</span>% end %&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb29-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
+<span id="cb29-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-2" aria-hidden="true"></a></span>
+<span id="cb29-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb29-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-4" aria-hidden="true"></a></span>
+<span id="cb29-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
+<span id="cb29-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-6" aria-hidden="true"></a></span>
+<span id="cb29-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb29-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb29-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb29-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-10" aria-hidden="true"></a></span>
+<span id="cb29-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-11" aria-hidden="true"></a><span class="er">&lt;</span>% if comp_move == &quot;rock&quot; %&gt;</span>
+<span id="cb29-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-12" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We tied!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb29-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-13" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
+<span id="cb29-14"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-14" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We lost!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb29-15"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-15" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
+<span id="cb29-16"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-16" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We won!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb29-17"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb29-17" aria-hidden="true"></a><span class="er">&lt;</span>% end %&gt;</span></code></pre></div>
 <p>{: mark_lines=“5”}</p>
 <p>The highlighted code <code>&lt;% comp_move = ["rock", "paper", "scissors"].sample %&gt;</code> is okay, but you could imagine that in a real application there may be dozens of lines of code to prepare the information that we actually want to show the user. Our example is trivial. In reality we may lookup data from a database, doing math on it, finding API data, and more. Think of our “take your umbrella” example <strong>BENP: insert link to this DarkSky API example; but wait, has it even been presented up to this point?</strong>, which took around 30 lines of Ruby code to produce. We want somewhere other than the HTML template to put this code.</p>
 <p>We can in fact do that!</p>
 <p>Let’s go back to the <code>game_templates/user_paper.html.erb</code> file, since we didn’t get as far there and see how we can make this modification. We would like our file to look like this:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb31-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
-<span id="cb31-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-2" aria-hidden="true"></a></span>
-<span id="cb31-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb31-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-4" aria-hidden="true"></a>    We played paper!</span>
-<span id="cb31-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb31-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-6" aria-hidden="true"></a></span>
-<span id="cb31-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb31-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
-<span id="cb31-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb31-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-10" aria-hidden="true"></a></span>
-<span id="cb31-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb31-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= outcome %&gt;!</span>
-<span id="cb31-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb30-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb30-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-2" aria-hidden="true"></a></span>
+<span id="cb30-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb30-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb30-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb30-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-6" aria-hidden="true"></a></span>
+<span id="cb30-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb30-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb30-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb30-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-10" aria-hidden="true"></a></span>
+<span id="cb30-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb30-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= outcome %&gt;!</span>
+<span id="cb30-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb30-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
 <p>{: mark_lines=“7-13”}</p>
 <p>We wish we could just do this and avoid all the lines of embedded Ruby that are in the previous <code>user_rock.html.erb</code> view template. The responsibility for these computations really don’t belong here, the view templates should be given some data and then the job should just be to format and present it beautifuly and usably to the user. In the backend the responsibility should be marshalling the correct data and sending it to the view template.</p>
 <p>We can return to our <code>app/controllers/application_controller.rb</code> controller file and do the following:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb32-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
-<span id="cb32-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-2" aria-hidden="true"></a></span>
-<span id="cb32-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
-<span id="cb32-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
-<span id="cb32-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-5" aria-hidden="true"></a></span>
-<span id="cb32-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
-<span id="cb32-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
-<span id="cb32-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-8" aria-hidden="true"></a>  </span>
-<span id="cb32-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
-<span id="cb32-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
-<span id="cb32-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb32-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-12" aria-hidden="true"></a></span>
-<span id="cb32-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
-<span id="cb32-14"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
-<span id="cb32-15"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-15" aria-hidden="true"></a>    </span>
-<span id="cb32-16"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
-<span id="cb32-17"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-17" aria-hidden="true"></a>    </span>
-<span id="cb32-18"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
-<span id="cb32-19"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-19" aria-hidden="true"></a></span>
-<span id="cb32-20"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
-<span id="cb32-21"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb32-22"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-22" aria-hidden="true"></a></span>
-<span id="cb32-23"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-23" aria-hidden="true"></a>  <span class="kw">def</span> play_paper</span>
-<span id="cb32-24"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-24" aria-hidden="true"></a>    comp_move = [<span class="st">&quot;rock&quot;</span>, <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;scissors&quot;</span>].sample</span>
-<span id="cb32-25"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-25" aria-hidden="true"></a>    </span>
-<span id="cb32-26"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-26" aria-hidden="true"></a>    <span class="kw">if</span> comp_move == <span class="st">&quot;rock&quot;</span></span>
-<span id="cb32-27"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-27" aria-hidden="true"></a>      outcome = <span class="st">&quot;won&quot;</span></span>
-<span id="cb32-28"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-28" aria-hidden="true"></a>    <span class="kw">elsif</span> comp_move == <span class="st">&quot;paper&quot;</span></span>
-<span id="cb32-29"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-29" aria-hidden="true"></a>      outcome =  <span class="st">&quot;tied&quot;</span></span>
-<span id="cb32-30"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-30" aria-hidden="true"></a>    <span class="kw">elsif</span> comp_move == <span class="st">&quot;scissors&quot;</span></span>
-<span id="cb32-31"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-31" aria-hidden="true"></a>      outcome = <span class="st">&quot;lost&quot;</span></span>
-<span id="cb32-32"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-32" aria-hidden="true"></a>    <span class="kw">end</span></span>
-<span id="cb32-33"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-33" aria-hidden="true"></a></span>
-<span id="cb32-34"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-34" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_paper.html.erb&quot;</span> })</span>
-<span id="cb32-35"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-35" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb32-36"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-36" aria-hidden="true"></a></span>
-<span id="cb32-37"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-37" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb31-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb31-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-2" aria-hidden="true"></a></span>
+<span id="cb31-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb31-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb31-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-5" aria-hidden="true"></a></span>
+<span id="cb31-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb31-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb31-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-8" aria-hidden="true"></a>  </span>
+<span id="cb31-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
+<span id="cb31-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
+<span id="cb31-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb31-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-12" aria-hidden="true"></a></span>
+<span id="cb31-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb31-14"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb31-15"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-15" aria-hidden="true"></a>    </span>
+<span id="cb31-16"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb31-17"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-17" aria-hidden="true"></a>    </span>
+<span id="cb31-18"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
+<span id="cb31-19"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-19" aria-hidden="true"></a></span>
+<span id="cb31-20"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
+<span id="cb31-21"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb31-22"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-22" aria-hidden="true"></a></span>
+<span id="cb31-23"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-23" aria-hidden="true"></a>  <span class="kw">def</span> play_paper</span>
+<span id="cb31-24"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-24" aria-hidden="true"></a>    comp_move = [<span class="st">&quot;rock&quot;</span>, <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;scissors&quot;</span>].sample</span>
+<span id="cb31-25"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-25" aria-hidden="true"></a>    </span>
+<span id="cb31-26"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-26" aria-hidden="true"></a>    <span class="kw">if</span> comp_move == <span class="st">&quot;rock&quot;</span></span>
+<span id="cb31-27"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-27" aria-hidden="true"></a>      outcome = <span class="st">&quot;won&quot;</span></span>
+<span id="cb31-28"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-28" aria-hidden="true"></a>    <span class="kw">elsif</span> comp_move == <span class="st">&quot;paper&quot;</span></span>
+<span id="cb31-29"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-29" aria-hidden="true"></a>      outcome =  <span class="st">&quot;tied&quot;</span></span>
+<span id="cb31-30"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-30" aria-hidden="true"></a>    <span class="kw">elsif</span> comp_move == <span class="st">&quot;scissors&quot;</span></span>
+<span id="cb31-31"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-31" aria-hidden="true"></a>      outcome = <span class="st">&quot;lost&quot;</span></span>
+<span id="cb31-32"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-32" aria-hidden="true"></a>    <span class="kw">end</span></span>
+<span id="cb31-33"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-33" aria-hidden="true"></a></span>
+<span id="cb31-34"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-34" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_paper.html.erb&quot;</span> })</span>
+<span id="cb31-35"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-35" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb31-36"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-36" aria-hidden="true"></a></span>
+<span id="cb31-37"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb31-37" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“23-31”}</p>
 <p>In the above highlighted code we have removed all of the embedded Ruby tags (<code>&lt;% %&gt;</code> and <code>&lt;%= %&gt;</code>) from the code we had in the <code>.html.erb</code> view template. Now when a user visits the route <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/paper</strong>, the action <code>play_paper</code> in the controller <code>ApplicationController</code> will be triggered, and the code will be run before the template is rendered.</p>
 <p>So let’s try to visit <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/paper</strong> again. Oops, we get this error:</p>
 <p><img src="/assets/rps-rcav/err-undefined-local-var-or-meth.png" /></p>
 <p>In our <code>game_templates/user_paper.html.erb</code> view template, when we get to the first embedded Ruby tag:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb33-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
-<span id="cb33-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-2" aria-hidden="true"></a></span>
-<span id="cb33-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb33-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-4" aria-hidden="true"></a>    We played paper!</span>
-<span id="cb33-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb33-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-6" aria-hidden="true"></a></span>
-<span id="cb33-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb33-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
-<span id="cb33-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb33-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-10" aria-hidden="true"></a></span>
-<span id="cb33-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb33-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= outcome %&gt;!</span>
-<span id="cb33-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb32-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb32-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-2" aria-hidden="true"></a></span>
+<span id="cb32-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb32-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb32-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb32-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-6" aria-hidden="true"></a></span>
+<span id="cb32-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb32-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb32-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb32-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-10" aria-hidden="true"></a></span>
+<span id="cb32-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb32-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= outcome %&gt;!</span>
+<span id="cb32-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb32-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
 <p>{: mark_lines=“8”}</p>
-<p>That <em>local variable</em> <code>comp_move</code> is undefined! A <em>local variable</em> only exists in the scope it was defined. If I create a local variable in a loop, it will only exist in that loop. If I want some variable available outside the loop, then I would need to create it outside the loop and modify it in the loop. So there’s a scope to local variables and I can’t just use it in my template if I created it in the <code>play_paper</code> method (action). The variable is effectively “dead” after <code>play_paper</code> executes.</p>
+<p>That <em>local variable</em> <code>comp_move</code> is undefined! A <em>local variable</em> only exists in the scope it was defined. If I create a local variable in a loop, it will only exist in that loop. If I want some variable available outside the loop, then I would need to create it outside the loop and modify it in the loop. So there’s a scope to local variables and I can’t just use it in my template if I created it in the <code>play_paper</code> <code>method</code> (action). The variable is effectively “dead” after <code>play_paper</code> executes.</p>
 <p>So how do we make the controller variables available in the view template? Let’s modify our <code>app/controllers/application_controller.rb</code>:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb34-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
-<span id="cb34-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-2" aria-hidden="true"></a></span>
-<span id="cb34-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
-<span id="cb34-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
-<span id="cb34-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-5" aria-hidden="true"></a></span>
-<span id="cb34-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
-<span id="cb34-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
-<span id="cb34-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-8" aria-hidden="true"></a>  </span>
-<span id="cb34-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
-<span id="cb34-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
-<span id="cb34-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb34-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-12" aria-hidden="true"></a></span>
-<span id="cb34-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
-<span id="cb34-14"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
-<span id="cb34-15"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-15" aria-hidden="true"></a>    </span>
-<span id="cb34-16"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
-<span id="cb34-17"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-17" aria-hidden="true"></a>    </span>
-<span id="cb34-18"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
-<span id="cb34-19"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-19" aria-hidden="true"></a></span>
-<span id="cb34-20"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
-<span id="cb34-21"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb34-22"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-22" aria-hidden="true"></a></span>
-<span id="cb34-23"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-23" aria-hidden="true"></a>  <span class="kw">def</span> play_paper</span>
-<span id="cb34-24"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-24" aria-hidden="true"></a>    <span class="ot">@comp_move</span> = [<span class="st">&quot;rock&quot;</span>, <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;scissors&quot;</span>].sample</span>
-<span id="cb34-25"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-25" aria-hidden="true"></a>    </span>
-<span id="cb34-26"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-26" aria-hidden="true"></a>    <span class="kw">if</span> <span class="ot">@comp_move</span> == <span class="st">&quot;rock&quot;</span></span>
-<span id="cb34-27"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-27" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;won&quot;</span></span>
-<span id="cb34-28"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-28" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;paper&quot;</span></span>
-<span id="cb34-29"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-29" aria-hidden="true"></a>      <span class="ot">@outcome</span> =  <span class="st">&quot;tied&quot;</span></span>
-<span id="cb34-30"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-30" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;scissors&quot;</span></span>
-<span id="cb34-31"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-31" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;lost&quot;</span></span>
-<span id="cb34-32"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-32" aria-hidden="true"></a>    <span class="kw">end</span></span>
-<span id="cb34-33"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-33" aria-hidden="true"></a></span>
-<span id="cb34-34"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-34" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_paper.html.erb&quot;</span> })</span>
-<span id="cb34-35"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-35" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb34-36"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-36" aria-hidden="true"></a></span>
-<span id="cb34-37"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-37" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb33-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb33-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-2" aria-hidden="true"></a></span>
+<span id="cb33-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb33-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb33-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-5" aria-hidden="true"></a></span>
+<span id="cb33-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb33-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb33-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-8" aria-hidden="true"></a>  </span>
+<span id="cb33-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
+<span id="cb33-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
+<span id="cb33-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb33-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-12" aria-hidden="true"></a></span>
+<span id="cb33-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb33-14"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb33-15"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-15" aria-hidden="true"></a>    </span>
+<span id="cb33-16"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb33-17"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-17" aria-hidden="true"></a>    </span>
+<span id="cb33-18"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
+<span id="cb33-19"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-19" aria-hidden="true"></a></span>
+<span id="cb33-20"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
+<span id="cb33-21"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb33-22"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-22" aria-hidden="true"></a></span>
+<span id="cb33-23"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-23" aria-hidden="true"></a>  <span class="kw">def</span> play_paper</span>
+<span id="cb33-24"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-24" aria-hidden="true"></a>    <span class="ot">@comp_move</span> = [<span class="st">&quot;rock&quot;</span>, <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;scissors&quot;</span>].sample</span>
+<span id="cb33-25"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-25" aria-hidden="true"></a>    </span>
+<span id="cb33-26"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-26" aria-hidden="true"></a>    <span class="kw">if</span> <span class="ot">@comp_move</span> == <span class="st">&quot;rock&quot;</span></span>
+<span id="cb33-27"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-27" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;won&quot;</span></span>
+<span id="cb33-28"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-28" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;paper&quot;</span></span>
+<span id="cb33-29"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-29" aria-hidden="true"></a>      <span class="ot">@outcome</span> =  <span class="st">&quot;tied&quot;</span></span>
+<span id="cb33-30"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-30" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;scissors&quot;</span></span>
+<span id="cb33-31"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-31" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;lost&quot;</span></span>
+<span id="cb33-32"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-32" aria-hidden="true"></a>    <span class="kw">end</span></span>
+<span id="cb33-33"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-33" aria-hidden="true"></a></span>
+<span id="cb33-34"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-34" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_paper.html.erb&quot;</span> })</span>
+<span id="cb33-35"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-35" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb33-36"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-36" aria-hidden="true"></a></span>
+<span id="cb33-37"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb33-37" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“23 25-30”}</p>
-<p>All we did was place an <code>@</code> symbol before any variable that we want access to in our view template. This is a new kind of variable called an <em>instance variable</em>. This type of variable will survive as long as the instance the object in which its created survives <strong>BENP: last sentence a bit confusing</strong>. In this case when someone visits <strong>/paper</strong>, Rails is going to create an instance of the <code>ApplicationController</code> class and then run the <code>play_paper</code> method. So as long as the <code>ApplicationController</code> instance is alive (Rails keeps it until the response is sent to the user), the variables produced by <code>play_paper</code> will exist.</p>
+<p>All we did was place an <code>@</code> symbol before any variable that we want access to in our view template. This is a new kind of variable called an <em>instance variable</em>. This type of variable will survive as long as the instance the object in which its created survives <strong>BENP: last sentence a bit confusing</strong>. In this case when someone visits <strong>/paper</strong>, Rails is going to create an instance of the <code>ApplicationController</code> class and then run the <code>play_paper</code> <code>method</code>. So as long as the <code>ApplicationController</code> instance is alive (Rails keeps it until the response is sent to the user), the variables produced by <code>play_paper</code> will exist.</p>
 <p>When someone visits <strong>/paper</strong>, we now have <code>@comp_move</code> and <code>@outcome</code> available for our template. We just need to make sure those instance variables are also properly referenced in <code>game_templates/user_paper.html.erb</code>:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb35-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
-<span id="cb35-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-2" aria-hidden="true"></a></span>
-<span id="cb35-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb35-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-4" aria-hidden="true"></a>    We played paper!</span>
-<span id="cb35-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb35-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-6" aria-hidden="true"></a></span>
-<span id="cb35-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb35-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= @comp_move %&gt;!</span>
-<span id="cb35-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb35-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-10" aria-hidden="true"></a></span>
-<span id="cb35-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb35-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= @outcome %&gt;!</span>
-<span id="cb35-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb35-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb34-1"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb34-2"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-2" aria-hidden="true"></a></span>
+<span id="cb34-3"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb34-4"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb34-5"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb34-6"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-6" aria-hidden="true"></a></span>
+<span id="cb34-7"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb34-8"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= @comp_move %&gt;!</span>
+<span id="cb34-9"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb34-10"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-10" aria-hidden="true"></a></span>
+<span id="cb34-11"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb34-12"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= @outcome %&gt;!</span>
+<span id="cb34-13"><a href="video-segment-embedded-ruby-in-the-controller-with-instance-variables.html#cb34-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
 <p>{: mark_lines=“8 12”}</p>
 <p>Again, we just use the leading <code>@</code> symbols on our variables to tie them to the instance variables in the controller. And if we visit the <strong>/paper</strong> URL, it works! And we have a much improved organization.</p>
 <p>Most computation work like this should go in the controller as we have done it here. We will have cases where embedded Ruby goes in the template (e.g., rendering database records with <code>each</code> loops, <code>if</code> statements to check if a user is allowed to see something, other conditional statements). If it can happen in the controller, it should happen there.</p>
