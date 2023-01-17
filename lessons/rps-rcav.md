@@ -25,32 +25,30 @@
   - actions
   - render and redirect
 
-We now have some proficiency in HTML and CSS for designing web pages, and Ruby for writing programs. However, if we (the developers) are the only ones that can _run_ these programs (from the command line through the `ruby` interpreter), then they aren't much use. It's time to start adding a <u>web interface</u> on top of our Ruby programs so that external users can interact with and benefit from them.
+We now have some proficiency in HTML and CSS for designing web pages, and Ruby for writing programs. However, if we (the developers) are the only ones that can _run_ these programs (from the command line through the `ruby` interpreter), then they aren't much use. It's time to start adding a <mark>web interface</mark> on top of our Ruby programs so that external users can interact with and benefit from them.
 
-We already have all the tools to build our first <u>dynamic web application</u>. Before we begin building, we need to understand the URL <u>request lifecycle</u> of *Route, Controller, Action, View (<u>RCAV</u>)*.
+We already have all the tools to build our first <mark>dynamic web application</mark>. But, before we begin building, we need to understand the URL <mark>request lifecycle</mark> of _Route, Controller, Action, View (<mark>RCAV</mark>)_.
 
-Let's recall that Software as a Service (SaaS) has eaten the world. What does this mean? For an application that runs on a server and transmits information across the internet, the **interface** consists of a set of URLs that a user can visit. People can type in a URL, click a link, or submit a form, and then get back some information relevant and valuable to them.
+Recall that Software as a Service (<mark>SaaS</mark>) has *eaten the world*. For an application that runs on a server and transmits information across the internet, the interface consists of a set of Uniform Resource Locators (<mark>URL</mark>s) that a user can visit, and receive some information relevant and valuable to them.
 
 ![](/assets/rps-rcav/airbnb-url.png)
 
-Each URL will either
+Each URL will either:
 
- - _display_ a page with some information ("get" in HTTP terminology)
- - trigger the _storing_ of some information ("post" in HTTP terminology)
- - trigger the _deleting_ of some information ("delete" in HTTP terminology)
- - trigger the _updating_ of some information ("patch" in HTTP terminology)
+ - _display_ a page with some information (`get` in <mark>HTTP</mark> terminology)
+ - trigger the _storing_ of some information (`post` in HTTP terminology)
+ - trigger the _deleting_ of some information (`delete` in HTTP terminology)
+ - trigger the _updating_ of some information (`patch` in HTTP terminology)
  - forward to another URL
  - or some combination of the above
 
-Our goal was to demistify what happens between the user action and the return of information. Now we have the vocabulary to talk about this.
+Most obviously, the user might be visiting the URLs in their browser by typing into the address bar or clicking on links. Or, more and more commonly, users might be visiting from native iPhone or Android apps without even knowing that, behind the scenes, they are visiting URLs to store and retrieve the information they need. 
 
-The world turns around the humble Uniform Resource Locator, or URL. Most obviously, the user might be visiting the URLs in their browser by typing into the address bar or clicking on links. Or, more and more commonly, users might be visiting from native iPhone or Android apps without even knowing that, behind the scenes, they are visiting URLs to store and retrieve the information they need. 
+But make no mistake: if there is information being stored in a central database, then there's a <mark>web server</mark> running somewhere and URLs are being visited with each *action* a user takes. When somebody puts that URL into the address bar and hits enter, they are actually triggering a specific Ruby method.
 
-When somebody puts that URL into the address bar, and something happens between the URL and the page being rendered, we now can say what that is. When a user visits a URL, they are actually triggering a specific Ruby method.
+In the background, there is a a *noun* (the object) and a *verb* (the <mark>instance method</mark>), `Object#method`[^dot_vs_octo]. That method is actually going to do the work of drawing the correct page of information with exactly the right information for that user and outputting it in the right format (almost alway HTML). So our job is to write those Ruby methods (called "actions") and allow users to trigger those methods when they visit each URL. 
 
-But make no mistake: if there is information being stored in a central database, then there's a web server running somewhere and URLs are being visited with each **action** a user takes.
-
-In the background somewhere, there is an object and method and somebody is saying `Something.something`, and that method is actually going to do the work of drawing the correct page of information with exactly the right information for that user and outputting it in the right format (almost alway HTML). So our job is to write those Ruby methods (called "actions") and allow users to trigger those methods when they visit each URL. 
+[^dot_vs_octo]: Recall from [Our own classes][Our own classes], that `Object#method` notation symbolizes an <mark>*instance* method</mark>, while `Object.method` notation symbolizes a <mark>*class* method</mark>.
 
 So we can write any Ruby we want in those action methods. We can generate random numbers, read from APIs, calculate things, send text messages, and more. But every action must do one of two things:
 

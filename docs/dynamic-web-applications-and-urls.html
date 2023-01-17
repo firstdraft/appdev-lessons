@@ -1594,24 +1594,22 @@ Proudly published with bookdown</a></li>
 <li>render and redirect</li>
 </ul></li>
 </ul>
-<p>We now have some proficiency in HTML and CSS for designing web pages, and Ruby for writing programs. However, if we (the developers) are the only ones that can <em>run</em> these programs (from the command line through the <code>ruby</code> interpreter), then they aren’t much use. It’s time to start adding a <u>web interface</u> on top of our Ruby programs so that external users can interact with and benefit from them.</p>
-<p>We already have all the tools to build our first <u>dynamic web application</u>. Before we begin building, we need to understand the URL <u>request lifecycle</u> of <em>Route, Controller, Action, View (<u>RCAV</u>)</em>.</p>
-<p>Let’s recall that Software as a Service (SaaS) has eaten the world. What does this mean? For an application that runs on a server and transmits information across the internet, the <strong>interface</strong> consists of a set of URLs that a user can visit. People can type in a URL, click a link, or submit a form, and then get back some information relevant and valuable to them.</p>
+<p>We now have some proficiency in HTML and CSS for designing web pages, and Ruby for writing programs. However, if we (the developers) are the only ones that can <em>run</em> these programs (from the command line through the <code>ruby</code> interpreter), then they aren’t much use. It’s time to start adding a <mark>web interface</mark> on top of our Ruby programs so that external users can interact with and benefit from them.</p>
+<p>We already have all the tools to build our first <mark>dynamic web application</mark>. But, before we begin building, we need to understand the URL <mark>request lifecycle</mark> of <em>Route, Controller, Action, View (<mark>RCAV</mark>)</em>.</p>
+<p>Recall that Software as a Service (<mark>SaaS</mark>) has <em>eaten the world</em>. For an application that runs on a server and transmits information across the internet, the interface consists of a set of Uniform Resource Locators (<mark>URL</mark>s) that a user can visit, and receive some information relevant and valuable to them.</p>
 <p><img src="/assets/rps-rcav/airbnb-url.png" /></p>
-<p>Each URL will either</p>
+<p>Each URL will either:</p>
 <ul>
-<li><em>display</em> a page with some information (“get” in HTTP terminology)</li>
-<li>trigger the <em>storing</em> of some information (“post” in HTTP terminology)</li>
-<li>trigger the <em>deleting</em> of some information (“delete” in HTTP terminology)</li>
-<li>trigger the <em>updating</em> of some information (“patch” in HTTP terminology)</li>
+<li><em>display</em> a page with some information (<code>get</code> in <mark>HTTP</mark> terminology)</li>
+<li>trigger the <em>storing</em> of some information (<code>post</code> in HTTP terminology)</li>
+<li>trigger the <em>deleting</em> of some information (<code>delete</code> in HTTP terminology)</li>
+<li>trigger the <em>updating</em> of some information (<code>patch</code> in HTTP terminology)</li>
 <li>forward to another URL</li>
 <li>or some combination of the above</li>
 </ul>
-<p>Our goal was to demistify what happens between the user action and the return of information. Now we have the vocabulary to talk about this.</p>
-<p>The world turns around the humble Uniform Resource Locator, or URL. Most obviously, the user might be visiting the URLs in their browser by typing into the address bar or clicking on links. Or, more and more commonly, users might be visiting from native iPhone or Android apps without even knowing that, behind the scenes, they are visiting URLs to store and retrieve the information they need.</p>
-<p>When somebody puts that URL into the address bar, and something happens between the URL and the page being rendered, we now can say what that is. When a user visits a URL, they are actually triggering a specific Ruby method.</p>
-<p>But make no mistake: if there is information being stored in a central database, then there’s a web server running somewhere and URLs are being visited with each <strong>action</strong> a user takes.</p>
-<p>In the background somewhere, there is an object and method and somebody is saying <code>Something.something</code>, and that method is actually going to do the work of drawing the correct page of information with exactly the right information for that user and outputting it in the right format (almost alway HTML). So our job is to write those Ruby methods (called “actions”) and allow users to trigger those methods when they visit each URL.</p>
+<p>Most obviously, the user might be visiting the URLs in their browser by typing into the address bar or clicking on links. Or, more and more commonly, users might be visiting from native iPhone or Android apps without even knowing that, behind the scenes, they are visiting URLs to store and retrieve the information they need.</p>
+<p>But make no mistake: if there is information being stored in a central database, then there’s a <mark>web server</mark> running somewhere and URLs are being visited with each <em>action</em> a user takes. When somebody puts that URL into the address bar and hits enter, they are actually triggering a specific Ruby method.</p>
+<p>In the background, there is a a <em>noun</em> (the object) and a <em>verb</em> (the <mark>instance method</mark>), <code>Object#method</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. That method is actually going to do the work of drawing the correct page of information with exactly the right information for that user and outputting it in the right format (almost alway HTML). So our job is to write those Ruby methods (called “actions”) and allow users to trigger those methods when they visit each URL.</p>
 <p>So we can write any Ruby we want in those action methods. We can generate random numbers, read from APIs, calculate things, send text messages, and more. But every action must do one of two things:</p>
 <ol style="list-style-type: decimal">
 <li><p><em>Render</em> a response, by sending back some HTML and displaying a new page</p></li>
@@ -1661,6 +1659,12 @@ Point your browser at /rock, /paper, or /scissors to play the game.</code></pre>
 <div id="text-companion-dynamic-web-applications-and-urls" class="section level3 hasAnchor" number="16.1.2">
 <h3><span class="header-section-number">16.1.2</span> Text Companion: Dynamic Web Applications and URLs<a href="dynamic-web-applications-and-urls.html#text-companion-dynamic-web-applications-and-urls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Recall <code>Object#method</code> symbolizes an <mark><em>instance</em> method</mark>, while <code>Object.method</code> notation symbolizes a <mark><em>class</em> method</mark><a href="dynamic-web-applications-and-urls.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
