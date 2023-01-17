@@ -53,6 +53,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- https://stackoverflow.com/questions/62305956/fivethirtyeight-style-in-text-footnotes-for-bookdown -->
+<!-- https://github.com/wjakethompson/bd-reprex/blob/master/assets/style.html -->
+
+<style>
+input[type=checkbox][id|=fn] ~ span {display:none;}
+input[type=checkbox][id|=fn]:checked ~ span {display:block;}
+input[type=checkbox][id|=fn] {display:none;}
+</style>
 
 
 <style type="text/css">
@@ -120,6 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
+<link rel="stylesheet" href="assets/styling/style.css" type="text/css" />
 </head>
 
 <body>
@@ -1609,7 +1618,10 @@ Proudly published with bookdown</a></li>
 </ul>
 <p>Most obviously, the user might be visiting the URLs in their browser by typing into the address bar or clicking on links. Or, more and more commonly, users might be visiting from native iPhone or Android apps without even knowing that, behind the scenes, they are visiting URLs to store and retrieve the information they need.</p>
 <p>But make no mistake: if there is information being stored in a central database, then there’s a <mark>web server</mark> running somewhere and URLs are being visited with each <em>action</em> a user takes. When somebody puts that URL into the address bar and hits enter, they are actually triggering a specific Ruby method.</p>
-<p>In the background, there is a a <em>noun</em> (the object) and a <em>verb</em> (the <mark>instance method</mark>), <code>Object#method</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. That method is actually going to do the work of drawing the correct page of information with exactly the right information for that user and outputting it in the right format (almost alway HTML). So our job is to write those Ruby methods (called “actions”) and allow users to trigger those methods when they visit each URL.</p>
+<p>In the background, there is a a <em>noun</em> (the object) and a <em>verb</em> (the instance method), <code>Object#method</code><span id="fn-1"><!--
+--><label for="fn-1-toggle"><sup>1</sup></label><!--
+--><input type="checkbox" hidden id="fn-1-toggle"/>
+<span id="fn-content">Recall from <a href="our-own-classes.html#our-own-classes">Our own classes</a>, that <code>Object#method</code> notation symbolizes an <mark><em>instance</em> method</mark>, while <code>Object.method</code> notation symbolizes a <mark><em>class</em> method</mark>.</span></span>. That method is actually going to do the work of drawing the correct page of information with exactly the right information for that user and outputting it in the right format (almost alway HTML). So our job is to write those Ruby methods (called “actions”) and allow users to trigger those methods when they visit each URL.</p>
 <p>So we can write any Ruby we want in those action methods. We can generate random numbers, read from APIs, calculate things, send text messages, and more. But every action must do one of two things:</p>
 <ol style="list-style-type: decimal">
 <li><p><em>Render</em> a response, by sending back some HTML and displaying a new page</p></li>
@@ -1659,12 +1671,6 @@ Point your browser at /rock, /paper, or /scissors to play the game.</code></pre>
 <div id="text-companion-dynamic-web-applications-and-urls" class="section level3 hasAnchor" number="16.1.2">
 <h3><span class="header-section-number">16.1.2</span> Text Companion: Dynamic Web Applications and URLs<a href="dynamic-web-applications-and-urls.html#text-companion-dynamic-web-applications-and-urls" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>Recall <code>Object#method</code> symbolizes an <mark><em>instance</em> method</mark>, while <code>Object.method</code> notation symbolizes a <mark><em>class</em> method</mark><a href="dynamic-web-applications-and-urls.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 

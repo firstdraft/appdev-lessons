@@ -53,6 +53,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- https://stackoverflow.com/questions/62305956/fivethirtyeight-style-in-text-footnotes-for-bookdown -->
+<!-- https://github.com/wjakethompson/bd-reprex/blob/master/assets/style.html -->
+
+<style>
+input[type=checkbox][id|=fn] ~ span {display:none;}
+input[type=checkbox][id|=fn]:checked ~ span {display:block;}
+input[type=checkbox][id|=fn] {display:none;}
+</style>
 
 
 <style type="text/css">
@@ -120,6 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
+<link rel="stylesheet" href="assets/styling/style.css" type="text/css" />
 </head>
 
 <body>

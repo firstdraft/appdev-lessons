@@ -53,6 +53,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- https://stackoverflow.com/questions/62305956/fivethirtyeight-style-in-text-footnotes-for-bookdown -->
+<!-- https://github.com/wjakethompson/bd-reprex/blob/master/assets/style.html -->
+
+<style>
+input[type=checkbox][id|=fn] ~ span {display:none;}
+input[type=checkbox][id|=fn]:checked ~ span {display:block;}
+input[type=checkbox][id|=fn] {display:none;}
+</style>
 
 
 <style type="text/css">
@@ -120,6 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
+<link rel="stylesheet" href="assets/styling/style.css" type="text/css" />
 </head>
 
 <body>
@@ -1597,7 +1606,10 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb2"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb2-1"><a href="video-segment-route.html#cb2-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
 <span id="cb2-2"><a href="video-segment-route.html#cb2-2" aria-hidden="true"></a></span>
 <span id="cb2-3"><a href="video-segment-route.html#cb2-3" aria-hidden="true"></a><span class="dv">self</span>.get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span></code></pre></div>
-<p>The method here is <code>get</code><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> and there are parentheses for its <strong>two arguments</strong>:
+<p>The method here is <code>get</code><span id="fn-2"><!--
+--><label for="fn-2-toggle"><sup>2</sup></label><!--
+--><input type="checkbox" hidden id="fn-2-toggle"/>
+<span id="fn-content">Later we’ll use other methods, <code>post()</code>, etc, if we want to support requests using the other HTTP verbs.</span></span> and there are parentheses for its <strong>two arguments</strong>:
 - <strong>The first argument to <code>get</code> is a <code>String</code></strong>: the <em>path</em> that we want users to be able to visit (the path is the portion of the URL that comes after the domain name). Here it is <code>"/rock"</code>
 - <strong>The second argument to <code>get</code> is a <code>Hash</code></strong>: this is where we tell Rails which method to call when a user visits the path in the first argument. (We’ll have to actually write this method in the next step, after we write the route.)</p>
 <pre><code>The `Hash` must have two key/value pairs:
@@ -1610,12 +1622,6 @@ Proudly published with bookdown</a></li>
 <div id="text-companion-route" class="section level3 hasAnchor" number="16.2.1">
 <h3><span class="header-section-number">16.2.1</span> Text Companion: Route<a href="video-segment-route.html#text-companion-route" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>Later we’ll use other methods, <code>post()</code>, etc, if we want to support requests using the other HTTP verbs.<a href="video-segment-route.html#fnref2" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 

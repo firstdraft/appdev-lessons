@@ -46,7 +46,7 @@ Most obviously, the user might be visiting the URLs in their browser by typing i
 
 But make no mistake: if there is information being stored in a central database, then there's a <mark>web server</mark> running somewhere and URLs are being visited with each *action* a user takes. When somebody puts that URL into the address bar and hits enter, they are actually triggering a specific Ruby method.
 
-In the background, there is a a *noun* (the object) and a *verb* (the <mark>instance method</mark>), `Object#method`[^dot_vs_octo]. That method is actually going to do the work of drawing the correct page of information with exactly the right information for that user and outputting it in the right format (almost alway HTML). So our job is to write those Ruby methods (called "actions") and allow users to trigger those methods when they visit each URL. 
+In the background, there is a a *noun* (the object) and a *verb* (the instance method), `Object#method`[^dot_vs_octo]. That method is actually going to do the work of drawing the correct page of information with exactly the right information for that user and outputting it in the right format (almost alway HTML). So our job is to write those Ruby methods (called "actions") and allow users to trigger those methods when they visit each URL. 
 
 [^dot_vs_octo]: Recall from [Our own classes][Our own classes], that `Object#method` notation symbolizes an <mark>*instance* method</mark>, while `Object.method` notation symbolizes a <mark>*class* method</mark>.
 
