@@ -1,5 +1,5 @@
 -- https://stackoverflow.com/questions/62305956/fivethirtyeight-style-in-text-footnotes-for-bookdown
--- https://github.com/wjakethompson/bd-reprex/blob/master/assets/footnote.lua
+-- https://github.com/wjakethompson/bd-reprex/blob/masterassets/footnote.lua
 
 -- how many notes we've seen yet.
 local note_number = 0

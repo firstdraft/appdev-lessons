@@ -11,7 +11,7 @@ In this lesson, we will explore routing. In practice, the project we work throug
 
 For an application that runs on a server and transmits information across the internet (i.e. Software as a Service, <mark>SaaS</mark>), the interface consists of a set of Uniform Resource Locators (<mark>URL</mark>s) that a user can visit, and receive some information relevant and valuable to them.
 
-![](/assets/rps-rcav/airbnb-url.png)
+![](assets/rps-rcav/airbnb-url.png)
 
 Each URL will either:
 
@@ -213,7 +213,7 @@ Navigate to the route **/rock**[^drop_domain] in our Rails browser. We get an er
 No route matches [GET] "/rock".
 ```
 
-![](/assets/rps-rcav/err-no-routes-match.png)
+![](assets/rps-rcav/err-no-routes-match.png)
 
 We need to *Read The Error Message (<mark>RTEM</mark>)*. This error message is telling us that we need to define the route. 
 
@@ -279,7 +279,7 @@ Go back to the browser and refresh the URL **/rock**. You should be sent to Wiki
 
 Check out the server log in your GitPod workspace. That is the terminal running `bin/server`. (Use <kbd>Ctrl</kbd> + <kbd>J</kbd> to open and close the terminal pane, find the `bin/server` terminal, and possibly use <kbd>Ctrl</kbd> + <kbd>K</kbd> to clear it for a cleaner view.) We should see something like:
 
-![](/assets/rps-rcav/rock-to-wikipedia-server-log.png)
+![](assets/rps-rcav/rock-to-wikipedia-server-log.png)
 
 The server log tells us *exactly* what happened. Someone tried to `GET "/rock"` from a given IP address at a given time, we found a route with instructions to use `ApplicationController#play_rock`, calling this controller/action pair resulted in a redirect to the given URL (`https://www.wikipedia.org`), and the entire request lifecycle completed in the stated time with no errors. Hooray!
 
@@ -641,7 +641,7 @@ In the browser, pretend to be a user and navigate to the URL **/** in the addres
 The action 'play_rock' could not be found for ApplicationController
 ```
 
-![](/assets/rps-rcav/err-action-not-in-contoller.png)
+![](assets/rps-rcav/err-action-not-in-contoller.png)
 
 This is good! That means we defined the route correctly. If you still see a "No route matches" error, then double-check your route syntax in the `get` method, save the changes, and get that error to go away before you proceed. 
 
@@ -791,7 +791,7 @@ Refresh **/paper**, and we'll get a new error message:
 Missing template game_templates/user_paper.html.erb
 ```
 
-![](/assets/rps-rcav/err-missing-view-template.png)
+![](assets/rps-rcav/err-missing-view-template.png)
 
 If you keep getting the same error message, there are a few steps you can try:
 
@@ -971,7 +971,7 @@ So let's try to visit **/paper** again. Oops, we get this error:
 undefined local variable or method `comp_move' for #<#Class...
 ```
 
-![](/assets/rps-rcav/err-undefined-local-var-or-meth.png)
+![](assets/rps-rcav/err-undefined-local-var-or-meth.png)
 
 This error is coming from our `user_paper.html.erb` view template, when the browser gets to the first embedded Ruby tag:
 
@@ -1271,7 +1271,7 @@ So remember: everything always starts with a *route* between an *address* we wan
 
 In order to support a URL in your app such as **https://3000-your-gitpod-workspace.gitpod.io/home**, there are a lot of dots to connect!
 
-![](/assets/rps-rcav/rcav-chart.png)
+![](assets/rps-rcav/rcav-chart.png)
 
  1. A user visits an address in our app; in this case, we chose **/home**.
  2. If we want to allow users to visit that address, we have to add a *route* for it in `config/routes.rb`.

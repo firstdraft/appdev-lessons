@@ -19,25 +19,25 @@ Linktree has many users, from media companies to celebrities to, most likely, so
 
 HBO's Instagram bio:
 
-![](/assets/linkinbio/linkinbio-hbo-profile.jpg){width="480"}
+![](assets/linkinbio/linkinbio-hbo-profile.jpg){width="480"}
 
 And HBO's list of links:
 
-![](/assets/linkinbio/linkinbio-hbo-linktree.jpg){width="480"}
+![](assets/linkinbio/linkinbio-hbo-linktree.jpg){width="480"}
 
 Katy Perry's Instagram bio:
 
-![](/assets/linkinbio/linkinbio-katyperry-profile.jpg){width="480"}
+![](assets/linkinbio/linkinbio-katyperry-profile.jpg){width="480"}
 
 And Katy Perry's list of links:
 
-![](/assets/linkinbio/linkinbio-katyperry-linktree.jpg){width="480"}
+![](assets/linkinbio/linkinbio-katyperry-linktree.jpg){width="480"}
 
 ---
 
 In this project, we're going to build our own mobile-friendly list of links that we can include in our social media profiles or anywhere else that we like. [Here's mine](https://rag.hu){target="_blank"}:
 
-![](/assets/linkinbio/linkinbio-raghu-final.png)
+![](assets/linkinbio/linkinbio-raghu-final.png)
 
 There are several benefits to writing our own rather than using a service like Linktree:
 
@@ -60,7 +60,7 @@ Let's get started.
         - Make sure to include the ".github.io" part in the repo name. E.g.:
         - Click "Create new repository from template".
 
-![](/assets/linkinbio/linkinbio-repo-name.png)
+![](assets/linkinbio/linkinbio-repo-name.png)
 
 - Create a new Gitpod workspace based on your brand new repository:
     - In a new tab's address bar, type "gitpod.io/#". Then copy-paste the URL of your new repository after that. The URL should look something like `gitpod.io/#https://github.com/your-username/your-username.github.io`
@@ -118,7 +118,7 @@ Let's add our images, copy, and links. I wrapped each block of content in a `<di
 
 <div class="link">
   <img
-    src="https://www.ycombinator.com/assets/ycdc/yc-og-image-0cfa80cac837d64d9b4f0705950000b66906ac032791376bd721f246fafcc7b4.png">
+    src="https://www.ycombinator.comassets/ycdc/yc-og-image-0cfa80cac837d64d9b4f0705950000b66906ac032791376bd721f246fafcc7b4.png">
 
   <a target="_blank" href="http://paulgraham.com/startupideas.html">How to Get Startup Ideas
     — Paul Graham</a>
@@ -383,7 +383,7 @@ To make it easier to see things while I am working on layouts, I often use the f
 
 This puts a thin red border around every element. Your page should now look something like this:
 
-![](/assets/linkinbio/linkinbio-before-flex-grow.png)
+![](assets/linkinbio/linkinbio-before-flex-grow.png)
 
 We can see that the `<a>` elements are only just wide enough to fit their content, so centering within them isn't doing anything. Instead, we want the `<a>` element to occupy all of the available space to the right of the thumbnail.
 
@@ -447,7 +447,7 @@ But then we again need to tell the child elements to grow to take up all availab
 
 Our page layout should now look solid!
 
-![](/assets/linkinbio/linkinbio-finished-layout.png)
+![](assets/linkinbio/linkinbio-finished-layout.png)
 
 Let's add a little bit of padding inside our `div.link`s:
 

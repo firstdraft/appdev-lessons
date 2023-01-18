@@ -11,7 +11,7 @@ My ERD ended up looking like the below.
 <details>
   <summary>Show ERD</summary>
 
-  <img class="img-fluid w-100" src="https://res.cloudinary.com/firstdraft/image/fetch/f_auto,q_auto:low/https://raw.githubusercontent.com/firstdraft/appdev-chapters/master/assets/towerofbabel-erd.png" alt="" />
+  <img class="img-fluid w-100" src="https://res.cloudinary.com/firstdraft/image/fetch/f_auto,q_auto:low/https://raw.githubusercontent.com/firstdraft/appdev-chapters/masterassets/towerofbabel-erd.png" alt="" />
 </details>
 
 ## Steps for setting up the CRUD infrastructure

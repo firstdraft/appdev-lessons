@@ -48,13 +48,13 @@ The first example they give is:
 
 Replace `YOUR_API_KEY` with the one provided on Canvas in the Omnicalc 2 assignment. Paste that URL into a Chrome tab; you should see something like this:
 
-![](/assets/meteorologist-intro-to-apis/mapsjson.png)
+![](assets/meteorologist-intro-to-apis/mapsjson.png)
 
 (If your JSON looks like a wall of text instead of the nicely indented version above, then you haven't installed or enabled the [JSONView Chrome extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en){target="_blank"}.)
 
 Try folding away the `address_components` section to make the value of the `geometry` key stand out, since that is where our target information lives:
 
-![](/assets/meteorologist-intro-to-apis/folded-mapsjson.png)
+![](assets/meteorologist-intro-to-apis/folded-mapsjson.png)
 
 Notice the `lat` and `lng` keys within the `location` hash. Notice that JSON uses curly braces for Hashes and square brackets for Arrays just like Ruby does.
 
@@ -72,7 +72,7 @@ You'll have to modify the example URL somehow.
 
 It turns out we need to replace the part of the URL after the `?address=` with the address we want geocoded:
 
-![](/assets/meteorologist-intro-to-apis/modified-address.png)
+![](assets/meteorologist-intro-to-apis/modified-address.png)
 
 (Spaces are not legal in URLs, so we have to **encode** them. One way to encode them can be seen in Google's example, with `+`s. If you tried typing the address with spaces in it, you'll have noticed that Google encodes spaces automatically with `%20%`.)
 
@@ -97,7 +97,7 @@ open(url).read
 
 You should see something like this:
 
-![](/assets/meteorologist-intro-to-apis/open-url-read.jpg)
+![](assets/meteorologist-intro-to-apis/open-url-read.jpg)
 
 > **Note:** To scroll through long output in `rails console`, you can use <kbd>return</kbd> to scroll one line at a time, <kbd>Space</kbd> to scroll one page at a time, or <kbd>Q</kbd> to just get back to the prompt to enter a new Ruby expression.
 
@@ -273,13 +273,13 @@ Step 1 when working with any API is research. What is the URL of the page that h
 
 The Dark Sky API is unfortunately no longer available for new signups, since Apple purchased them recently. You can use my key from Canvas. Here is what their dashboard looks like:
 
-![](/assets/meteorologist-intro-to-apis/dark-sky-dashboard.png)
+![](assets/meteorologist-intro-to-apis/dark-sky-dashboard.png)
 
 #### Find an example
 
 Visit the example link and check out the data they provide. Scroll up and down and get a feel for it:
 
-![](/assets/meteorologist-intro-to-apis/dark-sky-sample.png)
+![](assets/meteorologist-intro-to-apis/dark-sky-sample.png)
 
 It's pretty amazingly detailed data; it tells us current conditions, along with minute-by-minute conditions for the next hour, hour-by-hour conditions for the next day or so, etc.
 
