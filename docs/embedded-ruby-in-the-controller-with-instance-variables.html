@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>16.5 Starting Our GitPod Workspace | AD1</title>
+  <title>16.12 Embedded Ruby in the Controller with Instance Variables | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="16.5 Starting Our GitPod Workspace | AD1" />
+  <meta property="og:title" content="16.12 Embedded Ruby in the Controller with Instance Variables | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="16.5 Starting Our GitPod Workspace | AD1" />
+  <meta name="twitter:title" content="16.12 Embedded Ruby in the Controller with Instance Variables | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="dropping-self..html"/>
-<link rel="next" href="our-first-rcav.html"/>
+<link rel="prev" href="reinforce-rcav-with-paper.html"/>
+<link rel="next" href="linking-pages-with-layouts.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -1578,39 +1578,239 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="starting-our-gitpod-workspace" class="section level2 hasAnchor" number="16.5">
-<h2><span class="header-section-number">16.5</span> Starting Our GitPod Workspace<a href="starting-our-gitpod-workspace.html#starting-our-gitpod-workspace" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="embedded-ruby-in-the-controller-with-instance-variables" class="section level2 hasAnchor" number="16.12">
+<h2><span class="header-section-number">16.12</span> Embedded Ruby in the Controller with Instance Variables<a href="embedded-ruby-in-the-controller-with-instance-variables.html#embedded-ruby-in-the-controller-with-instance-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details>
 <summary>
 Notes:
 </summary>
 <ul>
-<li>time stamp 00:11:00 to 00:13:30
+<li>time stamp 00:44:27 to 00:54:20
 <ul>
-<li>these are common steps that should be done first in <em>any</em> project</li>
-<li>maybe link to <a href="technical-setup.html#technical-setup">Technical Setup</a></li>
+<li>moving conditional control flow <code>&lt;% if ... %&gt;</code> from <strong>/rock</strong> into the <code>ApplicationController</code> action <code>play_rock</code></li>
+<li>local variables vs. instance variables with <code>@</code>-notation</li>
 </ul></li>
 </ul>
 </details>
-<p>Enough theory. It’s time to open the RPS-RCAV GitPod project so we can visualize the steps and see some results. We’ll finally make our Rock, Paper, Scissors game work, by having the computer opponent randomly choose a move rather than always playing paper. We will then be able to compute outcomes based on the computer’s move.</p>
-<p><a href="https://github.com/appdev-projects/rps-rcav" target="_blank">Here</a> is the assignment. As usual:</p>
-<ol style="list-style-type: decimal">
-<li>Start the web server by running <code>bin/server</code>.</li>
-<li>Navigate to your live application preview.</li>
-<li>As you work, remember to navigate to <strong>/git</strong> and <em>Always Be Committing (ABC)</em>.</li>
-<li>Organize your workspace tabs.</li>
-<li>Run <code>rails grade</code> as often as you like to see how you are doing, but make sure you <em>test your app manually first</em> to make sure it matches the target’s behavior.</li>
-</ol>
-<p>If you need a refresher in starting the workspace, see the <a href="technical-setup.html#technical-setup">Technical Setup</a></p>
-<p>The <a href="https://rps-rcav.matchthetarget.com/" target="_blank">target</a> for this project, looks similar to what we have produced. But, the key difference is that the computer plays different moves, so the application is finally <em>dynamic</em>.</p>
+<p>Now that we are RCAV pros, we can go back to the embedded Ruby we used to make <strong>/rock</strong> truly dynamic. Let’s see another (perhaps better) way of writing our embedded Ruby code.</p>
+<p>Open the <code>user_rock.html.erb</code> file:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb42-1"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
+<span id="cb42-2"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-2" aria-hidden="true"></a></span>
+<span id="cb42-3"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb42-4"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-4" aria-hidden="true"></a></span>
+<span id="cb42-5"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
+<span id="cb42-6"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-6" aria-hidden="true"></a></span>
+<span id="cb42-7"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb42-8"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb42-9"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb42-10"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-10" aria-hidden="true"></a></span>
+<span id="cb42-11"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-11" aria-hidden="true"></a><span class="er">&lt;</span>% if comp_move == &quot;rock&quot; %&gt;</span>
+<span id="cb42-12"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-12" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We tied!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb42-13"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-13" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
+<span id="cb42-14"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-14" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We lost!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb42-15"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-15" aria-hidden="true"></a><span class="er">&lt;</span>% elsif comp_move == &quot;paper&quot; %&gt;</span>
+<span id="cb42-16"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-16" aria-hidden="true"></a>  <span class="kw">&lt;h2&gt;</span>We won!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb42-17"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb42-17" aria-hidden="true"></a><span class="er">&lt;</span>% end %&gt;</span></code></pre></div>
+<p>{: mark_lines=“5”}</p>
+<p>The highlighted code <code>&lt;% comp_move = ["rock", "paper", "scissors"].sample %&gt;</code> is okay for this trivial example, but in a real application there may be dozens of lines of code to prepare the information for the user. We may lookup data from a database, do some math on it, find API data, and more. We want somewhere other than the HTML template to put this code.</p>
+<p>Go back to the <code>game_templates/user_paper.html.erb</code> file associated with <strong>/paper</strong>, since we didn’t get far there. We would like our file to look like this:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb43-1"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb43-2"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-2" aria-hidden="true"></a></span>
+<span id="cb43-3"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb43-4"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb43-5"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb43-6"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-6" aria-hidden="true"></a></span>
+<span id="cb43-7"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb43-8"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb43-9"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb43-10"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-10" aria-hidden="true"></a></span>
+<span id="cb43-11"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb43-12"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= outcome %&gt;!</span>
+<span id="cb43-13"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb43-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“7-13”}</p>
+<p>We <em>wish</em> we could just do this and avoid all the lines of embedded Ruby that are in the previous <code>user_rock.html.erb</code> view template. These computations really don’t belong here. The view templates should be given some data and then their job should just be to format and present it beautifuly and usably to the user. In the <em>backend</em> the responsibility should be marshalling the correct data and sending it to the view template.</p>
+<p>Well, return to our controller file and add the following:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb44-1"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb44-2"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-2" aria-hidden="true"></a></span>
+<span id="cb44-3"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb44-4"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb44-5"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-5" aria-hidden="true"></a></span>
+<span id="cb44-6"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb44-7"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb44-8"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-8" aria-hidden="true"></a>  </span>
+<span id="cb44-9"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
+<span id="cb44-10"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
+<span id="cb44-11"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb44-12"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-12" aria-hidden="true"></a></span>
+<span id="cb44-13"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb44-14"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb44-15"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-15" aria-hidden="true"></a>    </span>
+<span id="cb44-16"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb44-17"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-17" aria-hidden="true"></a>    </span>
+<span id="cb44-18"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
+<span id="cb44-19"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-19" aria-hidden="true"></a></span>
+<span id="cb44-20"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
+<span id="cb44-21"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb44-22"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-22" aria-hidden="true"></a></span>
+<span id="cb44-23"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-23" aria-hidden="true"></a>  <span class="kw">def</span> play_paper</span>
+<span id="cb44-24"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-24" aria-hidden="true"></a>    comp_move = [<span class="st">&quot;rock&quot;</span>, <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;scissors&quot;</span>].sample</span>
+<span id="cb44-25"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-25" aria-hidden="true"></a>    </span>
+<span id="cb44-26"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-26" aria-hidden="true"></a>    <span class="kw">if</span> comp_move == <span class="st">&quot;rock&quot;</span></span>
+<span id="cb44-27"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-27" aria-hidden="true"></a>      outcome = <span class="st">&quot;won&quot;</span></span>
+<span id="cb44-28"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-28" aria-hidden="true"></a>    <span class="kw">elsif</span> comp_move == <span class="st">&quot;paper&quot;</span></span>
+<span id="cb44-29"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-29" aria-hidden="true"></a>      outcome =  <span class="st">&quot;tied&quot;</span></span>
+<span id="cb44-30"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-30" aria-hidden="true"></a>    <span class="kw">elsif</span> comp_move == <span class="st">&quot;scissors&quot;</span></span>
+<span id="cb44-31"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-31" aria-hidden="true"></a>      outcome = <span class="st">&quot;lost&quot;</span></span>
+<span id="cb44-32"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-32" aria-hidden="true"></a>    <span class="kw">end</span></span>
+<span id="cb44-33"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-33" aria-hidden="true"></a></span>
+<span id="cb44-34"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-34" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_paper.html.erb&quot;</span> })</span>
+<span id="cb44-35"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-35" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb44-36"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-36" aria-hidden="true"></a></span>
+<span id="cb44-37"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb44-37" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“23-31”}</p>
+<p><em>STOP</em>. Read the added code. Do you understand it? Yes? Okay, keep reading.</p>
+<p>We have removed all of the embedded Ruby tags (<code>&lt;% %&gt;</code> and <code>&lt;%= %&gt;</code>) from the code we had in the <code>user_rock.html.erb</code> view template and added a new <code>outcome</code> variable to hold a <code>String</code> that depends on the control flow associated with the random computer move <code>comp_move</code>.</p>
+<p>Now, when a user visits the route <strong>/paper</strong>, the action <code>play_paper</code> in the controller <code>ApplicationController</code> will be triggered, and the code will be run <em>before</em> the template is rendered.</p>
+<p>So let’s try to visit <strong>/paper</strong> again. Oops, we get this error:</p>
+<pre><code>undefined local variable or method `comp_move&#39; for #&lt;#Class...</code></pre>
+<p><img src="/assets/rps-rcav/err-undefined-local-var-or-meth.png" /></p>
+<p>This error is coming from our <code>user_paper.html.erb</code> view template, when the browser gets to the first embedded Ruby tag:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb46-1"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb46-2"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-2" aria-hidden="true"></a></span>
+<span id="cb46-3"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb46-4"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb46-5"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb46-6"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-6" aria-hidden="true"></a></span>
+<span id="cb46-7"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb46-8"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb46-9"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb46-10"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-10" aria-hidden="true"></a></span>
+<span id="cb46-11"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb46-12"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= outcome %&gt;!</span>
+<span id="cb46-13"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb46-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“8”}</p>
+<p>That <em>local variable</em> <code>comp_move</code> is undefined!</p>
+<p>A <mark>local variable</mark> only exists in the scope it was defined. If we create a local variable in a loop, it will only exist <em>in that loop</em>. If I want some variable available outside the loop, then I would need to create it outside the loop and modify it in the loop. We can’t just use the <code>comp_move</code> local variable in our template if we created it in the <code>play_paper</code> method (action). The variable is effectively “dead” after <code>play_paper</code> executes.</p>
+<p>Then how do we make the controller variables available in the view template? We can do this by modifying our controller:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb47-1"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb47-2"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-2" aria-hidden="true"></a></span>
+<span id="cb47-3"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb47-4"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb47-5"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-5" aria-hidden="true"></a></span>
+<span id="cb47-6"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb47-7"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb47-8"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-8" aria-hidden="true"></a>  </span>
+<span id="cb47-9"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
+<span id="cb47-10"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
+<span id="cb47-11"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb47-12"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-12" aria-hidden="true"></a></span>
+<span id="cb47-13"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb47-14"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb47-15"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-15" aria-hidden="true"></a>    </span>
+<span id="cb47-16"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb47-17"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-17" aria-hidden="true"></a>    </span>
+<span id="cb47-18"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
+<span id="cb47-19"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-19" aria-hidden="true"></a></span>
+<span id="cb47-20"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
+<span id="cb47-21"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb47-22"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-22" aria-hidden="true"></a></span>
+<span id="cb47-23"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-23" aria-hidden="true"></a>  <span class="kw">def</span> play_paper</span>
+<span id="cb47-24"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-24" aria-hidden="true"></a>    <span class="ot">@comp_move</span> = [<span class="st">&quot;rock&quot;</span>, <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;scissors&quot;</span>].sample</span>
+<span id="cb47-25"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-25" aria-hidden="true"></a>    </span>
+<span id="cb47-26"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-26" aria-hidden="true"></a>    <span class="kw">if</span> <span class="ot">@comp_move</span> == <span class="st">&quot;rock&quot;</span></span>
+<span id="cb47-27"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-27" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;won&quot;</span></span>
+<span id="cb47-28"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-28" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;paper&quot;</span></span>
+<span id="cb47-29"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-29" aria-hidden="true"></a>      <span class="ot">@outcome</span> =  <span class="st">&quot;tied&quot;</span></span>
+<span id="cb47-30"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-30" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;scissors&quot;</span></span>
+<span id="cb47-31"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-31" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;lost&quot;</span></span>
+<span id="cb47-32"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-32" aria-hidden="true"></a>    <span class="kw">end</span></span>
+<span id="cb47-33"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-33" aria-hidden="true"></a></span>
+<span id="cb47-34"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-34" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_paper.html.erb&quot;</span> })</span>
+<span id="cb47-35"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-35" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb47-36"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-36" aria-hidden="true"></a></span>
+<span id="cb47-37"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb47-37" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“23 25-30”}</p>
+<p>All we did was place an <code>@</code> character before any variable that we want access to in our view template. This is a new kind of variable called an <mark>instance variable</mark>. This type of variable will survive as long as the <em>instance of the object in which it’s created survives</em>.</p>
+<p>When someone visits <strong>/paper</strong>, Rails creates an instance of the <code>ApplicationController</code> Class and then executes the <code>play_paper</code> method (because <code>get</code> in <code>config/routes.rb</code> told it how to respond to this route!). As long as the <code>ApplicationController</code> instance is “alive” (until the response is sent to the user by rendering HTML in their browser), the <em>instance variables</em> produced by <code>play_paper</code> will exist!</p>
+<p>All that is to say, by adding <code>@</code>, we now have <code>@comp_move</code> and <code>@outcome</code> available for our template. We just need to make sure those instance variables are also properly referenced in <code>user_paper.html.erb</code>:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb48-1"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb48-2"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-2" aria-hidden="true"></a></span>
+<span id="cb48-3"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb48-4"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb48-5"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb48-6"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-6" aria-hidden="true"></a></span>
+<span id="cb48-7"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb48-8"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= @comp_move %&gt;!</span>
+<span id="cb48-9"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb48-10"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-10" aria-hidden="true"></a></span>
+<span id="cb48-11"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb48-12"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= @outcome %&gt;!</span>
+<span id="cb48-13"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb48-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“8 12”}</p>
+<p>Again, we just use the leading <code>@</code> on our variables to tie them to the instance variables in the controller. And if we visit the <strong>/paper</strong> URL, it works! And we have a vastly improved organization.</p>
+<p>Most computation work like this should go in the controller as we have done it here. We will have some cases where more embedded Ruby goes in the template (e.g. rendering database records with <code>.each</code> loops, <code>if</code> statements to check if a user is allowed to see something, other conditional statements). In general, if it <em>can</em> happen in the controller, it <em>should</em> happen there.</p>
+<p>If <strong>/paper</strong> appears to work when you test it manually, then it’s time for a <code>rails grade</code> and a <strong>/git</strong> commit.</p>
+<div id="completed-code-5" class="section level3 hasAnchor" number="16.12.1">
+<h3><span class="header-section-number">16.12.1</span> Completed Code<a href="embedded-ruby-in-the-controller-with-instance-variables.html#completed-code-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb49"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb49-1"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb49-2"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-2" aria-hidden="true"></a></span>
+<span id="cb49-3"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb49-4"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb49-5"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-5" aria-hidden="true"></a></span>
+<span id="cb49-6"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb49-7"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb49-8"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-8" aria-hidden="true"></a>  </span>
+<span id="cb49-9"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-9" aria-hidden="true"></a>  <span class="kw">def</span> homepage</span>
+<span id="cb49-10"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-10" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/rules.html.erb&quot;</span> })</span>
+<span id="cb49-11"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-11" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb49-12"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-12" aria-hidden="true"></a></span>
+<span id="cb49-13"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-13" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb49-14"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-14" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb49-15"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-15" aria-hidden="true"></a>    </span>
+<span id="cb49-16"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-16" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb49-17"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-17" aria-hidden="true"></a>    </span>
+<span id="cb49-18"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-18" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
+<span id="cb49-19"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-19" aria-hidden="true"></a></span>
+<span id="cb49-20"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-20" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
+<span id="cb49-21"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-21" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb49-22"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-22" aria-hidden="true"></a></span>
+<span id="cb49-23"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-23" aria-hidden="true"></a>  <span class="kw">def</span> play_paper</span>
+<span id="cb49-24"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-24" aria-hidden="true"></a>    <span class="ot">@comp_move</span> = [<span class="st">&quot;rock&quot;</span>, <span class="st">&quot;paper&quot;</span>, <span class="st">&quot;scissors&quot;</span>].sample</span>
+<span id="cb49-25"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-25" aria-hidden="true"></a>    </span>
+<span id="cb49-26"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-26" aria-hidden="true"></a>    <span class="kw">if</span> <span class="ot">@comp_move</span> == <span class="st">&quot;rock&quot;</span></span>
+<span id="cb49-27"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-27" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;won&quot;</span></span>
+<span id="cb49-28"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-28" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;paper&quot;</span></span>
+<span id="cb49-29"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-29" aria-hidden="true"></a>      <span class="ot">@outcome</span> =  <span class="st">&quot;tied&quot;</span></span>
+<span id="cb49-30"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-30" aria-hidden="true"></a>    <span class="kw">elsif</span> <span class="ot">@comp_move</span> == <span class="st">&quot;scissors&quot;</span></span>
+<span id="cb49-31"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-31" aria-hidden="true"></a>      <span class="ot">@outcome</span> = <span class="st">&quot;lost&quot;</span></span>
+<span id="cb49-32"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-32" aria-hidden="true"></a>    <span class="kw">end</span></span>
+<span id="cb49-33"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-33" aria-hidden="true"></a></span>
+<span id="cb49-34"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-34" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_paper.html.erb&quot;</span> })</span>
+<span id="cb49-35"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-35" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb49-36"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-36" aria-hidden="true"></a></span>
+<span id="cb49-37"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb49-37" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb50-1"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb50-2"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-2" aria-hidden="true"></a></span>
+<span id="cb50-3"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb50-4"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-4" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb50-5"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-5" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb50-6"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-6" aria-hidden="true"></a></span>
+<span id="cb50-7"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb50-8"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-8" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= @comp_move %&gt;!</span>
+<span id="cb50-9"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb50-10"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-10" aria-hidden="true"></a></span>
+<span id="cb50-11"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-11" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb50-12"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-12" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= @outcome %&gt;!</span>
+<span id="cb50-13"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#cb50-13" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="dropping-self..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="our-first-rcav.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="reinforce-rcav-with-paper.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linking-pages-with-layouts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

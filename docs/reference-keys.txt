@@ -1047,3 +1047,16 @@ starting-our-gitpod-workspace
 our-first-rcav
 our-first-rcav-completed-code
 render-html
+completed-code
+embedded-ruby-tags
+completed-code-1
+control-flow-with-embedded-ruby
+completed-code-2
+reinforce-rcav-with
+completed-code-3
+reinforce-rcav-with-paper
+completed-code-4
+embedded-ruby-in-the-controller-with-instance-variables
+completed-code-5
+linking-pages-with-layouts
+completed-code-6
