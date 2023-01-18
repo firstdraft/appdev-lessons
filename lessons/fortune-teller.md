@@ -10,7 +10,7 @@
 
   - Useful chapters:
 
-    - [Adding Routes][Adding Routes]
+    - [Addendum: RCAV Flowchart][Addendum: RCAV Flowchart]
     - [RCAV Flowchart][RCAV Flowchart]
     - [Routing - RCAV Slides](https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q){target="_blank"}
 
@@ -324,7 +324,7 @@ Now refreshing **/lottery/unlucky** should display our copy and our array of num
 
 And now **/lottery/unlucky** should match the target. Test it manually to see, and when you've done that...
 
-Time for a `/git` commit, and maybe even a `rails grade` to see what's left to do.
+Time for a **/git** commit, and maybe even a `rails grade` to see what's left to do.
 
 
 
@@ -449,7 +449,7 @@ Hmm. This means we have not defined the class `FireController`. So let's look in
 
 One thing to note. If you think you did everything correctly but are still getting error messages, then go to GitPod, shut down your server in the terminal by using `Ctrl + C`, and restart with `bin/server`. This sometimes happens with filename or foldername changes.
 
-Time for a `/git` commit, and maybe even a `rails grade` to see what's left to do.
+Time for a **/git** commit, and maybe even a `rails grade` to see what's left to do.
 
 And now you can proceed on your own with the `config/routes.rb` file as we've done above. Uncomment, RTEM, and proceed.
 

@@ -31,9 +31,9 @@ Create a file to write the program in. I called mine `qr.rb`.
 
 Add some code to print "hello world" and ensure that you can run the program without any issues.
 
-At a command prompt, `bin/server`. Visit `/git` and make a commit. Push your changes back to GitHub.
+At a command prompt, `bin/server`. Visit **/git** and make a commit. Push your changes back to GitHub.
 
-Keep the `/git` page open in a tab. As you work, continue to make commits and push them.
+Keep the **/git** page open in a tab. As you work, continue to make commits and push them.
 
 ## Install the rqrcode gem
 

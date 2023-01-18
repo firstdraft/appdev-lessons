@@ -1,5 +1,9 @@
 # see gitbook options: https://bookdown.org/yihui/bookdown/html.html#gitbook-style
 bookdown::gitbook:
+  css: assets/styling/style.css
+  pandoc_args: ["--lua-filter=assets/styling/footnote.lua"]
+  includes:
+    in_header: assets/styling/style.html
   # lib_dir: assets
   highlight: pygments # highlight, default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, and breezedark
   split_by: section # rmd, chapter, section, chapter+number, section+number

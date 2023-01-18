@@ -41,8 +41,8 @@ In other words, we're going to build Software as a Service. So let's get started
 
 1. Start the web server by running `bin/server`.
 2. Navigate to your live application preview.
-3. As you work, remember to navigate to **/git** and **A**lways **B**e **C**ommitting.
-4. Organize your workspace tabs. **BENP: Added this step!**
+3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*.
+4. Organize your workspace tabs.
 5. Run `rails grade` as often as you like to see how you are doing, but make sure you **test your app manually first** to make sure it matches the target's behavior.
 
 **BENP: possible image(s) (better, GIFs?) of starting a workspace, opening /git, organizing tabs, noting the target favicon. But these are probably in a different chapter.**
@@ -388,7 +388,7 @@ Alright, now that we have all four classes in our `app/models/` folder we can co
 
 One thing we may have noted is that it's a bit cumbersome to play with our models in a view template, where we need to keep going to the `app/views/` folder, modifying the template's embedded Ruby tags, and then refreshing our browser URL to see the results. 
 
-Let's look at a better place to do this, the Rails console. We've already seen this a bit. Go to GitPod, make sure your terminal window is open (`Cmd + J`), and open a new terminal (keep the `bin/server` terminal running so the browser tab doesn't crash). You can can open a new terminal by going to the top menu "Terminal" and selecting "New Terminal". 
+Let's look at a better place to do this, the Rails console. We've already seen this a bit. Go to GitPod, make sure your terminal window is open (<kbd>Ctrl</kbd> + <kbd>J</kbd>:), and open a new terminal (keep the `bin/server` terminal running so the browser tab doesn't crash). You can can open a new terminal by going to the top menu "Terminal" and selecting "New Terminal". 
 
 Now at this fresh terminal you can enter `rails console` (or just `rails c` for short will do the same thing):
 
@@ -984,7 +984,7 @@ You never need to memorize these odd string formating characters for dates. Just
 
 And our page is up and running like the target. 
 
-By the way, have you been using `rails grade` to check your progress and `/git` committing when you get things working?!?! Do it now if you haven't.
+By the way, have you been using `rails grade` to check your progress and **/git** committing when you get things working?!?! Do it now if you haven't.
 
 
 
@@ -1170,7 +1170,7 @@ And we can use this director record `@the_director` instance variable in our vie
 
 And just to note, the target has some nice formatting for the "Created at" and "Updated at" information. The way this is done is simply wrapping the instance variable attribute, which come out as `Time` classes, in the inherited Rails function `time_ago_in_words()`, like: `<%= time_ago_in_words(@the_director.created_at) %>`. 
 
-The "Show details" pages on **/directors** now appear to be working (test is manually yourself), so we can `rails grade` and `/git` commit, then move on to the next thing.
+The "Show details" pages on **/directors** now appear to be working (test is manually yourself), so we can `rails grade` and **/git** commit, then move on to the next thing.
 
 
 
@@ -1323,7 +1323,7 @@ We could use the `@the_director.name` from above since we are on this page, but 
 
 Okay, now that we have a filmography we've really circled back on all of the early stuff we talked about with one-to-many and many-to-many relationships. This is what makes our applications powerful!
 
-Now, after a `rails grade` and potentially a `/git` commit if everything is work, the rest of the project to match the target is up to you.
+Now, after a `rails grade` and potentially a **/git** commit if everything is work, the rest of the project to match the target is up to you.
 
 
 

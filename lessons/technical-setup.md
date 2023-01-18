@@ -178,7 +178,7 @@ Then search for "terminal clear" in the search bar and click the plus icon to th
 
 ![](/assets/technical-setup/gitpod-clear-terminal.png)
 
-Finally, type <kbd>ctrl</kbd> + <kbd>k</kbd> and <kbd>Enter</kbd> to confirm.
+Finally, type <kbd>Ctrl</kbd> + <kbd>K</kbd> and <kbd>Enter</kbd> to confirm.
 
 ![](/assets/technical-setup/gitpod-ctrl-k.png)
 
@@ -322,7 +322,7 @@ Bitbucket, GitLab, and especially GitHub (all private companies) rode the rise o
 
 In this course, we're going to use one simple but effective Git-based workflow to save versions of our work. This will allow us to freely experiment with different approaches, while never having to throw away code.
 
-In all of our Rails apps, after you start the server, you can navigate to the address `/git` in your live application. If you're using Gitpod, the URL will look like:
+In all of our Rails apps, after you start the server, you can navigate to the address **/git** in your live application. If you're using Gitpod, the URL will look like:
 
     https://[YOUR GITPOD WORKSPACE URL].gitpod.io/git
 
@@ -358,7 +358,7 @@ If you edit your code again, then you can make further commits.
 
 The best time to commit is right after you just got something to work, before you start on your next experiment.
 
-Remember: **ABC**: **A**lways **B**e **C**ommitting.
+Remember: **ABC**: *Always Be Committing (ABC)*.
 
 ### Jumping back in time
 

@@ -31,8 +31,8 @@ Practice *reading* the code and reasoning your way through it, line by line; exp
 
 1. Start the web server by running `bin/server`.
 2. Navigate to your live application preview.
-3. As you work, remember to navigate to **/git** and **A**lways **B**e **C**ommitting.
-4. Organize your workspace tabs. **BENP: Added this step!**
+3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*.
+4. Organize your workspace tabs.
 5. Run `rails grade` as often as you like to see how you are doing, but make sure you **test your app manually first** to make sure it matches the target's behavior.
 
 **BENP: possible image(s) (better, GIFs?) of starting a workspace, opening /git, organizing tabs, noting the target favicon. But these are probably in a different chapter.**
@@ -644,7 +644,7 @@ You should try to define the six methods needed:
 # Character#actor
 ```
 
-Defining these last four is your job. Try and do this on your own based on the two sides of the 1-N that we defined, and run `rails grade` and `/git` commit as you get things working!
+Defining these last four is your job. Try and do this on your own based on the two sides of the 1-N that we defined, and run `rails grade` and **/git** commit as you get things working!
 
 Keep in mind there is some reference (written notes) for this project [here](https://chapters.firstdraft.com/chapters/843){target="_blank"}, including a section [reviewing instance methods](https://chapters.firstdraft.com/chapters/843#instance-method-review){target="_blank"}.
 

@@ -12,4 +12,4 @@ rails g draft:layout
 
 It will warn you that it is going to overwrite your existing `app/views/layouts/application.html.erb` -- say yes if you are sure that's okay. Copy out any important stuff if necessary, to be re-pasted back in.
 
-As with all generators, I recommend making a git commit before you generate, and then compare the diff at `/git`. What files did it add? What are they doing?
+As with all generators, I recommend making a git commit before you generate, and then compare the diff at **/git**. What files did it add? What are they doing?

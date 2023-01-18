@@ -307,7 +307,7 @@ end
 
 And now, since we defined the variable, if we refresh **/users** in our browser, then we will see the populated table with our list of records with no error messages. And we even ordered is alphabetically by username using `.order({ :username => :asc })` in the action.
 
-Now would be a good time for a `rails grade` and a `/git` commit if everything is working like the target.
+Now would be a good time for a `rails grade` and a **/git** commit if everything is working like the target.
 
 
 
@@ -579,7 +579,7 @@ Let's go back and make the user "Show details" link on the **/users** page actua
 
 And this link will work right away for each user in the table because we defined our dynamic routes, like **/users/anisa**, **/users/austin**, etc. So this `href=""` attribute will lead to a defined route when we click the "Show details" link in our table on **/users**.
 
-The index and show pages for users is looking good, so let's `rails grade` and `/git` commit.
+The index and show pages for users is looking good, so let's `rails grade` and **/git** commit.
 
 
 
@@ -696,7 +696,7 @@ In our new controller action we ordered by newest photo first (`created_at` colu
 ```
 {: mark_lines="16-20"}
 
-And if we refresh **/photos**, we will see our nice table of records. Let's `/git` commit it.
+And if we refresh **/photos**, we will see our nice table of records. Let's **/git** commit it.
 
 
 
@@ -875,7 +875,7 @@ Now we could go back into our action and define something in the `show` action t
 
 Note that we are using yet another association accessor method `.commenter` (you can find that in `app/models/comment.rb`) on our `a_comment` variable to get the username (because this method returns a user). 
 
-Let's `/git` commit all of this before we move on to updating and deleting records with forms.
+Let's **/git** commit all of this before we move on to updating and deleting records with forms.
 
 
 
@@ -965,7 +965,7 @@ And this is it! `.destroy` issues the SQL to the database and deletes the record
 
 We have just set the action to redirect to the **/photos** page, but we could have also had this action render another page with some information, like a page that informs the user that the action was successful.
 
-Let's make a `/git` commit!
+Let's make a **/git** commit!
 
 
 
@@ -1217,7 +1217,7 @@ end
 
 Try and add some new URLs to the form on your own and watch it work!
 
-Time to `/git` commit.
+Time to **/git** commit.
 
 
 
@@ -1379,7 +1379,7 @@ end
 ```
 {: mark_lines="6-16"}
 
-Try and update some captions on your photos. If you see everything working as you expect, then you can do a `rails grade` to check your work, and a `/git` commit.
+Try and update some captions on your photos. If you see everything working as you expect, then you can do a `rails grade` to check your work, and a **/git** commit.
 
 You can now CRUD!
 
@@ -1414,7 +1414,7 @@ The required tasks are:
 
  1. As often as you like, reset your database with sample data: `rails sample_data`
  2. Start the web server: `bin/server`
- 3. **A**lways **B**e **C**ommitting at `/git`
+ 3. *Always Be Committing (ABC)* at **/git**
  4. Check out your database visually at `/rails/db`
  5. Run `rails grade` as often as you like to see how you are doing, but **test whatever you're working on manually first to make sure it matches the target's behavior**. Don't debug using `rails grade`; that is a terribly slow feedback loop.
 

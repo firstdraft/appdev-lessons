@@ -71,7 +71,7 @@ heroku stack:set heroku-20
 
 ### Deploying code to your production server
 
- - Make a git commit with your latest work that you wish to deploy. You can use the web interface at `/git`, or you can run the following commands at a terminal prompt:
+ - Make a git commit with your latest work that you wish to deploy. You can use the web interface at **/git**, or you can run the following commands at a terminal prompt:
 
     ```
     git add -A
