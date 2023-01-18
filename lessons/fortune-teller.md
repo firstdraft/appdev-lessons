@@ -10,7 +10,7 @@
 
   - Useful chapters:
 
-    - [Adding Routes][Adding Routes]
+    - [Addendum: RCAV Flowchart][Addendum: RCAV Flowchart]
     - [RCAV Flowchart][RCAV Flowchart]
     - [Routing - RCAV Slides](https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q){target="_blank"}
 
