@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="video-segment-render-html.html"/>
+<link rel="prev" href="render-html.html"/>
 <link rel="next" href="video-segment-control-flow-with-embedded-ruby.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -486,21 +486,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="16.2" data-path="rcav-route.html"><a href="rcav-route.html"><i class="fa fa-check"></i><b>16.2</b> RCAV: Route</a></li>
 <li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a></li>
-<li class="chapter" data-level="16.4" data-path="dropping-self..html"><a href="dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Dropping <code>self.</code></a>
+<li class="chapter" data-level="16.4" data-path="dropping-self..html"><a href="dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Dropping <code>self.</code></a></li>
+<li class="chapter" data-level="16.5" data-path="starting-our-gitpod-workspace.html"><a href="starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>16.5</b> Starting Our GitPod Workspace</a></li>
+<li class="chapter" data-level="16.6" data-path="our-first-rcav.html"><a href="our-first-rcav.html"><i class="fa fa-check"></i><b>16.6</b> Our First RCAV</a>
 <ul>
-<li class="chapter" data-level="16.4.1" data-path="dropping-self..html"><a href="dropping-self..html#text-companion-dropping-.self"><i class="fa fa-check"></i><b>16.4.1</b> Text Companion: Dropping <code>.self</code></a></li>
+<li class="chapter" data-level="16.6.1" data-path="our-first-rcav.html"><a href="our-first-rcav.html#our-first-rcav-completed-code"><i class="fa fa-check"></i><b>16.6.1</b> Our First RCAV: Completed Code</a></li>
 </ul></li>
-<li class="chapter" data-level="16.5" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>16.5</b> Video Segment: Starting Our GitPod Workspace</a>
+<li class="chapter" data-level="16.7" data-path="render-html.html"><a href="render-html.html"><i class="fa fa-check"></i><b>16.7</b> Render HTML</a>
 <ul>
-<li class="chapter" data-level="16.5.1" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html#text-companion-starting-our-gitpod-workspace"><i class="fa fa-check"></i><b>16.5.1</b> Text Companion: Starting Our GitPod Workspace</a></li>
-</ul></li>
-<li class="chapter" data-level="16.6" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html"><i class="fa fa-check"></i><b>16.6</b> Video Segment: Our First RCAV</a>
-<ul>
-<li class="chapter" data-level="16.6.1" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html#text-companion-our-first-rcav"><i class="fa fa-check"></i><b>16.6.1</b> Text Companion: Our First RCAV</a></li>
-</ul></li>
-<li class="chapter" data-level="16.7" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html"><i class="fa fa-check"></i><b>16.7</b> Video Segment: Render HTML</a>
-<ul>
-<li class="chapter" data-level="16.7.1" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html#text-companion-render-html"><i class="fa fa-check"></i><b>16.7.1</b> Text Companion: Render HTML</a></li>
+<li class="chapter" data-level="16.7.1" data-path="render-html.html"><a href="render-html.html#text-companion-render-html"><i class="fa fa-check"></i><b>16.7.1</b> Text Companion: Render HTML</a></li>
 </ul></li>
 <li class="chapter" data-level="16.8" data-path="video-segment-embedded-ruby-tags.html"><a href="video-segment-embedded-ruby-tags.html"><i class="fa fa-check"></i><b>16.8</b> Video Segment: Embedded Ruby Tags</a>
 <ul>
@@ -1594,47 +1588,47 @@ Proudly published with bookdown</a></li>
 </ul></li>
 </ul>
 <p>But we can do something way better with this new system. Let’s add the following to our embedded Ruby file:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="video-segment-embedded-ruby-tags.html#cb16-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
-<span id="cb16-2"><a href="video-segment-embedded-ruby-tags.html#cb16-2" aria-hidden="true"></a></span>
-<span id="cb16-3"><a href="video-segment-embedded-ruby-tags.html#cb16-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb16-4"><a href="video-segment-embedded-ruby-tags.html#cb16-4" aria-hidden="true"></a></span>
-<span id="cb16-5"><a href="video-segment-embedded-ruby-tags.html#cb16-5" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb16-6"><a href="video-segment-embedded-ruby-tags.html#cb16-6" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= %&gt;!</span>
-<span id="cb16-7"><a href="video-segment-embedded-ruby-tags.html#cb16-7" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
-<p>{: mark_lines=“5-7”}</p>
-<p>Now we created a new tag that looks like HTML, but contains a doorway to Ruby: <code>&lt;%= %&gt;</code>. We can write any Ruby we want in that <em>embedded Ruby tag</em>, and this is what makes the whole effort of RCAV worthwhile. For instance we can write:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb17-1"><a href="video-segment-embedded-ruby-tags.html#cb17-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
-<span id="cb17-2"><a href="video-segment-embedded-ruby-tags.html#cb17-2" aria-hidden="true"></a></span>
-<span id="cb17-3"><a href="video-segment-embedded-ruby-tags.html#cb17-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb17-4"><a href="video-segment-embedded-ruby-tags.html#cb17-4" aria-hidden="true"></a></span>
-<span id="cb17-5"><a href="video-segment-embedded-ruby-tags.html#cb17-5" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb17-6"><a href="video-segment-embedded-ruby-tags.html#cb17-6" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= 6 * 7 %&gt;!</span>
-<span id="cb17-7"><a href="video-segment-embedded-ruby-tags.html#cb17-7" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
-<p>{: mark_lines=“6”}</p>
-<p>And we will see the result of this computation when we refresh <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/rock</strong>. But if we go to view source in the browser, we won’t see the Ruby code. We only see the result <code>42</code>. The browser only understands HTML and has no idea of the code that allows us to make the web application dynamic. So rails is processing all of the embedded Ruby tags and injecting them in the document before it sends the plain HTML file to the browser.</p>
-<p>We could also do something like</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb18-1"><a href="video-segment-embedded-ruby-tags.html#cb18-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
-<span id="cb18-2"><a href="video-segment-embedded-ruby-tags.html#cb18-2" aria-hidden="true"></a></span>
-<span id="cb18-3"><a href="video-segment-embedded-ruby-tags.html#cb18-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb18-4"><a href="video-segment-embedded-ruby-tags.html#cb18-4" aria-hidden="true"></a></span>
-<span id="cb18-5"><a href="video-segment-embedded-ruby-tags.html#cb18-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
-<span id="cb18-6"><a href="video-segment-embedded-ruby-tags.html#cb18-6" aria-hidden="true"></a></span>
-<span id="cb18-7"><a href="video-segment-embedded-ruby-tags.html#cb18-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb18-8"><a href="video-segment-embedded-ruby-tags.html#cb18-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= 6 * 7 %&gt;!</span>
-<span id="cb18-9"><a href="video-segment-embedded-ruby-tags.html#cb18-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
-<p>{: mark_lines=“5”}</p>
-<p>Here, we used a slightly different embedded Ruby tag: <code>&lt;% %&gt;</code>. We left off the <code>=</code> sign, which means the output of this Ruby code will be hidden in the final HTML. But, the variable <code>comp_move</code> (which is the result of randomly sampling an array of three possble string values) is still available and we can render it by changing the file again:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb19-1"><a href="video-segment-embedded-ruby-tags.html#cb19-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
 <span id="cb19-2"><a href="video-segment-embedded-ruby-tags.html#cb19-2" aria-hidden="true"></a></span>
 <span id="cb19-3"><a href="video-segment-embedded-ruby-tags.html#cb19-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
 <span id="cb19-4"><a href="video-segment-embedded-ruby-tags.html#cb19-4" aria-hidden="true"></a></span>
-<span id="cb19-5"><a href="video-segment-embedded-ruby-tags.html#cb19-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
-<span id="cb19-6"><a href="video-segment-embedded-ruby-tags.html#cb19-6" aria-hidden="true"></a></span>
-<span id="cb19-7"><a href="video-segment-embedded-ruby-tags.html#cb19-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb19-8"><a href="video-segment-embedded-ruby-tags.html#cb19-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
-<span id="cb19-9"><a href="video-segment-embedded-ruby-tags.html#cb19-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<span id="cb19-5"><a href="video-segment-embedded-ruby-tags.html#cb19-5" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb19-6"><a href="video-segment-embedded-ruby-tags.html#cb19-6" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= %&gt;!</span>
+<span id="cb19-7"><a href="video-segment-embedded-ruby-tags.html#cb19-7" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“5-7”}</p>
+<p>Now we created a new tag that looks like HTML, but contains a doorway to Ruby: <code>&lt;%= %&gt;</code>. We can write any Ruby we want in that <em>embedded Ruby tag</em>, and this is what makes the whole effort of RCAV worthwhile. For instance we can write:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb20-1"><a href="video-segment-embedded-ruby-tags.html#cb20-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
+<span id="cb20-2"><a href="video-segment-embedded-ruby-tags.html#cb20-2" aria-hidden="true"></a></span>
+<span id="cb20-3"><a href="video-segment-embedded-ruby-tags.html#cb20-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb20-4"><a href="video-segment-embedded-ruby-tags.html#cb20-4" aria-hidden="true"></a></span>
+<span id="cb20-5"><a href="video-segment-embedded-ruby-tags.html#cb20-5" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb20-6"><a href="video-segment-embedded-ruby-tags.html#cb20-6" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= 6 * 7 %&gt;!</span>
+<span id="cb20-7"><a href="video-segment-embedded-ruby-tags.html#cb20-7" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“6”}</p>
+<p>And we will see the result of this computation when we refresh <strong>/rock</strong>. But if we go to view source in the browser, we won’t see the Ruby code. We only see the result <code>42</code>. The browser only understands HTML and has no idea of the code that allows us to make the web application dynamic. So rails is processing all of the embedded Ruby tags and injecting them in the document before it sends the plain HTML file to the browser.</p>
+<p>We could also do something like</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb21-1"><a href="video-segment-embedded-ruby-tags.html#cb21-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
+<span id="cb21-2"><a href="video-segment-embedded-ruby-tags.html#cb21-2" aria-hidden="true"></a></span>
+<span id="cb21-3"><a href="video-segment-embedded-ruby-tags.html#cb21-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb21-4"><a href="video-segment-embedded-ruby-tags.html#cb21-4" aria-hidden="true"></a></span>
+<span id="cb21-5"><a href="video-segment-embedded-ruby-tags.html#cb21-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
+<span id="cb21-6"><a href="video-segment-embedded-ruby-tags.html#cb21-6" aria-hidden="true"></a></span>
+<span id="cb21-7"><a href="video-segment-embedded-ruby-tags.html#cb21-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb21-8"><a href="video-segment-embedded-ruby-tags.html#cb21-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= 6 * 7 %&gt;!</span>
+<span id="cb21-9"><a href="video-segment-embedded-ruby-tags.html#cb21-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p>{: mark_lines=“5”}</p>
+<p>Here, we used a slightly different embedded Ruby tag: <code>&lt;% %&gt;</code>. We left off the <code>=</code> sign, which means the output of this Ruby code will be hidden in the final HTML. But, the variable <code>comp_move</code> (which is the result of randomly sampling an array of three possble string values) is still available and we can render it by changing the file again:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb22-1"><a href="video-segment-embedded-ruby-tags.html#cb22-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
+<span id="cb22-2"><a href="video-segment-embedded-ruby-tags.html#cb22-2" aria-hidden="true"></a></span>
+<span id="cb22-3"><a href="video-segment-embedded-ruby-tags.html#cb22-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb22-4"><a href="video-segment-embedded-ruby-tags.html#cb22-4" aria-hidden="true"></a></span>
+<span id="cb22-5"><a href="video-segment-embedded-ruby-tags.html#cb22-5" aria-hidden="true"></a><span class="er">&lt;</span>% comp_move = [&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;].sample %&gt;</span>
+<span id="cb22-6"><a href="video-segment-embedded-ruby-tags.html#cb22-6" aria-hidden="true"></a></span>
+<span id="cb22-7"><a href="video-segment-embedded-ruby-tags.html#cb22-7" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb22-8"><a href="video-segment-embedded-ruby-tags.html#cb22-8" aria-hidden="true"></a>  They played <span class="er">&lt;</span>%= comp_move %&gt;!</span>
+<span id="cb22-9"><a href="video-segment-embedded-ruby-tags.html#cb22-9" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
 <p>{: mark_lines=“8”}</p>
-<p>Such that our calculated variable <code>comp_move</code> is now rendered in the final HTML output, because it is in a <code>&lt;%= %&gt;</code> tag, with the <code>=</code> sign. And we will see the result of this computation when we refresh <strong><a href="http://%5BYOUR" class="uri">http://[YOUR</a> APP DOMAIN]/rock</strong>. View the source code here and you won’t see any sign of the <code>comp_move</code> variable computation from the <code>&lt;% %&gt;</code> tag.</p>
+<p>Such that our calculated variable <code>comp_move</code> is now rendered in the final HTML output, because it is in a <code>&lt;%= %&gt;</code> tag, with the <code>=</code> sign. And we will see the result of this computation when we refresh <strong>/rock</strong>. View the source code here and you won’t see any sign of the <code>comp_move</code> variable computation from the <code>&lt;% %&gt;</code> tag.</p>
 <p><strong>BENP: Now could be time for a screenshot or better GIF of refreshing /rock a couple of times to see the output and showing the source code.</strong></p>
 <p>Alright, we are now finally building dynamic web applications. We are able to render a template, we are able to write some HTML, and we able use <em>embedded Ruby tags</em>: <code>&lt;% %&gt;</code> for hidden content, and <code>&lt;%= %&gt;</code> for rendered content that the user will see.</p>
 <div id="text-companion-embedded-ruby-tags" class="section level3 hasAnchor" number="16.8.1">
@@ -1646,7 +1640,7 @@ Proudly published with bookdown</a></li>
           </div>
         </div>
       </div>
-<a href="video-segment-render-html.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="render-html.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="video-segment-control-flow-with-embedded-ruby.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

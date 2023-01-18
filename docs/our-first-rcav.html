@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>16.2 RCAV: Route | AD1</title>
+  <title>16.6 Our First RCAV | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="16.2 RCAV: Route | AD1" />
+  <meta property="og:title" content="16.6 Our First RCAV | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="16.2 RCAV: Route | AD1" />
+  <meta name="twitter:title" content="16.6 Our First RCAV | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="dynamic-web-applications-and-urls.html"/>
-<link rel="next" href="rcav-controller-action-view.html"/>
+<link rel="prev" href="starting-our-gitpod-workspace.html"/>
+<link rel="next" href="render-html.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -1578,52 +1578,109 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rcav-route" class="section level2 hasAnchor" number="16.2">
-<h2><span class="header-section-number">16.2</span> RCAV: Route<a href="rcav-route.html#rcav-route" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="our-first-rcav" class="section level2 hasAnchor" number="16.6">
+<h2><span class="header-section-number">16.6</span> Our First RCAV<a href="our-first-rcav.html#our-first-rcav" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details>
 <summary>
 Notes:
 </summary>
 <ul>
-<li>time stamp 00:03:30 to 00:07:10
+<li>time stamp 00:13:30 to 00:18:40
 <ul>
-<li>all about routing and <code>config/routes.rb</code></li>
-<li><code>get()</code></li>
+<li>debugging an RCAV for <strong>/rock</strong></li>
+<li>RTEM</li>
+<li>ends with <code>redirect_to</code></li>
 </ul></li>
 </ul>
 </details>
-<p>The key is <em>routes</em>. <em>Routes</em> are how we connect a URL to an <em>action</em>.</p>
-<p>The <code>config/routes.rb</code><span id="fn-2"><!--
---><label for="fn-2-toggle"><sup>2</sup></label><!--
---><input type="checkbox" hidden id="fn-2-toggle"/>
-<span id="fn-content">It’s finally time to move out of our <code>public/</code> and <code>tasks/</code> folders, and use more of our Rails application by working in the <code>app/</code> folder, where most of our code goes, and with this one file <code>routes.rb</code> that is in the <code>config/</code> folder.</span></span> file included in every Rails app lists all of the URLs (<em>routes</em>) that a user can visit. When someone visits the URL we say which class and which method Rails should execute to handle the request. Here is an example of a route:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="rcav-route.html#cb1-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb1-2"><a href="rcav-route.html#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="rcav-route.html#cb1-3" aria-hidden="true"></a><span class="dv">self</span>.get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span></code></pre></div>
-<p>The method here is <code>get</code><span id="fn-3"><!--
---><label for="fn-3-toggle"><sup>3</sup></label><!--
---><input type="checkbox" hidden id="fn-3-toggle"/>
-<span id="fn-content">Later we’ll use other methods, like <code>post</code>, if we want to support requests using the other HTTP verbs.</span></span> and there are parentheses for its <em>two arguments</em>:</p>
-<ol style="list-style-type: decimal">
-<li><p>A <code>String</code>: the <em>path</em> that we want users to be able to visit (the <mark>path</mark> is the portion of the URL that comes after the <mark>domain name</mark>). Here it is <code>"/rock"</code>.</p></li>
-<li><p>A <code>Hash</code>: this is where we tell Rails which method to call when a user visits the path in the first argument. (We’ll have to actually write this method in the next step, after we write the route.)</p></li>
-</ol>
-<p>The <code>Hash</code> must have two key/value pairs:</p>
-<ul>
-<li><p><code>:controller</code>: The value for this key is what we’re going to name the Class that <em>contains</em> the method we want Rails to call when the user visits the path. For now we’re going to default this value to <code>"application"</code>.</p></li>
-<li><p><code>:action</code>: The value for this key is what we’re going to name the method itself. <em>Action</em> is the term used to refer to Ruby methods that are triggered by users visiting URLs.</p></li>
-</ul>
-<p>The <code>Hash</code> is saying: <em>“Use a <code>Class</code> (controller) called <code>application_controller</code>, and in that <code>Class</code> use a <code>method</code> (action) called <code>play_rock</code> to generate a response for the user.”</em></p>
-<p>Don’t be confused by the key names <code>:controller</code> and <code>:action</code>, these are equivalent to a Ruby Class and method. They just have special names in the lingo of web applications.</p>
-<p>The <code>get</code> method is <em>inherited</em>, we don’t need to build this method ourselves, which saves us a lot of time. We get the plumbing for free and we just need to tell Rails how we want each request to be handled by declaring our routes.</p>
+<p>Our workflow for a <mark><em>dynamic web application</em></mark> is always the same: Route, Controller, Action, View (RCAV). <em>The world is ruled by URLs</em>, so we will always start with what URL we want to build and get it to work.</p>
+<p>Navigate to the route <u>/rock</u><span id="fn-5"><!--
+--><label for="fn-5-toggle"><sup>5</sup></label><!--
+--><input type="checkbox" hidden id="fn-5-toggle"/>
+<span id="fn-content">We will no longer write out the entire URL path with <u>http://[APP DOMAIN]</u> preceeding the route of interest. A lone <u>/</u> signifies the homepage and anything else is another route (page) in the app.</span></span> in our Rails browser. We get an error message:</p>
+<pre><code>No route matches [GET] &quot;/rock&quot;.</code></pre>
+<p><img src="/assets/rps-rcav/err-no-routes-match.png" /></p>
+<p>We need to <em>Read The Error Message (<mark>RTEM</mark>)</em>. This error message is telling us that we need to define the route.</p>
+<p>Open the file <code>config/routes.rb</code> and define the route by adding the following code:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb9-1"><a href="our-first-rcav.html#cb9-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb9-2"><a href="our-first-rcav.html#cb9-2" aria-hidden="true"></a></span>
+<span id="cb9-3"><a href="our-first-rcav.html#cb9-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb9-4"><a href="our-first-rcav.html#cb9-4" aria-hidden="true"></a></span>
+<span id="cb9-5"><a href="our-first-rcav.html#cb9-5" aria-hidden="true"></a>  get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span>
+<span id="cb9-6"><a href="our-first-rcav.html#cb9-6" aria-hidden="true"></a></span>
+<span id="cb9-7"><a href="our-first-rcav.html#cb9-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“5” }</p>
+<p>All of our routes must be contained within the block following <code>Rails.application.routes.draw</code>. A new Rails app will already come with this code pre-written in <code>config/routes.rb</code>.</p>
+<p>Again, we have our route <code>"/rock"</code> and our key/value pairs for the <code>:controller</code> (or Class) and <code>:action</code> (or method). We need to choose a value for the <code>:controller</code> that Rails will use, and the <code>:action</code> within the controller that will be executed. For now we are just using the <code>app/controllers/application_controller.rb</code> for the controller, and we will define our action <code>play_rock</code> in there.</p>
+<p>Now, open the file <code>app/controllers/application_controller.rb</code>. Rails is smart and will add <code>_controller.rb</code> to our <code>:controller</code> argument in <code>get</code>, and within that controller file you will see the Class has the underscores removed and is capitalized as <code>ApplicationController</code><span id="fn-6"><!--
+--><label for="fn-6-toggle"><sup>6</sup></label><!--
+--><input type="checkbox" hidden id="fn-6-toggle"/>
+<span id="fn-content">To summarize: In <code>get</code>, the controller is <code>application</code>. That refers to the <code>snake_case</code> controller <code>application_controller</code>, which contains the <code>CamelCase</code> Class <code>ApplicationController</code>.</span></span>. You should follow these conventions.</p>
+<p>Add the following code:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb10-1"><a href="our-first-rcav.html#cb10-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb10-2"><a href="our-first-rcav.html#cb10-2" aria-hidden="true"></a></span>
+<span id="cb10-3"><a href="our-first-rcav.html#cb10-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb10-4"><a href="our-first-rcav.html#cb10-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb10-5"><a href="our-first-rcav.html#cb10-5" aria-hidden="true"></a></span>
+<span id="cb10-6"><a href="our-first-rcav.html#cb10-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb10-7"><a href="our-first-rcav.html#cb10-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb10-8"><a href="our-first-rcav.html#cb10-8" aria-hidden="true"></a></span>
+<span id="cb10-9"><a href="our-first-rcav.html#cb10-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb10-10"><a href="our-first-rcav.html#cb10-10" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb10-11"><a href="our-first-rcav.html#cb10-11" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“9-10”}</p>
+<p>Our action <code>play_rock</code> exactly matches what we wrote in the <code>config/routes.rb</code> file: <code>:action =&gt; "play_rock"</code>. Between the <code>def play_rock</code> and <code>end</code>, we could put <em>whatever</em> and <em>however</em> much code we would like to execute in that action for the user. In the end, we will need to either <em>render</em> some HTML back to the user or <em>redirect</em> the user to another place. Let’s begin with a redirect:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb11-1"><a href="our-first-rcav.html#cb11-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb11-2"><a href="our-first-rcav.html#cb11-2" aria-hidden="true"></a></span>
+<span id="cb11-3"><a href="our-first-rcav.html#cb11-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb11-4"><a href="our-first-rcav.html#cb11-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb11-5"><a href="our-first-rcav.html#cb11-5" aria-hidden="true"></a></span>
+<span id="cb11-6"><a href="our-first-rcav.html#cb11-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb11-7"><a href="our-first-rcav.html#cb11-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb11-8"><a href="our-first-rcav.html#cb11-8" aria-hidden="true"></a>  </span>
+<span id="cb11-9"><a href="our-first-rcav.html#cb11-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb11-10"><a href="our-first-rcav.html#cb11-10" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb11-11"><a href="our-first-rcav.html#cb11-11" aria-hidden="true"></a></span>
+<span id="cb11-12"><a href="our-first-rcav.html#cb11-12" aria-hidden="true"></a>    redirect_to(<span class="st">&quot;https://www.wikipedia.org&quot;</span>)</span>
+<span id="cb11-13"><a href="our-first-rcav.html#cb11-13" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb11-14"><a href="our-first-rcav.html#cb11-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“10-12”}</p>
+<p>Go back to the browser and refresh the URL <strong>/rock</strong>. You should be sent to Wikipedia. Boom! We just created a full RCAV <em>request lifecycle</em>.</p>
+<p>Check out the server log in your GitPod workspace. That is the terminal running <code>bin/server</code>. (Use <kbd>Ctrl</kbd> + <kbd>J</kbd> to open and close the terminal pane, find the <code>bin/server</code> terminal, and possibly use <kbd>Ctrl</kbd> + <kbd>K</kbd> to clear it for a cleaner view.) We should see something like:</p>
+<p><img src="/assets/rps-rcav/rock-to-wikipedia-server-log.png" /></p>
+<p>The server log tells us <em>exactly</em> what happened. Someone tried to <code>GET "/rock"</code> from a given IP address at a given time, we found a route with instructions to use <code>ApplicationController#play_rock</code>, calling this controller/action pair resulted in a redirect to the given URL (<code>https://www.wikipedia.org</code>), and the entire request lifecycle completed in the stated time with no errors. Hooray!</p>
+<div id="our-first-rcav-completed-code" class="section level3 hasAnchor" number="16.6.1">
+<h3><span class="header-section-number">16.6.1</span> Our First RCAV: Completed Code<a href="our-first-rcav.html#our-first-rcav-completed-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb12-1"><a href="our-first-rcav.html#cb12-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb12-2"><a href="our-first-rcav.html#cb12-2" aria-hidden="true"></a></span>
+<span id="cb12-3"><a href="our-first-rcav.html#cb12-3" aria-hidden="true"></a><span class="dt">Rails</span>.application.routes.draw <span class="kw">do</span></span>
+<span id="cb12-4"><a href="our-first-rcav.html#cb12-4" aria-hidden="true"></a></span>
+<span id="cb12-5"><a href="our-first-rcav.html#cb12-5" aria-hidden="true"></a>  get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span>
+<span id="cb12-6"><a href="our-first-rcav.html#cb12-6" aria-hidden="true"></a></span>
+<span id="cb12-7"><a href="our-first-rcav.html#cb12-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb13-1"><a href="our-first-rcav.html#cb13-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb13-2"><a href="our-first-rcav.html#cb13-2" aria-hidden="true"></a></span>
+<span id="cb13-3"><a href="our-first-rcav.html#cb13-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb13-4"><a href="our-first-rcav.html#cb13-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb13-5"><a href="our-first-rcav.html#cb13-5" aria-hidden="true"></a></span>
+<span id="cb13-6"><a href="our-first-rcav.html#cb13-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb13-7"><a href="our-first-rcav.html#cb13-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb13-8"><a href="our-first-rcav.html#cb13-8" aria-hidden="true"></a>  </span>
+<span id="cb13-9"><a href="our-first-rcav.html#cb13-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb13-10"><a href="our-first-rcav.html#cb13-10" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb13-11"><a href="our-first-rcav.html#cb13-11" aria-hidden="true"></a></span>
+<span id="cb13-12"><a href="our-first-rcav.html#cb13-12" aria-hidden="true"></a>    redirect_to(<span class="st">&quot;https://www.wikipedia.org&quot;</span>)</span>
+<span id="cb13-13"><a href="our-first-rcav.html#cb13-13" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb13-14"><a href="our-first-rcav.html#cb13-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="dynamic-web-applications-and-urls.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rcav-controller-action-view.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="starting-our-gitpod-workspace.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="render-html.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

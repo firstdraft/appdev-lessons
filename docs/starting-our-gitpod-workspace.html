@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>16.2 RCAV: Route | AD1</title>
+  <title>16.5 Starting Our GitPod Workspace | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="16.2 RCAV: Route | AD1" />
+  <meta property="og:title" content="16.5 Starting Our GitPod Workspace | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="16.2 RCAV: Route | AD1" />
+  <meta name="twitter:title" content="16.5 Starting Our GitPod Workspace | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="dynamic-web-applications-and-urls.html"/>
-<link rel="next" href="rcav-controller-action-view.html"/>
+<link rel="prev" href="dropping-self..html"/>
+<link rel="next" href="our-first-rcav.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -1578,52 +1578,39 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rcav-route" class="section level2 hasAnchor" number="16.2">
-<h2><span class="header-section-number">16.2</span> RCAV: Route<a href="rcav-route.html#rcav-route" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="starting-our-gitpod-workspace" class="section level2 hasAnchor" number="16.5">
+<h2><span class="header-section-number">16.5</span> Starting Our GitPod Workspace<a href="starting-our-gitpod-workspace.html#starting-our-gitpod-workspace" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details>
 <summary>
 Notes:
 </summary>
 <ul>
-<li>time stamp 00:03:30 to 00:07:10
+<li>time stamp 00:11:00 to 00:13:30
 <ul>
-<li>all about routing and <code>config/routes.rb</code></li>
-<li><code>get()</code></li>
+<li>these are common steps that should be done first in <em>any</em> project</li>
+<li>maybe link to <a href="technical-setup.html#technical-setup">Technical Setup</a></li>
 </ul></li>
 </ul>
 </details>
-<p>The key is <em>routes</em>. <em>Routes</em> are how we connect a URL to an <em>action</em>.</p>
-<p>The <code>config/routes.rb</code><span id="fn-2"><!--
---><label for="fn-2-toggle"><sup>2</sup></label><!--
---><input type="checkbox" hidden id="fn-2-toggle"/>
-<span id="fn-content">It’s finally time to move out of our <code>public/</code> and <code>tasks/</code> folders, and use more of our Rails application by working in the <code>app/</code> folder, where most of our code goes, and with this one file <code>routes.rb</code> that is in the <code>config/</code> folder.</span></span> file included in every Rails app lists all of the URLs (<em>routes</em>) that a user can visit. When someone visits the URL we say which class and which method Rails should execute to handle the request. Here is an example of a route:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="rcav-route.html#cb1-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb1-2"><a href="rcav-route.html#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="rcav-route.html#cb1-3" aria-hidden="true"></a><span class="dv">self</span>.get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span></code></pre></div>
-<p>The method here is <code>get</code><span id="fn-3"><!--
---><label for="fn-3-toggle"><sup>3</sup></label><!--
---><input type="checkbox" hidden id="fn-3-toggle"/>
-<span id="fn-content">Later we’ll use other methods, like <code>post</code>, if we want to support requests using the other HTTP verbs.</span></span> and there are parentheses for its <em>two arguments</em>:</p>
+<p>Enough theory. It’s time to open the RPS-RCAV GitPod project so we can visualize the steps and see some results. We’ll finally make our Rock, Paper, Scissors game work, by having the computer opponent randomly choose a move rather than always playing paper. We will then be able to compute outcomes based on the computer’s move.</p>
+<p><a href="https://github.com/appdev-projects/rps-rcav" target="_blank">Here</a> is the assignment. As usual:</p>
 <ol style="list-style-type: decimal">
-<li><p>A <code>String</code>: the <em>path</em> that we want users to be able to visit (the <mark>path</mark> is the portion of the URL that comes after the <mark>domain name</mark>). Here it is <code>"/rock"</code>.</p></li>
-<li><p>A <code>Hash</code>: this is where we tell Rails which method to call when a user visits the path in the first argument. (We’ll have to actually write this method in the next step, after we write the route.)</p></li>
+<li>Start the web server by running <code>bin/server</code>.</li>
+<li>Navigate to your live application preview.</li>
+<li>As you work, remember to navigate to <strong>/git</strong> and <strong>A</strong>lways <strong>B</strong>e <strong>C</strong>ommitting.</li>
+<li>Organize your workspace tabs.</li>
+<li>Run <code>rails grade</code> as often as you like to see how you are doing, but make sure you <em>test your app manually first</em> to make sure it matches the target’s behavior.</li>
 </ol>
-<p>The <code>Hash</code> must have two key/value pairs:</p>
-<ul>
-<li><p><code>:controller</code>: The value for this key is what we’re going to name the Class that <em>contains</em> the method we want Rails to call when the user visits the path. For now we’re going to default this value to <code>"application"</code>.</p></li>
-<li><p><code>:action</code>: The value for this key is what we’re going to name the method itself. <em>Action</em> is the term used to refer to Ruby methods that are triggered by users visiting URLs.</p></li>
-</ul>
-<p>The <code>Hash</code> is saying: <em>“Use a <code>Class</code> (controller) called <code>application_controller</code>, and in that <code>Class</code> use a <code>method</code> (action) called <code>play_rock</code> to generate a response for the user.”</em></p>
-<p>Don’t be confused by the key names <code>:controller</code> and <code>:action</code>, these are equivalent to a Ruby Class and method. They just have special names in the lingo of web applications.</p>
-<p>The <code>get</code> method is <em>inherited</em>, we don’t need to build this method ourselves, which saves us a lot of time. We get the plumbing for free and we just need to tell Rails how we want each request to be handled by declaring our routes.</p>
+<p>If you need a refresher in starting the workspace, see the <a href="technical-setup.html#technical-setup">Technical Setup</a></p>
+<p>The <a href="https://rps-rcav.matchthetarget.com/" target="_blank">target</a> for this project, looks similar to what we have produced. But, the key difference is that the computer plays different moves, so the application is finally <em>dynamic</em>.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="dynamic-web-applications-and-urls.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rcav-controller-action-view.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="dropping-self..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="our-first-rcav.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

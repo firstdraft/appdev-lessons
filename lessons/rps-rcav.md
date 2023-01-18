@@ -79,6 +79,7 @@ Now — how do we get our web server to perform the above tasks when users visi
     - That's right! This is the _action method_ that does the work of rendering or redirecting
 {: .choose_best #bin points="30" answer="3" }
 
+
 ## RCAV: Route
 
 <details>
@@ -130,9 +131,7 @@ The `get` method is _inherited_, we don't need to build this method ourselves, w
   - `ApplicationController` inheritance
 </details>
 
-All of our controller Classes will be in the `app/controllers/` folder. There's already one controller that comes with every Rails app: `ApplicationController`, found in `app/controllers/application_controller.rb`[^snake_camel]. _This_ is the controller that the `get("/rock", ...)` route is referring to. We will just use this default controller for now. Later we will make separate controllers to keep our code organized.
-
-[^snake_camel]: In `get()`, the controller is `application`. That refers to the `snake_case` controller `application_controller`, which contains the `CamelCase` Class `ApplicationController`. 
+All of our controller Classes will be in the `app/controllers/` folder. There's already one controller that comes with every Rails app: `ApplicationController`, found in `app/controllers/application_controller.rb`. _This_ is the controller that the `get("/rock", ...)` route is referring to. We will just use this default controller for now. Later we will make separate controllers to keep our code organized.
 
 Here is an example of an action in the controller:
 
@@ -225,6 +224,7 @@ end
 ```
 {: mark_lines="5" }
 
+
 ## Starting Our GitPod Workspace
 
 <details>
@@ -236,36 +236,44 @@ end
 
 Enough theory. It's time to open the RPS-RCAV GitPod project so we can visualize the steps and see some results. We'll finally make our Rock, Paper, Scissors game work, by having the computer opponent randomly choose a move rather than always playing paper. We will then be able to compute outcomes based on the computer's move.
 
-[Here is the assignment](https://github.com/appdev-projects/rps-rcav){target="_blank"}. As usual:
+[Here](https://github.com/appdev-projects/rps-rcav){target="_blank"} is the assignment. As usual:
 
-1. Start the web server by running `bin/server`.
-2. Navigate to your live application preview.
-3. As you work, remember to navigate to **/git** and **A**lways **B**e **C**ommitting.
-4. Organize your workspace tabs. **BENP: Added this step!**
-5. Run `rails grade` as often as you like to see how you are doing, but make sure you **test your app manually first** to make sure it matches the target's behavior.
+  1. Start the web server by running `bin/server`.
+  2. Navigate to your live application preview.
+  3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*.
+  4. Organize your workspace tabs.
+  5. Run `rails grade` as often as you like to see how you are doing, but make sure you *test your app manually first* to make sure it matches the target's behavior.
 
-The target for this project [here](https://rps-rcav.matchthetarget.com/){target="_blank"}, looks similar to what we have produced, but the key is that the computer plays different moves, and the application is finally *dynamic*. So how do we get here?
+If you need a refresher in starting the workspace, see the [Technical Setup][Technical Setup]
 
-### Text Companion: Starting Our GitPod Workspace
+The [target](https://rps-rcav.matchthetarget.com/){target="_blank"} for this project, looks similar to what we have produced. But, the key difference is that the computer plays different moves, so the application is finally *dynamic*. 
 
-## Video Segment: Our First RCAV
 
-- Notes:
+## Our First RCAV
 
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:13:30 to 00:18:40
   - debugging an RCAV for **/rock** 
   - RTEM
   - ends with `redirect_to`
+</details>
 
-Our workflow for a dynamic web application is always the same: Route, Controller, Action, View (RCAV). Remember, the world is ruled by URLs. So we will always start with what URL we want to build and get it to work.
+Our workflow for a <mark>*dynamic web application*</mark> is always the same: Route, Controller, Action, View (RCAV). *The world is ruled by URLs*, so we will always start with what URL we want to build and get it to work.
 
-If we begin by navigating to the route **/rock** in our Rails browser: **http://[YOUR APP DOMAIN]/rock**, then we get an error message: No route matches [GET] "/rock".
+Navigate to the route **/rock**[^drop_domain] in our Rails browser. We get an error message: 
+
+[^drop_domain]: We will no longer write out the entire URL path with **http\://[APP DOMAIN]** preceeding the route of interest. A lone **/** signifies the homepage and anything else is another route (page) in the app.
+
+```
+No route matches [GET] "/rock".
+```
 
 ![](/assets/rps-rcav/err-no-routes-match.png)
 
-We need to *Read The Error Message* (RTEM) and define the first route that will allow us to support a request of the form for our users. 
+We need to *Read The Error Message (<mark>RTEM</mark>)*. This error message is telling us that we need to define the route. 
 
-Let's open the file `config/routes.rb` and define the route by adding the following code:
+Open the file `config/routes.rb` and define the route by adding the following code:
 
 ```ruby
 # config/routes.rb
@@ -278,13 +286,15 @@ end
 ```
 {: mark_lines="5" }
 
-(All of our routes must be contained within the block following `Rails.application.routes.draw`. A new Rails app will already come with this code pre-written in `routes.rb`.)
+All of our routes must be contained within the block following `Rails.application.routes.draw`. A new Rails app will already come with this code pre-written in `config/routes.rb`.
 
-Again, we have our route `"/rock"` and our key/value pairs for the `:controller` (or Class) and `:action` (or method). We need to choose values for the `:controller` that Rails will use and the `:action` within the controller that will be called. For now we are just using the `app/controllers/application_controller.rb` for the controller, and we will define our action `play_rock` in there.
+Again, we have our route `"/rock"` and our key/value pairs for the `:controller` (or Class) and `:action` (or method). We need to choose a value for the `:controller` that Rails will use, and the `:action` within the controller that will be executed. For now we are just using the `app/controllers/application_controller.rb` for the controller, and we will define our action `play_rock` in there.
 
-We now need to open `app/controllers/application_controller.rb` to add some code. Note that Rails is smart and will add `_controller.rb` to our `:controller` argument in `get`, and within that controller file you will see the class has the underscores removed and is capitalized as `ApplicationController`. These are helpful conventions, and are best followed. **BENP: is that last thing a fair statment?** 
+Now, open the file `app/controllers/application_controller.rb`. Rails is smart and will add `_controller.rb` to our `:controller` argument in `get`, and within that controller file you will see the Class has the underscores removed and is capitalized as `ApplicationController`[^snake_camel]. You should follow these conventions.
 
-In this file we will add the following:
+[^snake_camel]: To summarize: In `get`, the controller is `application`. That refers to the `snake_case` controller `application_controller`, which contains the `CamelCase` Class `ApplicationController`. 
+
+Add the following code:
 
 ```ruby
 # app/controllers/application_controller.rb
@@ -301,7 +311,7 @@ end
 ```
 {: mark_lines="9-10"}
 
-We need our action to exactly match what we wrote in the `config/routes.rb` file, here `play_rock`. Between the `def play_rock` and `end` that we added, we could put whatever and however much code we would like to execute in that action for the user. In the end we will need to either *render* some HTML back to the user or *redirect* the user to another place. Let's begin by just redirecting to some other URL:
+Our action `play_rock` exactly matches what we wrote in the `config/routes.rb` file: `:action => "play_rock"`. Between the `def play_rock` and `end`, we could put *whatever* and *however* much code we would like to execute in that action for the user. In the end, we will need to either *render* some HTML back to the user or *redirect* the user to another place. Let's begin with a redirect:
 
 ```ruby
 # app/controllers/application_controller.rb
@@ -321,26 +331,56 @@ end
 ```
 {: mark_lines="10-12"}
 
-And we just created a full RCAV request lifecycle. If we go back to the browser and refresh the URL: **http://[YOUR APP DOMAIN]/rock**, then we will end up on Wikipedia.
+Go back to the browser and refresh the URL **/rock**. You should be sent to Wikipedia. Boom! We just created a full RCAV *request lifecycle*. 
 
-If I go back to GitPod and look in my server log (use `Cmd + J` to open and close the log, `Cmd + K` to clear the log), then I will see something like:
+Check out the server log in your GitPod workspace. That is the terminal running `bin/server`. (Use <kbd>Ctrl</kbd> + <kbd>J</kbd> to open and close the terminal pane, find the `bin/server` terminal, and possibly use <kbd>Ctrl</kbd> + <kbd>K</kbd> to clear it for a cleaner view.) We should see something like:
 
 ![](/assets/rps-rcav/rock-to-wikipedia-server-log.png)
 
-We can see exactly what happened. Someone tried to `GET "/rock"` from a given IP address at a given time, we found a route with instructions to use `ApplicationController#play_rock` (where the `Something#something` is Ruby shorthand for `Class.method`, with the `.` exchanged for a `#`), calling this controller-action pair resulted in a redirect to the given URL (`https://www.wikipedia.org`), and the entire request lifecycle completed in the stated time with no errors.
+The server log tells us *exactly* what happened. Someone tried to `GET "/rock"` from a given IP address at a given time, we found a route with instructions to use `ApplicationController#play_rock`, calling this controller/action pair resulted in a redirect to the given URL (`https://www.wikipedia.org`), and the entire request lifecycle completed in the stated time with no errors. Hooray!
 
-### Text Companion: Our First RCAV
+### Our First RCAV: Completed Code
 
-## Video Segment: Render HTML
+```ruby
+# config/routes.rb
 
-- Notes:
+Rails.application.routes.draw do
 
+  get("/rock", { :controller => "application", :action => "play_rock" })
+
+end
+```
+
+```ruby
+# app/controllers/application_controller.rb
+
+class ApplicationController < ActionController::Base
+  layout(false)
+
+  # Add your actions below this line
+  # ================================
+  
+  def play_rock
+    # write your code here
+
+    redirect_to("https://www.wikipedia.org")
+  end
+end
+```
+
+## Render HTML
+
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:18:40 to 00:26:38
   - from `render({ :plain => "Hello, world!" })` to `render({ :template => "game_templates/user_rock.html.erb" })`
   - `.html` vs. `.html.erb`
   - `app/views/` view templates rather than `public/`
+</details>
 
-We've written our first functional action, which just forwards someone to a new page. Now let's try to render some of our own HTML, rather than redirecting to Wikipedia. We can change the previous code in `app/controllers/application_controller.rb` to:
+We've written our first functional action, which just redirects someone to a new page. Now let's *render* some of our own HTML. 
+
+Change the previous code in `app/controllers/application_controller.rb` to:
 
 ```ruby
 # app/controllers/application_controller.rb
@@ -362,13 +402,13 @@ end
 ```
 {: mark_lines="12-14"}
 
-Rather than using `redirect_to()`, which we inherited `<` from the Rails `Base` class, we'll use another inherited method to complete the request lifecycle: `render()`. 
+Rather than `redirect_to`, we'll use another inherited method to complete the request lifecycle: `render`.
 
-This method, takes a `Hash` as an argument with a key/value pair. The key has many options, here we will use `:plain`, which will just send back plain text. A boring response, but good to start with.
+This method, takes a `Hash` as an argument with a key/value pair. The key has many options, here we use `:plain`, which will just send back plain text. A boring response, but good to start with.
 
-Now if I pretend I'm a user and visit **http://[YOUR APP DOMAIN]/rock**, then I get a page with my `"Hello, world!"` rendered. 
+Now, pretend you're a user and visit **/rock** in the GitPod browser. You should see a mostly empty page with the text "Hello, world!" rendered. 
 
-Congratulations! You've wired up a route; prepare to do it a million more times, because all developers do all day is pick the next **spec** , wire up the route for the URL so that a user can visit it, and then implement the logic to send back the correct information.
+Congratulations! You've wired up a route; prepare to do it a million more times, because all developers do all day is pick the next *spec*, wire up the route for the URL so that a user can visit it, and then implement the logic to send back the correct information.
 
 Remember, we did not create and send a file, we are using Ruby to generate this reponse, opening a world of possibilities. For instance, what if we instead rendered a random number:
 
@@ -392,9 +432,7 @@ end
 ```
 {: mark_lines="14"}
 
-Now everytime we refresh **http://[YOUR APP DOMAIN]/rock**, we get a different random number, generated automatically by Ruby. This is a dynamic response, not just a static page that we placed in the public folder. 
-
-This is a simple example, but fundamentally that's it. We connected a URL to a method that can do *anything*. It can call APIs, parse CSVs, compute whatever you want, run machine learning models. With this we can do anything. Of course, there is a lot more to learn, but fundamentally this is it. 
+Now everytime we refresh **/rock**, we get a different random number, generated automatically by Ruby. This is a *dynamic response*, not just a static page that we placed in the `public/` folder. This is a simple example, but fundamentally that's it. We connected a URL to a method that can do *anything*. It can call APIs, parse CSVs, compute whatever we want, run machine learning models, etc. Of course, there is a lot more to learn, but *fundamentally this is it*. 
 
 Now let's send back some actual HTML:
 
@@ -418,9 +456,11 @@ end
 ```
 {: mark_lines="14"}
 
-The `:html` key to `render()` allows us to place whatever HTML we want in a string that will be shown on the page. We need the `.html_safe` on the end of the string, which is a bit of Rails security to make sure that one user can't inject malicious HTML into another user's browser, in case we were getting the given HTML string from another user (e.g., from a `<form>`). Don't worry about this, we will see a better way of doing this in a moment.
+The `:html` key allows us to place whatever HTML we want in a `String` that will be shown on the page. We need the `.html_safe` on the end of the `String`. Don't worry about this[^html_safe], we will see a better way in a moment.
 
-If we refresh **http://[YOUR APP DOMAIN]/rock**, then we will see our HTML. We could go crazy and put our entire HTML document in that string. But a much, much better way to to write what's called an *embedded Ruby template*.
+[^html_safe]: Okay, if you really want to know, `.html_safe` is a bit of Rails security to prevent one user from injecting malicious HTML into another user's browser, in case we were getting the given HTML `String` from the user (e.g. from a `<form>`). 
+
+If we refresh **/rock**, then we should see our rendered HTML. We could go crazy and put our entire HTML document in that `String`. But a much better way is to use an <mark>embedded Ruby template</mark> file.
 
 ```ruby
 # app/controllers/application_controller.rb
@@ -444,15 +484,19 @@ end
 ```
 {: mark_lines="16"}
 
-The `:template` key to `render()` allows us to assign a template to render. We specify the name of a folder `game_templates/` and file `user_rock.html.erb` that will contain all of our HTML. This is an `.erb` for *embedded Ruby template* file, rather than a plain old `.html` file. 
+The `:template` key to `render` lets us assign a <mark>view template</mark>. We specify the name of a folder `game_templates/` and file `user_rock.html.erb` that will contain all of our HTML. This file is an `.html.erb`, for *embedded Ruby template*, rather than a plain `.html` file. 
 
-We create this file in the existing `app/views/` folder, which is a way better place than `public/`, because users do not have access to all of its contents. We will keep things organized and put different templates in different sub-folders. Do not put the `.html.erb` file in the `app/views/layouts/` folder that already exists, first make a new folder in `app/views/` called `game_templates/` then make the new file in this folder called `user_rock.html.erb`.
+We can now create this file in the existing `app/views/` folder. All of our application view templates will go here. It is far safer folder than `public/`, because users do not have access to its contents, and cannot modify the source code. 
 
-**BENP: insert image(s) (gifs? would be better here; cf. video 00:25:20) of new folder and new file steps in GitPod**
+We want to keep things organized and put different templates in different sub-folders. Do not put the `.html.erb` file in the `app/views/layouts/` folder that already exists. 
 
-You can call the `game_templates/user_rock.html.erb` folder and file whatever you want. The user will not see the folder or the file, they will only see `"/rock"`, the specified route.
+First make a new folder in `app/views/` by right-clicking on the folder and selecting "New Folder...", then naming the folder `game_templates`. Then, right-click on this new folder, select "New File...", and create `user_rock.html.erb`. The entire filepath will look like `app/views/game_templates/user_rock.html.erb`.
 
-Now you can enter in your new `user_rock.html.erb` file some HTML to render:
+**BENP: insert gif of create new folder and create new file steps in GitPod**
+
+By using `:template =>` in `render`, Rails knows to look in `app/views/`. We could call the `game_templates/user_rock.html.erb` folder and file whatever we want. The user will not see the folder or the file, they will only see **/rock**, the specified route, in their browser.
+
+Open the newly created `user_rock.html.erb` file and add some HTML to render:
 
 ```html
 <!-- app/views/game_templates/user_rock.html.erb -->
@@ -460,22 +504,51 @@ Now you can enter in your new `user_rock.html.erb` file some HTML to render:
 <h2>We played rock!</h2>
 ```
 
-Don't forget to save the file changes if you haven't done so. 
+*Don't forget to save the file changes if you haven't done so.*
 
-And now when we refresh **http://[YOUR APP DOMAIN]/rock**, we get the text from our file rendered in HTML.
+And now when we refresh **/rock**, we get the text from our *new file* rendered in HTML.
 
-So after all of that we have an HTML page that basically does what we could have done quickly if we made a file called `rock.html` in the `public/` folder. 
+After all of that, we have an HTML page that does what we could have done quickly if we made a file called `rock.html` in the `public/` folder. But we can do something way better with this new system. 
 
-### Text Companion: Render HTML
+### Completed Code
 
-## Video Segment: Embedded Ruby Tags
+```ruby
+# app/controllers/application_controller.rb
 
-- Notes:
+class ApplicationController < ActionController::Base
+  layout(false)
 
+  # Add your actions below this line
+  # ================================
+  
+  def play_rock
+    # write your code here
+
+    # redirect_to("https://www.wikipedia.org")
+    
+    # render({ :html => "<h1>Hellow, world!</h1>".html_safe })
+
+    render({ :template => "game_templates/user_rock.html.erb" })
+  end
+end
+```
+
+```html
+<!-- app/views/game_templates/user_rock.html.erb -->
+
+<h2>We played rock!</h2>
+```
+
+
+## Embedded Ruby Tags
+
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:26:38 to 00:31:37
   - all about `<% %>` and `<%= %>` in a view template
+</details>
 
-But we can do something way better with this new system. Let's add the following to our embedded Ruby file:
+What can we do with this new system? Add the following to our embedded Ruby file:
 
 ```html
 <!-- app/views/game_templates/user_rock.html.erb -->
@@ -488,7 +561,9 @@ But we can do something way better with this new system. Let's add the following
 ```
 {: mark_lines="5-7"}
 
-Now we created a new tag that looks like HTML, but contains a doorway to Ruby: `<%= %>`. We can write any Ruby we want in that *embedded Ruby tag*, and this is what makes the whole effort of RCAV worthwhile. For instance we can write:
+We created a new tag that *looks* like HTML, but contains a *doorway to Ruby*: `<%= %>`. We can write any Ruby we want in that <mark>*embedded Ruby tag*</mark>. *This is what makes the whole effort of RCAV worthwhile!* 
+
+For instance, we can write:
 
 ```html
 <!-- app/views/game_templates/user_rock.html.erb -->
@@ -501,9 +576,11 @@ Now we created a new tag that looks like HTML, but contains a doorway to Ruby: `
 ```
 {: mark_lines="6"}
 
-And we will see the result of this computation when we refresh **http://[YOUR APP DOMAIN]/rock**. But if we go to view source in the browser, we won't see the Ruby code. We only see the result `42`. The browser only understands HTML and has no idea of the code that allows us to make the web application dynamic. So rails is processing all of the embedded Ruby tags and injecting them in the document before it sends the plain HTML file to the browser. 
+And we will see the result of this computation when we refresh **/rock**. (Did you *save* the changes in the file before refreshing the browser?) But, if we right-click and "View page source" in the browser, we won't see the Ruby code. We only see the result `42`. 
 
-We could also do something like
+The browser *only* understands HTML and has no idea of the code that allows us to make the web application dynamic. Rails is processing all of the embedded Ruby tags and injecting them in the document before it sends the plain HTML file to the browser. 
+
+We could also do something like:
 
 ```html
 <!-- app/views/game_templates/user_rock.html.erb -->
@@ -518,7 +595,7 @@ We could also do something like
 ```
 {: mark_lines="5"}
 
-Here, we used a slightly different embedded Ruby tag: `<% %>`. We left off the `=` sign, which means the output of this Ruby code will be hidden in the final HTML. But, the variable `comp_move` (which is the result of randomly sampling an array of three possble string values) is still available and we can render it by changing the file again:
+Here, we used a slightly different embedded Ruby tag: `<% %>`. We left off the `=` sign, which means the output of this Ruby code will be hidden in the rendered HTML. But, the variable `comp_move` (the result of randomly sampling an array of three possible `String` values) is still available and we can render that by changing the file again:
 
 ```html
 <!-- app/views/game_templates/user_rock.html.erb -->
@@ -533,25 +610,34 @@ Here, we used a slightly different embedded Ruby tag: `<% %>`. We left off the `
 ```
 {: mark_lines="8"}
 
-Such that our calculated variable `comp_move` is now rendered in the final HTML output, because it is in a `<%= %>` tag, with the `=` sign. And we will see the result of this computation when we refresh **http://[YOUR APP DOMAIN]/rock**. View the source code here and you won't see any sign of the `comp_move` variable computation from the `<% %>` tag.
+Our calculated variable `comp_move` is now rendered in the final HTML output, because it is in a `<%= %>` tag, with the `=` sign. And we will see the result of this computation when we refresh **/rock**. Again, "View page source" here and you won't see any sign of the `comp_move` variable computation from the `<% %>` tag.
 
-**BENP: Now could be time for a screenshot or better GIF of refreshing /rock a couple of times to see the output and showing the source code.**
+Alright, we are now finally building dynamic web applications. We are able to render a template, we are able to write some HTML, and we are able to use *embedded Ruby tags*: `<% %>` for hidden content, and `<%= %>` for rendered content.
 
-Alright, we are now finally building dynamic web applications. We are able to render a template, we are able to write some HTML, and we able use *embedded Ruby tags*: `<% %>` for hidden content, and `<%= %>` for rendered content that the user will see.
+### Completed Code
 
-### Text Companion: Embedded Ruby Tags
+```html
+<!-- app/views/game_templates/user_rock.html.erb -->
 
-## Video Segment: Control Flow with Embedded Ruby
+<h2>We played rock!</h2>
 
-- Notes:
+<% comp_move = ["rock", "paper", "scissors"].sample %>
 
+<h2>
+  They played <%= comp_move %>!
+</h2>
+```
+
+## Control Flow with Embedded Ruby
+
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:31:37 to 00:37:10
   - conditionals
   - all about `<% if ... %>`
+</details>
 
-
-
-Now we can actually compute who won or lost our Rock Paper Scissors match. Let's add this long `if-else` Ruby code to our `game_templates/` file:
+With the power of Ruby, we can actually compute who won or lost our Rock, Paper, Scissors match on the page before rendering the HTML to the user. Add the following `if-else` embedded Ruby code to our view template:
 
 ```html
 <!-- app/views/game_templates/user_rock.html.erb -->
@@ -574,18 +660,42 @@ Now we can actually compute who won or lost our Rock Paper Scissors match. Let's
 ```
 {: mark_lines="11-17"}
 
-Above, we used hidden `<% %>` embedded Ruby tags in our control flow on each line we wanted to hide, so none of this will be rendered to the user. Only the result of this control flow `<h2>We tied!</h2>`, `<h2>We lost!</h2>`, `<h2>We won!</h2>` will be rendered, depending on the randomly sampled `comp_move` variable. Refresh **http://[YOUR APP DOMAIN]/rock** to see. 
+Do you understand this added code? *Read* it carefully and try to understand the logic before you keep reading.
 
-And now would be a good time to run `rails grade` at the GitPod console to check our progress. And remember to **A**lways **B**e **C**ommitting, by making a **/git** commit. We have a lot done, but we still have a lot to do.
+We used hidden `<% %>` embedded Ruby tags in our <mark>control flow</mark> on each line we wanted to hide from the user. Only the result of this control flow `<h2>We tied!</h2>`, `<h2>We lost!</h2>`, or `<h2>We won!</h2>` will be rendered, *depending on the randomly sampled `comp_move` variable*. Refresh **/rock** a few times to see. 
 
-### Text Companion: Control Flow with Embedded Ruby
+If you haven't, now would be a good time to run `rails grade` at the GitPod terminal to check your progress. And remember to *Always Be Committing (ABC)*, by making a **/git** commit. We have a lot done, but we still have a lot to do.
 
-## Video Segment: Homepage
+### Completed Code
 
-- Notes:
+```html
+<!-- app/views/game_templates/user_rock.html.erb -->
 
+<h2>We played rock!</h2>
+
+<% comp_move = ["rock", "paper", "scissors"].sample %>
+
+<h2>
+  They played <%= comp_move %>!
+</h2>
+
+<% if comp_move == "rock" %>
+  <h2>We tied!</h2>
+<% elsif comp_move == "paper" %>
+  <h2>We lost!</h2>
+<% elsif comp_move == "paper" %>
+  <h2>We won!</h2>
+<% end %>
+```
+
+
+## Homepage RCAV
+
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:37:10 to 00:40:18
   - RCAV with `render` for **/**
+</details>
 
 The [target](https://rps-rcav.matchthetarget.com/){target="_blank"} has a homepage at the root URL, **/**. In the old days, we would create a file in `public/` called `index.html`, but now we are pretty much done with `public/` except maybe for static assets like images or css files, but we won't put any more user-facing URL pages there. Those will be connected up with routes from here on. Let's go to our `config/routes.rb` and add a homepage route:
 
@@ -604,7 +714,7 @@ end
 
 We are adding the `"/"` homepage route, we are using the `application_controller.rb` file, and we are using the action (or the method within the `ApplicationController`) that we call `homepage`. 
 
-Now if I refresh the **http://[YOUR APP DOMAIN]/** page, I get an error message that the `homepage` action cannot be found in `ApplicationController`:
+Now if I refresh the **/** page, I get an error message that the `homepage` action cannot be found in `ApplicationController`:
 
 ```ruby
 The action 'play_rock' could not be found for ApplicationController
@@ -648,7 +758,7 @@ And now we can create that new file `game_templates/rules.html.erb`, and add to 
 <h1>Welcome to RPS</h1>
 ```
 
-Now when we refresh **http://[YOUR APP DOMAIN]/**, there is no error and our HTML template is rendered. And we did not put any HTML in the public folder! You will almost always want some kind of dynamic behavior on every page. So our new workflow is always RCAV: Define a route, assign a controller, create an action in that controller, and view the result.
+Now when we refresh **/**, there is no error and our HTML template is rendered. And we did not put any HTML in the public folder! You will almost always want some kind of dynamic behavior on every page. So our new workflow is always RCAV: Define a route, assign a controller, create an action in that controller, and view the result.
 
 ### Text Companion: Homepage
 
@@ -676,7 +786,7 @@ end
 ```
 {: mark_lines="9" }
 
-Again, we use the `application_controller.rb`. If we pretend we are a user now and go to **http://[YOUR APP DOMAIN]/paper**, we again get the "action not found" error. The helpful error message (RTEM!) tells us we need to define another method for the action in our controller called `play_paper`. 
+Again, we use the `application_controller.rb`. If we pretend we are a user now and go to **/paper**, we again get the "action not found" error. The helpful error message (RTEM!) tells us we need to define another method for the action in our controller called `play_paper`. 
 
 We are in our **Route, Controller, Action, View** sequence that makes Rails so useful! It's the same flow, over and over again. All we need to do is keep visiting the route and RTEM to find the next step.
 
@@ -714,7 +824,7 @@ end
 ```
 {: mark_lines="23-26"}
 
-Now we can pretend we are a user and again refresh **http://[YOUR APP DOMAIN]/paper**. And we'll get a new error message that tells us we are missing the view template:
+Now we can pretend we are a user and again refresh **/paper**. And we'll get a new error message that tells us we are missing the view template:
 
 ![](/assets/rps-rcav/err-missing-view-template.png)
 
@@ -730,7 +840,7 @@ We RTEM above and that tells us to go and make the new `game_templates/user_pape
 </h2>
 ```
 
-And now our view at **http://[YOUR APP DOMAIN]/paper** renders content with no error message. A successful RCAV!
+And now our view at **/paper** renders content with no error message. A successful RCAV!
 
 ### Text Companion: Reinforce RCAV with /paper
 
@@ -833,9 +943,9 @@ end
 ```
 {: mark_lines="23-31"}
 
-In the above highlighted code we have removed all of the embedded Ruby tags (`<% %>` and `<%= %>`) from the code we had in the `.html.erb` view template. Now when a user visits the route **http://[YOUR APP DOMAIN]/paper**, the action `play_paper` in the controller `ApplicationController` will be triggered, and the code will be run before the template is rendered. 
+In the above highlighted code we have removed all of the embedded Ruby tags (`<% %>` and `<%= %>`) from the code we had in the `.html.erb` view template. Now when a user visits the route **/paper**, the action `play_paper` in the controller `ApplicationController` will be triggered, and the code will be run before the template is rendered. 
 
-So let's try to visit **http://[YOUR APP DOMAIN]/paper** again. Oops, we get this error:
+So let's try to visit **/paper** again. Oops, we get this error:
 
 ![](/assets/rps-rcav/err-undefined-local-var-or-meth.png)
 

@@ -486,21 +486,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="16.2" data-path="rcav-route.html"><a href="rcav-route.html"><i class="fa fa-check"></i><b>16.2</b> RCAV: Route</a></li>
 <li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a></li>
-<li class="chapter" data-level="16.4" data-path="dropping-self..html"><a href="dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Dropping <code>self.</code></a>
+<li class="chapter" data-level="16.4" data-path="dropping-self..html"><a href="dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Dropping <code>self.</code></a></li>
+<li class="chapter" data-level="16.5" data-path="starting-our-gitpod-workspace.html"><a href="starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>16.5</b> Starting Our GitPod Workspace</a></li>
+<li class="chapter" data-level="16.6" data-path="our-first-rcav.html"><a href="our-first-rcav.html"><i class="fa fa-check"></i><b>16.6</b> Our First RCAV</a>
 <ul>
-<li class="chapter" data-level="16.4.1" data-path="dropping-self..html"><a href="dropping-self..html#text-companion-dropping-.self"><i class="fa fa-check"></i><b>16.4.1</b> Text Companion: Dropping <code>.self</code></a></li>
+<li class="chapter" data-level="16.6.1" data-path="our-first-rcav.html"><a href="our-first-rcav.html#our-first-rcav-completed-code"><i class="fa fa-check"></i><b>16.6.1</b> Our First RCAV: Completed Code</a></li>
 </ul></li>
-<li class="chapter" data-level="16.5" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>16.5</b> Video Segment: Starting Our GitPod Workspace</a>
+<li class="chapter" data-level="16.7" data-path="render-html.html"><a href="render-html.html"><i class="fa fa-check"></i><b>16.7</b> Render HTML</a>
 <ul>
-<li class="chapter" data-level="16.5.1" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html#text-companion-starting-our-gitpod-workspace"><i class="fa fa-check"></i><b>16.5.1</b> Text Companion: Starting Our GitPod Workspace</a></li>
-</ul></li>
-<li class="chapter" data-level="16.6" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html"><i class="fa fa-check"></i><b>16.6</b> Video Segment: Our First RCAV</a>
-<ul>
-<li class="chapter" data-level="16.6.1" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html#text-companion-our-first-rcav"><i class="fa fa-check"></i><b>16.6.1</b> Text Companion: Our First RCAV</a></li>
-</ul></li>
-<li class="chapter" data-level="16.7" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html"><i class="fa fa-check"></i><b>16.7</b> Video Segment: Render HTML</a>
-<ul>
-<li class="chapter" data-level="16.7.1" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html#text-companion-render-html"><i class="fa fa-check"></i><b>16.7.1</b> Text Companion: Render HTML</a></li>
+<li class="chapter" data-level="16.7.1" data-path="render-html.html"><a href="render-html.html#text-companion-render-html"><i class="fa fa-check"></i><b>16.7.1</b> Text Companion: Render HTML</a></li>
 </ul></li>
 <li class="chapter" data-level="16.8" data-path="video-segment-embedded-ruby-tags.html"><a href="video-segment-embedded-ruby-tags.html"><i class="fa fa-check"></i><b>16.8</b> Video Segment: Embedded Ruby Tags</a>
 <ul>
@@ -1597,62 +1591,62 @@ Proudly published with bookdown</a></li>
 </ul>
 <p>It would now be nice to add some links so we don’t need to type in the URL addresses, like in our <a href="https://rps-rcav.matchthetarget.com/" target="_blank">target</a>.</p>
 <p>Let’s start with our <code>game_templates/user_paper.html.erb</code>:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb34-1"><a href="video-segment-linking-pages-with-layouts.html#cb34-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
-<span id="cb34-2"><a href="video-segment-linking-pages-with-layouts.html#cb34-2" aria-hidden="true"></a></span>
-<span id="cb34-3"><a href="video-segment-linking-pages-with-layouts.html#cb34-3" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
-<span id="cb34-4"><a href="video-segment-linking-pages-with-layouts.html#cb34-4" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/rock&quot;</span><span class="kw">&gt;</span>Play Rock<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb34-5"><a href="video-segment-linking-pages-with-layouts.html#cb34-5" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
-<span id="cb34-6"><a href="video-segment-linking-pages-with-layouts.html#cb34-6" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
-<span id="cb34-7"><a href="video-segment-linking-pages-with-layouts.html#cb34-7" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/paper&quot;</span><span class="kw">&gt;</span>Play Paper<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb34-8"><a href="video-segment-linking-pages-with-layouts.html#cb34-8" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
-<span id="cb34-9"><a href="video-segment-linking-pages-with-layouts.html#cb34-9" aria-hidden="true"></a></span>
-<span id="cb34-10"><a href="video-segment-linking-pages-with-layouts.html#cb34-10" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb34-11"><a href="video-segment-linking-pages-with-layouts.html#cb34-11" aria-hidden="true"></a>    We played paper!</span>
-<span id="cb34-12"><a href="video-segment-linking-pages-with-layouts.html#cb34-12" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb34-13"><a href="video-segment-linking-pages-with-layouts.html#cb34-13" aria-hidden="true"></a></span>
-<span id="cb34-14"><a href="video-segment-linking-pages-with-layouts.html#cb34-14" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb34-15"><a href="video-segment-linking-pages-with-layouts.html#cb34-15" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= @comp_move %&gt;!</span>
-<span id="cb34-16"><a href="video-segment-linking-pages-with-layouts.html#cb34-16" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
-<span id="cb34-17"><a href="video-segment-linking-pages-with-layouts.html#cb34-17" aria-hidden="true"></a></span>
-<span id="cb34-18"><a href="video-segment-linking-pages-with-layouts.html#cb34-18" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
-<span id="cb34-19"><a href="video-segment-linking-pages-with-layouts.html#cb34-19" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= @outcome %&gt;!</span>
-<span id="cb34-20"><a href="video-segment-linking-pages-with-layouts.html#cb34-20" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb37-1"><a href="video-segment-linking-pages-with-layouts.html#cb37-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_paper.html.erb --&gt;</span></span>
+<span id="cb37-2"><a href="video-segment-linking-pages-with-layouts.html#cb37-2" aria-hidden="true"></a></span>
+<span id="cb37-3"><a href="video-segment-linking-pages-with-layouts.html#cb37-3" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
+<span id="cb37-4"><a href="video-segment-linking-pages-with-layouts.html#cb37-4" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/rock&quot;</span><span class="kw">&gt;</span>Play Rock<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb37-5"><a href="video-segment-linking-pages-with-layouts.html#cb37-5" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb37-6"><a href="video-segment-linking-pages-with-layouts.html#cb37-6" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
+<span id="cb37-7"><a href="video-segment-linking-pages-with-layouts.html#cb37-7" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/paper&quot;</span><span class="kw">&gt;</span>Play Paper<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb37-8"><a href="video-segment-linking-pages-with-layouts.html#cb37-8" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb37-9"><a href="video-segment-linking-pages-with-layouts.html#cb37-9" aria-hidden="true"></a></span>
+<span id="cb37-10"><a href="video-segment-linking-pages-with-layouts.html#cb37-10" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb37-11"><a href="video-segment-linking-pages-with-layouts.html#cb37-11" aria-hidden="true"></a>    We played paper!</span>
+<span id="cb37-12"><a href="video-segment-linking-pages-with-layouts.html#cb37-12" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb37-13"><a href="video-segment-linking-pages-with-layouts.html#cb37-13" aria-hidden="true"></a></span>
+<span id="cb37-14"><a href="video-segment-linking-pages-with-layouts.html#cb37-14" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb37-15"><a href="video-segment-linking-pages-with-layouts.html#cb37-15" aria-hidden="true"></a>    They played <span class="er">&lt;</span>%= @comp_move %&gt;!</span>
+<span id="cb37-16"><a href="video-segment-linking-pages-with-layouts.html#cb37-16" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb37-17"><a href="video-segment-linking-pages-with-layouts.html#cb37-17" aria-hidden="true"></a></span>
+<span id="cb37-18"><a href="video-segment-linking-pages-with-layouts.html#cb37-18" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span></span>
+<span id="cb37-19"><a href="video-segment-linking-pages-with-layouts.html#cb37-19" aria-hidden="true"></a>    We <span class="er">&lt;</span>%= @outcome %&gt;!</span>
+<span id="cb37-20"><a href="video-segment-linking-pages-with-layouts.html#cb37-20" aria-hidden="true"></a><span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
 <p>{: mark_lines=“3-8”}</p>
 <p>And now if we visit our <strong>/paper</strong> URL, then we have the links. But if we click on “Play Rock” here, and we are taken to the <strong>/rock</strong> URL, then the links are not there, because we only put them in the <code>game_templates/user_paper.html.erb</code> file, and not in the <code>game_templates/user_rock.html.erb</code> file, which is what visiting the <strong>/rock</strong> URL will render.</p>
 <p><strong>BENP: In the below example, we use the <code>app/views/layouts/wrapper.html.erb</code> file that we create, but in all other class work we use <code>app/views/layouts/application.html.erb</code> to place our headers and footers. Maybe we change the below section to just do it with that, which also I think allows us to omit the <code>layout("wrapper.html.erb)"</code> call?</strong></p>
 <p>How can we avoid repeating these HTML navigation links in all of our view templates? Well, here is one of the great benefits of working in Rails instead of HTML. We are dynamically generating responses rather than hard-coding into a bunch of files. If there is common stuff we want on every page, like a nav-bar or footer, then we can make a special file in <code>app/views/layouts/</code> and call it whatever we like. Let’s create a file in that folder called <code>wrapper.html.erb</code> and let’s fill our new <code>app/views/layouts/wrapper.html.erb</code> file with:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb35-1"><a href="video-segment-linking-pages-with-layouts.html#cb35-1" aria-hidden="true"></a><span class="co">&lt;!-- app/view/layouts/wrapper.html.erb --&gt;</span></span>
-<span id="cb35-2"><a href="video-segment-linking-pages-with-layouts.html#cb35-2" aria-hidden="true"></a></span>
-<span id="cb35-3"><a href="video-segment-linking-pages-with-layouts.html#cb35-3" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
-<span id="cb35-4"><a href="video-segment-linking-pages-with-layouts.html#cb35-4" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/rock&quot;</span><span class="kw">&gt;</span>Play Rock<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb35-5"><a href="video-segment-linking-pages-with-layouts.html#cb35-5" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
-<span id="cb35-6"><a href="video-segment-linking-pages-with-layouts.html#cb35-6" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
-<span id="cb35-7"><a href="video-segment-linking-pages-with-layouts.html#cb35-7" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/paper&quot;</span><span class="kw">&gt;</span>Play Paper<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb35-8"><a href="video-segment-linking-pages-with-layouts.html#cb35-8" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
-<span id="cb35-9"><a href="video-segment-linking-pages-with-layouts.html#cb35-9" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
-<span id="cb35-10"><a href="video-segment-linking-pages-with-layouts.html#cb35-10" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/scissors&quot;</span><span class="kw">&gt;</span>Play Scissors<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb35-11"><a href="video-segment-linking-pages-with-layouts.html#cb35-11" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
-<span id="cb35-12"><a href="video-segment-linking-pages-with-layouts.html#cb35-12" aria-hidden="true"></a></span>
-<span id="cb35-13"><a href="video-segment-linking-pages-with-layouts.html#cb35-13" aria-hidden="true"></a><span class="er">&lt;</span>%= yield %&gt;</span>
-<span id="cb35-14"><a href="video-segment-linking-pages-with-layouts.html#cb35-14" aria-hidden="true"></a></span>
-<span id="cb35-15"><a href="video-segment-linking-pages-with-layouts.html#cb35-15" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
-<span id="cb35-16"><a href="video-segment-linking-pages-with-layouts.html#cb35-16" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/&quot;</span><span class="kw">&gt;</span>Rules<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb35-17"><a href="video-segment-linking-pages-with-layouts.html#cb35-17" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
-<span id="cb35-18"><a href="video-segment-linking-pages-with-layouts.html#cb35-18" aria-hidden="true"></a></span>
-<span id="cb35-19"><a href="video-segment-linking-pages-with-layouts.html#cb35-19" aria-hidden="true"></a>Copyright, Appdev 2022. All rights reserved.</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb38-1"><a href="video-segment-linking-pages-with-layouts.html#cb38-1" aria-hidden="true"></a><span class="co">&lt;!-- app/view/layouts/wrapper.html.erb --&gt;</span></span>
+<span id="cb38-2"><a href="video-segment-linking-pages-with-layouts.html#cb38-2" aria-hidden="true"></a></span>
+<span id="cb38-3"><a href="video-segment-linking-pages-with-layouts.html#cb38-3" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
+<span id="cb38-4"><a href="video-segment-linking-pages-with-layouts.html#cb38-4" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/rock&quot;</span><span class="kw">&gt;</span>Play Rock<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb38-5"><a href="video-segment-linking-pages-with-layouts.html#cb38-5" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb38-6"><a href="video-segment-linking-pages-with-layouts.html#cb38-6" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
+<span id="cb38-7"><a href="video-segment-linking-pages-with-layouts.html#cb38-7" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/paper&quot;</span><span class="kw">&gt;</span>Play Paper<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb38-8"><a href="video-segment-linking-pages-with-layouts.html#cb38-8" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb38-9"><a href="video-segment-linking-pages-with-layouts.html#cb38-9" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
+<span id="cb38-10"><a href="video-segment-linking-pages-with-layouts.html#cb38-10" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/scissors&quot;</span><span class="kw">&gt;</span>Play Scissors<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb38-11"><a href="video-segment-linking-pages-with-layouts.html#cb38-11" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb38-12"><a href="video-segment-linking-pages-with-layouts.html#cb38-12" aria-hidden="true"></a></span>
+<span id="cb38-13"><a href="video-segment-linking-pages-with-layouts.html#cb38-13" aria-hidden="true"></a><span class="er">&lt;</span>%= yield %&gt;</span>
+<span id="cb38-14"><a href="video-segment-linking-pages-with-layouts.html#cb38-14" aria-hidden="true"></a></span>
+<span id="cb38-15"><a href="video-segment-linking-pages-with-layouts.html#cb38-15" aria-hidden="true"></a><span class="kw">&lt;div&gt;</span></span>
+<span id="cb38-16"><a href="video-segment-linking-pages-with-layouts.html#cb38-16" aria-hidden="true"></a>  <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/&quot;</span><span class="kw">&gt;</span>Rules<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb38-17"><a href="video-segment-linking-pages-with-layouts.html#cb38-17" aria-hidden="true"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb38-18"><a href="video-segment-linking-pages-with-layouts.html#cb38-18" aria-hidden="true"></a></span>
+<span id="cb38-19"><a href="video-segment-linking-pages-with-layouts.html#cb38-19" aria-hidden="true"></a>Copyright, Appdev 2022. All rights reserved.</span></code></pre></div>
 <p>{: mark_lines=“13”}</p>
 <p>Now every page that we visit will have all of its contents placed where the above highlighted code says <code>&lt;%= yield %&gt;</code>. We just need to also change our <code>application_controller.rb</code> file to note this and have it take effect:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb36-1"><a href="video-segment-linking-pages-with-layouts.html#cb36-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
-<span id="cb36-2"><a href="video-segment-linking-pages-with-layouts.html#cb36-2" aria-hidden="true"></a></span>
-<span id="cb36-3"><a href="video-segment-linking-pages-with-layouts.html#cb36-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
-<span id="cb36-4"><a href="video-segment-linking-pages-with-layouts.html#cb36-4" aria-hidden="true"></a>  layout(<span class="st">&quot;wrapper.html.erb&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb39-1"><a href="video-segment-linking-pages-with-layouts.html#cb39-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb39-2"><a href="video-segment-linking-pages-with-layouts.html#cb39-2" aria-hidden="true"></a></span>
+<span id="cb39-3"><a href="video-segment-linking-pages-with-layouts.html#cb39-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb39-4"><a href="video-segment-linking-pages-with-layouts.html#cb39-4" aria-hidden="true"></a>  layout(<span class="st">&quot;wrapper.html.erb&quot;</span>)</span></code></pre></div>
 <p>{: mark_lines=“4”}</p>
 <p>This <code>layout</code> method takes one argument and it already knows to look in the folder <code>app/views/layouts/</code> for the file that we created.</p>
 <p>After this change, try visiting your pages using the links on every page. It should work (except for <strong>/scissors</strong> because we haven’t done the RCAV for that page yet).</p>
 <p>If we only wanted the layout to apply on a per-page basis we could also leave <code>layout(false)</code> in the previous code, and we could in the <code>play_rock</code> method (action) change our render statement to:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb37-1"><a href="video-segment-linking-pages-with-layouts.html#cb37-1" aria-hidden="true"></a>render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span>, <span class="st">:layout</span> =&gt; <span class="st">&quot;wrapper.html.erb&quot;</span> })</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb40-1"><a href="video-segment-linking-pages-with-layouts.html#cb40-1" aria-hidden="true"></a>render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span>, <span class="st">:layout</span> =&gt; <span class="st">&quot;wrapper.html.erb&quot;</span> })</span></code></pre></div>
 <p>This additional <code>:layout</code> argument would then only put the nav-bar and footer in <code>wrapper.html.erb</code> on the <strong>/rock</strong> route.</p>
-<p>Time for a <code>rails grade</code> and a <code>/git</code> commit!</p>
+<p>Time for a <code>rails grade</code> and a <strong>/git</strong> commit!</p>
 <p>The rest of the project is up to you to finish. Visit the <strong>specs</strong> and wire them all up. You have all the tools now.</p>
 <div id="text-companion-linking-pages-with-layouts" class="section level3 hasAnchor" number="16.13.1">
 <h3><span class="header-section-number">16.13.1</span> Text Companion: Linking Pages with Layouts<a href="video-segment-linking-pages-with-layouts.html#text-companion-linking-pages-with-layouts" class="anchor-section" aria-label="Anchor link to header"></a></h3>

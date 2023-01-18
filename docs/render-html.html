@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>16.2 RCAV: Route | AD1</title>
+  <title>16.7 Render HTML | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="16.2 RCAV: Route | AD1" />
+  <meta property="og:title" content="16.7 Render HTML | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="16.2 RCAV: Route | AD1" />
+  <meta name="twitter:title" content="16.7 Render HTML | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="dynamic-web-applications-and-urls.html"/>
-<link rel="next" href="rcav-controller-action-view.html"/>
+<link rel="prev" href="our-first-rcav.html"/>
+<link rel="next" href="video-segment-embedded-ruby-tags.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -1578,52 +1578,129 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rcav-route" class="section level2 hasAnchor" number="16.2">
-<h2><span class="header-section-number">16.2</span> RCAV: Route<a href="rcav-route.html#rcav-route" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="render-html" class="section level2 hasAnchor" number="16.7">
+<h2><span class="header-section-number">16.7</span> Render HTML<a href="render-html.html#render-html" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details>
 <summary>
 Notes:
 </summary>
 <ul>
-<li>time stamp 00:03:30 to 00:07:10
+<li>time stamp 00:18:40 to 00:26:38
 <ul>
-<li>all about routing and <code>config/routes.rb</code></li>
-<li><code>get()</code></li>
+<li>from <code>render({ :plain =&gt; "Hello, world!" })</code> to <code>render({ :template =&gt; "game_templates/user_rock.html.erb" })</code></li>
+<li><code>.html</code> vs. <code>.html.erb</code></li>
+<li><code>app/views/</code> view templates rather than <code>public/</code></li>
 </ul></li>
 </ul>
 </details>
-<p>The key is <em>routes</em>. <em>Routes</em> are how we connect a URL to an <em>action</em>.</p>
-<p>The <code>config/routes.rb</code><span id="fn-2"><!--
---><label for="fn-2-toggle"><sup>2</sup></label><!--
---><input type="checkbox" hidden id="fn-2-toggle"/>
-<span id="fn-content">It’s finally time to move out of our <code>public/</code> and <code>tasks/</code> folders, and use more of our Rails application by working in the <code>app/</code> folder, where most of our code goes, and with this one file <code>routes.rb</code> that is in the <code>config/</code> folder.</span></span> file included in every Rails app lists all of the URLs (<em>routes</em>) that a user can visit. When someone visits the URL we say which class and which method Rails should execute to handle the request. Here is an example of a route:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="rcav-route.html#cb1-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
-<span id="cb1-2"><a href="rcav-route.html#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="rcav-route.html#cb1-3" aria-hidden="true"></a><span class="dv">self</span>.get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span></code></pre></div>
-<p>The method here is <code>get</code><span id="fn-3"><!--
---><label for="fn-3-toggle"><sup>3</sup></label><!--
---><input type="checkbox" hidden id="fn-3-toggle"/>
-<span id="fn-content">Later we’ll use other methods, like <code>post</code>, if we want to support requests using the other HTTP verbs.</span></span> and there are parentheses for its <em>two arguments</em>:</p>
-<ol style="list-style-type: decimal">
-<li><p>A <code>String</code>: the <em>path</em> that we want users to be able to visit (the <mark>path</mark> is the portion of the URL that comes after the <mark>domain name</mark>). Here it is <code>"/rock"</code>.</p></li>
-<li><p>A <code>Hash</code>: this is where we tell Rails which method to call when a user visits the path in the first argument. (We’ll have to actually write this method in the next step, after we write the route.)</p></li>
-</ol>
-<p>The <code>Hash</code> must have two key/value pairs:</p>
-<ul>
-<li><p><code>:controller</code>: The value for this key is what we’re going to name the Class that <em>contains</em> the method we want Rails to call when the user visits the path. For now we’re going to default this value to <code>"application"</code>.</p></li>
-<li><p><code>:action</code>: The value for this key is what we’re going to name the method itself. <em>Action</em> is the term used to refer to Ruby methods that are triggered by users visiting URLs.</p></li>
-</ul>
-<p>The <code>Hash</code> is saying: <em>“Use a <code>Class</code> (controller) called <code>application_controller</code>, and in that <code>Class</code> use a <code>method</code> (action) called <code>play_rock</code> to generate a response for the user.”</em></p>
-<p>Don’t be confused by the key names <code>:controller</code> and <code>:action</code>, these are equivalent to a Ruby Class and method. They just have special names in the lingo of web applications.</p>
-<p>The <code>get</code> method is <em>inherited</em>, we don’t need to build this method ourselves, which saves us a lot of time. We get the plumbing for free and we just need to tell Rails how we want each request to be handled by declaring our routes.</p>
+<p>We’ve written our first functional action, which just redirects someone to a new page. Now let’s <em>render</em> some of our own HTML.</p>
+<p>Change the previous code in <code>app/controllers/application_controller.rb</code> to:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb14-1"><a href="render-html.html#cb14-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb14-2"><a href="render-html.html#cb14-2" aria-hidden="true"></a></span>
+<span id="cb14-3"><a href="render-html.html#cb14-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb14-4"><a href="render-html.html#cb14-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb14-5"><a href="render-html.html#cb14-5" aria-hidden="true"></a></span>
+<span id="cb14-6"><a href="render-html.html#cb14-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb14-7"><a href="render-html.html#cb14-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb14-8"><a href="render-html.html#cb14-8" aria-hidden="true"></a>  </span>
+<span id="cb14-9"><a href="render-html.html#cb14-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb14-10"><a href="render-html.html#cb14-10" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb14-11"><a href="render-html.html#cb14-11" aria-hidden="true"></a></span>
+<span id="cb14-12"><a href="render-html.html#cb14-12" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb14-13"><a href="render-html.html#cb14-13" aria-hidden="true"></a>    </span>
+<span id="cb14-14"><a href="render-html.html#cb14-14" aria-hidden="true"></a>    render({ <span class="st">:plain</span> =&gt; <span class="st">&quot;Hello, world!&quot;</span> })</span>
+<span id="cb14-15"><a href="render-html.html#cb14-15" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb14-16"><a href="render-html.html#cb14-16" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“12-14”}</p>
+<p>Rather than <code>redirect_to</code>, we’ll use another inherited method to complete the request lifecycle: <code>render</code>.</p>
+<p>This method, takes a <code>Hash</code> as an argument with a key/value pair. The key has many options, here we use <code>:plain</code>, which will just send back plain text. A boring response, but good to start with.</p>
+<p>Now, pretend you’re a user and visit <strong>/rock</strong> in the GitPod browser. You should see a mostly empty page with the text “Hello, world!” rendered.</p>
+<p>Congratulations! You’ve wired up a route; prepare to do it a million more times, because all developers do all day is pick the next <em>spec</em>, wire up the route for the URL so that a user can visit it, and then implement the logic to send back the correct information.</p>
+<p>Remember, we did not create and send a file, we are using Ruby to generate this reponse, opening a world of possibilities. For instance, what if we instead rendered a random number:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb15-1"><a href="render-html.html#cb15-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb15-2"><a href="render-html.html#cb15-2" aria-hidden="true"></a></span>
+<span id="cb15-3"><a href="render-html.html#cb15-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb15-4"><a href="render-html.html#cb15-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb15-5"><a href="render-html.html#cb15-5" aria-hidden="true"></a></span>
+<span id="cb15-6"><a href="render-html.html#cb15-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb15-7"><a href="render-html.html#cb15-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb15-8"><a href="render-html.html#cb15-8" aria-hidden="true"></a>  </span>
+<span id="cb15-9"><a href="render-html.html#cb15-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb15-10"><a href="render-html.html#cb15-10" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb15-11"><a href="render-html.html#cb15-11" aria-hidden="true"></a></span>
+<span id="cb15-12"><a href="render-html.html#cb15-12" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb15-13"><a href="render-html.html#cb15-13" aria-hidden="true"></a>    </span>
+<span id="cb15-14"><a href="render-html.html#cb15-14" aria-hidden="true"></a>    render({ <span class="st">:plain</span> =&gt; rand(<span class="dv">100</span>) })</span>
+<span id="cb15-15"><a href="render-html.html#cb15-15" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb15-16"><a href="render-html.html#cb15-16" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“14”}</p>
+<p>Now everytime we refresh <strong>/rock</strong>, we get a different random number, generated automatically by Ruby. This is a <em>dynamic response</em>, not just a static page that we placed in the <code>public/</code> folder. This is a simple example, but fundamentally that’s it. We connected a URL to a method that can do <em>anything</em>. It can call APIs, parse CSVs, compute whatever we want, run machine learning models, etc. Of course, there is a lot more to learn, but <em>fundamentally this is it</em>.</p>
+<p>Now let’s send back some actual HTML:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb16-1"><a href="render-html.html#cb16-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb16-2"><a href="render-html.html#cb16-2" aria-hidden="true"></a></span>
+<span id="cb16-3"><a href="render-html.html#cb16-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb16-4"><a href="render-html.html#cb16-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb16-5"><a href="render-html.html#cb16-5" aria-hidden="true"></a></span>
+<span id="cb16-6"><a href="render-html.html#cb16-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb16-7"><a href="render-html.html#cb16-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb16-8"><a href="render-html.html#cb16-8" aria-hidden="true"></a>  </span>
+<span id="cb16-9"><a href="render-html.html#cb16-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb16-10"><a href="render-html.html#cb16-10" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb16-11"><a href="render-html.html#cb16-11" aria-hidden="true"></a></span>
+<span id="cb16-12"><a href="render-html.html#cb16-12" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb16-13"><a href="render-html.html#cb16-13" aria-hidden="true"></a>    </span>
+<span id="cb16-14"><a href="render-html.html#cb16-14" aria-hidden="true"></a>    render({ <span class="st">:html</span> =&gt; <span class="st">&quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;</span>.html_safe })</span>
+<span id="cb16-15"><a href="render-html.html#cb16-15" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb16-16"><a href="render-html.html#cb16-16" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“14”}</p>
+<p>The <code>:html</code> key allows us to place whatever HTML we want in a <code>String</code> that will be shown on the page. We need the <code>.html_safe</code> on the end of the <code>String</code>. Don’t worry about this<span id="fn-7"><!--
+--><label for="fn-7-toggle"><sup>7</sup></label><!--
+--><input type="checkbox" hidden id="fn-7-toggle"/>
+<span id="fn-content">Okay, if you really want to know, <code>.html_safe</code> is a bit of Rails security to prevent one user from injecting malicious HTML into another user’s browser, in case we were getting the given HTML <code>String</code> from the user (e.g. from a <code>&lt;form&gt;</code>).</span></span>, we will see a better way in a moment.</p>
+<p>If we refresh <strong>/rock</strong>, then we should see our rendered HTML. We could go crazy and put our entire HTML document in that <code>String</code>. But a much better way is to use an <mark>embedded Ruby template</mark> file.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb17-1"><a href="render-html.html#cb17-1" aria-hidden="true"></a><span class="co"># app/controllers/application_controller.rb</span></span>
+<span id="cb17-2"><a href="render-html.html#cb17-2" aria-hidden="true"></a></span>
+<span id="cb17-3"><a href="render-html.html#cb17-3" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">ApplicationController</span> &lt; <span class="dt">ActionController</span>::<span class="dt">Base</span></span>
+<span id="cb17-4"><a href="render-html.html#cb17-4" aria-hidden="true"></a>  layout(<span class="dv">false</span>)</span>
+<span id="cb17-5"><a href="render-html.html#cb17-5" aria-hidden="true"></a></span>
+<span id="cb17-6"><a href="render-html.html#cb17-6" aria-hidden="true"></a>  <span class="co"># Add your actions below this line</span></span>
+<span id="cb17-7"><a href="render-html.html#cb17-7" aria-hidden="true"></a>  <span class="co"># ================================</span></span>
+<span id="cb17-8"><a href="render-html.html#cb17-8" aria-hidden="true"></a>  </span>
+<span id="cb17-9"><a href="render-html.html#cb17-9" aria-hidden="true"></a>  <span class="kw">def</span> play_rock</span>
+<span id="cb17-10"><a href="render-html.html#cb17-10" aria-hidden="true"></a>    <span class="co"># write your code here</span></span>
+<span id="cb17-11"><a href="render-html.html#cb17-11" aria-hidden="true"></a></span>
+<span id="cb17-12"><a href="render-html.html#cb17-12" aria-hidden="true"></a>    <span class="co"># redirect_to(&quot;https://www.wikipedia.org&quot;)</span></span>
+<span id="cb17-13"><a href="render-html.html#cb17-13" aria-hidden="true"></a>    </span>
+<span id="cb17-14"><a href="render-html.html#cb17-14" aria-hidden="true"></a>    <span class="co"># render({ :html =&gt; &quot;&lt;h1&gt;Hellow, world!&lt;/h1&gt;&quot;.html_safe })</span></span>
+<span id="cb17-15"><a href="render-html.html#cb17-15" aria-hidden="true"></a></span>
+<span id="cb17-16"><a href="render-html.html#cb17-16" aria-hidden="true"></a>    render({ <span class="st">:template</span> =&gt; <span class="st">&quot;game_templates/user_rock.html.erb&quot;</span> })</span>
+<span id="cb17-17"><a href="render-html.html#cb17-17" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb17-18"><a href="render-html.html#cb17-18" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>{: mark_lines=“16”}</p>
+<p>The <code>:template</code> key to <code>render</code> allows us to assign a <mark>view template</mark>. We specify the name of a folder <code>game_templates/</code> and file <code>user_rock.html.erb</code> that will contain all of our HTML. This file is an <code>.html.erb</code>, for <em>embedded Ruby template</em>, rather than a plain <code>.html</code> file.</p>
+<p>We can now create this file in the existing <code>app/views/</code> folder. All of our application view templates will go here. It is far safer folder than <code>public/</code>, because users do not have access to its contents, and cannot modify the source code.</p>
+<p>We want to keep things organized and put different templates in different sub-folders. Do not put the <code>.html.erb</code> file in the <code>app/views/layouts/</code> folder that already exists.</p>
+<p>First make a new folder in <code>app/views/</code> by right-clicking on the folder and selecting “New Folder…”, then naming the folder <code>game_templates</code>. Then, right-click on this new folder, select “New File…”, and create <code>user_rock.html.erb</code>. The entire filepath will look like <code>app/views/game_templates/user_rock.html.erb</code>.</p>
+<p><strong>BENP: insert gif of create new folder and create new file steps in GitPod</strong></p>
+<p>By using <code>:template =&gt;</code> in <code>render</code>, Rails knows to look in <code>app/views/</code>. We could call the <code>game_templates/user_rock.html.erb</code> folder and file whatever we want. The user will not see the folder or the file, they will only see <strong>/rock</strong>, the specified route, in their browser.</p>
+<p>Open the newly created <code>user_rock.html.erb</code> file and add some HTML to render:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb18-1"><a href="render-html.html#cb18-1" aria-hidden="true"></a><span class="co">&lt;!-- app/views/game_templates/user_rock.html.erb --&gt;</span></span>
+<span id="cb18-2"><a href="render-html.html#cb18-2" aria-hidden="true"></a></span>
+<span id="cb18-3"><a href="render-html.html#cb18-3" aria-hidden="true"></a><span class="kw">&lt;h2&gt;</span>We played rock!<span class="kw">&lt;/h2&gt;</span></span></code></pre></div>
+<p><strong>Don’t forget to <em>save</em> the file changes if you haven’t done so.</strong></p>
+<p>And now when we refresh <strong>/rock</strong>, we get the text from our file rendered in HTML.</p>
+<p>So after all of that we have an HTML page that basically does what we could have done quickly if we made a file called <code>rock.html</code> in the <code>public/</code> folder.</p>
+<div id="text-companion-render-html" class="section level3 hasAnchor" number="16.7.1">
+<h3><span class="header-section-number">16.7.1</span> Text Companion: Render HTML<a href="render-html.html#text-companion-render-html" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="dynamic-web-applications-and-urls.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rcav-controller-action-view.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="our-first-rcav.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="video-segment-embedded-ruby-tags.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

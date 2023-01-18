@@ -38,8 +38,8 @@ Let's practice building forms. Forms are incredibly important to us. That is the
 
 1. Start the web server by running `bin/server`.
 2. Navigate to your live application preview.
-3. As you work, remember to navigate to **/git** and **A**lways **B**e **C**ommitting.
-4. Organize your workspace tabs. **BENP: Added this step!**
+3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*.
+4. Organize your workspace tabs.
 5. Run `rails grade` as often as you like to see how you are doing, but make sure you **test your app manually first** to make sure it matches the target's behavior.
 
 **BENP: possible image(s) (better, GIFs?) of starting a workspace, opening /git, organizing tabs, noting the target favicon. But these are probably in a different chapter.**
@@ -237,7 +237,7 @@ One of the key problems I have is not naming my `input`, so let's do that in our
 
 Just to be silly **BENP: again, maybe use realistic for, id, name from this point already** we named the `input` `"elephant"`. And now when I **refresh** (the **back** arrow won't change anything) the form at **/square/new**, and enter in 42 again then hit the calculate button, I will see a new URL string: **/square/new?elephant=42**.
 
-Now even though the form isn't taking me to another place, at least the value I typed is getting preserved in the *query string* in the URL. And because of the way that Rails work, that value, if it's in a query string, Rails is going to parse it and put it in a very special `Hash`. We can view that `Hash` in our GitPod terminal (`Cmd + J` to open or close it):
+Now even though the form isn't taking me to another place, at least the value I typed is getting preserved in the *query string* in the URL. And because of the way that Rails work, that value, if it's in a query string, Rails is going to parse it and put it in a very special `Hash`. We can view that `Hash` in our GitPod terminal (<kbd>Ctrl</kbd> + <kbd>J</kbd>: to open or close it):
 
 ![](/assets/omnicalc-1/params-elephant-gitpod-terminal.png)
 
@@ -527,7 +527,7 @@ Now we refresh our browser, RTEM, and add the new view template that we named an
 
 And if we refresh and get no error message, our RCAV is complete and now we just need to get the view template to actually render what we want. 
 
-Try to manually navigate the URL to **/random/results?user_min=1.5&user_max=4.5**. Now go to the GitPod server terminal (as usual `Cmd + J` to open or close it, and `Cmd + K` to clear the log for a better view) and you will see the query string transcribed in the `Parameters` `Hash`, which we know is accessible anywhere in our Rails app by `params = { key => value}`, or, in this case: `params = { "user_min" => "1.5", "user_max" => "4.5" }`. 
+Try to manually navigate the URL to **/random/results?user_min=1.5&user_max=4.5**. Now go to the GitPod server terminal (as usual <kbd>Ctrl</kbd> + <kbd>J</kbd>: to open or close it, and <kbd>Ctrl</kbd> + <kbd>K</kbd>: to clear the log for a better view) and you will see the query string transcribed in the `Parameters` `Hash`, which we know is accessible anywhere in our Rails app by `params = { key => value}`, or, in this case: `params = { "user_min" => "1.5", "user_max" => "4.5" }`. 
 
 Okay so let's get this out in our action:
 

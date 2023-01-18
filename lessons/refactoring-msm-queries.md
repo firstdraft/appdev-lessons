@@ -31,8 +31,8 @@ Practice *reading* the code and reasoning your way through it, line by line; exp
 
 1. Start the web server by running `bin/server`.
 2. Navigate to your live application preview.
-3. As you work, remember to navigate to **/git** and **A**lways **B**e **C**ommitting.
-4. Organize your workspace tabs. **BENP: Added this step!**
+3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*.
+4. Organize your workspace tabs.
 5. Run `rails grade` as often as you like to see how you are doing, but make sure you **test your app manually first** to make sure it matches the target's behavior.
 
 **BENP: possible image(s) (better, GIFs?) of starting a workspace, opening /git, organizing tabs, noting the target favicon. But these are probably in a different chapter.**

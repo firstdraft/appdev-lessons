@@ -31,7 +31,7 @@
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="rcav-controller-action-view.html"/>
-<link rel="next" href="video-segment-starting-our-gitpod-workspace.html"/>
+<link rel="next" href="starting-our-gitpod-workspace.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -486,21 +486,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="16.2" data-path="rcav-route.html"><a href="rcav-route.html"><i class="fa fa-check"></i><b>16.2</b> RCAV: Route</a></li>
 <li class="chapter" data-level="16.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>16.3</b> RCAV: Controller, Action, View</a></li>
-<li class="chapter" data-level="16.4" data-path="dropping-self..html"><a href="dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Dropping <code>self.</code></a>
+<li class="chapter" data-level="16.4" data-path="dropping-self..html"><a href="dropping-self..html"><i class="fa fa-check"></i><b>16.4</b> Dropping <code>self.</code></a></li>
+<li class="chapter" data-level="16.5" data-path="starting-our-gitpod-workspace.html"><a href="starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>16.5</b> Starting Our GitPod Workspace</a></li>
+<li class="chapter" data-level="16.6" data-path="our-first-rcav.html"><a href="our-first-rcav.html"><i class="fa fa-check"></i><b>16.6</b> Our First RCAV</a>
 <ul>
-<li class="chapter" data-level="16.4.1" data-path="dropping-self..html"><a href="dropping-self..html#text-companion-dropping-.self"><i class="fa fa-check"></i><b>16.4.1</b> Text Companion: Dropping <code>.self</code></a></li>
+<li class="chapter" data-level="16.6.1" data-path="our-first-rcav.html"><a href="our-first-rcav.html#our-first-rcav-completed-code"><i class="fa fa-check"></i><b>16.6.1</b> Our First RCAV: Completed Code</a></li>
 </ul></li>
-<li class="chapter" data-level="16.5" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>16.5</b> Video Segment: Starting Our GitPod Workspace</a>
+<li class="chapter" data-level="16.7" data-path="render-html.html"><a href="render-html.html"><i class="fa fa-check"></i><b>16.7</b> Render HTML</a>
 <ul>
-<li class="chapter" data-level="16.5.1" data-path="video-segment-starting-our-gitpod-workspace.html"><a href="video-segment-starting-our-gitpod-workspace.html#text-companion-starting-our-gitpod-workspace"><i class="fa fa-check"></i><b>16.5.1</b> Text Companion: Starting Our GitPod Workspace</a></li>
-</ul></li>
-<li class="chapter" data-level="16.6" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html"><i class="fa fa-check"></i><b>16.6</b> Video Segment: Our First RCAV</a>
-<ul>
-<li class="chapter" data-level="16.6.1" data-path="video-segment-our-first-rcav.html"><a href="video-segment-our-first-rcav.html#text-companion-our-first-rcav"><i class="fa fa-check"></i><b>16.6.1</b> Text Companion: Our First RCAV</a></li>
-</ul></li>
-<li class="chapter" data-level="16.7" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html"><i class="fa fa-check"></i><b>16.7</b> Video Segment: Render HTML</a>
-<ul>
-<li class="chapter" data-level="16.7.1" data-path="video-segment-render-html.html"><a href="video-segment-render-html.html#text-companion-render-html"><i class="fa fa-check"></i><b>16.7.1</b> Text Companion: Render HTML</a></li>
+<li class="chapter" data-level="16.7.1" data-path="render-html.html"><a href="render-html.html#text-companion-render-html"><i class="fa fa-check"></i><b>16.7.1</b> Text Companion: Render HTML</a></li>
 </ul></li>
 <li class="chapter" data-level="16.8" data-path="video-segment-embedded-ruby-tags.html"><a href="video-segment-embedded-ruby-tags.html"><i class="fa fa-check"></i><b>16.8</b> Video Segment: Embedded Ruby Tags</a>
 <ul>
@@ -1599,7 +1593,7 @@ Notes:
 </details>
 <p>Before proceeding, let’s get something out of the way.</p>
 <p>We are using the <code>self</code> keyword in our example because we are calling these methods on the Class (<code>ApplicationController</code>) that we are defining the action (<code>play_rock</code>) for. <a href="our-own-classes.html#our-own-classes">Recall</a> when we learned about the <code>Person</code> Class, with the instance methods <code>first_name</code> and <code>last_name</code>. If we wanted a <code>full_name</code> method we called <code>self.first_name + self.last_name</code>.</p>
-<p>In our example, we’re defining <code>play_rock</code> and we want use the method <code>redirect</code> which already exists on <code>ApplicationController</code>. We don’t see <code>def redirect</code> in our Class, since it’s inherited via <code>&lt; ActionController::Base</code> and is defined there. So, we are using a method that already exists in the Class to build our new method, hence <code>self.redirect_to</code>.</p>
+<p>In our example, we’re defining <code>play_rock</code> and we want use the method <code>redirect</code> that already exists on <code>ApplicationController</code>. We don’t see <code>def redirect</code> in our Class, since it’s inherited via <code>&lt; ActionController::Base</code> and is defined there. So, we are using a method that already exists in the Class to build our new method, hence <code>self.redirect_to</code>.</p>
 <p>But, in Ruby, when we call a method on <code>self</code>, we can drop the <code>self.</code>, and Ruby will figure it out. Before anything, Ruby will look to see if that object exists in the Class, no <code>self.</code> required!</p>
 <p>In practice, that means we can re-write the code to:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb6-1"><a href="dropping-self..html#cb6-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
@@ -1615,9 +1609,6 @@ Notes:
 <span id="cb7-6"><a href="dropping-self..html#cb7-6" aria-hidden="true"></a>  <span class="kw">end</span> </span>
 <span id="cb7-7"><a href="dropping-self..html#cb7-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>{: mark_lines=“5” }</p>
-<div id="text-companion-dropping-.self" class="section level3 hasAnchor" number="16.4.1">
-<h3><span class="header-section-number">16.4.1</span> Text Companion: Dropping <code>.self</code><a href="dropping-self..html#text-companion-dropping-.self" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
 </div>
             </section>
 
@@ -1625,7 +1616,7 @@ Notes:
         </div>
       </div>
 <a href="rcav-controller-action-view.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="video-segment-starting-our-gitpod-workspace.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="starting-our-gitpod-workspace.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
