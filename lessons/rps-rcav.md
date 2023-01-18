@@ -689,7 +689,7 @@ If you haven't, now would be a good time to run `rails grade` at the GitPod term
 ```
 
 
-## Homepage RCAV
+## Reinforce RCAV with /
 
 <details>
   <summary>Notes:</summary>  
@@ -697,7 +697,11 @@ If you haven't, now would be a good time to run `rails grade` at the GitPod term
   - RCAV with `render` for **/**
 </details>
 
-The [target](https://rps-rcav.matchthetarget.com/){target="_blank"} has a homepage at the root URL, **/**. In the old days, we would create a file in `public/` called `index.html`, but now we are pretty much done with `public/` except maybe for static assets like images or css files, but we won't put any more user-facing URL pages there. Those will be connected up with routes from here on. Let's go to our `config/routes.rb` and add a homepage route:
+Before we go on with the embedded Ruby, let's reinforce RCAV a couple of times.
+
+The [target](https://rps-rcav.matchthetarget.com/){target="_blank"} has a homepage at the root URL, **/**. In the old days, we would create a file in `public/` called `index.html`, but from here on we will connect any URL with routes. 
+
+Open the `config/routes.rb` file and add a homepage route:
 
 ```ruby
 # config/routes.rb
@@ -712,17 +716,19 @@ end
 ```
 {: mark_lines="5" }
 
-We are adding the `"/"` homepage route, we are using the `application_controller.rb` file, and we are using the action (or the method within the `ApplicationController`) that we call `homepage`. 
+We are using `get` to add the `"/"` homepage route. `:controller => "application"` signifies that we are using the `app/controllers/application_controller.rb` file for our controller, and `:action => "homepage"` is a yet to be defined action in the controller. 
 
-Now if I refresh the **/** page, I get an error message that the `homepage` action cannot be found in `ApplicationController`:
+In the browser, pretend to be a user and navigate to the URL **/** in the address bar. <mark>RTEM</mark>.
 
-```ruby
+```
 The action 'play_rock' could not be found for ApplicationController
 ```
 
 ![](/assets/rps-rcav/err-action-not-in-contoller.png)
 
-This is good! That means we defined the route correctly. If you still see a "No route matches" error, then double-check your route syntax and get that error to go away before you proceed further. The error occurs because we did not yet define the action. So we need to go to our `app/controllers/application_controller.rb` file and add:
+This is good! That means we defined the route correctly. If you still see a "No route matches" error, then double-check your route syntax in the `get` method, save the changes, and get that error to go away before you proceed. 
+
+The new error occurs because we did not yet define the action! So we need to open `app/controllers/application_controller.rb` and add:
 
 ```ruby
 # app/controllers/application_controller.rb
@@ -750,7 +756,7 @@ end
 ```
 {: mark_lines="9-11"}
 
-And now we can create that new file `game_templates/rules.html.erb`, and add to it:
+Now create the view template file `game_templates/rules.html.erb`, again in `app/views/` where *all* our view templates live in organized subfolders. Once you create the file, add some HTML copy to it:
 
 ```html
 <!-- app/views/game_templates/rules.html.erb -->
@@ -758,18 +764,62 @@ And now we can create that new file `game_templates/rules.html.erb`, and add to 
 <h1>Welcome to RPS</h1>
 ```
 
-Now when we refresh **/**, there is no error and our HTML template is rendered. And we did not put any HTML in the public folder! You will almost always want some kind of dynamic behavior on every page. So our new workflow is always RCAV: Define a route, assign a controller, create an action in that controller, and view the result.
+Now refresh **/**. There is no error and our HTML template is rendered. And we did not put any HTML in the `public/` folder! You will almost always want some kind of dynamic behavior on every page. So our new workflow is *always RCAV*: Define a *route*, assign a *controller*, create an *action* in that controller, and *view* the result.
 
-### Text Companion: Homepage
+### Completed Code
 
-## Video Segment: Reinforce RCAV with /paper
+```ruby
+# config/routes.rb
 
-- Notes:
+Rails.application.routes.draw do
+  
+  get("/", { :controller => "application", :action => "homepage" })
 
+  get("/rock", { :controller => "application", :action => "play_rock" })
+
+end
+```
+
+```ruby
+# app/controllers/application_controller.rb
+
+class ApplicationController < ActionController::Base
+  layout(false)
+
+  # Add your actions below this line
+  # ================================
+  
+  def homepage
+    render({ :template => "game_templates/rules.html.erb" })
+  end
+
+  def play_rock
+    # write your code here
+    
+    # redirect_to("https://www.wikipedia.org")
+    
+    # render({ :html => "<h1>Hellow, world!</h1>".html_safe })
+
+    render({ :template => "game_templates/user_rock.html.erb" })
+  end
+end
+```
+
+```html
+<!-- app/views/game_templates/rules.html.erb -->
+
+<h1>Welcome to RPS</h1>
+```
+
+## Reinforce RCAV with /paper
+
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:40:18 to 00:44:27
   - RCAV with `render` for **/paper**
+</details>
 
-Let's start with the **/paper** route, for when we play paper. First we define the route in `config/routes.rb` with a controller:
+Let's reinforce the steps again with the **/paper** route, for when the user plays paper. First, define the route in `config/routes.rb` with a controller:
 
 ```ruby
 # config/routes.rb
@@ -788,9 +838,9 @@ end
 
 Again, we use the `application_controller.rb`. If we pretend we are a user now and go to **/paper**, we again get the "action not found" error. The helpful error message (RTEM!) tells us we need to define another method for the action in our controller called `play_paper`. 
 
-We are in our **Route, Controller, Action, View** sequence that makes Rails so useful! It's the same flow, over and over again. All we need to do is keep visiting the route and RTEM to find the next step.
+It's the same flow, over and over again. Make a change, visit the route, RTEM, and find the next step.
 
-Ok, let's define the action in our `app/controllers/application_controller.rb`:
+Ok, then define the action in our controller:
 
 ```ruby
 # app/controllers/application_controller.rb
@@ -824,33 +874,95 @@ end
 ```
 {: mark_lines="23-26"}
 
-Now we can pretend we are a user and again refresh **/paper**. And we'll get a new error message that tells us we are missing the view template:
+Refresh **/paper**, and we'll get a new error message:
+
+```
+Missing template game_templates/user_paper.html.erb
+```
 
 ![](/assets/rps-rcav/err-missing-view-template.png)
 
-If you cannot figure out what your typo is and why an error message keeps coming up, then delete what you wrote and try to type it again from scratch (or talk to your rubber duck). 
+If you keep getting the same error message, there are a few steps you can try:
 
-We RTEM above and that tells us to go and make the new `game_templates/user_paper.html.erb` file that will be rendered to the user:
+  1. Carefully scan your code for a typo. Your syntax needs to be exact. *Grammar* matters!
+  1. If you cannot figure out what your typo is and why an error message keeps coming up, then delete what you wrote and try to type it again from scratch.
+  1. Explain the code line-by-line out loud to yourself or someone else.
+
+Back to our new error, we RTEM, and that tells us to go and make the new `game_templates/user_paper.html.erb` file (in `app/views/`) that will be rendered to the user:
 
 ```html
 <!-- app/views/game_templates/user_paper.html.erb -->
 
 <h2>
-    We played paper!
+  We played paper!
 </h2>
 ```
 
-And now our view at **/paper** renders content with no error message. A successful RCAV!
+Refresh **/paper**. No error message? A successful RCAV!
 
-### Text Companion: Reinforce RCAV with /paper
+### Completed Code
 
-## Video Segment: Embedded Ruby in the Controller with Instance Variables
+```ruby
+# config/routes.rb
 
-- Notes:
+Rails.application.routes.draw do
+  
+  get("/", { :controller => "application", :action => "homepage" })
 
+  get("/rock", { :controller => "application", :action => "play_rock" })
+
+  get("/paper", { :controller => "application", :action => "play_paper" })
+
+end
+```
+
+```ruby
+# app/controllers/application_controller.rb
+
+class ApplicationController < ActionController::Base
+  layout(false)
+
+  # Add your actions below this line
+  # ================================
+  
+  def homepage
+    render({ :template => "game_templates/rules.html.erb" })
+  end
+
+  def play_rock
+    # write your code here
+    
+    # redirect_to("https://www.wikipedia.org")
+    
+    # render({ :html => "<h1>Hellow, world!</h1>".html_safe })
+
+    render({ :template => "game_templates/user_rock.html.erb" })
+  end
+
+  def play_paper
+
+    render({ :template => "game_templates/user_paper.html.erb" })
+  end
+
+end
+```
+
+```html
+<!-- app/views/game_templates/user_paper.html.erb -->
+
+<h2>
+  We played paper!
+</h2>
+```
+
+## Embedded Ruby in the Controller with Instance Variables
+
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:44:27 to 00:54:20
   - moving conditional control flow `<% if ... %>` from **/rock** into the `ApplicationController` action `play_rock`
   - local variables vs. instance variables with `@`-notation
+</details>
 
 Now that we are RCAV pros, let me show you another (perhaps better, depending on your taste) way of writing our embedded Ruby code. Let's return to the `game_templates/user_rock.html.erb` file:
 
@@ -1040,16 +1152,17 @@ Most computation work like this should go in the controller as we have done it h
 
 Time for a `rails grade` and a **/git** commit!
 
-### Text Companion: Embedded Ruby in the Controller with Instance Variables
+### Completed Code
 
-## Video Segment: Linking Pages with Layouts
+## Linking Pages with Layouts
 
-- Notes:
-
+<details>
+  <summary>Notes:</summary>  
   - time stamp 00:54:20 to 01:00:49
   - all about `app/views/layouts/wrapper.html.erb` to get some headers, footers, and navigation links
   - `layout("wrapper.html.erb")` in `ApplicationController`
   - `:layout` argument for `render()`
+</details>
 
 It would now be nice to add some links so we don't need to type in the URL addresses, like in our [target](https://rps-rcav.matchthetarget.com/){target="_blank"}. 
 
@@ -1134,19 +1247,21 @@ Time for a `rails grade` and a **/git** commit!
 
 The rest of the project is up to you to finish. Visit the **specs** and wire them all up. You have all the tools now.
 
-### Text Companion: Linking Pages with Layouts
+### Completed Code
 
 ## Finish and Submit RPS RCAV
 
-- Notes:
-
+<details>
+  <summary>Notes:</summary>  
   - Refer students to [`rails grade`][`rails grade`], [git][Using Git to freely experiment and save work], and [Sharing a Gitpod Snapshot][Sharing a Gitpod Snapshot] sections for how to get help
+</details>
 
 ## RCAV Addendums
 
-- Notes:
-
+<details>
+  <summary>Notes:</summary>  
   - Stuff that I did not zip in from the chapter [Adding Routes][Adding Routes]:
+</details>
 
 ### Addendum: Rendering JSON
 
