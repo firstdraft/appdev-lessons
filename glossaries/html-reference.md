@@ -328,7 +328,7 @@ The `title` tag is required and used to assign a title to an HTML document. Thes
 </html>
 ```
 
-![](assets/html-reference/browser-title.jpg)
+![](/assets/html-reference/browser-title.jpg)
 
 With the addition of `<title>`, we now have a complete, valid HTML document.
 

@@ -16,7 +16,7 @@ The starting point of this project is a blank Rails application. You need to cre
 
 We domain modeled this application in first two weeks of class, and used the same database structure in photogram-gui and photogram-signin; here's the Entity Relationship Diagram (ERD):
 
-![](assets/photogram-final/photogram-final-erd.png)
+![](/assets/photogram-final/photogram-final-erd.png)
 
 _All tables will automatically get the usual `id`, `created_at`, and `updated_at` columns._
 

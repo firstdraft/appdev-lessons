@@ -93,7 +93,7 @@ If we open our app browser, we can see that we do have a homepage **/** with the
 
 Before we do anything, navigate to **/rails/db** in the browser. You will see a really cool gem. This is not included in Rails by default, it's rather a third party gem from the community. It's a visual interface to your database:
 
-![](assets/msm-queries/rails-db.png)
+![](/assets/msm-queries/rails-db.png)
 
 Rails includes a database out-of-the-box. This is unlike other frameworks, where you need to pick one, connect to it, etc. If you're lucky you can easily connect to it, but you still have to set it up. 
 

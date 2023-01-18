@@ -239,7 +239,7 @@ Just to be silly **BENP: again, maybe use realistic for, id, name from this poin
 
 Now even though the form isn't taking me to another place, at least the value I typed is getting preserved in the *query string* in the URL. And because of the way that Rails work, that value, if it's in a query string, Rails is going to parse it and put it in a very special `Hash`. We can view that `Hash` in our GitPod terminal (<kbd>Ctrl</kbd> + <kbd>J</kbd>: to open or close it):
 
-![](assets/omnicalc-1/params-elephant-gitpod-terminal.png)
+![](/assets/omnicalc-1/params-elephant-gitpod-terminal.png)
 
 This `Hash` with the name `Parameters` is now available in our entire app: in the view template, the action, we can use it anywhere. That is the crux of how we get information out of forms. All we need to do is `name` an `input` in the form, and that will capture the variable in our query string and Rails will put it in a hash that we can access. After all the API work that we've done **BENP: wait, did we do API work up to this point?** we are pros at capturing things out of hashes.
 
@@ -614,7 +614,7 @@ The way the assignment should work is:
     - If I submit that form, I should see the **monthly** payment due given the values that I entered.
     - Mind your units! Use this formula:
 
-        ![Payment formula](assets/omnical-1/payment_formula.gif)
+        ![Payment formula](/assets/omnical-1/payment_formula.gif)
 
     - Hint 1: The number of periods, `n`, that we receive from the user is in years. Since we're calculating monthly payment we multiply it by 12.
     - Hint 2: `apr` comes in as a string. We should turn it into a float and divide the number by 100 to get the percentage.

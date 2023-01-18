@@ -14,7 +14,7 @@ So remember: everything always starts with a **route** between an *address* we w
 
 In order to support a URL in your app such as `https://3000-your-gitpod-workspace.gitpod.io/home`, there are a lot of dots to connect!
 
-![](assets/rcav-flowchart/rcav-chart.png)
+![](/assets/rcav-flowchart/rcav-chart.png)
 
  1. A user visits an address in our app; in this case, we chose `/home`.
  2. If we want to allow users to visit that address, we have to add a **route** for it in `config/routes.rb`.

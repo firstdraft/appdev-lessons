@@ -7,20 +7,20 @@
 ## Create your GitHub repository
 1. Visit [https://github.com/appdev-projects/base-rails](https://github.com/appdev-projects/base-rails){target="_blank"}
 2. Click on "Use this template"
-  ![](assets/starting-a-rails-project-from-scratch/use-this-template.png)
+  ![](/assets/starting-a-rails-project-from-scratch/use-this-template.png)
 3. In the "Owner" dropdown, select your GitHub organization and choose a name for your project
-  ![](assets/starting-a-rails-project-from-scratch/name-app.png)
+  ![](/assets/starting-a-rails-project-from-scratch/name-app.png)
 4. Make sure "public" is selected
-  ![](assets/starting-a-rails-project-from-scratch/select-public.png)
+  ![](/assets/starting-a-rails-project-from-scratch/select-public.png)
 5. Click "Create repository from template" 
 
 ## Create a Gitpod workspace off of your GitHub repository
 - Copy the URL of your GitHub repositroy
-  ![](assets/starting-a-rails-project-from-scratch/copy-repo-url.png)
+  ![](/assets/starting-a-rails-project-from-scratch/copy-repo-url.png)
 - In the address bar of your browser type: `gitpod.io/#` + your GitHub repository URL
-  ![](assets/starting-a-rails-project-from-scratch/create-new-gitpod-workspace.png)
+  ![](/assets/starting-a-rails-project-from-scratch/create-new-gitpod-workspace.png)
   - Alternatively, if you have the [Gitpod extension](https://chrome.google.com/webstore/detail/gitpod-dev-environments-i/dodmmooeoklaejobgleioelladacbeki?hl=en){target="_blank"} installed, you can click on the Gitpod button
-  ![](assets/starting-a-rails-project-from-scratch/open-repo-in-gitpod.png)
+  ![](/assets/starting-a-rails-project-from-scratch/open-repo-in-gitpod.png)
 
 
 ## Differences between base-rails and a plain new Rails app

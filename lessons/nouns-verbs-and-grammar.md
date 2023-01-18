@@ -10,7 +10,7 @@ Programming is the art of getting a computer to do useful things with informatio
 
 If you think about it that way, then you already know at least one programming language:
 
-![](assets/nouns-verbs-and-grammar/youalreadyknow.png)
+![](/assets/nouns-verbs-and-grammar/youalreadyknow.png)
 
 In the case of a calculator, the "information" is numbers and the "useful things" are adding, subtracting, multiplying, etc. Like any computer (or person), we get the calculator to do useful work by writing instructions that it can understand.
 
@@ -82,7 +82,7 @@ Here's a real example:
 
 Here, you try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a Repl will copy the Repl to your own account and allow you to edit it.
 
-![](assets/nouns-verbs-and-grammar/replit-fork-hd.png)
+![](/assets/nouns-verbs-and-grammar/replit-fork-hd.png)
 
 In the black window that appears at the bottom of the window, type:
 
@@ -94,7 +94,7 @@ and press <kbd>return</kbd>. This will launch _interactive Ruby_ (IRB), a progra
 
 At the `irb(main)` prompt that appears, you can now try out `"hello world!".upcase`:
 
-![](assets/nouns-verbs-and-grammar/irb.png)
+![](/assets/nouns-verbs-and-grammar/irb.png)
 
 If all went well, you should have seen `=> "HELLO WORLD!"` in the black window at the bottom (known as the "terminal"). Yay[^tradition]! What just happened?
 
