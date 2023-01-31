@@ -452,6 +452,13 @@ stretch-goal
 using-gems-to-interact-with-apis
 twilio
 google-cloud-translate
+dynamic-routes
+the-limit-of-static-routes
+what-are-dynamic-routes
+why-do-we-use-them
+how-to-define-a-dynamic-route
+using-params
+demo-1
 refactoring-fortune-teller-with-dynamic-routes
 part-1-dice
 part-2-horoscopes
