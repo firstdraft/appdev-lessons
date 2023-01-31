@@ -59,7 +59,7 @@ Here is a practical guide for how to edit and compile the book. A lot more detai
           ...
       ```
 
-1. When you add a lesson (new `.md`  file), also make an `assets/` sub-directory (even if it's empty). Like `lessons/my-file.md`, `assets/my-file/`. **And if you change the `.md` file-name, change the sub-directory name**. Never put chapter numbers in any filenames. We don't want to imply any order.
+1. When you add a lesson (new `.md`  file), make an `assets/` sub-directory *only if there are images you want to include in the lesson*. Like `lessons/my-file.md`, `assets/my-file/`. If you change the `.md` file-name, change the assets sub-directory name as well. Never put chapter numbers in any filenames. We don't want to imply any order.
 
 1. Here are instructions for getting R to work with VS Code so we can render the book: [https://www.bendirt.com/bookdown/#installing-r-with-vs-code](https://www.bendirt.com/bookdown/#installing-r-with-vs-code)
 
