@@ -44,6 +44,7 @@ rmd_files:
     "lessons/storing-credentials-securely.md",
     "lessons/meteorologist-intro-to-apis.md",
     "lessons/omnicalc-2.md", 
+    "lessons/dynamic-routes.md",
     "lessons/refactoring-fortune-teller-with-dynamic-routes.md",
     "lessons/dashboards.md", 
     "lessons/classroom-domain-modeling.md",
