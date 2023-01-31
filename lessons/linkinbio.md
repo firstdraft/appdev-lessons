@@ -559,6 +559,7 @@ Then peruse [the icon list](https://fontawesome.com/search?m=free){target="_blan
 - [Silk](http://weavesilk.com/){target="_blank"}
 - [Haikei](https://app.haikei.app/){target="_blank"}
 - [Tabbied](https://tabbied.com/select-artwork){target="_blank"}
+- [Broider](https://maxbittker.github.io/broider/){target="_blank"}
 
 #### Filters
 

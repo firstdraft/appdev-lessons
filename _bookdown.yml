@@ -38,6 +38,7 @@ rmd_files:
     # "lessons/routing.md",
     "lessons/rps-rcav.md",
     "lessons/forms-query-strings-and-params.md",
+    "lessons/dynamic-routes.md",
     "lessons/omnicalc-1.md",
     "lessons/fortune-teller.md",
     "lessons/omnicalc-api.md",
