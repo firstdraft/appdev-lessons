@@ -33,6 +33,7 @@ rmd_files:
     "lessons/hash.md",
     "lessons/our-own-classes.md",
     "lessons/ruby-gym.md", 
+    "lesson/umbrella.md",
     # "lessons/adding-routes.md",
     # "lessons/rcav-flowchart.md",
     # "lessons/routing.md",
