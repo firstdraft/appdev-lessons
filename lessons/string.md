@@ -448,6 +448,9 @@ That's about all we'll need to know about strings to do most anything related to
 
   - Copied from project README: [https://github.com/appdev-projects/string-chapter](https://github.com/appdev-projects/string-chapter){target="_blank"}
 
+  - There is an un-transcribed [video](https://canvas.uchicago.edu/courses/47526/pages/video-getting-started-with-the-ruby-chapters){target="_blank"} associated with [String][String] that serves as review of the [Technical Setup][Technical Setup]. This video should be integrated here.
+  
+
 Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
 
 If we want to run `string_multiplication.rb`, we can write the command:
