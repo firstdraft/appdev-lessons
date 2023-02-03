@@ -22,7 +22,7 @@ This will, however, just give us back an empty string `""`. We would then have t
 
 #### Make the invisible visible in GitPod {-}
 
-<mark>✏️ **Exercise:**</mark> Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there. We will alternate between using REPLs for quick sandbox exercises, and GitPod for graded exercises.
+<mark>✏️ **Exercise:**</mark> Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there.
 
 **BENP: As a template use 00:00:00 to 00:06:15 of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} to transcribe and then re-record an exercise where you first open the `helloruby` project, create `howdy.rb`, run it, then add another `invisible_to_visible.rb` exercise like below:**
 
@@ -37,16 +37,18 @@ s = s.upcase
 # p s
 ```
 
+When you are done experimenting, feel free to close the GitPod project window. We will open another project momentarily and only one GitPod tab will limit confusion.
+
 #### ASCII Codes {-}
 
-What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1s`); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
+What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1`s); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
 
 [^unicode]: Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
 
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; ">
    **ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**
    :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
-   32|(space)|48|`0`|64|`@`|80|`P`|96|\`|112|`p`
+   32|(space)|48|`0`|64|`@`|80|`P`|96|<code>\`</code>|112|`p`
    33|`!`|49|`1`|65|`A`|81|`Q`|97|`a`|113|`q`
    34|`"`|50|`2`|66|`B`|82|`R`|98|`b`|114|`r`
    35|`#`|51|`3`|67|`C`|83|`S`|99|`c`|115|`s`
@@ -67,10 +69,14 @@ What's an ASCII code? At the hardware level, computers only store integers (spec
 Given those ASCII codes, we can now build up a new string from scratch like so:
 
 ```ruby
+# instantiate a new variable of String class
 my_string = String.new
 
-p my_string
+# make the invisible visible!
+p my_string # => ""
 
+# use the concat method to add characters
+# one-by-one to the empty string variable
 my_string.concat(72)
 my_string.concat(101)
 my_string.concat(108)
@@ -78,8 +84,10 @@ my_string.concat(108)
 my_string.concat(111)
 my_string.concat(44)
 
-p my_string
+# make the invisible visible!
+p my_string # => "Hello,"
 
+# add some more characters again
 my_string.concat(32)
 my_string.concat(119)
 my_string.concat(111)
@@ -88,14 +96,31 @@ my_string.concat(108)
 my_string.concat(100)
 my_string.concat(33)
 
-p my_string
+# make the invisible visible!
+p my_string # => "Hello, world!"
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
+##### Start the GitPod Project {-}
+
+<mark>✏️ **Exercise:**</mark> It's time to open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file. **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`**
+
+ 1. **BENP: how are they starting the project, fork from canvas, gitpod.io/# method, other?** Fork the project from GitHub: [https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions){target="_blank"}
+ 1. Open the `string_concat.rb` file in the editor window.
+ 1. Modify the file per the instructions on top.
+ 1. Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the terminal. If we want to run `string_concat.rb`, we can write the command:
+
+      ```bash
+      ruby string_concat.rb
+      ```
+   
+      Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use **tab completion**!
+
+1. To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you've run in a terminal.
+1. When you think you have the required output, run `rails grade` and proceed when the test passes without errors.
+
+<!-- This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"} -->
 
 #### String literals {-}
-
-**BENP: possibly shorten section, is it necessary?**
 
 What a pain! Now that we've shown that, under the hood, even creating a string follows the syntax of `noun.verb` — let's never do it again. From now on, we'll use the shortcut of creating string "**literals**" in place by typing the characters we want within quotes: `"Thank goodness!"`
 
@@ -103,11 +128,13 @@ These kinds of exceptions to the regular grammar in order to make life easier ar
 
 ### Methods
 
-Next, let's familiarize ourselves with some of the `String` class's methods. For each method below, we've provided some REPLs. They are there for you to experiment with the code, click "run ▶", or use `irb`and see how the methods work. Keep these methods in mind when working on the assignment in Gitpod.
+Next, let's familiarize ourselves with some of the `String` class's methods. For each method below, there is a an `.rb` exercise in the GitPod project. So keep that project window open and work through it with `rails grade` as you go!
+
+<!-- For each method below, we've provided some REPLs. They are there for you to experiment with the code, click "▶ Run", or use the `irb` terminal and see how the methods work. Keep these methods in mind when working on the assignments in Gitpod. -->
 
 #### String addition, a.k.a. + {-}
 
-We've already met the `.concat` method. `.concat` can accept an integer as an argument, which it interprets as an [ASCII code](https://chapters.firstdraft.com/chapters/757#ascii-codes), translates into a single character, and adds to the original string:
+We've already met the `.concat` method. `.concat` can accept an integer as an argument, which it interprets as an [ASCII code][ASCII Codes], translates into a single character, and adds to the original string:
 
 ```ruby
 "hi".concat(33) # => "hi!"
@@ -453,70 +480,3 @@ and see how it's different.
 ### Conclusion
 
 That's about all we'll need to know about strings to do most anything related to web applications! Next, we'll take a look at numbers, [starting with `Integer`](https://chapters.firstdraft.com/chapters/760).
-
-
-## Ruby Practice: String
-
-- Notes:
-
-  - Copied from project README: [https://github.com/appdev-projects/string-chapter](https://github.com/appdev-projects/string-chapter){target="_blank"}
-
-  - There is an un-transcribed [video](https://canvas.uchicago.edu/courses/47526/pages/video-getting-started-with-the-ruby-chapters){target="_blank"} associated with [String][String] that serves as review of the [Technical Setup][Technical Setup]. This video should be integrated here.
-
-
-Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
-
-If we want to run `string_multiplication.rb`, we can write the command:
-
-```bash
-ruby string_multiplication.rb
-```
-
-To re-run this command, you can use the UP and DOWN arrow keys to look at the history of commands you've run in a Terminal.
-
-### string_multiplication.rb
-Should output:
-```
-"HoHoHo"
-```
-using String multiplication.
-
-(Don't just print the String literal `"HoHoHo"`)
-
-### string_case.rb
-Should output:
-```
-"HELLO friends AnD FaMiLy"
-```
-using a combination of the `upcase`, `downcase`, and `swapcase` methods.
-
-### string_chomp.rb
-Shoud output:
-```
-"Hello!"
-```
-using the given starting variable.
-
-### string_gsub.rb
-Should output:
-```
-"put spaces in between these words"
-```
-using the given starting variable.
-
-### string_strip.rb
-Should output exactly
-```
-"remove the outside spaces"
-```
-using the given starting variable.
-
-### string_gets.rb
-Write a program that gets a name (e.g. "alice") from the user, capitalizes it, and then says "Hello, Alice!"
-
-Should work similarly to the following:
-```
-"What's your name?"
-jelani
-"Hello, Jelani!"
-```
