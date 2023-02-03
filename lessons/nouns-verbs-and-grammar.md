@@ -78,7 +78,7 @@ Here's a real example:
 "Hello, world!".upcase
 ```
 
-> ✏️ **Exercise:** You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a Repl will copy the Repl to your own account and allow you to edit it.
+> ✏️ **Exercise:** You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
 
 <!-- <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/@raghubetina/hello-world?lite=true"></iframe> -->
 
@@ -110,13 +110,13 @@ In this case, we asked `"Hello, world!"`, which is a string (Ruby's name for a p
 
 [^string_name]: The name "string" is used in pretty much every programming language for the datatype that holds a piece of text, and refers to a string of _characters_; a holdover from back when we used to have to worry about conserving the computer's physical storage space and had a separate datatype for an individual character. Now we usually don't have to worry about storage space anymore, but the name "string" stuck with us.
 
-**BENP: shorten ^string\_name footnote. delete after ;**
-
 > ✏️ **Exercise:** At the same `irb(main)` prompt in the Repl, retype the string object, and this time use the `.downcase` method in place of `.upcase`. What happens when you press <kbd>return</kbd>? How about if you use `.split`? We'll circle back on this, but the important thing to note is that there are _many_ built in methods, or verbs.
 
 ### Every class has different methods
 
-Different **classes** can perform different **methods**. Here are a few expressions to try out. Type each one into IRB.
+Different **classes**[^everything_is_object] (string being one) can perform different **methods**. Here are a few expressions to try out. Type each one into IRB.
+
+[^everything_is_object]: Everything in Ruby is an **object**. That's the idea behind [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming){target="_blank"}. Text like `"Hello, world!"` is an object — specifically a **string class object**.
 
 ```ruby
 7.odd?
@@ -126,7 +126,7 @@ Different **classes** can perform different **methods**. Here are a few expressi
 "Your Name".swapcase
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){target="_blank"}
+> ✏️ **Exercise:** [Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){target="_blank"}
 
 What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try it:
 
@@ -136,7 +136,7 @@ What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try i
 
 #### _Do_, or do not. There is no  _read_.
 
-If you weren't typing out every expression in a REPL, then you're doing this wrong. If you're just _reading_, you won't be successful at learning programming; you have to _do_ in order to build up some muscle memory. _Practice is crucial._
+When you saw the "✏️ **Exercise:**" prompt, if you weren't typing out every expression in a REPL, then you're doing this wrong. If you're just _reading_, you won't be successful at learning programming; you have to _do_ in order to build up some muscle memory. _Practice is crucial._
 
 In fact, not only should you be typing the things I ask you to type, but you should also be trying out random other things that occur to you. (E.g., "What if I tried `"Mississippi".length.even?`)
 

@@ -595,7 +595,7 @@ Proudly published with bookdown</a></li>
 <p>Here’s a real example:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="nouns-verbs-and-grammar.html#cb1-1" aria-hidden="true"></a><span class="st">&quot;Hello, world!&quot;</span>.upcase</span></code></pre></div>
 <blockquote>
-<p>✏️ <strong>Exercise:</strong> You try it. <a href="https://replit.com/@raghubetina/hello-world" target="_blank">Click here to visit repl.it</a>, a service that offers instant programming sandboxes within your browser. Click the “Fork” button in the top right and sign in with your Github account. “Forking” a Repl will copy the Repl to your own account and allow you to edit it.</p>
+<p>✏️ <strong>Exercise:</strong> You try it. <a href="https://replit.com/@raghubetina/hello-world" target="_blank">Click here to visit repl.it</a>, a service that offers instant programming sandboxes within your browser. Click the “Fork” button in the top right and sign in with your Github account. “Forking” a REPL will copy the REPL to your own account and allow you to edit it.</p>
 </blockquote>
 <!-- <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/@raghubetina/hello-world?lite=true"></iframe> -->
 <p><img src="/assets/nouns-verbs-and-grammar/replit-fork-hd.png" /></p>
@@ -617,25 +617,29 @@ Proudly published with bookdown</a></li>
 --><label for="fn-3-toggle"><sup>3</sup></label><!--
 --><input type="checkbox" hidden id="fn-3-toggle"/>
 <span id="fn-content">The name “string” is used in pretty much every programming language for the datatype that holds a piece of text, and refers to a string of <em>characters</em>; a holdover from back when we used to have to worry about conserving the computer’s physical storage space and had a separate datatype for an individual character. Now we usually don’t have to worry about storage space anymore, but the name “string” stuck with us.</span></span>), to <code>upcase</code> itself, which it (very) happily does, and we’re left with <code>"HELLO, WORLD!"</code> at the end of the day.</p>
-<p><strong>BENP: shorten ^string_name footnote. delete after ;</strong></p>
 <blockquote>
 <p>✏️ <strong>Exercise:</strong> At the same <code>irb(main)</code> prompt in the Repl, retype the string object, and this time use the <code>.downcase</code> method in place of <code>.upcase</code>. What happens when you press <kbd>return</kbd>? How about if you use <code>.split</code>? We’ll circle back on this, but the important thing to note is that there are <em>many</em> built in methods, or verbs.</p>
 </blockquote>
 </div>
 <div id="every-class-has-different-methods" class="section level3 hasAnchor" number="1.1.4">
 <h3><span class="header-section-number">1.1.4</span> Every class has different methods<a href="nouns-verbs-and-grammar.html#every-class-has-different-methods" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Different <strong>classes</strong> can perform different <strong>methods</strong>. Here are a few expressions to try out. Type each one into IRB.</p>
+<p>Different <strong>classes</strong><span id="fn-4"><!--
+--><label for="fn-4-toggle"><sup>4</sup></label><!--
+--><input type="checkbox" hidden id="fn-4-toggle"/>
+<span id="fn-content">Everything in Ruby is an <strong>object</strong>. That’s the idea behind <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">object-oriented programming</a>. Text like <code>"Hello, world!"</code> is an object — specifically a <strong>string class object</strong>.</span></span> (string being one) can perform different <strong>methods</strong>. Here are a few expressions to try out. Type each one into IRB.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb3-1"><a href="nouns-verbs-and-grammar.html#cb3-1" aria-hidden="true"></a><span class="dv">7</span>.odd?</span>
 <span id="cb3-2"><a href="nouns-verbs-and-grammar.html#cb3-2" aria-hidden="true"></a><span class="dv">7</span>.even?</span>
 <span id="cb3-3"><a href="nouns-verbs-and-grammar.html#cb3-3" aria-hidden="true"></a><span class="st">&quot;Mississippi&quot;</span>.length</span>
 <span id="cb3-4"><a href="nouns-verbs-and-grammar.html#cb3-4" aria-hidden="true"></a><span class="st">&quot;Raghu Betina&quot;</span>.reverse</span>
 <span id="cb3-5"><a href="nouns-verbs-and-grammar.html#cb3-5" aria-hidden="true"></a><span class="st">&quot;Your Name&quot;</span>.swapcase</span></code></pre></div>
-<p><a href="https://repl.it/@raghubetina/different-classes-have-different-methods" target="_blank">Click here for a REPL to try it.</a></p>
+<blockquote>
+<p>✏️ <strong>Exercise:</strong> <a href="https://repl.it/@raghubetina/different-classes-have-different-methods" target="_blank">Click here for a REPL to try it.</a></p>
+</blockquote>
 <p>What do you expect will happen if we ask <code>"Mississippi"</code> if it is <code>even?</code>? Try it:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb4-1"><a href="nouns-verbs-and-grammar.html#cb4-1" aria-hidden="true"></a><span class="st">&quot;Mississippi&quot;</span>.even?</span></code></pre></div>
 <div id="do-or-do-not.-there-is-no-read." class="section level4 hasAnchor" number="1.1.4.1">
 <h4><span class="header-section-number">1.1.4.1</span> <em>Do</em>, or do not. There is no <em>read</em>.<a href="nouns-verbs-and-grammar.html#do-or-do-not.-there-is-no-read." class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>If you weren’t typing out every expression in a REPL, then you’re doing this wrong. If you’re just <em>reading</em>, you won’t be successful at learning programming; you have to <em>do</em> in order to build up some muscle memory. <em>Practice is crucial.</em></p>
+<p>When you saw the “✏️ <strong>Exercise:</strong>” prompt, if you weren’t typing out every expression in a REPL, then you’re doing this wrong. If you’re just <em>reading</em>, you won’t be successful at learning programming; you have to <em>do</em> in order to build up some muscle memory. <em>Practice is crucial.</em></p>
 <p>In fact, not only should you be typing the things I ask you to type, but you should also be trying out random other things that occur to you. (E.g., "What if I tried <code>"Mississippi".length.even?</code>)</p>
 <p><em>Experiment!</em></p>
 </div>
