@@ -26,6 +26,21 @@ s = String.new
 
 This will, however, just give us back an empty string `""`. We would then have to add each character to it one by one. One way to do so is by using the `.concat` method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.
 
+<mark>✏️ **Exercise:**</mark> Let's practice **making the invisible visible**. 
+
+**BENP: insert exercise for printing. Do a few manipulations to a variable and print the result of each:**
+
+```ruby
+# One-by-one, uncomment the p statements 
+# below and rerun the code
+s = String.new
+# p s 
+s = "Hello, world!"
+# p s
+s = s.upcase
+# p s
+```
+
 #### ASCII Codes
 
 What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1s`); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
@@ -449,7 +464,7 @@ That's about all we'll need to know about strings to do most anything related to
   - Copied from project README: [https://github.com/appdev-projects/string-chapter](https://github.com/appdev-projects/string-chapter){target="_blank"}
 
   - There is an un-transcribed [video](https://canvas.uchicago.edu/courses/47526/pages/video-getting-started-with-the-ruby-chapters){target="_blank"} associated with [String][String] that serves as review of the [Technical Setup][Technical Setup]. This video should be integrated here.
-  
+
 
 Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
 
