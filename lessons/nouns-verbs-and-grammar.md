@@ -1,9 +1,5 @@
 ## Nouns, verbs, and grammar
 
-- Notes:
-
-  - Copied from [`nouns-verbs-and-grammar.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/nouns-verbs-and-grammar.md){target="_blank"}
-
 ### You already know how to program
 
 Programming is the art of getting a computer to do useful things with information.
@@ -14,7 +10,7 @@ If you think about it that way, then you already know at least one programming l
 
 In the case of a calculator, the "information" is numbers and the "useful things" are adding, subtracting, multiplying, etc. Like any computer (or person), we get the calculator to do useful work by writing instructions that it can understand.
 
-For example, if we press the keys <kbd>7</kbd> <kbd>×</kbd> <kbd>6</kbd> <kbd>=</kbd> (in that order), then the calculator will return `42` on the screen; but if we press the keys <kbd>x</kbd> <kbd>7</kbd> <kbd>=</kbd> <kbd>6</kbd>, then it won't.
+For example, if we press the keys <kbd>7</kbd> <kbd>×</kbd> <kbd>6</kbd> <kbd>=</kbd> (in that order), then the calculator will return `42` on the screen; but if we press the keys <kbd>×</kbd> <kbd>7</kbd> <kbd>=</kbd> <kbd>6</kbd>, then it won't.
 
 - In the above example, `7` and `6` are known as **data**, or as I think of it, _nouns_.
 - `x` and `=` are known as **methods**, or as I think of it, _verbs_.
@@ -32,7 +28,9 @@ A basic calculator's entire vocabulary consists of the following:
 
 <kbd>=</kbd> <kbd>+</kbd> <kbd>-</kbd> <kbd>×</kbd> <kbd>÷</kbd> <kbd>%</kbd> <kbd>±</kbd> <kbd>AC</kbd>
 
-And there are only a few syntax rules:
+**Syntax**
+
+There are only a few rules:
 
 - **Primary syntax**: A number, then an operator, then another number, then the <kbd>=</kbd>.
 - Numbers can contain a single decimal point.
@@ -42,7 +40,7 @@ And there are only a few syntax rules:
 
 It's a very small language, but it demonstrates the same parts as any other programming language: **data**, **methods**, and **syntax**.
 
-Got it? Good, because that's basically all that there is to any other programming language, too! It's just that its vocabulary will be bigger, and it will have a more grammar rules.
+Got it? Good, because that's basically all that there is to any other programming language, too! It's just that its vocabulary will be bigger, and it will have more grammar rules.
 
 ### Ruby's vocabulary
 
@@ -77,14 +75,18 @@ So, in terms of **data** and **methods**, Ruby comes with a powerful set out-of-
 Here's a real example:
 
 ```ruby
-"hello world!".upcase
+"Hello, world!".upcase
 ```
 
-Here, you try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a Repl will copy the Repl to your own account and allow you to edit it.
+> ✏️ **Exercise:** You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a Repl will copy the Repl to your own account and allow you to edit it.
+
+<!-- <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/@raghubetina/hello-world?lite=true"></iframe> -->
 
 ![](/assets/nouns-verbs-and-grammar/replit-fork-hd.png)
 
-In the black window that appears at the bottom of the window, type:
+In the black window that appears on the right side under the `>_ Console` tab[^the_terminal], type:
+
+[^the_terminal]: This is a "command-line" or "terminal". You enter text commands here by typing them out *exactly*, and the computer will execute them, similar to how you click on a program with your mouse to run it. You've already seen another terminal in your GitPod workspaces for running commands like `bin/server` and `rails grade`.
 
 ```bash
 irb
@@ -92,11 +94,11 @@ irb
 
 and press <kbd>return</kbd>. This will launch _interactive Ruby_ (IRB), a program that lets you evaluate one Ruby expression at a time.
 
-At the `irb(main)` prompt that appears, you can now try out `"hello world!".upcase`:
+At the `irb(main)` prompt that appears, you can now try out `"Hello, world!".upcase`:
 
-![](/assets/nouns-verbs-and-grammar/irb.png)
+![](/assets/nouns-verbs-and-grammar/irb-new.png)
 
-If all went well, you should have seen `=> "HELLO WORLD!"` in the black window at the bottom (known as the "terminal"). Yay[^tradition]! What just happened?
+If all went well, you should have seen `=> "HELLO, WORLD!"` output by the command. Yay[^tradition]! What just happened?
 
 [^tradition]: It is [a time-honored tradition](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program){target="_blank"} that the very first thing a programmer does in a new language is print out "Hello, World!" Congratulations — you're now one of us 🙌🏾
 
@@ -104,11 +106,13 @@ The primary way to write an expression in Ruby is: `object.method`. We ask the _
 
 The computer then evaluates that expression and **returns** a new piece of data in its place (just like with the calculator).
 
-In this case, we asked `"hello world!"`, which is a string (Ruby's name for a piece of text[^string_name]), to `upcase` itself, which it (very) happily does, and we're left with `"HELLO WORLD!"` at the end of the day.
+In this case, we asked `"Hello, world!"`, which is a string (Ruby's name for a piece of text[^string_name]), to `upcase` itself, which it (very) happily does, and we're left with `"HELLO, WORLD!"` at the end of the day.
 
 [^string_name]: The name "string" is used in pretty much every programming language for the datatype that holds a piece of text, and refers to a string of _characters_; a holdover from back when we used to have to worry about conserving the computer's physical storage space and had a separate datatype for an individual character. Now we usually don't have to worry about storage space anymore, but the name "string" stuck with us.
 
 **BENP: shorten ^string\_name footnote. delete after ;**
+
+> ✏️ **Exercise:** At the same `irb(main)` prompt in the Repl, retype the string object, and this time use the `.downcase` method in place of `.upcase`. What happens when you press <kbd>return</kbd>? How about if you use `.split`? We'll circle back on this, but the important thing to note is that there are _many_ built in methods, or verbs.
 
 ### Every class has different methods
 

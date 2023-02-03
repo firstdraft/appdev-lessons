@@ -340,3 +340,5 @@ add-images
 tables-1
 embedding-objects
 styling-with-css
+random-number-between-0-and-8
+housekeeping
