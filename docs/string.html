@@ -538,14 +538,6 @@ Proudly published with bookdown</a></li>
             <section class="normal" id="section-">
 <div id="string" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> String<a href="string.html#string" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><p>Notes:</p>
-<ul>
-<li>Copied from <a href="https://github.com/firstdraft/appdev-chapters/blob/benp-edits/string.md" target="_blank"><code>string.md</code></a></li>
-<li>There is an un-transcribed <a href="https://canvas.uchicago.edu/courses/47526/pages/video-getting-started-with-the-ruby-chapters" target="_blank">video</a> that serves as review of the [Technical Setup][Technical Setup].</li>
-<li>See <a href="ruby-practice-string.html#ruby-practice-string">Ruby Practice: String</a> for project: <a href="https://github.com/appdev-projects/string-chapter" target="_blank">https://github.com/appdev-projects/string-chapter</a></li>
-</ul></li>
-</ul>
 <p>Let’s start by getting a more formal introduction to our friend, <code>String</code>.</p>
 <p>First of all, notice that when I refer to Ruby classes, I capitalize the first letter. The <em>only</em> time we use capital letters when we’re programming is when we refer to Ruby classes. All other times — variable names, file names, etc — we’re going to use lowercase letters only (other than when we’re writing some copy inside a string, of course).</p>
 <div id="creating-strings" class="section level3 hasAnchor" number="1.3.1">
@@ -555,8 +547,10 @@ Proudly published with bookdown</a></li>
 <p>In Ruby, the formal way to create a new object is to use the <code>.new</code> method on the parent class:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb2-1"><a href="string.html#cb2-1" aria-hidden="true"></a>s = <span class="dt">String</span>.new</span></code></pre></div>
 <p>This will, however, just give us back an empty string <code>""</code>. We would then have to add each character to it one by one. One way to do so is by using the <code>.concat</code> method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.</p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Let’s practice <strong>making the invisible visible</strong>.</p>
-<p><strong>BENP: insert exercise for printing. Do a few manipulations to a variable and print the result of each:</strong></p>
+<div id="make-the-invisible-visible-in-gitpod" class="section level4 unnumbered hasAnchor">
+<h4>Make the invisible visible in GitPod<a href="string.html#make-the-invisible-visible-in-gitpod" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Let’s practice <strong>making the invisible visible</strong>. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there. We will alternate between using REPLs for quick sandbox exercises, and GitPod for graded exercises.</p>
+<p><strong>BENP: As a template use 00:00:00 to 00:06:15 of <a href="https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&amp;start=146.06" target="_blank">string video</a> to transcribe and then re-record an exercise where you first open the <code>helloruby</code> project, create <code>howdy.rb</code>, run it, then add another <code>invisible_to_visible.rb</code> exercise like below:</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb3-1"><a href="string.html#cb3-1" aria-hidden="true"></a><span class="co"># One-by-one, uncomment the p statements </span></span>
 <span id="cb3-2"><a href="string.html#cb3-2" aria-hidden="true"></a><span class="co"># below and rerun the code</span></span>
 <span id="cb3-3"><a href="string.html#cb3-3" aria-hidden="true"></a>s = <span class="dt">String</span>.new</span>
@@ -565,12 +559,14 @@ Proudly published with bookdown</a></li>
 <span id="cb3-6"><a href="string.html#cb3-6" aria-hidden="true"></a><span class="co"># p s</span></span>
 <span id="cb3-7"><a href="string.html#cb3-7" aria-hidden="true"></a>s = s.upcase</span>
 <span id="cb3-8"><a href="string.html#cb3-8" aria-hidden="true"></a><span class="co"># p s</span></span></code></pre></div>
-<div id="ascii-codes" class="section level4 hasAnchor" number="1.3.1.1">
-<h4><span class="header-section-number">1.3.1.1</span> ASCII Codes<a href="string.html#ascii-codes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="ascii-codes" class="section level4 unnumbered hasAnchor">
+<h4>ASCII Codes<a href="string.html#ascii-codes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>What’s an ASCII code? At the hardware level, computers only store integers (specifically, in <em>binary</em> form — using only <code>0</code>s and <code>1s</code>); so all other datatypes need to be encoded somehow as a number. <a href="https://en.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a>, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers<span id="fn-1"><!--
 --><label for="fn-1-toggle"><sup>1</sup></label><!--
 --><input type="checkbox" hidden id="fn-1-toggle"/>
 <span id="fn-content">Nowadays we use much more sophisticated encoding schemes such as <a href="https://en.wikipedia.org/wiki/Unicode" target="_blank">Unicode</a> that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.</span></span>. The codes are as follows:</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; ">
 <table>
 <colgroup>
 <col width="8%" />
@@ -613,9 +609,177 @@ Proudly published with bookdown</a></li>
 <td align="center">80</td>
 <td align="center"><code>P</code></td>
 <td align="center">96</td>
-<td align="center"><code><code>&lt;/code&gt;|112|</code>p<code>33|</code>!<code>|49|</code>1<code>|65|</code>A<code>|81|</code>Q<code>|97|</code>a<code>|113|</code>q<code>34|</code>"<code>|50|</code>2<code>|66|</code>B<code>|82|</code>R<code>|98|</code>b<code>|114|</code>r<code>35|</code>#<code>|51|</code>3<code>|67|</code>C<code>|83|</code>S<code>|99|</code>c<code>|115|</code>s<code>36|</code>$<code>|52|</code>4<code>|68|</code>D<code>|84|</code>T<code>|100|</code>d<code>|116|</code>t<code>37|</code>%<code>|53|</code>5<code>|69|</code>E<code>|85|</code>U<code>|101|</code>e<code>|117|</code>u<code>38|</code>&amp;<code>|54|</code>6<code>|70|</code>F<code>|86|</code>V<code>|102|</code>f<code>|118|</code>v<code>39|</code>’<code>|55|</code>7<code>|71|</code>G<code>|87|</code>W<code>|103|</code>g<code>|119|</code>w<code>40|</code>(<code>|56|</code>8<code>|72|</code>H<code>|88|</code>X<code>|104|</code>h<code>|120|</code>x<code>41|</code>)<code>|57|</code>9<code>|73|</code>I<code>|89|</code>Y<code>|105|</code>i<code>|121|</code>y<code>42|</code>*<code>|58|</code>:<code>|74|</code>J<code>|90|</code>Z<code>|106|</code>j<code>|122|</code>z<code>43|</code>+<code>|59|</code>;<code>|75|</code>K<code>|91|</code>[<code>|107|</code>k<code>|123|</code>{<code>44|</code>,<code>|60|</code>&lt;<code>|76|</code>L<code>|92|</code>`</td>
+<td align="center">`</td>
+<td align="center">112</td>
+<td align="center"><code>p</code></td>
+</tr>
+<tr class="even">
+<td align="center">33</td>
+<td align="center"><code>!</code></td>
+<td align="center">49</td>
+<td align="center"><code>1</code></td>
+<td align="center">65</td>
+<td align="center"><code>A</code></td>
+<td align="center">81</td>
+<td align="center"><code>Q</code></td>
+<td align="center">97</td>
+<td align="center"><code>a</code></td>
+<td align="center">113</td>
+<td align="center"><code>q</code></td>
+</tr>
+<tr class="odd">
+<td align="center">34</td>
+<td align="center"><code>"</code></td>
+<td align="center">50</td>
+<td align="center"><code>2</code></td>
+<td align="center">66</td>
+<td align="center"><code>B</code></td>
+<td align="center">82</td>
+<td align="center"><code>R</code></td>
+<td align="center">98</td>
+<td align="center"><code>b</code></td>
+<td align="center">114</td>
+<td align="center"><code>r</code></td>
+</tr>
+<tr class="even">
+<td align="center">35</td>
+<td align="center"><code>#</code></td>
+<td align="center">51</td>
+<td align="center"><code>3</code></td>
+<td align="center">67</td>
+<td align="center"><code>C</code></td>
+<td align="center">83</td>
+<td align="center"><code>S</code></td>
+<td align="center">99</td>
+<td align="center"><code>c</code></td>
+<td align="center">115</td>
+<td align="center"><code>s</code></td>
+</tr>
+<tr class="odd">
+<td align="center">36</td>
+<td align="center"><code>$</code></td>
+<td align="center">52</td>
+<td align="center"><code>4</code></td>
+<td align="center">68</td>
+<td align="center"><code>D</code></td>
+<td align="center">84</td>
+<td align="center"><code>T</code></td>
+<td align="center">100</td>
+<td align="center"><code>d</code></td>
+<td align="center">116</td>
+<td align="center"><code>t</code></td>
+</tr>
+<tr class="even">
+<td align="center">37</td>
+<td align="center"><code>%</code></td>
+<td align="center">53</td>
+<td align="center"><code>5</code></td>
+<td align="center">69</td>
+<td align="center"><code>E</code></td>
+<td align="center">85</td>
+<td align="center"><code>U</code></td>
+<td align="center">101</td>
+<td align="center"><code>e</code></td>
+<td align="center">117</td>
+<td align="center"><code>u</code></td>
+</tr>
+<tr class="odd">
+<td align="center">38</td>
+<td align="center"><code>&amp;</code></td>
+<td align="center">54</td>
+<td align="center"><code>6</code></td>
+<td align="center">70</td>
+<td align="center"><code>F</code></td>
+<td align="center">86</td>
+<td align="center"><code>V</code></td>
+<td align="center">102</td>
+<td align="center"><code>f</code></td>
+<td align="center">118</td>
+<td align="center"><code>v</code></td>
+</tr>
+<tr class="even">
+<td align="center">39</td>
+<td align="center"><code>'</code></td>
+<td align="center">55</td>
+<td align="center"><code>7</code></td>
+<td align="center">71</td>
+<td align="center"><code>G</code></td>
+<td align="center">87</td>
+<td align="center"><code>W</code></td>
+<td align="center">103</td>
+<td align="center"><code>g</code></td>
+<td align="center">119</td>
+<td align="center"><code>w</code></td>
+</tr>
+<tr class="odd">
+<td align="center">40</td>
+<td align="center"><code>(</code></td>
+<td align="center">56</td>
+<td align="center"><code>8</code></td>
+<td align="center">72</td>
+<td align="center"><code>H</code></td>
+<td align="center">88</td>
+<td align="center"><code>X</code></td>
+<td align="center">104</td>
+<td align="center"><code>h</code></td>
+<td align="center">120</td>
+<td align="center"><code>x</code></td>
+</tr>
+<tr class="even">
+<td align="center">41</td>
+<td align="center"><code>)</code></td>
+<td align="center">57</td>
+<td align="center"><code>9</code></td>
+<td align="center">73</td>
+<td align="center"><code>I</code></td>
+<td align="center">89</td>
+<td align="center"><code>Y</code></td>
+<td align="center">105</td>
+<td align="center"><code>i</code></td>
+<td align="center">121</td>
+<td align="center"><code>y</code></td>
+</tr>
+<tr class="odd">
+<td align="center">42</td>
+<td align="center"><code>*</code></td>
+<td align="center">58</td>
+<td align="center"><code>:</code></td>
+<td align="center">74</td>
+<td align="center"><code>J</code></td>
+<td align="center">90</td>
+<td align="center"><code>Z</code></td>
+<td align="center">106</td>
+<td align="center"><code>j</code></td>
+<td align="center">122</td>
+<td align="center"><code>z</code></td>
+</tr>
+<tr class="even">
+<td align="center">43</td>
+<td align="center"><code>+</code></td>
+<td align="center">59</td>
+<td align="center"><code>;</code></td>
+<td align="center">75</td>
+<td align="center"><code>K</code></td>
+<td align="center">91</td>
+<td align="center"><code>[</code></td>
+<td align="center">107</td>
+<td align="center"><code>k</code></td>
+<td align="center">123</td>
+<td align="center"><code>{</code></td>
+</tr>
+<tr class="odd">
+<td align="center">44</td>
+<td align="center"><code>,</code></td>
+<td align="center">60</td>
+<td align="center"><code>&lt;</code></td>
+<td align="center">76</td>
+<td align="center"><code>L</code></td>
+<td align="center">92</td>
+<td align="center"><code>\</code></td>
 <td align="center">108</td>
 <td align="center"><code>l</code></td>
+<td align="center">124</td>
+<td align="center"><code>|</code></td>
 </tr>
 <tr class="even">
 <td align="center">45</td>
@@ -661,6 +825,7 @@ Proudly published with bookdown</a></li>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Given those ASCII codes, we can now build up a new string from scratch like so:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb4-1"><a href="string.html#cb4-1" aria-hidden="true"></a>my_string = <span class="dt">String</span>.new</span>
 <span id="cb4-2"><a href="string.html#cb4-2" aria-hidden="true"></a></span>
@@ -686,8 +851,8 @@ Proudly published with bookdown</a></li>
 <span id="cb4-22"><a href="string.html#cb4-22" aria-hidden="true"></a>p my_string</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/creating-objects-with-new" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="string-literals" class="section level4 hasAnchor" number="1.3.1.2">
-<h4><span class="header-section-number">1.3.1.2</span> String literals<a href="string.html#string-literals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="string-literals" class="section level4 unnumbered hasAnchor">
+<h4>String literals<a href="string.html#string-literals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><strong>BENP: possibly shorten section, is it necessary?</strong></p>
 <p>What a pain! Now that we’ve shown that, under the hood, even creating a string follows the syntax of <code>noun.verb</code> — let’s never do it again. From now on, we’ll use the shortcut of creating string “<strong>literals</strong>” in place by typing the characters we want within quotes: <code>"Thank goodness!"</code></p>
 <p>These kinds of exceptions to the regular grammar in order to make life easier are known as “<strong>syntactic sugar</strong>”.</p>
@@ -696,8 +861,8 @@ Proudly published with bookdown</a></li>
 <div id="methods" class="section level3 hasAnchor" number="1.3.2">
 <h3><span class="header-section-number">1.3.2</span> Methods<a href="string.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Next, let’s familiarize ourselves with some of the <code>String</code> class’s methods. For each method below, we’ve provided some REPLs. They are there for you to experiment with the code, click “run ▶”, or use <code>irb</code>and see how the methods work. Keep these methods in mind when working on the assignment in Gitpod.</p>
-<div id="string-addition-a.k.a." class="section level4 hasAnchor" number="1.3.2.1">
-<h4><span class="header-section-number">1.3.2.1</span> String addition, a.k.a. +<a href="string.html#string-addition-a.k.a." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="string-addition-a.k.a." class="section level4 unnumbered hasAnchor">
+<h4>String addition, a.k.a. +<a href="string.html#string-addition-a.k.a." class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We’ve already met the <code>.concat</code> method. <code>.concat</code> can accept an integer as an argument, which it interprets as an <a href="https://chapters.firstdraft.com/chapters/757#ascii-codes">ASCII code</a>, translates into a single character, and adds to the original string:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb5-1"><a href="string.html#cb5-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.concat(<span class="dv">33</span>) <span class="co"># =&gt; &quot;hi!&quot;</span></span></code></pre></div>
 <p><code>.concat</code> can also accept a string literal as an argument, in which case it just adds the whole thing to the end of the original string.</p>
@@ -718,8 +883,8 @@ Proudly published with bookdown</a></li>
 <span id="cb10-3"><a href="string.html#cb10-3" aria-hidden="true"></a>p a + b        <span class="co"># You can add strings together</span></span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/concatenation" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="string-multiplication-a.k.a" class="section level4 hasAnchor" number="1.3.2.2">
-<h4><span class="header-section-number">1.3.2.2</span> String multiplication, a.k.a *<a href="string.html#string-multiplication-a.k.a" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="string-multiplication-a.k.a" class="section level4 unnumbered hasAnchor">
+<h4>String multiplication, a.k.a *<a href="string.html#string-multiplication-a.k.a" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>String</code>s can be multiplied by numbers using the <code>*</code> method<span id="fn-3"><!--
 --><label for="fn-3-toggle"><sup>3</sup></label><!--
 --><input type="checkbox" hidden id="fn-3-toggle"/>
@@ -735,38 +900,38 @@ Proudly published with bookdown</a></li>
 <p>But <code>3 * "Hello"</code> is calling the <code>Integer</code> method <code>*</code> with an argument of <code>"Hello"</code>, which doesn’t make much sense (what would it mean to add <code>3</code> to itself <code>"Hello"</code> times?).</p>
 <p>Thus, we can see why the <code>String</code> version of <code>*</code> and the <code>Integer</code> version of <code>*</code> both need an integer argument. Again, <a href="https://chapters.firstdraft.com/chapters/754#the-bottom-line" target="_blank">the bottom line</a> is — at all times as you are writing Ruby, you should be thinking: “What <strong>class</strong> is this object? What <strong>methods</strong> does <em>this</em> class have available?” Even when there’s some syntactic sugar making things <em>look</em> unconventional, don’t forget your basics! It’s still <code>noun.verb</code> under the hood.</p>
 </div>
-<div id="upcase" class="section level4 hasAnchor" number="1.3.2.3">
-<h4><span class="header-section-number">1.3.2.3</span> upcase<a href="string.html#upcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="upcase" class="section level4 unnumbered hasAnchor">
+<h4>upcase<a href="string.html#upcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The upcase method returns a copy of the <code>String</code> with all lowercase letters replaced with their uppercase counterparts.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb14-1"><a href="string.html#cb14-1" aria-hidden="true"></a>p <span class="st">&quot;hello&quot;</span>.upcase</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/upcase" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="downcase" class="section level4 hasAnchor" number="1.3.2.4">
-<h4><span class="header-section-number">1.3.2.4</span> downcase<a href="string.html#downcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="downcase" class="section level4 unnumbered hasAnchor">
+<h4>downcase<a href="string.html#downcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The downcase method returns a copy of the <code>String</code> with all uppercase letters replaced with their lowercase counterparts.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb15-1"><a href="string.html#cb15-1" aria-hidden="true"></a>p <span class="st">&quot;I&#39;M NOT YELLING AT YOU&quot;</span>.downcase</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/downcase" target="_blank">Click here for a REPL to try it.</a></p>
 <p><strong>BENP: maybe overkill on the REPLs here, can we combine all these string methods (below as well) into one?</strong></p>
 </div>
-<div id="swapcase" class="section level4 hasAnchor" number="1.3.2.5">
-<h4><span class="header-section-number">1.3.2.5</span> swapcase<a href="string.html#swapcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="swapcase" class="section level4 unnumbered hasAnchor">
+<h4>swapcase<a href="string.html#swapcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The swapcase method returns a copy of the <code>String</code> with all uppercase letters replaced with their lowercase counterparts, <em>and</em> vice versa.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb16-1"><a href="string.html#cb16-1" aria-hidden="true"></a>p <span class="st">&quot;FaMiLy&quot;</span>.swapcase <span class="co"># =&gt; &quot;fAmIlY</span></span></code></pre></div>
 </div>
-<div id="reverse" class="section level4 hasAnchor" number="1.3.2.6">
-<h4><span class="header-section-number">1.3.2.6</span> reverse<a href="string.html#reverse" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="reverse" class="section level4 unnumbered hasAnchor">
+<h4>reverse<a href="string.html#reverse" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The reverse method returns a new <code>String</code> with the characters from the <code>String</code> in reverse order.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb17-1"><a href="string.html#cb17-1" aria-hidden="true"></a>p <span class="st">&quot;I can speak in backwords words&quot;</span>.reverse</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/reverse" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="length" class="section level4 hasAnchor" number="1.3.2.7">
-<h4><span class="header-section-number">1.3.2.7</span> length<a href="string.html#length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="length" class="section level4 unnumbered hasAnchor">
+<h4>length<a href="string.html#length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The length method returns the number of characters (as an <code>Integer</code>) that a <code>String</code> has.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb18-1"><a href="string.html#cb18-1" aria-hidden="true"></a>p <span class="st">&quot;Supercalifragilisticexpialidocious&quot;</span>.length</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/length" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="chomp" class="section level4 hasAnchor" number="1.3.2.8">
-<h4><span class="header-section-number">1.3.2.8</span> chomp<a href="string.html#chomp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="chomp" class="section level4 unnumbered hasAnchor">
+<h4>chomp<a href="string.html#chomp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>chomp</code> method is mostly used to remove the <code>"\n"</code> (newline) character from the end of a string, if it is present:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb19-1"><a href="string.html#cb19-1" aria-hidden="true"></a><span class="st">&quot;Raghu\n&quot;</span>.chomp <span class="co"># =&gt; &quot;Raghu&quot;</span></span>
 <span id="cb19-2"><a href="string.html#cb19-2" aria-hidden="true"></a><span class="st">&quot;Raghu&quot;</span>.chomp <span class="co"># =&gt; &quot;Raghu&quot;</span></span></code></pre></div>
@@ -776,14 +941,14 @@ Proudly published with bookdown</a></li>
 <span id="cb20-2"><a href="string.html#cb20-2" aria-hidden="true"></a><span class="st">&quot;1 apple&quot;</span>.chomp(<span class="st">&quot;s&quot;</span>) <span class="co"># =&gt; &quot;1 apple&quot;</span></span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/chomp" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="gsub" class="section level4 hasAnchor" number="1.3.2.9">
-<h4><span class="header-section-number">1.3.2.9</span> gsub<a href="string.html#gsub" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="gsub" class="section level4 unnumbered hasAnchor">
+<h4>gsub<a href="string.html#gsub" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The gsub method returns a copy of the <code>String</code> it was called on with all occurrences of the first argument substituted for the second argument.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb21-1"><a href="string.html#cb21-1" aria-hidden="true"></a>a = <span class="st">&quot;Hello&quot;</span></span>
 <span id="cb21-2"><a href="string.html#cb21-2" aria-hidden="true"></a>p a.gsub(<span class="st">&quot;ll&quot;</span>, <span class="st">&quot;ww&quot;</span>)  <span class="co"># =&gt; &quot;Hewwo&quot;</span></span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/gsub" target="_blank">Click here for a REPL to try it.</a></p>
-<div id="advanced-gsub-techniques" class="section level5 hasAnchor" number="1.3.2.9.1">
-<h5><span class="header-section-number">1.3.2.9.1</span> Advanced gsub techniques<a href="string.html#advanced-gsub-techniques" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="advanced-gsub-techniques" class="section level5 unnumbered hasAnchor">
+<h5>Advanced gsub techniques<a href="string.html#advanced-gsub-techniques" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><strong>BENP: This is pretty advanced and could be confusing to throw in here; maybe Regexp doesn’t appear here?</strong></p>
 <p><code>gsub</code> also supports accepting a <em>regular expression</em> as its first argument. We won’t get into regular expressions in detail right now, but all languages (C, C++, Python, etc) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.</p>
 <p>In Ruby, we work with regular expressions the way we work with everything else — via a class, <code>Regexp</code>. We create <code>Regexp</code> <em>literals</em> with forward slashes (like we use quotes to create <code>String</code> literals), and then put the pattern that we’re trying to match between the slashes.</p>
@@ -808,26 +973,26 @@ Proudly published with bookdown</a></li>
 </ul>
 </div>
 </div>
-<div id="to_i" class="section level4 hasAnchor" number="1.3.2.10">
-<h4><span class="header-section-number">1.3.2.10</span> to_i<a href="string.html#to_i" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="to_i" class="section level4 unnumbered hasAnchor">
+<h4>to_i<a href="string.html#to_i" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. <code>to_i</code> will attempt to convert a <code>String</code> object into an <code>Integer</code> object.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb26-1"><a href="string.html#cb26-1" aria-hidden="true"></a>p <span class="st">&quot;8&quot;</span>.to_i</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/toi" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="strip" class="section level4 hasAnchor" number="1.3.2.11">
-<h4><span class="header-section-number">1.3.2.11</span> strip<a href="string.html#strip" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="strip" class="section level4 unnumbered hasAnchor">
+<h4>strip<a href="string.html#strip" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>strip</code> removes all leading and trailing whitespace.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb27-1"><a href="string.html#cb27-1" aria-hidden="true"></a>p <span class="st">&quot;   This has a lot of space on the outside     &quot;</span>.strip</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/strip" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="capitalize" class="section level4 hasAnchor" number="1.3.2.12">
-<h4><span class="header-section-number">1.3.2.12</span> capitalize<a href="string.html#capitalize" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="capitalize" class="section level4 unnumbered hasAnchor">
+<h4>capitalize<a href="string.html#capitalize" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>capitalize returns a <code>String</code> with the first character converted to uppercase and the remainder to lowercase.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb28-1"><a href="string.html#cb28-1" aria-hidden="true"></a>p <span class="st">&quot;beginning&quot;</span>.capitalize</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/capitalize" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="split" class="section level4 hasAnchor" number="1.3.2.13">
-<h4><span class="header-section-number">1.3.2.13</span> split<a href="string.html#split" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="split" class="section level4 unnumbered hasAnchor">
+<h4>split<a href="string.html#split" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>This transforms the <code>String</code> into an <code>Array</code> (a list), which we’ll <a href="https://chapters.firstdraft.com/chapters/758">read more about later</a>.</p>
 <p>If you provide no argument, the string is split upon whitespace, which is handy for e.g. turning a sentence into a list of words:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb29-1"><a href="string.html#cb29-1" aria-hidden="true"></a>sentence = <span class="st">&quot;Hi I&#39;d like to learn how to program please!&quot;</span></span>
@@ -843,8 +1008,8 @@ Proudly published with bookdown</a></li>
 <span id="cb30-2"><a href="string.html#cb30-2" aria-hidden="true"></a>a.at(<span class="dv">0</span>) <span class="co"># =&gt; &quot;H&quot;</span></span>
 <span id="cb30-3"><a href="string.html#cb30-3" aria-hidden="true"></a>a.at(-<span class="dv">1</span>) <span class="co"># =&gt; &quot;!&quot;</span></span></code></pre></div>
 </div>
-<div id="include" class="section level4 hasAnchor" number="1.3.2.14">
-<h4><span class="header-section-number">1.3.2.14</span> include?<a href="string.html#include" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="include" class="section level4 unnumbered hasAnchor">
+<h4>include?<a href="string.html#include" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>include?</code> takes a String argument and returns <code>true</code> or <code>false</code> if the argument exists in the String that <code>include?</code> is called on.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb31-1"><a href="string.html#cb31-1" aria-hidden="true"></a>p <span class="st">&quot;Happy Days&quot;</span>.include?(<span class="st">&quot;H&quot;</span>)</span>
 <span id="cb31-2"><a href="string.html#cb31-2" aria-hidden="true"></a></span>
@@ -880,8 +1045,8 @@ Proudly published with bookdown</a></li>
 <span id="cb35-5"><a href="string.html#cb35-5" aria-hidden="true"></a>p <span class="st">&quot;Hello, &quot;</span> + their_name + <span class="st">&quot;!&quot;</span></span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/Hello-gets" target="_blank">Click here for a REPL to try it.</a></p>
 <p>Great! Our first user input. However, you’ll notice a couple of things. First of all, there’s a <code>\n</code> sneaking into the input. <code>\n</code> represents a newline character, and it’s in there because of the <kbd>return</kbd> that is pressed to submit the input.</p>
-<div id="puts" class="section level4 hasAnchor" number="1.3.4.1">
-<h4><span class="header-section-number">1.3.4.1</span> puts<a href="string.html#puts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="puts" class="section level4 unnumbered hasAnchor">
+<h4>puts<a href="string.html#puts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you want to see the newline in action, we can use a different printing method called <code>Kernel.puts</code> (pronounced “put S”, short for “put string”). <code>puts</code> is actually the printing method that is used most when crafting the final output of command-line programs; as opposed to <code>Kernel.p</code>, which is used most for <em>making the invisible visible</em> while debugging. Try switching</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb36-1"><a href="string.html#cb36-1" aria-hidden="true"></a>p <span class="st">&quot;Hello, &quot;</span> + their_name + <span class="st">&quot;!&quot;</span></span></code></pre></div>
 <p>to</p>
@@ -890,8 +1055,8 @@ Proudly published with bookdown</a></li>
 <p>You can see that the quotes around the string are removed, which makes sense if you’re actually displaying output to a user and not debugging — users should not know or care about the quotes around Ruby string literals. And the newline character causes a line break when a string is printed with <code>puts</code>, as it should.</p>
 <p>Most of the time, we’ll stick with <code>p</code>, since it provides more details while debugging; but it’s good to know that <code>puts</code> exists.</p>
 </div>
-<div id="gets.chomp" class="section level4 hasAnchor" number="1.3.4.2">
-<h4><span class="header-section-number">1.3.4.2</span> gets.chomp<a href="string.html#gets.chomp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="gets.chomp" class="section level4 unnumbered hasAnchor">
+<h4>gets.chomp<a href="string.html#gets.chomp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We almost never want to keep the <code>\n</code> that results from the <kbd>return</kbd> keypress that submits the user’s input. Fortunately, <a href="https://chapters.firstdraft.com/chapters/757#chomp" target="_blank">the handy <code>.chomp</code> method</a> does exactly what we need — if there’s a <code>\n</code> at the end of a string, it will remove it; if there isn’t, it does nothing. So, in practice, when we call <code>gets</code> we almost always tack a <code>.chomp</code> on to it immediately. Try modifying the program to:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb38-1"><a href="string.html#cb38-1" aria-hidden="true"></a>their_name = gets.chomp</span></code></pre></div>
 <p>and see how it’s different.</p>

@@ -1,11 +1,5 @@
 ## String
 
-- Notes:
-
-  - Copied from [`string.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/string.md){target="_blank"}
-  - There is an un-transcribed [video](https://canvas.uchicago.edu/courses/47526/pages/video-getting-started-with-the-ruby-chapters){target="_blank"} that serves as review of the [Technical Setup][Technical Setup].
-  - See [Ruby Practice: String][Ruby Practice: String] for project: [https://github.com/appdev-projects/string-chapter](https://github.com/appdev-projects/string-chapter){target="_blank"}
-
 Let's start by getting a more formal introduction to our friend, `String`.
 
 First of all, notice that when I refer to Ruby classes, I capitalize the first letter. The _only_ time we use capital letters when we're programming is when we refer to Ruby classes. All other times — variable names, file names, etc — we're going to use lowercase letters only (other than when we're writing some copy inside a string, of course).
@@ -26,9 +20,11 @@ s = String.new
 
 This will, however, just give us back an empty string `""`. We would then have to add each character to it one by one. One way to do so is by using the `.concat` method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.
 
-<mark>✏️ **Exercise:**</mark> Let's practice **making the invisible visible**. 
+#### Make the invisible visible in GitPod {-}
 
-**BENP: insert exercise for printing. Do a few manipulations to a variable and print the result of each:**
+<mark>✏️ **Exercise:**</mark> Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there. We will alternate between using REPLs for quick sandbox exercises, and GitPod for graded exercises.
+
+**BENP: As a template use 00:00:00 to 00:06:15 of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} to transcribe and then re-record an exercise where you first open the `helloruby` project, create `howdy.rb`, run it, then add another `invisible_to_visible.rb` exercise like below:**
 
 ```ruby
 # One-by-one, uncomment the p statements 
@@ -41,30 +37,32 @@ s = s.upcase
 # p s
 ```
 
-#### ASCII Codes
+#### ASCII Codes {-}
 
 What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1s`); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
 
 [^unicode]: Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
 
-**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**
-:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
-32|(space)|48|`0`|64|`@`|80|`P`|96|<code>`</code>|112|`p`
-33|`!`|49|`1`|65|`A`|81|`Q`|97|`a`|113|`q`
-34|`"`|50|`2`|66|`B`|82|`R`|98|`b`|114|`r`
-35|`#`|51|`3`|67|`C`|83|`S`|99|`c`|115|`s`
-36|`$`|52|`4`|68|`D`|84|`T`|100|`d`|116|`t`
-37|`%`|53|`5`|69|`E`|85|`U`|101|`e`|117|`u`
-38|`&`|54|`6`|70|`F`|86|`V`|102|`f`|118|`v`
-39|`'`|55|`7`|71|`G`|87|`W`|103|`g`|119|`w`
-40|`(`|56|`8`|72|`H`|88|`X`|104|`h`|120|`x`
-41|`)`|57|`9`|73|`I`|89|`Y`|105|`i`|121|`y`
-42|`*`|58|`:`|74|`J`|90|`Z`|106|`j`|122|`z`
-43|`+`|59|`;`|75|`K`|91|`[`|107|`k`|123|`{`
-44|`,`|60|`<`|76|`L`|92|`\`|108|`l`|124|`|`
-45|`-`|61|`=`|77|`M`|93|`]`|109|`m`|125|`}`
-46|`.`|62|`>`|78|`N`|94|`^`|110|`n`|126|`~`
-47|`/`|63|`?`|79|`O`|95|`_`|111|`o`|
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; ">
+   **ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**
+   :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
+   32|(space)|48|`0`|64|`@`|80|`P`|96|\`|112|`p`
+   33|`!`|49|`1`|65|`A`|81|`Q`|97|`a`|113|`q`
+   34|`"`|50|`2`|66|`B`|82|`R`|98|`b`|114|`r`
+   35|`#`|51|`3`|67|`C`|83|`S`|99|`c`|115|`s`
+   36|`$`|52|`4`|68|`D`|84|`T`|100|`d`|116|`t`
+   37|`%`|53|`5`|69|`E`|85|`U`|101|`e`|117|`u`
+   38|`&`|54|`6`|70|`F`|86|`V`|102|`f`|118|`v`
+   39|`'`|55|`7`|71|`G`|87|`W`|103|`g`|119|`w`
+   40|`(`|56|`8`|72|`H`|88|`X`|104|`h`|120|`x`
+   41|`)`|57|`9`|73|`I`|89|`Y`|105|`i`|121|`y`
+   42|`*`|58|`:`|74|`J`|90|`Z`|106|`j`|122|`z`
+   43|`+`|59|`;`|75|`K`|91|`[`|107|`k`|123|`{`
+   44|`,`|60|`<`|76|`L`|92|`\`|108|`l`|124|`|`
+   45|`-`|61|`=`|77|`M`|93|`]`|109|`m`|125|`}`
+   46|`.`|62|`>`|78|`N`|94|`^`|110|`n`|126|`~`
+   47|`/`|63|`?`|79|`O`|95|`_`|111|`o`|
+</div>
 
 Given those ASCII codes, we can now build up a new string from scratch like so:
 
@@ -95,7 +93,7 @@ p my_string
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
 
-#### String literals
+#### String literals {-}
 
 **BENP: possibly shorten section, is it necessary?**
 
@@ -107,7 +105,7 @@ These kinds of exceptions to the regular grammar in order to make life easier ar
 
 Next, let's familiarize ourselves with some of the `String` class's methods. For each method below, we've provided some REPLs. They are there for you to experiment with the code, click "run ▶", or use `irb`and see how the methods work. Keep these methods in mind when working on the assignment in Gitpod.
 
-#### String addition, a.k.a. +
+#### String addition, a.k.a. + {-}
 
 We've already met the `.concat` method. `.concat` can accept an integer as an argument, which it interprets as an [ASCII code](https://chapters.firstdraft.com/chapters/757#ascii-codes), translates into a single character, and adds to the original string:
 
@@ -153,7 +151,7 @@ p a + b        # You can add strings together
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
 
-#### String multiplication, a.k.a *
+#### String multiplication, a.k.a * {-}
 
 `String`s can be multiplied by numbers using the `*` method[^more_sugar]:
 
@@ -185,7 +183,7 @@ But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hell
 
 Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line](https://chapters.firstdraft.com/chapters/754#the-bottom-line){target="_blank"} is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
 
-#### upcase
+#### upcase {-}
 
 The upcase method returns a copy of the `String` with all lowercase letters replaced with their uppercase counterparts.
 
@@ -195,7 +193,7 @@ p "hello".upcase
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
 
-#### downcase
+#### downcase {-}
 
 The downcase method returns a copy of the `String` with all uppercase letters replaced with their lowercase counterparts.
 
@@ -207,7 +205,7 @@ p "I'M NOT YELLING AT YOU".downcase
 
 **BENP: maybe overkill on the REPLs here, can we combine all these string methods (below as well) into one?**
 
-#### swapcase
+#### swapcase {-}
 
 The swapcase method returns a copy of the `String` with all uppercase letters replaced with their lowercase counterparts, _and_ vice versa.
 
@@ -215,7 +213,7 @@ The swapcase method returns a copy of the `String` with all uppercase letters re
 p "FaMiLy".swapcase # => "fAmIlY
 ```
 
-#### reverse
+#### reverse {-}
 
 The reverse method returns a new `String` with the characters from the `String` in reverse order.
 
@@ -225,7 +223,7 @@ p "I can speak in backwords words".reverse
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
 
-#### length
+#### length {-}
 
 The length method  returns the number of characters (as an `Integer`) that a `String` has.
 
@@ -235,7 +233,7 @@ p "Supercalifragilisticexpialidocious".length
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
 
-#### chomp
+#### chomp {-}
 
 The `chomp` method is mostly used to remove the `"\n"` (newline) character from the end of a string, if it is present:
 
@@ -255,7 +253,7 @@ This seemingly strange task is very common due to the way that getting user inpu
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
 
-#### gsub
+#### gsub {-}
 
 The gsub method returns a copy of the `String` it was called on with all occurrences of the first argument substituted for the second argument.
 
@@ -266,7 +264,7 @@ p a.gsub("ll", "ww")  # => "Hewwo"
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
 
-##### Advanced gsub techniques
+##### Advanced gsub techniques {-}
 
 **BENP: This is pretty advanced and could be confusing to throw in here; maybe Regexp doesn't appear here?**
 
@@ -301,7 +299,7 @@ For now, we're just going to copy-paste a few simple regexes[^regexone] that com
     "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
     ```
 
-#### to_i
+#### to_i {-}
 
 Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. `to_i` will attempt to convert a `String` object into an `Integer` object.
 
@@ -311,7 +309,7 @@ p "8".to_i
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
 
-#### strip
+#### strip {-}
 
 `strip` removes all leading and trailing whitespace.
 
@@ -321,7 +319,7 @@ p "   This has a lot of space on the outside     ".strip
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
 
-#### capitalize
+#### capitalize {-}
 
 capitalize returns a `String` with the first character converted to uppercase and the remainder to lowercase.
 
@@ -331,7 +329,7 @@ p "beginning".capitalize
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
 
-#### split
+#### split {-}
 
 This transforms the `String` into an `Array` (a list), which we'll [read more about later](https://chapters.firstdraft.com/chapters/758).
 
@@ -359,7 +357,7 @@ a.at(0) # => "H"
 a.at(-1) # => "!"
 ```
 
-#### include?
+#### include? {-}
 
 `include?` takes a String argument and returns `true` or `false` if the argument exists in the String that `include?` is called on.
 
@@ -422,7 +420,7 @@ p "Hello, " + their_name + "!"
 
 Great! Our first user input. However, you'll notice a couple of things. First of all, there's a `\n` sneaking into the input. `\n` represents a newline character, and it's in there because of the <kbd>return</kbd> that is pressed to submit the input.
 
-#### puts
+#### puts {-}
 
 If you want to see the newline in action, we can use a different printing method called `Kernel.puts` (pronounced "put S", short for "put string"). `puts` is actually the printing method that is used most when crafting the final output of command-line programs; as opposed to `Kernel.p`, which is used most for _making the invisible visible_ while debugging. Try switching
 
@@ -442,7 +440,7 @@ You can see that the quotes around the string are removed, which makes sense if 
 
 Most of the time, we'll stick with `p`, since it provides more details while debugging; but it's good to know that `puts` exists.
 
-#### gets.chomp
+#### gets.chomp {-}
 
 We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, [the handy `.chomp` method](https://chapters.firstdraft.com/chapters/757#chomp){target="_blank"} does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
 
