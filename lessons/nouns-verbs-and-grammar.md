@@ -78,7 +78,7 @@ Here's a real example:
 "Hello, world!".upcase
 ```
 
-> ✏️ **Exercise:** You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
+<mark>✏️ **Exercise:**</mark> You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
 
 <!-- <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/@raghubetina/hello-world?lite=true"></iframe> -->
 
@@ -114,7 +114,7 @@ In this case, we asked `"Hello, world!"`, which is a string (Ruby's name for a p
 
 Different **classes**[^everything_is_object] (string being one) can perform different **methods**. Here are a few expressions to try out. Type each one into IRB.
 
-[^everything_is_object]: Everything in Ruby is an **object**. That's the idea behind [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming){target="_blank"}. Text like `"Hello, world!"` is an object — specifically a **string class object**.
+[^everything_is_object]: Almost everything in Ruby is an **object**. That's the idea behind [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming){target="_blank"}. Text like `"Hello, world!"` is an object — specifically a **string class object**.
 
 ```ruby
 7.odd?
@@ -124,7 +124,7 @@ Different **classes**[^everything_is_object] (string being one) can perform diff
 "Your Name".swapcase
 ```
 
-> ✏️ **Exercise:** [Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){target="_blank"}
 
 What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try it:
 
@@ -132,17 +132,19 @@ What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try i
 "Mississippi".even?
 ```
 
-#### _Do_, or do not. There is no  _read_.
+### Error Messages
+
+#### _Do_, or do not. There is no  _read_. {-}
 
 When you saw the <mark>✏️ **Exercise:**</mark> prompt, were you typing out every expression in a REPL? 
 
 If not, then you're doing this wrong. If you're just _reading_, you won't be successful at learning programming; you have to _do_ in order to build up some muscle memory. _Practice is crucial._
 
-In fact, not only should you be typing the things I ask you to type, but you should also be trying out random other things that occur to you. (E.g., "What if I tried `"Mississippi".length.even?`)
+In fact, not only should you be typing the things I ask you to type, but you should also be trying out random other things that occur to you. (E.g., "What if I tried `"Mississippi".length.even?`")
 
 _Experiment!_
 
-#### Read. The. Error. Message. (A.k.a., "RTEM")
+#### Read. The. Error. Message. (A.k.a., "RTEM") {-}
 
 Aha! If you were typing out every expression and running it, then
 
@@ -164,25 +166,25 @@ might mean?
 
 In this case, it is saying: "Hey, friend — there's no method called `even?` for `"Mississippi"`, which is a `String`. Sorry." Fair enough, that makes sense.
 
-##### The bottom line
+#### The bottom line {-}
 
 The bottom line is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Then, the syntax itself is simple — `my_object.cool_method`.
 
 ### Arguments are inputs
 
-Alright, so the **primary syntax** in Ruby is straightforward — `object.method`. However, there's a wrinkle: some methods require additional inputs. For example, there is a method called `gsub` which we can call on `String`s, which will substitute characters with other characters. Try it:
+Alright, so the **primary syntax** in Ruby is straightforward — `object.method`. However, there's a wrinkle: some methods require additional inputs. For example, there is a method called `gsub` which we can call on a `String`, which will substitute characters with other characters. Try it:
 
 ```ruby
 "Java is a joy".gsub("Java", "Ruby")
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/arguments-are-inputs){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/arguments-are-inputs){target="_blank"}
 
 `gsub` is short for "globally substitute", because it will replace _all_ occurrences of one _substring_ with another _substring_.
 
 In order to do its job, the `gsub` method needs to know what substring to get rid of and what to replace it with. So we give it inputs, or **arguments**, which must come in parentheses _immediately_ following the method. If the method takes multiple arguments, as `gsub` does, then they are separated by commas.
 
-Try replacing `"Java is a joy"` with any string you like, and experiment with different arguments instead of `"Java"` and `"Ruby"`. For example, maybe start with `"resume"` and try to transform it into `"résumé"` using `gsub`. What is the purpose of `gsub`'s first argument, and what is the purpose of the second argument?
+<mark>✏️ **Exercise:**</mark> Try replacing `"Java is a joy"` with any string you like, and experiment with different arguments instead of `"Java"` and `"Ruby"`. For example, use `gsub` to change `"Hello, world!"` to say `"Hello, you there!"`. Then, start with `"resume"` and try to transform it into `"résumé"`. What is the purpose of `gsub`'s first argument, and what is the purpose of the second argument?
 
 In reality, `gsub` is more often used to do things like removing illegal characters from usernames before saving, e.g.:
 
@@ -192,7 +194,7 @@ In reality, `gsub` is more often used to do things like removing illegal charact
 
 (`""` is an empty string, so all `@`s will be replaced with nothing, i.e. removed.)
 
-#### One of the only times when whitespace matters
+### One of the only times when whitespace matters
 
 Unlike some other languages (e.g. Python) where indentation and spacing can change the entire meaning of a program, Ruby is, generally, very permissive about how you use whitespace. You can _usually_ use spacing according to your own taste, and Ruby will be able to make sense of your code.
 
@@ -216,9 +218,9 @@ Can you spot the difference? **Don't put a space between the method and the open
 
 It's a very easy mistake to make, so I just wanted to warn you early on so you that can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:
 
-[Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){target="_blank"}
 
-#### Seriously: please read the error message
+### Seriously: please read the error message
 
 Programming boils down to:
 
@@ -246,11 +248,22 @@ In this text, I'm going to refer to it as an [octothorpe](https://en.wiktionary.
 
 The octothorpe is used quite a bit in Ruby. You can see one important way in the example above, where I said `# bad!` after some offending code. That is known as a "code comment". The Ruby interpreter, when it sees the `#`, will ignore it and everything that comes after it; allowing us to leave notes to ourselves and to each other. **Use comments liberally.**
 
-Another nice trick is: when experimenting with some code and it's not working, just comment it out and try a different approach on the next line. That way you can keep the old code around for reference without having to delete it, but it won't break the program.
+Another nice trick is: when experimenting with some code and it's not working, just comment it out and try a different approach on the next line. That way you can keep the old code around for reference without having to delete it, but it won't break the program:
+
+```ruby
+# "Raghu@Bet@ina".gsub ("@", "")
+
+# The code above was throwing an error message,
+# but I want to save it for reference as I try
+# to debug, so I put a #-symbol before it. 
+# Now, let me see if this thing below fixes it
+
+"Raghu@Bet@ina".gsub("@", "")
+```
 
 ### Variables are boxes
 
-Now that you've seen arguments, you know all there is to know about crafting _expressions_ in Ruby. No kidding: `object.method(arguments)` is the *vast* majority of what we'll be doing. That's it.
+Now that you've seen **arguments**, you know all there is to know about crafting _expressions_ in Ruby. No kidding: `object.method(arguments)` is the *vast* majority of what we'll be doing. That's it.
 
 However, so far we haven't been doing much with the **return value** of each expression. We've just been reading it off the screen, and then dropping it on the ground. For example, try the following:
 
@@ -259,7 +272,7 @@ However, so far we haven't been doing much with the **return value** of each exp
 # "hello world".reverse
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-drop-on-the-ground){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-drop-on-the-ground){target="_blank"} Did it work? Did you copy-paste and forget to remove the leading `#` symbol..?
 
 We're not really able to make any forward progress when we only perform one operation at a time. Programs get interesting only when we start to take the return value of one expression and feed it into the _next_ method. That's how we craft our own novel, useful applications from the basic building blocks of Ruby.
 
@@ -272,13 +285,13 @@ s = "hello world!".upcase
 s
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){target="_blank"}
 
 This creates a box, labels it `s`, and stores the string `"HELLO WORLD!"` in it.
 
-#### The variable assignment operator
+#### The variable assignment operator {-}
 
-The single equals sign, `=`, is called the "variable assignment operator".
+The single equals sign, `=`, is called the **variable assignment operator**.
 
 When I read
 
@@ -288,7 +301,9 @@ s = "hello world!".upcase
 
 out loud, I say "the string hello world dot upcase _is assigned_ to the variable s". I read the right side first, because that's how Ruby reads it too; it first evaluates the expression on the right side of the `=`, and then it stores the resulting value in the variable on the left.
 
-Now add another line,
+<mark>✏️ **Exercise:**</mark> Using as many Ruby terms as you can (string, object, assign, etc.), read the following out loud (or maybe in your head if you're in a quiet café): `t = "I like Ruby".gsub("like", "love")`. Carefully reading code with correct terminology is a great way to learn and spot error messages before they occur.
+
+<mark>✏️ **Exercise:**</mark> Now add another line to the REPL,
 
 ```ruby
 s = "hello world!".upcase
@@ -298,7 +313,7 @@ s
 
 Great! Now we're making progress.
 
-#### Storing the next return value
+#### Storing the next return value {-}
 
 What would you expect to happen if you add a third line so that your program reads:
 
@@ -308,6 +323,8 @@ s.reverse
 s.gsub("L", "Z")
 ```
 
+<mark>✏️ **Exercise:**</mark> Do it! Type the above code into your current REPL.
+
 What do you think `s` contains now? Try it:
 
 ```ruby
@@ -316,7 +333,7 @@ s
 
 Did it match your expectations?
 
-Most Ruby methods don't modify the object that they are called upon; they just return a modified copy. The original variable is untouched, so if we want to hold on to the new value then we better store that too. Type this:
+Most Ruby methods don't modify the object that they are called upon; they just return a **modified copy**. The original variable is untouched, so if we want to hold on to the new value then we better store that too. Type this:
 
 ```ruby
 s = "hello world!".upcase
@@ -325,9 +342,11 @@ u = t.gsub("L", "Z")
 u
 ```
 
+<mark>✏️ **Exercise:**</mark> Do it! Type the above code into your current REPL.
+
 Fortunately, we can create as many variables as we want.
 
-#### Updating variables
+#### Updating variables {-}
 
 It can get old coming up with different variable names for every step of the program. Instead, we usually want to re-use existing variables. We can throw away what we have in the box and put in something entirely different with the same assignment operator, `=`. Type this:
 
@@ -336,6 +355,8 @@ s = "hi"
 s = 2.odd?
 s
 ```
+
+<mark>✏️ **Exercise:**</mark> Do it! Type the above code into your current REPL.
 
 We can even replace the value in the box with an updated version of the _old_ value, because _the expression on the right side of the assignment operator is evaluated before the assignment takes place_. Type this:
 
@@ -346,9 +367,11 @@ s = s.reverse
 s
 ```
 
+<mark>✏️ **Exercise:**</mark> Do it! Type the above code into your current REPL.
+
 That may look strange — how can we use `s` on the left side _and_ the right side of the `=`?
 
-But it's because this is not the equals sign from math class; this is the _variable assignment operator_, and the right side is evaluated first until only a single value is left; and _then_ that object is assigned into the box on the left (replacing whatever was there before).
+But it's because this is _not the equals sign from math class_; this is the **variable assignment operator**, and the right side is evaluated first until only a single value is left; and _then_ that object is assigned into the box on the left (replacing whatever was there before).
 
 So you will very often see something like this:
 
@@ -358,7 +381,7 @@ counter = counter + 1
 
 When we're keeping track of e.g. how many times we've printed something out on the screen. We are taking the original value of `counter`, adding `1` to it, and then replacing the contents of `counter` with that new total.
 
-#### Variable syntax
+#### Variable syntax {-}
 
 You may have noticed that the variable assignment syntax is a departure from the primary syntax of `object.method`. But we do it all day long, so we need to know it just as well. Our programs will end up looking like this (these are made-up method names, so this code won't work):
 
@@ -375,9 +398,7 @@ storage_box_3 = storage_box_2.third_method.maybe_even("another", "one")
 
 Most programs are just a long succession of statements where we do some work with `object.method` and store the result in some variable, then we do some more work on that variable and store the result in yet another variable, and a hundred steps later we've produced our final result and we display that to our user.
 
-**BENP: I wonder if the previous two sections can be condensed a bit more and merged into one**
-
-#### Variable naming rules
+#### Variable naming rules {-}
 
 When you are choosing your variable names, there are some rules:
 

@@ -154,10 +154,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.2" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#rubys-vocabulary"><i class="fa fa-check"></i><b>1.1.2</b> Ruby’s vocabulary</a></li>
 <li class="chapter" data-level="1.1.3" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#rubys-primary-syntax"><i class="fa fa-check"></i><b>1.1.3</b> Ruby’s primary syntax</a></li>
 <li class="chapter" data-level="1.1.4" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#every-class-has-different-methods"><i class="fa fa-check"></i><b>1.1.4</b> Every class has different methods</a></li>
-<li class="chapter" data-level="1.1.5" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#arguments-are-inputs"><i class="fa fa-check"></i><b>1.1.5</b> Arguments are inputs</a></li>
-<li class="chapter" data-level="1.1.6" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#an-aside-code-comments"><i class="fa fa-check"></i><b>1.1.6</b> An aside: Code comments</a></li>
-<li class="chapter" data-level="1.1.7" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#variables-are-boxes"><i class="fa fa-check"></i><b>1.1.7</b> Variables are boxes</a></li>
-<li class="chapter" data-level="1.1.8" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#thats-it"><i class="fa fa-check"></i><b>1.1.8</b> That’s it</a></li>
+<li class="chapter" data-level="1.1.5" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#error-messages"><i class="fa fa-check"></i><b>1.1.5</b> Error Messages</a></li>
+<li class="chapter" data-level="1.1.6" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#arguments-are-inputs"><i class="fa fa-check"></i><b>1.1.6</b> Arguments are inputs</a></li>
+<li class="chapter" data-level="1.1.7" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#one-of-the-only-times-when-whitespace-matters"><i class="fa fa-check"></i><b>1.1.7</b> One of the only times when whitespace matters</a></li>
+<li class="chapter" data-level="1.1.8" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#seriously-please-read-the-error-message"><i class="fa fa-check"></i><b>1.1.8</b> Seriously: please read the error message</a></li>
+<li class="chapter" data-level="1.1.9" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#an-aside-code-comments"><i class="fa fa-check"></i><b>1.1.9</b> An aside: Code comments</a></li>
+<li class="chapter" data-level="1.1.10" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#variables-are-boxes"><i class="fa fa-check"></i><b>1.1.10</b> Variables are boxes</a></li>
+<li class="chapter" data-level="1.1.11" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#thats-it"><i class="fa fa-check"></i><b>1.1.11</b> That’s it</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html"><i class="fa fa-check"></i><b>1.2</b> A few program notes</a>
 <ul>
@@ -594,9 +597,7 @@ Proudly published with bookdown</a></li>
 <p>So, in terms of <strong>data</strong> and <strong>methods</strong>, Ruby comes with a powerful set out-of-the-box <em>and</em> is always getting better. That’s good news! Here’s even more good news: to access all of this power, the <strong>primary syntax</strong> is straightforward. It looks like this: <code>some_object.some_method</code></p>
 <p>Here’s a real example:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="nouns-verbs-and-grammar.html#cb1-1" aria-hidden="true"></a><span class="st">&quot;Hello, world!&quot;</span>.upcase</span></code></pre></div>
-<blockquote>
-<p>✏️ <strong>Exercise:</strong> You try it. <a href="https://replit.com/@raghubetina/hello-world" target="_blank">Click here to visit repl.it</a>, a service that offers instant programming sandboxes within your browser. Click the “Fork” button in the top right and sign in with your Github account. “Forking” a REPL will copy the REPL to your own account and allow you to edit it.</p>
-</blockquote>
+<p><mark>✏️ <strong>Exercise:</strong></mark> You try it. <a href="https://replit.com/@raghubetina/hello-world" target="_blank">Click here to visit repl.it</a>, a service that offers instant programming sandboxes within your browser. Click the “Fork” button in the top right and sign in with your Github account. “Forking” a REPL will copy the REPL to your own account and allow you to edit it.</p>
 <!-- <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/@raghubetina/hello-world?lite=true"></iframe> -->
 <p><img src="/assets/nouns-verbs-and-grammar/replit-fork-hd.png" /></p>
 <p>In the black window that appears on the right side under the <code>&gt;_ Console</code> tab<span id="fn-1"><!--
@@ -623,26 +624,27 @@ Proudly published with bookdown</a></li>
 <p>Different <strong>classes</strong><span id="fn-4"><!--
 --><label for="fn-4-toggle"><sup>4</sup></label><!--
 --><input type="checkbox" hidden id="fn-4-toggle"/>
-<span id="fn-content">Everything in Ruby is an <strong>object</strong>. That’s the idea behind <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">object-oriented programming</a>. Text like <code>"Hello, world!"</code> is an object — specifically a <strong>string class object</strong>.</span></span> (string being one) can perform different <strong>methods</strong>. Here are a few expressions to try out. Type each one into IRB.</p>
+<span id="fn-content">Almost everything in Ruby is an <strong>object</strong>. That’s the idea behind <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">object-oriented programming</a>. Text like <code>"Hello, world!"</code> is an object — specifically a <strong>string class object</strong>.</span></span> (string being one) can perform different <strong>methods</strong>. Here are a few expressions to try out. Type each one into IRB.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb3-1"><a href="nouns-verbs-and-grammar.html#cb3-1" aria-hidden="true"></a><span class="dv">7</span>.odd?</span>
 <span id="cb3-2"><a href="nouns-verbs-and-grammar.html#cb3-2" aria-hidden="true"></a><span class="dv">7</span>.even?</span>
 <span id="cb3-3"><a href="nouns-verbs-and-grammar.html#cb3-3" aria-hidden="true"></a><span class="st">&quot;Mississippi&quot;</span>.length</span>
 <span id="cb3-4"><a href="nouns-verbs-and-grammar.html#cb3-4" aria-hidden="true"></a><span class="st">&quot;Raghu Betina&quot;</span>.reverse</span>
 <span id="cb3-5"><a href="nouns-verbs-and-grammar.html#cb3-5" aria-hidden="true"></a><span class="st">&quot;Your Name&quot;</span>.swapcase</span></code></pre></div>
-<blockquote>
-<p>✏️ <strong>Exercise:</strong> <a href="https://repl.it/@raghubetina/different-classes-have-different-methods" target="_blank">Click here for a REPL to try it.</a></p>
-</blockquote>
+<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/different-classes-have-different-methods" target="_blank">Click here for a REPL to try it.</a></p>
 <p>What do you expect will happen if we ask <code>"Mississippi"</code> if it is <code>even?</code>? Try it:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb4-1"><a href="nouns-verbs-and-grammar.html#cb4-1" aria-hidden="true"></a><span class="st">&quot;Mississippi&quot;</span>.even?</span></code></pre></div>
-<div id="do-or-do-not.-there-is-no-read." class="section level4 hasAnchor" number="1.1.4.1">
-<h4><span class="header-section-number">1.1.4.1</span> <em>Do</em>, or do not. There is no <em>read</em>.<a href="nouns-verbs-and-grammar.html#do-or-do-not.-there-is-no-read." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="error-messages" class="section level3 hasAnchor" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> Error Messages<a href="nouns-verbs-and-grammar.html#error-messages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="do-or-do-not.-there-is-no-read." class="section level4 unnumbered hasAnchor">
+<h4><em>Do</em>, or do not. There is no <em>read</em>.<a href="nouns-verbs-and-grammar.html#do-or-do-not.-there-is-no-read." class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you saw the <mark>✏️ <strong>Exercise:</strong></mark> prompt, were you typing out every expression in a REPL?</p>
 <p>If not, then you’re doing this wrong. If you’re just <em>reading</em>, you won’t be successful at learning programming; you have to <em>do</em> in order to build up some muscle memory. <em>Practice is crucial.</em></p>
-<p>In fact, not only should you be typing the things I ask you to type, but you should also be trying out random other things that occur to you. (E.g., "What if I tried <code>"Mississippi".length.even?</code>)</p>
+<p>In fact, not only should you be typing the things I ask you to type, but you should also be trying out random other things that occur to you. (E.g., “What if I tried <code>"Mississippi".length.even?</code>”)</p>
 <p><em>Experiment!</em></p>
 </div>
-<div id="read.-the.-error.-message.-a.k.a.-rtem" class="section level4 hasAnchor" number="1.1.4.2">
-<h4><span class="header-section-number">1.1.4.2</span> Read. The. Error. Message. (A.k.a., “RTEM”)<a href="nouns-verbs-and-grammar.html#read.-the.-error.-message.-a.k.a.-rtem" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="read.-the.-error.-message.-a.k.a.-rtem" class="section level4 unnumbered hasAnchor">
+<h4>Read. The. Error. Message. (A.k.a., “RTEM”)<a href="nouns-verbs-and-grammar.html#read.-the.-error.-message.-a.k.a.-rtem" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Aha! If you were typing out every expression and running it, then</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb5-1"><a href="nouns-verbs-and-grammar.html#cb5-1" aria-hidden="true"></a><span class="st">&quot;Mississippi&quot;</span>.even?</span></code></pre></div>
 <p>should have produced your very first error message! 🎉</p>
@@ -651,25 +653,26 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="nouns-verbs-and-grammar.html#cb6-1" aria-hidden="true"></a><span class="ex">undefined</span> method <span class="kw">`</span><span class="ex">even?</span><span class="st">&#39; for &quot;Mississippi&quot;:String</span></span></code></pre></div>
 <p>might mean?</p>
 <p>In this case, it is saying: “Hey, friend — there’s no method called <code>even?</code> for <code>"Mississippi"</code>, which is a <code>String</code>. Sorry.” Fair enough, that makes sense.</p>
-<div id="the-bottom-line" class="section level5 hasAnchor" number="1.1.4.2.1">
-<h5><span class="header-section-number">1.1.4.2.1</span> The bottom line<a href="nouns-verbs-and-grammar.html#the-bottom-line" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+</div>
+<div id="the-bottom-line" class="section level4 unnumbered hasAnchor">
+<h4>The bottom line<a href="nouns-verbs-and-grammar.html#the-bottom-line" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The bottom line is — at all times as you are writing Ruby, you should be thinking: “What <strong>class</strong> is this object? What <strong>methods</strong> does <em>this</em> class have available?” Then, the syntax itself is simple — <code>my_object.cool_method</code>.</p>
 </div>
 </div>
-</div>
-<div id="arguments-are-inputs" class="section level3 hasAnchor" number="1.1.5">
-<h3><span class="header-section-number">1.1.5</span> Arguments are inputs<a href="nouns-verbs-and-grammar.html#arguments-are-inputs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Alright, so the <strong>primary syntax</strong> in Ruby is straightforward — <code>object.method</code>. However, there’s a wrinkle: some methods require additional inputs. For example, there is a method called <code>gsub</code> which we can call on <code>String</code>s, which will substitute characters with other characters. Try it:</p>
+<div id="arguments-are-inputs" class="section level3 hasAnchor" number="1.1.6">
+<h3><span class="header-section-number">1.1.6</span> Arguments are inputs<a href="nouns-verbs-and-grammar.html#arguments-are-inputs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Alright, so the <strong>primary syntax</strong> in Ruby is straightforward — <code>object.method</code>. However, there’s a wrinkle: some methods require additional inputs. For example, there is a method called <code>gsub</code> which we can call on a <code>String</code>, which will substitute characters with other characters. Try it:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="nouns-verbs-and-grammar.html#cb7-1" aria-hidden="true"></a><span class="st">&quot;Java is a joy&quot;</span>.gsub(<span class="st">&quot;Java&quot;</span>, <span class="st">&quot;Ruby&quot;</span>)</span></code></pre></div>
-<p><a href="https://repl.it/@raghubetina/arguments-are-inputs" target="_blank">Click here for a REPL to try it.</a></p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/arguments-are-inputs" target="_blank">Click here for a REPL to try it.</a></p>
 <p><code>gsub</code> is short for “globally substitute”, because it will replace <em>all</em> occurrences of one <em>substring</em> with another <em>substring</em>.</p>
 <p>In order to do its job, the <code>gsub</code> method needs to know what substring to get rid of and what to replace it with. So we give it inputs, or <strong>arguments</strong>, which must come in parentheses <em>immediately</em> following the method. If the method takes multiple arguments, as <code>gsub</code> does, then they are separated by commas.</p>
-<p>Try replacing <code>"Java is a joy"</code> with any string you like, and experiment with different arguments instead of <code>"Java"</code> and <code>"Ruby"</code>. For example, maybe start with <code>"resume"</code> and try to transform it into <code>"résumé"</code> using <code>gsub</code>. What is the purpose of <code>gsub</code>’s first argument, and what is the purpose of the second argument?</p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Try replacing <code>"Java is a joy"</code> with any string you like, and experiment with different arguments instead of <code>"Java"</code> and <code>"Ruby"</code>. For example, use <code>gsub</code> to change <code>"Hello, world!"</code> to say <code>"Hello, you there!"</code>. Then, start with <code>"resume"</code> and try to transform it into <code>"résumé"</code>. What is the purpose of <code>gsub</code>’s first argument, and what is the purpose of the second argument?</p>
 <p>In reality, <code>gsub</code> is more often used to do things like removing illegal characters from usernames before saving, e.g.:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb8-1"><a href="nouns-verbs-and-grammar.html#cb8-1" aria-hidden="true"></a><span class="st">&quot;Raghu@Bet@ina&quot;</span>.gsub(<span class="st">&quot;@&quot;</span>, <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p>(<code>""</code> is an empty string, so all <code>@</code>s will be replaced with nothing, i.e. removed.)</p>
-<div id="one-of-the-only-times-when-whitespace-matters" class="section level4 hasAnchor" number="1.1.5.1">
-<h4><span class="header-section-number">1.1.5.1</span> One of the only times when whitespace matters<a href="nouns-verbs-and-grammar.html#one-of-the-only-times-when-whitespace-matters" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="one-of-the-only-times-when-whitespace-matters" class="section level3 hasAnchor" number="1.1.7">
+<h3><span class="header-section-number">1.1.7</span> One of the only times when whitespace matters<a href="nouns-verbs-and-grammar.html#one-of-the-only-times-when-whitespace-matters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Unlike some other languages (e.g. Python) where indentation and spacing can change the entire meaning of a program, Ruby is, generally, very permissive about how you use whitespace. You can <em>usually</em> use spacing according to your own taste, and Ruby will be able to make sense of your code.</p>
 <p>So, for example, whether you have spaces between arguments doesn’t matter; these two are equivalent:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb9-1"><a href="nouns-verbs-and-grammar.html#cb9-1" aria-hidden="true"></a><span class="st">&quot;Raghu@Bet@ina&quot;</span>.gsub(<span class="st">&quot;@&quot;</span>,    <span class="st">&quot;&quot;</span>)</span>
@@ -680,10 +683,10 @@ Proudly published with bookdown</a></li>
 <span id="cb10-2"><a href="nouns-verbs-and-grammar.html#cb10-2" aria-hidden="true"></a><span class="st">&quot;Raghu@Bet@ina&quot;</span>.gsub (<span class="st">&quot;@&quot;</span>, <span class="st">&quot;&quot;</span>) <span class="co"># bad!</span></span></code></pre></div>
 <p>Can you spot the difference? <strong>Don’t put a space between the method and the opening parenthesis.</strong></p>
 <p>It’s a very easy mistake to make, so I just wanted to warn you early on so you that can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:</p>
-<p><a href="https://replit.com/@raghubetina/bad-argument-syntax" target="_blank">Click here for a REPL to try it.</a></p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://replit.com/@raghubetina/bad-argument-syntax" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
-<div id="seriously-please-read-the-error-message" class="section level4 hasAnchor" number="1.1.5.2">
-<h4><span class="header-section-number">1.1.5.2</span> Seriously: please read the error message<a href="nouns-verbs-and-grammar.html#seriously-please-read-the-error-message" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="seriously-please-read-the-error-message" class="section level3 hasAnchor" number="1.1.8">
+<h3><span class="header-section-number">1.1.8</span> Seriously: please read the error message<a href="nouns-verbs-and-grammar.html#seriously-please-read-the-error-message" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Programming boils down to:</p>
 <ol style="list-style-type: decimal">
 <li>Forming a plan of what you want to do (e.g. “I want to remove any ’@’s in this input.”)</li>
@@ -696,89 +699,100 @@ Proudly published with bookdown</a></li>
 </ol>
 <p>Your skill level as a programmer is essentially <strong>the number of error messages that you have encountered in the past and now recognize</strong>. So start paying attention to them now — we want to collect ’em all!</p>
 </div>
-</div>
-<div id="an-aside-code-comments" class="section level3 hasAnchor" number="1.1.6">
-<h3><span class="header-section-number">1.1.6</span> An aside: Code comments<a href="nouns-verbs-and-grammar.html#an-aside-code-comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="an-aside-code-comments" class="section level3 hasAnchor" number="1.1.9">
+<h3><span class="header-section-number">1.1.9</span> An aside: Code comments<a href="nouns-verbs-and-grammar.html#an-aside-code-comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here’s a debate that will rage until the end of time: what do you call this symbol?</p>
 <pre><code>                 #</code></pre>
 <p>Is it a number sign? Is it a pound sign? Is it a hashtag? Is it a waffle?</p>
 <p>In this text, I’m going to refer to it as an <a href="https://en.wiktionary.org/wiki/octothorpe" target="_blank">octothorpe</a>.</p>
 <p>The octothorpe is used quite a bit in Ruby. You can see one important way in the example above, where I said <code># bad!</code> after some offending code. That is known as a “code comment”. The Ruby interpreter, when it sees the <code>#</code>, will ignore it and everything that comes after it; allowing us to leave notes to ourselves and to each other. <strong>Use comments liberally.</strong></p>
-<p>Another nice trick is: when experimenting with some code and it’s not working, just comment it out and try a different approach on the next line. That way you can keep the old code around for reference without having to delete it, but it won’t break the program.</p>
+<p>Another nice trick is: when experimenting with some code and it’s not working, just comment it out and try a different approach on the next line. That way you can keep the old code around for reference without having to delete it, but it won’t break the program:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb12-1"><a href="nouns-verbs-and-grammar.html#cb12-1" aria-hidden="true"></a><span class="co"># &quot;Raghu@Bet@ina&quot;.gsub (&quot;@&quot;, &quot;&quot;)</span></span>
+<span id="cb12-2"><a href="nouns-verbs-and-grammar.html#cb12-2" aria-hidden="true"></a></span>
+<span id="cb12-3"><a href="nouns-verbs-and-grammar.html#cb12-3" aria-hidden="true"></a><span class="co"># The code above was throwing an error message,</span></span>
+<span id="cb12-4"><a href="nouns-verbs-and-grammar.html#cb12-4" aria-hidden="true"></a><span class="co"># but I want to save it for reference as I try</span></span>
+<span id="cb12-5"><a href="nouns-verbs-and-grammar.html#cb12-5" aria-hidden="true"></a><span class="co"># to debug, so I put a #-symbol before it. </span></span>
+<span id="cb12-6"><a href="nouns-verbs-and-grammar.html#cb12-6" aria-hidden="true"></a><span class="co"># Now, let me see if this thing below fixes it</span></span>
+<span id="cb12-7"><a href="nouns-verbs-and-grammar.html#cb12-7" aria-hidden="true"></a></span>
+<span id="cb12-8"><a href="nouns-verbs-and-grammar.html#cb12-8" aria-hidden="true"></a><span class="st">&quot;Raghu@Bet@ina&quot;</span>.gsub(<span class="st">&quot;@&quot;</span>, <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 </div>
-<div id="variables-are-boxes" class="section level3 hasAnchor" number="1.1.7">
-<h3><span class="header-section-number">1.1.7</span> Variables are boxes<a href="nouns-verbs-and-grammar.html#variables-are-boxes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Now that you’ve seen arguments, you know all there is to know about crafting <em>expressions</em> in Ruby. No kidding: <code>object.method(arguments)</code> is the <em>vast</em> majority of what we’ll be doing. That’s it.</p>
+<div id="variables-are-boxes" class="section level3 hasAnchor" number="1.1.10">
+<h3><span class="header-section-number">1.1.10</span> Variables are boxes<a href="nouns-verbs-and-grammar.html#variables-are-boxes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that you’ve seen <strong>arguments</strong>, you know all there is to know about crafting <em>expressions</em> in Ruby. No kidding: <code>object.method(arguments)</code> is the <em>vast</em> majority of what we’ll be doing. That’s it.</p>
 <p>However, so far we haven’t been doing much with the <strong>return value</strong> of each expression. We’ve just been reading it off the screen, and then dropping it on the ground. For example, try the following:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb12-1"><a href="nouns-verbs-and-grammar.html#cb12-1" aria-hidden="true"></a><span class="co"># &quot;hello world&quot;.upcase</span></span>
-<span id="cb12-2"><a href="nouns-verbs-and-grammar.html#cb12-2" aria-hidden="true"></a><span class="co"># &quot;hello world&quot;.reverse</span></span></code></pre></div>
-<p><a href="https://repl.it/@raghubetina/variables-drop-on-the-ground" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb13-1"><a href="nouns-verbs-and-grammar.html#cb13-1" aria-hidden="true"></a><span class="co"># &quot;hello world&quot;.upcase</span></span>
+<span id="cb13-2"><a href="nouns-verbs-and-grammar.html#cb13-2" aria-hidden="true"></a><span class="co"># &quot;hello world&quot;.reverse</span></span></code></pre></div>
+<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/variables-drop-on-the-ground" target="_blank">Click here for a REPL to try it.</a> Did it work? Did you copy-paste and forget to remove the leading <code>#</code> symbol..?</p>
 <p>We’re not really able to make any forward progress when we only perform one operation at a time. Programs get interesting only when we start to take the return value of one expression and feed it into the <em>next</em> method. That’s how we craft our own novel, useful applications from the basic building blocks of Ruby.</p>
 <p>So: let’s start to store our return values for future reference, instead of dropping them on the ground. We do this using <strong>variables</strong>, or as I like to think of them, <em>boxes</em>. Let’s get our feet wet:</p>
 <p>Type the following:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb13-1"><a href="nouns-verbs-and-grammar.html#cb13-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
-<span id="cb13-2"><a href="nouns-verbs-and-grammar.html#cb13-2" aria-hidden="true"></a>s</span></code></pre></div>
-<p><a href="https://repl.it/@raghubetina/variables-are-boxes" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb14-1"><a href="nouns-verbs-and-grammar.html#cb14-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
+<span id="cb14-2"><a href="nouns-verbs-and-grammar.html#cb14-2" aria-hidden="true"></a>s</span></code></pre></div>
+<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/variables-are-boxes" target="_blank">Click here for a REPL to try it.</a></p>
 <p>This creates a box, labels it <code>s</code>, and stores the string <code>"HELLO WORLD!"</code> in it.</p>
-<div id="the-variable-assignment-operator" class="section level4 hasAnchor" number="1.1.7.1">
-<h4><span class="header-section-number">1.1.7.1</span> The variable assignment operator<a href="nouns-verbs-and-grammar.html#the-variable-assignment-operator" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>The single equals sign, <code>=</code>, is called the “variable assignment operator”.</p>
+<div id="the-variable-assignment-operator" class="section level4 unnumbered hasAnchor">
+<h4>The variable assignment operator<a href="nouns-verbs-and-grammar.html#the-variable-assignment-operator" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The single equals sign, <code>=</code>, is called the <strong>variable assignment operator</strong>.</p>
 <p>When I read</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb14-1"><a href="nouns-verbs-and-grammar.html#cb14-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb15-1"><a href="nouns-verbs-and-grammar.html#cb15-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span></code></pre></div>
 <p>out loud, I say “the string hello world dot upcase <em>is assigned</em> to the variable s”. I read the right side first, because that’s how Ruby reads it too; it first evaluates the expression on the right side of the <code>=</code>, and then it stores the resulting value in the variable on the left.</p>
-<p>Now add another line,</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb15-1"><a href="nouns-verbs-and-grammar.html#cb15-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
-<span id="cb15-2"><a href="nouns-verbs-and-grammar.html#cb15-2" aria-hidden="true"></a>s.reverse</span>
-<span id="cb15-3"><a href="nouns-verbs-and-grammar.html#cb15-3" aria-hidden="true"></a>s</span></code></pre></div>
-<p>Great! Now we’re making progress.</p>
-</div>
-<div id="storing-the-next-return-value" class="section level4 hasAnchor" number="1.1.7.2">
-<h4><span class="header-section-number">1.1.7.2</span> Storing the next return value<a href="nouns-verbs-and-grammar.html#storing-the-next-return-value" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>What would you expect to happen if you add a third line so that your program reads:</p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Using as many Ruby terms as you can (string, object, assign, etc.), read the following out loud (or maybe in your head if you’re in a quiet café): <code>t = "I like Ruby".gsub("like", "love")</code>. Carefully reading code with correct terminology is a great way to learn and spot error messages before they occur.</p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Now add another line to the REPL,</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb16-1"><a href="nouns-verbs-and-grammar.html#cb16-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
 <span id="cb16-2"><a href="nouns-verbs-and-grammar.html#cb16-2" aria-hidden="true"></a>s.reverse</span>
-<span id="cb16-3"><a href="nouns-verbs-and-grammar.html#cb16-3" aria-hidden="true"></a>s.gsub(<span class="st">&quot;L&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
+<span id="cb16-3"><a href="nouns-verbs-and-grammar.html#cb16-3" aria-hidden="true"></a>s</span></code></pre></div>
+<p>Great! Now we’re making progress.</p>
+</div>
+<div id="storing-the-next-return-value" class="section level4 unnumbered hasAnchor">
+<h4>Storing the next return value<a href="nouns-verbs-and-grammar.html#storing-the-next-return-value" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>What would you expect to happen if you add a third line so that your program reads:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb17-1"><a href="nouns-verbs-and-grammar.html#cb17-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
+<span id="cb17-2"><a href="nouns-verbs-and-grammar.html#cb17-2" aria-hidden="true"></a>s.reverse</span>
+<span id="cb17-3"><a href="nouns-verbs-and-grammar.html#cb17-3" aria-hidden="true"></a>s.gsub(<span class="st">&quot;L&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Do it! Type the above code into your current REPL.</p>
 <p>What do you think <code>s</code> contains now? Try it:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb17-1"><a href="nouns-verbs-and-grammar.html#cb17-1" aria-hidden="true"></a>s</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb18-1"><a href="nouns-verbs-and-grammar.html#cb18-1" aria-hidden="true"></a>s</span></code></pre></div>
 <p>Did it match your expectations?</p>
-<p>Most Ruby methods don’t modify the object that they are called upon; they just return a modified copy. The original variable is untouched, so if we want to hold on to the new value then we better store that too. Type this:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb18-1"><a href="nouns-verbs-and-grammar.html#cb18-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
-<span id="cb18-2"><a href="nouns-verbs-and-grammar.html#cb18-2" aria-hidden="true"></a>t = s.reverse</span>
-<span id="cb18-3"><a href="nouns-verbs-and-grammar.html#cb18-3" aria-hidden="true"></a>u = t.gsub(<span class="st">&quot;L&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span>
-<span id="cb18-4"><a href="nouns-verbs-and-grammar.html#cb18-4" aria-hidden="true"></a>u</span></code></pre></div>
+<p>Most Ruby methods don’t modify the object that they are called upon; they just return a <strong>modified copy</strong>. The original variable is untouched, so if we want to hold on to the new value then we better store that too. Type this:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb19-1"><a href="nouns-verbs-and-grammar.html#cb19-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
+<span id="cb19-2"><a href="nouns-verbs-and-grammar.html#cb19-2" aria-hidden="true"></a>t = s.reverse</span>
+<span id="cb19-3"><a href="nouns-verbs-and-grammar.html#cb19-3" aria-hidden="true"></a>u = t.gsub(<span class="st">&quot;L&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span>
+<span id="cb19-4"><a href="nouns-verbs-and-grammar.html#cb19-4" aria-hidden="true"></a>u</span></code></pre></div>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Do it! Type the above code into your current REPL.</p>
 <p>Fortunately, we can create as many variables as we want.</p>
 </div>
-<div id="updating-variables" class="section level4 hasAnchor" number="1.1.7.3">
-<h4><span class="header-section-number">1.1.7.3</span> Updating variables<a href="nouns-verbs-and-grammar.html#updating-variables" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="updating-variables" class="section level4 unnumbered hasAnchor">
+<h4>Updating variables<a href="nouns-verbs-and-grammar.html#updating-variables" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>It can get old coming up with different variable names for every step of the program. Instead, we usually want to re-use existing variables. We can throw away what we have in the box and put in something entirely different with the same assignment operator, <code>=</code>. Type this:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb19-1"><a href="nouns-verbs-and-grammar.html#cb19-1" aria-hidden="true"></a>s = <span class="st">&quot;hi&quot;</span></span>
-<span id="cb19-2"><a href="nouns-verbs-and-grammar.html#cb19-2" aria-hidden="true"></a>s = <span class="dv">2</span>.odd?</span>
-<span id="cb19-3"><a href="nouns-verbs-and-grammar.html#cb19-3" aria-hidden="true"></a>s</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb20-1"><a href="nouns-verbs-and-grammar.html#cb20-1" aria-hidden="true"></a>s = <span class="st">&quot;hi&quot;</span></span>
+<span id="cb20-2"><a href="nouns-verbs-and-grammar.html#cb20-2" aria-hidden="true"></a>s = <span class="dv">2</span>.odd?</span>
+<span id="cb20-3"><a href="nouns-verbs-and-grammar.html#cb20-3" aria-hidden="true"></a>s</span></code></pre></div>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Do it! Type the above code into your current REPL.</p>
 <p>We can even replace the value in the box with an updated version of the <em>old</em> value, because <em>the expression on the right side of the assignment operator is evaluated before the assignment takes place</em>. Type this:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb20-1"><a href="nouns-verbs-and-grammar.html#cb20-1" aria-hidden="true"></a>s = <span class="st">&quot;hello, world!&quot;</span></span>
-<span id="cb20-2"><a href="nouns-verbs-and-grammar.html#cb20-2" aria-hidden="true"></a>s = s.capitalize</span>
-<span id="cb20-3"><a href="nouns-verbs-and-grammar.html#cb20-3" aria-hidden="true"></a>s = s.reverse</span>
-<span id="cb20-4"><a href="nouns-verbs-and-grammar.html#cb20-4" aria-hidden="true"></a>s</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb21-1"><a href="nouns-verbs-and-grammar.html#cb21-1" aria-hidden="true"></a>s = <span class="st">&quot;hello, world!&quot;</span></span>
+<span id="cb21-2"><a href="nouns-verbs-and-grammar.html#cb21-2" aria-hidden="true"></a>s = s.capitalize</span>
+<span id="cb21-3"><a href="nouns-verbs-and-grammar.html#cb21-3" aria-hidden="true"></a>s = s.reverse</span>
+<span id="cb21-4"><a href="nouns-verbs-and-grammar.html#cb21-4" aria-hidden="true"></a>s</span></code></pre></div>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Do it! Type the above code into your current REPL.</p>
 <p>That may look strange — how can we use <code>s</code> on the left side <em>and</em> the right side of the <code>=</code>?</p>
-<p>But it’s because this is not the equals sign from math class; this is the <em>variable assignment operator</em>, and the right side is evaluated first until only a single value is left; and <em>then</em> that object is assigned into the box on the left (replacing whatever was there before).</p>
+<p>But it’s because this is <em>not the equals sign from math class</em>; this is the <strong>variable assignment operator</strong>, and the right side is evaluated first until only a single value is left; and <em>then</em> that object is assigned into the box on the left (replacing whatever was there before).</p>
 <p>So you will very often see something like this:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb21-1"><a href="nouns-verbs-and-grammar.html#cb21-1" aria-hidden="true"></a>counter = counter + <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb22-1"><a href="nouns-verbs-and-grammar.html#cb22-1" aria-hidden="true"></a>counter = counter + <span class="dv">1</span></span></code></pre></div>
 <p>When we’re keeping track of e.g. how many times we’ve printed something out on the screen. We are taking the original value of <code>counter</code>, adding <code>1</code> to it, and then replacing the contents of <code>counter</code> with that new total.</p>
 </div>
-<div id="variable-syntax" class="section level4 hasAnchor" number="1.1.7.4">
-<h4><span class="header-section-number">1.1.7.4</span> Variable syntax<a href="nouns-verbs-and-grammar.html#variable-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="variable-syntax" class="section level4 unnumbered hasAnchor">
+<h4>Variable syntax<a href="nouns-verbs-and-grammar.html#variable-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>You may have noticed that the variable assignment syntax is a departure from the primary syntax of <code>object.method</code>. But we do it all day long, so we need to know it just as well. Our programs will end up looking like this (these are made-up method names, so this code won’t work):</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb22-1"><a href="nouns-verbs-and-grammar.html#cb22-1" aria-hidden="true"></a>storage_box_1 = <span class="st">&quot;starting data&quot;</span>.first_transformation</span>
-<span id="cb22-2"><a href="nouns-verbs-and-grammar.html#cb22-2" aria-hidden="true"></a>storage_box_2 = storage_box_1.second_step</span>
-<span id="cb22-3"><a href="nouns-verbs-and-grammar.html#cb22-3" aria-hidden="true"></a>storage_box_3 = storage_box_2.third_method.maybe_even(<span class="st">&quot;another&quot;</span>, <span class="st">&quot;one&quot;</span>)</span>
-<span id="cb22-4"><a href="nouns-verbs-and-grammar.html#cb22-4" aria-hidden="true"></a><span class="co"># etc for dozens or hundreds of lines</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb23-1"><a href="nouns-verbs-and-grammar.html#cb23-1" aria-hidden="true"></a>storage_box_1 = <span class="st">&quot;starting data&quot;</span>.first_transformation</span>
+<span id="cb23-2"><a href="nouns-verbs-and-grammar.html#cb23-2" aria-hidden="true"></a>storage_box_2 = storage_box_1.second_step</span>
+<span id="cb23-3"><a href="nouns-verbs-and-grammar.html#cb23-3" aria-hidden="true"></a>storage_box_3 = storage_box_2.third_method.maybe_even(<span class="st">&quot;another&quot;</span>, <span class="st">&quot;one&quot;</span>)</span>
+<span id="cb23-4"><a href="nouns-verbs-and-grammar.html#cb23-4" aria-hidden="true"></a><span class="co"># etc for dozens or hundreds of lines</span></span></code></pre></div>
 <p><em>First</em>, the expression on the right side of the assignment operator will be evaluated until there are no methods left and there’s just a piece of data remaining.</p>
 <p><em>Then</em>, that value will be placed in the variable named on the left side of the assignment operator, which will be created if it doesn’t exist, or will have its value replaced if it does exist.</p>
 <p>Most programs are just a long succession of statements where we do some work with <code>object.method</code> and store the result in some variable, then we do some more work on that variable and store the result in yet another variable, and a hundred steps later we’ve produced our final result and we display that to our user.</p>
-<p><strong>BENP: I wonder if the previous two sections can be condensed a bit more and merged into one</strong></p>
 </div>
-<div id="variable-naming-rules" class="section level4 hasAnchor" number="1.1.7.5">
-<h4><span class="header-section-number">1.1.7.5</span> Variable naming rules<a href="nouns-verbs-and-grammar.html#variable-naming-rules" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="variable-naming-rules" class="section level4 unnumbered hasAnchor">
+<h4>Variable naming rules<a href="nouns-verbs-and-grammar.html#variable-naming-rules" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When you are choosing your variable names, there are some rules:</p>
 <ul>
 <li>Variable names can only contain <strong>lowercase</strong> letters (<code>a..z</code>), numbers (<code>0..9</code>), and underscores (<code>_</code>) — they can’t contain spaces.</li>
@@ -788,10 +802,10 @@ Proudly published with bookdown</a></li>
 <p><em>Please</em> avoid naming your variables <code>x</code>, <code>y</code>, and <code>z</code>. Use underscores to separate words in multi-word variable names, since we can’t use spaces.</p>
 </div>
 </div>
-<div id="thats-it" class="section level3 hasAnchor" number="1.1.8">
-<h3><span class="header-section-number">1.1.8</span> That’s it<a href="nouns-verbs-and-grammar.html#thats-it" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="thats-it" class="section level3 hasAnchor" number="1.1.11">
+<h3><span class="header-section-number">1.1.11</span> That’s it<a href="nouns-verbs-and-grammar.html#thats-it" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>That’s it for the fundamental grammar of Ruby!</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb23-1"><a href="nouns-verbs-and-grammar.html#cb23-1" aria-hidden="true"></a>storage_box = noun.verb(input1, input2)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb24-1"><a href="nouns-verbs-and-grammar.html#cb24-1" aria-hidden="true"></a>storage_box = noun.verb(input1, input2)</span></code></pre></div>
 <p>It’s not <em>that</em> much worse than the calculator language, is it? Of course, there’s a bit more syntax (like how to define our own nouns and verbs) that we need to learn, but for the most part, <code>object.method</code> is the bulk of what we do.</p>
 <p>Now we need to spend some time expanding our <em>vocabulary</em> — what are the most commonly used data types in Ruby, and what are some of their methods? <a href="https://chapters.firstdraft.com/chapters/755">That’s coming up next.</a></p>
 
