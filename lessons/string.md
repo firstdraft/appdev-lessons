@@ -100,9 +100,13 @@ my_string.concat(33)
 p my_string # => "Hello, world!"
 ```
 
+<mark>✏️ **Exercise:**</mark> This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
+
 ##### Start the GitPod Project {-}
 
-<mark>✏️ **Exercise:**</mark> It's time to open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file. **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`**
+Once you've played with the REPL, it's time to move into the graded project environment.
+
+<mark>✏️ **Exercise:**</mark> Open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file. **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`**
 
  1. **BENP: how are they starting the project, fork from canvas, gitpod.io/# method, other?** Fork the project from GitHub: [https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions){target="_blank"}
  1. Open the `string_concat.rb` file in the editor window.
@@ -118,9 +122,7 @@ p my_string # => "Hello, world!"
 1. To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you've run in a terminal.
 1. When you think you have the required output, run `rails grade` and proceed when the test passes without errors.
 
-**If you are struggling, try to experiment directly in the IRB environment by typing `irb` into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start `irb` then the terminal will no longer be in the `bash` environment so things like `rails grade` won't work. You will need to open a second terminal with the plus (+) icon and switch between the `irb` and `bash` terminals as needed.**
-
-<!-- This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"} -->
+If you are struggling, **try to experiment directly in the IRB environment** by typing `irb` into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start `irb` then the terminal will no longer be in the `bash` environment so things like `rails grade` won't work. You will need to open a second terminal with the plus (+) icon and switch between the `irb` and `bash` terminals as needed. Alternatively type `exit` at the IRB terminal prompt to return to the `bash` environment.
 
 #### String literals {-}
 
@@ -158,27 +160,27 @@ There's also a shorthand for `.concat`: `.+`.[^concat_lie] That may look a littl
 
 But here's where it gets interesting; Ruby has another bit of nice _syntactic sugar_ for us. If a class has a method named `+`, then you are allowed to drop the `.` before the method name when you call it, and just say:
 
-**BENP: this seems like a long-winded way to say you can just add strings, but I guess + comes up in other classes besides strings and integers? Is that something students can learn later in their programming life. Always trying to reduce information at the early stages here...maybe dropping the stuff about "." in this and following section.**
-
 ```ruby
 "hi" +(" there") # => "hi there"
 ```
 
-Wild! And, as we learned earlier when we were [introduced](https://chapters.firstdraft.com/chapters/755#make-the-invisible-visible){target="_blank"} to the `p` method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:
+Wild! And, as we learned earlier when we were [introduced][Make the invisible visible] to the `p` method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:
 
 ```ruby
 "hi" + " there" # => "hi there"
 ```
 
-Now this is really starting to look familiar! It's a lot like the calculator language, actually. [Developer happiness](https://chapters.firstdraft.com/chapters/755#developer-happiness){target="_blank"}, indeed.
+Now this is really starting to look familiar! It's a lot like the calculator language, actually. [Developer happiness][Developer happiness], indeed.
 
 ```ruby
 a = "Hello"
 b = "World"
-p a + b        # You can add strings together
+p a + b # => "HelloWorld"        # You can add strings together
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
+<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_addition.rb`
+
+<!-- [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"} -->
 
 #### String multiplication, a.k.a * {-}
 
@@ -196,7 +198,7 @@ This sort of makes sense, if you think about multiplication as being repeated ad
 p "Hello" * 3
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){target="_blank"}
 
 The order matters, though. See what happens when you try:
 
@@ -204,13 +206,15 @@ The order matters, though. See what happens when you try:
 3 * "Hello"
 ```
 
-Read The Error Message ([RTEM](https://chapters.firstdraft.com/chapters/754#seriously-please-read-the-error-message){target="_blank"})!
+Read The Error Message ([RTEM][Seriously: please read the error message])!
 
 Does this make sense? `"Hello" * 3` is calling the `String` method `*` with an argument of `3`, which kinda makes sense (add `"Hello"` to itself `3` times).
 
 But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hello"`, which doesn't make much sense (what would it mean to add `3` to itself `"Hello"` times?).
 
-Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line](https://chapters.firstdraft.com/chapters/754#the-bottom-line){target="_blank"} is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
+Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line][The bottom line] is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
+
+<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_multiplication.rb`
 
 #### upcase {-}
 
@@ -232,8 +236,6 @@ p "I'M NOT YELLING AT YOU".downcase
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
 
-**BENP: maybe overkill on the REPLs here, can we combine all these string methods (below as well) into one?**
-
 #### swapcase {-}
 
 The swapcase method returns a copy of the `String` with all uppercase letters replaced with their lowercase counterparts, _and_ vice versa.
@@ -241,6 +243,8 @@ The swapcase method returns a copy of the `String` with all uppercase letters re
 ```ruby
 p "FaMiLy".swapcase # => "fAmIlY
 ```
+
+<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_case.rb`
 
 #### reverse {-}
 
@@ -281,6 +285,8 @@ This seemingly strange task is very common due to the way that getting user inpu
 ```
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
+
+<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_chomp.rb`
 
 #### gsub {-}
 
@@ -328,6 +334,8 @@ For now, we're just going to copy-paste a few simple regexes[^regexone] that com
     "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
     ```
 
+<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_gsub.rb`
+
 #### to_i {-}
 
 Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. `to_i` will attempt to convert a `String` object into an `Integer` object.
@@ -347,6 +355,8 @@ p "   This has a lot of space on the outside     ".strip
 ```
 
 [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
+
+<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_strip.rb`
 
 #### capitalize {-}
 
@@ -478,6 +488,8 @@ their_name = gets.chomp
 ```
 
 and see how it's different.
+
+<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_gets.rb`
 
 ### Conclusion
 

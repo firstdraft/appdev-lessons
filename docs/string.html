@@ -848,9 +848,11 @@ Proudly published with bookdown</a></li>
 <span id="cb4-27"><a href="string.html#cb4-27" aria-hidden="true"></a></span>
 <span id="cb4-28"><a href="string.html#cb4-28" aria-hidden="true"></a><span class="co"># make the invisible visible!</span></span>
 <span id="cb4-29"><a href="string.html#cb4-29" aria-hidden="true"></a>p my_string <span class="co"># =&gt; &quot;Hello, world!&quot;</span></span></code></pre></div>
+<p><mark>✏️ <strong>Exercise:</strong></mark> This is just a quick sandbox, so <a href="https://repl.it/@raghubetina/creating-objects-with-new" target="_blank">click here for a REPL to try it.</a></p>
 <div id="start-the-gitpod-project" class="section level5 unnumbered hasAnchor">
 <h5>Start the GitPod Project<a href="string.html#start-the-gitpod-project" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p><mark>✏️ <strong>Exercise:</strong></mark> It’s time to open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the <code>string_concat.rb</code> file. <strong>BENP: use second half of <a href="https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&amp;start=146.06" target="_blank">string video</a> as template to re-record opening the workspace and working on a file, including <code>rails grade</code></strong></p>
+<p>Once you’ve played with the REPL, it’s time to move into the graded project environment.</p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the <code>string_concat.rb</code> file. <strong>BENP: use second half of <a href="https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&amp;start=146.06" target="_blank">string video</a> as template to re-record opening the workspace and working on a file, including <code>rails grade</code></strong></p>
 <ol style="list-style-type: decimal">
 <li><p><strong>BENP: how are they starting the project, fork from canvas, gitpod.io/# method, other?</strong> Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions" target="_blank">https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions</a></p></li>
 <li><p>Open the <code>string_concat.rb</code> file in the editor window.</p></li>
@@ -861,8 +863,7 @@ Proudly published with bookdown</a></li>
 <li><p>To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you’ve run in a terminal.</p></li>
 <li><p>When you think you have the required output, run <code>rails grade</code> and proceed when the test passes without errors.</p></li>
 </ol>
-<p><strong>If you are struggling, try to experiment directly in the IRB environment by typing <code>irb</code> into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start <code>irb</code> then the terminal will no longer be in the <code>bash</code> environment so things like <code>rails grade</code> won’t work. You will need to open a second terminal with the plus (+) icon and switch between the <code>irb</code> and <code>bash</code> terminals as needed.</strong></p>
-<!-- This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"} -->
+<p>If you are struggling, <strong>try to experiment directly in the IRB environment</strong> by typing <code>irb</code> into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start <code>irb</code> then the terminal will no longer be in the <code>bash</code> environment so things like <code>rails grade</code> won’t work. You will need to open a second terminal with the plus (+) icon and switch between the <code>irb</code> and <code>bash</code> terminals as needed. Alternatively type <code>exit</code> at the IRB terminal prompt to return to the <code>bash</code> environment.</p>
 </div>
 </div>
 <div id="string-literals" class="section level4 unnumbered hasAnchor">
@@ -887,15 +888,15 @@ Proudly published with bookdown</a></li>
 <span id="fn-content">This is not <em>quite</em> true. The <code>+</code> method is not just an alias for <code>concat</code> — they do slightly different things. But they’re close enough, for our purposes.</span></span> That may look a little funny, but it’s nothing special, really; it’s just a method with a very short (one letter long) name:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb8-1"><a href="string.html#cb8-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.+(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
 <p>But here’s where it gets interesting; Ruby has another bit of nice <em>syntactic sugar</em> for us. If a class has a method named <code>+</code>, then you are allowed to drop the <code>.</code> before the method name when you call it, and just say:</p>
-<p><strong>BENP: this seems like a long-winded way to say you can just add strings, but I guess + comes up in other classes besides strings and integers? Is that something students can learn later in their programming life. Always trying to reduce information at the early stages here…maybe dropping the stuff about “.” in this and following section.</strong></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb9-1"><a href="string.html#cb9-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span> +(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
-<p>Wild! And, as we learned earlier when we were <a href="https://chapters.firstdraft.com/chapters/755#make-the-invisible-visible" target="_blank">introduced</a> to the <code>p</code> method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:</p>
+<p>Wild! And, as we learned earlier when we were <a href="a-few-program-notes.html#make-the-invisible-visible">introduced</a> to the <code>p</code> method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb10-1"><a href="string.html#cb10-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span> + <span class="st">&quot; there&quot;</span> <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
-<p>Now this is really starting to look familiar! It’s a lot like the calculator language, actually. <a href="https://chapters.firstdraft.com/chapters/755#developer-happiness" target="_blank">Developer happiness</a>, indeed.</p>
+<p>Now this is really starting to look familiar! It’s a lot like the calculator language, actually. <a href="a-few-program-notes.html#developer-happiness">Developer happiness</a>, indeed.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb11-1"><a href="string.html#cb11-1" aria-hidden="true"></a>a = <span class="st">&quot;Hello&quot;</span></span>
 <span id="cb11-2"><a href="string.html#cb11-2" aria-hidden="true"></a>b = <span class="st">&quot;World&quot;</span></span>
-<span id="cb11-3"><a href="string.html#cb11-3" aria-hidden="true"></a>p a + b        <span class="co"># You can add strings together</span></span></code></pre></div>
-<p><a href="https://repl.it/@raghubetina/concatenation" target="_blank">Click here for a REPL to try it.</a></p>
+<span id="cb11-3"><a href="string.html#cb11-3" aria-hidden="true"></a>p a + b <span class="co"># =&gt; &quot;HelloWorld&quot;        # You can add strings together</span></span></code></pre></div>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod String project and work through <code>string_addition.rb</code></p>
+<!-- [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"} -->
 </div>
 <div id="string-multiplication-a.k.a" class="section level4 unnumbered hasAnchor">
 <h4>String multiplication, a.k.a *<a href="string.html#string-multiplication-a.k.a" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -906,13 +907,14 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb12"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb12-1"><a href="string.html#cb12-1" aria-hidden="true"></a><span class="st">&quot;Ya&quot;</span> * <span class="dv">5</span> <span class="co"># =&gt; &quot;YaYaYaYaYa&quot;</span></span></code></pre></div>
 <p>This sort of makes sense, if you think about multiplication as being repeated addition.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb13-1"><a href="string.html#cb13-1" aria-hidden="true"></a>p <span class="st">&quot;Hello&quot;</span> * <span class="dv">3</span></span></code></pre></div>
-<p><a href="https://repl.it/@raghubetina/multiplication" target="_blank">Click here for a REPL to try it.</a></p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/multiplication" target="_blank">Click here for a REPL to try it.</a></p>
 <p>The order matters, though. See what happens when you try:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb14-1"><a href="string.html#cb14-1" aria-hidden="true"></a><span class="dv">3</span> * <span class="st">&quot;Hello&quot;</span></span></code></pre></div>
-<p>Read The Error Message (<a href="https://chapters.firstdraft.com/chapters/754#seriously-please-read-the-error-message" target="_blank">RTEM</a>)!</p>
+<p>Read The Error Message (<a href="nouns-verbs-and-grammar.html#seriously-please-read-the-error-message">RTEM</a>)!</p>
 <p>Does this make sense? <code>"Hello" * 3</code> is calling the <code>String</code> method <code>*</code> with an argument of <code>3</code>, which kinda makes sense (add <code>"Hello"</code> to itself <code>3</code> times).</p>
 <p>But <code>3 * "Hello"</code> is calling the <code>Integer</code> method <code>*</code> with an argument of <code>"Hello"</code>, which doesn’t make much sense (what would it mean to add <code>3</code> to itself <code>"Hello"</code> times?).</p>
-<p>Thus, we can see why the <code>String</code> version of <code>*</code> and the <code>Integer</code> version of <code>*</code> both need an integer argument. Again, <a href="https://chapters.firstdraft.com/chapters/754#the-bottom-line" target="_blank">the bottom line</a> is — at all times as you are writing Ruby, you should be thinking: “What <strong>class</strong> is this object? What <strong>methods</strong> does <em>this</em> class have available?” Even when there’s some syntactic sugar making things <em>look</em> unconventional, don’t forget your basics! It’s still <code>noun.verb</code> under the hood.</p>
+<p>Thus, we can see why the <code>String</code> version of <code>*</code> and the <code>Integer</code> version of <code>*</code> both need an integer argument. Again, <a href="hash.html#the-bottom-line-1">the bottom line</a> is — at all times as you are writing Ruby, you should be thinking: “What <strong>class</strong> is this object? What <strong>methods</strong> does <em>this</em> class have available?” Even when there’s some syntactic sugar making things <em>look</em> unconventional, don’t forget your basics! It’s still <code>noun.verb</code> under the hood.</p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod String project and work through <code>string_multiplication.rb</code></p>
 </div>
 <div id="upcase" class="section level4 unnumbered hasAnchor">
 <h4>upcase<a href="string.html#upcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -925,12 +927,12 @@ Proudly published with bookdown</a></li>
 <p>The downcase method returns a copy of the <code>String</code> with all uppercase letters replaced with their lowercase counterparts.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb16-1"><a href="string.html#cb16-1" aria-hidden="true"></a>p <span class="st">&quot;I&#39;M NOT YELLING AT YOU&quot;</span>.downcase</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/downcase" target="_blank">Click here for a REPL to try it.</a></p>
-<p><strong>BENP: maybe overkill on the REPLs here, can we combine all these string methods (below as well) into one?</strong></p>
 </div>
 <div id="swapcase" class="section level4 unnumbered hasAnchor">
 <h4>swapcase<a href="string.html#swapcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The swapcase method returns a copy of the <code>String</code> with all uppercase letters replaced with their lowercase counterparts, <em>and</em> vice versa.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb17-1"><a href="string.html#cb17-1" aria-hidden="true"></a>p <span class="st">&quot;FaMiLy&quot;</span>.swapcase <span class="co"># =&gt; &quot;fAmIlY</span></span></code></pre></div>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod String project and work through <code>string_case.rb</code></p>
 </div>
 <div id="reverse" class="section level4 unnumbered hasAnchor">
 <h4>reverse<a href="string.html#reverse" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -954,6 +956,7 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb21"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb21-1"><a href="string.html#cb21-1" aria-hidden="true"></a><span class="st">&quot;1 apples&quot;</span>.chomp(<span class="st">&quot;s&quot;</span>) <span class="co"># =&gt; &quot;1 apple&quot;</span></span>
 <span id="cb21-2"><a href="string.html#cb21-2" aria-hidden="true"></a><span class="st">&quot;1 apple&quot;</span>.chomp(<span class="st">&quot;s&quot;</span>) <span class="co"># =&gt; &quot;1 apple&quot;</span></span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/chomp" target="_blank">Click here for a REPL to try it.</a></p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod String project and work through <code>string_chomp.rb</code></p>
 </div>
 <div id="gsub" class="section level4 unnumbered hasAnchor">
 <h4>gsub<a href="string.html#gsub" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -985,6 +988,7 @@ Proudly published with bookdown</a></li>
 <li><p><code>/[^a-z0-9\s]/i</code> matches everything except letters, digits, and whitespace, so we can use it to remove everything except for those:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb26-1"><a href="string.html#cb26-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^a-z0-9\s]/i</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;March 29th&quot;</span></span></code></pre></div></li>
 </ul>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod String project and work through <code>string_gsub.rb</code></p>
 </div>
 </div>
 <div id="to_i" class="section level4 unnumbered hasAnchor">
@@ -998,6 +1002,7 @@ Proudly published with bookdown</a></li>
 <p><code>strip</code> removes all leading and trailing whitespace.</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb28-1"><a href="string.html#cb28-1" aria-hidden="true"></a>p <span class="st">&quot;   This has a lot of space on the outside     &quot;</span>.strip</span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/strip" target="_blank">Click here for a REPL to try it.</a></p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod String project and work through <code>string_strip.rb</code></p>
 </div>
 <div id="capitalize" class="section level4 unnumbered hasAnchor">
 <h4>capitalize<a href="string.html#capitalize" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -1074,6 +1079,7 @@ Proudly published with bookdown</a></li>
 <p>We almost never want to keep the <code>\n</code> that results from the <kbd>return</kbd> keypress that submits the user’s input. Fortunately, <a href="https://chapters.firstdraft.com/chapters/757#chomp" target="_blank">the handy <code>.chomp</code> method</a> does exactly what we need — if there’s a <code>\n</code> at the end of a string, it will remove it; if there isn’t, it does nothing. So, in practice, when we call <code>gets</code> we almost always tack a <code>.chomp</code> on to it immediately. Try modifying the program to:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb39-1"><a href="string.html#cb39-1" aria-hidden="true"></a>their_name = gets.chomp</span></code></pre></div>
 <p>and see how it’s different.</p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod String project and work through <code>string_gets.rb</code></p>
 </div>
 </div>
 <div id="conclusion" class="section level3 hasAnchor" number="1.3.5">
