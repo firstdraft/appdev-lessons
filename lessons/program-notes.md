@@ -85,7 +85,7 @@ Let's talk a little bit more about how the REPLs work. So far, we've been using 
 
 So, from now one we'll write them in the **editor** on the left side of the REPL window; then we'll run the program by clicking "▶ Run" and seeing the output in the neighboring **terminal**.
 
-![](/assets/program-notes/repl-play.png)
+![](assets/program-notes/repl-play.png)
 
 There won't be any output unless we specifically say what we want to print into the terminal. It turns out there's a special method in Ruby called `Kernel.p` (`p` is short for "print inspect") that will display its argument in the terminal. Try running the following in a REPL:
 

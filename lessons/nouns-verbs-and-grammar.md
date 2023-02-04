@@ -82,7 +82,7 @@ Here's a real example:
 
 <!-- <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/@raghubetina/hello-world?lite=true"></iframe> -->
 
-![](/assets/nouns-verbs-and-grammar/replit-fork-hd.png)
+![](assets/nouns-verbs-and-grammar/replit-fork-hd.png)
 
 In the black window that appears on the right side under the `>_ Console` tab[^the_terminal], type:
 
@@ -96,7 +96,7 @@ and press <kbd>return</kbd>. This will launch _interactive Ruby_ (IRB), a progra
 
 At the `irb(main)` prompt that appears, you can now try out `"Hello, world!".upcase`:
 
-![](/assets/nouns-verbs-and-grammar/irb-new.png)
+![](assets/nouns-verbs-and-grammar/irb-new.png)
 
 If all went well, you should have seen `=> "HELLO, WORLD!"` output by the command. Yay[^tradition]! What just happened?
 

@@ -23,18 +23,18 @@ But how do we create the environment variables and store our secrets in them?
 ### Gitpod
 
 From your Gitpod dashboard
-![](/assets/storing-credentials-securely/gitpod-dashboard.png)
+![](assets/storing-credentials-securely/gitpod-dashboard.png)
 
 Click on your icon in the top right corner and select "Environment Variables"
 
 
-![](/assets/storing-credentials-securely/open-env-gitpod.gif)
+![](assets/storing-credentials-securely/open-env-gitpod.gif)
 
 Next you can click the "+" button to add a new entry and edit the name and value sections.
 
 The "Organization/Repository" entry is to specify which project(s) on Gitpod will have access to this credential. The "Organization/Repository" of **any** Gitpod workspace can be found on the dashboard. 
 
-![](/assets/storing-credentials-securely/gitpod-workspace-organization-repo.jpg)
+![](assets/storing-credentials-securely/gitpod-workspace-organization-repo.jpg)
 
 
 If you want to allow the use of this credential in all workspaces you can set it to `*/*`. 

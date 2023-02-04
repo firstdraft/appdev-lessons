@@ -591,7 +591,7 @@ Proudly published with bookdown</a></li>
 <h5>Printing values<a href="a-few-program-notes.html#printing-values" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Let’s talk a little bit more about how the REPLs work. So far, we’ve been using IRB to run one line of Ruby at a time. But our programs will be thousands of lines long, ultimately; and we want to save them permanently into files, not type them in one line at a time.</p>
 <p>So, from now one we’ll write them in the <strong>editor</strong> on the left side of the REPL window; then we’ll run the program by clicking “▶ Run” and seeing the output in the neighboring <strong>terminal</strong>.</p>
-<p><img src="/assets/program-notes/repl-play.png" /></p>
+<p><img src="assets/program-notes/repl-play.png" /></p>
 <p>There won’t be any output unless we specifically say what we want to print into the terminal. It turns out there’s a special method in Ruby called <code>Kernel.p</code> (<code>p</code> is short for “print inspect”) that will display its argument in the terminal. Try running the following in a REPL:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb25-1"><a href="a-few-program-notes.html#cb25-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
 <span id="cb25-2"><a href="a-few-program-notes.html#cb25-2" aria-hidden="true"></a>t = s.reverse</span>
