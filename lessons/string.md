@@ -301,9 +301,9 @@ p a.gsub("ll", "ww")  # => "Hewwo"
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
 
-##### Advanced gsub techniques {-}
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub.rb`
 
-**BENP: This is pretty advanced and confusing to read the expressions. Do we use `Regexp` ever in the course? It might be better to just keep this as an "addendum" for reference at the end of this chapter or in the One Reference.**
+##### Advanced gsub techniques {-}
 
 `gsub` also supports accepting a _regular expression_ as its first argument. We won't get into regular expressions in detail right now, but all languages (C, C++, Python, etc.) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.
 
@@ -334,7 +334,7 @@ For now, we're just going to copy-paste a few simple regexes[^regexone] that com
     "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
     ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub_advanced.rb`
 
 #### to_i {-}
 
