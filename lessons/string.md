@@ -180,7 +180,7 @@ b = "World"
 p a + b # => "HelloWorld"        # You can add strings together
 ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_addition.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_addition.rb`
 
 <!-- [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"} -->
 
@@ -216,7 +216,7 @@ But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hell
 
 Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line][The bottom line] is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_multiplication.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_multiplication.rb`
 
 #### upcase {-}
 
@@ -226,7 +226,7 @@ The upcase method returns a copy of the `String` with all lowercase letters repl
 p "hello".upcase
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
 
 #### downcase {-}
 
@@ -236,7 +236,7 @@ The downcase method returns a copy of the `String` with all uppercase letters re
 p "I'M NOT YELLING AT YOU".downcase
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
 
 #### swapcase {-}
 
@@ -246,7 +246,7 @@ The swapcase method returns a copy of the `String` with all uppercase letters re
 p "FaMiLy".swapcase # => "fAmIlY
 ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_case.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_case.rb`
 
 #### reverse {-}
 
@@ -256,7 +256,7 @@ The reverse method returns a new `String` with the characters from the `String` 
 p "I can speak in backwords words".reverse
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
 
 #### length {-}
 
@@ -266,7 +266,7 @@ The length method  returns the number of characters (as an `Integer`) that a `St
 p "Supercalifragilisticexpialidocious".length
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
 
 #### chomp {-}
 
@@ -277,7 +277,7 @@ The `chomp` method is mostly used to remove the `"\n"` (newline) character from 
 "Raghu".chomp # => "Raghu"
 ```
 
-This seemingly strange task is very common due to the way that getting user input works; usually someone has to type something at a prompt and then they press <kbd>return</kbd> to submit it, and that adds a newline to the end of the string that they typed. Typically, we want to `chomp` that off the end of their input before we do anything further with it.
+This seemingly strange task is very common due to the way that getting user input works; usually someone has to type something at a prompt and then they press <kbd>return</kbd> to submit it, and that adds a "newline" (`"\n"`) to the end of the string that they typed. Typically, we want to `chomp` that off the end of their input before we do anything further with it.
 
 `chomp` can also remove other specified character(s) from the end of the string, if they are provided as an argument:
 
@@ -286,32 +286,32 @@ This seemingly strange task is very common due to the way that getting user inpu
 "1 apple".chomp("s") # => "1 apple"
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_chomp.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_chomp.rb`
 
 #### gsub {-}
 
-The gsub method returns a copy of the `String` it was called on with all occurrences of the first argument substituted for the second argument.
+The `gsub` method returns a copy of the `String` it was called on with all occurrences of the first argument substituted for the second argument.
 
 ```ruby
 a = "Hello"
 p a.gsub("ll", "ww")  # => "Hewwo"
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
 
 ##### Advanced gsub techniques {-}
 
-**BENP: This is pretty advanced and could be confusing to throw in here; maybe Regexp doesn't appear here?**
+**BENP: This is pretty advanced and confusing to read the expressions. Do we use `Regexp` ever in the course? It might be better to just keep this as an "addendum" for reference at the end of this chapter or in the One Reference.**
 
-`gsub` also supports accepting a _regular expression_ as its first argument. We won't get into regular expressions in detail right now, but all languages (C, C++, Python, etc) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.
+`gsub` also supports accepting a _regular expression_ as its first argument. We won't get into regular expressions in detail right now, but all languages (C, C++, Python, etc.) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.
 
 In Ruby, we work with regular expressions the way we work with everything else — via a class, `Regexp`. We create `Regexp` _literals_ with forward slashes (like we use quotes to create `String` literals), and then put the pattern that we're trying to match between the slashes.
 
 For now, we're just going to copy-paste a few simple regexes[^regexone] that come in handy with `gsub`, in particular:
 
-[^regexone]: If your project requires scanning text for patterns, then [RegexOne](https://regexone.com/){target="_blank"} is a good resource for learning more. [Rubular](https://rubular.com/) is handy for quickly testing your regular expressions against some example strings.
+[^regexone]: If your project requires scanning text for patterns, then [RegexOne](https://regexone.com/){target="_blank"} is a good resource for learning more. [Rubular](https://rubular.com/){target="_blank"} is handy for quickly testing your regular expressions against some example strings.
 
  - `/\s+/` matches all whitespace, so we can use it with `gsub` to _remove_ all whitespace:
 
@@ -323,20 +323,18 @@ For now, we're just going to copy-paste a few simple regexes[^regexone] that com
     ```ruby
     "March 29th!".gsub(/[^0-9]/, "") # => "29"
     ```
- - `/[^a-z]/i` matches everything _except_ letters (case-insensitively), so we can use it with `gsub` to _remove_ everything except letters:
-
-**BENP: where is the `i` from in the above expression -- case-insensitive?**
+ - `/[^a-z]/i` matches everything _except_ letters (case-insensitively using the `i` mode after the `//` slashes). So we can use it with `gsub` to _remove_ everything except letters:
 
     ```ruby
     "March 29th!".gsub(/[^a-z]/i, "") # => "Marchth"
     ```
- - `/[^a-z0-9\s]/i` matches everything except letters, digits, and whitespace, so we can use it to remove everything except for those:
+ - `/[^a-z0-9\s]/i` matches everything _except_ letters, digits, and whitespace, so we can use it to remove everything except for those:
 
     ```ruby
     "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
     ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_gsub.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub.rb`
 
 #### to_i {-}
 
@@ -346,7 +344,7 @@ Sometimes you have a string that contains a number, usually input from a user, a
 p "8".to_i
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
 
 #### strip {-}
 
@@ -356,9 +354,9 @@ p "8".to_i
 p "   This has a lot of space on the outside     ".strip
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_strip.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_strip.rb`
 
 #### capitalize {-}
 
@@ -368,7 +366,7 @@ capitalize returns a `String` with the first character converted to uppercase an
 p "beginning".capitalize
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
 
 #### split {-}
 
@@ -384,7 +382,7 @@ words = sentence.split
 p words
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/split){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/split){target="_blank"}
 
 If you do provide an argument to `.split`, then the string will be chopped up wherever that argument occurs instead of whitespace — for example, use `"4,8,15,16,23,42".split(",")` to split on commas.
 
@@ -408,7 +406,7 @@ p "Happy Days".include?("H")
 p "Happy Days".include?("Z")
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
 
 ### More on adding strings together
 
@@ -419,7 +417,7 @@ number = 6 * 7
 message = "Your lucky number for today is " + number + "."
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){target="_blank"}
 
 You'll see that Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn't feel comfortable with that.
 
@@ -457,7 +455,7 @@ their_name = gets
 p "Hello, " + their_name + "!"
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){target="_blank"}
 
 Great! Our first user input. However, you'll notice a couple of things. First of all, there's a `\n` sneaking into the input. `\n` represents a newline character, and it's in there because of the <kbd>return</kbd> that is pressed to submit the input.
 
@@ -491,7 +489,7 @@ their_name = gets.chomp
 
 and see how it's different.
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod String project and work through `string_gets.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gets.rb`
 
 ### Conclusion
 
