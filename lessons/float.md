@@ -9,7 +9,7 @@ Ruby calls decimal numbers `Float`s. To create a `Float` rather than an `Integer
 
 ### Methods
 
-#### + - * / ** (math)
+#### + - * / ** (math) {-}
 
 The math methods work mostly like you'd expect, and similarly to [the ones for integers](#integer-math).
 
@@ -50,7 +50,7 @@ Open the GitPod project for this chapter and start with the exercises. [See prio
 
 where `a` and `b` are the lengths of the shorter sides, and `c` is the length of the longest side. Read more about the formula [here](https://www.mathsisfun.com/pythagoras.html){target="_blank"}.
 
-#### round
+#### round {-}
 
 `Float`s can round themselves. Play around with the `.round` method:
 
@@ -63,7 +63,7 @@ p pi.round(3)
 
 <mark>✏️ **Exercise:**</mark> Return to the GitPod `Float` project and work through `float_round.rb`
 
-#### rand
+#### rand {-}
 
 The `rand` method that we met earlier can also be called with no arguments, in which case it returns a `Float` between 0 and 1. This is very handy for e.g. probabilities. Give it a try:
 
@@ -79,4 +79,58 @@ That's it for `Float`. Next up, we'll learn to manipulate dates and times with t
 
 ### Addendum: Even more Float methods
 
-Looking for even more Float methods? See [here][More Float methods] for some additional methods added by the `activesupport` gem (automatically available within Ruby on Rails).
+Looking for even more Float methods?
+
+Ruby on Rails enhances certain Ruby classes with additional convenience methods that aren't included in plain ol' Ruby. Many of these are included in the `activesupport` gem that comes with Rails; you could also include it in a pure Ruby program if you wanted to.
+
+ - To use the following methods within Ruby on Rails, you don't have to do anything.
+ - To use the following methods in a plain Ruby script, include the line:
+
+    ```ruby
+    require 'activesupport'
+    ```
+
+#### Formatting Floats as Strings {-}
+
+As we know, you can call the `.to_s` method on a Float to convert the number into a String:
+
+```ruby
+10.25.to_s # => "10.25"
+```
+
+Within a Rails application[^Rails], you can provide a `Symbol`[^Symbol] as an argument to `Float`'s `to_s` method. This allows you to convert the `Float` to a `String` _and_ add additional formatting at the same time.
+
+[^Rails]:  Or anywhere using `activesupport`.
+
+[^Symbol]: A `Symbol` is a Ruby Class that is similar to a `String`. Symbols start with a colon (`:`) at the beginning. See the chapter section [here][A brief interlude: Symbols]. 
+
+##### Phone {-}
+
+```ruby
+5551234.to_s(:phone) # => "555-1234"
+```
+
+In addition to providing a `Symbol` to the `to_s` method, you can provide an _additional_ `Hash`[^Hash] argument to tweak the some finer details about how we want to format the Float.
+
+```ruby
+1235551234.to_s(:phone, { :area_code => true }                     # => "(123) 555-1234"
+1235551234.to_s(:phone, { :country_code => 1 } )                   # => "+1-123-555-1234"
+1235551234.to_s(:phone, { :area_code => true, :extension => 555 }) # => (123) 555-1234 x 555
+```
+
+[^Hash]: A `Hash` is another Class is Ruby that. See the [Hash chapter](#hash-chapter). In this case, just be aware that this kind of formatting is possible and easy to do in a Rails application.
+
+##### Currency {-}
+
+```ruby
+1234567890.50.to_s(:currency)                  # => "$1,234,567,890.50"
+67890.506.to_s(:currency, { :precision => 3 }) # => "$67,890.506"
+```
+
+##### Percentage {-}
+
+```ruby
+100.to_s(:percentage)                                            # => "100.000%"
+100.to_s(:percentage, { :precision => 0 } )                      # => "100%"
+1000.to_s(:percentage, { :delimiter => ".", :separator => "," }) # => "1.000,000%"
+```

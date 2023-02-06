@@ -1,10 +1,5 @@
 ## Date
 
-- Notes:
-
-  - Copied from [`date.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/date.md){target="_blank"}
-  - See [Ruby Practice: Date][Ruby Practice: Date] for project: [https://github.com/appdev-projects/date-chapter](https://github.com/appdev-projects/date-chapter){target="_blank"}
-
 Sure, we could just use a `String` to represent a date, like `"April 19, 1987"`. But Ruby has a built-in class that makes it much easier to work with dates: `Date`.
 
 ### Creating a date
@@ -17,7 +12,7 @@ The `Date` class isn't loaded into every Ruby program by default, so to use it w
 require "date"
 ```
 
-(Usually we omit the parentheses around the string argument to the `require` method.)
+(Usually we [omit the parentheses][Optional parentheses around arguments] around the string argument to the `require` method. Just like when we use `p "Hello, world!"` as opposed to `p("Hello, World!")`.)
 
 #### Date.new
 
@@ -27,7 +22,7 @@ After `require "date"`, we can create a new instance as usual with:
 Date.new # => #<Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
 ```
 
-By default, the new date is January 1st, of the year -4712 BCE! Interesting[^julian], but not very helpful.
+By default, the new date is January 1st, of the year 4712 BCE! Interesting[^julian], but not very helpful.
 
 [^julian]: [Julian Period](https://en.wikipedia.org/wiki/Julian_day){target="_blank"}
 
@@ -39,7 +34,9 @@ Date.new(2001,2,3)        #=> #<Date: 2001-02-03 ...>
 Date.new(2001,2,-1)       #=> #<Date: 2001-02-28 ...>
 ```
 
-### Date.today
+### Date Methods
+
+#### Date.today {-}
 
 The `Date.today` method returns an object initialized to the current date.
 
@@ -47,7 +44,7 @@ The `Date.today` method returns an object initialized to the current date.
 Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 ```
 
-### year
+#### year {-}
 
 Call the `year` method on a `Date` object to return just the year of the date as an `Integer`.
 
@@ -55,7 +52,7 @@ Call the `year` method on a `Date` object to return just the year of the date as
 t = Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 t.year # => 2019
 ```
-### month
+#### month {-}
 
 Call the `month` method on a `Date` object to return just the month of the date as an `Integer`.
 
@@ -64,7 +61,7 @@ t = Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 t.month # => 4
 ```
 
-### day
+#### day {-}
 
 Call the `day` method on a `Date` object to return just the day of the date as an `Integer`.
 
@@ -73,7 +70,13 @@ t = Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 t.day # => 16
 ```
 
-### Date.parse
+##### Start the GitPod Project {-}
+
+Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions){target="_blank"}.
+
+<mark>✏️ **Exercise:**</mark> Work through `date_formatted.rb`.
+
+#### Date.parse {-}
 
 The `Date.parse()` method accepts a `String` argument and tries to interpret it as a date, initializing a `Date` object.
 
@@ -83,7 +86,7 @@ Date.parse("20010203") #=> #<Date: 2001-02-03 ...>
 Date.parse("3rd Feb 2001") #=> #<Date: 2001-02-03 ...>
 ```
 
-### Subtraction
+#### Subtraction {-}
 
 You can subtract two dates from one another, which will return the number of days between them. The return value class is a `Rational`, which can be converted to a regular `Integer` with `.to_i`:
 
@@ -94,41 +97,45 @@ days.to_i
  => 88674
 ```
 
-### monday?
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `Date` project and work through `date_math.rb`
+
+#### monday? {-}
 
 Returns `true` if the date is a Monday.
 
-### tuesday?
+#### tuesday? {-}
 
 Returns `true` if the date is a Tuesday.
 
-### wednesday?
+#### wednesday? {-}
 
 Returns `true` if the date is a Wednesday.
 
-### thursday?
+#### thursday? {-}
 
 Returns `true` if the date is a Thursday.
 
-### friday?
+#### friday? {-}
 
 Returns `true` if the date is a Friday.
 
-### saturday?
+#### saturday? {-}
 
 Returns `true` if the date is a Saturday.
 
-### sunday?
+#### sunday? {-}
 
 Returns `true` if the date is a Sunday.
 
-### wday
+#### wday {-}
 
 Returns the day of week (0-6, Sunday is zero).
 
 ```ruby
 Date.new(2001,2,3).wday #=> 6
 ```
+
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `Date` project and work through `date_math.rb`
 
 ### Time
 
@@ -140,7 +147,7 @@ Time.now.saturday? # => true
 Time.now.day # => 3
 ```
 
-#### strftime
+#### strftime {-}
 
 The `strftime` method is used on a `Date` or `Time` object. It requires a `String` argument that will be used to format the Date or Time in a particular way.
 
@@ -156,50 +163,6 @@ Time.now.strftime("%a %e, %R %p") # => "Mon, 7 14:35 PM"
 
 You should **not** try to memorize what these patterns mean. Tools like [strftime.net](http://www.strftime.net){target="_blank"} and [For a Good Strftime](https://www.foragoodstrftime.com/){target="_blank"} exist to help compose the formatting string argument.
 
-## Ruby Practice: Date
+###  Conclusion
 
-- Notes:
-
-  - Copied from project README: [https://github.com/appdev-projects/date-chapter](https://github.com/appdev-projects/date-chapter){target="_blank"}
-
-Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
-
-If we want to run `date_math.rb`, we can write the command:
-
-```bash
-ruby date_math.rb
-```
-
-To re-run this command, you can use the UP and DOWN arrow keys to look at the history of commands you've run in a Terminal.
-
-### date_formatted.rb
-
-Should format and identify different parts of todays date.
-
-```bash
-"The year is: 2020, the calendar day is: 1, and the month is: 7."
-```
-
-
-### date_math.rb
-Should output the number of days since Ruby was made.
-
-Ruby released to the public on `December 21, 1995`.
-
-```bash
-"Ruby is 108937 days old!"
-```
-
-### date_monday.rb
-
-Should output:
-```bash
-"Is today Monday? true"
-```
-if today is Monday, or
-```bash
-"Is today Monday? false"
-```
-if today is _not_ Monday.
-
-
+That's it for `Date` and `Time`. Next up, we'll learn how we can make lists of data with the `Array` class.

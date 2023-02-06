@@ -24,7 +24,7 @@ We'll learn about integers first.
 
 Let's experiment with some common methods for `Integer`s:
 
-### + - * / % ** (math) {#integer-math}
+#### + - * / % ** (math) {- #integer-math}
 
 We, of course, have the standard math methods, like the calculator language. These methods all have the same syntactic sugar that the `String` versions did, so we can say `12 + 5` rather than `12.+(5)` (thankfully).
 
@@ -77,7 +77,7 @@ If you are struggling, **try to experiment directly in the IRB environment** by 
 
 ![](assets/string/irb-gif.gif)
 
-### odd? and even?
+#### odd? and even? {-}
 
 The `.odd?` and `.even?` methods return `true` or `false` based on whether the number is, well, odd or even. Don't be thrown off by the question mark at the end of the method name — it's nothing special, just another letter. Rubyists like to end method names with a question mark when methods return `true` or `false`.
 
@@ -89,7 +89,7 @@ p 7.odd?
 
 <mark>✏️ **Exercise:**</mark> Return to the GitPod `Integer` project and work through `integer_odd.rb`
 
-### rand
+#### rand {-}
 
 There's another special method like `p` that we are allowed to call "in space", i.e. not on the right side of a dot[^rand_implicit_receiver], called `rand`. It returns a random number, and is very useful for all kinds of stuff, everything from games to statistical analysis:
 
@@ -110,7 +110,7 @@ p rand(9)
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/rand){target="_blank"}
 
-### to_s
+#### to_s {-}
 
 We often will want to combine our `Integer`s with `String`s when crafting output for our users. Give it a try:
 
@@ -129,7 +129,7 @@ p 98.to_s
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){target="_blank"}
 
-### to_f
+#### to_f {-}
 
 Similarly, there's a `to_f` (or "to float") method to convert an `Integer` to a `Float`, which is often handy for doing math, as we'll see next.
 

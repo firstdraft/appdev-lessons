@@ -33,7 +33,7 @@ rmd_files:
     "lessons/each.md",
     "lessons/hash.md",
     "lessons/our-own-classes.md",
-    "lessons/more-on-floats.md",
+    # # "lessons/more-on-floats.md",
     "lessons/ruby-gym.md", 
     
     # "lesson/umbrella.md",
