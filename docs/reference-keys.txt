@@ -31,10 +31,6 @@ rand
 to_s
 to_f
 conclusion-1
-ruby-practice-integer
-integer_math.rb
-integer_odd.rb
-integer_birth_year.rb
 float
 methods-2
 math-1

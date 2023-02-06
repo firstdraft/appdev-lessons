@@ -149,6 +149,30 @@ Some further things for you to experiment with:
 
 #### String#split
 
+<!-- This transforms the `String` into an `Array` (a list), which we'll [read more about later](https://chapters.firstdraft.com/chapters/758).
+
+If you provide no argument, the string is split upon whitespace, which is handy for e.g. turning a sentence into a list of words:
+
+```ruby
+sentence = "Hi I'd like to learn how to program please!"
+
+words = sentence.split
+
+p words
+```
+
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/split){target="_blank"}
+
+If you do provide an argument to `.split`, then the string will be chopped up wherever that argument occurs instead of whitespace — for example, use `"4,8,15,16,23,42".split(",")` to split on commas.
+
+You can also `split` with the empty string, `""`, as an argument in order to turn a string into an `Array` of its individual characters:
+
+```ruby
+a = "Hello!".split("") # => ["H", "e", "l", "l", "o", "!"]
+a.at(0) # => "H"
+a.at(-1) # => "!"
+``` -->
+
 Before we proceed with more `Array` methods, I want to go back for a minute and talk about [the `.split` method from the `String` class](https://chapters.firstdraft.com/chapters/757#split){target="_blank"}. This method, when called on a `String`, will return an `Array` of substrings:
 
 ```ruby

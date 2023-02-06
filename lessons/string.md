@@ -108,7 +108,9 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
 <mark>✏️ **Exercise:**</mark> Open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file. **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`**
 
- 1. **BENP: how are they starting the project, fork from canvas, gitpod.io/# method, other?** Fork the project from GitHub: [https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions){target="_blank"}
+**BENP: how are they starting the project, fork from canvas, gitpod.io/# method (gitpod.io/# would require access token to run rails grade...)** 
+
+ 1. Fork the project from GitHub: [https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions){target="_blank"}
  1. Open the `string_concat.rb` file in the editor window.
  1. Modify the file per the instructions on top.
  1. Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the terminal. If we want to run `string_concat.rb`, we can write the command:
@@ -301,8 +303,6 @@ p a.gsub("ll", "ww")  # => "Hewwo"
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub.rb`
-
 ##### Advanced gsub techniques {-}
 
 `gsub` also supports accepting a _regular expression_ as its first argument. We won't get into regular expressions in detail right now, but all languages (C, C++, Python, etc.) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.
@@ -334,7 +334,9 @@ For now, we're just going to copy-paste a few simple regexes[^regexone] that com
     "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
     ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub_advanced.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub.rb`
+
+<!-- <mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub_advanced.rb` -->
 
 #### to_i {-}
 
@@ -356,8 +358,6 @@ p "   This has a lot of space on the outside     ".strip
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_strip.rb`
-
 #### capitalize {-}
 
 capitalize returns a `String` with the first character converted to uppercase and the remainder to lowercase.
@@ -368,9 +368,13 @@ p "beginning".capitalize
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
 
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_strip.rb`
+
 #### split {-}
 
-This transforms the `String` into an `Array` (a list), which we'll [read more about later](https://chapters.firstdraft.com/chapters/758).
+**BENP: Commented out String#split. This chapter already very long and this method is better introduced in Array.**
+
+<!-- This transforms the `String` into an `Array` (a list), which we'll [read more about later](https://chapters.firstdraft.com/chapters/758).
 
 If you provide no argument, the string is split upon whitespace, which is handy for e.g. turning a sentence into a list of words:
 
@@ -386,15 +390,13 @@ p words
 
 If you do provide an argument to `.split`, then the string will be chopped up wherever that argument occurs instead of whitespace — for example, use `"4,8,15,16,23,42".split(",")` to split on commas.
 
-**BENP: Below is maybe best left off, introduces arrays and array indexing a bit early**
-
 You can also `split` with the empty string, `""`, as an argument in order to turn a string into an `Array` of its individual characters:
 
 ```ruby
 a = "Hello!".split("") # => ["H", "e", "l", "l", "o", "!"]
 a.at(0) # => "H"
 a.at(-1) # => "!"
-```
+``` -->
 
 #### include? {-}
 
@@ -481,7 +483,7 @@ Most of the time, we'll stick with `p`, since it provides more details while deb
 
 #### gets.chomp {-}
 
-We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, [the handy `.chomp` method](https://chapters.firstdraft.com/chapters/757#chomp){target="_blank"} does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
+We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, [the handy `.chomp` method][chomp] does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
 
 ```ruby
 their_name = gets.chomp
@@ -493,4 +495,4 @@ and see how it's different.
 
 ### Conclusion
 
-That's about all we'll need to know about strings to do most anything related to web applications! Next, we'll take a look at numbers, [starting with `Integer`](https://chapters.firstdraft.com/chapters/760).
+That's about all we'll need to know about strings to do most anything related to web applications! Next, we'll take a look at numbers, starting with `Integer`.
