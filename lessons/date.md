@@ -74,7 +74,7 @@ t.day # => 16
 
 Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions){target="_blank"}.
 
-<mark>✏️ **Exercise:**</mark> Work through `date_formatted.rb`.
+<mark>✏️ **Exercise:**</mark> On GitPod in the `Date` project, work through `date_formatted.rb`.
 
 #### Date.parse {-}
 
@@ -135,7 +135,7 @@ Returns the day of week (0-6, Sunday is zero).
 Date.new(2001,2,3).wday #=> 6
 ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Date` project and work through `date_math.rb`
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `Date` project and work through `date_monday.rb`
 
 ### Time
 

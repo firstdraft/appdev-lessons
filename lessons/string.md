@@ -370,34 +370,6 @@ p "beginning".capitalize
 
 <mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_strip.rb`
 
-#### split {-}
-
-**BENP: Commented out String#split. This chapter already very long and this method is better introduced in Array.**
-
-<!-- This transforms the `String` into an `Array` (a list), which we'll [read more about later](https://chapters.firstdraft.com/chapters/758).
-
-If you provide no argument, the string is split upon whitespace, which is handy for e.g. turning a sentence into a list of words:
-
-```ruby
-sentence = "Hi I'd like to learn how to program please!"
-
-words = sentence.split
-
-p words
-```
-
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/split){target="_blank"}
-
-If you do provide an argument to `.split`, then the string will be chopped up wherever that argument occurs instead of whitespace — for example, use `"4,8,15,16,23,42".split(",")` to split on commas.
-
-You can also `split` with the empty string, `""`, as an argument in order to turn a string into an `Array` of its individual characters:
-
-```ruby
-a = "Hello!".split("") # => ["H", "e", "l", "l", "o", "!"]
-a.at(0) # => "H"
-a.at(-1) # => "!"
-``` -->
-
 #### include? {-}
 
 `include?` takes a String argument and returns `true` or `false` if the argument exists in the String that `include?` is called on.

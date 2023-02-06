@@ -44,7 +44,7 @@ One other thing to keep in mind: you can use `**` in conjunction with fractions 
 
 Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions){target="_blank"}.
 
-<mark>✏️ **Exercise:**</mark> Work through `float_find_hypotenuse.rb`. _Remember_: the Pythagorean Theorem says that
+<mark>✏️ **Exercise:**</mark> On GitPod in the `Float` project, work through `float_find_hypotenuse.rb`. _Remember_: the Pythagorean Theorem says that
 
 ![](assets/float/pythagorous.png)
 

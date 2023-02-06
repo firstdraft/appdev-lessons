@@ -328,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="B.5.10" data-path="string-1.html"><a href="string-1.html#to_i-string"><i class="fa fa-check"></i><b>B.5.10</b> .to_i (String)</a></li>
 <li class="chapter" data-level="B.5.11" data-path="string-1.html"><a href="string-1.html#strip-1"><i class="fa fa-check"></i><b>B.5.11</b> .strip</a></li>
 <li class="chapter" data-level="B.5.12" data-path="string-1.html"><a href="string-1.html#capitalize-1"><i class="fa fa-check"></i><b>B.5.12</b> .capitalize</a></li>
-<li class="chapter" data-level="B.5.13" data-path="string-1.html"><a href="string-1.html#split-1"><i class="fa fa-check"></i><b>B.5.13</b> .split</a></li>
+<li class="chapter" data-level="B.5.13" data-path="string-1.html"><a href="string-1.html#split"><i class="fa fa-check"></i><b>B.5.13</b> .split</a></li>
 <li class="chapter" data-level="B.5.14" data-path="string-1.html"><a href="string-1.html#include-2"><i class="fa fa-check"></i><b>B.5.14</b> .include?</a></li>
 </ul></li>
 <li class="chapter" data-level="B.6" data-path="integer-1.html"><a href="integer-1.html"><i class="fa fa-check"></i><b>B.6</b> Integer</a>
@@ -489,7 +489,7 @@ Proudly published with bookdown</a></li>
 <p>Sure, we could just use a <code>String</code> to represent a date, like <code>"April 19, 1987"</code>. But Ruby has a built-in class that makes it much easier to work with dates: <code>Date</code>.</p>
 <div id="creating-a-date" class="section level3 hasAnchor" number="1.6.1">
 <h3><span class="header-section-number">1.6.1</span> Creating a date<a href="date.html#creating-a-date" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>BENP: is this our first library import? Maybe that deserved more of an aside about “gems”?</strong></p>
+<p><strong>BENP: Do we need an aside section here introducing gems in a bit more detail.</strong></p>
 <p>The <code>Date</code> class isn’t loaded into every Ruby program by default, so to use it we first need to say</p>
 <div class="sourceCode" id="cb87"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb87-1"><a href="date.html#cb87-1" aria-hidden="true"></a>require <span class="st">&quot;date&quot;</span></span></code></pre></div>
 <p>(Usually we <a href="a-few-program-notes.html#optional-parentheses-around-arguments">omit the parentheses</a> around the string argument to the <code>require</code> method. Just like when we use <code>p "Hello, world!"</code> as opposed to <code>p("Hello, World!")</code>.)</p>
@@ -534,7 +534,7 @@ Proudly published with bookdown</a></li>
 <div id="start-the-gitpod-project-2" class="section level5 unnumbered hasAnchor">
 <h5>Start the GitPod Project<a href="date.html#start-the-gitpod-project-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Open the GitPod project for this chapter and start with the exercises. <a href="integer.html#start-the-gitpod-project-for-integer">See prior steps</a> as a reminder. Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions" target="_blank">https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions</a>.</p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Work through <code>date_formatted.rb</code>.</p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> On GitPod in the <code>Date</code> project, work through <code>date_formatted.rb</code>.</p>
 </div>
 </div>
 <div id="date.parse" class="section level4 unnumbered hasAnchor">
@@ -585,7 +585,7 @@ Proudly published with bookdown</a></li>
 <h4>wday<a href="date.html#wday" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Returns the day of week (0-6, Sunday is zero).</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb96-1"><a href="date.html#cb96-1" aria-hidden="true"></a><span class="dt">Date</span>.new(<span class="dv">2001</span>,<span class="dv">2</span>,<span class="dv">3</span>).wday <span class="co">#=&gt; 6</span></span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod <code>Date</code> project and work through <code>date_math.rb</code></p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod <code>Date</code> project and work through <code>date_monday.rb</code></p>
 </div>
 </div>
 <div id="time" class="section level3 hasAnchor" number="1.6.3">

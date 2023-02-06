@@ -328,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="B.5.10" data-path="string-1.html"><a href="string-1.html#to_i-string"><i class="fa fa-check"></i><b>B.5.10</b> .to_i (String)</a></li>
 <li class="chapter" data-level="B.5.11" data-path="string-1.html"><a href="string-1.html#strip-1"><i class="fa fa-check"></i><b>B.5.11</b> .strip</a></li>
 <li class="chapter" data-level="B.5.12" data-path="string-1.html"><a href="string-1.html#capitalize-1"><i class="fa fa-check"></i><b>B.5.12</b> .capitalize</a></li>
-<li class="chapter" data-level="B.5.13" data-path="string-1.html"><a href="string-1.html#split-1"><i class="fa fa-check"></i><b>B.5.13</b> .split</a></li>
+<li class="chapter" data-level="B.5.13" data-path="string-1.html"><a href="string-1.html#split"><i class="fa fa-check"></i><b>B.5.13</b> .split</a></li>
 <li class="chapter" data-level="B.5.14" data-path="string-1.html"><a href="string-1.html#include-2"><i class="fa fa-check"></i><b>B.5.14</b> .include?</a></li>
 </ul></li>
 <li class="chapter" data-level="B.6" data-path="integer-1.html"><a href="integer-1.html"><i class="fa fa-check"></i><b>B.6</b> Integer</a>
@@ -963,33 +963,6 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb55"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb55-1"><a href="string.html#cb55-1" aria-hidden="true"></a>p <span class="st">&quot;beginning&quot;</span>.capitalize</span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/capitalize" target="_blank">Click here for a REPL to try it.</a></p>
 <p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod <code>String</code> project and work through <code>string_strip.rb</code></p>
-</div>
-<div id="split" class="section level4 unnumbered hasAnchor">
-<h4>split<a href="string.html#split" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><strong>BENP: Commented out String#split. This chapter already very long and this method is better introduced in Array.</strong></p>
-<!-- This transforms the `String` into an `Array` (a list), which we'll [read more about later](https://chapters.firstdraft.com/chapters/758).
-
-If you provide no argument, the string is split upon whitespace, which is handy for e.g. turning a sentence into a list of words:
-
-```ruby
-sentence = "Hi I'd like to learn how to program please!"
-
-words = sentence.split
-
-p words
-```
-
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/split){target="_blank"}
-
-If you do provide an argument to `.split`, then the string will be chopped up wherever that argument occurs instead of whitespace — for example, use `"4,8,15,16,23,42".split(",")` to split on commas.
-
-You can also `split` with the empty string, `""`, as an argument in order to turn a string into an `Array` of its individual characters:
-
-```ruby
-a = "Hello!".split("") # => ["H", "e", "l", "l", "o", "!"]
-a.at(0) # => "H"
-a.at(-1) # => "!"
-``` -->
 </div>
 <div id="include" class="section level4 unnumbered hasAnchor">
 <h4>include?<a href="string.html#include" class="anchor-section" aria-label="Anchor link to header"></a></h4>
