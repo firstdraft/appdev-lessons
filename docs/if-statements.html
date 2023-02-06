@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.9 If statements | AD1</title>
+  <title>1.8 If statements | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.9 If statements | AD1" />
+  <meta property="og:title" content="1.8 If statements | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.9 If statements | AD1" />
+  <meta name="twitter:title" content="1.8 If statements | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="ruby-practice-array.html"/>
+<link rel="prev" href="array.html"/>
 <link rel="next" href="ruby-practice-conditionals.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -200,83 +200,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.7.1" data-path="array.html"><a href="array.html#creating-arrays"><i class="fa fa-check"></i><b>1.7.1</b> Creating arrays</a></li>
 <li class="chapter" data-level="1.7.2" data-path="array.html"><a href="array.html#methods-3"><i class="fa fa-check"></i><b>1.7.2</b> Methods</a></li>
+<li class="chapter" data-level="1.7.3" data-path="array.html"><a href="array.html#conclusion-4"><i class="fa fa-check"></i><b>1.7.3</b> Conclusion</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html"><i class="fa fa-check"></i><b>1.8</b> Ruby Practice: Array</a>
+<li class="chapter" data-level="1.8" data-path="if-statements.html"><a href="if-statements.html"><i class="fa fa-check"></i><b>1.8</b> If statements</a>
 <ul>
-<li class="chapter" data-level="1.8.1" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_element_square.rb"><i class="fa fa-check"></i><b>1.8.1</b> array_element_square.rb</a></li>
-<li class="chapter" data-level="1.8.2" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_count.rb"><i class="fa fa-check"></i><b>1.8.2</b> array_count.rb</a></li>
-<li class="chapter" data-level="1.8.3" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_reverse.rb"><i class="fa fa-check"></i><b>1.8.3</b> array_reverse.rb</a></li>
-<li class="chapter" data-level="1.8.4" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_min_max_difference.rb"><i class="fa fa-check"></i><b>1.8.4</b> array_min_max_difference.rb</a></li>
-<li class="chapter" data-level="1.8.5" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_sum_elements.rb"><i class="fa fa-check"></i><b>1.8.5</b> array_sum_elements.rb</a></li>
+<li class="chapter" data-level="1.8.1" data-path="if-statements.html"><a href="if-statements.html#the-basic-anatomy-of-if-statements"><i class="fa fa-check"></i><b>1.8.1</b> The basic anatomy of if statements</a></li>
+<li class="chapter" data-level="1.8.2" data-path="if-statements.html"><a href="if-statements.html#multibranch-if-statements"><i class="fa fa-check"></i><b>1.8.2</b> Multibranch if statements</a></li>
+<li class="chapter" data-level="1.8.3" data-path="if-statements.html"><a href="if-statements.html#truthiness-and-falsiness"><i class="fa fa-check"></i><b>1.8.3</b> truthiness and falsiness</a></li>
+<li class="chapter" data-level="1.8.4" data-path="if-statements.html"><a href="if-statements.html#comparisons"><i class="fa fa-check"></i><b>1.8.4</b> Comparisons</a></li>
+<li class="chapter" data-level="1.8.5" data-path="if-statements.html"><a href="if-statements.html#combining-conditions-with-and-and-or"><i class="fa fa-check"></i><b>1.8.5</b> Combining conditions with AND and OR</a></li>
+<li class="chapter" data-level="1.8.6" data-path="if-statements.html"><a href="if-statements.html#challenge"><i class="fa fa-check"></i><b>1.8.6</b> Challenge</a></li>
 </ul></li>
-<li class="chapter" data-level="1.9" data-path="if-statements.html"><a href="if-statements.html"><i class="fa fa-check"></i><b>1.9</b> If statements</a>
+<li class="chapter" data-level="1.9" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html"><i class="fa fa-check"></i><b>1.9</b> Ruby Practice: Conditionals</a>
 <ul>
-<li class="chapter" data-level="1.9.1" data-path="if-statements.html"><a href="if-statements.html#the-basic-anatomy-of-if-statements"><i class="fa fa-check"></i><b>1.9.1</b> The basic anatomy of if statements</a></li>
-<li class="chapter" data-level="1.9.2" data-path="if-statements.html"><a href="if-statements.html#multibranch-if-statements"><i class="fa fa-check"></i><b>1.9.2</b> Multibranch if statements</a></li>
-<li class="chapter" data-level="1.9.3" data-path="if-statements.html"><a href="if-statements.html#truthiness-and-falsiness"><i class="fa fa-check"></i><b>1.9.3</b> truthiness and falsiness</a></li>
-<li class="chapter" data-level="1.9.4" data-path="if-statements.html"><a href="if-statements.html#comparisons"><i class="fa fa-check"></i><b>1.9.4</b> Comparisons</a></li>
-<li class="chapter" data-level="1.9.5" data-path="if-statements.html"><a href="if-statements.html#combining-conditions-with-and-and-or"><i class="fa fa-check"></i><b>1.9.5</b> Combining conditions with AND and OR</a></li>
-<li class="chapter" data-level="1.9.6" data-path="if-statements.html"><a href="if-statements.html#challenge"><i class="fa fa-check"></i><b>1.9.6</b> Challenge</a></li>
+<li class="chapter" data-level="1.9.1" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_rps.rb"><i class="fa fa-check"></i><b>1.9.1</b> conditionals_rps.rb</a></li>
+<li class="chapter" data-level="1.9.2" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_palindrome.rb"><i class="fa fa-check"></i><b>1.9.2</b> conditionals_palindrome.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.10" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html"><i class="fa fa-check"></i><b>1.10</b> Ruby Practice: Conditionals</a>
+<li class="chapter" data-level="1.10" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html"><i class="fa fa-check"></i><b>1.10</b> Loops in Ruby</a>
 <ul>
-<li class="chapter" data-level="1.10.1" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_rps.rb"><i class="fa fa-check"></i><b>1.10.1</b> conditionals_rps.rb</a></li>
-<li class="chapter" data-level="1.10.2" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_palindrome.rb"><i class="fa fa-check"></i><b>1.10.2</b> conditionals_palindrome.rb</a></li>
+<li class="chapter" data-level="1.10.1" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#if-conditionally-doing-something-once"><i class="fa fa-check"></i><b>1.10.1</b> if: conditionally doing something once</a></li>
+<li class="chapter" data-level="1.10.2" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#while-conditionally-doing-something-multiple-times"><i class="fa fa-check"></i><b>1.10.2</b> while: conditionally doing something multiple times</a></li>
+<li class="chapter" data-level="1.10.3" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#blocks"><i class="fa fa-check"></i><b>1.10.3</b> Blocks</a></li>
 </ul></li>
-<li class="chapter" data-level="1.11" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html"><i class="fa fa-check"></i><b>1.11</b> Loops in Ruby</a>
+<li class="chapter" data-level="1.11" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html"><i class="fa fa-check"></i><b>1.11</b> Ruby Practice: Loops</a>
 <ul>
-<li class="chapter" data-level="1.11.1" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#if-conditionally-doing-something-once"><i class="fa fa-check"></i><b>1.11.1</b> if: conditionally doing something once</a></li>
-<li class="chapter" data-level="1.11.2" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#while-conditionally-doing-something-multiple-times"><i class="fa fa-check"></i><b>1.11.2</b> while: conditionally doing something multiple times</a></li>
-<li class="chapter" data-level="1.11.3" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#blocks"><i class="fa fa-check"></i><b>1.11.3</b> Blocks</a></li>
+<li class="chapter" data-level="1.11.1" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_letter_count.rb"><i class="fa fa-check"></i><b>1.11.1</b> loops_letter_count.rb</a></li>
+<li class="chapter" data-level="1.11.2" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_multiples.rb"><i class="fa fa-check"></i><b>1.11.2</b> loops_multiples.rb</a></li>
+<li class="chapter" data-level="1.11.3" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_fizzbuzz.rb"><i class="fa fa-check"></i><b>1.11.3</b> loops_fizzbuzz.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html"><i class="fa fa-check"></i><b>1.12</b> Ruby Practice: Loops</a>
+<li class="chapter" data-level="1.12" data-path="each.html"><a href="each.html"><i class="fa fa-check"></i><b>1.12</b> Each</a>
 <ul>
-<li class="chapter" data-level="1.12.1" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_letter_count.rb"><i class="fa fa-check"></i><b>1.12.1</b> loops_letter_count.rb</a></li>
-<li class="chapter" data-level="1.12.2" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_multiples.rb"><i class="fa fa-check"></i><b>1.12.2</b> loops_multiples.rb</a></li>
-<li class="chapter" data-level="1.12.3" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_fizzbuzz.rb"><i class="fa fa-check"></i><b>1.12.3</b> loops_fizzbuzz.rb</a></li>
+<li class="chapter" data-level="1.12.1" data-path="each.html"><a href="each.html#iterating-over-arrays-with-integers-times-method"><i class="fa fa-check"></i><b>1.12.1</b> Iterating over arrays with Integer’s times method</a></li>
+<li class="chapter" data-level="1.12.2" data-path="each.html"><a href="each.html#arrays-each-method"><i class="fa fa-check"></i><b>1.12.2</b> Array’s each method</a></li>
+<li class="chapter" data-level="1.12.3" data-path="each.html"><a href="each.html#sneak-peek"><i class="fa fa-check"></i><b>1.12.3</b> Sneak peek</a></li>
+<li class="chapter" data-level="1.12.4" data-path="each.html"><a href="each.html#each_with_index"><i class="fa fa-check"></i><b>1.12.4</b> each_with_index</a></li>
 </ul></li>
-<li class="chapter" data-level="1.13" data-path="each.html"><a href="each.html"><i class="fa fa-check"></i><b>1.13</b> Each</a>
+<li class="chapter" data-level="1.13" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Practice: Each</a>
 <ul>
-<li class="chapter" data-level="1.13.1" data-path="each.html"><a href="each.html#iterating-over-arrays-with-integers-times-method"><i class="fa fa-check"></i><b>1.13.1</b> Iterating over arrays with Integer’s times method</a></li>
-<li class="chapter" data-level="1.13.2" data-path="each.html"><a href="each.html#arrays-each-method"><i class="fa fa-check"></i><b>1.13.2</b> Array’s each method</a></li>
-<li class="chapter" data-level="1.13.3" data-path="each.html"><a href="each.html#sneak-peek"><i class="fa fa-check"></i><b>1.13.3</b> Sneak peek</a></li>
-<li class="chapter" data-level="1.13.4" data-path="each.html"><a href="each.html#each_with_index"><i class="fa fa-check"></i><b>1.13.4</b> each_with_index</a></li>
+<li class="chapter" data-level="1.13.1" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_spell_word.rb"><i class="fa fa-check"></i><b>1.13.1</b> each_spell_word.rb</a></li>
+<li class="chapter" data-level="1.13.2" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_even_word.rb"><i class="fa fa-check"></i><b>1.13.2</b> each_even_word.rb</a></li>
+<li class="chapter" data-level="1.13.3" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_letter_count.rb"><i class="fa fa-check"></i><b>1.13.3</b> each_letter_count.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.14" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html"><i class="fa fa-check"></i><b>1.14</b> Ruby Practice: Each</a>
+<li class="chapter" data-level="1.14" data-path="hash-chapter.html"><a href="hash-chapter.html"><i class="fa fa-check"></i><b>1.14</b> Hash</a>
 <ul>
-<li class="chapter" data-level="1.14.1" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_spell_word.rb"><i class="fa fa-check"></i><b>1.14.1</b> each_spell_word.rb</a></li>
-<li class="chapter" data-level="1.14.2" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_even_word.rb"><i class="fa fa-check"></i><b>1.14.2</b> each_even_word.rb</a></li>
-<li class="chapter" data-level="1.14.3" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_letter_count.rb"><i class="fa fa-check"></i><b>1.14.3</b> each_letter_count.rb</a></li>
+<li class="chapter" data-level="1.14.1" data-path="hash-chapter.html"><a href="hash-chapter.html#a-brief-interlude-symbols"><i class="fa fa-check"></i><b>1.14.1</b> A brief interlude: Symbols</a></li>
+<li class="chapter" data-level="1.14.2" data-path="hash-chapter.html"><a href="hash-chapter.html#creating-hashes-and-storing-values"><i class="fa fa-check"></i><b>1.14.2</b> Creating hashes and storing values</a></li>
+<li class="chapter" data-level="1.14.3" data-path="hash-chapter.html"><a href="hash-chapter.html#fetch"><i class="fa fa-check"></i><b>1.14.3</b> fetch</a></li>
+<li class="chapter" data-level="1.14.4" data-path="hash-chapter.html"><a href="hash-chapter.html#hash-literals"><i class="fa fa-check"></i><b>1.14.4</b> Hash literals</a></li>
+<li class="chapter" data-level="1.14.5" data-path="hash-chapter.html"><a href="hash-chapter.html#fetch-shorthand"><i class="fa fa-check"></i><b>1.14.5</b> fetch shorthand, []</a></li>
+<li class="chapter" data-level="1.14.6" data-path="hash-chapter.html"><a href="hash-chapter.html#store-shorthand"><i class="fa fa-check"></i><b>1.14.6</b> store shorthand, []=</a></li>
+<li class="chapter" data-level="1.14.7" data-path="hash-chapter.html"><a href="hash-chapter.html#use-.keys-to-explore"><i class="fa fa-check"></i><b>1.14.7</b> Use .keys to explore</a></li>
+<li class="chapter" data-level="1.14.8" data-path="hash-chapter.html"><a href="hash-chapter.html#keys-can-be-anything"><i class="fa fa-check"></i><b>1.14.8</b> keys can be anything</a></li>
+<li class="chapter" data-level="1.14.9" data-path="hash-chapter.html"><a href="hash-chapter.html#values-can-be-anything"><i class="fa fa-check"></i><b>1.14.9</b> values can be anything</a></li>
+<li class="chapter" data-level="1.14.10" data-path="hash-chapter.html"><a href="hash-chapter.html#key"><i class="fa fa-check"></i><b>1.14.10</b> key</a></li>
+<li class="chapter" data-level="1.14.11" data-path="hash-chapter.html"><a href="hash-chapter.html#the-bottom-line-1"><i class="fa fa-check"></i><b>1.14.11</b> The bottom line</a></li>
 </ul></li>
-<li class="chapter" data-level="1.15" data-path="hash-chapter.html"><a href="hash-chapter.html"><i class="fa fa-check"></i><b>1.15</b> Hash</a>
+<li class="chapter" data-level="1.15" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html"><i class="fa fa-check"></i><b>1.15</b> Ruby Practice: Hash</a>
 <ul>
-<li class="chapter" data-level="1.15.1" data-path="hash-chapter.html"><a href="hash-chapter.html#a-brief-interlude-symbols"><i class="fa fa-check"></i><b>1.15.1</b> A brief interlude: Symbols</a></li>
-<li class="chapter" data-level="1.15.2" data-path="hash-chapter.html"><a href="hash-chapter.html#creating-hashes-and-storing-values"><i class="fa fa-check"></i><b>1.15.2</b> Creating hashes and storing values</a></li>
-<li class="chapter" data-level="1.15.3" data-path="hash-chapter.html"><a href="hash-chapter.html#fetch"><i class="fa fa-check"></i><b>1.15.3</b> fetch</a></li>
-<li class="chapter" data-level="1.15.4" data-path="hash-chapter.html"><a href="hash-chapter.html#hash-literals"><i class="fa fa-check"></i><b>1.15.4</b> Hash literals</a></li>
-<li class="chapter" data-level="1.15.5" data-path="hash-chapter.html"><a href="hash-chapter.html#fetch-shorthand"><i class="fa fa-check"></i><b>1.15.5</b> fetch shorthand, []</a></li>
-<li class="chapter" data-level="1.15.6" data-path="hash-chapter.html"><a href="hash-chapter.html#store-shorthand"><i class="fa fa-check"></i><b>1.15.6</b> store shorthand, []=</a></li>
-<li class="chapter" data-level="1.15.7" data-path="hash-chapter.html"><a href="hash-chapter.html#use-.keys-to-explore"><i class="fa fa-check"></i><b>1.15.7</b> Use .keys to explore</a></li>
-<li class="chapter" data-level="1.15.8" data-path="hash-chapter.html"><a href="hash-chapter.html#keys-can-be-anything"><i class="fa fa-check"></i><b>1.15.8</b> keys can be anything</a></li>
-<li class="chapter" data-level="1.15.9" data-path="hash-chapter.html"><a href="hash-chapter.html#values-can-be-anything"><i class="fa fa-check"></i><b>1.15.9</b> values can be anything</a></li>
-<li class="chapter" data-level="1.15.10" data-path="hash-chapter.html"><a href="hash-chapter.html#key"><i class="fa fa-check"></i><b>1.15.10</b> key</a></li>
-<li class="chapter" data-level="1.15.11" data-path="hash-chapter.html"><a href="hash-chapter.html#the-bottom-line-1"><i class="fa fa-check"></i><b>1.15.11</b> The bottom line</a></li>
+<li class="chapter" data-level="1.15.1" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_person.rb"><i class="fa fa-check"></i><b>1.15.1</b> hash_person.rb</a></li>
+<li class="chapter" data-level="1.15.2" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_dig.rb"><i class="fa fa-check"></i><b>1.15.2</b> hash_dig.rb</a></li>
+<li class="chapter" data-level="1.15.3" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_find_value.rb"><i class="fa fa-check"></i><b>1.15.3</b> hash_find_value.rb</a></li>
+<li class="chapter" data-level="1.15.4" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_list.rb"><i class="fa fa-check"></i><b>1.15.4</b> hash_list.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.16" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html"><i class="fa fa-check"></i><b>1.16</b> Ruby Practice: Hash</a>
+<li class="chapter" data-level="1.16" data-path="our-own-classes.html"><a href="our-own-classes.html"><i class="fa fa-check"></i><b>1.16</b> Our own classes</a>
 <ul>
-<li class="chapter" data-level="1.16.1" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_person.rb"><i class="fa fa-check"></i><b>1.16.1</b> hash_person.rb</a></li>
-<li class="chapter" data-level="1.16.2" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_dig.rb"><i class="fa fa-check"></i><b>1.16.2</b> hash_dig.rb</a></li>
-<li class="chapter" data-level="1.16.3" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_find_value.rb"><i class="fa fa-check"></i><b>1.16.3</b> hash_find_value.rb</a></li>
-<li class="chapter" data-level="1.16.4" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_list.rb"><i class="fa fa-check"></i><b>1.16.4</b> hash_list.rb</a></li>
+<li class="chapter" data-level="1.16.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.16.1</b> Modeling real world things</a></li>
+<li class="chapter" data-level="1.16.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.16.2</b> Inheritance</a></li>
 </ul></li>
-<li class="chapter" data-level="1.17" data-path="our-own-classes.html"><a href="our-own-classes.html"><i class="fa fa-check"></i><b>1.17</b> Our own classes</a>
+<li class="chapter" data-level="1.17" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>1.17</b> Ruby Practice: Our own classes</a>
 <ul>
-<li class="chapter" data-level="1.17.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.17.1</b> Modeling real world things</a></li>
-<li class="chapter" data-level="1.17.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.17.2</b> Inheritance</a></li>
-</ul></li>
-<li class="chapter" data-level="1.18" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>1.18</b> Ruby Practice: Our own classes</a>
-<ul>
-<li class="chapter" data-level="1.18.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>1.18.1</b> class_person.rb</a></li>
+<li class="chapter" data-level="1.17.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>1.17.1</b> class_person.rb</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>2</b> Ruby Gym</a>
@@ -484,8 +477,8 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="if-statements" class="section level2 hasAnchor" number="1.9">
-<h2><span class="header-section-number">1.9</span> If statements<a href="if-statements.html#if-statements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="if-statements" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> If statements<a href="if-statements.html#if-statements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Notes:</p>
 <ul>
@@ -496,21 +489,21 @@ Proudly published with bookdown</a></li>
 <p>Now that we can get input from our users, we can start to make our programs
 smart, by behaving differently based on different conditions.</p>
 <p>To do this, we need to add a new grammar to our toolbox: the <code>if</code>/<code>end</code> <strong>keywords</strong>. Here’s how it looks:</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb126-1"><a href="if-statements.html#cb126-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">100</span>)</span>
-<span id="cb126-2"><a href="if-statements.html#cb126-2" aria-hidden="true"></a></span>
-<span id="cb126-3"><a href="if-statements.html#cb126-3" aria-hidden="true"></a>p <span class="st">&quot;Your lucky number is &quot;</span> + lucky_number.to_s + <span class="st">&quot;.&quot;</span></span>
-<span id="cb126-4"><a href="if-statements.html#cb126-4" aria-hidden="true"></a></span>
-<span id="cb126-5"><a href="if-statements.html#cb126-5" aria-hidden="true"></a><span class="kw">if</span> lucky_number.odd?</span>
-<span id="cb126-6"><a href="if-statements.html#cb126-6" aria-hidden="true"></a>  p <span class="st">&quot;The number is odd.&quot;</span></span>
-<span id="cb126-7"><a href="if-statements.html#cb126-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb121-1"><a href="if-statements.html#cb121-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">100</span>)</span>
+<span id="cb121-2"><a href="if-statements.html#cb121-2" aria-hidden="true"></a></span>
+<span id="cb121-3"><a href="if-statements.html#cb121-3" aria-hidden="true"></a>p <span class="st">&quot;Your lucky number is &quot;</span> + lucky_number.to_s + <span class="st">&quot;.&quot;</span></span>
+<span id="cb121-4"><a href="if-statements.html#cb121-4" aria-hidden="true"></a></span>
+<span id="cb121-5"><a href="if-statements.html#cb121-5" aria-hidden="true"></a><span class="kw">if</span> lucky_number.odd?</span>
+<span id="cb121-6"><a href="if-statements.html#cb121-6" aria-hidden="true"></a>  p <span class="st">&quot;The number is odd.&quot;</span></span>
+<span id="cb121-7"><a href="if-statements.html#cb121-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/first-conditional" target="_blank">Click here for a REPL to try it.</a></p>
 <p>Try running this program a few times and see how it behaves. These expressions, which conditonally run some code based on the truth or falseness of some condition, are known as <strong>conditionals</strong> or <strong>if statements</strong>.</p>
-<div id="the-basic-anatomy-of-if-statements" class="section level3 hasAnchor" number="1.9.1">
-<h3><span class="header-section-number">1.9.1</span> The basic anatomy of if statements<a href="if-statements.html#the-basic-anatomy-of-if-statements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="the-basic-anatomy-of-if-statements" class="section level3 hasAnchor" number="1.8.1">
+<h3><span class="header-section-number">1.8.1</span> The basic anatomy of if statements<a href="if-statements.html#the-basic-anatomy-of-if-statements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The anatomy of an <code>if</code> statement is:</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb127-1"><a href="if-statements.html#cb127-1" aria-hidden="true"></a><span class="kw">if</span> condition</span>
-<span id="cb127-2"><a href="if-statements.html#cb127-2" aria-hidden="true"></a>  <span class="co"># code that runs if the condition is true</span></span>
-<span id="cb127-3"><a href="if-statements.html#cb127-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb122-1"><a href="if-statements.html#cb122-1" aria-hidden="true"></a><span class="kw">if</span> condition</span>
+<span id="cb122-2"><a href="if-statements.html#cb122-2" aria-hidden="true"></a>  <span class="co"># code that runs if the condition is true</span></span>
+<span id="cb122-3"><a href="if-statements.html#cb122-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>First comes the <code>if</code> keyword.</li>
 <li>After the <code>if</code>, on the same line, comes any Ruby expression, which is evaluated until only one piece of data is left.</li>
@@ -518,37 +511,37 @@ smart, by behaving differently based on different conditions.</p>
 <li>If the final return value of <code>condition</code> is “falsy”, then the code on the lines between the <code>if</code> and <code>end</code> keywords is ignored.</li>
 <li>Either way, the program picks up execution on the next line after the <code>end</code> keyword and continues on.</li>
 </ol>
-<div id="dont-forget-the-end" class="section level4 hasAnchor" number="1.9.1.1">
-<h4><span class="header-section-number">1.9.1.1</span> Don’t forget the end<a href="if-statements.html#dont-forget-the-end" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="dont-forget-the-end" class="section level4 hasAnchor" number="1.8.1.1">
+<h4><span class="header-section-number">1.8.1.1</span> Don’t forget the end<a href="if-statements.html#dont-forget-the-end" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Every <code>if</code> requires a matching <code>end</code>, and forgetting it is a <em>very</em> common mistake.</p>
 <p>My advice: type the <code>end</code> <em>immediately</em> after typing the <code>if</code> so that you don’t forget it; <em>then</em> worry about typing the condition, and the code that comes on the lines between the <code>if</code> and the <code>end</code>.</p>
 <p>(While you’re at it, indent the code on the lines between by two spaces so that it is visually clear what’s inside the <code>if</code> statement.)</p>
 </div>
 </div>
-<div id="multibranch-if-statements" class="section level3 hasAnchor" number="1.9.2">
-<h3><span class="header-section-number">1.9.2</span> Multibranch if statements<a href="if-statements.html#multibranch-if-statements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="multibranch-if-statements" class="section level3 hasAnchor" number="1.8.2">
+<h3><span class="header-section-number">1.8.2</span> Multibranch if statements<a href="if-statements.html#multibranch-if-statements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can also have <strong>multibranch</strong> <code>if</code> statements, where we specify fallback conditions to check and code to execute if the first condition is falsy:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb128-1"><a href="if-statements.html#cb128-1" aria-hidden="true"></a>the_temp = rand(<span class="dv">100</span>)</span>
-<span id="cb128-2"><a href="if-statements.html#cb128-2" aria-hidden="true"></a></span>
-<span id="cb128-3"><a href="if-statements.html#cb128-3" aria-hidden="true"></a>p the_temp</span>
-<span id="cb128-4"><a href="if-statements.html#cb128-4" aria-hidden="true"></a></span>
-<span id="cb128-5"><a href="if-statements.html#cb128-5" aria-hidden="true"></a><span class="kw">if</span> the_temp &gt; <span class="dv">75</span></span>
-<span id="cb128-6"><a href="if-statements.html#cb128-6" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;s going to be a great day today&quot;</span></span>
-<span id="cb128-7"><a href="if-statements.html#cb128-7" aria-hidden="true"></a><span class="kw">else</span></span>
-<span id="cb128-8"><a href="if-statements.html#cb128-8" aria-hidden="true"></a>  p <span class="st">&quot;Don&#39;t leave home today&quot;</span></span>
-<span id="cb128-9"><a href="if-statements.html#cb128-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb123-1"><a href="if-statements.html#cb123-1" aria-hidden="true"></a>the_temp = rand(<span class="dv">100</span>)</span>
+<span id="cb123-2"><a href="if-statements.html#cb123-2" aria-hidden="true"></a></span>
+<span id="cb123-3"><a href="if-statements.html#cb123-3" aria-hidden="true"></a>p the_temp</span>
+<span id="cb123-4"><a href="if-statements.html#cb123-4" aria-hidden="true"></a></span>
+<span id="cb123-5"><a href="if-statements.html#cb123-5" aria-hidden="true"></a><span class="kw">if</span> the_temp &gt; <span class="dv">75</span></span>
+<span id="cb123-6"><a href="if-statements.html#cb123-6" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;s going to be a great day today&quot;</span></span>
+<span id="cb123-7"><a href="if-statements.html#cb123-7" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb123-8"><a href="if-statements.html#cb123-8" aria-hidden="true"></a>  p <span class="st">&quot;Don&#39;t leave home today&quot;</span></span>
+<span id="cb123-9"><a href="if-statements.html#cb123-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>Or you can have multiple conditions that get checked, one after the other:</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb129-1"><a href="if-statements.html#cb129-1" aria-hidden="true"></a>the_temp = rand(<span class="dv">100</span>)</span>
-<span id="cb129-2"><a href="if-statements.html#cb129-2" aria-hidden="true"></a></span>
-<span id="cb129-3"><a href="if-statements.html#cb129-3" aria-hidden="true"></a>p the_temp</span>
-<span id="cb129-4"><a href="if-statements.html#cb129-4" aria-hidden="true"></a></span>
-<span id="cb129-5"><a href="if-statements.html#cb129-5" aria-hidden="true"></a><span class="kw">if</span> the_temp &gt; <span class="dv">75</span></span>
-<span id="cb129-6"><a href="if-statements.html#cb129-6" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;s going to be a great day today&quot;</span></span>
-<span id="cb129-7"><a href="if-statements.html#cb129-7" aria-hidden="true"></a><span class="kw">elsif</span> the_temp &gt; <span class="dv">32</span></span>
-<span id="cb129-8"><a href="if-statements.html#cb129-8" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;ll be an okay day today&quot;</span></span>
-<span id="cb129-9"><a href="if-statements.html#cb129-9" aria-hidden="true"></a><span class="kw">else</span></span>
-<span id="cb129-10"><a href="if-statements.html#cb129-10" aria-hidden="true"></a>  p <span class="st">&quot;Don&#39;t leave home today&quot;</span></span>
-<span id="cb129-11"><a href="if-statements.html#cb129-11" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb124-1"><a href="if-statements.html#cb124-1" aria-hidden="true"></a>the_temp = rand(<span class="dv">100</span>)</span>
+<span id="cb124-2"><a href="if-statements.html#cb124-2" aria-hidden="true"></a></span>
+<span id="cb124-3"><a href="if-statements.html#cb124-3" aria-hidden="true"></a>p the_temp</span>
+<span id="cb124-4"><a href="if-statements.html#cb124-4" aria-hidden="true"></a></span>
+<span id="cb124-5"><a href="if-statements.html#cb124-5" aria-hidden="true"></a><span class="kw">if</span> the_temp &gt; <span class="dv">75</span></span>
+<span id="cb124-6"><a href="if-statements.html#cb124-6" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;s going to be a great day today&quot;</span></span>
+<span id="cb124-7"><a href="if-statements.html#cb124-7" aria-hidden="true"></a><span class="kw">elsif</span> the_temp &gt; <span class="dv">32</span></span>
+<span id="cb124-8"><a href="if-statements.html#cb124-8" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;ll be an okay day today&quot;</span></span>
+<span id="cb124-9"><a href="if-statements.html#cb124-9" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb124-10"><a href="if-statements.html#cb124-10" aria-hidden="true"></a>  p <span class="st">&quot;Don&#39;t leave home today&quot;</span></span>
+<span id="cb124-11"><a href="if-statements.html#cb124-11" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/multibranch-if" target="_blank">Click here for a REPL to try it.</a></p>
 <ul>
 <li>Note that there is <strong>no space</strong> in the <code>elsif</code> keyword, and that there is <strong>no <code>e</code> in the middle</strong> of the <code>elsif</code> keyword. (In other languages, this construct is <code>elseif</code>, <code>else if</code>, etc; but in Ruby it’s just <code>elsif</code>.)</li>
@@ -558,8 +551,8 @@ smart, by behaving differently based on different conditions.</p>
 <li>Try to indent the code within each branch by two spaces, especially if you have multiple nested <code>if</code> statements within one another.</li>
 </ul>
 </div>
-<div id="truthiness-and-falsiness" class="section level3 hasAnchor" number="1.9.3">
-<h3><span class="header-section-number">1.9.3</span> truthiness and falsiness<a href="if-statements.html#truthiness-and-falsiness" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="truthiness-and-falsiness" class="section level3 hasAnchor" number="1.8.3">
+<h3><span class="header-section-number">1.8.3</span> truthiness and falsiness<a href="if-statements.html#truthiness-and-falsiness" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Why did I say “truthy” and “falsy” instead of just <code>true</code> and <code>false</code>? Because many — most — Ruby expressions return values other than <code>true</code> or <code>false</code>. <em>Any</em> expression can appear next to an <code>if</code>, and some will cause the code inside the <code>if</code> statement to execute (these values are known as “truthy”) and some will not (these are “falsy”).</p>
 <p>In the REPL below, try replacing <code>1 == 1</code> with each of the following. Before clicking “run” for each one, ask yourself, do you expect to see the output <code>"The expression is truthy."</code> or not?</p>
 <ul>
@@ -571,11 +564,11 @@ smart, by behaving differently based on different conditions.</p>
 <li><code>""</code></li>
 <li><code>false</code></li>
 </ul>
-<div class="sourceCode" id="cb130"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb130-1"><a href="if-statements.html#cb130-1" aria-hidden="true"></a><span class="kw">if</span> <span class="dv">1</span> == <span class="dv">1</span> <span class="co"># Replace this with each expression. Which of them count as &quot;truthy&quot;?</span></span>
-<span id="cb130-2"><a href="if-statements.html#cb130-2" aria-hidden="true"></a>  p <span class="st">&quot;The expression is truthy.&quot;</span></span>
-<span id="cb130-3"><a href="if-statements.html#cb130-3" aria-hidden="true"></a><span class="kw">else</span></span>
-<span id="cb130-4"><a href="if-statements.html#cb130-4" aria-hidden="true"></a>  p <span class="st">&quot;The expression is falsy.&quot;</span></span>
-<span id="cb130-5"><a href="if-statements.html#cb130-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb125-1"><a href="if-statements.html#cb125-1" aria-hidden="true"></a><span class="kw">if</span> <span class="dv">1</span> == <span class="dv">1</span> <span class="co"># Replace this with each expression. Which of them count as &quot;truthy&quot;?</span></span>
+<span id="cb125-2"><a href="if-statements.html#cb125-2" aria-hidden="true"></a>  p <span class="st">&quot;The expression is truthy.&quot;</span></span>
+<span id="cb125-3"><a href="if-statements.html#cb125-3" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb125-4"><a href="if-statements.html#cb125-4" aria-hidden="true"></a>  p <span class="st">&quot;The expression is falsy.&quot;</span></span>
+<span id="cb125-5"><a href="if-statements.html#cb125-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/truthiness" target="_blank">Click here for a REPL to try it.</a></p>
 <p>For how many of the above did you correctly predict the output? What did you learn about what objects count as truthy and what objects count as falsy in Ruby?</p>
 <hr />
@@ -584,56 +577,56 @@ smart, by behaving differently based on different conditions.</p>
 <hr />
 <p>It turns out that <strong>only <code>false</code> and <code>nil</code> are falsy</strong>. <em>All</em> other objects in Ruby are truthy — even <code>0</code>, <code>""</code>, and <code>[]</code>.</p>
 </div>
-<div id="comparisons" class="section level3 hasAnchor" number="1.9.4">
-<h3><span class="header-section-number">1.9.4</span> Comparisons<a href="if-statements.html#comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="comparisons" class="section level3 hasAnchor" number="1.8.4">
+<h3><span class="header-section-number">1.8.4</span> Comparisons<a href="if-statements.html#comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>That said, we’ll mostly use expressions after <code>if</code> that return <code>true</code> or <code>false</code>. There are lot of methods that are designed to do this; we’ve seen <code>Integer</code>’s <code>.odd?</code> and <code>.even?</code>, but there are a lot more.</p>
 <p>For example, most classes have ways to compare <em>instances</em> of the class to one another:</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb131-1"><a href="if-statements.html#cb131-1" aria-hidden="true"></a><span class="dv">1</span> &lt; <span class="dv">2</span>          <span class="co"># &quot;1 is less than 2&quot;</span></span>
-<span id="cb131-2"><a href="if-statements.html#cb131-2" aria-hidden="true"></a><span class="dv">2</span> &lt; <span class="dv">1</span>          <span class="co"># &quot;2 is less than 1&quot;</span></span>
-<span id="cb131-3"><a href="if-statements.html#cb131-3" aria-hidden="true"></a><span class="dv">24</span>*<span class="dv">365</span> &gt; <span class="dv">10000</span> <span class="co"># There are more than 10,000 hours in a year</span></span>
-<span id="cb131-4"><a href="if-statements.html#cb131-4" aria-hidden="true"></a><span class="dv">1</span> == <span class="dv">1</span>         <span class="co"># &quot;1 is equivalent to 1&quot;</span></span>
-<span id="cb131-5"><a href="if-statements.html#cb131-5" aria-hidden="true"></a><span class="dv">1</span> == <span class="dv">2</span>         <span class="co"># &quot;1 is equivalent to 2&quot;</span></span>
-<span id="cb131-6"><a href="if-statements.html#cb131-6" aria-hidden="true"></a><span class="dv">1</span> &lt;= <span class="dv">2</span>         <span class="co"># &quot;1 is less than or equal to 2&quot;</span></span>
-<span id="cb131-7"><a href="if-statements.html#cb131-7" aria-hidden="true"></a><span class="dv">1</span> &gt;= <span class="dv">2</span>         <span class="co"># &quot;1 is greater than or equal to 2&quot;</span></span>
-<span id="cb131-8"><a href="if-statements.html#cb131-8" aria-hidden="true"></a><span class="dv">1</span> != <span class="dv">1</span>         <span class="co"># &quot;1 is NOT equivalent to 1&quot;</span></span>
-<span id="cb131-9"><a href="if-statements.html#cb131-9" aria-hidden="true"></a><span class="dv">1</span> != <span class="dv">2</span>         <span class="co"># &quot;1 is NOT equivalent to 2&quot;</span></span>
-<span id="cb131-10"><a href="if-statements.html#cb131-10" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> &lt; <span class="st">&quot;banana&quot;</span></span>
-<span id="cb131-11"><a href="if-statements.html#cb131-11" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> &gt; <span class="st">&quot;banana&quot;</span></span>
-<span id="cb131-12"><a href="if-statements.html#cb131-12" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> == <span class="st">&quot;banana&quot;</span></span>
-<span id="cb131-13"><a href="if-statements.html#cb131-13" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> != <span class="st">&quot;banana&quot;</span></span></code></pre></div>
-<div id="equivalence-vs-assignment" class="section level4 hasAnchor" number="1.9.4.1">
-<h4><span class="header-section-number">1.9.4.1</span> Equivalence vs assignment<a href="if-statements.html#equivalence-vs-assignment" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb126"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb126-1"><a href="if-statements.html#cb126-1" aria-hidden="true"></a><span class="dv">1</span> &lt; <span class="dv">2</span>          <span class="co"># &quot;1 is less than 2&quot;</span></span>
+<span id="cb126-2"><a href="if-statements.html#cb126-2" aria-hidden="true"></a><span class="dv">2</span> &lt; <span class="dv">1</span>          <span class="co"># &quot;2 is less than 1&quot;</span></span>
+<span id="cb126-3"><a href="if-statements.html#cb126-3" aria-hidden="true"></a><span class="dv">24</span>*<span class="dv">365</span> &gt; <span class="dv">10000</span> <span class="co"># There are more than 10,000 hours in a year</span></span>
+<span id="cb126-4"><a href="if-statements.html#cb126-4" aria-hidden="true"></a><span class="dv">1</span> == <span class="dv">1</span>         <span class="co"># &quot;1 is equivalent to 1&quot;</span></span>
+<span id="cb126-5"><a href="if-statements.html#cb126-5" aria-hidden="true"></a><span class="dv">1</span> == <span class="dv">2</span>         <span class="co"># &quot;1 is equivalent to 2&quot;</span></span>
+<span id="cb126-6"><a href="if-statements.html#cb126-6" aria-hidden="true"></a><span class="dv">1</span> &lt;= <span class="dv">2</span>         <span class="co"># &quot;1 is less than or equal to 2&quot;</span></span>
+<span id="cb126-7"><a href="if-statements.html#cb126-7" aria-hidden="true"></a><span class="dv">1</span> &gt;= <span class="dv">2</span>         <span class="co"># &quot;1 is greater than or equal to 2&quot;</span></span>
+<span id="cb126-8"><a href="if-statements.html#cb126-8" aria-hidden="true"></a><span class="dv">1</span> != <span class="dv">1</span>         <span class="co"># &quot;1 is NOT equivalent to 1&quot;</span></span>
+<span id="cb126-9"><a href="if-statements.html#cb126-9" aria-hidden="true"></a><span class="dv">1</span> != <span class="dv">2</span>         <span class="co"># &quot;1 is NOT equivalent to 2&quot;</span></span>
+<span id="cb126-10"><a href="if-statements.html#cb126-10" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> &lt; <span class="st">&quot;banana&quot;</span></span>
+<span id="cb126-11"><a href="if-statements.html#cb126-11" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> &gt; <span class="st">&quot;banana&quot;</span></span>
+<span id="cb126-12"><a href="if-statements.html#cb126-12" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> == <span class="st">&quot;banana&quot;</span></span>
+<span id="cb126-13"><a href="if-statements.html#cb126-13" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> != <span class="st">&quot;banana&quot;</span></span></code></pre></div>
+<div id="equivalence-vs-assignment" class="section level4 hasAnchor" number="1.8.4.1">
+<h4><span class="header-section-number">1.8.4.1</span> Equivalence vs assignment<a href="if-statements.html#equivalence-vs-assignment" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Note the difference between the <strong>equivalence operator</strong> — two equals signs, <code>==</code> — and the variable assignment operator — one equals sign, <code>=</code>. Mixing up the two of them is probably <em>the</em> most common typo programmers make:</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb132-1"><a href="if-statements.html#cb132-1" aria-hidden="true"></a>x = <span class="dv">2</span></span>
-<span id="cb132-2"><a href="if-statements.html#cb132-2" aria-hidden="true"></a></span>
-<span id="cb132-3"><a href="if-statements.html#cb132-3" aria-hidden="true"></a><span class="kw">if</span> x = <span class="dv">3</span></span>
-<span id="cb132-4"><a href="if-statements.html#cb132-4" aria-hidden="true"></a>  p <span class="st">&quot;x is 3&quot;</span></span>
-<span id="cb132-5"><a href="if-statements.html#cb132-5" aria-hidden="true"></a><span class="kw">else</span></span>
-<span id="cb132-6"><a href="if-statements.html#cb132-6" aria-hidden="true"></a>  p <span class="st">&quot;x is not 3&quot;</span></span>
-<span id="cb132-7"><a href="if-statements.html#cb132-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb127-1"><a href="if-statements.html#cb127-1" aria-hidden="true"></a>x = <span class="dv">2</span></span>
+<span id="cb127-2"><a href="if-statements.html#cb127-2" aria-hidden="true"></a></span>
+<span id="cb127-3"><a href="if-statements.html#cb127-3" aria-hidden="true"></a><span class="kw">if</span> x = <span class="dv">3</span></span>
+<span id="cb127-4"><a href="if-statements.html#cb127-4" aria-hidden="true"></a>  p <span class="st">&quot;x is 3&quot;</span></span>
+<span id="cb127-5"><a href="if-statements.html#cb127-5" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb127-6"><a href="if-statements.html#cb127-6" aria-hidden="true"></a>  p <span class="st">&quot;x is not 3&quot;</span></span>
+<span id="cb127-7"><a href="if-statements.html#cb127-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>If you run the code above, what would be printed? Why?</p>
 <p>We accidentally used the assignment operator instead of the equivalence comparison, and in doing so, we <em>set</em> <code>x = 3</code> when we meant to check <code>if x == 3</code>.</p>
 <p>You will 💯 make this typo, we all do at some point — when your conditional always is going into the <code>true</code> branch inexplicably, let this ring a bell!</p>
 </div>
 </div>
-<div id="combining-conditions-with-and-and-or" class="section level3 hasAnchor" number="1.9.5">
-<h3><span class="header-section-number">1.9.5</span> Combining conditions with AND and OR<a href="if-statements.html#combining-conditions-with-and-and-or" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="combining-conditions-with-and-and-or" class="section level3 hasAnchor" number="1.8.5">
+<h3><span class="header-section-number">1.8.5</span> Combining conditions with AND and OR<a href="if-statements.html#combining-conditions-with-and-and-or" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Finally, another handy thing to have in your toolbelt are the <strong>logical operators</strong> <code>&amp;&amp;</code> (AND) and <code>||</code> (OR). These allow you to combine expressions; try these combined expressions out below:</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb133-1"><a href="if-statements.html#cb133-1" aria-hidden="true"></a><span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.even?</span>
-<span id="cb133-2"><a href="if-statements.html#cb133-2" aria-hidden="true"></a><span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.odd?</span>
-<span id="cb133-3"><a href="if-statements.html#cb133-3" aria-hidden="true"></a><span class="dv">3</span>.even? &amp;&amp; <span class="dv">4</span>.odd?</span>
-<span id="cb133-4"><a href="if-statements.html#cb133-4" aria-hidden="true"></a><span class="dv">3</span>.odd? || <span class="dv">4</span>.even?</span>
-<span id="cb133-5"><a href="if-statements.html#cb133-5" aria-hidden="true"></a><span class="dv">3</span>.odd? || <span class="dv">4</span>.odd?</span>
-<span id="cb133-6"><a href="if-statements.html#cb133-6" aria-hidden="true"></a><span class="dv">3</span>.even? || <span class="dv">4</span>.odd?</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb128-1"><a href="if-statements.html#cb128-1" aria-hidden="true"></a><span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.even?</span>
+<span id="cb128-2"><a href="if-statements.html#cb128-2" aria-hidden="true"></a><span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.odd?</span>
+<span id="cb128-3"><a href="if-statements.html#cb128-3" aria-hidden="true"></a><span class="dv">3</span>.even? &amp;&amp; <span class="dv">4</span>.odd?</span>
+<span id="cb128-4"><a href="if-statements.html#cb128-4" aria-hidden="true"></a><span class="dv">3</span>.odd? || <span class="dv">4</span>.even?</span>
+<span id="cb128-5"><a href="if-statements.html#cb128-5" aria-hidden="true"></a><span class="dv">3</span>.odd? || <span class="dv">4</span>.odd?</span>
+<span id="cb128-6"><a href="if-statements.html#cb128-6" aria-hidden="true"></a><span class="dv">3</span>.even? || <span class="dv">4</span>.odd?</span></code></pre></div>
 <p>When used with <code>if</code> statements, this ability is very powerful:</p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb134-1"><a href="if-statements.html#cb134-1" aria-hidden="true"></a><span class="kw">if</span> <span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.even?</span>
-<span id="cb134-2"><a href="if-statements.html#cb134-2" aria-hidden="true"></a>  p <span class="st">&quot;The combined expression is truthy.&quot;</span></span>
-<span id="cb134-3"><a href="if-statements.html#cb134-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb129-1"><a href="if-statements.html#cb129-1" aria-hidden="true"></a><span class="kw">if</span> <span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.even?</span>
+<span id="cb129-2"><a href="if-statements.html#cb129-2" aria-hidden="true"></a>  p <span class="st">&quot;The combined expression is truthy.&quot;</span></span>
+<span id="cb129-3"><a href="if-statements.html#cb129-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><a href="https://repl.it/@raghubetina/and-and-or" target="_blank">Click here for a REPL to try it.</a></p>
 <p>Basically, <code>&amp;&amp;</code> is stricter than <code>||</code>; both comparisons have to be true in order for the whole statement to be true when combined with <code>&amp;&amp;</code>; either one being true is sufficient for <code>||</code>.</p>
 </div>
-<div id="challenge" class="section level3 hasAnchor" number="1.9.6">
-<h3><span class="header-section-number">1.9.6</span> Challenge<a href="if-statements.html#challenge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="challenge" class="section level3 hasAnchor" number="1.8.6">
+<h3><span class="header-section-number">1.8.6</span> Challenge<a href="if-statements.html#challenge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Can you create a Rock, Paper, Scissors game?</p>
 <p><a href="https://repl.it/@raghubetina/rps-2" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -643,7 +636,7 @@ smart, by behaving differently based on different conditions.</p>
           </div>
         </div>
       </div>
-<a href="ruby-practice-array.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="array.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="ruby-practice-conditionals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

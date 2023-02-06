@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.17 Ruby Practice: Our own classes | AD1</title>
+  <title>B.11 Conditionals | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.17 Ruby Practice: Our own classes | AD1" />
+  <meta property="og:title" content="B.11 Conditionals | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.17 Ruby Practice: Our own classes | AD1" />
+  <meta name="twitter:title" content="B.11 Conditionals | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="our-own-classes.html"/>
-<link rel="next" href="ruby-gym.html"/>
+<link rel="prev" href="hash.html"/>
+<link rel="next" href="loops.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -477,47 +477,36 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ruby-practice-our-own-classes" class="section level2 hasAnchor" number="1.17">
-<h2><span class="header-section-number">1.17</span> Ruby Practice: Our own classes<a href="ruby-practice-our-own-classes.html#ruby-practice-our-own-classes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><p>Notes:</p>
-<ul>
-<li>Copied from project README: <a href="https://github.com/appdev-projects/our-own-classes-chapter" target="_blank">https://github.com/appdev-projects/our-own-classes-chapter</a></li>
-</ul></li>
-</ul>
-<p>Run your Ruby file by typing <code>ruby</code> and then the name of the file you want to run in the Terminal.</p>
-<p>If we want to run <code>class_person.rb</code>, we can write the command:</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb196-1"><a href="ruby-practice-our-own-classes.html#cb196-1" aria-hidden="true"></a><span class="ex">ruby</span> class_person.rb</span></code></pre></div>
-<p>To re-run this command, you can use the UP and DOWN arrow keys to look at the history of commands you’ve run in a Terminal.</p>
-<div id="class_person.rb" class="section level3 hasAnchor" number="1.17.1">
-<h3><span class="header-section-number">1.17.1</span> class_person.rb<a href="ruby-practice-our-own-classes.html#class_person.rb" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Define a class Person with:</p>
-<ul>
-<li>An attribute first_name</li>
-<li>An attribute last_name</li>
-<li>An attribute birthdate (we just assign a string to this attribute, e.g. “April 19, 1987”)</li>
-<li>An instance method, full_name, that puts first_name and last_name together</li>
-<li>An instance method, age, that calculates the number of years between today and birthdate</li>
-</ul>
-<p>These methods should <strong>return</strong> an values; they shouldn’t print anything to the terminal.</p>
-<p>Example</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb197-1"><a href="ruby-practice-our-own-classes.html#cb197-1" aria-hidden="true"></a>dev = <span class="dt">Person</span>.new</span>
-<span id="cb197-2"><a href="ruby-practice-our-own-classes.html#cb197-2" aria-hidden="true"></a>dev.first_name = <span class="st">&quot;James&quot;</span></span>
-<span id="cb197-3"><a href="ruby-practice-our-own-classes.html#cb197-3" aria-hidden="true"></a>dev.last_name = <span class="st">&quot;Baldwin&quot;</span></span>
-<span id="cb197-4"><a href="ruby-practice-our-own-classes.html#cb197-4" aria-hidden="true"></a>dev.birthdate = <span class="st">&quot;November 16, 1953&quot;</span></span>
-<span id="cb197-5"><a href="ruby-practice-our-own-classes.html#cb197-5" aria-hidden="true"></a>dev.full_name <span class="co"># =&gt; &quot;James Baldwin&quot;</span></span>
-<span id="cb197-6"><a href="ruby-practice-our-own-classes.html#cb197-6" aria-hidden="true"></a>dev.age <span class="co"># =&gt; 67</span></span></code></pre></div>
-
+<div id="conditionals-1" class="section level2 hasAnchor" number="4.11">
+<h2><span class="header-section-number">B.11</span> Conditionals<a href="conditionals-1.html#conditionals-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Basic Anatomy of multibranch <code>if</code> statements:</p>
+<div class="sourceCode" id="cb279"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb279-1"><a href="conditionals-1.html#cb279-1" aria-hidden="true"></a><span class="kw">if</span> condition1</span>
+<span id="cb279-2"><a href="conditionals-1.html#cb279-2" aria-hidden="true"></a>  <span class="co"># do something if condition1 is true</span></span>
+<span id="cb279-3"><a href="conditionals-1.html#cb279-3" aria-hidden="true"></a><span class="kw">elsif</span> condition2</span>
+<span id="cb279-4"><a href="conditionals-1.html#cb279-4" aria-hidden="true"></a>  <span class="co"># do something if condition2 is true</span></span>
+<span id="cb279-5"><a href="conditionals-1.html#cb279-5" aria-hidden="true"></a><span class="kw">else</span> <span class="co"># if both condition1 and condition2 were falsy</span></span>
+<span id="cb279-6"><a href="conditionals-1.html#cb279-6" aria-hidden="true"></a>  <span class="co"># do something else</span></span>
+<span id="cb279-7"><a href="conditionals-1.html#cb279-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb280-1"><a href="conditionals-1.html#cb280-1" aria-hidden="true"></a>p <span class="st">&quot;Type a number less than 10 and greater than 0:&quot;</span></span>
+<span id="cb280-2"><a href="conditionals-1.html#cb280-2" aria-hidden="true"></a>user_input = gets.chomp.to_i <span class="co"># gets user input, removes newline character, converts the string to integer. </span></span>
+<span id="cb280-3"><a href="conditionals-1.html#cb280-3" aria-hidden="true"></a><span class="kw">if</span> user_input == <span class="dv">5</span> </span>
+<span id="cb280-4"><a href="conditionals-1.html#cb280-4" aria-hidden="true"></a>  p <span class="st">&quot;You win!&quot;</span> <span class="co"># Will print this if the user input is 5</span></span>
+<span id="cb280-5"><a href="conditionals-1.html#cb280-5" aria-hidden="true"></a><span class="kw">elsif</span> user_input &lt; <span class="dv">10</span> &amp;&amp; user_input &gt; <span class="dv">0</span> <span class="co"># check if the user input is valid</span></span>
+<span id="cb280-6"><a href="conditionals-1.html#cb280-6" aria-hidden="true"></a>  p <span class="st">&quot;You lose!&quot;</span> <span class="co"># Will print this if the user input is between 1 and 9</span></span>
+<span id="cb280-7"><a href="conditionals-1.html#cb280-7" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb280-8"><a href="conditionals-1.html#cb280-8" aria-hidden="true"></a>  p <span class="st">&quot;You didn&#39;t type in a valid number.&quot;</span> <span class="co"># Will print this if the user input is not between 1 and 9</span></span>
+<span id="cb280-9"><a href="conditionals-1.html#cb280-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p><strong>Don’t forget the <code>end</code> keyword.</strong></p>
+<p><a href="https://chapters.firstdraft.com/chapters/763#conditionals">Full explanation</a></p>
 </div>
-</div>
-<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="our-own-classes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ruby-gym.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hash.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="loops.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -549,7 +538,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/our-own-classes.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/glossaries/the-one-reference.md",
 "text": "Edit"
 },
 "history": {
@@ -557,7 +546,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/our-own-classes.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/glossaries/the-one-reference.md",
 "text": null
 },
 "download": null,

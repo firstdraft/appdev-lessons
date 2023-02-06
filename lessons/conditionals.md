@@ -1,4 +1,4 @@
-## If statements
+## Conditionals
 
 - Notes:
 

@@ -39,13 +39,8 @@ conclusion-3
 array
 creating-arrays
 methods-3
-ruby-practice-array
-array_element_square.rb
-array_count.rb
-array_reverse.rb
-array_min_max_difference.rb
-array_sum_elements.rb
-if-statements
+conclusion-4
+conditionals
 the-basic-anatomy-of-if-statements
 dont-forget-the-end
 multibranch-if-statements
@@ -183,7 +178,7 @@ interlude-symbol
 creating-a-hash
 store
 fetch-1
-conditionals
+conditionals-1
 loops
 blocks-1
 times

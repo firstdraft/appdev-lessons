@@ -176,7 +176,13 @@ p "You entered " + length.to_s + " numbers."
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/gets-with-split){target="_blank"}
 
-We'll be using this technique for the remainder of our test REPLs, to make things more interesting.
+We'll be using this technique frequently to make things more interesting.
+
+##### Start the GitPod Project {-}
+
+Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions){target="_blank"}.
+
+<mark>✏️ **Exercise:**</mark> On GitPod in the `Array` project, work through `array_element_square.rb`.
 
 #### count {-}
 
@@ -191,6 +197,8 @@ p a.count(3)
 ```
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/count){target="_blank"}
+
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `Array` project and work through `array_count.rb`
  
 #### include? {-}
 
@@ -221,6 +229,8 @@ p array.reverse # => [3, 23, 19, 1, 3, 8]
 ```
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-reverse){target="_blank"}
+
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `Array` project and work through `array_reverse.rb`
 
 #### sort {-}
 
@@ -272,6 +282,8 @@ p a.max # => 23
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/max){target="_blank"}
 
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `Array` project and work through `array_min_max_difference.rb`
+
 #### sum {-}
 
 ```ruby
@@ -281,6 +293,8 @@ p a.sum # => 57
 ```
 
 <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/sum){target="_blank"}
+
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `Array` project and work through `array_sum_elements.rb`
 
 #### join {-}
 
@@ -297,55 +311,6 @@ You can think of `Array`'s `.join` method as the inverse of `String`'s `.split` 
 
 That is, the `.split` method is called on a `String` and returns an `Array` of substrings; while the `.join` method is called on an `Array` (where each element must be a `String`) and returns a single `String`.
 
-## Ruby Practice: Array
+###  Conclusion
 
-- Notes:
-
-  - Copied from project README: [https://github.com/appdev-projects/array-chapter](https://github.com/appdev-projects/array-chapter){target="_blank"}
-
-Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
-
-If we want to run `array_count.rb`, we can write the command:
-
-```bash
-ruby array_count.rb
-```
-
-To re-run this command, you can use the UP and DOWN arrow keys to look at the history of commands you've run in a Terminal.
-
-### array_element_square.rb
-Print the square of the second-to-last number that the user enters.
-
-The expected output will be something like:
-```
-"Enter at least 2 numbers, separated by spaces:"
-9.0
-```
-### array_count.rb
-Create an Array and use the count method to print how many elements are in that Array.
-
-Expected output:
-```
-"Enter at least 2 numbers, separated by spaces:"
-2
-```
-### array_reverse.rb
-Create an Array and use the reverse method to return the array in reverse order.
-
-Expected output: 
-```
-"Enter at least 2 values, separated by spaces:"
-["second", "first", 0]
-```
-
-### array_min_max_difference.rb
-Create an Array of numbers and output the number with the lowest value in the array, the number with the highest value in the array, and the difference between the highest value and the lowest value.
-```
-lowest_number
-highest_number
-difference
-```
-
-### array_sum_elements.rb
-Output the sum value of all the elements in the array.
-
+That's it for `Array`s. Now we'll have a look at **conditionals** with `if` statements.
