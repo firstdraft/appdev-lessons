@@ -46,15 +46,12 @@ multibranch-if-statements
 truthiness-and-falsiness
 comparisons
 combining-conditions-with-and-and-or
-loops-in-ruby
+conclusion-5
+loops
 if-conditionally-doing-something-once
 while-conditionally-doing-something-multiple-times
 blocks
-block-variables
-ruby-practice-loops
-loops_letter_count.rb
-loops_multiples.rb
-loops_fizzbuzz.rb
+conclusion-6
 each
 iterating-over-arrays-with-integers-times-method
 arrays-each-method
@@ -156,7 +153,7 @@ days-of-the-week
 array-1
 creating-an-array
 push-1
-at-1
+at
 first-and-.last
 index-1
 count-1
@@ -173,7 +170,7 @@ creating-a-hash
 store
 fetch-1
 conditionals
-loops
+loops-1
 blocks-1
 times
 other-methods

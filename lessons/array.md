@@ -66,7 +66,7 @@ This is the technique that we'll be using most often.
 
 Now let's familiarize ourselves with some of `Array`s methods.
 
-#### at {-}
+#### at {- #at-zero-indexing}
 
 After adding elements to the list, the next most important thing we need to be able to do is retrieve an element back out from the list. Our first tool for doing that is `.at`.
 
