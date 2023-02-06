@@ -35,6 +35,9 @@ p cities
 Now we're talking! We've stored multiple strings within a single array using the `.push` method[^push_alias]. Ruby separates the elements in an array with commas.
 
 [^push_alias]:
+    You might come across a shorthand for `.push`, the `<<` method, known as the "shovel" operator. This allows you to write something like: `cities.<<("Chicago")`. Or with the syntactic sugar that we're very accustomed to by now: `cities << "Chicago"` I personally prefer `.push` — I think it's more readable — but feel free to use the shovel if you like it better.
+
+<!-- [^push_alias]:
     You might come across a shorthand for `.push`, the `<<` method, known as the "shovel" operator. This allows you to write something like:
 
     ```ruby
@@ -47,7 +50,7 @@ Now we're talking! We've stored multiple strings within a single array using the
     cities << "Chicago"
     ```
 
-    I personally prefer `.push` — I think it's more readable — but feel free to use the shovel if you like it better.
+    I personally prefer `.push` — I think it's more readable — but feel free to use the shovel if you like it better. -->
 
 #### Array literals {-}
 
