@@ -118,7 +118,7 @@ ruby-practice-each
 each_spell_word.rb
 each_even_word.rb
 each_letter_count.rb
-hash
+hash-chapter
 a-brief-interlude-symbols
 creating-hashes-and-storing-values
 fetch
@@ -226,7 +226,7 @@ shuffle-1
 sample-1
 min-and-.max
 sum-array
-hash-1
+hash
 interlude-symbol
 creating-a-hash
 store

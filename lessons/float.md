@@ -75,7 +75,7 @@ p rand
 
 ###  Conclusion
 
-That's it for `Float`. Next up, we'll learn to manipulate dates and times with: `Date`.
+That's it for `Float`. Next up, we'll learn to manipulate dates and times with the `Date` and `Time` classes.
 
 ### Addendum: Even more Float methods
 
