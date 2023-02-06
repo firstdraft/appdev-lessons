@@ -24,7 +24,7 @@ We'll learn about integers first.
 
 Let's experiment with some common methods for `Integer`s:
 
-### + - * / % ** (math)
+### + - * / % ** (math) {#integer-math}
 
 We, of course, have the standard math methods, like the calculator language. These methods all have the same syntactic sugar that the `String` versions did, so we can say `12 + 5` rather than `12.+(5)` (thankfully).
 
@@ -53,7 +53,7 @@ Another maybe unexpected thing: raising a number to a power, e.g. 3<sup>2</sup>,
 3 ** 2
 ```
 
-##### Start the GitPod Project {-}
+##### Start the GitPod Project for Integer {-}
 
 Once you've played with the REPL, it's time to move into the graded project environment.
 

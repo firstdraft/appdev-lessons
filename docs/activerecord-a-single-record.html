@@ -181,7 +181,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.4.1" data-path="integer.html"><a href="integer.html#syntax"><i class="fa fa-check"></i><b>1.4.1</b> Syntax</a></li>
 <li class="chapter" data-level="1.4.2" data-path="integer.html"><a href="integer.html#methods-1"><i class="fa fa-check"></i><b>1.4.2</b> Methods</a></li>
-<li class="chapter" data-level="1.4.3" data-path="integer.html"><a href="integer.html#math"><i class="fa fa-check"></i><b>1.4.3</b> + - * / % ** (math)</a></li>
+<li class="chapter" data-level="1.4.3" data-path="integer.html"><a href="integer.html#integer-math"><i class="fa fa-check"></i><b>1.4.3</b> + - * / % ** (math)</a></li>
 <li class="chapter" data-level="1.4.4" data-path="integer.html"><a href="integer.html#odd-and-even"><i class="fa fa-check"></i><b>1.4.4</b> odd? and even?</a></li>
 <li class="chapter" data-level="1.4.5" data-path="integer.html"><a href="integer.html#rand"><i class="fa fa-check"></i><b>1.4.5</b> rand</a></li>
 <li class="chapter" data-level="1.4.6" data-path="integer.html"><a href="integer.html#to_s"><i class="fa fa-check"></i><b>1.4.6</b> to_s</a></li>
@@ -191,123 +191,119 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5" data-path="float.html"><a href="float.html"><i class="fa fa-check"></i><b>1.5</b> Float</a>
 <ul>
 <li class="chapter" data-level="1.5.1" data-path="float.html"><a href="float.html#methods-2"><i class="fa fa-check"></i><b>1.5.1</b> Methods</a></li>
-<li class="chapter" data-level="1.5.2" data-path="float.html"><a href="float.html#even-more-float-methods"><i class="fa fa-check"></i><b>1.5.2</b> Even more Float methods</a></li>
+<li class="chapter" data-level="1.5.2" data-path="float.html"><a href="float.html#conclusion-2"><i class="fa fa-check"></i><b>1.5.2</b> Conclusion</a></li>
+<li class="chapter" data-level="1.5.3" data-path="float.html"><a href="float.html#addendum-even-more-float-methods"><i class="fa fa-check"></i><b>1.5.3</b> Addendum: Even more Float methods</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="ruby-practice-float.html"><a href="ruby-practice-float.html"><i class="fa fa-check"></i><b>1.6</b> Ruby Practice: Float</a>
+<li class="chapter" data-level="1.6" data-path="date.html"><a href="date.html"><i class="fa fa-check"></i><b>1.6</b> Date</a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="ruby-practice-float.html"><a href="ruby-practice-float.html#float_find_hypotenuse.rb"><i class="fa fa-check"></i><b>1.6.1</b> float_find_hypotenuse.rb</a></li>
-<li class="chapter" data-level="1.6.2" data-path="ruby-practice-float.html"><a href="ruby-practice-float.html#float_rounding.rb"><i class="fa fa-check"></i><b>1.6.2</b> float_rounding.rb</a></li>
+<li class="chapter" data-level="1.6.1" data-path="date.html"><a href="date.html#creating-a-date"><i class="fa fa-check"></i><b>1.6.1</b> Creating a date</a></li>
+<li class="chapter" data-level="1.6.2" data-path="date.html"><a href="date.html#date.today"><i class="fa fa-check"></i><b>1.6.2</b> Date.today</a></li>
+<li class="chapter" data-level="1.6.3" data-path="date.html"><a href="date.html#year"><i class="fa fa-check"></i><b>1.6.3</b> year</a></li>
+<li class="chapter" data-level="1.6.4" data-path="date.html"><a href="date.html#month"><i class="fa fa-check"></i><b>1.6.4</b> month</a></li>
+<li class="chapter" data-level="1.6.5" data-path="date.html"><a href="date.html#day"><i class="fa fa-check"></i><b>1.6.5</b> day</a></li>
+<li class="chapter" data-level="1.6.6" data-path="date.html"><a href="date.html#date.parse"><i class="fa fa-check"></i><b>1.6.6</b> Date.parse</a></li>
+<li class="chapter" data-level="1.6.7" data-path="date.html"><a href="date.html#subtraction"><i class="fa fa-check"></i><b>1.6.7</b> Subtraction</a></li>
+<li class="chapter" data-level="1.6.8" data-path="date.html"><a href="date.html#monday"><i class="fa fa-check"></i><b>1.6.8</b> monday?</a></li>
+<li class="chapter" data-level="1.6.9" data-path="date.html"><a href="date.html#tuesday"><i class="fa fa-check"></i><b>1.6.9</b> tuesday?</a></li>
+<li class="chapter" data-level="1.6.10" data-path="date.html"><a href="date.html#wednesday"><i class="fa fa-check"></i><b>1.6.10</b> wednesday?</a></li>
+<li class="chapter" data-level="1.6.11" data-path="date.html"><a href="date.html#thursday"><i class="fa fa-check"></i><b>1.6.11</b> thursday?</a></li>
+<li class="chapter" data-level="1.6.12" data-path="date.html"><a href="date.html#friday"><i class="fa fa-check"></i><b>1.6.12</b> friday?</a></li>
+<li class="chapter" data-level="1.6.13" data-path="date.html"><a href="date.html#saturday"><i class="fa fa-check"></i><b>1.6.13</b> saturday?</a></li>
+<li class="chapter" data-level="1.6.14" data-path="date.html"><a href="date.html#sunday"><i class="fa fa-check"></i><b>1.6.14</b> sunday?</a></li>
+<li class="chapter" data-level="1.6.15" data-path="date.html"><a href="date.html#wday"><i class="fa fa-check"></i><b>1.6.15</b> wday</a></li>
+<li class="chapter" data-level="1.6.16" data-path="date.html"><a href="date.html#time"><i class="fa fa-check"></i><b>1.6.16</b> Time</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="more-float-methods.html"><a href="more-float-methods.html"><i class="fa fa-check"></i><b>1.7</b> More Float methods</a>
+<li class="chapter" data-level="1.7" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html"><i class="fa fa-check"></i><b>1.7</b> Ruby Practice: Date</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="more-float-methods.html"><a href="more-float-methods.html#formatting-floats-as-strings"><i class="fa fa-check"></i><b>1.7.1</b> Formatting Floats as Strings</a></li>
+<li class="chapter" data-level="1.7.1" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html#date_formatted.rb"><i class="fa fa-check"></i><b>1.7.1</b> date_formatted.rb</a></li>
+<li class="chapter" data-level="1.7.2" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html#date_math.rb"><i class="fa fa-check"></i><b>1.7.2</b> date_math.rb</a></li>
+<li class="chapter" data-level="1.7.3" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html#date_monday.rb"><i class="fa fa-check"></i><b>1.7.3</b> date_monday.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="date.html"><a href="date.html"><i class="fa fa-check"></i><b>1.8</b> Date</a>
+<li class="chapter" data-level="1.8" data-path="array.html"><a href="array.html"><i class="fa fa-check"></i><b>1.8</b> Array</a>
 <ul>
-<li class="chapter" data-level="1.8.1" data-path="date.html"><a href="date.html#creating-a-date"><i class="fa fa-check"></i><b>1.8.1</b> Creating a date</a></li>
-<li class="chapter" data-level="1.8.2" data-path="date.html"><a href="date.html#date.today"><i class="fa fa-check"></i><b>1.8.2</b> Date.today</a></li>
-<li class="chapter" data-level="1.8.3" data-path="date.html"><a href="date.html#year"><i class="fa fa-check"></i><b>1.8.3</b> year</a></li>
-<li class="chapter" data-level="1.8.4" data-path="date.html"><a href="date.html#month"><i class="fa fa-check"></i><b>1.8.4</b> month</a></li>
-<li class="chapter" data-level="1.8.5" data-path="date.html"><a href="date.html#day"><i class="fa fa-check"></i><b>1.8.5</b> day</a></li>
-<li class="chapter" data-level="1.8.6" data-path="date.html"><a href="date.html#date.parse"><i class="fa fa-check"></i><b>1.8.6</b> Date.parse</a></li>
-<li class="chapter" data-level="1.8.7" data-path="date.html"><a href="date.html#subtraction"><i class="fa fa-check"></i><b>1.8.7</b> Subtraction</a></li>
-<li class="chapter" data-level="1.8.8" data-path="date.html"><a href="date.html#monday"><i class="fa fa-check"></i><b>1.8.8</b> monday?</a></li>
-<li class="chapter" data-level="1.8.9" data-path="date.html"><a href="date.html#tuesday"><i class="fa fa-check"></i><b>1.8.9</b> tuesday?</a></li>
-<li class="chapter" data-level="1.8.10" data-path="date.html"><a href="date.html#wednesday"><i class="fa fa-check"></i><b>1.8.10</b> wednesday?</a></li>
-<li class="chapter" data-level="1.8.11" data-path="date.html"><a href="date.html#thursday"><i class="fa fa-check"></i><b>1.8.11</b> thursday?</a></li>
-<li class="chapter" data-level="1.8.12" data-path="date.html"><a href="date.html#friday"><i class="fa fa-check"></i><b>1.8.12</b> friday?</a></li>
-<li class="chapter" data-level="1.8.13" data-path="date.html"><a href="date.html#saturday"><i class="fa fa-check"></i><b>1.8.13</b> saturday?</a></li>
-<li class="chapter" data-level="1.8.14" data-path="date.html"><a href="date.html#sunday"><i class="fa fa-check"></i><b>1.8.14</b> sunday?</a></li>
-<li class="chapter" data-level="1.8.15" data-path="date.html"><a href="date.html#wday"><i class="fa fa-check"></i><b>1.8.15</b> wday</a></li>
-<li class="chapter" data-level="1.8.16" data-path="date.html"><a href="date.html#time"><i class="fa fa-check"></i><b>1.8.16</b> Time</a></li>
+<li class="chapter" data-level="1.8.1" data-path="array.html"><a href="array.html#creating-arrays"><i class="fa fa-check"></i><b>1.8.1</b> Creating arrays</a></li>
+<li class="chapter" data-level="1.8.2" data-path="array.html"><a href="array.html#methods-3"><i class="fa fa-check"></i><b>1.8.2</b> Methods</a></li>
 </ul></li>
-<li class="chapter" data-level="1.9" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html"><i class="fa fa-check"></i><b>1.9</b> Ruby Practice: Date</a>
+<li class="chapter" data-level="1.9" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html"><i class="fa fa-check"></i><b>1.9</b> Ruby Practice: Array</a>
 <ul>
-<li class="chapter" data-level="1.9.1" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html#date_formatted.rb"><i class="fa fa-check"></i><b>1.9.1</b> date_formatted.rb</a></li>
-<li class="chapter" data-level="1.9.2" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html#date_math.rb"><i class="fa fa-check"></i><b>1.9.2</b> date_math.rb</a></li>
-<li class="chapter" data-level="1.9.3" data-path="ruby-practice-date.html"><a href="ruby-practice-date.html#date_monday.rb"><i class="fa fa-check"></i><b>1.9.3</b> date_monday.rb</a></li>
+<li class="chapter" data-level="1.9.1" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_element_square.rb"><i class="fa fa-check"></i><b>1.9.1</b> array_element_square.rb</a></li>
+<li class="chapter" data-level="1.9.2" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_count.rb"><i class="fa fa-check"></i><b>1.9.2</b> array_count.rb</a></li>
+<li class="chapter" data-level="1.9.3" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_reverse.rb"><i class="fa fa-check"></i><b>1.9.3</b> array_reverse.rb</a></li>
+<li class="chapter" data-level="1.9.4" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_min_max_difference.rb"><i class="fa fa-check"></i><b>1.9.4</b> array_min_max_difference.rb</a></li>
+<li class="chapter" data-level="1.9.5" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_sum_elements.rb"><i class="fa fa-check"></i><b>1.9.5</b> array_sum_elements.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.10" data-path="array.html"><a href="array.html"><i class="fa fa-check"></i><b>1.10</b> Array</a>
+<li class="chapter" data-level="1.10" data-path="if-statements.html"><a href="if-statements.html"><i class="fa fa-check"></i><b>1.10</b> If statements</a>
 <ul>
-<li class="chapter" data-level="1.10.1" data-path="array.html"><a href="array.html#creating-arrays"><i class="fa fa-check"></i><b>1.10.1</b> Creating arrays</a></li>
-<li class="chapter" data-level="1.10.2" data-path="array.html"><a href="array.html#methods-3"><i class="fa fa-check"></i><b>1.10.2</b> Methods</a></li>
+<li class="chapter" data-level="1.10.1" data-path="if-statements.html"><a href="if-statements.html#the-basic-anatomy-of-if-statements"><i class="fa fa-check"></i><b>1.10.1</b> The basic anatomy of if statements</a></li>
+<li class="chapter" data-level="1.10.2" data-path="if-statements.html"><a href="if-statements.html#multibranch-if-statements"><i class="fa fa-check"></i><b>1.10.2</b> Multibranch if statements</a></li>
+<li class="chapter" data-level="1.10.3" data-path="if-statements.html"><a href="if-statements.html#truthiness-and-falsiness"><i class="fa fa-check"></i><b>1.10.3</b> truthiness and falsiness</a></li>
+<li class="chapter" data-level="1.10.4" data-path="if-statements.html"><a href="if-statements.html#comparisons"><i class="fa fa-check"></i><b>1.10.4</b> Comparisons</a></li>
+<li class="chapter" data-level="1.10.5" data-path="if-statements.html"><a href="if-statements.html#combining-conditions-with-and-and-or"><i class="fa fa-check"></i><b>1.10.5</b> Combining conditions with AND and OR</a></li>
+<li class="chapter" data-level="1.10.6" data-path="if-statements.html"><a href="if-statements.html#challenge"><i class="fa fa-check"></i><b>1.10.6</b> Challenge</a></li>
 </ul></li>
-<li class="chapter" data-level="1.11" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html"><i class="fa fa-check"></i><b>1.11</b> Ruby Practice: Array</a>
+<li class="chapter" data-level="1.11" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html"><i class="fa fa-check"></i><b>1.11</b> Ruby Practice: Conditionals</a>
 <ul>
-<li class="chapter" data-level="1.11.1" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_element_square.rb"><i class="fa fa-check"></i><b>1.11.1</b> array_element_square.rb</a></li>
-<li class="chapter" data-level="1.11.2" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_count.rb"><i class="fa fa-check"></i><b>1.11.2</b> array_count.rb</a></li>
-<li class="chapter" data-level="1.11.3" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_reverse.rb"><i class="fa fa-check"></i><b>1.11.3</b> array_reverse.rb</a></li>
-<li class="chapter" data-level="1.11.4" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_min_max_difference.rb"><i class="fa fa-check"></i><b>1.11.4</b> array_min_max_difference.rb</a></li>
-<li class="chapter" data-level="1.11.5" data-path="ruby-practice-array.html"><a href="ruby-practice-array.html#array_sum_elements.rb"><i class="fa fa-check"></i><b>1.11.5</b> array_sum_elements.rb</a></li>
+<li class="chapter" data-level="1.11.1" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_rps.rb"><i class="fa fa-check"></i><b>1.11.1</b> conditionals_rps.rb</a></li>
+<li class="chapter" data-level="1.11.2" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_palindrome.rb"><i class="fa fa-check"></i><b>1.11.2</b> conditionals_palindrome.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="if-statements.html"><a href="if-statements.html"><i class="fa fa-check"></i><b>1.12</b> If statements</a>
+<li class="chapter" data-level="1.12" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html"><i class="fa fa-check"></i><b>1.12</b> Loops in Ruby</a>
 <ul>
-<li class="chapter" data-level="1.12.1" data-path="if-statements.html"><a href="if-statements.html#the-basic-anatomy-of-if-statements"><i class="fa fa-check"></i><b>1.12.1</b> The basic anatomy of if statements</a></li>
-<li class="chapter" data-level="1.12.2" data-path="if-statements.html"><a href="if-statements.html#multibranch-if-statements"><i class="fa fa-check"></i><b>1.12.2</b> Multibranch if statements</a></li>
-<li class="chapter" data-level="1.12.3" data-path="if-statements.html"><a href="if-statements.html#truthiness-and-falsiness"><i class="fa fa-check"></i><b>1.12.3</b> truthiness and falsiness</a></li>
-<li class="chapter" data-level="1.12.4" data-path="if-statements.html"><a href="if-statements.html#comparisons"><i class="fa fa-check"></i><b>1.12.4</b> Comparisons</a></li>
-<li class="chapter" data-level="1.12.5" data-path="if-statements.html"><a href="if-statements.html#combining-conditions-with-and-and-or"><i class="fa fa-check"></i><b>1.12.5</b> Combining conditions with AND and OR</a></li>
-<li class="chapter" data-level="1.12.6" data-path="if-statements.html"><a href="if-statements.html#challenge"><i class="fa fa-check"></i><b>1.12.6</b> Challenge</a></li>
+<li class="chapter" data-level="1.12.1" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#if-conditionally-doing-something-once"><i class="fa fa-check"></i><b>1.12.1</b> if: conditionally doing something once</a></li>
+<li class="chapter" data-level="1.12.2" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#while-conditionally-doing-something-multiple-times"><i class="fa fa-check"></i><b>1.12.2</b> while: conditionally doing something multiple times</a></li>
+<li class="chapter" data-level="1.12.3" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#blocks"><i class="fa fa-check"></i><b>1.12.3</b> Blocks</a></li>
 </ul></li>
-<li class="chapter" data-level="1.13" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Practice: Conditionals</a>
+<li class="chapter" data-level="1.13" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Practice: Loops</a>
 <ul>
-<li class="chapter" data-level="1.13.1" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_rps.rb"><i class="fa fa-check"></i><b>1.13.1</b> conditionals_rps.rb</a></li>
-<li class="chapter" data-level="1.13.2" data-path="ruby-practice-conditionals.html"><a href="ruby-practice-conditionals.html#conditionals_palindrome.rb"><i class="fa fa-check"></i><b>1.13.2</b> conditionals_palindrome.rb</a></li>
+<li class="chapter" data-level="1.13.1" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_letter_count.rb"><i class="fa fa-check"></i><b>1.13.1</b> loops_letter_count.rb</a></li>
+<li class="chapter" data-level="1.13.2" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_multiples.rb"><i class="fa fa-check"></i><b>1.13.2</b> loops_multiples.rb</a></li>
+<li class="chapter" data-level="1.13.3" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_fizzbuzz.rb"><i class="fa fa-check"></i><b>1.13.3</b> loops_fizzbuzz.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.14" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html"><i class="fa fa-check"></i><b>1.14</b> Loops in Ruby</a>
+<li class="chapter" data-level="1.14" data-path="each.html"><a href="each.html"><i class="fa fa-check"></i><b>1.14</b> Each</a>
 <ul>
-<li class="chapter" data-level="1.14.1" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#if-conditionally-doing-something-once"><i class="fa fa-check"></i><b>1.14.1</b> if: conditionally doing something once</a></li>
-<li class="chapter" data-level="1.14.2" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#while-conditionally-doing-something-multiple-times"><i class="fa fa-check"></i><b>1.14.2</b> while: conditionally doing something multiple times</a></li>
-<li class="chapter" data-level="1.14.3" data-path="loops-in-ruby.html"><a href="loops-in-ruby.html#blocks"><i class="fa fa-check"></i><b>1.14.3</b> Blocks</a></li>
+<li class="chapter" data-level="1.14.1" data-path="each.html"><a href="each.html#iterating-over-arrays-with-integers-times-method"><i class="fa fa-check"></i><b>1.14.1</b> Iterating over arrays with Integer’s times method</a></li>
+<li class="chapter" data-level="1.14.2" data-path="each.html"><a href="each.html#arrays-each-method"><i class="fa fa-check"></i><b>1.14.2</b> Array’s each method</a></li>
+<li class="chapter" data-level="1.14.3" data-path="each.html"><a href="each.html#sneak-peek"><i class="fa fa-check"></i><b>1.14.3</b> Sneak peek</a></li>
+<li class="chapter" data-level="1.14.4" data-path="each.html"><a href="each.html#each_with_index"><i class="fa fa-check"></i><b>1.14.4</b> each_with_index</a></li>
 </ul></li>
-<li class="chapter" data-level="1.15" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html"><i class="fa fa-check"></i><b>1.15</b> Ruby Practice: Loops</a>
+<li class="chapter" data-level="1.15" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html"><i class="fa fa-check"></i><b>1.15</b> Ruby Practice: Each</a>
 <ul>
-<li class="chapter" data-level="1.15.1" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_letter_count.rb"><i class="fa fa-check"></i><b>1.15.1</b> loops_letter_count.rb</a></li>
-<li class="chapter" data-level="1.15.2" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_multiples.rb"><i class="fa fa-check"></i><b>1.15.2</b> loops_multiples.rb</a></li>
-<li class="chapter" data-level="1.15.3" data-path="ruby-practice-loops.html"><a href="ruby-practice-loops.html#loops_fizzbuzz.rb"><i class="fa fa-check"></i><b>1.15.3</b> loops_fizzbuzz.rb</a></li>
+<li class="chapter" data-level="1.15.1" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_spell_word.rb"><i class="fa fa-check"></i><b>1.15.1</b> each_spell_word.rb</a></li>
+<li class="chapter" data-level="1.15.2" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_even_word.rb"><i class="fa fa-check"></i><b>1.15.2</b> each_even_word.rb</a></li>
+<li class="chapter" data-level="1.15.3" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_letter_count.rb"><i class="fa fa-check"></i><b>1.15.3</b> each_letter_count.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.16" data-path="each.html"><a href="each.html"><i class="fa fa-check"></i><b>1.16</b> Each</a>
+<li class="chapter" data-level="1.16" data-path="hash.html"><a href="hash.html"><i class="fa fa-check"></i><b>1.16</b> Hash</a>
 <ul>
-<li class="chapter" data-level="1.16.1" data-path="each.html"><a href="each.html#iterating-over-arrays-with-integers-times-method"><i class="fa fa-check"></i><b>1.16.1</b> Iterating over arrays with Integer’s times method</a></li>
-<li class="chapter" data-level="1.16.2" data-path="each.html"><a href="each.html#arrays-each-method"><i class="fa fa-check"></i><b>1.16.2</b> Array’s each method</a></li>
-<li class="chapter" data-level="1.16.3" data-path="each.html"><a href="each.html#sneak-peek"><i class="fa fa-check"></i><b>1.16.3</b> Sneak peek</a></li>
-<li class="chapter" data-level="1.16.4" data-path="each.html"><a href="each.html#each_with_index"><i class="fa fa-check"></i><b>1.16.4</b> each_with_index</a></li>
+<li class="chapter" data-level="1.16.1" data-path="hash.html"><a href="hash.html#a-brief-interlude-symbols"><i class="fa fa-check"></i><b>1.16.1</b> A brief interlude: Symbols</a></li>
+<li class="chapter" data-level="1.16.2" data-path="hash.html"><a href="hash.html#creating-hashes-and-storing-values"><i class="fa fa-check"></i><b>1.16.2</b> Creating hashes and storing values</a></li>
+<li class="chapter" data-level="1.16.3" data-path="hash.html"><a href="hash.html#fetch"><i class="fa fa-check"></i><b>1.16.3</b> fetch</a></li>
+<li class="chapter" data-level="1.16.4" data-path="hash.html"><a href="hash.html#hash-literals"><i class="fa fa-check"></i><b>1.16.4</b> Hash literals</a></li>
+<li class="chapter" data-level="1.16.5" data-path="hash.html"><a href="hash.html#fetch-shorthand"><i class="fa fa-check"></i><b>1.16.5</b> fetch shorthand, []</a></li>
+<li class="chapter" data-level="1.16.6" data-path="hash.html"><a href="hash.html#store-shorthand"><i class="fa fa-check"></i><b>1.16.6</b> store shorthand, []=</a></li>
+<li class="chapter" data-level="1.16.7" data-path="hash.html"><a href="hash.html#use-.keys-to-explore"><i class="fa fa-check"></i><b>1.16.7</b> Use .keys to explore</a></li>
+<li class="chapter" data-level="1.16.8" data-path="hash.html"><a href="hash.html#keys-can-be-anything"><i class="fa fa-check"></i><b>1.16.8</b> keys can be anything</a></li>
+<li class="chapter" data-level="1.16.9" data-path="hash.html"><a href="hash.html#values-can-be-anything"><i class="fa fa-check"></i><b>1.16.9</b> values can be anything</a></li>
+<li class="chapter" data-level="1.16.10" data-path="hash.html"><a href="hash.html#key"><i class="fa fa-check"></i><b>1.16.10</b> key</a></li>
+<li class="chapter" data-level="1.16.11" data-path="hash.html"><a href="hash.html#the-bottom-line-1"><i class="fa fa-check"></i><b>1.16.11</b> The bottom line</a></li>
 </ul></li>
-<li class="chapter" data-level="1.17" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html"><i class="fa fa-check"></i><b>1.17</b> Ruby Practice: Each</a>
+<li class="chapter" data-level="1.17" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html"><i class="fa fa-check"></i><b>1.17</b> Ruby Practice: Hash</a>
 <ul>
-<li class="chapter" data-level="1.17.1" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_spell_word.rb"><i class="fa fa-check"></i><b>1.17.1</b> each_spell_word.rb</a></li>
-<li class="chapter" data-level="1.17.2" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_even_word.rb"><i class="fa fa-check"></i><b>1.17.2</b> each_even_word.rb</a></li>
-<li class="chapter" data-level="1.17.3" data-path="ruby-practice-each.html"><a href="ruby-practice-each.html#each_letter_count.rb"><i class="fa fa-check"></i><b>1.17.3</b> each_letter_count.rb</a></li>
+<li class="chapter" data-level="1.17.1" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_person.rb"><i class="fa fa-check"></i><b>1.17.1</b> hash_person.rb</a></li>
+<li class="chapter" data-level="1.17.2" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_dig.rb"><i class="fa fa-check"></i><b>1.17.2</b> hash_dig.rb</a></li>
+<li class="chapter" data-level="1.17.3" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_find_value.rb"><i class="fa fa-check"></i><b>1.17.3</b> hash_find_value.rb</a></li>
+<li class="chapter" data-level="1.17.4" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_list.rb"><i class="fa fa-check"></i><b>1.17.4</b> hash_list.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.18" data-path="hash.html"><a href="hash.html"><i class="fa fa-check"></i><b>1.18</b> Hash</a>
+<li class="chapter" data-level="1.18" data-path="our-own-classes.html"><a href="our-own-classes.html"><i class="fa fa-check"></i><b>1.18</b> Our own classes</a>
 <ul>
-<li class="chapter" data-level="1.18.1" data-path="hash.html"><a href="hash.html#a-brief-interlude-symbols"><i class="fa fa-check"></i><b>1.18.1</b> A brief interlude: Symbols</a></li>
-<li class="chapter" data-level="1.18.2" data-path="hash.html"><a href="hash.html#creating-hashes-and-storing-values"><i class="fa fa-check"></i><b>1.18.2</b> Creating hashes and storing values</a></li>
-<li class="chapter" data-level="1.18.3" data-path="hash.html"><a href="hash.html#fetch"><i class="fa fa-check"></i><b>1.18.3</b> fetch</a></li>
-<li class="chapter" data-level="1.18.4" data-path="hash.html"><a href="hash.html#hash-literals"><i class="fa fa-check"></i><b>1.18.4</b> Hash literals</a></li>
-<li class="chapter" data-level="1.18.5" data-path="hash.html"><a href="hash.html#fetch-shorthand"><i class="fa fa-check"></i><b>1.18.5</b> fetch shorthand, []</a></li>
-<li class="chapter" data-level="1.18.6" data-path="hash.html"><a href="hash.html#store-shorthand"><i class="fa fa-check"></i><b>1.18.6</b> store shorthand, []=</a></li>
-<li class="chapter" data-level="1.18.7" data-path="hash.html"><a href="hash.html#use-.keys-to-explore"><i class="fa fa-check"></i><b>1.18.7</b> Use .keys to explore</a></li>
-<li class="chapter" data-level="1.18.8" data-path="hash.html"><a href="hash.html#keys-can-be-anything"><i class="fa fa-check"></i><b>1.18.8</b> keys can be anything</a></li>
-<li class="chapter" data-level="1.18.9" data-path="hash.html"><a href="hash.html#values-can-be-anything"><i class="fa fa-check"></i><b>1.18.9</b> values can be anything</a></li>
-<li class="chapter" data-level="1.18.10" data-path="hash.html"><a href="hash.html#key"><i class="fa fa-check"></i><b>1.18.10</b> key</a></li>
-<li class="chapter" data-level="1.18.11" data-path="hash.html"><a href="hash.html#the-bottom-line-1"><i class="fa fa-check"></i><b>1.18.11</b> The bottom line</a></li>
+<li class="chapter" data-level="1.18.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.18.1</b> Modeling real world things</a></li>
+<li class="chapter" data-level="1.18.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.18.2</b> Inheritance</a></li>
 </ul></li>
-<li class="chapter" data-level="1.19" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html"><i class="fa fa-check"></i><b>1.19</b> Ruby Practice: Hash</a>
+<li class="chapter" data-level="1.19" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>1.19</b> Ruby Practice: Our own classes</a>
 <ul>
-<li class="chapter" data-level="1.19.1" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_person.rb"><i class="fa fa-check"></i><b>1.19.1</b> hash_person.rb</a></li>
-<li class="chapter" data-level="1.19.2" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_dig.rb"><i class="fa fa-check"></i><b>1.19.2</b> hash_dig.rb</a></li>
-<li class="chapter" data-level="1.19.3" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_find_value.rb"><i class="fa fa-check"></i><b>1.19.3</b> hash_find_value.rb</a></li>
-<li class="chapter" data-level="1.19.4" data-path="ruby-practice-hash.html"><a href="ruby-practice-hash.html#hash_list.rb"><i class="fa fa-check"></i><b>1.19.4</b> hash_list.rb</a></li>
+<li class="chapter" data-level="1.19.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>1.19.1</b> class_person.rb</a></li>
 </ul></li>
-<li class="chapter" data-level="1.20" data-path="our-own-classes.html"><a href="our-own-classes.html"><i class="fa fa-check"></i><b>1.20</b> Our own classes</a>
+<li class="chapter" data-level="1.20" data-path="more-float-methods.html"><a href="more-float-methods.html"><i class="fa fa-check"></i><b>1.20</b> More Float methods</a>
 <ul>
-<li class="chapter" data-level="1.20.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.20.1</b> Modeling real world things</a></li>
-<li class="chapter" data-level="1.20.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.20.2</b> Inheritance</a></li>
-</ul></li>
-<li class="chapter" data-level="1.21" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>1.21</b> Ruby Practice: Our own classes</a>
-<ul>
-<li class="chapter" data-level="1.21.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>1.21.1</b> class_person.rb</a></li>
+<li class="chapter" data-level="1.20.1" data-path="more-float-methods.html"><a href="more-float-methods.html#formatting-floats-as-strings"><i class="fa fa-check"></i><b>1.20.1</b> Formatting Floats as Strings</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>2</b> Ruby Gym</a>
@@ -526,11 +522,11 @@ Proudly published with bookdown</a></li>
 <div id="any-other-instance-methods-you-define-in-the-class" class="section level3 hasAnchor" number="4.3.2">
 <h3><span class="header-section-number">B.3.2</span> Any other instance methods you define in the class<a href="activerecord-a-single-record.html#any-other-instance-methods-you-define-in-the-class" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It’s often helpful to define your own instance methods in the model file; for example, you might want to define a method <code>.full_name</code>:</p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb230-1"><a href="activerecord-a-single-record.html#cb230-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Contact</span> &lt; <span class="dt">ApplicationRecord</span></span>
-<span id="cb230-2"><a href="activerecord-a-single-record.html#cb230-2" aria-hidden="true"></a>  <span class="kw">def</span> full_name</span>
-<span id="cb230-3"><a href="activerecord-a-single-record.html#cb230-3" aria-hidden="true"></a>    <span class="kw">return</span> <span class="dv">self</span>.first_name + <span class="st">&quot; &quot;</span> + <span class="dv">self</span>.last_name</span>
-<span id="cb230-4"><a href="activerecord-a-single-record.html#cb230-4" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb230-5"><a href="activerecord-a-single-record.html#cb230-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb227-1"><a href="activerecord-a-single-record.html#cb227-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Contact</span> &lt; <span class="dt">ApplicationRecord</span></span>
+<span id="cb227-2"><a href="activerecord-a-single-record.html#cb227-2" aria-hidden="true"></a>  <span class="kw">def</span> full_name</span>
+<span id="cb227-3"><a href="activerecord-a-single-record.html#cb227-3" aria-hidden="true"></a>    <span class="kw">return</span> <span class="dv">self</span>.first_name + <span class="st">&quot; &quot;</span> + <span class="dv">self</span>.last_name</span>
+<span id="cb227-4"><a href="activerecord-a-single-record.html#cb227-4" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb227-5"><a href="activerecord-a-single-record.html#cb227-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>You would then be able to call <code>.full_name</code> anywhere in the application that you wind up with an individual <code>Contact</code> object.</p>
 <p><a href="https://chapters.firstdraft.com/chapters/769#defining-instance-methods">Full explanation</a></p>
 </div>
