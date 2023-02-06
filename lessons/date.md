@@ -4,7 +4,7 @@ Sure, we could just use a `String` to represent a date, like `"April 19, 1987"`.
 
 ### Creating a date
 
-**BENP: is this our first library import? Maybe that deserved more of an aside about "gems"?**
+**BENP: Do we need an aside section here introducing gems in a bit more detail.**
 
 The `Date` class isn't loaded into every Ruby program by default, so to use it we first need to say
 

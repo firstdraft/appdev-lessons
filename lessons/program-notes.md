@@ -35,6 +35,8 @@ People often ask "What's the best language for task X?" Depending on the task, s
 
 However, there's another very important consideration: which language has the largest **community** of developers doing task X? More community means more shared code (known as **libraries**, or in Ruby-land, **gems**), more blog posts, more answers when you Google a question, etc.
 
+**BENP: do we need an aside on gems with some more detail here?**
+
 For example, Python and Ruby are very similar languages in terms of their technical features and performance profile. However, by some historical accident, Python seems to have gathered more of the scientific/data analysis/machine learning community around it, so more open-source libraries in those areas have been developed and shared in Python than in Ruby; and so now Python is the go-to language for those tasks.
 
 On the other hand, for agile development of database-backed applications, Ruby has a huge and thriving community. In particular, there is an open-source library for building applications called **Ruby on Rails** ("Rails", for short) that makes small teams or even solo developers incredibly productive. The existence of Rails alone makes the Ruby language a good choice[^rails_relevant] for both startups and beginners.
