@@ -23,7 +23,7 @@
 <meta name="author" content="Ben + Raghu" />
 
 
-<meta name="date" content="2023-02-06" />
+<meta name="date" content="2023-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,9 +57,9 @@
 <!-- https://github.com/wjakethompson/bd-reprex/blob/master/assets/style.html -->
 
 <style>
-input[type=checkbox][id|=fn] ~ span {display:none;}
-input[type=checkbox][id|=fn]:checked ~ span {display:block;}
-input[type=checkbox][id|=fn] {display:none;}
+  input[type=checkbox][id|=fn] ~ span {display:none;}
+  input[type=checkbox][id|=fn]:checked ~ span {display:block;}
+  input[type=checkbox][id|=fn] {display:none;}
 </style>
 
 
@@ -406,6 +406,19 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb293"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb293-1"><a href="new-hash-syntax.html#cb293-1" aria-hidden="true"></a>{ <span class="dv">1</span>: <span class="st">&quot;pink&quot;</span>, <span class="dv">2</span>: <span class="st">&quot;cookies&quot;</span> }</span></code></pre></div>
 <p>No! The “new” hash syntax is for when the keys are <code>Symbol</code>s — then you can swing the <code>Symbol</code>’s colon around to the other side of it.</p>
 </div>
+<!-- https://community.rstudio.com/t/insertion-of-javascript-into-bookdown-project/44176 -->
+<!-- https://stackoverflow.com/questions/6822945/add-target-blank-to-link-with-javascript -->
+<!-- https://stackoverflow.com/a/6823034 -->
+
+<script>
+  var links = document.getElementsByTagName('a');
+  var len = links.length;
+
+  for(var i=0; i<len; i++)
+  {
+    links[i].target = "_blank";
+  }
+</script>
             </section>
 
           </div>
