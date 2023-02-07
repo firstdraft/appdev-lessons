@@ -77,7 +77,7 @@ p rand
 
 That's it for `Float`. Next up, we'll learn to manipulate dates and times with the `Date` and `Time` classes.
 
-### Addendum: Even more Float methods
+#### Addendum: Even more Float methods {-}
 
 Looking for even more Float methods?
 
@@ -90,7 +90,7 @@ Ruby on Rails enhances certain Ruby classes with additional convenience methods 
     require 'activesupport'
     ```
 
-#### Formatting Floats as Strings {-}
+##### Formatting Floats as Strings {-}
 
 As we know, you can call the `.to_s` method on a Float to convert the number into a String:
 
@@ -118,7 +118,7 @@ In addition to providing a `Symbol` to the `to_s` method, you can provide an _ad
 1235551234.to_s(:phone, { :area_code => true, :extension => 555 }) # => (123) 555-1234 x 555
 ```
 
-[^Hash]: A `Hash` is another Class is Ruby that. See the [Hash chapter](#hash-chapter). In this case, just be aware that this kind of formatting is possible and easy to do in a Rails application.
+[^Hash]: A `Hash` is another Class is Ruby that. See the [Hash chapter](#hash-chapter). Until you read that chapter, just be aware that this kind of formatting is possible and easy to do in a Rails application.
 
 ##### Currency {-}
 

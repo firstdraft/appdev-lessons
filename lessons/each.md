@@ -1,22 +1,12 @@
 ## Each
 
-- Notes:
+When we met the `Array` class, we noted that most of what we do as developers is manage _lists of things_ — photos, likes, followers, reviews, listings, messages, rides, events, concerts, projects, etc etc etc — and `Array` is the data structure that we'll most commonly use to contain these lists.
 
-  - Copied from [`each.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/each.md){target="_blank"}
-  - See [Ruby Practice: Each][Ruby Practice: Each] for project: [https://github.com/appdev-projects/each-chapter](https://github.com/appdev-projects/each-chapter){target="_blank"}
-
-When we met the `Array` class, we noted that most of what we do as developers is
-manage _lists of things_ — photos, likes, followers, reviews, listings,
-messages, rides, events, concerts, projects, etc etc etc — and `Array` is the
-data structure that we'll most commonly use to contain these lists.
-
-Therefore, the most common reason we'll have to write loops is to **visit each
-element in an `Array` and do something interesting with it** — for example,
-display the element to the user with some formatting around it.
+Therefore, the most common reason we'll have to write loops is to **visit each element in an `Array` and do something interesting with it** — for example, display the element to the user with some formatting around it.
 
 ### Iterating over arrays with Integer's times method
 
-Try transforming the words in an Array using what you've learned so far about [loops](https://chapters.firstdraft.com/chapters/764){target="_blank"}:
+Try transforming the words in an Array using what you've learned so far about [loops](#loops-chapter):
 
 Write a program that, given a list of words from the user, would take each word and print it in three forms:
 
@@ -44,7 +34,7 @@ Your program should output the following:
 "ORANGE"
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){target="_blank"}
 
 ---
 
@@ -73,9 +63,9 @@ user_words.each do |the_word|
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/each-iterating-with-each){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-iterating-with-each){target="_blank"}
 
-Click "run" and verify that both programs do the same thing.
+Click "Run" and verify that both programs do the same thing.
 
 Nice! `.each` has two clear benefits over using `.times`:
 
@@ -89,9 +79,7 @@ Nice! `.each` has two clear benefits over using `.times`:
      Then, **we just use that variable directly**, and we don't have to worry about accessing the array with `.at`.
 
 [^singular_vs_plural]:
-    I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and block variables _singularly_ (e.g. `photo`) to make it clear to myself which is which — the list itself versus one element within the list.
-
-    Whatever you do, don't name the block variable plurally — that's very confusing when you come back to your code later and have to make sense of it.
+    I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and block variables _singularly_ (e.g. `photo`) to make it clear to myself which is which — the list itself versus one element within the list. Whatever you do, don't name the block variable plurally — that's very confusing when you come back to your code later and have to make sense of it.
 
 The hardest part, I think, is getting your head around the block variable; in this case, `|the_word|`. It takes some practice.
 
@@ -115,9 +103,23 @@ Just a sneak peek as to why `.each` is so important to get comfortable with: soo
 
 Code like this is what drives the dozens of dynamic applications you interact with on a daily basis — we pull a list of records from a database table, then we loop over them, and then we format each one using some _markup language_ (in this case HTML for the browser, but it could be XML for native apps, etc).
 
-### each_with_index
+##### Start the GitPod Project {-}
 
-**BENP: I also used to teach `enumerate` in my python class, but I found it was better to drop this and explain it later if/when necessary (i.e., after the students get very comfortable with loops on arrays). I suggest possibly striking this section... and making sure it doesn't appear in assignment.**
+Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions){target="_blank"}.
+
+<mark>✏️ **Exercise:**</mark> On GitPod in the `.each` project, work through `each_spell_word.rb`.
+
+<mark>✏️ **Exercise:**</mark> When you're done with the first one, work through `each_even_word.rb`
+
+<mark>✏️ **Exercise:**</mark> And finally, work through `each_letter_count.rb`
+
+###  Conclusion
+
+That's it for `.each` and loops. It's time to meet a very important data structure class that we will be seeing a lot: `Hash`.
+
+#### Addendum: each_with_index {-}
+
+**BENP: I suggest making this an addendum. May be difficult to grasp at this stage**
 
 There are some rare cases when you are looping over an array and, within the block, you would like access to the element _and_ its index. For example, maybe you want to print a line after every other element. You could fall back to `.times` in these scenarios, but there's also another `Array` method that has your back: `.each_with_index`. It looks like this:
 
@@ -138,88 +140,6 @@ user_words.each_with_index do |the_word, the_index|
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/each-each-with-index){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-each-with-index){target="_blank"}
 
 As you can see, some methods provide more than one block variable. `.each_with_index` allows you to name two variables within the pipes; the first one will receive the element, and the second one will receive the index of the iteration. Within the block you can use both variables as you see fit. In rare cases, handy.
-
-
-## Ruby Practice: Each
-
-- Notes:
-
-  - Copied from project README: [https://github.com/appdev-projects/each-chapter](https://github.com/appdev-projects/each-chapter){target="_blank"}
-
-Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
-
-If we want to run `each_even_word.rb`, we can write the command:
-
-```bash
-ruby each_even_word.rb
-```
-
-To re-run this command, you can use the UP and DOWN arrow keys to look at the history of commands you've run in a Terminal.
-
-### each_spell_word.rb
-Write a program that:
-
-Asks your user to enter any word and have it spelled out letter by letter.  
-
-Input
-`Georgia`
-
-Output
-```bash
-"G"
-"E"
-"O"
-"R"
-"G"
-"I"
-"A"
-```
-
-Example
-```bash
-"Enter a word for me to spell:"
-Georgia
-"G"
-"E"
-"O"
-"R"
-"G"
-"I"
-"A"
-```
-
-### each_even_word.rb
-Write a program that:
-  Asks the user to enter a list of words separated by spaces.
-  The program should only print the words that are have an even number of characters
-
-Example (`mountain pink vines` is the input)
-```bash
-"Enter a list of words separated by spaces:"
-mountain pink vines
-"mountain"
-"pink"
-```
-
-### each_letter_count.rb
-
-Write a program that:
- 
- Asks the user to enter a word.
-  The program should print each letter in the word the number of times it appears in the word.
-
-Example input: `loop`
-
-Output:
-```bash
-"Enter a word"
-loop
-l appears 1 times
-o appears 2 times
-o appears 2 times
-p appears 1 times
-```
-

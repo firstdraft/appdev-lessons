@@ -1,4 +1,4 @@
-## Loops
+## Loops {#loops-chapter}
 
 ### if: conditionally doing something once
 

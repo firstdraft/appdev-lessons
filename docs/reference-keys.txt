@@ -29,7 +29,6 @@ conclusion-1
 float
 methods-2
 conclusion-2
-addendum-even-more-float-methods
 date
 creating-a-date
 date.new
@@ -47,7 +46,7 @@ truthiness-and-falsiness
 comparisons
 combining-conditions-with-and-and-or
 conclusion-5
-loops
+loops-chapter
 if-conditionally-doing-something-once
 while-conditionally-doing-something-multiple-times
 blocks
@@ -56,11 +55,7 @@ each
 iterating-over-arrays-with-integers-times-method
 arrays-each-method
 sneak-peek
-each_with_index
-ruby-practice-each
-each_spell_word.rb
-each_even_word.rb
-each_letter_count.rb
+conclusion-7
 hash-chapter
 a-brief-interlude-symbols
 creating-hashes-and-storing-values
@@ -170,7 +165,7 @@ creating-a-hash
 store
 fetch-1
 conditionals
-loops-1
+loops
 blocks-1
 times
 other-methods
@@ -179,7 +174,7 @@ downto
 step
 looping-through-arrays
 each-1
-each_with_index-1
+each_with_index
 different-ruby-styles
 no-parentheses-around-arguments
 curly-braces-around-hash-arguments
