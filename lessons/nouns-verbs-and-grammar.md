@@ -78,9 +78,9 @@ Here's a real example:
 "Hello, world!".upcase
 ```
 
-<mark>✏️ **Exercise:**</mark> You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
-
-
+<p class="repl">
+  You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
+</p>
 
 ![](assets/nouns-verbs-and-grammar/replit-fork-hd.png)
 
@@ -124,7 +124,9 @@ Different **classes**[^everything_is_object] (string being one) can perform diff
 "Your Name".swapcase
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){target="_blank"}
+<p class="repl">
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){target="_blank"}
+</p>
 
 What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try it:
 
@@ -178,13 +180,17 @@ Alright, so the **primary syntax** in Ruby is straightforward — `object.method
 "Java is a joy".gsub("Java", "Ruby")
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/arguments-are-inputs){target="_blank"}
+<p class="repl">
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/arguments-are-inputs){target="_blank"}
+</p>
 
 `gsub` is short for "globally substitute", because it will replace _all_ occurrences of one _substring_ with another _substring_.
 
 In order to do its job, the `gsub` method needs to know what substring to get rid of and what to replace it with. So we give it inputs, or **arguments**, which must come in parentheses _immediately_ following the method. If the method takes multiple arguments, as `gsub` does, then they are separated by commas.
 
-<mark>✏️ **Exercise:**</mark> Try replacing `"Java is a joy"` with any string you like, and experiment with different arguments instead of `"Java"` and `"Ruby"`. For example, use `gsub` to change `"Hello, world!"` to say `"Hello, you there!"`. Then, start with `"resume"` and try to transform it into `"résumé"`. What is the purpose of `gsub`'s first argument, and what is the purpose of the second argument?
+<p class="repl">
+  Try replacing `"Java is a joy"` with any string you like, and experiment with different arguments instead of `"Java"` and `"Ruby"`. For example, use `gsub` to change `"Hello, world!"` to say `"Hello, you there!"`. Then, start with `"resume"` and try to transform it into `"résumé"`. What is the purpose of `gsub`'s first argument, and what is the purpose of the second argument?
+</p>
 
 In reality, `gsub` is more often used to do things like removing illegal characters from usernames before saving, e.g.:
 
@@ -218,7 +224,9 @@ Can you spot the difference? **Don't put a space between the method and the open
 
 It's a very easy mistake to make, so I just wanted to warn you early on so you that can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){target="_blank"}
+<p class="repl">
+  [Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){target="_blank"}
+</p>
 
 ### Seriously: please read the error message
 
@@ -272,7 +280,9 @@ However, so far we haven't been doing much with the **return value** of each exp
 # "hello world".reverse
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-drop-on-the-ground){target="_blank"} Did it work? Did you copy-paste and forget to remove the leading `#` symbol..?
+<p class="repl">
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-drop-on-the-ground){target="_blank"} Did it work? Did you copy-paste and forget to remove the leading `#` symbol..?
+</p>
 
 We're not really able to make any forward progress when we only perform one operation at a time. Programs get interesting only when we start to take the return value of one expression and feed it into the _next_ method. That's how we craft our own novel, useful applications from the basic building blocks of Ruby.
 
@@ -285,7 +295,9 @@ s = "hello world!".upcase
 s
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){target="_blank"}
+<p class="repl">
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){target="_blank"}
+</p>
 
 This creates a box, labels it `s`, and stores the string `"HELLO WORLD!"` in it.
 
@@ -303,7 +315,9 @@ out loud, I say "the string hello world dot upcase _is assigned_ to the variable
 
 <mark>✏️ **Exercise:**</mark> Using as many Ruby terms as you can (string, object, assign, etc.), read the following out loud (or maybe in your head if you're in a quiet café): `t = "I like Ruby".gsub("like", "love")`. Carefully reading code with correct terminology is a great way to learn and spot error messages before they occur.
 
-<mark>✏️ **Exercise:**</mark> Now add another line to the REPL,
+<p class="repl">
+  Now add another line to the REPL,
+</p>
 
 ```ruby
 s = "hello world!".upcase
@@ -323,7 +337,9 @@ s.reverse
 s.gsub("L", "Z")
 ```
 
-<mark>✏️ **Exercise:**</mark> Do it! Type the above code into your current REPL.
+<p class="repl">
+  Do it! Type the above code into your current REPL.
+</p>
 
 What do you think `s` contains now? Try it:
 
@@ -342,7 +358,9 @@ u = t.gsub("L", "Z")
 u
 ```
 
-<mark>✏️ **Exercise:**</mark> Do it! Type the above code into your current REPL.
+<p class="repl">
+  Do it! Type the above code into your current REPL.
+</p>
 
 Fortunately, we can create as many variables as we want.
 
@@ -356,7 +374,9 @@ s = 2.odd?
 s
 ```
 
-<mark>✏️ **Exercise:**</mark> Do it! Type the above code into your current REPL.
+<p class="repl">
+  Do it! Type the above code into your current REPL.
+</p>
 
 We can even replace the value in the box with an updated version of the _old_ value, because _the expression on the right side of the assignment operator is evaluated before the assignment takes place_. Type this:
 
@@ -367,7 +387,9 @@ s = s.reverse
 s
 ```
 
-<mark>✏️ **Exercise:**</mark> Do it! Type the above code into your current REPL.
+<p class="repl">
+  Do it! Type the above code into your current REPL.
+</p>
 
 That may look strange — how can we use `s` on the left side _and_ the right side of the `=`?
 

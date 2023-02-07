@@ -454,15 +454,14 @@ Proudly published with bookdown</a></li>
 <p>So, in terms of <strong>data</strong> and <strong>methods</strong>, Ruby comes with a powerful set out-of-the-box <em>and</em> is always getting better. That’s good news! Here’s even more good news: to access all of this power, the <strong>primary syntax</strong> is straightforward. It looks like this: <code>some_object.some_method</code></p>
 <p>Here’s a real example:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="nouns-verbs-and-grammar.html#cb1-1" aria-hidden="true"></a><span class="st">&quot;Hello, world!&quot;</span>.upcase</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> You try it. <a href="https://replit.com/@raghubetina/hello-world" target="_blank">Click here to visit repl.it</a>, a service that offers instant programming sandboxes within your browser. Click the “Fork” button in the top right and sign in with your Github account. “Forking” a REPL will copy the REPL to your own account and allow you to edit it.</p>
-<p class="proj">
-<mark>✏️ <strong>Exercise:</strong></mark> You try it. <a href="https://replit.com/@raghubetina/hello-world" target="_blank">Click here to visit repl.it</a>, a service that offers instant programming sandboxes within your browser. Click the “Fork” button in the top right and sign in with your Github account. “Forking” a REPL will copy the REPL to your own account and allow you to edit it.
-<img src="assets/nouns-verbs-and-grammar/replit-fork-hd.png" />
-In the black window that appears on the right side under the <code>&gt;_ Console</code> tab<span id="fn-1"><!--
+<p class="repl">
+You try it. <a href="https://replit.com/@raghubetina/hello-world" target="_blank">Click here to visit repl.it</a>, a service that offers instant programming sandboxes within your browser. Click the “Fork” button in the top right and sign in with your Github account. “Forking” a REPL will copy the REPL to your own account and allow you to edit it.
+</p>
+<p><img src="assets/nouns-verbs-and-grammar/replit-fork-hd.png" /></p>
+<p>In the black window that appears on the right side under the <code>&gt;_ Console</code> tab<span id="fn-1"><!--
 --><label for="fn-1-toggle"><sup>1</sup></label><!--
 --><input type="checkbox" hidden id="fn-1-toggle"/>
-<span id="fn-content">This is a “command-line” or “terminal”. You enter text commands here by typing them out <em>exactly</em>, and the computer will execute them, similar to how you click on a program with your mouse to run it. You’ve already seen another terminal in your GitPod workspaces for running commands like <code>bin/server</code> and <code>rails grade</code>.</span></span>, type:
-</p>
+<span id="fn-content">This is a “command-line” or “terminal”. You enter text commands here by typing them out <em>exactly</em>, and the computer will execute them, similar to how you click on a program with your mouse to run it. You’ve already seen another terminal in your GitPod workspaces for running commands like <code>bin/server</code> and <code>rails grade</code>.</span></span>, type:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="nouns-verbs-and-grammar.html#cb2-1" aria-hidden="true"></a><span class="ex">irb</span></span></code></pre></div>
 <p>and press <kbd>return</kbd>. This will launch <em>interactive Ruby</em> (IRB), a program that lets you evaluate one Ruby expression at a time.</p>
 <p>At the <code>irb(main)</code> prompt that appears, you can now try out <code>"Hello, world!".upcase</code>:</p>
@@ -489,7 +488,9 @@ In the black window that appears on the right side under the <code>&gt;_ Console
 <span id="cb3-3"><a href="nouns-verbs-and-grammar.html#cb3-3" aria-hidden="true"></a><span class="st">&quot;Mississippi&quot;</span>.length</span>
 <span id="cb3-4"><a href="nouns-verbs-and-grammar.html#cb3-4" aria-hidden="true"></a><span class="st">&quot;Raghu Betina&quot;</span>.reverse</span>
 <span id="cb3-5"><a href="nouns-verbs-and-grammar.html#cb3-5" aria-hidden="true"></a><span class="st">&quot;Your Name&quot;</span>.swapcase</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/different-classes-have-different-methods" target="_blank">Click here for a REPL to try it.</a></p>
+<p class="repl">
+<a href="https://repl.it/@raghubetina/different-classes-have-different-methods" target="_blank">Click here for a REPL to try it.</a>
+</p>
 <p>What do you expect will happen if we ask <code>"Mississippi"</code> if it is <code>even?</code>? Try it:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb4-1"><a href="nouns-verbs-and-grammar.html#cb4-1" aria-hidden="true"></a><span class="st">&quot;Mississippi&quot;</span>.even?</span></code></pre></div>
 </div>
@@ -497,7 +498,7 @@ In the black window that appears on the right side under the <code>&gt;_ Console
 <h3><span class="header-section-number">1.1.5</span> Error Messages<a href="nouns-verbs-and-grammar.html#error-messages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="do-or-do-not.-there-is-no-read." class="section level4 unnumbered hasAnchor">
 <h4><em>Do</em>, or do not. There is no <em>read</em>.<a href="nouns-verbs-and-grammar.html#do-or-do-not.-there-is-no-read." class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>When you saw the <mark>✏️ <strong>Exercise:</strong></mark> prompt, were you typing out every expression in a REPL?</p>
+<p>When you saw the exercise prompt, were you typing out every expression in a REPL?</p>
 <p>If not, then you’re doing this wrong. If you’re just <em>reading</em>, you won’t be successful at learning programming; you have to <em>do</em> in order to build up some muscle memory. <em>Practice is crucial.</em></p>
 <p>In fact, not only should you be typing the things I ask you to type, but you should also be trying out random other things that occur to you. (E.g., “What if I tried <code>"Mississippi".length.even?</code>”)</p>
 <p><em>Experiment!</em></p>
@@ -522,10 +523,14 @@ In the black window that appears on the right side under the <code>&gt;_ Console
 <h3><span class="header-section-number">1.1.6</span> Arguments are inputs<a href="nouns-verbs-and-grammar.html#arguments-are-inputs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Alright, so the <strong>primary syntax</strong> in Ruby is straightforward — <code>object.method</code>. However, there’s a wrinkle: some methods require additional inputs. For example, there is a method called <code>gsub</code> which we can call on a <code>String</code>, which will substitute characters with other characters. Try it:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="nouns-verbs-and-grammar.html#cb7-1" aria-hidden="true"></a><span class="st">&quot;Java is a joy&quot;</span>.gsub(<span class="st">&quot;Java&quot;</span>, <span class="st">&quot;Ruby&quot;</span>)</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/arguments-are-inputs" target="_blank">Click here for a REPL to try it.</a></p>
+<p class="repl">
+<a href="https://repl.it/@raghubetina/arguments-are-inputs" target="_blank">Click here for a REPL to try it.</a>
+</p>
 <p><code>gsub</code> is short for “globally substitute”, because it will replace <em>all</em> occurrences of one <em>substring</em> with another <em>substring</em>.</p>
 <p>In order to do its job, the <code>gsub</code> method needs to know what substring to get rid of and what to replace it with. So we give it inputs, or <strong>arguments</strong>, which must come in parentheses <em>immediately</em> following the method. If the method takes multiple arguments, as <code>gsub</code> does, then they are separated by commas.</p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Try replacing <code>"Java is a joy"</code> with any string you like, and experiment with different arguments instead of <code>"Java"</code> and <code>"Ruby"</code>. For example, use <code>gsub</code> to change <code>"Hello, world!"</code> to say <code>"Hello, you there!"</code>. Then, start with <code>"resume"</code> and try to transform it into <code>"résumé"</code>. What is the purpose of <code>gsub</code>’s first argument, and what is the purpose of the second argument?</p>
+<p class="repl">
+Try replacing <code>"Java is a joy"</code> with any string you like, and experiment with different arguments instead of <code>"Java"</code> and <code>"Ruby"</code>. For example, use <code>gsub</code> to change <code>"Hello, world!"</code> to say <code>"Hello, you there!"</code>. Then, start with <code>"resume"</code> and try to transform it into <code>"résumé"</code>. What is the purpose of <code>gsub</code>’s first argument, and what is the purpose of the second argument?
+</p>
 <p>In reality, <code>gsub</code> is more often used to do things like removing illegal characters from usernames before saving, e.g.:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb8-1"><a href="nouns-verbs-and-grammar.html#cb8-1" aria-hidden="true"></a><span class="st">&quot;Raghu@Bet@ina&quot;</span>.gsub(<span class="st">&quot;@&quot;</span>, <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p>(<code>""</code> is an empty string, so all <code>@</code>s will be replaced with nothing, i.e. removed.)</p>
@@ -542,7 +547,9 @@ In the black window that appears on the right side under the <code>&gt;_ Console
 <span id="cb10-2"><a href="nouns-verbs-and-grammar.html#cb10-2" aria-hidden="true"></a><span class="st">&quot;Raghu@Bet@ina&quot;</span>.gsub (<span class="st">&quot;@&quot;</span>, <span class="st">&quot;&quot;</span>) <span class="co"># bad!</span></span></code></pre></div>
 <p>Can you spot the difference? <strong>Don’t put a space between the method and the opening parenthesis.</strong></p>
 <p>It’s a very easy mistake to make, so I just wanted to warn you early on so you that can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:</p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://replit.com/@raghubetina/bad-argument-syntax" target="_blank">Click here for a REPL to try it.</a></p>
+<p class="repl">
+<a href="https://replit.com/@raghubetina/bad-argument-syntax" target="_blank">Click here for a REPL to try it.</a>
+</p>
 </div>
 <div id="seriously-please-read-the-error-message" class="section level3 hasAnchor" number="1.1.8">
 <h3><span class="header-section-number">1.1.8</span> Seriously: please read the error message<a href="nouns-verbs-and-grammar.html#seriously-please-read-the-error-message" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -581,13 +588,17 @@ In the black window that appears on the right side under the <code>&gt;_ Console
 <p>However, so far we haven’t been doing much with the <strong>return value</strong> of each expression. We’ve just been reading it off the screen, and then dropping it on the ground. For example, try the following:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb13-1"><a href="nouns-verbs-and-grammar.html#cb13-1" aria-hidden="true"></a><span class="co"># &quot;hello world&quot;.upcase</span></span>
 <span id="cb13-2"><a href="nouns-verbs-and-grammar.html#cb13-2" aria-hidden="true"></a><span class="co"># &quot;hello world&quot;.reverse</span></span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/variables-drop-on-the-ground" target="_blank">Click here for a REPL to try it.</a> Did it work? Did you copy-paste and forget to remove the leading <code>#</code> symbol..?</p>
+<p class="repl">
+<a href="https://repl.it/@raghubetina/variables-drop-on-the-ground" target="_blank">Click here for a REPL to try it.</a> Did it work? Did you copy-paste and forget to remove the leading <code>#</code> symbol..?
+</p>
 <p>We’re not really able to make any forward progress when we only perform one operation at a time. Programs get interesting only when we start to take the return value of one expression and feed it into the <em>next</em> method. That’s how we craft our own novel, useful applications from the basic building blocks of Ruby.</p>
 <p>So: let’s start to store our return values for future reference, instead of dropping them on the ground. We do this using <strong>variables</strong>, or as I like to think of them, <em>boxes</em>. Let’s get our feet wet:</p>
 <p>Type the following:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb14-1"><a href="nouns-verbs-and-grammar.html#cb14-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
 <span id="cb14-2"><a href="nouns-verbs-and-grammar.html#cb14-2" aria-hidden="true"></a>s</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/variables-are-boxes" target="_blank">Click here for a REPL to try it.</a></p>
+<p class="repl">
+<a href="https://repl.it/@raghubetina/variables-are-boxes" target="_blank">Click here for a REPL to try it.</a>
+</p>
 <p>This creates a box, labels it <code>s</code>, and stores the string <code>"HELLO WORLD!"</code> in it.</p>
 <div id="the-variable-assignment-operator" class="section level4 unnumbered hasAnchor">
 <h4>The variable assignment operator<a href="nouns-verbs-and-grammar.html#the-variable-assignment-operator" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -596,7 +607,9 @@ In the black window that appears on the right side under the <code>&gt;_ Console
 <div class="sourceCode" id="cb15"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb15-1"><a href="nouns-verbs-and-grammar.html#cb15-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span></code></pre></div>
 <p>out loud, I say “the string hello world dot upcase <em>is assigned</em> to the variable s”. I read the right side first, because that’s how Ruby reads it too; it first evaluates the expression on the right side of the <code>=</code>, and then it stores the resulting value in the variable on the left.</p>
 <p><mark>✏️ <strong>Exercise:</strong></mark> Using as many Ruby terms as you can (string, object, assign, etc.), read the following out loud (or maybe in your head if you’re in a quiet café): <code>t = "I like Ruby".gsub("like", "love")</code>. Carefully reading code with correct terminology is a great way to learn and spot error messages before they occur.</p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Now add another line to the REPL,</p>
+<p class="repl">
+Now add another line to the REPL,
+</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb16-1"><a href="nouns-verbs-and-grammar.html#cb16-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
 <span id="cb16-2"><a href="nouns-verbs-and-grammar.html#cb16-2" aria-hidden="true"></a>s.reverse</span>
 <span id="cb16-3"><a href="nouns-verbs-and-grammar.html#cb16-3" aria-hidden="true"></a>s</span></code></pre></div>
@@ -608,7 +621,9 @@ In the black window that appears on the right side under the <code>&gt;_ Console
 <div class="sourceCode" id="cb17"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb17-1"><a href="nouns-verbs-and-grammar.html#cb17-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
 <span id="cb17-2"><a href="nouns-verbs-and-grammar.html#cb17-2" aria-hidden="true"></a>s.reverse</span>
 <span id="cb17-3"><a href="nouns-verbs-and-grammar.html#cb17-3" aria-hidden="true"></a>s.gsub(<span class="st">&quot;L&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Do it! Type the above code into your current REPL.</p>
+<p class="repl">
+Do it! Type the above code into your current REPL.
+</p>
 <p>What do you think <code>s</code> contains now? Try it:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb18-1"><a href="nouns-verbs-and-grammar.html#cb18-1" aria-hidden="true"></a>s</span></code></pre></div>
 <p>Did it match your expectations?</p>
@@ -617,7 +632,9 @@ In the black window that appears on the right side under the <code>&gt;_ Console
 <span id="cb19-2"><a href="nouns-verbs-and-grammar.html#cb19-2" aria-hidden="true"></a>t = s.reverse</span>
 <span id="cb19-3"><a href="nouns-verbs-and-grammar.html#cb19-3" aria-hidden="true"></a>u = t.gsub(<span class="st">&quot;L&quot;</span>, <span class="st">&quot;Z&quot;</span>)</span>
 <span id="cb19-4"><a href="nouns-verbs-and-grammar.html#cb19-4" aria-hidden="true"></a>u</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Do it! Type the above code into your current REPL.</p>
+<p class="repl">
+Do it! Type the above code into your current REPL.
+</p>
 <p>Fortunately, we can create as many variables as we want.</p>
 </div>
 <div id="updating-variables" class="section level4 unnumbered hasAnchor">
@@ -626,13 +643,17 @@ In the black window that appears on the right side under the <code>&gt;_ Console
 <div class="sourceCode" id="cb20"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb20-1"><a href="nouns-verbs-and-grammar.html#cb20-1" aria-hidden="true"></a>s = <span class="st">&quot;hi&quot;</span></span>
 <span id="cb20-2"><a href="nouns-verbs-and-grammar.html#cb20-2" aria-hidden="true"></a>s = <span class="dv">2</span>.odd?</span>
 <span id="cb20-3"><a href="nouns-verbs-and-grammar.html#cb20-3" aria-hidden="true"></a>s</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Do it! Type the above code into your current REPL.</p>
+<p class="repl">
+Do it! Type the above code into your current REPL.
+</p>
 <p>We can even replace the value in the box with an updated version of the <em>old</em> value, because <em>the expression on the right side of the assignment operator is evaluated before the assignment takes place</em>. Type this:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb21-1"><a href="nouns-verbs-and-grammar.html#cb21-1" aria-hidden="true"></a>s = <span class="st">&quot;hello, world!&quot;</span></span>
 <span id="cb21-2"><a href="nouns-verbs-and-grammar.html#cb21-2" aria-hidden="true"></a>s = s.capitalize</span>
 <span id="cb21-3"><a href="nouns-verbs-and-grammar.html#cb21-3" aria-hidden="true"></a>s = s.reverse</span>
 <span id="cb21-4"><a href="nouns-verbs-and-grammar.html#cb21-4" aria-hidden="true"></a>s</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Do it! Type the above code into your current REPL.</p>
+<p class="repl">
+Do it! Type the above code into your current REPL.
+</p>
 <p>That may look strange — how can we use <code>s</code> on the left side <em>and</em> the right side of the <code>=</code>?</p>
 <p>But it’s because this is <em>not the equals sign from math class</em>; this is the <strong>variable assignment operator</strong>, and the right side is evaluated first until only a single value is left; and <em>then</em> that object is assigned into the box on the left (replacing whatever was there before).</p>
 <p>So you will very often see something like this:</p>
