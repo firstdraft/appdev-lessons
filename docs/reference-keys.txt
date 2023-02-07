@@ -39,6 +39,7 @@ array
 creating-arrays
 methods-3
 conclusion-4
+ruby-gym-part-1
 if-statements
 the-basic-anatomy-of-if-statements
 multibranch-if-statements
@@ -46,6 +47,7 @@ truthiness-and-falsiness
 comparisons
 combining-conditions-with-and-and-or
 conclusion-5
+ruby-gym-part-2
 loops-chapter
 if-conditionally-doing-something-once
 while-conditionally-doing-something-multiple-times
@@ -56,6 +58,7 @@ iterating-over-arrays-with-integers-times-method
 arrays-each-method
 sneak-peek
 conclusion-7
+ruby-gym-part-3
 hash-chapter
 a-brief-interlude-symbols
 creating-hashes-and-storing-values
@@ -68,6 +71,7 @@ keys-can-be-anything
 values-can-be-anything
 key
 conclusion-8
+ruby-gym-part-4
 our-own-classes
 modeling-real-world-things
 inheritance

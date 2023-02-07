@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>B.5 Integer | AD1</title>
+  <title>1.8 Ruby Gym Part 1 | AD1</title>
   <meta name="description" content="This book covers the AD1 course at UChicago" />
   <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="B.5 Integer | AD1" />
+  <meta property="og:title" content="1.8 Ruby Gym Part 1 | AD1" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book covers the AD1 course at UChicago" />
   <meta name="github-repo" content="firstdraft/appdev-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="B.5 Integer | AD1" />
+  <meta name="twitter:title" content="1.8 Ruby Gym Part 1 | AD1" />
   
   <meta name="twitter:description" content="This book covers the AD1 course at UChicago" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="string-1.html"/>
-<link rel="next" href="float-1.html"/>
+<link rel="prev" href="array.html"/>
+<link rel="next" href="if-statements.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -393,110 +393,15 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="integer-1" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">B.5</span> Integer<a href="integer-1.html#integer-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>whole numbers</p>
-<div id="math-operations-for-the-integer-class" class="section level3 hasAnchor" number="3.5.1">
-<h3><span class="header-section-number">B.5.1</span> Math Operations for the Integer Class<a href="integer-1.html#math-operations-for-the-integer-class" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>12 + 5 # =&gt; 17</code><br />
-<code>12 - 5 # =&gt; 7</code><br />
-<code>12 * 5 # =&gt; 60</code><br />
-<code>12 / 5 # =&gt; 2</code><br />
-The <code>/</code> operator for integers only returns a whole number and omits the remainder.</p>
-<p><a href="https://chapters.firstdraft.com/chapters/760#-------math">Full explanation</a></p>
-</div>
-<div id="modulus-operator" class="section level3 hasAnchor" number="3.5.2">
-<h3><span class="header-section-number">B.5.2</span> <code>%</code> (modulus) operator<a href="integer-1.html#modulus-operator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>Integer % Integer ⇒ Integer</code></p>
-<p>Returns the <a href="integer.html#integer"><code>Integer</code></a> remainder from a divisions.</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb241-1"><a href="integer-1.html#cb241-1" aria-hidden="true"></a><span class="dv">13</span> / <span class="dv">5</span></span></code></pre></div>
-<p>Returns</p>
-<p><code>3</code></p>
-</div>
-<div id="operator-integer" class="section level3 hasAnchor" number="3.5.3">
-<h3><span class="header-section-number">B.5.3</span> <code>**</code> operator Integer<a href="integer-1.html#operator-integer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>Integer ** Integer ⇒ Integer</code></p>
-<p>Raises a number to a power.</p>
-<p>Returns an <a href="integer.html#integer"><code>Integer</code></a></p>
-<p><code>3 ** 2 # =&gt; 9</code><br />
-<code>2 ** 3 # =&gt; 8</code></p>
-<p><a href="https://chapters.firstdraft.com/chapters/760#-------math">Full explanation</a></p>
-</div>
-<div id="odd-and-.even-method" class="section level3 hasAnchor" number="3.5.4">
-<h3><span class="header-section-number">B.5.4</span> .odd? and .even? method<a href="integer-1.html#odd-and-.even-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>Integer#odd? ⇒ Boolean</code></p>
-<p>or</p>
-<p><code>Integer#even? ⇒ Boolean</code></p>
-<p>Returns a <a href="conditionals.html#conditionals"><em>boolean</em></a>(<code>true</code> or <code>false</code>) based on whether the integer is odd or even.</p>
-<p><code>7.odd?</code></p>
-<p>Returns</p>
-<p><code>true</code></p>
-<p><code>8.odd?</code></p>
-<p>Returns</p>
-<p><code>false</code></p>
-<p><code>8.even?</code></p>
-<p>Returns</p>
-<p><code>true</code></p>
-<p><code>7.even?</code></p>
-<p>Returns</p>
-<p><code>false</code></p>
-<p><a href="https://chapters.firstdraft.com/chapters/760#odd-and-even">Full explanation</a></p>
-</div>
-<div id="rand-2" class="section level3 hasAnchor" number="3.5.5">
-<h3><span class="header-section-number">B.5.5</span> rand<a href="integer-1.html#rand-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>Integer#rand ⇒ Float</code></p>
-<p>or</p>
-<p><code>Integer#rand(Integer) ⇒ Integer</code></p>
-<p>or</p>
-<p><code>Integer#rand(Range) ⇒ Integer</code></p>
-<ul>
-<li>Creates a random <a href="float.html#float"><code>Float</code></a> between 0 to 1</li>
-<li>Can be given an optional <code>Integer</code> argument that will generate and return an <a href="integer.html#integer"><code>Integer</code></a> between 0 and the argument.</li>
-<li>Can be given an optional argument of a <code>Range</code> that will generate a random <a href="integer.html#integer"><code>Integer</code></a> that between the <code>Range</code>.</li>
-</ul>
-<div class="sourceCode" id="cb242"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb242-1"><a href="integer-1.html#cb242-1" aria-hidden="true"></a>rand           <span class="co"># returns =&gt; 0.21374618638...</span></span>
-<span id="cb242-2"><a href="integer-1.html#cb242-2" aria-hidden="true"></a>rand(<span class="dv">10</span>)       <span class="co"># returns =&gt; 7</span></span>
-<span id="cb242-3"><a href="integer-1.html#cb242-3" aria-hidden="true"></a>rand((<span class="dv">10</span>..<span class="dv">20</span>)) <span class="co"># returns =&gt; 19</span></span></code></pre></div>
-<p><a href="https://chapters.firstdraft.com/chapters/760#rand">Full explanation</a></p>
-</div>
-<div id="to_s-1" class="section level3 hasAnchor" number="3.5.6">
-<h3><span class="header-section-number">B.5.6</span> .to_s<a href="integer-1.html#to_s-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>Integer#to_s ⇒ String</code></p>
-<p>Converts an integer to a string literal.</p>
-<p>Returns a <a href="string.html#string"><code>String</code></a></p>
-<p><code>8.to_s</code></p>
-<blockquote>
-<p>“8”</p>
-</blockquote>
-<div class="sourceCode" id="cb243"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb243-1"><a href="integer-1.html#cb243-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">10</span>) <span class="co"># assigns a random integer between 0 to 9 to the variable lucky_number</span></span>
-<span id="cb243-2"><a href="integer-1.html#cb243-2" aria-hidden="true"></a>p <span class="st">&quot;My lucky number is &quot;</span> + lucky_number + <span class="st">&quot;!&quot;</span> </span></code></pre></div>
-<p>The above block of code won’t work and will throw an error.</p>
-<p><code>TypeError (no implicit conversion of Integer into String)</code></p>
-<p>This is where the <code>.to_s</code> method comes handy.</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb244-1"><a href="integer-1.html#cb244-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">10</span>) <span class="co"># assigns a random integer between 0 to 9 to the variable lucky_number</span></span>
-<span id="cb244-2"><a href="integer-1.html#cb244-2" aria-hidden="true"></a>p <span class="st">&quot;My lucky number is &quot;</span> + lucky_number.to_s + <span class="st">&quot;!&quot;</span> </span></code></pre></div>
-<blockquote>
-<p>“My lucky number is 7!”</p>
-</blockquote>
-<p><code>"There are " + 7.to_s + " pineapples."</code></p>
-<blockquote>
-<p>“There are 7 pineapples”</p>
-</blockquote>
-<p><a href="https://chapters.firstdraft.com/chapters/760#to_s">Full explanation</a></p>
-</div>
-<div id="to_f-1" class="section level3 hasAnchor" number="3.5.7">
-<h3><span class="header-section-number">B.5.7</span> .to_f<a href="integer-1.html#to_f-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><code>Integer#to_f ⇒ Float</code></p>
-<p>converts an integer to a <a href="float.html#float"><code>Float</code></a>(decimal).<br />
-<code>7.to_f</code></p>
-<blockquote>
-<p>7.0</p>
-</blockquote>
-<div class="sourceCode" id="cb245"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb245-1"><a href="integer-1.html#cb245-1" aria-hidden="true"></a>number = <span class="dv">10</span>       <span class="co">#  </span></span>
-<span id="cb245-2"><a href="integer-1.html#cb245-2" aria-hidden="true"></a>p number / <span class="dv">3</span>      <span class="co"># Returns =&gt; 3</span></span>
-<span id="cb245-3"><a href="integer-1.html#cb245-3" aria-hidden="true"></a>p number.to_f / <span class="dv">3</span> <span class="co"># Returns =&gt; 3.3333333333333335</span></span></code></pre></div>
-<p><a href="float-1.html#integer-and-float-division-examples">More examples</a></p>
-<p><a href="https://chapters.firstdraft.com/chapters/760#to_f">Full explanation</a></p>
+<div id="ruby-gym-part-1" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Ruby Gym Part 1<a href="ruby-gym-part-1.html#ruby-gym-part-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>BENP: right after array</strong></p>
+<p>Before we go on, let’s stop, take a breath, and try to put what we’ve learned so far to good use. The idea with the following exercises is to use the building blocks from the previous sections to write some small programs. These are longer projects than the exercises we’ve seen so far, and they may require a few different tools to complete. There is no right answer, and there are likely a few ways to solve an exercise. Just get the code to pass all of the <code>rails grade</code> tests and you are good to move on.</p>
+<div id="start-the-gitpod-project-4" class="section level5 unnumbered hasAnchor">
+<h5>Start the GitPod Project<a href="ruby-gym-part-1.html#start-the-gitpod-project-4" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Open the GitPod project for the Ruby Gym and start with the exercises. <a href="integer.html#start-the-gitpod-project-for-integer">See prior steps</a> as a reminder. Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/ruby-gym/tree/bp-edits" target="_blank">https://github.com/bpurinton-appdev/ruby-gym/tree/bp-edits</a>.</p>
+<p><mark>✏️ <strong>Exercise:</strong></mark> On GitPod in the Ruby Gym project, work through <code>character_types.rb</code>.</p>
+
 </div>
 </div>
             </section>
@@ -504,8 +409,8 @@ The <code>/</code> operator for integers only returns a whole number and omits t
           </div>
         </div>
       </div>
-<a href="string-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="float-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="array.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="if-statements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -537,7 +442,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/firstdraft/appdev-textbook/edit/main/glossaries/the-one-reference.md",
+"link": "https://github.com/firstdraft/appdev-textbook/edit/main/lessons/ruby-gym-part1.md",
 "text": "Edit"
 },
 "history": {
@@ -545,7 +450,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/firstdraft/appdev-textbook/blob/main/glossaries/the-one-reference.md",
+"link": "https://github.com/firstdraft/appdev-textbook/blob/main/lessons/ruby-gym-part1.md",
 "text": null
 },
 "download": null,
