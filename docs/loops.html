@@ -242,10 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.12.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.12.1</b> Modeling real world things</a></li>
 <li class="chapter" data-level="1.12.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.12.2</b> Inheritance</a></li>
-</ul></li>
-<li class="chapter" data-level="1.13" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Practice: Our own classes</a>
-<ul>
-<li class="chapter" data-level="1.13.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>1.13.1</b> class_person.rb</a></li>
+<li class="chapter" data-level="1.12.3" data-path="our-own-classes.html"><a href="our-own-classes.html#conclusion-9"><i class="fa fa-check"></i><b>1.12.3</b> Conclusion</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>2</b> Ruby Gym</a>
@@ -456,21 +453,21 @@ Proudly published with bookdown</a></li>
 <div id="loops" class="section level2 hasAnchor" number="4.12">
 <h2><span class="header-section-number">B.12</span> Loops<a href="loops.html#loops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>while statements:</strong></p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb264-1"><a href="loops.html#cb264-1" aria-hidden="true"></a><span class="kw">while</span> boolean</span>
-<span id="cb264-2"><a href="loops.html#cb264-2" aria-hidden="true"></a>  <span class="co"># ruby code here</span></span>
-<span id="cb264-3"><a href="loops.html#cb264-3" aria-hidden="true"></a><span class="kw">end</span></span>
-<span id="cb264-4"><a href="loops.html#cb264-4" aria-hidden="true"></a></span>
-<span id="cb264-5"><a href="loops.html#cb264-5" aria-hidden="true"></a>⇒ <span class="dv">nil</span></span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb262-1"><a href="loops.html#cb262-1" aria-hidden="true"></a><span class="kw">while</span> boolean</span>
+<span id="cb262-2"><a href="loops.html#cb262-2" aria-hidden="true"></a>  <span class="co"># ruby code here</span></span>
+<span id="cb262-3"><a href="loops.html#cb262-3" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb262-4"><a href="loops.html#cb262-4" aria-hidden="true"></a></span>
+<span id="cb262-5"><a href="loops.html#cb262-5" aria-hidden="true"></a>⇒ <span class="dv">nil</span></span></code></pre></div>
 <p><code>while</code> is similar to <code>if</code>. The difference is everytime the execution of the program reaches the <code>end</code> it jumps back and evaluates the <em>truthiness</em> of the condtion next to the <code>while</code> statement and decides whether or not to execute the code within the <code>while</code> loop.</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb265-1"><a href="loops.html#cb265-1" aria-hidden="true"></a><span class="kw">while</span> condition </span>
-<span id="cb265-2"><a href="loops.html#cb265-2" aria-hidden="true"></a>  <span class="co"># do something while condition is true</span></span>
-<span id="cb265-3"><a href="loops.html#cb265-3" aria-hidden="true"></a><span class="kw">end</span> <span class="co"># jump back to the while statement</span></span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb263-1"><a href="loops.html#cb263-1" aria-hidden="true"></a><span class="kw">while</span> condition </span>
+<span id="cb263-2"><a href="loops.html#cb263-2" aria-hidden="true"></a>  <span class="co"># do something while condition is true</span></span>
+<span id="cb263-3"><a href="loops.html#cb263-3" aria-hidden="true"></a><span class="kw">end</span> <span class="co"># jump back to the while statement</span></span></code></pre></div>
 <p><strong>Example:</strong></p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb266-1"><a href="loops.html#cb266-1" aria-hidden="true"></a>limit = <span class="dv">5</span></span>
-<span id="cb266-2"><a href="loops.html#cb266-2" aria-hidden="true"></a><span class="kw">while</span> limit &gt; <span class="dv">0</span> </span>
-<span id="cb266-3"><a href="loops.html#cb266-3" aria-hidden="true"></a>  p limit</span>
-<span id="cb266-4"><a href="loops.html#cb266-4" aria-hidden="true"></a>  limit = limit - <span class="dv">1</span></span>
-<span id="cb266-5"><a href="loops.html#cb266-5" aria-hidden="true"></a><span class="kw">end</span> </span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb264-1"><a href="loops.html#cb264-1" aria-hidden="true"></a>limit = <span class="dv">5</span></span>
+<span id="cb264-2"><a href="loops.html#cb264-2" aria-hidden="true"></a><span class="kw">while</span> limit &gt; <span class="dv">0</span> </span>
+<span id="cb264-3"><a href="loops.html#cb264-3" aria-hidden="true"></a>  p limit</span>
+<span id="cb264-4"><a href="loops.html#cb264-4" aria-hidden="true"></a>  limit = limit - <span class="dv">1</span></span>
+<span id="cb264-5"><a href="loops.html#cb264-5" aria-hidden="true"></a><span class="kw">end</span> </span></code></pre></div>
 <blockquote>
 <p>5<br />
 4<br />

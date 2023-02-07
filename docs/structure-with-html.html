@@ -242,10 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.12.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.12.1</b> Modeling real world things</a></li>
 <li class="chapter" data-level="1.12.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.12.2</b> Inheritance</a></li>
-</ul></li>
-<li class="chapter" data-level="1.13" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Practice: Our own classes</a>
-<ul>
-<li class="chapter" data-level="1.13.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>1.13.1</b> class_person.rb</a></li>
+<li class="chapter" data-level="1.12.3" data-path="our-own-classes.html"><a href="our-own-classes.html#conclusion-9"><i class="fa fa-check"></i><b>1.12.3</b> Conclusion</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>2</b> Ruby Gym</a>
@@ -495,27 +492,27 @@ Proudly published with bookdown</a></li>
 <li><code>[first name]-[last-initial]-3.png</code></li>
 </ul>
 <p>Then, add them into your document using the <code>img</code> tag:</p>
-<div class="sourceCode" id="cb335"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb335-1"><a href="structure-with-html.html#cb335-1" aria-hidden="true"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/whatever.jpg&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb333-1"><a href="structure-with-html.html#cb333-1" aria-hidden="true"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;images/whatever.jpg&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
 <p>Or, if it’s located somewhere out on the internet rather than in our own code:</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb336-1"><a href="structure-with-html.html#cb336-1" aria-hidden="true"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;http://www.somewhere.com/whatever.jpg&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb334-1"><a href="structure-with-html.html#cb334-1" aria-hidden="true"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;http://www.somewhere.com/whatever.jpg&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
 </div>
 <div id="tables-1" class="section level3 hasAnchor" number="8.2.4">
 <h3><span class="header-section-number">F.2.4</span> Tables<a href="structure-with-html.html#tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s put your experience data into a table. In HTML, the <code>&lt;table&gt;</code> element is used to represent two dimensional data. A simple table looks like this:</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb337-1"><a href="structure-with-html.html#cb337-1" aria-hidden="true"></a><span class="kw">&lt;table</span><span class="ot"> border=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb337-2"><a href="structure-with-html.html#cb337-2" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb337-3"><a href="structure-with-html.html#cb337-3" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>First<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb337-4"><a href="structure-with-html.html#cb337-4" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Last<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb337-5"><a href="structure-with-html.html#cb337-5" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb337-6"><a href="structure-with-html.html#cb337-6" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb337-7"><a href="structure-with-html.html#cb337-7" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb337-8"><a href="structure-with-html.html#cb337-8" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb337-9"><a href="structure-with-html.html#cb337-9" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb337-10"><a href="structure-with-html.html#cb337-10" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb337-11"><a href="structure-with-html.html#cb337-11" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Jane<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb337-12"><a href="structure-with-html.html#cb337-12" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb337-13"><a href="structure-with-html.html#cb337-13" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb337-14"><a href="structure-with-html.html#cb337-14" aria-hidden="true"></a><span class="kw">&lt;/table&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb335-1"><a href="structure-with-html.html#cb335-1" aria-hidden="true"></a><span class="kw">&lt;table</span><span class="ot"> border=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb335-2"><a href="structure-with-html.html#cb335-2" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb335-3"><a href="structure-with-html.html#cb335-3" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>First<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb335-4"><a href="structure-with-html.html#cb335-4" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Last<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb335-5"><a href="structure-with-html.html#cb335-5" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb335-6"><a href="structure-with-html.html#cb335-6" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb335-7"><a href="structure-with-html.html#cb335-7" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb335-8"><a href="structure-with-html.html#cb335-8" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb335-9"><a href="structure-with-html.html#cb335-9" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb335-10"><a href="structure-with-html.html#cb335-10" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb335-11"><a href="structure-with-html.html#cb335-11" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Jane<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb335-12"><a href="structure-with-html.html#cb335-12" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb335-13"><a href="structure-with-html.html#cb335-13" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb335-14"><a href="structure-with-html.html#cb335-14" aria-hidden="true"></a><span class="kw">&lt;/table&gt;</span></span></code></pre></div>
 <p>which would produce this:</p>
 <table border="1">
 <tr>
@@ -550,19 +547,19 @@ Doe
 <li>Every <code>&lt;tr&gt;</code> must have the same number of cells, or things get out of whack.</li>
 </ul>
 <p>Despite this last rule, you can, however, “merge” cells using the <code>colspan</code> attribute:</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb338-1"><a href="structure-with-html.html#cb338-1" aria-hidden="true"></a><span class="kw">&lt;table</span><span class="ot"> border=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb338-2"><a href="structure-with-html.html#cb338-2" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb338-3"><a href="structure-with-html.html#cb338-3" aria-hidden="true"></a>    <span class="kw">&lt;td</span><span class="ot"> colspan=</span><span class="st">&quot;2&quot;</span><span class="kw">&gt;</span>People<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb338-4"><a href="structure-with-html.html#cb338-4" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb338-5"><a href="structure-with-html.html#cb338-5" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb338-6"><a href="structure-with-html.html#cb338-6" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb338-7"><a href="structure-with-html.html#cb338-7" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb338-8"><a href="structure-with-html.html#cb338-8" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb338-9"><a href="structure-with-html.html#cb338-9" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
-<span id="cb338-10"><a href="structure-with-html.html#cb338-10" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Jane<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb338-11"><a href="structure-with-html.html#cb338-11" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
-<span id="cb338-12"><a href="structure-with-html.html#cb338-12" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
-<span id="cb338-13"><a href="structure-with-html.html#cb338-13" aria-hidden="true"></a><span class="kw">&lt;/table&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb336-1"><a href="structure-with-html.html#cb336-1" aria-hidden="true"></a><span class="kw">&lt;table</span><span class="ot"> border=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb336-2"><a href="structure-with-html.html#cb336-2" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb336-3"><a href="structure-with-html.html#cb336-3" aria-hidden="true"></a>    <span class="kw">&lt;td</span><span class="ot"> colspan=</span><span class="st">&quot;2&quot;</span><span class="kw">&gt;</span>People<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb336-4"><a href="structure-with-html.html#cb336-4" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb336-5"><a href="structure-with-html.html#cb336-5" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb336-6"><a href="structure-with-html.html#cb336-6" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>John<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb336-7"><a href="structure-with-html.html#cb336-7" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb336-8"><a href="structure-with-html.html#cb336-8" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb336-9"><a href="structure-with-html.html#cb336-9" aria-hidden="true"></a>  <span class="kw">&lt;tr&gt;</span></span>
+<span id="cb336-10"><a href="structure-with-html.html#cb336-10" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Jane<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb336-11"><a href="structure-with-html.html#cb336-11" aria-hidden="true"></a>    <span class="kw">&lt;td&gt;</span>Doe<span class="kw">&lt;/td&gt;</span></span>
+<span id="cb336-12"><a href="structure-with-html.html#cb336-12" aria-hidden="true"></a>  <span class="kw">&lt;/tr&gt;</span></span>
+<span id="cb336-13"><a href="structure-with-html.html#cb336-13" aria-hidden="true"></a><span class="kw">&lt;/table&gt;</span></span></code></pre></div>
 <p>produces:</p>
 <table border="1">
 <tr>

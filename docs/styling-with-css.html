@@ -242,10 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.12.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.12.1</b> Modeling real world things</a></li>
 <li class="chapter" data-level="1.12.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.12.2</b> Inheritance</a></li>
-</ul></li>
-<li class="chapter" data-level="1.13" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Practice: Our own classes</a>
-<ul>
-<li class="chapter" data-level="1.13.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>1.13.1</b> class_person.rb</a></li>
+<li class="chapter" data-level="1.12.3" data-path="our-own-classes.html"><a href="our-own-classes.html#conclusion-9"><i class="fa fa-check"></i><b>1.12.3</b> Conclusion</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>2</b> Ruby Gym</a>
@@ -457,14 +454,14 @@ Proudly published with bookdown</a></li>
 <h2><span class="header-section-number">F.3</span> Styling with CSS<a href="styling-with-css.html#styling-with-css" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now that we have our content showing up, and we’ve added some basic structure with HTML, it’s time to customize the styling of the page.</p>
 <p>The basic syntax of CSS looks like this:</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb339-1"><a href="styling-with-css.html#cb339-1" aria-hidden="true"></a><span class="kw">&lt;h1</span><span class="ot"> class=</span><span class="st">&quot;greeting&quot;</span><span class="kw">&gt;</span>Hi there<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb339-2"><a href="styling-with-css.html#cb339-2" aria-hidden="true"></a></span>
-<span id="cb339-3"><a href="styling-with-css.html#cb339-3" aria-hidden="true"></a><span class="kw">&lt;style&gt;</span></span>
-<span id="cb339-4"><a href="styling-with-css.html#cb339-4" aria-hidden="true"></a>  <span class="fu">.greeting</span> {</span>
-<span id="cb339-5"><a href="styling-with-css.html#cb339-5" aria-hidden="true"></a>    <span class="kw">font-size</span>: <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb339-6"><a href="styling-with-css.html#cb339-6" aria-hidden="true"></a>    <span class="kw">color</span>: <span class="cn">darkgrey</span><span class="op">;</span></span>
-<span id="cb339-7"><a href="styling-with-css.html#cb339-7" aria-hidden="true"></a>  }</span>
-<span id="cb339-8"><a href="styling-with-css.html#cb339-8" aria-hidden="true"></a><span class="kw">&lt;/style&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb337-1"><a href="styling-with-css.html#cb337-1" aria-hidden="true"></a><span class="kw">&lt;h1</span><span class="ot"> class=</span><span class="st">&quot;greeting&quot;</span><span class="kw">&gt;</span>Hi there<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb337-2"><a href="styling-with-css.html#cb337-2" aria-hidden="true"></a></span>
+<span id="cb337-3"><a href="styling-with-css.html#cb337-3" aria-hidden="true"></a><span class="kw">&lt;style&gt;</span></span>
+<span id="cb337-4"><a href="styling-with-css.html#cb337-4" aria-hidden="true"></a>  <span class="fu">.greeting</span> {</span>
+<span id="cb337-5"><a href="styling-with-css.html#cb337-5" aria-hidden="true"></a>    <span class="kw">font-size</span>: <span class="dv">24</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb337-6"><a href="styling-with-css.html#cb337-6" aria-hidden="true"></a>    <span class="kw">color</span>: <span class="cn">darkgrey</span><span class="op">;</span></span>
+<span id="cb337-7"><a href="styling-with-css.html#cb337-7" aria-hidden="true"></a>  }</span>
+<span id="cb337-8"><a href="styling-with-css.html#cb337-8" aria-hidden="true"></a><span class="kw">&lt;/style&gt;</span></span></code></pre></div>
 <p>The rest is just practice, and expanding our vocabulary of what CSS properties are available to us.</p>
 <p>Below are some resources that might be helpful as we go along:</p>
 <ul>
@@ -472,62 +469,62 @@ Proudly published with bookdown</a></li>
 <li><p>Google Web Font showcases: <a href="http://hellohappy.org/beautiful-web-type">Beautiful Web Type</a> and <a href="http://femmebot.github.io/google-type/">Typographic Project</a></p></li>
 <li><p>Hero unit with cover image:</p></li>
 </ul>
-<div class="sourceCode" id="cb340"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb340-1"><a href="styling-with-css.html#cb340-1" aria-hidden="true"></a><span class="fu">.top-cover</span> {</span>
-<span id="cb340-2"><a href="styling-with-css.html#cb340-2" aria-hidden="true"></a>  <span class="kw">background</span>: <span class="fu">url(</span><span class="st">&quot;cover.jpg&quot;</span><span class="fu">)</span> <span class="dv">no-repeat</span> <span class="dv">center</span> <span class="dv">bottom</span><span class="op">;</span></span>
-<span id="cb340-3"><a href="styling-with-css.html#cb340-3" aria-hidden="true"></a>  <span class="kw">background-size</span>: <span class="dv">cover</span><span class="op">;</span></span>
-<span id="cb340-4"><a href="styling-with-css.html#cb340-4" aria-hidden="true"></a>  <span class="kw">height</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb340-5"><a href="styling-with-css.html#cb340-5" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb338-1"><a href="styling-with-css.html#cb338-1" aria-hidden="true"></a><span class="fu">.top-cover</span> {</span>
+<span id="cb338-2"><a href="styling-with-css.html#cb338-2" aria-hidden="true"></a>  <span class="kw">background</span>: <span class="fu">url(</span><span class="st">&quot;cover.jpg&quot;</span><span class="fu">)</span> <span class="dv">no-repeat</span> <span class="dv">center</span> <span class="dv">bottom</span><span class="op">;</span></span>
+<span id="cb338-3"><a href="styling-with-css.html#cb338-3" aria-hidden="true"></a>  <span class="kw">background-size</span>: <span class="dv">cover</span><span class="op">;</span></span>
+<span id="cb338-4"><a href="styling-with-css.html#cb338-4" aria-hidden="true"></a>  <span class="kw">height</span>: <span class="dv">300</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb338-5"><a href="styling-with-css.html#cb338-5" aria-hidden="true"></a>}</span></code></pre></div>
 <ul>
 <li><a href="https://www.google.com/design/spec/material-design/introduction.html">Material-Design</a>-style box shadow:</li>
 </ul>
-<div class="sourceCode" id="cb341"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb341-1"><a href="styling-with-css.html#cb341-1" aria-hidden="true"></a><span class="fu">.some-thing</span> {</span>
-<span id="cb341-2"><a href="styling-with-css.html#cb341-2" aria-hidden="true"></a>  <span class="kw">box-shadow</span>: <span class="dv">0</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">3</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.12</span><span class="fu">)</span><span class="op">,</span> <span class="dv">0</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.24</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb341-3"><a href="styling-with-css.html#cb341-3" aria-hidden="true"></a>  <span class="kw">transition</span>: <span class="dv">all</span> <span class="dv">0.2</span><span class="dt">s</span> <span class="dv">ease-in-out</span><span class="op">;</span></span>
-<span id="cb341-4"><a href="styling-with-css.html#cb341-4" aria-hidden="true"></a>}</span>
-<span id="cb341-5"><a href="styling-with-css.html#cb341-5" aria-hidden="true"></a></span>
-<span id="cb341-6"><a href="styling-with-css.html#cb341-6" aria-hidden="true"></a><span class="fu">.some-thing</span><span class="in">:hover</span> {</span>
-<span id="cb341-7"><a href="styling-with-css.html#cb341-7" aria-hidden="true"></a>  <span class="kw">box-shadow</span>: <span class="dv">0</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.19</span><span class="fu">)</span><span class="op">,</span> <span class="dv">0</span> <span class="dv">6</span><span class="dt">px</span> <span class="dv">6</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.23</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb341-8"><a href="styling-with-css.html#cb341-8" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb339-1"><a href="styling-with-css.html#cb339-1" aria-hidden="true"></a><span class="fu">.some-thing</span> {</span>
+<span id="cb339-2"><a href="styling-with-css.html#cb339-2" aria-hidden="true"></a>  <span class="kw">box-shadow</span>: <span class="dv">0</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">3</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.12</span><span class="fu">)</span><span class="op">,</span> <span class="dv">0</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.24</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb339-3"><a href="styling-with-css.html#cb339-3" aria-hidden="true"></a>  <span class="kw">transition</span>: <span class="dv">all</span> <span class="dv">0.2</span><span class="dt">s</span> <span class="dv">ease-in-out</span><span class="op">;</span></span>
+<span id="cb339-4"><a href="styling-with-css.html#cb339-4" aria-hidden="true"></a>}</span>
+<span id="cb339-5"><a href="styling-with-css.html#cb339-5" aria-hidden="true"></a></span>
+<span id="cb339-6"><a href="styling-with-css.html#cb339-6" aria-hidden="true"></a><span class="fu">.some-thing</span><span class="in">:hover</span> {</span>
+<span id="cb339-7"><a href="styling-with-css.html#cb339-7" aria-hidden="true"></a>  <span class="kw">box-shadow</span>: <span class="dv">0</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.19</span><span class="fu">)</span><span class="op">,</span> <span class="dv">0</span> <span class="dv">6</span><span class="dt">px</span> <span class="dv">6</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0.23</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb339-8"><a href="styling-with-css.html#cb339-8" aria-hidden="true"></a>}</span></code></pre></div>
 <ul>
 <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML5 Element List</a></p></li>
 <li><p>An abbreviated list of other useful CSS properties and example values:</p></li>
 </ul>
-<div class="sourceCode" id="cb342"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb342-1"><a href="styling-with-css.html#cb342-1" aria-hidden="true"></a><span class="co">/* Typography */</span></span>
-<span id="cb342-2"><a href="styling-with-css.html#cb342-2" aria-hidden="true"></a></span>
-<span id="cb342-3"><a href="styling-with-css.html#cb342-3" aria-hidden="true"></a>color<span class="in">: orange</span>;</span>
-<span id="cb342-4"><a href="styling-with-css.html#cb342-4" aria-hidden="true"></a>font-family<span class="in">: &#39;Playfair</span> Display&#39;<span class="op">,</span> serif;</span>
-<span id="cb342-5"><a href="styling-with-css.html#cb342-5" aria-hidden="true"></a>font-size<span class="in">: 18px;</span></span>
-<span id="cb342-6"><a href="styling-with-css.html#cb342-6" aria-hidden="true"></a>font-weight<span class="in">: bold</span>;</span>
-<span id="cb342-7"><a href="styling-with-css.html#cb342-7" aria-hidden="true"></a>letter-spacing<span class="in">: 0.4em;</span></span>
-<span id="cb342-8"><a href="styling-with-css.html#cb342-8" aria-hidden="true"></a>line-height<span class="in">: 1.86;</span></span>
-<span id="cb342-9"><a href="styling-with-css.html#cb342-9" aria-hidden="true"></a>text-align<span class="in">: center</span>;</span>
-<span id="cb342-10"><a href="styling-with-css.html#cb342-10" aria-hidden="true"></a>text-decoration<span class="in">: none</span>;</span>
-<span id="cb342-11"><a href="styling-with-css.html#cb342-11" aria-hidden="true"></a>text-transform<span class="in">: uppercase</span>;</span>
-<span id="cb342-12"><a href="styling-with-css.html#cb342-12" aria-hidden="true"></a></span>
-<span id="cb342-13"><a href="styling-with-css.html#cb342-13" aria-hidden="true"></a><span class="co">/* Box Model */</span></span>
-<span id="cb342-14"><a href="styling-with-css.html#cb342-14" aria-hidden="true"></a></span>
-<span id="cb342-15"><a href="styling-with-css.html#cb342-15" aria-hidden="true"></a>border-color<span class="in">: rgb(240, 240, 240)</span>;</span>
-<span id="cb342-16"><a href="styling-with-css.html#cb342-16" aria-hidden="true"></a>border-style<span class="in">: solid</span>;</span>
-<span id="cb342-17"><a href="styling-with-css.html#cb342-17" aria-hidden="true"></a>border-width<span class="in">: 5px;</span></span>
-<span id="cb342-18"><a href="styling-with-css.html#cb342-18" aria-hidden="true"></a>border<span class="in">: thick</span> white solid;</span>
-<span id="cb342-19"><a href="styling-with-css.html#cb342-19" aria-hidden="true"></a>height<span class="in">: 200px;</span></span>
-<span id="cb342-20"><a href="styling-with-css.html#cb342-20" aria-hidden="true"></a>margin<span class="in">: auto</span>;</span>
-<span id="cb342-21"><a href="styling-with-css.html#cb342-21" aria-hidden="true"></a>padding-bottom<span class="in">: 20px;</span></span>
-<span id="cb342-22"><a href="styling-with-css.html#cb342-22" aria-hidden="true"></a>padding-left<span class="in">: 20px;</span></span>
-<span id="cb342-23"><a href="styling-with-css.html#cb342-23" aria-hidden="true"></a>padding-right<span class="in">: 20px;</span></span>
-<span id="cb342-24"><a href="styling-with-css.html#cb342-24" aria-hidden="true"></a>padding<span class="in">: 20px;</span></span>
-<span id="cb342-25"><a href="styling-with-css.html#cb342-25" aria-hidden="true"></a>width<span class="in">: 100%;</span></span>
-<span id="cb342-26"><a href="styling-with-css.html#cb342-26" aria-hidden="true"></a></span>
-<span id="cb342-27"><a href="styling-with-css.html#cb342-27" aria-hidden="true"></a><span class="co">/* Table */</span></span>
-<span id="cb342-28"><a href="styling-with-css.html#cb342-28" aria-hidden="true"></a></span>
-<span id="cb342-29"><a href="styling-with-css.html#cb342-29" aria-hidden="true"></a>border-spacing<span class="in">: 10px;</span></span>
-<span id="cb342-30"><a href="styling-with-css.html#cb342-30" aria-hidden="true"></a>vertical-align<span class="in">: top</span>;</span>
-<span id="cb342-31"><a href="styling-with-css.html#cb342-31" aria-hidden="true"></a></span>
-<span id="cb342-32"><a href="styling-with-css.html#cb342-32" aria-hidden="true"></a><span class="co">/* Other */</span></span>
-<span id="cb342-33"><a href="styling-with-css.html#cb342-33" aria-hidden="true"></a></span>
-<span id="cb342-34"><a href="styling-with-css.html#cb342-34" aria-hidden="true"></a>background-color<span class="in">: rgba(0, 0, 0, 0.5)</span></span>
-<span id="cb342-35"><a href="styling-with-css.html#cb342-35" aria-hidden="true"></a>box-shadow<span class="in">: 0 1px 3px rgba(0,0,0,0.12)</span>;</span>
-<span id="cb342-36"><a href="styling-with-css.html#cb342-36" aria-hidden="true"></a>list-style-type<span class="in">: square</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb340-1"><a href="styling-with-css.html#cb340-1" aria-hidden="true"></a><span class="co">/* Typography */</span></span>
+<span id="cb340-2"><a href="styling-with-css.html#cb340-2" aria-hidden="true"></a></span>
+<span id="cb340-3"><a href="styling-with-css.html#cb340-3" aria-hidden="true"></a>color<span class="in">: orange</span>;</span>
+<span id="cb340-4"><a href="styling-with-css.html#cb340-4" aria-hidden="true"></a>font-family<span class="in">: &#39;Playfair</span> Display&#39;<span class="op">,</span> serif;</span>
+<span id="cb340-5"><a href="styling-with-css.html#cb340-5" aria-hidden="true"></a>font-size<span class="in">: 18px;</span></span>
+<span id="cb340-6"><a href="styling-with-css.html#cb340-6" aria-hidden="true"></a>font-weight<span class="in">: bold</span>;</span>
+<span id="cb340-7"><a href="styling-with-css.html#cb340-7" aria-hidden="true"></a>letter-spacing<span class="in">: 0.4em;</span></span>
+<span id="cb340-8"><a href="styling-with-css.html#cb340-8" aria-hidden="true"></a>line-height<span class="in">: 1.86;</span></span>
+<span id="cb340-9"><a href="styling-with-css.html#cb340-9" aria-hidden="true"></a>text-align<span class="in">: center</span>;</span>
+<span id="cb340-10"><a href="styling-with-css.html#cb340-10" aria-hidden="true"></a>text-decoration<span class="in">: none</span>;</span>
+<span id="cb340-11"><a href="styling-with-css.html#cb340-11" aria-hidden="true"></a>text-transform<span class="in">: uppercase</span>;</span>
+<span id="cb340-12"><a href="styling-with-css.html#cb340-12" aria-hidden="true"></a></span>
+<span id="cb340-13"><a href="styling-with-css.html#cb340-13" aria-hidden="true"></a><span class="co">/* Box Model */</span></span>
+<span id="cb340-14"><a href="styling-with-css.html#cb340-14" aria-hidden="true"></a></span>
+<span id="cb340-15"><a href="styling-with-css.html#cb340-15" aria-hidden="true"></a>border-color<span class="in">: rgb(240, 240, 240)</span>;</span>
+<span id="cb340-16"><a href="styling-with-css.html#cb340-16" aria-hidden="true"></a>border-style<span class="in">: solid</span>;</span>
+<span id="cb340-17"><a href="styling-with-css.html#cb340-17" aria-hidden="true"></a>border-width<span class="in">: 5px;</span></span>
+<span id="cb340-18"><a href="styling-with-css.html#cb340-18" aria-hidden="true"></a>border<span class="in">: thick</span> white solid;</span>
+<span id="cb340-19"><a href="styling-with-css.html#cb340-19" aria-hidden="true"></a>height<span class="in">: 200px;</span></span>
+<span id="cb340-20"><a href="styling-with-css.html#cb340-20" aria-hidden="true"></a>margin<span class="in">: auto</span>;</span>
+<span id="cb340-21"><a href="styling-with-css.html#cb340-21" aria-hidden="true"></a>padding-bottom<span class="in">: 20px;</span></span>
+<span id="cb340-22"><a href="styling-with-css.html#cb340-22" aria-hidden="true"></a>padding-left<span class="in">: 20px;</span></span>
+<span id="cb340-23"><a href="styling-with-css.html#cb340-23" aria-hidden="true"></a>padding-right<span class="in">: 20px;</span></span>
+<span id="cb340-24"><a href="styling-with-css.html#cb340-24" aria-hidden="true"></a>padding<span class="in">: 20px;</span></span>
+<span id="cb340-25"><a href="styling-with-css.html#cb340-25" aria-hidden="true"></a>width<span class="in">: 100%;</span></span>
+<span id="cb340-26"><a href="styling-with-css.html#cb340-26" aria-hidden="true"></a></span>
+<span id="cb340-27"><a href="styling-with-css.html#cb340-27" aria-hidden="true"></a><span class="co">/* Table */</span></span>
+<span id="cb340-28"><a href="styling-with-css.html#cb340-28" aria-hidden="true"></a></span>
+<span id="cb340-29"><a href="styling-with-css.html#cb340-29" aria-hidden="true"></a>border-spacing<span class="in">: 10px;</span></span>
+<span id="cb340-30"><a href="styling-with-css.html#cb340-30" aria-hidden="true"></a>vertical-align<span class="in">: top</span>;</span>
+<span id="cb340-31"><a href="styling-with-css.html#cb340-31" aria-hidden="true"></a></span>
+<span id="cb340-32"><a href="styling-with-css.html#cb340-32" aria-hidden="true"></a><span class="co">/* Other */</span></span>
+<span id="cb340-33"><a href="styling-with-css.html#cb340-33" aria-hidden="true"></a></span>
+<span id="cb340-34"><a href="styling-with-css.html#cb340-34" aria-hidden="true"></a>background-color<span class="in">: rgba(0, 0, 0, 0.5)</span></span>
+<span id="cb340-35"><a href="styling-with-css.html#cb340-35" aria-hidden="true"></a>box-shadow<span class="in">: 0 1px 3px rgba(0,0,0,0.12)</span>;</span>
+<span id="cb340-36"><a href="styling-with-css.html#cb340-36" aria-hidden="true"></a>list-style-type<span class="in">: square</span>;</span></code></pre></div>
 
 </div>
 <!-- </div> -->

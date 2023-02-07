@@ -242,10 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.12.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.12.1</b> Modeling real world things</a></li>
 <li class="chapter" data-level="1.12.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.12.2</b> Inheritance</a></li>
-</ul></li>
-<li class="chapter" data-level="1.13" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Practice: Our own classes</a>
-<ul>
-<li class="chapter" data-level="1.13.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>1.13.1</b> class_person.rb</a></li>
+<li class="chapter" data-level="1.12.3" data-path="our-own-classes.html"><a href="our-own-classes.html#conclusion-9"><i class="fa fa-check"></i><b>1.12.3</b> Conclusion</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>2</b> Ruby Gym</a>
@@ -469,7 +466,7 @@ The <code>/</code> operator for integers only returns a whole number and omits t
 <h3><span class="header-section-number">B.6.2</span> <code>%</code> (modulus) operator<a href="integer-1.html#modulus-operator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>Integer % Integer ⇒ Integer</code></p>
 <p>Returns the <a href="integer.html#integer"><code>Integer</code></a> remainder from a divisions.</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb243-1"><a href="integer-1.html#cb243-1" aria-hidden="true"></a><span class="dv">13</span> / <span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb241-1"><a href="integer-1.html#cb241-1" aria-hidden="true"></a><span class="dv">13</span> / <span class="dv">5</span></span></code></pre></div>
 <p>Returns</p>
 <p><code>3</code></p>
 </div>
@@ -514,9 +511,9 @@ The <code>/</code> operator for integers only returns a whole number and omits t
 <li>Can be given an optional <code>Integer</code> argument that will generate and return an <a href="integer.html#integer"><code>Integer</code></a> between 0 and the argument.</li>
 <li>Can be given an optional argument of a <code>Range</code> that will generate a random <a href="integer.html#integer"><code>Integer</code></a> that between the <code>Range</code>.</li>
 </ul>
-<div class="sourceCode" id="cb244"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb244-1"><a href="integer-1.html#cb244-1" aria-hidden="true"></a>rand           <span class="co"># returns =&gt; 0.21374618638...</span></span>
-<span id="cb244-2"><a href="integer-1.html#cb244-2" aria-hidden="true"></a>rand(<span class="dv">10</span>)       <span class="co"># returns =&gt; 7</span></span>
-<span id="cb244-3"><a href="integer-1.html#cb244-3" aria-hidden="true"></a>rand((<span class="dv">10</span>..<span class="dv">20</span>)) <span class="co"># returns =&gt; 19</span></span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb242-1"><a href="integer-1.html#cb242-1" aria-hidden="true"></a>rand           <span class="co"># returns =&gt; 0.21374618638...</span></span>
+<span id="cb242-2"><a href="integer-1.html#cb242-2" aria-hidden="true"></a>rand(<span class="dv">10</span>)       <span class="co"># returns =&gt; 7</span></span>
+<span id="cb242-3"><a href="integer-1.html#cb242-3" aria-hidden="true"></a>rand((<span class="dv">10</span>..<span class="dv">20</span>)) <span class="co"># returns =&gt; 19</span></span></code></pre></div>
 <p><a href="https://chapters.firstdraft.com/chapters/760#rand">Full explanation</a></p>
 </div>
 <div id="to_s-1" class="section level3 hasAnchor" number="4.6.6">
@@ -528,13 +525,13 @@ The <code>/</code> operator for integers only returns a whole number and omits t
 <blockquote>
 <p>“8”</p>
 </blockquote>
-<div class="sourceCode" id="cb245"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb245-1"><a href="integer-1.html#cb245-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">10</span>) <span class="co"># assigns a random integer between 0 to 9 to the variable lucky_number</span></span>
-<span id="cb245-2"><a href="integer-1.html#cb245-2" aria-hidden="true"></a>p <span class="st">&quot;My lucky number is &quot;</span> + lucky_number + <span class="st">&quot;!&quot;</span> </span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb243-1"><a href="integer-1.html#cb243-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">10</span>) <span class="co"># assigns a random integer between 0 to 9 to the variable lucky_number</span></span>
+<span id="cb243-2"><a href="integer-1.html#cb243-2" aria-hidden="true"></a>p <span class="st">&quot;My lucky number is &quot;</span> + lucky_number + <span class="st">&quot;!&quot;</span> </span></code></pre></div>
 <p>The above block of code won’t work and will throw an error.</p>
 <p><code>TypeError (no implicit conversion of Integer into String)</code></p>
 <p>This is where the <code>.to_s</code> method comes handy.</p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb246-1"><a href="integer-1.html#cb246-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">10</span>) <span class="co"># assigns a random integer between 0 to 9 to the variable lucky_number</span></span>
-<span id="cb246-2"><a href="integer-1.html#cb246-2" aria-hidden="true"></a>p <span class="st">&quot;My lucky number is &quot;</span> + lucky_number.to_s + <span class="st">&quot;!&quot;</span> </span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb244-1"><a href="integer-1.html#cb244-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">10</span>) <span class="co"># assigns a random integer between 0 to 9 to the variable lucky_number</span></span>
+<span id="cb244-2"><a href="integer-1.html#cb244-2" aria-hidden="true"></a>p <span class="st">&quot;My lucky number is &quot;</span> + lucky_number.to_s + <span class="st">&quot;!&quot;</span> </span></code></pre></div>
 <blockquote>
 <p>“My lucky number is 7!”</p>
 </blockquote>
@@ -552,9 +549,9 @@ The <code>/</code> operator for integers only returns a whole number and omits t
 <blockquote>
 <p>7.0</p>
 </blockquote>
-<div class="sourceCode" id="cb247"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb247-1"><a href="integer-1.html#cb247-1" aria-hidden="true"></a>number = <span class="dv">10</span>       <span class="co">#  </span></span>
-<span id="cb247-2"><a href="integer-1.html#cb247-2" aria-hidden="true"></a>p number / <span class="dv">3</span>      <span class="co"># Returns =&gt; 3</span></span>
-<span id="cb247-3"><a href="integer-1.html#cb247-3" aria-hidden="true"></a>p number.to_f / <span class="dv">3</span> <span class="co"># Returns =&gt; 3.3333333333333335</span></span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb245-1"><a href="integer-1.html#cb245-1" aria-hidden="true"></a>number = <span class="dv">10</span>       <span class="co">#  </span></span>
+<span id="cb245-2"><a href="integer-1.html#cb245-2" aria-hidden="true"></a>p number / <span class="dv">3</span>      <span class="co"># Returns =&gt; 3</span></span>
+<span id="cb245-3"><a href="integer-1.html#cb245-3" aria-hidden="true"></a>p number.to_f / <span class="dv">3</span> <span class="co"># Returns =&gt; 3.3333333333333335</span></span></code></pre></div>
 <p><a href="float-1.html#integer-and-float-division-examples">More examples</a></p>
 <p><a href="https://chapters.firstdraft.com/chapters/760#to_f">Full explanation</a></p>
 </div>

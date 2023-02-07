@@ -242,10 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.12.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.12.1</b> Modeling real world things</a></li>
 <li class="chapter" data-level="1.12.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.12.2</b> Inheritance</a></li>
-</ul></li>
-<li class="chapter" data-level="1.13" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Practice: Our own classes</a>
-<ul>
-<li class="chapter" data-level="1.13.1" data-path="ruby-practice-our-own-classes.html"><a href="ruby-practice-our-own-classes.html#class_person.rb"><i class="fa fa-check"></i><b>1.13.1</b> class_person.rb</a></li>
+<li class="chapter" data-level="1.12.3" data-path="our-own-classes.html"><a href="our-own-classes.html#conclusion-9"><i class="fa fa-check"></i><b>1.12.3</b> Conclusion</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>2</b> Ruby Gym</a>
@@ -456,14 +453,14 @@ Proudly published with bookdown</a></li>
 <div id="new-hash-syntax" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">C.3</span> New Hash Syntax<a href="new-hash-syntax.html#new-hash-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Consider a <code>Hash</code>:</p>
-<div class="sourceCode" id="cb292"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb292-1"><a href="new-hash-syntax.html#cb292-1" aria-hidden="true"></a>{ <span class="st">:fruit</span> =&gt; <span class="st">&quot;banana&quot;</span>, <span class="st">:sport</span> =&gt; <span class="st">&quot;hockey&quot;</span> }</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb290-1"><a href="new-hash-syntax.html#cb290-1" aria-hidden="true"></a>{ <span class="st">:fruit</span> =&gt; <span class="st">&quot;banana&quot;</span>, <span class="st">:sport</span> =&gt; <span class="st">&quot;hockey&quot;</span> }</span></code></pre></div>
 <p>We can also (as of Ruby version 1.9) write the same thing as:</p>
-<div class="sourceCode" id="cb293"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb293-1"><a href="new-hash-syntax.html#cb293-1" aria-hidden="true"></a>{ <span class="st">fruit: &quot;banana&quot;</span>, <span class="st">sport: &quot;hockey&quot;</span> }</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb291-1"><a href="new-hash-syntax.html#cb291-1" aria-hidden="true"></a>{ <span class="st">fruit: &quot;banana&quot;</span>, <span class="st">sport: &quot;hockey&quot;</span> }</span></code></pre></div>
 <p>In other words, if the key in a key-value pair in a hash is a <code>Symbol</code>, you can move the colon (<code>:</code>) from the beginning of the symbol to the end of the symbol, and get rid of the hash rocket (<code>=&gt;</code>). This is known as the “new hash syntax” (even though Ruby 1.9 is pretty old by now).</p>
 <p>Consider the following Hash:</p>
-<div class="sourceCode" id="cb294"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb294-1"><a href="new-hash-syntax.html#cb294-1" aria-hidden="true"></a>{ <span class="dv">1</span> =&gt; <span class="st">&quot;pink&quot;</span>, <span class="dv">2</span> =&gt; <span class="st">&quot;cookies&quot;</span> }</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb292-1"><a href="new-hash-syntax.html#cb292-1" aria-hidden="true"></a>{ <span class="dv">1</span> =&gt; <span class="st">&quot;pink&quot;</span>, <span class="dv">2</span> =&gt; <span class="st">&quot;cookies&quot;</span> }</span></code></pre></div>
 <p>Can we do the same trick and write this as:</p>
-<div class="sourceCode" id="cb295"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb295-1"><a href="new-hash-syntax.html#cb295-1" aria-hidden="true"></a>{ <span class="dv">1</span>: <span class="st">&quot;pink&quot;</span>, <span class="dv">2</span>: <span class="st">&quot;cookies&quot;</span> }</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb293-1"><a href="new-hash-syntax.html#cb293-1" aria-hidden="true"></a>{ <span class="dv">1</span>: <span class="st">&quot;pink&quot;</span>, <span class="dv">2</span>: <span class="st">&quot;cookies&quot;</span> }</span></code></pre></div>
 <p>No! The “new” hash syntax is for when the keys are <code>Symbol</code>s — then you can swing the <code>Symbol</code>’s colon around to the other side of it.</p>
 </div>
             </section>

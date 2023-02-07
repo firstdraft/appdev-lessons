@@ -70,11 +70,8 @@ key
 conclusion-8
 our-own-classes
 modeling-real-world-things
-defining-instance-methods
-defining-class-methods
 inheritance
-ruby-practice-our-own-classes
-class_person.rb
+conclusion-9
 ruby-gym
 optional-ruby-practice
 terminology-technical-reference
