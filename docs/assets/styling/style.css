@@ -9,3 +9,21 @@
   margin-right:auto;
   width: 90%;
 }
+
+p.repl {
+  background-color: #d4edda;
+  padding: 10px;
+  border: 1px solid black;
+  margin-left: 5px;
+  border-radius: 5px;
+  font-style: normal;
+  }
+
+p.proj {
+  background-color: #fff3cd;
+  padding: 10px;
+  border: 1px solid black;
+  margin-left: 5px;
+  border-radius: 5px;
+  font-style: normal;
+  }
