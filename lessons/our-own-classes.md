@@ -263,7 +263,3 @@ end
 Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions){target="_blank"}.
 
 <mark>✏️ **Exercise:**</mark> On GitPod in the "our own classes" project, work through `class_person.rb`.
-
-### Conclusion
-
-That's it for our crash course! Congratulations, you're ready to begin using Ruby in your web applications to develop the backend code.

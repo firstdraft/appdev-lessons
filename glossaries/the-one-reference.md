@@ -1,12 +1,8 @@
 # The One Ruby Reference
 
-- Notes:
+This glossary should be used as a quick reference for Ruby; for more depth, click through to the "Full Explanation"s.
 
-  - Copied from [`the-one-reference.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/the-one-reference.md){target="_blank"}
-
-This document should be used as a quick reference for Ruby; for more depth, click through to the "Full Explanation"s.
-
-## How to interpret this reference
+#### How to interpret this reference {-}
 
 This reference is (with a few exceptions) organized by Ruby Class, e.g. `String`, `Array`, `Hash`, etc. Click the firstdraft icon in the top-left corner of the page to slide out the table of contents, scan it, and find a section that interests you. Usually, each section describes a Ruby _method_. For example, here's what the section `String#split` looks like:
 

@@ -34,7 +34,8 @@ rmd_files:
     "lessons/hash.md",
     "lessons/our-own-classes.md",
     # # "lessons/more-on-floats.md",
-    "lessons/ruby-gym.md", 
+    # # "lessons/ruby-gym.md", 
+    "lessons/ruby-conclusions.md",
     
     # "lesson/umbrella.md",
     # # "lessons/adding-routes.md",
@@ -107,11 +108,11 @@ rmd_files:
     # "lessons/management-readings.md",
     # "lessons/sample_data.md",
     
-    # glossaries
+    # # glossaries
     "glossaries/terminology-technical-reference.md", 
     "glossaries/the-one-reference.md",
     "glossaries/optional-syntaxes-in-ruby.md",
-    "glossaries/html-reference.md",
-    "glossaries/html-cheatsheet.md",
-    "glossaries/classbook.md",
+    # "glossaries/html-reference.md",
+    # "glossaries/html-cheatsheet.md",
+    # "glossaries/classbook.md",
   ]

@@ -242,12 +242,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.12.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.12.1</b> Modeling real world things</a></li>
 <li class="chapter" data-level="1.12.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.12.2</b> Inheritance</a></li>
-<li class="chapter" data-level="1.12.3" data-path="our-own-classes.html"><a href="our-own-classes.html#conclusion-9"><i class="fa fa-check"></i><b>1.12.3</b> Conclusion</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>2</b> Ruby Gym</a>
+<li class="chapter" data-level="1.13" data-path="ruby-conclusions.html"><a href="ruby-conclusions.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Conclusions</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="optional-ruby-practice.html"><a href="optional-ruby-practice.html"><i class="fa fa-check"></i><b>2.1</b> Optional Ruby Practice</a></li>
+<li class="chapter" data-level="" data-path="ruby-conclusions.html"><a href="ruby-conclusions.html#addendum-the-one-reference-vs.-google-fu"><i class="fa fa-check"></i>Addendum: The One Reference vs. Google-Fu</a></li>
+<li class="chapter" data-level="" data-path="ruby-conclusions.html"><a href="ruby-conclusions.html#addendum-optional-ruby-practice"><i class="fa fa-check"></i>Addendum: Optional Ruby Practice</a></li>
+</ul></li>
 </ul></li>
 <li class="appendix"><span><b>Glossaries</b></span></li>
 <li class="chapter" data-level="A" data-path="terminology-technical-reference.html"><a href="terminology-technical-reference.html"><i class="fa fa-check"></i><b>A</b> Terminology Technical Reference</a></li>
@@ -450,13 +450,13 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="basic-syntax" class="section level2 hasAnchor" number="7.1">
+<div id="basic-syntax" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">E.1</span> Basic Syntax<a href="basic-syntax.html#basic-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An HTML page is made up of <strong>elements</strong>.</p>
 <p>An <strong>element</strong> is constructed from an opening tag, content, and a closing tag. The general structure looks like:</p>
 <div class="sourceCode" id="cb326"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb326-1"><a href="basic-syntax.html#cb326-1" aria-hidden="true"></a><span class="kw">&lt;tagname&gt;</span>Content goes here...<span class="kw">&lt;/tagname&gt;</span></span></code></pre></div>
 <p><small><code>tagname</code> is a not a real HTML tag, but a placeholder for any HTML tag.</small></p>
-<div id="attributes" class="section level3 hasAnchor" number="7.1.1">
+<div id="attributes" class="section level3 hasAnchor" number="6.1.1">
 <h3><span class="header-section-number">E.1.1</span> Attributes<a href="basic-syntax.html#attributes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An attribute specifies additional information about the element. One or more attributes can be added inside the opening tag after the tag name. Attributes are usually structured as name/value pairs in the format <code>name="value"</code>.</p>
 <p>For example:</p>
@@ -470,7 +470,7 @@ Proudly published with bookdown</a></li>
 - <code>for=""</code> is for <code>&lt;label&gt;</code> elements, to specify which input element it is paired with.</p>
 <p>Some attributes can be put on almost any element, like <code>class=""</code> or <code>id=""</code>. ​Any single <code>id</code> should only be used <strong>once</strong> per document. A class can and should be used repeatedly.</p>
 </div>
-<div id="exceptions" class="section level3 hasAnchor" number="7.1.2">
+<div id="exceptions" class="section level3 hasAnchor" number="6.1.2">
 <h3><span class="header-section-number">E.1.2</span> Exceptions<a href="basic-syntax.html#exceptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are a few elements that don’t require content and therefore don’t have a closing tag.</p>
 <p>The most common ones are:
@@ -481,7 +481,7 @@ Proudly published with bookdown</a></li>
 - <code>&lt;meta&gt;</code>
 - <code>&lt;link&gt;</code></p>
 </div>
-<div id="nesting-elements" class="section level3 hasAnchor" number="7.1.3">
+<div id="nesting-elements" class="section level3 hasAnchor" number="6.1.3">
 <h3><span class="header-section-number">E.1.3</span> Nesting Elements<a href="basic-syntax.html#nesting-elements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Elements can contain other elements. When that happens, the one inside is known as a <strong>child element</strong> and the one outside is the <strong>parent element</strong>.</p>
 <p>If there are multiple levels of nesting, then all the elements inside an outer element are its <em>descendants</em>. Similarly, an element that contains other elements is referred to as an <em>ancestor</em>.</p>

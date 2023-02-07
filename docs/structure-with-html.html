@@ -242,12 +242,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.12.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.12.1</b> Modeling real world things</a></li>
 <li class="chapter" data-level="1.12.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.12.2</b> Inheritance</a></li>
-<li class="chapter" data-level="1.12.3" data-path="our-own-classes.html"><a href="our-own-classes.html#conclusion-9"><i class="fa fa-check"></i><b>1.12.3</b> Conclusion</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="ruby-gym.html"><a href="ruby-gym.html"><i class="fa fa-check"></i><b>2</b> Ruby Gym</a>
+<li class="chapter" data-level="1.13" data-path="ruby-conclusions.html"><a href="ruby-conclusions.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Conclusions</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="optional-ruby-practice.html"><a href="optional-ruby-practice.html"><i class="fa fa-check"></i><b>2.1</b> Optional Ruby Practice</a></li>
+<li class="chapter" data-level="" data-path="ruby-conclusions.html"><a href="ruby-conclusions.html#addendum-the-one-reference-vs.-google-fu"><i class="fa fa-check"></i>Addendum: The One Reference vs. Google-Fu</a></li>
+<li class="chapter" data-level="" data-path="ruby-conclusions.html"><a href="ruby-conclusions.html#addendum-optional-ruby-practice"><i class="fa fa-check"></i>Addendum: Optional Ruby Practice</a></li>
+</ul></li>
 </ul></li>
 <li class="appendix"><span><b>Glossaries</b></span></li>
 <li class="chapter" data-level="A" data-path="terminology-technical-reference.html"><a href="terminology-technical-reference.html"><i class="fa fa-check"></i><b>A</b> Terminology Technical Reference</a></li>
@@ -450,9 +450,9 @@ Proudly published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="structure-with-html" class="section level2 hasAnchor" number="8.2">
+<div id="structure-with-html" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">F.2</span> Structure with HTML<a href="structure-with-html.html#structure-with-html" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="raw-content" class="section level3 hasAnchor" number="8.2.1">
+<div id="raw-content" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">F.2.1</span> Raw Content<a href="structure-with-html.html#raw-content" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Type in your own content:</p>
 <ul>
@@ -463,7 +463,7 @@ Proudly published with bookdown</a></li>
 <li>The address of yourfavorite nearby haunt (coffee shop or restaurant or pub)</li>
 </ul>
 </div>
-<div id="add-semantic-markup" class="section level3 hasAnchor" number="8.2.2">
+<div id="add-semantic-markup" class="section level3 hasAnchor" number="7.2.2">
 <h3><span class="header-section-number">F.2.2</span> Add Semantic Markup<a href="structure-with-html.html#add-semantic-markup" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Next, let’s tag our content to let the browser know what each thing is. Useful HTML elements include:</p>
 <ul>
@@ -475,7 +475,7 @@ Proudly published with bookdown</a></li>
 <li>Link: <code>&lt;a href="http://www.addressofsomepage.com/whatever"&gt;</code></li>
 </ul>
 </div>
-<div id="add-images" class="section level3 hasAnchor" number="8.2.3">
+<div id="add-images" class="section level3 hasAnchor" number="7.2.3">
 <h3><span class="header-section-number">F.2.3</span> Add Images<a href="structure-with-html.html#add-images" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s add some images to the page:</p>
 <ul>
@@ -496,7 +496,7 @@ Proudly published with bookdown</a></li>
 <p>Or, if it’s located somewhere out on the internet rather than in our own code:</p>
 <div class="sourceCode" id="cb334"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb334-1"><a href="structure-with-html.html#cb334-1" aria-hidden="true"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;http://www.somewhere.com/whatever.jpg&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
 </div>
-<div id="tables-1" class="section level3 hasAnchor" number="8.2.4">
+<div id="tables-1" class="section level3 hasAnchor" number="7.2.4">
 <h3><span class="header-section-number">F.2.4</span> Tables<a href="structure-with-html.html#tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s put your experience data into a table. In HTML, the <code>&lt;table&gt;</code> element is used to represent two dimensional data. A simple table looks like this:</p>
 <div class="sourceCode" id="cb335"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb335-1"><a href="structure-with-html.html#cb335-1" aria-hidden="true"></a><span class="kw">&lt;table</span><span class="ot"> border=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span></span>
@@ -587,7 +587,7 @@ Doe
 <p>You can see that we’ve merged two cells in the first row together; the <code>colspan="2"</code> on the first cell ensures that we don’t violate the “every <code>&lt;tr&gt;</code> must have the same number of cells” rule.</p>
 <p><strong>Your task:</strong> Try to create a “What I’ve Done” section similar to <a href="http://appdevspring16.github.io/friendbook/intermediate.html">the one you see here</a>.</p>
 </div>
-<div id="embedding-objects" class="section level3 hasAnchor" number="8.2.5">
+<div id="embedding-objects" class="section level3 hasAnchor" number="7.2.5">
 <h3><span class="header-section-number">F.2.5</span> Embedding Objects<a href="structure-with-html.html#embedding-objects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Add a Google Map of your favorite nearby haunt</li>
