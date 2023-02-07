@@ -4,6 +4,7 @@ bookdown::gitbook:
   pandoc_args: ["--lua-filter=assets/styling/footnote.lua"]
   includes:
     in_header: assets/styling/style.html
+    after_body: assets/styling/scripts.html
   # lib_dir: assets
   highlight: pygments # highlight, default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, and breezedark
   split_by: section # rmd, chapter, section, chapter+number, section+number

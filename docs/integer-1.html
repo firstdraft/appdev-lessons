@@ -23,7 +23,7 @@
 <meta name="author" content="Ben + Raghu" />
 
 
-<meta name="date" content="2023-02-06" />
+<meta name="date" content="2023-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,9 +57,9 @@
 <!-- https://github.com/wjakethompson/bd-reprex/blob/master/assets/style.html -->
 
 <style>
-input[type=checkbox][id|=fn] ~ span {display:none;}
-input[type=checkbox][id|=fn]:checked ~ span {display:block;}
-input[type=checkbox][id|=fn] {display:none;}
+  input[type=checkbox][id|=fn] ~ span {display:none;}
+  input[type=checkbox][id|=fn]:checked ~ span {display:block;}
+  input[type=checkbox][id|=fn] {display:none;}
 </style>
 
 
@@ -499,6 +499,19 @@ The <code>/</code> operator for integers only returns a whole number and omits t
 <p><a href="https://chapters.firstdraft.com/chapters/760#to_f">Full explanation</a></p>
 </div>
 </div>
+<!-- https://community.rstudio.com/t/insertion-of-javascript-into-bookdown-project/44176 -->
+<!-- https://stackoverflow.com/questions/6822945/add-target-blank-to-link-with-javascript -->
+<!-- https://stackoverflow.com/a/6823034 -->
+
+<script>
+  var links = document.getElementsByTagName('a');
+  var len = links.length;
+
+  for(var i=0; i<len; i++)
+  {
+    links[i].target = "_blank";
+  }
+</script>
             </section>
 
           </div>

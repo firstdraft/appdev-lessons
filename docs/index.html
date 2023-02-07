@@ -23,7 +23,7 @@
 <meta name="author" content="Ben + Raghu" />
 
 
-<meta name="date" content="2023-02-06" />
+<meta name="date" content="2023-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,9 +57,9 @@
 <!-- https://github.com/wjakethompson/bd-reprex/blob/master/assets/style.html -->
 
 <style>
-input[type=checkbox][id|=fn] ~ span {display:none;}
-input[type=checkbox][id|=fn]:checked ~ span {display:block;}
-input[type=checkbox][id|=fn] {display:none;}
+  input[type=checkbox][id|=fn] ~ span {display:none;}
+  input[type=checkbox][id|=fn]:checked ~ span {display:block;}
+  input[type=checkbox][id|=fn] {display:none;}
 </style>
 
 
@@ -396,13 +396,26 @@ Proudly published with bookdown</a></li>
 <div id="header">
 <h1 class="title">AD1</h1>
 <p class="author"><em>Ben + Raghu</em></p>
-<p class="date"><em>2023-02-06</em></p>
+<p class="date"><em>2023-02-07</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered hasAnchor">
 <h1>Welcome!<a href="index.html#welcome" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This is the AD1 Textbook. Enjoy.</p>
 
 </div>
+<!-- https://community.rstudio.com/t/insertion-of-javascript-into-bookdown-project/44176 -->
+<!-- https://stackoverflow.com/questions/6822945/add-target-blank-to-link-with-javascript -->
+<!-- https://stackoverflow.com/a/6823034 -->
+
+<script>
+  var links = document.getElementsByTagName('a');
+  var len = links.length;
+
+  for(var i=0; i<len; i++)
+  {
+    links[i].target = "_blank";
+  }
+</script>
             </section>
 
           </div>
