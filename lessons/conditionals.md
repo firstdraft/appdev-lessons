@@ -191,7 +191,7 @@ Open the GitPod project for this chapter and start with the exercises. [See prio
 
 <mark>✏️ **Exercise:**</mark> Also, work through `conditionals_palindrome.rb`
 
-<!-- <mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/rps-2){target="_blank"} -->
+
 
 ###  Conclusion
 

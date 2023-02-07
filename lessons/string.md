@@ -138,7 +138,7 @@ These kinds of exceptions to the regular grammar in order to make life easier ar
 
 Next, let's familiarize ourselves with some of the `String` class's methods. For each method below, there is a an `.rb` exercise in the GitPod project. So keep that project window open and work through it with `rails grade` as you go!
 
-<!-- For each method below, we've provided some REPLs. They are there for you to experiment with the code, click "▶ Run", or use the `irb` terminal and see how the methods work. Keep these methods in mind when working on the assignments in Gitpod. -->
+For each method below, we've provided some REPLs. They are there for you to experiment with the code, click "▶ Run", or use the `irb` terminal and see how the methods work. Keep these methods in mind when working on the assignments in Gitpod.
 
 #### String addition, a.k.a. + {-}
 
@@ -184,7 +184,7 @@ p a + b # => "HelloWorld"        # You can add strings together
 
 <mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_addition.rb`
 
-<!-- [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"} -->
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
 
 #### String multiplication, a.k.a * {-}
 

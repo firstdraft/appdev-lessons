@@ -80,7 +80,7 @@ Here's a real example:
 
 <mark>✏️ **Exercise:**</mark> You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
 
-<!-- <iframe frameborder="0" width="100%" height="600px" src="https://repl.it/@raghubetina/hello-world?lite=true"></iframe> -->
+
 
 ![](assets/nouns-verbs-and-grammar/replit-fork-hd.png)
 
@@ -136,7 +136,7 @@ What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try i
 
 #### _Do_, or do not. There is no  _read_. {-}
 
-When you saw the <mark>✏️ **Exercise:**</mark> prompt, were you typing out every expression in a REPL? 
+When you saw the exercise prompt, were you typing out every expression in a REPL? 
 
 If not, then you're doing this wrong. If you're just _reading_, you won't be successful at learning programming; you have to _do_ in order to build up some muscle memory. _Practice is crucial._
 
