@@ -1,10 +1,5 @@
 ## Hash {#hash-chapter}
 
-- Notes:
-
-  - Copied from [`hash.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hash.md){target="_blank"}
-  - See [Ruby Practice: Hash][Ruby Practice: Hash] for project: [https://github.com/appdev-projects/hash-chapter](https://github.com/appdev-projects/hash-chapter){target="_blank"}
-
 `Array` is a very good structure for containing multiple objects, but it's not the only one. In some situations, another structure is a better tool for the job: `Hash`.
 
 Suppose we have instructors and students:
@@ -57,8 +52,6 @@ So, that's that. `Symbol`s are lightweight strings that we, the developers, use 
 Back to the problem of storing a list of attributes about a person effectively, without mixing them up.
 `Hash`es are like `Array`s, except each cell isn't automatically numbered — **we get to label each cell ourselves**. So instead of representing a person with an Array like `["Raghu", "Betina", "Instructor"]`, we instead can use a `Hash` like this:
 
-**BENP: Here would be a good place to explain the dictionary analogy for what hashes kind of do?**
-
 ```ruby
 person1 = Hash.new
 p person1
@@ -75,9 +68,9 @@ p person1
 p person1.fetch(:role)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){target="_blank"}{target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){target="_blank"}
 
-Click "run" and see what it looks like to build up a `Hash`. A few things to note:
+Click "Run" and see what it looks like to build up a `Hash`. A few things to note:
 
  - Ruby represents a `Hash` with curly brackets, `{}`, as opposed to the square brackets (`[]`) of an `Array`.
  - We use the `.store` method to add elements to a `Hash`, as opposed to the `.push` method of `Array`.
@@ -101,7 +94,7 @@ person1.store(:role, "Instructor")
 p person1.fetch(:last_name)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){target="_blank"}
 
 Beautiful! Now we don't have to remember that position number 1 is last name, position number 2 is role, etc. We can retrieve objects from the list using meaningful labels instead.
 
@@ -122,7 +115,7 @@ p person1.fetch(:first_name) + " is a " + person1.fetch(:role)
 p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){target="_blank"}
 
 A few things to try:
 
@@ -131,7 +124,7 @@ A few things to try:
 
 Get used to those error messages. You're going to see them a _lot_.
 
-#### fetch fallback
+#### fetch fallback {- #fetch-fallback}
 
 Sometimes you may want to call `.fetch` using a key that may not be present in the `Hash`, and you don't want the program to crash with the "key not found" error message. In that case, you can provide a second argument which will be used as a fallback return value:
 
@@ -145,7 +138,7 @@ p person1.fetch(:first_name, "None provided")
 p person1.fetch(:middle_name, "None provided")
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){target="_blank"}
 
 ### Hash literals
 
@@ -164,9 +157,15 @@ In particular, `Hash`es are very often used as the arguments to methods, because
 Movie.where({ :title => "The Shawshank Redemption" })
 ```
 
+##### Start the GitPod Project {-}
+
+Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions){target="_blank"}.
+
+<mark>✏️ **Exercise:**</mark> On GitPod in the `Hash` project, work through `hash_person.rb`.
+
 ### fetch shorthand, []
 
-Much like [`Array`'s shorthand for `.at`](https://chapters.firstdraft.com/chapters/758#at-shorthand-){target="_blank"}, `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
+Much like [`Array`'s shorthand for `.at`][at shorthand, []], `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
 
 ```ruby
 person1 = { :first_name => "Raghu", :last_name => "Betina", :role => "Instructor" }
@@ -183,7 +182,7 @@ p person1.fetch(:last_name)
 p person1[:last_name]
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){target="_blank"}
+<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){target="_blank"}
 
 Were you able to find the difference between the two methods?
 
@@ -271,6 +270,8 @@ person_hash.fetch(:age)
 # => 32
 ```
 
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `Hash` project and work through `hash_dig.rb`
+
 ### key
 
 The `.key` method is sort of the inverse of `.fetch`: given an object, `.key` searches through each value in the hash and returns the key where it resides or `nil` if it doesn't exist in the hash.
@@ -284,92 +285,14 @@ h.key(400)   #=> "d"
 h.key(500)   #=> nil
 ```
 
-### The bottom line
+<mark>✏️ **Exercise:**</mark> Return to the GitPod `Hash` project and work through `hash_find_value.rb`
+
+<mark>✏️ **Exercise:**</mark> Finally, in the GitPod `Hash` project complete `hash_list.rb`
+
+### Conclusion
 
 `Array`s are very useful for storing a list of things that are all basically the same, and for lists that are of unknown length, and so it's nice for Ruby to automatically number them for you.
 
 But when you are storing a list of things that are categorically different from one another and you'd rather label them yourself, then `Hash`es are a better choice. That's about it!
 
-## Ruby Practice: Hash
-
-- Notes:
-
-  - Copied from project README: [https://github.com/appdev-projects/hash-chapter](https://github.com/appdev-projects/hash-chapter){target="_blank"}
-
-Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
-
-If we want to run `hash_person.rb`, we can write the command:
-
-```bash
-ruby hash_person.rb
-```
-
-To re-run this command, you can use the UP and DOWN arrow keys to look at the history of commands you've run in a Terminal.
-
-### hash_person.rb
-Input:
-```
-Maude 24 Artist
-```
-
-Key output:
-`{ :name => "Maude", :age => 24, :occupation => "Artist" }`
-
-Complete input and output example:
-```bash
-"Enter a name, age, and occupation separated by spaces:"
-Maude 24 Artist
-{ :name => "Maude", :age => 24, :occupation => "Artist" }
-```
-
-###### Make sure the value of the :age key is an Integer
-
-### hash_dig.rb
-
-Write a program that uses the `sample_hash` variable and prints the value of key "history"
-
-```ruby
-sample_hash = {
-   :class => { 
-      :student => { 
-         :name => "Mike",
-         "marks" => { 
-            "physics" => 70,
-            "history" => 80
-         }
-      }
-   }
-}
-```
-
-### hash_find_value.rb
-
-Write a program that:
-   Asks the user for an Integer, then checks to see if that integer is
-   a value of any of the keys in sample_hash.
-   If you find the number, print out "100 is under the key: a."
-   If you don't find the number print out "Could not find the integer 100"
-
-Example:
-
-```bash
-"Enter an integer:"
-4
-"Could not find the integer 4"
-```
-
-### hash_list.rb
-
-Given this list of people, print only names of people who are at least 16.
-
-Yes, you could just look at it with your eyes and print their names, but imagine that you couldn't because there are a million items in the list.
-
-Use the variable, loops, and conditionals instead.
-
-Output something like:
-
-```bash
-"Jerry"
-"Sloane"
-"Hurly"
-```
+The last intro topic to cover in the next section is creating our own classes in Ruby.

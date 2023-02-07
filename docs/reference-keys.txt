@@ -60,7 +60,6 @@ hash-chapter
 a-brief-interlude-symbols
 creating-hashes-and-storing-values
 fetch
-fetch-fallback
 hash-literals
 fetch-shorthand
 store-shorthand
@@ -68,13 +67,7 @@ use-.keys-to-explore
 keys-can-be-anything
 values-can-be-anything
 key
-the-bottom-line-1
-ruby-practice-hash
-hash_person.rb
-make-sure-the-value-of-the-age-key-is-an-integer
-hash_dig.rb
-hash_find_value.rb
-hash_list.rb
+conclusion-8
 our-own-classes
 modeling-real-world-things
 defining-instance-methods
