@@ -14,7 +14,10 @@ if lucky_number.odd?
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-conditional){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-conditional){target="_blank"}
+</div>
 
 Try running this program a few times and see how it behaves. These expressions, which conditonally run some code based on the truth or falseness of some condition, are known as **conditionals** or **if statements**.
 
@@ -74,7 +77,10 @@ else
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/multibranch-if){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/multibranch-if){target="_blank"}
+</div>
 
  - Note that there is **no space** in the `elsif` keyword, and that there is **no `e` in the middle** of the `elsif` keyword. (In other languages, this construct is `elseif`, `else if`, etc; but in Ruby it's just `elsif`.)
  - The conditions are checked in top-down priority, so even if more than one is true, whichever one is first has its branch executed; the rest are ignored.
@@ -104,7 +110,10 @@ else
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){target="_blank"}
+</div>
 
 For how many of the above did you correctly predict the output? What did you learn about what objects count as truthy and what objects count as falsy in Ruby?
 
@@ -179,17 +188,26 @@ if 3.odd? && 4.even?
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/and-and-or){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/and-and-or){target="_blank"}
+</div>
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.
 
-##### Start the GitPod Project {-}
+<div class="proj">
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/if-statements-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/if-statements-chapter/tree/bp-additions){target="_blank"}.
+  Open the GitPod `if` statements project for this chapter and start with the exercise `conditionals_rps.rb`:
 
-<mark>✏️ **Exercise:**</mark> On GitPod in the `if` statements project, work through `conditionals_rps.rb`.
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/if-statements-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[conditionals_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>
 
-<mark>✏️ **Exercise:**</mark> Also, work through `conditionals_palindrome.rb`
+<div class="proj">
+
+  Also, work through `conditionals_palindrome.rb`
+</div>
 
 
 
