@@ -22,11 +22,18 @@ This will, however, just give us back an empty string `""`. We would then have t
 
 #### Make the invisible visible in GitPod {-}
 
-<div class="proj">
+<div class="experiment">
    Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there.
+
+   **BENP: As a template use 00:00:00 to 00:06:15 of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} to transcribe and then re-record an exercise where you first open the `helloruby` project, create `howdy.rb`, run it, then add another `invisible_to_visible.rb` exercise like below:**
+
+   The steps are:
+
+   1. 
+
 </div>
 
-**BENP: As a template use 00:00:00 to 00:06:15 of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} to transcribe and then re-record an exercise where you first open the `helloruby` project, create `howdy.rb`, run it, then add another `invisible_to_visible.rb` exercise like below:**
+
 
 ```ruby
 # One-by-one, uncomment the p statements 
@@ -102,7 +109,7 @@ my_string.concat(33)
 p my_string # => "Hello, world!"
 ```
 
-<div class="repl">
+<div class="experiment">
    This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
 </div>
 
@@ -196,7 +203,7 @@ p a + b # => "HelloWorld"        # You can add strings together
    Return to the GitPod `String` project and work through `string_addition.rb`
 </div>
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
 </div>
 
@@ -216,7 +223,7 @@ This sort of makes sense, if you think about multiplication as being repeated ad
 p "Hello" * 3
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){target="_blank"}
 </div>
 
@@ -246,7 +253,7 @@ The upcase method returns a copy of the `String` with all lowercase letters repl
 p "hello".upcase
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
 </div>
 
@@ -258,7 +265,7 @@ The downcase method returns a copy of the `String` with all uppercase letters re
 p "I'M NOT YELLING AT YOU".downcase
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
 </div>
 
@@ -282,7 +289,7 @@ The reverse method returns a new `String` with the characters from the `String` 
 p "I can speak in backwords words".reverse
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
 </div>
 
@@ -294,7 +301,7 @@ The length method  returns the number of characters (as an `Integer`) that a `St
 p "Supercalifragilisticexpialidocious".length
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
 </div>
 
@@ -316,7 +323,7 @@ This seemingly strange task is very common due to the way that getting user inpu
 "1 apple".chomp("s") # => "1 apple"
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
 </div>
 
@@ -333,7 +340,7 @@ a = "Hello"
 p a.gsub("ll", "ww")  # => "Hewwo"
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
 </div>
 
@@ -384,7 +391,7 @@ Sometimes you have a string that contains a number, usually input from a user, a
 p "8".to_i
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
 </div>
 
@@ -396,7 +403,7 @@ p "8".to_i
 p "   This has a lot of space on the outside     ".strip
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
 </div>
 
@@ -408,7 +415,7 @@ capitalize returns a `String` with the first character converted to uppercase an
 p "beginning".capitalize
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
 </div>
 
@@ -426,7 +433,7 @@ p "Happy Days".include?("H")
 p "Happy Days".include?("Z")
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
 </div>
 
@@ -439,7 +446,7 @@ number = 6 * 7
 message = "Your lucky number for today is " + number + "."
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){target="_blank"}
 </div>
 
@@ -479,7 +486,7 @@ their_name = gets
 p "Hello, " + their_name + "!"
 ```
 
-<div class="repl">
+<div class="experiment">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){target="_blank"}
 </div>
 

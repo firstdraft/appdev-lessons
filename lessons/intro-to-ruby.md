@@ -6,7 +6,7 @@ Prepare for a crash course in the following sections. Expect short readings inte
 
 **_Do_, or do not. There is no  _read_.** Look out for the exercise prompts:
 
-<div class="repl">
+<div class="experiment">
   for sandbox experimentation
 </div>
 

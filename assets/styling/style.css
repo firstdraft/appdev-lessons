@@ -10,7 +10,7 @@
   width: 90%;
 }
 
-div.repl {
+div.experiment {
   background-color: #d4edda;
   padding: 5px;
   border: 1px solid black;
@@ -21,7 +21,7 @@ div.repl {
   font-style: normal;
   }
 
-div.repl::before{
+div.experiment::before{
   content: "🧪";
 }
 

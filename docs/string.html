@@ -406,10 +406,14 @@ Proudly published with bookdown</a></li>
 <p>This will, however, just give us back an empty string <code>""</code>. We would then have to add each character to it one by one. One way to do so is by using the <code>.concat</code> method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.</p>
 <div id="make-the-invisible-visible-in-gitpod" class="section level4 unnumbered hasAnchor">
 <h4>Make the invisible visible in GitPod<a href="string.html#make-the-invisible-visible-in-gitpod" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="proj">
+<div class="experiment">
 <p>Let’s practice <strong>making the invisible visible</strong>. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there.</p>
-</div>
 <p><strong>BENP: As a template use 00:00:00 to 00:06:15 of <a href="https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&amp;start=146.06" target="_blank">string video</a> to transcribe and then re-record an exercise where you first open the <code>helloruby</code> project, create <code>howdy.rb</code>, run it, then add another <code>invisible_to_visible.rb</code> exercise like below:</strong></p>
+<p>The steps are:</p>
+<ol style="list-style-type: decimal">
+<li></li>
+</ol>
+</div>
 <div class="sourceCode" id="cb29"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb29-1"><a href="string.html#cb29-1" aria-hidden="true"></a><span class="co"># One-by-one, uncomment the p statements </span></span>
 <span id="cb29-2"><a href="string.html#cb29-2" aria-hidden="true"></a><span class="co"># below and rerun the code</span></span>
 <span id="cb29-3"><a href="string.html#cb29-3" aria-hidden="true"></a>s = <span class="dt">String</span>.new</span>
@@ -716,7 +720,7 @@ Proudly published with bookdown</a></li>
 <span id="cb30-27"><a href="string.html#cb30-27" aria-hidden="true"></a></span>
 <span id="cb30-28"><a href="string.html#cb30-28" aria-hidden="true"></a><span class="co"># make the invisible visible!</span></span>
 <span id="cb30-29"><a href="string.html#cb30-29" aria-hidden="true"></a>p my_string <span class="co"># =&gt; &quot;Hello, world!&quot;</span></span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p>This is just a quick sandbox, so <a href="https://repl.it/@raghubetina/creating-objects-with-new" target="_blank">click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -774,7 +778,7 @@ Proudly published with bookdown</a></li>
 <div class="proj">
 <p>Return to the GitPod <code>String</code> project and work through <code>string_addition.rb</code></p>
 </div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/concatenation" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -787,7 +791,7 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb38"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb38-1"><a href="string.html#cb38-1" aria-hidden="true"></a><span class="st">&quot;Ya&quot;</span> * <span class="dv">5</span> <span class="co"># =&gt; &quot;YaYaYaYaYa&quot;</span></span></code></pre></div>
 <p>This sort of makes sense, if you think about multiplication as being repeated addition.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb39-1"><a href="string.html#cb39-1" aria-hidden="true"></a>p <span class="st">&quot;Hello&quot;</span> * <span class="dv">3</span></span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/multiplication" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <p>The order matters, though. See what happens when you try:</p>
@@ -804,7 +808,7 @@ Proudly published with bookdown</a></li>
 <h4>upcase<a href="string.html#upcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The upcase method returns a copy of the <code>String</code> with all lowercase letters replaced with their uppercase counterparts.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb41-1"><a href="string.html#cb41-1" aria-hidden="true"></a>p <span class="st">&quot;hello&quot;</span>.upcase</span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/upcase" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -812,7 +816,7 @@ Proudly published with bookdown</a></li>
 <h4>downcase<a href="string.html#downcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The downcase method returns a copy of the <code>String</code> with all uppercase letters replaced with their lowercase counterparts.</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb42-1"><a href="string.html#cb42-1" aria-hidden="true"></a>p <span class="st">&quot;I&#39;M NOT YELLING AT YOU&quot;</span>.downcase</span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/downcase" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -828,7 +832,7 @@ Proudly published with bookdown</a></li>
 <h4>reverse<a href="string.html#reverse" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The reverse method returns a new <code>String</code> with the characters from the <code>String</code> in reverse order.</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb44-1"><a href="string.html#cb44-1" aria-hidden="true"></a>p <span class="st">&quot;I can speak in backwords words&quot;</span>.reverse</span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/reverse" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -836,7 +840,7 @@ Proudly published with bookdown</a></li>
 <h4>length<a href="string.html#length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The length method returns the number of characters (as an <code>Integer</code>) that a <code>String</code> has.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb45-1"><a href="string.html#cb45-1" aria-hidden="true"></a>p <span class="st">&quot;Supercalifragilisticexpialidocious&quot;</span>.length</span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/length" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -849,7 +853,7 @@ Proudly published with bookdown</a></li>
 <p><code>chomp</code> can also remove other specified character(s) from the end of the string, if they are provided as an argument:</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb47-1"><a href="string.html#cb47-1" aria-hidden="true"></a><span class="st">&quot;1 apples&quot;</span>.chomp(<span class="st">&quot;s&quot;</span>) <span class="co"># =&gt; &quot;1 apple&quot;</span></span>
 <span id="cb47-2"><a href="string.html#cb47-2" aria-hidden="true"></a><span class="st">&quot;1 apple&quot;</span>.chomp(<span class="st">&quot;s&quot;</span>) <span class="co"># =&gt; &quot;1 apple&quot;</span></span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/chomp" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <div class="proj">
@@ -861,7 +865,7 @@ Proudly published with bookdown</a></li>
 <p>The <code>gsub</code> method returns a copy of the <code>String</code> it was called on with all occurrences of the first argument substituted for the second argument.</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb48-1"><a href="string.html#cb48-1" aria-hidden="true"></a>a = <span class="st">&quot;Hello&quot;</span></span>
 <span id="cb48-2"><a href="string.html#cb48-2" aria-hidden="true"></a>p a.gsub(<span class="st">&quot;ll&quot;</span>, <span class="st">&quot;ww&quot;</span>)  <span class="co"># =&gt; &quot;Hewwo&quot;</span></span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/gsub" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <div id="advanced-gsub-techniques" class="section level5 unnumbered hasAnchor">
@@ -894,7 +898,7 @@ Proudly published with bookdown</a></li>
 <h4>to_i<a href="string.html#to_i" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. <code>to_i</code> will attempt to convert a <code>String</code> object into an <code>Integer</code> object.</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb53-1"><a href="string.html#cb53-1" aria-hidden="true"></a>p <span class="st">&quot;8&quot;</span>.to_i</span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/toi" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -902,7 +906,7 @@ Proudly published with bookdown</a></li>
 <h4>strip<a href="string.html#strip" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>strip</code> removes all leading and trailing whitespace.</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb54-1"><a href="string.html#cb54-1" aria-hidden="true"></a>p <span class="st">&quot;   This has a lot of space on the outside     &quot;</span>.strip</span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/strip" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -910,7 +914,7 @@ Proudly published with bookdown</a></li>
 <h4>capitalize<a href="string.html#capitalize" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>capitalize returns a <code>String</code> with the first character converted to uppercase and the remainder to lowercase.</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb55-1"><a href="string.html#cb55-1" aria-hidden="true"></a>p <span class="st">&quot;beginning&quot;</span>.capitalize</span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/capitalize" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <div class="proj">
@@ -923,7 +927,7 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb56"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb56-1"><a href="string.html#cb56-1" aria-hidden="true"></a>p <span class="st">&quot;Happy Days&quot;</span>.include?(<span class="st">&quot;H&quot;</span>)</span>
 <span id="cb56-2"><a href="string.html#cb56-2" aria-hidden="true"></a></span>
 <span id="cb56-3"><a href="string.html#cb56-3" aria-hidden="true"></a>p <span class="st">&quot;Happy Days&quot;</span>.include?(<span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/stringinclude" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -933,7 +937,7 @@ Proudly published with bookdown</a></li>
 <p>We spend a lot of time composing strings of output for our users, so let’s see a few more examples. Try this:</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb57-1"><a href="string.html#cb57-1" aria-hidden="true"></a>number = <span class="dv">6</span> * <span class="dv">7</span></span>
 <span id="cb57-2"><a href="string.html#cb57-2" aria-hidden="true"></a>message = <span class="st">&quot;Your lucky number for today is &quot;</span> + number + <span class="st">&quot;.&quot;</span></span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/String-interpolation" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <p>You’ll see that Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn’t feel comfortable with that.</p>
@@ -956,7 +960,7 @@ Proudly published with bookdown</a></li>
 <span id="cb60-3"><a href="string.html#cb60-3" aria-hidden="true"></a>their_name = gets</span>
 <span id="cb60-4"><a href="string.html#cb60-4" aria-hidden="true"></a></span>
 <span id="cb60-5"><a href="string.html#cb60-5" aria-hidden="true"></a>p <span class="st">&quot;Hello, &quot;</span> + their_name + <span class="st">&quot;!&quot;</span></span></code></pre></div>
-<div class="repl">
+<div class="experiment">
 <p><a href="https://repl.it/@raghubetina/Hello-gets" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <p>Great! Our first user input. However, you’ll notice a couple of things. First of all, there’s a <code>\n</code> sneaking into the input. <code>\n</code> represents a newline character, and it’s in there because of the <kbd>return</kbd> that is pressed to submit the input.</p>
