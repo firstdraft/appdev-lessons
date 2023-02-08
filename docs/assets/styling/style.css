@@ -10,6 +10,11 @@
   width: 90%;
 }
 
+[for*="toggle"] {
+  color:#0275d8;
+  cursor: pointer;
+}
+
 div.experiment {
   background-color: #d4edda;
   padding: 5px;

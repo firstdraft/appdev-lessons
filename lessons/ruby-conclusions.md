@@ -33,13 +33,13 @@ Any assigned task _will_ be achievable using the classes, methods, and keywords 
 
 Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the previous sections to write some small programs. These are longer projects than the exercises we've seen so far, and they may require a few different tools to complete; so keep the chapter sections open for reference. 
 
-There are likely a few ways to solve an exercise. Just get the code to pass all of the `rails grade` tests and you are good to move on. Remember, [we are inventors][We are inventors]; don't rely on Google-Fu.
+There are likely a few ways to solve an exercise. Just get the code to pass all of the `rails grade` tests and you are good to move on. Remember, _we are inventors_; don't rely on Google-Fu.
 
 Please follow the instructions below to enter the Ruby Gym for some weight training 🏋️!
 
 <div class="proj">
 
-   Open the GitPod Ruby Gym project and complete the exercises:
+  Open the GitPod Ruby Gym project and complete the exercises:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/ruby-gym/tree/bp-edits)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[ruby_gym_project] 
   
