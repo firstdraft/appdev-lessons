@@ -35,3 +35,10 @@ p.proj {
 p.proj::before{
   content: "✏️";
 }
+
+kbd {
+  border-radius: 2px;
+  padding: 2px;
+  border: 1px solid black;
+  font-family: monospace;
+}

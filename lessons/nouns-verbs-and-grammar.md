@@ -80,9 +80,8 @@ Here's a real example:
 
 <p class="repl">
   You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
+  ![](assets/nouns-verbs-and-grammar/replit-fork-hd.png)
 </p>
-
-![](assets/nouns-verbs-and-grammar/replit-fork-hd.png)
 
 In the black window that appears on the right side under the `>_ Console` tab[^the_terminal], type:
 
@@ -138,7 +137,7 @@ What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try i
 
 #### _Do_, or do not. There is no  _read_. {-}
 
-When you saw the exercise prompt, were you typing out every expression in a REPL? 
+When you saw the 🧪 exercise prompt, were you typing out every expression in a REPL? 
 
 If not, then you're doing this wrong. If you're just _reading_, you won't be successful at learning programming; you have to _do_ in order to build up some muscle memory. _Practice is crucial._
 
@@ -313,7 +312,9 @@ s = "hello world!".upcase
 
 out loud, I say "the string hello world dot upcase _is assigned_ to the variable s". I read the right side first, because that's how Ruby reads it too; it first evaluates the expression on the right side of the `=`, and then it stores the resulting value in the variable on the left.
 
-<mark>✏️ **Exercise:**</mark> Using as many Ruby terms as you can (string, object, assign, etc.), read the following out loud (or maybe in your head if you're in a quiet café): `t = "I like Ruby".gsub("like", "love")`. Carefully reading code with correct terminology is a great way to learn and spot error messages before they occur.
+<p class="repl">
+  Using as many Ruby terms as you can (string, object, assign, etc.), read the following out loud (or maybe in your head if you're in a quiet café): `t = "I like Ruby".gsub("like", "love")`. Carefully reading code with correct terminology is a great way to learn and spot error messages before they occur.
+</p>
 
 <p class="repl">
   Now add another line to the REPL,
