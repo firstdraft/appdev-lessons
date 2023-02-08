@@ -27,24 +27,22 @@ This will, however, just give us back an empty string `""`. We would then have t
 
    **BENP: As a template use 00:00:00 to 00:06:15 of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} to transcribe and then re-record an exercise where you first open the `helloruby` project, create `howdy.rb`, run it, then add another `invisible_to_visible.rb` exercise like below:**
 
+   ```ruby
+   # One-by-one, uncomment the p statements 
+   # below and rerun the code
+   s = String.new
+   # p s 
+   s = "Hello, world!"
+   # p s
+   s = s.upcase
+   # p s
+   ```
+
    The steps are:
 
-   1. 
+   **BENP: see technical-setup.md [Getting started with Gitpod] section. Need to link to that here somehow.**
 
 </div>
-
-
-
-```ruby
-# One-by-one, uncomment the p statements 
-# below and rerun the code
-s = String.new
-# p s 
-s = "Hello, world!"
-# p s
-s = s.upcase
-# p s
-```
 
 When you are done experimenting, feel free to close the GitPod project window. We will open another project momentarily and only one GitPod tab will limit confusion.
 
@@ -119,9 +117,6 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
 <div class="proj">
    Open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file.
-</div>
-
-<div class="proj">
 
    **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`. Basically the steps outlined below.**
 
