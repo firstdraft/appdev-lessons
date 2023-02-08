@@ -120,7 +120,7 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
    **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`. Basically the steps outlined below.**
 
-   1. LTI{Load assignment}(https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_concat]
+   1. LTI{Load assignment}(https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_project]
    1. Open the `string_concat.rb` file in the editor window.
    1. Modify the file per the instructions on top.
    1. Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the terminal. If we want to run `string_concat.rb`, we can write the command:

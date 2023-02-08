@@ -404,11 +404,11 @@ Proudly published with bookdown</a></li>
 <div id="any-other-instance-methods-you-define-in-the-class" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">B.2.2</span> Any other instance methods you define in the class<a href="activerecord-a-single-record.html#any-other-instance-methods-you-define-in-the-class" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It’s often helpful to define your own instance methods in the model file; for example, you might want to define a method <code>.full_name</code>:</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb198-1"><a href="activerecord-a-single-record.html#cb198-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Contact</span> &lt; <span class="dt">ApplicationRecord</span></span>
-<span id="cb198-2"><a href="activerecord-a-single-record.html#cb198-2" aria-hidden="true"></a>  <span class="kw">def</span> full_name</span>
-<span id="cb198-3"><a href="activerecord-a-single-record.html#cb198-3" aria-hidden="true"></a>    <span class="kw">return</span> <span class="dv">self</span>.first_name + <span class="st">&quot; &quot;</span> + <span class="dv">self</span>.last_name</span>
-<span id="cb198-4"><a href="activerecord-a-single-record.html#cb198-4" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb198-5"><a href="activerecord-a-single-record.html#cb198-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb197-1"><a href="activerecord-a-single-record.html#cb197-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Contact</span> &lt; <span class="dt">ApplicationRecord</span></span>
+<span id="cb197-2"><a href="activerecord-a-single-record.html#cb197-2" aria-hidden="true"></a>  <span class="kw">def</span> full_name</span>
+<span id="cb197-3"><a href="activerecord-a-single-record.html#cb197-3" aria-hidden="true"></a>    <span class="kw">return</span> <span class="dv">self</span>.first_name + <span class="st">&quot; &quot;</span> + <span class="dv">self</span>.last_name</span>
+<span id="cb197-4"><a href="activerecord-a-single-record.html#cb197-4" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb197-5"><a href="activerecord-a-single-record.html#cb197-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>You would then be able to call <code>.full_name</code> anywhere in the application that you wind up with an individual <code>Contact</code> object.</p>
 <p><a href="https://chapters.firstdraft.com/chapters/769#defining-instance-methods">Full explanation</a></p>
 </div>

@@ -396,23 +396,23 @@ Proudly published with bookdown</a></li>
 <div id="conditionals" class="section level2 hasAnchor" number="3.10">
 <h2><span class="header-section-number">B.10</span> Conditionals<a href="conditionals.html#conditionals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Basic Anatomy of multibranch <code>if</code> statements:</p>
-<div class="sourceCode" id="cb260"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb260-1"><a href="conditionals.html#cb260-1" aria-hidden="true"></a><span class="kw">if</span> condition1</span>
-<span id="cb260-2"><a href="conditionals.html#cb260-2" aria-hidden="true"></a>  <span class="co"># do something if condition1 is true</span></span>
-<span id="cb260-3"><a href="conditionals.html#cb260-3" aria-hidden="true"></a><span class="kw">elsif</span> condition2</span>
-<span id="cb260-4"><a href="conditionals.html#cb260-4" aria-hidden="true"></a>  <span class="co"># do something if condition2 is true</span></span>
-<span id="cb260-5"><a href="conditionals.html#cb260-5" aria-hidden="true"></a><span class="kw">else</span> <span class="co"># if both condition1 and condition2 were falsy</span></span>
-<span id="cb260-6"><a href="conditionals.html#cb260-6" aria-hidden="true"></a>  <span class="co"># do something else</span></span>
-<span id="cb260-7"><a href="conditionals.html#cb260-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb259-1"><a href="conditionals.html#cb259-1" aria-hidden="true"></a><span class="kw">if</span> condition1</span>
+<span id="cb259-2"><a href="conditionals.html#cb259-2" aria-hidden="true"></a>  <span class="co"># do something if condition1 is true</span></span>
+<span id="cb259-3"><a href="conditionals.html#cb259-3" aria-hidden="true"></a><span class="kw">elsif</span> condition2</span>
+<span id="cb259-4"><a href="conditionals.html#cb259-4" aria-hidden="true"></a>  <span class="co"># do something if condition2 is true</span></span>
+<span id="cb259-5"><a href="conditionals.html#cb259-5" aria-hidden="true"></a><span class="kw">else</span> <span class="co"># if both condition1 and condition2 were falsy</span></span>
+<span id="cb259-6"><a href="conditionals.html#cb259-6" aria-hidden="true"></a>  <span class="co"># do something else</span></span>
+<span id="cb259-7"><a href="conditionals.html#cb259-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><strong>Example:</strong></p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb261-1"><a href="conditionals.html#cb261-1" aria-hidden="true"></a>p <span class="st">&quot;Type a number less than 10 and greater than 0:&quot;</span></span>
-<span id="cb261-2"><a href="conditionals.html#cb261-2" aria-hidden="true"></a>user_input = gets.chomp.to_i <span class="co"># gets user input, removes newline character, converts the string to integer. </span></span>
-<span id="cb261-3"><a href="conditionals.html#cb261-3" aria-hidden="true"></a><span class="kw">if</span> user_input == <span class="dv">5</span> </span>
-<span id="cb261-4"><a href="conditionals.html#cb261-4" aria-hidden="true"></a>  p <span class="st">&quot;You win!&quot;</span> <span class="co"># Will print this if the user input is 5</span></span>
-<span id="cb261-5"><a href="conditionals.html#cb261-5" aria-hidden="true"></a><span class="kw">elsif</span> user_input &lt; <span class="dv">10</span> &amp;&amp; user_input &gt; <span class="dv">0</span> <span class="co"># check if the user input is valid</span></span>
-<span id="cb261-6"><a href="conditionals.html#cb261-6" aria-hidden="true"></a>  p <span class="st">&quot;You lose!&quot;</span> <span class="co"># Will print this if the user input is between 1 and 9</span></span>
-<span id="cb261-7"><a href="conditionals.html#cb261-7" aria-hidden="true"></a><span class="kw">else</span></span>
-<span id="cb261-8"><a href="conditionals.html#cb261-8" aria-hidden="true"></a>  p <span class="st">&quot;You didn&#39;t type in a valid number.&quot;</span> <span class="co"># Will print this if the user input is not between 1 and 9</span></span>
-<span id="cb261-9"><a href="conditionals.html#cb261-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb260-1"><a href="conditionals.html#cb260-1" aria-hidden="true"></a>p <span class="st">&quot;Type a number less than 10 and greater than 0:&quot;</span></span>
+<span id="cb260-2"><a href="conditionals.html#cb260-2" aria-hidden="true"></a>user_input = gets.chomp.to_i <span class="co"># gets user input, removes newline character, converts the string to integer. </span></span>
+<span id="cb260-3"><a href="conditionals.html#cb260-3" aria-hidden="true"></a><span class="kw">if</span> user_input == <span class="dv">5</span> </span>
+<span id="cb260-4"><a href="conditionals.html#cb260-4" aria-hidden="true"></a>  p <span class="st">&quot;You win!&quot;</span> <span class="co"># Will print this if the user input is 5</span></span>
+<span id="cb260-5"><a href="conditionals.html#cb260-5" aria-hidden="true"></a><span class="kw">elsif</span> user_input &lt; <span class="dv">10</span> &amp;&amp; user_input &gt; <span class="dv">0</span> <span class="co"># check if the user input is valid</span></span>
+<span id="cb260-6"><a href="conditionals.html#cb260-6" aria-hidden="true"></a>  p <span class="st">&quot;You lose!&quot;</span> <span class="co"># Will print this if the user input is between 1 and 9</span></span>
+<span id="cb260-7"><a href="conditionals.html#cb260-7" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb260-8"><a href="conditionals.html#cb260-8" aria-hidden="true"></a>  p <span class="st">&quot;You didn&#39;t type in a valid number.&quot;</span> <span class="co"># Will print this if the user input is not between 1 and 9</span></span>
+<span id="cb260-9"><a href="conditionals.html#cb260-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><strong>Don’t forget the <code>end</code> keyword.</strong></p>
 <p><a href="https://chapters.firstdraft.com/chapters/763#conditionals">Full explanation</a></p>
 </div>

@@ -399,13 +399,13 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.3.1</span> belongs_to<a href="association-helper-methods.html#belongs_to" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>belongs_to(Symbol, Hash) ⇒ ActiveRecord</code></p>
 <p>Let’s say I have a movie in a variable <code>m</code>. It is annoying and error prone to, whenever I want the director associated with a movie, have to type</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb199-1"><a href="association-helper-methods.html#cb199-1" aria-hidden="true"></a>d = <span class="dt">Director</span>.where({ <span class="st">:id</span> =&gt; m.director_id }).at(<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb198-1"><a href="association-helper-methods.html#cb198-1" aria-hidden="true"></a>d = <span class="dt">Director</span>.where({ <span class="st">:id</span> =&gt; m.director_id }).at(<span class="dv">0</span>)</span></code></pre></div>
 <p>Wouldn’t it be great if I could just type</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb200-1"><a href="association-helper-methods.html#cb200-1" aria-hidden="true"></a>d = m.director</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb199-1"><a href="association-helper-methods.html#cb199-1" aria-hidden="true"></a>d = m.director</span></code></pre></div>
 <p>and it would know how to go look up the corresponding row in the directors table based on the movie’s <code>director_id</code>?</p>
 <p>Unfortunately, I can’t, because <code>.director</code> isn’t a method that <code>Movie</code> objects automatically know how to perform — the method would be undefined. (<code>Movie</code> objects know how to perform <code>.director_id</code> because we get a method for every column in the table.)</p>
 <p>We could define such an instance method in the model ourselves without too much trouble. But, fortunately, since domain modeling and associations are at the heart of every application’s power, Rails gives us a shortcut. Go into the <code>Movie</code> model and add a line like this:</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb201-1"><a href="association-helper-methods.html#cb201-1" aria-hidden="true"></a>belongs_to(<span class="st">:director</span>, { <span class="st">:class_name</span> =&gt; <span class="st">&quot;Director&quot;</span>, <span class="st">:foreign_key</span> =&gt; <span class="st">&quot;director_id&quot;</span> })</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb200-1"><a href="association-helper-methods.html#cb200-1" aria-hidden="true"></a>belongs_to(<span class="st">:director</span>, { <span class="st">:class_name</span> =&gt; <span class="st">&quot;Director&quot;</span>, <span class="st">:foreign_key</span> =&gt; <span class="st">&quot;director_id&quot;</span> })</span></code></pre></div>
 <p>This line tells Rails:</p>
 <ul>
 <li><code>belongs_to</code>: We only one result (not an array of results).</li>
@@ -414,18 +414,18 @@ Proudly published with bookdown</a></li>
 <li><code>:foreign_key =&gt; "director_id"</code>: Use the value in the <code>director_id</code> column of the movie to query the directors table for a row.</li>
 </ul>
 <p>This is exactly what we would do if we defined the instance method by hand:</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb202-1"><a href="association-helper-methods.html#cb202-1" aria-hidden="true"></a><span class="kw">def</span> director</span>
-<span id="cb202-2"><a href="association-helper-methods.html#cb202-2" aria-hidden="true"></a>  <span class="kw">return</span> <span class="dt">Director</span>.where({ <span class="st">:id</span> =&gt; m.director_id }).at(<span class="dv">0</span>)</span>
-<span id="cb202-3"><a href="association-helper-methods.html#cb202-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb201-1"><a href="association-helper-methods.html#cb201-1" aria-hidden="true"></a><span class="kw">def</span> director</span>
+<span id="cb201-2"><a href="association-helper-methods.html#cb201-2" aria-hidden="true"></a>  <span class="kw">return</span> <span class="dt">Director</span>.where({ <span class="st">:id</span> =&gt; m.director_id }).at(<span class="dv">0</span>)</span>
+<span id="cb201-3"><a href="association-helper-methods.html#cb201-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>Either way, we now can utilize this handy shortcut anywhere in our application when we have a movie <code>m</code> and we want to get the record in the directors table associated with it:</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb203-1"><a href="association-helper-methods.html#cb203-1" aria-hidden="true"></a>m.director</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb202-1"><a href="association-helper-methods.html#cb202-1" aria-hidden="true"></a>m.director</span></code></pre></div>
 <p>Even better, if you’ve named your method and foreign key column conventionally (exactly matching the name of the other table), you can use the super-shorthand version:</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb204-1"><a href="association-helper-methods.html#cb204-1" aria-hidden="true"></a>belongs_to(<span class="st">:director</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb203-1"><a href="association-helper-methods.html#cb203-1" aria-hidden="true"></a>belongs_to(<span class="st">:director</span>)</span></code></pre></div>
 <ul>
 <li><p>If you omit specifying the <code>:class_name</code>, Rails assumes that the table that you want to query is named the same thing as the method you are defining.</p></li>
 <li><p>If you omit specifying the <code>:foreign_key</code>, Rails assumes that the foreign key column is named the same thing as the method plus <code>_id</code>.</p></li>
 <li><p>If either of those things happens to not be true, then just include the <code>Hash</code> as the second argument to <code>belongs_to</code> and spell it all out:</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb205-1"><a href="association-helper-methods.html#cb205-1" aria-hidden="true"></a>belongs_to(<span class="st">:owner</span>, { <span class="st">:class_name</span> =&gt; <span class="st">&quot;User&quot;</span>, <span class="st">:foreign_key</span> =&gt; <span class="st">&quot;poster_id&quot;</span> })</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb204-1"><a href="association-helper-methods.html#cb204-1" aria-hidden="true"></a>belongs_to(<span class="st">:owner</span>, { <span class="st">:class_name</span> =&gt; <span class="st">&quot;User&quot;</span>, <span class="st">:foreign_key</span> =&gt; <span class="st">&quot;poster_id&quot;</span> })</span></code></pre></div>
 <p>This would give us a method called <code>.owner</code> that returns a <code>User</code>, even though the foreign key column is called <code>poster_id</code>. We still have complete control, if we need to depart from conventional method/foreign key names for some reason.</p></li>
 </ul>
 </div>
@@ -433,13 +433,13 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.3.2</span> has_many<a href="association-helper-methods.html#has_many" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>has_many(Symbol, Hash) ⇒ ActiveRecord_Relation</code></p>
 <p>Let’s say I have a director in a variable <code>d</code>. It is annoying and error prone to, whenever I want the films associated with the director, have to type</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb206-1"><a href="association-helper-methods.html#cb206-1" aria-hidden="true"></a>f = <span class="dt">Movie</span>.where({ <span class="st">:director_id</span> =&gt; d.id })</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb205-1"><a href="association-helper-methods.html#cb205-1" aria-hidden="true"></a>f = <span class="dt">Movie</span>.where({ <span class="st">:director_id</span> =&gt; d.id })</span></code></pre></div>
 <p>Wouldn’t it be great if I could just type</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb207-1"><a href="association-helper-methods.html#cb207-1" aria-hidden="true"></a>f = d.movies</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb206-1"><a href="association-helper-methods.html#cb206-1" aria-hidden="true"></a>f = d.movies</span></code></pre></div>
 <p>and it would know how to go look up the corresponding rows in the movies table based on the director’s <code>id</code>?</p>
 <p>Unfortunately, I can’t, because <code>.movies</code> isn’t a method that <code>Director</code> objects automatically know how to perform — the method would be undefined.</p>
 <p>We could define such an instance method in the model ourselves without too much trouble. But, fortunately, since domain modeling and associations are at the heart of every application’s power, Rails gives us a shortcut. Go into the <code>Director</code> model and add a line like this:</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb208-1"><a href="association-helper-methods.html#cb208-1" aria-hidden="true"></a>has_many(<span class="st">:movies</span>, { <span class="st">:class_name</span> =&gt; <span class="st">&quot;Movie&quot;</span>, <span class="st">:foreign_key</span> =&gt; <span class="st">&quot;director_id&quot;</span> })</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb207-1"><a href="association-helper-methods.html#cb207-1" aria-hidden="true"></a>has_many(<span class="st">:movies</span>, { <span class="st">:class_name</span> =&gt; <span class="st">&quot;Movie&quot;</span>, <span class="st">:foreign_key</span> =&gt; <span class="st">&quot;director_id&quot;</span> })</span></code></pre></div>
 <p>This line tells Rails:</p>
 <ul>
 <li><code>has_many</code>: We want many results in an array.</li>
@@ -448,18 +448,18 @@ Proudly published with bookdown</a></li>
 <li><code>:foreign_key =&gt; "director_id"</code>: Use the <code>director_id</code> column of the movies table to filter using the <code>id</code> of the director.</li>
 </ul>
 <p>This is exactly what we would do if we defined the instance method by hand:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb209-1"><a href="association-helper-methods.html#cb209-1" aria-hidden="true"></a><span class="kw">def</span> movies</span>
-<span id="cb209-2"><a href="association-helper-methods.html#cb209-2" aria-hidden="true"></a>  <span class="kw">return</span> <span class="dt">Movie</span>.where({ <span class="st">:director_id</span> =&gt; <span class="dv">self</span>.id })</span>
-<span id="cb209-3"><a href="association-helper-methods.html#cb209-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb208-1"><a href="association-helper-methods.html#cb208-1" aria-hidden="true"></a><span class="kw">def</span> movies</span>
+<span id="cb208-2"><a href="association-helper-methods.html#cb208-2" aria-hidden="true"></a>  <span class="kw">return</span> <span class="dt">Movie</span>.where({ <span class="st">:director_id</span> =&gt; <span class="dv">self</span>.id })</span>
+<span id="cb208-3"><a href="association-helper-methods.html#cb208-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>Either way, we now can utilize this handy shortcut anywhere in our application when we have a director <code>d</code> and we want to get the records in the movies table associated with it:</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb210-1"><a href="association-helper-methods.html#cb210-1" aria-hidden="true"></a>d.movies</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb209-1"><a href="association-helper-methods.html#cb209-1" aria-hidden="true"></a>d.movies</span></code></pre></div>
 <p>Even better, if you’ve named your method and foreign key column conventionally (exactly matching the name of the other table), you can use the super-shorthand version:</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb211-1"><a href="association-helper-methods.html#cb211-1" aria-hidden="true"></a>has_many(<span class="st">:movies</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb210-1"><a href="association-helper-methods.html#cb210-1" aria-hidden="true"></a>has_many(<span class="st">:movies</span>)</span></code></pre></div>
 <ul>
 <li><p>If you omit specifying the <code>:class_name</code>, Rails assumes that the table that you want to query is named the same thing as the method you are defining.</p></li>
 <li><p>If you omit specifying the <code>:foreign_key</code>, Rails assumes that the foreign key column is named the same thing as this model plus <code>_id</code>.</p></li>
 <li><p>If either of those things happens to not be true, then just include the <code>Hash</code> as the second argument to <code>belongs_to</code> and spell it all out:</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb212-1"><a href="association-helper-methods.html#cb212-1" aria-hidden="true"></a>has_many(<span class="st">:filmography</span>, { <span class="st">:class_name</span> =&gt; <span class="st">&quot;Movie&quot;</span>, <span class="st">:foreign_key</span> =&gt; <span class="st">&quot;director_id&quot;</span> })</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb211-1"><a href="association-helper-methods.html#cb211-1" aria-hidden="true"></a>has_many(<span class="st">:filmography</span>, { <span class="st">:class_name</span> =&gt; <span class="st">&quot;Movie&quot;</span>, <span class="st">:foreign_key</span> =&gt; <span class="st">&quot;director_id&quot;</span> })</span></code></pre></div>
 <p>This would give us a method called <code>.filmography</code> that returns <code>Movie</code>s. We still have complete control, if we need to depart from conventional method/foreign key names for some reason.</p></li>
 </ul>
 </div>
@@ -467,20 +467,20 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.3.3</span> has_many/through<a href="association-helper-methods.html#has_manythrough" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>has_many(Symbol, Hash) ⇒ ActiveRecord_Relation</code></p>
 <p>After you have established all of your one-to-many association helper methods, you can also add many-to-many helper methods with the <code>:through</code> option on <code>has_many</code>:</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb213-1"><a href="association-helper-methods.html#cb213-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Movie</span> &lt; <span class="dt">ApplicationRecord</span></span>
-<span id="cb213-2"><a href="association-helper-methods.html#cb213-2" aria-hidden="true"></a>   has_many(<span class="st">:characters</span>)</span>
-<span id="cb213-3"><a href="association-helper-methods.html#cb213-3" aria-hidden="true"></a>   has_many(<span class="st">:actors</span>, { <span class="st">:through</span> =&gt; <span class="st">:characters</span>, <span class="st">:source</span> =&gt; <span class="st">:actor</span> })</span>
-<span id="cb213-4"><a href="association-helper-methods.html#cb213-4" aria-hidden="true"></a><span class="kw">end</span></span>
-<span id="cb213-5"><a href="association-helper-methods.html#cb213-5" aria-hidden="true"></a></span>
-<span id="cb213-6"><a href="association-helper-methods.html#cb213-6" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Character</span> &lt; <span class="dt">ApplicationRecord</span></span>
-<span id="cb213-7"><a href="association-helper-methods.html#cb213-7" aria-hidden="true"></a>  belongs_to(<span class="st">:movie</span>)</span>
-<span id="cb213-8"><a href="association-helper-methods.html#cb213-8" aria-hidden="true"></a>  belongs_to(<span class="st">:actor</span>)</span>
-<span id="cb213-9"><a href="association-helper-methods.html#cb213-9" aria-hidden="true"></a><span class="kw">end</span></span>
-<span id="cb213-10"><a href="association-helper-methods.html#cb213-10" aria-hidden="true"></a></span>
-<span id="cb213-11"><a href="association-helper-methods.html#cb213-11" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Actor</span> &lt; <span class="dt">ApplicationRecord</span></span>
-<span id="cb213-12"><a href="association-helper-methods.html#cb213-12" aria-hidden="true"></a>   has_many(<span class="st">:characters</span>)</span>
-<span id="cb213-13"><a href="association-helper-methods.html#cb213-13" aria-hidden="true"></a>   has_many(<span class="st">:movies</span>, { <span class="st">:through</span> =&gt; <span class="st">:characters</span>, <span class="st">:source</span> =&gt; <span class="st">:movie</span> })</span>
-<span id="cb213-14"><a href="association-helper-methods.html#cb213-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb212-1"><a href="association-helper-methods.html#cb212-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Movie</span> &lt; <span class="dt">ApplicationRecord</span></span>
+<span id="cb212-2"><a href="association-helper-methods.html#cb212-2" aria-hidden="true"></a>   has_many(<span class="st">:characters</span>)</span>
+<span id="cb212-3"><a href="association-helper-methods.html#cb212-3" aria-hidden="true"></a>   has_many(<span class="st">:actors</span>, { <span class="st">:through</span> =&gt; <span class="st">:characters</span>, <span class="st">:source</span> =&gt; <span class="st">:actor</span> })</span>
+<span id="cb212-4"><a href="association-helper-methods.html#cb212-4" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb212-5"><a href="association-helper-methods.html#cb212-5" aria-hidden="true"></a></span>
+<span id="cb212-6"><a href="association-helper-methods.html#cb212-6" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Character</span> &lt; <span class="dt">ApplicationRecord</span></span>
+<span id="cb212-7"><a href="association-helper-methods.html#cb212-7" aria-hidden="true"></a>  belongs_to(<span class="st">:movie</span>)</span>
+<span id="cb212-8"><a href="association-helper-methods.html#cb212-8" aria-hidden="true"></a>  belongs_to(<span class="st">:actor</span>)</span>
+<span id="cb212-9"><a href="association-helper-methods.html#cb212-9" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb212-10"><a href="association-helper-methods.html#cb212-10" aria-hidden="true"></a></span>
+<span id="cb212-11"><a href="association-helper-methods.html#cb212-11" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Actor</span> &lt; <span class="dt">ApplicationRecord</span></span>
+<span id="cb212-12"><a href="association-helper-methods.html#cb212-12" aria-hidden="true"></a>   has_many(<span class="st">:characters</span>)</span>
+<span id="cb212-13"><a href="association-helper-methods.html#cb212-13" aria-hidden="true"></a>   has_many(<span class="st">:movies</span>, { <span class="st">:through</span> =&gt; <span class="st">:characters</span>, <span class="st">:source</span> =&gt; <span class="st">:movie</span> })</span>
+<span id="cb212-14"><a href="association-helper-methods.html#cb212-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 </div>
 </div>
 <!-- https://community.rstudio.com/t/insertion-of-javascript-into-bookdown-project/44176 -->

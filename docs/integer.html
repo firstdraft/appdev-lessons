@@ -417,7 +417,9 @@ Proudly published with bookdown</a></li>
 <span id="cb66-2"><a href="integer.html#cb66-2" aria-hidden="true"></a><span class="dv">12</span> - <span class="dv">5</span></span>
 <span id="cb66-3"><a href="integer.html#cb66-3" aria-hidden="true"></a><span class="dv">12</span> * <span class="dv">5</span></span>
 <span id="cb66-4"><a href="integer.html#cb66-4" aria-hidden="true"></a><span class="dv">12</span> / <span class="dv">5</span></span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/add-subtract-multiply-divide-exponent" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/add-subtract-multiply-divide-exponent" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 <p>Whoa! Did you get what you expected for that last one?</p>
 <p>It turns out that the <code>Integer</code> version of division will only return another <code>Integer</code>, and so <code>/</code> only returns the whole part (like in elementary school). If you want the remainder, you have to use the <code>%</code> (called the “modulus”) operator. Try this:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb67-1"><a href="integer.html#cb67-1" aria-hidden="true"></a><span class="dv">12</span> % <span class="dv">5</span></span></code></pre></div>
@@ -426,27 +428,23 @@ Proudly published with bookdown</a></li>
 <div id="start-the-gitpod-project-for-integer" class="section level5 unnumbered hasAnchor">
 <h5>Start the GitPod Project for Integer<a href="integer.html#start-the-gitpod-project-for-integer" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Once you’ve played with the REPL, it’s time to move into the graded project environment.</p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the <code>integer_math.rb</code> file.</p>
-<ol style="list-style-type: decimal">
-<li><p>Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/integer-chapter/tree/bp-additions" target="_blank">https://github.com/bpurinton-appdev/integer-chapter/tree/bp-additions</a></p></li>
-<li><p>Open the <code>integer_math.rb</code> file in the editor window.</p></li>
-<li><p>Modify the file per the instructions on top.</p></li>
-<li><p>Run your Ruby file by typing <code>ruby</code> and then the name of the file you want to run in the terminal. If we want to run <code>integer_math.rb</code>, we can write the command:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="integer.html#cb69-1" aria-hidden="true"></a><span class="ex">ruby</span> integer_math.rb</span></code></pre></div>
-<p>Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use <strong>tab completion</strong>!</p></li>
-<li><p>To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you’ve run in a terminal.</p></li>
-<li><p>When you think you have the required output, run <code>rails grade</code> and proceed when the test passes without errors.</p></li>
-</ol>
-<p>If you are struggling, <strong>try to experiment directly in the IRB environment</strong> by typing <code>irb</code> into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start <code>irb</code> then the terminal will no longer be in the <code>bash</code> environment so things like <code>rails grade</code> won’t work. You will need to open a second terminal with the plus (+) icon and switch between the <code>irb</code> and <code>bash</code> terminals as needed. Alternatively type <code>exit</code> at the IRB terminal prompt to return to the <code>bash</code> environment.</p>
-<p><img src="assets/string/irb-gif.gif" /></p>
+<div class="proj">
+<p>Open the GitPod project for this chapter and start with the exercise <code>integer_math.rb</code>:</p>
+<p>LTI{Load assignment}(<a href="https://github.com/bpurinton-appdev/integer-chapter/tree/bp-additions" class="uri">https://github.com/bpurinton-appdev/integer-chapter/tree/bp-additions</a>)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[integer_project]</p>
+<p>For a GitPod refresher, <a href="string.html#start-gitpod-project">see here</a>.</p>
+</div>
 </div>
 </div>
 <div id="odd-and-even" class="section level4 unnumbered hasAnchor">
 <h4>odd? and even?<a href="integer.html#odd-and-even" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>.odd?</code> and <code>.even?</code> methods return <code>true</code> or <code>false</code> based on whether the number is, well, odd or even. Don’t be thrown off by the question mark at the end of the method name — it’s nothing special, just another letter. Rubyists like to end method names with a question mark when methods return <code>true</code> or <code>false</code>.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb70-1"><a href="integer.html#cb70-1" aria-hidden="true"></a>p <span class="dv">7</span>.odd?</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/odd" target="_blank">Click here for a REPL to try it.</a></p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod <code>Integer</code> project and work through <code>integer_odd.rb</code></p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb69-1"><a href="integer.html#cb69-1" aria-hidden="true"></a>p <span class="dv">7</span>.odd?</span></code></pre></div>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/odd" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
+<div class="proj">
+<p>Return to the GitPod <code>Integer</code> project and work through <code>integer_odd.rb</code></p>
+</div>
 </div>
 <div id="rand" class="section level4 unnumbered hasAnchor">
 <h4>rand<a href="integer.html#rand" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -454,28 +452,34 @@ Proudly published with bookdown</a></li>
 --><label for="fn-13-toggle"><sup>13</sup></label><!--
 --><input type="checkbox" hidden id="fn-13-toggle"/>
 <span id="fn-content">This is another method defined on <code>Kernel</code>, so the longhand would be <code>Kernel.rand(6)</code>.</span></span>, called <code>rand</code>. It returns a random number, and is very useful for all kinds of stuff, everything from games to statistical analysis:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb71-1"><a href="integer.html#cb71-1" aria-hidden="true"></a>rand(<span class="dv">6</span>) <span class="co"># =&gt; returns a random integer between 0 and 5</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb70-1"><a href="integer.html#cb70-1" aria-hidden="true"></a>rand(<span class="dv">6</span>) <span class="co"># =&gt; returns a random integer between 0 and 5</span></span></code></pre></div>
 <p>Somewhat oddly, <code>rand(n)</code> will return a random integer between <code>0</code> and <code>n - 1</code> rather than between <code>1</code> and <code>n</code>. That may seem surprising, but it’s actually pretty handy because a lot of times what we want to do is generate a random <em>offset</em> and it’s convenient for that to include 0 as a possibility.</p>
 <p>Give it a try:</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb72-1"><a href="integer.html#cb72-1" aria-hidden="true"></a><span class="co"># random number between 0 and 8</span></span>
-<span id="cb72-2"><a href="integer.html#cb72-2" aria-hidden="true"></a>p rand(<span class="dv">9</span>)</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/rand" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb71-1"><a href="integer.html#cb71-1" aria-hidden="true"></a><span class="co"># random number between 0 and 8</span></span>
+<span id="cb71-2"><a href="integer.html#cb71-2" aria-hidden="true"></a>p rand(<span class="dv">9</span>)</span></code></pre></div>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/rand" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 </div>
 <div id="to_s" class="section level4 unnumbered hasAnchor">
 <h4>to_s<a href="integer.html#to_s" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We often will want to combine our <code>Integer</code>s with <code>String</code>s when crafting output for our users. Give it a try:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb73-1"><a href="integer.html#cb73-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">100</span>)</span>
-<span id="cb73-2"><a href="integer.html#cb73-2" aria-hidden="true"></a>p <span class="st">&quot;Your lucky number is&quot;</span> + lucky_number</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb72-1"><a href="integer.html#cb72-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">100</span>)</span>
+<span id="cb72-2"><a href="integer.html#cb72-2" aria-hidden="true"></a>p <span class="st">&quot;Your lucky number is&quot;</span> + lucky_number</span></code></pre></div>
 <p>Uh oh! <a href="nouns-verbs-and-grammar.html#seriously-please-read-the-error-message">RTEM!</a></p>
 <p>It turns out that <code>String</code>’s <code>+</code> method can only add two strings together, not a string and an object of some other class. So, a lot of times we’ll need to convert an <code>Integer</code> into a <code>String</code> prior to output. Fortunately <code>Integer</code> has a handy method, <code>to_s</code> (or “to string”), that does just that:</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb74-1"><a href="integer.html#cb74-1" aria-hidden="true"></a>p <span class="dv">98</span>.to_s</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/tos" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb73-1"><a href="integer.html#cb73-1" aria-hidden="true"></a>p <span class="dv">98</span>.to_s</span></code></pre></div>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/tos" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 </div>
 <div id="to_f" class="section level4 unnumbered hasAnchor">
 <h4>to_f<a href="integer.html#to_f" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Similarly, there’s a <code>to_f</code> (or “to float”) method to convert an <code>Integer</code> to a <code>Float</code>, which is often handy for doing math, as we’ll see next.</p>
 <p><strong>BENP: maybe combine to_i, to_f and to_s here in a gitpod exercise / modify integer_birth_year. integer_birth_year could move to dates chapter</strong></p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod <code>Integer</code> project and work through <code>integer_birth_year.rb</code></p>
+<div class="proj">
+<p>Return to the GitPod <code>Integer</code> project and work through <code>integer_birth_year.rb</code></p>
+</div>
 </div>
 </div>
 <div id="conclusion-1" class="section level3 hasAnchor" number="1.4.3">

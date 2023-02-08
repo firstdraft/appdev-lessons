@@ -396,25 +396,25 @@ Proudly published with bookdown</a></li>
 <div id="no-parentheses-around-arguments" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">C.1</span> No parentheses around arguments<a href="no-parentheses-around-arguments.html#no-parentheses-around-arguments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When we call a method that has arguments, we put the arguments within parentheses (<code>()</code>) immediately next to the method name (with no space between the method name and the opening parenthesis):</p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb282-1"><a href="no-parentheses-around-arguments.html#cb282-1" aria-hidden="true"></a><span class="st">&quot;hello&quot;</span>.gsub(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;z&quot;</span>)</span>
+<div class="sourceCode" id="cb281"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb281-1"><a href="no-parentheses-around-arguments.html#cb281-1" aria-hidden="true"></a><span class="st">&quot;hello&quot;</span>.gsub(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;z&quot;</span>)</span>
+<span id="cb281-2"><a href="no-parentheses-around-arguments.html#cb281-2" aria-hidden="true"></a></span>
+<span id="cb281-3"><a href="no-parentheses-around-arguments.html#cb281-3" aria-hidden="true"></a><span class="co"># =&gt; &quot;hezzo&quot;</span></span></code></pre></div>
+<p>Ruby will allow you to, optionally, drop the parentheses around arguments:</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb282-1"><a href="no-parentheses-around-arguments.html#cb282-1" aria-hidden="true"></a><span class="st">&quot;hello&quot;</span>.gsub <span class="st">&quot;l&quot;</span>, <span class="st">&quot;z&quot;</span></span>
 <span id="cb282-2"><a href="no-parentheses-around-arguments.html#cb282-2" aria-hidden="true"></a></span>
 <span id="cb282-3"><a href="no-parentheses-around-arguments.html#cb282-3" aria-hidden="true"></a><span class="co"># =&gt; &quot;hezzo&quot;</span></span></code></pre></div>
-<p>Ruby will allow you to, optionally, drop the parentheses around arguments:</p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb283-1"><a href="no-parentheses-around-arguments.html#cb283-1" aria-hidden="true"></a><span class="st">&quot;hello&quot;</span>.gsub <span class="st">&quot;l&quot;</span>, <span class="st">&quot;z&quot;</span></span>
-<span id="cb283-2"><a href="no-parentheses-around-arguments.html#cb283-2" aria-hidden="true"></a></span>
-<span id="cb283-3"><a href="no-parentheses-around-arguments.html#cb283-3" aria-hidden="true"></a><span class="co"># =&gt; &quot;hezzo&quot;</span></span></code></pre></div>
 <p>It’s important to remember <strong>not to mix these two by putting a space before parentheses!</strong></p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb284-1"><a href="no-parentheses-around-arguments.html#cb284-1" aria-hidden="true"></a><span class="co"># If you&#39;re going to use parens, don&#39;t also have a space</span></span>
-<span id="cb284-2"><a href="no-parentheses-around-arguments.html#cb284-2" aria-hidden="true"></a></span>
-<span id="cb284-3"><a href="no-parentheses-around-arguments.html#cb284-3" aria-hidden="true"></a><span class="st">&quot;hello&quot;</span>.gsub (<span class="st">&quot;l&quot;</span>, <span class="st">&quot;z&quot;</span>) <span class="co"># bad</span></span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb283-1"><a href="no-parentheses-around-arguments.html#cb283-1" aria-hidden="true"></a><span class="co"># If you&#39;re going to use parens, don&#39;t also have a space</span></span>
+<span id="cb283-2"><a href="no-parentheses-around-arguments.html#cb283-2" aria-hidden="true"></a></span>
+<span id="cb283-3"><a href="no-parentheses-around-arguments.html#cb283-3" aria-hidden="true"></a><span class="st">&quot;hello&quot;</span>.gsub (<span class="st">&quot;l&quot;</span>, <span class="st">&quot;z&quot;</span>) <span class="co"># bad</span></span></code></pre></div>
 <p>I like to include the parentheses around arguments because it makes it clear what’s what, <em>especially</em> when you are chaining multiple methods together. The only time that I drop the parentheses is if I am using trivial methods at the beginning of a line, like <code>p</code> or <code>ap</code>:</p>
-<div class="sourceCode" id="cb285"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb285-1"><a href="no-parentheses-around-arguments.html#cb285-1" aria-hidden="true"></a><span class="co"># Rather than</span></span>
-<span id="cb285-2"><a href="no-parentheses-around-arguments.html#cb285-2" aria-hidden="true"></a></span>
-<span id="cb285-3"><a href="no-parentheses-around-arguments.html#cb285-3" aria-hidden="true"></a>p(<span class="st">&quot;Hi there&quot;</span>)</span>
-<span id="cb285-4"><a href="no-parentheses-around-arguments.html#cb285-4" aria-hidden="true"></a></span>
-<span id="cb285-5"><a href="no-parentheses-around-arguments.html#cb285-5" aria-hidden="true"></a><span class="co"># I will usually do this instead:</span></span>
-<span id="cb285-6"><a href="no-parentheses-around-arguments.html#cb285-6" aria-hidden="true"></a></span>
-<span id="cb285-7"><a href="no-parentheses-around-arguments.html#cb285-7" aria-hidden="true"></a>p <span class="st">&quot;Hi there&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb284-1"><a href="no-parentheses-around-arguments.html#cb284-1" aria-hidden="true"></a><span class="co"># Rather than</span></span>
+<span id="cb284-2"><a href="no-parentheses-around-arguments.html#cb284-2" aria-hidden="true"></a></span>
+<span id="cb284-3"><a href="no-parentheses-around-arguments.html#cb284-3" aria-hidden="true"></a>p(<span class="st">&quot;Hi there&quot;</span>)</span>
+<span id="cb284-4"><a href="no-parentheses-around-arguments.html#cb284-4" aria-hidden="true"></a></span>
+<span id="cb284-5"><a href="no-parentheses-around-arguments.html#cb284-5" aria-hidden="true"></a><span class="co"># I will usually do this instead:</span></span>
+<span id="cb284-6"><a href="no-parentheses-around-arguments.html#cb284-6" aria-hidden="true"></a></span>
+<span id="cb284-7"><a href="no-parentheses-around-arguments.html#cb284-7" aria-hidden="true"></a>p <span class="st">&quot;Hi there&quot;</span></span></code></pre></div>
 </div>
 <!-- https://community.rstudio.com/t/insertion-of-javascript-into-bookdown-project/44176 -->
 <!-- https://stackoverflow.com/questions/6822945/add-target-blank-to-link-with-javascript -->
