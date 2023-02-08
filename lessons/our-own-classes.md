@@ -69,7 +69,10 @@ p c.role
 p c.class # => Person
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){target="_blank"}
+</div>
 
 For each attribute that we declared, we get methods that we can call to assign and retrieve values.
 
@@ -256,10 +259,16 @@ class Student
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){target="_blank"}
+<div class="experiment">
 
-##### Start the GitPod Project {-}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){target="_blank"}
+</div>
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions){target="_blank"}.
+<div class="proj">
 
-<mark>✏️ **Exercise:**</mark> On GitPod in the "our own classes" project, work through `class_person.rb`.
+  Open the GitPod "our own classes" project for this chapter and start with the exercise `class_person.rb`:
+
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[our_own_classes_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>
