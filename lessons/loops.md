@@ -108,7 +108,7 @@ end
 
 Does the code make sense to you?[^incrementing]
 
-[^incrementing]: If the line `mississipis = missippis + 1` looks a little odd to you, you're not alone. [Remember, this is _variable assignment_][Updating variables], not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
+[^incrementing]: If the line `mississipis = mississipis + 1` looks a little odd to you, you're not alone. [Remember, this is _variable assignment_][Updating variables], not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
 
 Or, rather than `while`, I could use `Integer`'s `.times` method, like this:
 
