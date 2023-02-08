@@ -396,32 +396,32 @@ Proudly published with bookdown</a></li>
 <div id="single-line-blocks" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">C.5</span> Single line blocks<a href="single-line-blocks.html#single-line-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Often, we only have one line of code within our <code>do</code>/<code>end</code> blocks:</p>
+<div class="sourceCode" id="cb304"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb304-1"><a href="single-line-blocks.html#cb304-1" aria-hidden="true"></a>numbers = [<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
+<span id="cb304-2"><a href="single-line-blocks.html#cb304-2" aria-hidden="true"></a></span>
+<span id="cb304-3"><a href="single-line-blocks.html#cb304-3" aria-hidden="true"></a>numbers.select <span class="kw">do</span> |num|</span>
+<span id="cb304-4"><a href="single-line-blocks.html#cb304-4" aria-hidden="true"></a>  num &gt; <span class="dv">3</span></span>
+<span id="cb304-5"><a href="single-line-blocks.html#cb304-5" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb304-6"><a href="single-line-blocks.html#cb304-6" aria-hidden="true"></a></span>
+<span id="cb304-7"><a href="single-line-blocks.html#cb304-7" aria-hidden="true"></a><span class="co"># =&gt; [8, 4, 9]</span></span></code></pre></div>
+<p>If you wanted to, you could fit it all on one line:</p>
 <div class="sourceCode" id="cb305"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb305-1"><a href="single-line-blocks.html#cb305-1" aria-hidden="true"></a>numbers = [<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
 <span id="cb305-2"><a href="single-line-blocks.html#cb305-2" aria-hidden="true"></a></span>
-<span id="cb305-3"><a href="single-line-blocks.html#cb305-3" aria-hidden="true"></a>numbers.select <span class="kw">do</span> |num|</span>
-<span id="cb305-4"><a href="single-line-blocks.html#cb305-4" aria-hidden="true"></a>  num &gt; <span class="dv">3</span></span>
-<span id="cb305-5"><a href="single-line-blocks.html#cb305-5" aria-hidden="true"></a><span class="kw">end</span></span>
-<span id="cb305-6"><a href="single-line-blocks.html#cb305-6" aria-hidden="true"></a></span>
-<span id="cb305-7"><a href="single-line-blocks.html#cb305-7" aria-hidden="true"></a><span class="co"># =&gt; [8, 4, 9]</span></span></code></pre></div>
-<p>If you wanted to, you could fit it all on one line:</p>
+<span id="cb305-3"><a href="single-line-blocks.html#cb305-3" aria-hidden="true"></a>numbers.select <span class="kw">do</span> |num| num &gt; <span class="dv">3</span> <span class="kw">end</span></span>
+<span id="cb305-4"><a href="single-line-blocks.html#cb305-4" aria-hidden="true"></a></span>
+<span id="cb305-5"><a href="single-line-blocks.html#cb305-5" aria-hidden="true"></a><span class="co"># =&gt; [8, 4, 9]</span></span></code></pre></div>
+<p>You can also replace the <code>do</code> with an opening curly bracket (<code>{</code>) and the <code>end</code> with a closing curly bracket (<code>}</code>):</p>
 <div class="sourceCode" id="cb306"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb306-1"><a href="single-line-blocks.html#cb306-1" aria-hidden="true"></a>numbers = [<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
 <span id="cb306-2"><a href="single-line-blocks.html#cb306-2" aria-hidden="true"></a></span>
-<span id="cb306-3"><a href="single-line-blocks.html#cb306-3" aria-hidden="true"></a>numbers.select <span class="kw">do</span> |num| num &gt; <span class="dv">3</span> <span class="kw">end</span></span>
+<span id="cb306-3"><a href="single-line-blocks.html#cb306-3" aria-hidden="true"></a>numbers.select { |num| num &gt; <span class="dv">3</span> }</span>
 <span id="cb306-4"><a href="single-line-blocks.html#cb306-4" aria-hidden="true"></a></span>
 <span id="cb306-5"><a href="single-line-blocks.html#cb306-5" aria-hidden="true"></a><span class="co"># =&gt; [8, 4, 9]</span></span></code></pre></div>
-<p>You can also replace the <code>do</code> with an opening curly bracket (<code>{</code>) and the <code>end</code> with a closing curly bracket (<code>}</code>):</p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb307-1"><a href="single-line-blocks.html#cb307-1" aria-hidden="true"></a>numbers = [<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
-<span id="cb307-2"><a href="single-line-blocks.html#cb307-2" aria-hidden="true"></a></span>
-<span id="cb307-3"><a href="single-line-blocks.html#cb307-3" aria-hidden="true"></a>numbers.select { |num| num &gt; <span class="dv">3</span> }</span>
-<span id="cb307-4"><a href="single-line-blocks.html#cb307-4" aria-hidden="true"></a></span>
-<span id="cb307-5"><a href="single-line-blocks.html#cb307-5" aria-hidden="true"></a><span class="co"># =&gt; [8, 4, 9]</span></span></code></pre></div>
 <p>This can get confusing, because now we’re overloading the curly braces (<code>{}</code>) for more than one purpose: Hash literals <em>and</em> blocks. However, it’s a very common style so you should get used to figuring out which one it is from the context. If the curly braces are next to a method and there are no key/value pairs, then it’s a block, not a Hash.</p>
 <p>This style is most often used when chaining more methods:</p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb308-1"><a href="single-line-blocks.html#cb308-1" aria-hidden="true"></a>numbers = [<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
-<span id="cb308-2"><a href="single-line-blocks.html#cb308-2" aria-hidden="true"></a></span>
-<span id="cb308-3"><a href="single-line-blocks.html#cb308-3" aria-hidden="true"></a>numbers.select { |num| num &gt; <span class="dv">3</span> }.sort</span>
-<span id="cb308-4"><a href="single-line-blocks.html#cb308-4" aria-hidden="true"></a></span>
-<span id="cb308-5"><a href="single-line-blocks.html#cb308-5" aria-hidden="true"></a><span class="co"># =&gt; [4, 8, 9]</span></span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb307-1"><a href="single-line-blocks.html#cb307-1" aria-hidden="true"></a>numbers = [<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
+<span id="cb307-2"><a href="single-line-blocks.html#cb307-2" aria-hidden="true"></a></span>
+<span id="cb307-3"><a href="single-line-blocks.html#cb307-3" aria-hidden="true"></a>numbers.select { |num| num &gt; <span class="dv">3</span> }.sort</span>
+<span id="cb307-4"><a href="single-line-blocks.html#cb307-4" aria-hidden="true"></a></span>
+<span id="cb307-5"><a href="single-line-blocks.html#cb307-5" aria-hidden="true"></a><span class="co"># =&gt; [4, 8, 9]</span></span></code></pre></div>
 <hr />
 <p>Ruby wants developers to be happy, so it gives them lots of options — this is a double-edged sword! It means we can be expressive, but it also means we need to be able to parse many different styles when reading other people’s writing. As beginners, it can be frustrating; but in the long-run, you’ll appreciate it.</p>
 

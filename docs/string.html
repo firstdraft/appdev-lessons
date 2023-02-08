@@ -400,9 +400,9 @@ Proudly published with bookdown</a></li>
 <div id="creating-strings" class="section level3 hasAnchor" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> Creating strings<a href="string.html#creating-strings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We’ve actually been taking a shortcut this whole time when we’ve been saying something like</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb28-1"><a href="string.html#cb28-1" aria-hidden="true"></a>s = <span class="st">&quot;Hello, world!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb27-1"><a href="string.html#cb27-1" aria-hidden="true"></a>s = <span class="st">&quot;Hello, world!&quot;</span></span></code></pre></div>
 <p>In Ruby, the formal way to create a new object is to use the <code>.new</code> method on the parent class:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb29-1"><a href="string.html#cb29-1" aria-hidden="true"></a>s = <span class="dt">String</span>.new</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb28-1"><a href="string.html#cb28-1" aria-hidden="true"></a>s = <span class="dt">String</span>.new</span></code></pre></div>
 <p>This will, however, just give us back an empty string <code>""</code>. We would then have to add each character to it one by one. One way to do so is by using the <code>.concat</code> method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.</p>
 <div id="make-the-invisible-visible-in-gitpod" class="section level4 unnumbered hasAnchor">
 <h4>Make the invisible visible in GitPod<a href="string.html#make-the-invisible-visible-in-gitpod" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -410,14 +410,14 @@ Proudly published with bookdown</a></li>
 <p>Let’s practice <strong>making the invisible visible</strong>. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there.</p>
 </div>
 <p><strong>BENP: As a template use 00:00:00 to 00:06:15 of <a href="https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&amp;start=146.06" target="_blank">string video</a> to transcribe and then re-record an exercise where you first open the <code>helloruby</code> project, create <code>howdy.rb</code>, run it, then add another <code>invisible_to_visible.rb</code> exercise like below:</strong></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb30-1"><a href="string.html#cb30-1" aria-hidden="true"></a><span class="co"># One-by-one, uncomment the p statements </span></span>
-<span id="cb30-2"><a href="string.html#cb30-2" aria-hidden="true"></a><span class="co"># below and rerun the code</span></span>
-<span id="cb30-3"><a href="string.html#cb30-3" aria-hidden="true"></a>s = <span class="dt">String</span>.new</span>
-<span id="cb30-4"><a href="string.html#cb30-4" aria-hidden="true"></a><span class="co"># p s </span></span>
-<span id="cb30-5"><a href="string.html#cb30-5" aria-hidden="true"></a>s = <span class="st">&quot;Hello, world!&quot;</span></span>
-<span id="cb30-6"><a href="string.html#cb30-6" aria-hidden="true"></a><span class="co"># p s</span></span>
-<span id="cb30-7"><a href="string.html#cb30-7" aria-hidden="true"></a>s = s.upcase</span>
-<span id="cb30-8"><a href="string.html#cb30-8" aria-hidden="true"></a><span class="co"># p s</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb29-1"><a href="string.html#cb29-1" aria-hidden="true"></a><span class="co"># One-by-one, uncomment the p statements </span></span>
+<span id="cb29-2"><a href="string.html#cb29-2" aria-hidden="true"></a><span class="co"># below and rerun the code</span></span>
+<span id="cb29-3"><a href="string.html#cb29-3" aria-hidden="true"></a>s = <span class="dt">String</span>.new</span>
+<span id="cb29-4"><a href="string.html#cb29-4" aria-hidden="true"></a><span class="co"># p s </span></span>
+<span id="cb29-5"><a href="string.html#cb29-5" aria-hidden="true"></a>s = <span class="st">&quot;Hello, world!&quot;</span></span>
+<span id="cb29-6"><a href="string.html#cb29-6" aria-hidden="true"></a><span class="co"># p s</span></span>
+<span id="cb29-7"><a href="string.html#cb29-7" aria-hidden="true"></a>s = s.upcase</span>
+<span id="cb29-8"><a href="string.html#cb29-8" aria-hidden="true"></a><span class="co"># p s</span></span></code></pre></div>
 <p>When you are done experimenting, feel free to close the GitPod project window. We will open another project momentarily and only one GitPod tab will limit confusion.</p>
 </div>
 <div id="ascii-codes" class="section level4 unnumbered hasAnchor">
@@ -687,35 +687,35 @@ Proudly published with bookdown</a></li>
 </table>
 </div>
 <p>Given those ASCII codes, we can now build up a new string from scratch like so:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb31-1"><a href="string.html#cb31-1" aria-hidden="true"></a><span class="co"># instantiate a new variable of String class</span></span>
-<span id="cb31-2"><a href="string.html#cb31-2" aria-hidden="true"></a>my_string = <span class="dt">String</span>.new</span>
-<span id="cb31-3"><a href="string.html#cb31-3" aria-hidden="true"></a></span>
-<span id="cb31-4"><a href="string.html#cb31-4" aria-hidden="true"></a><span class="co"># make the invisible visible!</span></span>
-<span id="cb31-5"><a href="string.html#cb31-5" aria-hidden="true"></a>p my_string <span class="co"># =&gt; &quot;&quot;</span></span>
-<span id="cb31-6"><a href="string.html#cb31-6" aria-hidden="true"></a></span>
-<span id="cb31-7"><a href="string.html#cb31-7" aria-hidden="true"></a><span class="co"># use the concat method to add characters</span></span>
-<span id="cb31-8"><a href="string.html#cb31-8" aria-hidden="true"></a><span class="co"># one-by-one to the empty string variable</span></span>
-<span id="cb31-9"><a href="string.html#cb31-9" aria-hidden="true"></a>my_string.concat(<span class="dv">72</span>)</span>
-<span id="cb31-10"><a href="string.html#cb31-10" aria-hidden="true"></a>my_string.concat(<span class="dv">101</span>)</span>
-<span id="cb31-11"><a href="string.html#cb31-11" aria-hidden="true"></a>my_string.concat(<span class="dv">108</span>)</span>
-<span id="cb31-12"><a href="string.html#cb31-12" aria-hidden="true"></a>my_string.concat(<span class="dv">108</span>)</span>
-<span id="cb31-13"><a href="string.html#cb31-13" aria-hidden="true"></a>my_string.concat(<span class="dv">111</span>)</span>
-<span id="cb31-14"><a href="string.html#cb31-14" aria-hidden="true"></a>my_string.concat(<span class="dv">44</span>)</span>
-<span id="cb31-15"><a href="string.html#cb31-15" aria-hidden="true"></a></span>
-<span id="cb31-16"><a href="string.html#cb31-16" aria-hidden="true"></a><span class="co"># make the invisible visible!</span></span>
-<span id="cb31-17"><a href="string.html#cb31-17" aria-hidden="true"></a>p my_string <span class="co"># =&gt; &quot;Hello,&quot;</span></span>
-<span id="cb31-18"><a href="string.html#cb31-18" aria-hidden="true"></a></span>
-<span id="cb31-19"><a href="string.html#cb31-19" aria-hidden="true"></a><span class="co"># add some more characters again</span></span>
-<span id="cb31-20"><a href="string.html#cb31-20" aria-hidden="true"></a>my_string.concat(<span class="dv">32</span>)</span>
-<span id="cb31-21"><a href="string.html#cb31-21" aria-hidden="true"></a>my_string.concat(<span class="dv">119</span>)</span>
-<span id="cb31-22"><a href="string.html#cb31-22" aria-hidden="true"></a>my_string.concat(<span class="dv">111</span>)</span>
-<span id="cb31-23"><a href="string.html#cb31-23" aria-hidden="true"></a>my_string.concat(<span class="dv">114</span>)</span>
-<span id="cb31-24"><a href="string.html#cb31-24" aria-hidden="true"></a>my_string.concat(<span class="dv">108</span>)</span>
-<span id="cb31-25"><a href="string.html#cb31-25" aria-hidden="true"></a>my_string.concat(<span class="dv">100</span>)</span>
-<span id="cb31-26"><a href="string.html#cb31-26" aria-hidden="true"></a>my_string.concat(<span class="dv">33</span>)</span>
-<span id="cb31-27"><a href="string.html#cb31-27" aria-hidden="true"></a></span>
-<span id="cb31-28"><a href="string.html#cb31-28" aria-hidden="true"></a><span class="co"># make the invisible visible!</span></span>
-<span id="cb31-29"><a href="string.html#cb31-29" aria-hidden="true"></a>p my_string <span class="co"># =&gt; &quot;Hello, world!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb30-1"><a href="string.html#cb30-1" aria-hidden="true"></a><span class="co"># instantiate a new variable of String class</span></span>
+<span id="cb30-2"><a href="string.html#cb30-2" aria-hidden="true"></a>my_string = <span class="dt">String</span>.new</span>
+<span id="cb30-3"><a href="string.html#cb30-3" aria-hidden="true"></a></span>
+<span id="cb30-4"><a href="string.html#cb30-4" aria-hidden="true"></a><span class="co"># make the invisible visible!</span></span>
+<span id="cb30-5"><a href="string.html#cb30-5" aria-hidden="true"></a>p my_string <span class="co"># =&gt; &quot;&quot;</span></span>
+<span id="cb30-6"><a href="string.html#cb30-6" aria-hidden="true"></a></span>
+<span id="cb30-7"><a href="string.html#cb30-7" aria-hidden="true"></a><span class="co"># use the concat method to add characters</span></span>
+<span id="cb30-8"><a href="string.html#cb30-8" aria-hidden="true"></a><span class="co"># one-by-one to the empty string variable</span></span>
+<span id="cb30-9"><a href="string.html#cb30-9" aria-hidden="true"></a>my_string.concat(<span class="dv">72</span>)</span>
+<span id="cb30-10"><a href="string.html#cb30-10" aria-hidden="true"></a>my_string.concat(<span class="dv">101</span>)</span>
+<span id="cb30-11"><a href="string.html#cb30-11" aria-hidden="true"></a>my_string.concat(<span class="dv">108</span>)</span>
+<span id="cb30-12"><a href="string.html#cb30-12" aria-hidden="true"></a>my_string.concat(<span class="dv">108</span>)</span>
+<span id="cb30-13"><a href="string.html#cb30-13" aria-hidden="true"></a>my_string.concat(<span class="dv">111</span>)</span>
+<span id="cb30-14"><a href="string.html#cb30-14" aria-hidden="true"></a>my_string.concat(<span class="dv">44</span>)</span>
+<span id="cb30-15"><a href="string.html#cb30-15" aria-hidden="true"></a></span>
+<span id="cb30-16"><a href="string.html#cb30-16" aria-hidden="true"></a><span class="co"># make the invisible visible!</span></span>
+<span id="cb30-17"><a href="string.html#cb30-17" aria-hidden="true"></a>p my_string <span class="co"># =&gt; &quot;Hello,&quot;</span></span>
+<span id="cb30-18"><a href="string.html#cb30-18" aria-hidden="true"></a></span>
+<span id="cb30-19"><a href="string.html#cb30-19" aria-hidden="true"></a><span class="co"># add some more characters again</span></span>
+<span id="cb30-20"><a href="string.html#cb30-20" aria-hidden="true"></a>my_string.concat(<span class="dv">32</span>)</span>
+<span id="cb30-21"><a href="string.html#cb30-21" aria-hidden="true"></a>my_string.concat(<span class="dv">119</span>)</span>
+<span id="cb30-22"><a href="string.html#cb30-22" aria-hidden="true"></a>my_string.concat(<span class="dv">111</span>)</span>
+<span id="cb30-23"><a href="string.html#cb30-23" aria-hidden="true"></a>my_string.concat(<span class="dv">114</span>)</span>
+<span id="cb30-24"><a href="string.html#cb30-24" aria-hidden="true"></a>my_string.concat(<span class="dv">108</span>)</span>
+<span id="cb30-25"><a href="string.html#cb30-25" aria-hidden="true"></a>my_string.concat(<span class="dv">100</span>)</span>
+<span id="cb30-26"><a href="string.html#cb30-26" aria-hidden="true"></a>my_string.concat(<span class="dv">33</span>)</span>
+<span id="cb30-27"><a href="string.html#cb30-27" aria-hidden="true"></a></span>
+<span id="cb30-28"><a href="string.html#cb30-28" aria-hidden="true"></a><span class="co"># make the invisible visible!</span></span>
+<span id="cb30-29"><a href="string.html#cb30-29" aria-hidden="true"></a>p my_string <span class="co"># =&gt; &quot;Hello, world!&quot;</span></span></code></pre></div>
 <div class="repl">
 <p>This is just a quick sandbox, so <a href="https://repl.it/@raghubetina/creating-objects-with-new" target="_blank">click here for a REPL to try it.</a></p>
 </div>
@@ -733,7 +733,7 @@ Proudly published with bookdown</a></li>
 <li><p>Open the <code>string_concat.rb</code> file in the editor window.</p></li>
 <li><p>Modify the file per the instructions on top.</p></li>
 <li><p>Run your Ruby file by typing <code>ruby</code> and then the name of the file you want to run in the terminal. If we want to run <code>string_concat.rb</code>, we can write the command:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="string.html#cb32-1" aria-hidden="true"></a><span class="ex">ruby</span> string_concat.rb</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="string.html#cb31-1" aria-hidden="true"></a><span class="ex">ruby</span> string_concat.rb</span></code></pre></div>
 <p>Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use <strong>tab completion</strong>!</p></li>
 <li><p>To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you’ve run in a terminal.</p></li>
 <li><p>When you think you have the required output, run <code>rails grade</code> and proceed when the test passes without errors.</p></li>
@@ -755,22 +755,22 @@ Proudly published with bookdown</a></li>
 <div id="string-addition-a.k.a." class="section level4 unnumbered hasAnchor">
 <h4>String addition, a.k.a. +<a href="string.html#string-addition-a.k.a." class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We’ve already met the <code>.concat</code> method. <code>.concat</code> can accept an integer as an argument, which it interprets as an <a href="string.html#ascii-codes">ASCII code</a>, translates into a single character, and adds to the original string:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb33-1"><a href="string.html#cb33-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.concat(<span class="dv">33</span>) <span class="co"># =&gt; &quot;hi!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb32-1"><a href="string.html#cb32-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.concat(<span class="dv">33</span>) <span class="co"># =&gt; &quot;hi!&quot;</span></span></code></pre></div>
 <p><code>.concat</code> can also accept a string literal as an argument, in which case it just adds the whole thing to the end of the original string.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb34-1"><a href="string.html#cb34-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.concat(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb33-1"><a href="string.html#cb33-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.concat(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
 <p>There’s also a shorthand for <code>.concat</code>: <code>.+</code>.<span id="fn-10"><!--
 --><label for="fn-10-toggle"><sup>10</sup></label><!--
 --><input type="checkbox" hidden id="fn-10-toggle"/>
 <span id="fn-content">This is not <em>quite</em> true. The <code>+</code> method is not just an alias for <code>concat</code> — they do slightly different things. But they’re close enough, for our purposes.</span></span> That may look a little funny, but it’s nothing special, really; it’s just a method with a very short (one letter long) name:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb35-1"><a href="string.html#cb35-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.+(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb34-1"><a href="string.html#cb34-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.+(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
 <p>But here’s where it gets interesting; Ruby has another bit of nice <em>syntactic sugar</em> for us. If a class has a method named <code>+</code>, then you are allowed to drop the <code>.</code> before the method name when you call it, and just say:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb36-1"><a href="string.html#cb36-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span> +(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb35-1"><a href="string.html#cb35-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span> +(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
 <p>Wild! And, as we learned earlier when we were <a href="a-few-program-notes.html#make-the-invisible-visible">introduced</a> to the <code>p</code> method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb37-1"><a href="string.html#cb37-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span> + <span class="st">&quot; there&quot;</span> <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb36-1"><a href="string.html#cb36-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span> + <span class="st">&quot; there&quot;</span> <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
 <p>Now this is really starting to look familiar! It’s a lot like the calculator language, actually. <a href="a-few-program-notes.html#developer-happiness">Developer happiness</a>, indeed.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb38-1"><a href="string.html#cb38-1" aria-hidden="true"></a>a = <span class="st">&quot;Hello&quot;</span></span>
-<span id="cb38-2"><a href="string.html#cb38-2" aria-hidden="true"></a>b = <span class="st">&quot;World&quot;</span></span>
-<span id="cb38-3"><a href="string.html#cb38-3" aria-hidden="true"></a>p a + b <span class="co"># =&gt; &quot;HelloWorld&quot;        # You can add strings together</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb37-1"><a href="string.html#cb37-1" aria-hidden="true"></a>a = <span class="st">&quot;Hello&quot;</span></span>
+<span id="cb37-2"><a href="string.html#cb37-2" aria-hidden="true"></a>b = <span class="st">&quot;World&quot;</span></span>
+<span id="cb37-3"><a href="string.html#cb37-3" aria-hidden="true"></a>p a + b <span class="co"># =&gt; &quot;HelloWorld&quot;        # You can add strings together</span></span></code></pre></div>
 <div class="proj">
 <p>Return to the GitPod <code>String</code> project and work through <code>string_addition.rb</code></p>
 </div>
@@ -784,14 +784,14 @@ Proudly published with bookdown</a></li>
 --><label for="fn-11-toggle"><sup>11</sup></label><!--
 --><input type="checkbox" hidden id="fn-11-toggle"/>
 <span id="fn-content">More syntactic sugar here, like with the <code>+</code> method above; you can say <code>"Ya" * 5</code> rather than <code>"Ya".*(5)</code>.</span></span>:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb39-1"><a href="string.html#cb39-1" aria-hidden="true"></a><span class="st">&quot;Ya&quot;</span> * <span class="dv">5</span> <span class="co"># =&gt; &quot;YaYaYaYaYa&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb38-1"><a href="string.html#cb38-1" aria-hidden="true"></a><span class="st">&quot;Ya&quot;</span> * <span class="dv">5</span> <span class="co"># =&gt; &quot;YaYaYaYaYa&quot;</span></span></code></pre></div>
 <p>This sort of makes sense, if you think about multiplication as being repeated addition.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb40-1"><a href="string.html#cb40-1" aria-hidden="true"></a>p <span class="st">&quot;Hello&quot;</span> * <span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb39-1"><a href="string.html#cb39-1" aria-hidden="true"></a>p <span class="st">&quot;Hello&quot;</span> * <span class="dv">3</span></span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/multiplication" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <p>The order matters, though. See what happens when you try:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb41-1"><a href="string.html#cb41-1" aria-hidden="true"></a><span class="dv">3</span> * <span class="st">&quot;Hello&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb40-1"><a href="string.html#cb40-1" aria-hidden="true"></a><span class="dv">3</span> * <span class="st">&quot;Hello&quot;</span></span></code></pre></div>
 <p>Read The Error Message (<a href="nouns-verbs-and-grammar.html#seriously-please-read-the-error-message">RTEM</a>)!</p>
 <p>Does this make sense? <code>"Hello" * 3</code> is calling the <code>String</code> method <code>*</code> with an argument of <code>3</code>, which kinda makes sense (add <code>"Hello"</code> to itself <code>3</code> times).</p>
 <p>But <code>3 * "Hello"</code> is calling the <code>Integer</code> method <code>*</code> with an argument of <code>"Hello"</code>, which doesn’t make much sense (what would it mean to add <code>3</code> to itself <code>"Hello"</code> times?).</p>
@@ -803,7 +803,7 @@ Proudly published with bookdown</a></li>
 <div id="upcase" class="section level4 unnumbered hasAnchor">
 <h4>upcase<a href="string.html#upcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The upcase method returns a copy of the <code>String</code> with all lowercase letters replaced with their uppercase counterparts.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb42-1"><a href="string.html#cb42-1" aria-hidden="true"></a>p <span class="st">&quot;hello&quot;</span>.upcase</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb41-1"><a href="string.html#cb41-1" aria-hidden="true"></a>p <span class="st">&quot;hello&quot;</span>.upcase</span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/upcase" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -811,7 +811,7 @@ Proudly published with bookdown</a></li>
 <div id="downcase" class="section level4 unnumbered hasAnchor">
 <h4>downcase<a href="string.html#downcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The downcase method returns a copy of the <code>String</code> with all uppercase letters replaced with their lowercase counterparts.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb43-1"><a href="string.html#cb43-1" aria-hidden="true"></a>p <span class="st">&quot;I&#39;M NOT YELLING AT YOU&quot;</span>.downcase</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb42-1"><a href="string.html#cb42-1" aria-hidden="true"></a>p <span class="st">&quot;I&#39;M NOT YELLING AT YOU&quot;</span>.downcase</span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/downcase" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -819,7 +819,7 @@ Proudly published with bookdown</a></li>
 <div id="swapcase" class="section level4 unnumbered hasAnchor">
 <h4>swapcase<a href="string.html#swapcase" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The swapcase method returns a copy of the <code>String</code> with all uppercase letters replaced with their lowercase counterparts, <em>and</em> vice versa.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb44-1"><a href="string.html#cb44-1" aria-hidden="true"></a>p <span class="st">&quot;FaMiLy&quot;</span>.swapcase <span class="co"># =&gt; &quot;fAmIlY</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb43-1"><a href="string.html#cb43-1" aria-hidden="true"></a>p <span class="st">&quot;FaMiLy&quot;</span>.swapcase <span class="co"># =&gt; &quot;fAmIlY</span></span></code></pre></div>
 <div class="proj">
 <p>Return to the GitPod <code>String</code> project and work through <code>string_case.rb</code></p>
 </div>
@@ -827,7 +827,7 @@ Proudly published with bookdown</a></li>
 <div id="reverse" class="section level4 unnumbered hasAnchor">
 <h4>reverse<a href="string.html#reverse" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The reverse method returns a new <code>String</code> with the characters from the <code>String</code> in reverse order.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb45-1"><a href="string.html#cb45-1" aria-hidden="true"></a>p <span class="st">&quot;I can speak in backwords words&quot;</span>.reverse</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb44-1"><a href="string.html#cb44-1" aria-hidden="true"></a>p <span class="st">&quot;I can speak in backwords words&quot;</span>.reverse</span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/reverse" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -835,7 +835,7 @@ Proudly published with bookdown</a></li>
 <div id="length" class="section level4 unnumbered hasAnchor">
 <h4>length<a href="string.html#length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The length method returns the number of characters (as an <code>Integer</code>) that a <code>String</code> has.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb46-1"><a href="string.html#cb46-1" aria-hidden="true"></a>p <span class="st">&quot;Supercalifragilisticexpialidocious&quot;</span>.length</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb45-1"><a href="string.html#cb45-1" aria-hidden="true"></a>p <span class="st">&quot;Supercalifragilisticexpialidocious&quot;</span>.length</span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/length" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -843,12 +843,12 @@ Proudly published with bookdown</a></li>
 <div id="chomp" class="section level4 unnumbered hasAnchor">
 <h4>chomp<a href="string.html#chomp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>chomp</code> method is mostly used to remove the <code>"\n"</code> (newline) character from the end of a string, if it is present:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb47-1"><a href="string.html#cb47-1" aria-hidden="true"></a><span class="st">&quot;Raghu\n&quot;</span>.chomp <span class="co"># =&gt; &quot;Raghu&quot;</span></span>
-<span id="cb47-2"><a href="string.html#cb47-2" aria-hidden="true"></a><span class="st">&quot;Raghu&quot;</span>.chomp <span class="co"># =&gt; &quot;Raghu&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb46-1"><a href="string.html#cb46-1" aria-hidden="true"></a><span class="st">&quot;Raghu\n&quot;</span>.chomp <span class="co"># =&gt; &quot;Raghu&quot;</span></span>
+<span id="cb46-2"><a href="string.html#cb46-2" aria-hidden="true"></a><span class="st">&quot;Raghu&quot;</span>.chomp <span class="co"># =&gt; &quot;Raghu&quot;</span></span></code></pre></div>
 <p>This seemingly strange task is very common due to the way that getting user input works; usually someone has to type something at a prompt and then they press <kbd>return</kbd> to submit it, and that adds a “newline” (<code>"\n"</code>) to the end of the string that they typed. Typically, we want to <code>chomp</code> that off the end of their input before we do anything further with it.</p>
 <p><code>chomp</code> can also remove other specified character(s) from the end of the string, if they are provided as an argument:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb48-1"><a href="string.html#cb48-1" aria-hidden="true"></a><span class="st">&quot;1 apples&quot;</span>.chomp(<span class="st">&quot;s&quot;</span>) <span class="co"># =&gt; &quot;1 apple&quot;</span></span>
-<span id="cb48-2"><a href="string.html#cb48-2" aria-hidden="true"></a><span class="st">&quot;1 apple&quot;</span>.chomp(<span class="st">&quot;s&quot;</span>) <span class="co"># =&gt; &quot;1 apple&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb47-1"><a href="string.html#cb47-1" aria-hidden="true"></a><span class="st">&quot;1 apples&quot;</span>.chomp(<span class="st">&quot;s&quot;</span>) <span class="co"># =&gt; &quot;1 apple&quot;</span></span>
+<span id="cb47-2"><a href="string.html#cb47-2" aria-hidden="true"></a><span class="st">&quot;1 apple&quot;</span>.chomp(<span class="st">&quot;s&quot;</span>) <span class="co"># =&gt; &quot;1 apple&quot;</span></span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/chomp" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -859,8 +859,8 @@ Proudly published with bookdown</a></li>
 <div id="gsub" class="section level4 unnumbered hasAnchor">
 <h4>gsub<a href="string.html#gsub" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>gsub</code> method returns a copy of the <code>String</code> it was called on with all occurrences of the first argument substituted for the second argument.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb49-1"><a href="string.html#cb49-1" aria-hidden="true"></a>a = <span class="st">&quot;Hello&quot;</span></span>
-<span id="cb49-2"><a href="string.html#cb49-2" aria-hidden="true"></a>p a.gsub(<span class="st">&quot;ll&quot;</span>, <span class="st">&quot;ww&quot;</span>)  <span class="co"># =&gt; &quot;Hewwo&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb48-1"><a href="string.html#cb48-1" aria-hidden="true"></a>a = <span class="st">&quot;Hello&quot;</span></span>
+<span id="cb48-2"><a href="string.html#cb48-2" aria-hidden="true"></a>p a.gsub(<span class="st">&quot;ll&quot;</span>, <span class="st">&quot;ww&quot;</span>)  <span class="co"># =&gt; &quot;Hewwo&quot;</span></span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/gsub" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -874,13 +874,13 @@ Proudly published with bookdown</a></li>
 <span id="fn-content">If your project requires scanning text for patterns, then <a href="https://regexone.com/" target="_blank">RegexOne</a> is a good resource for learning more. <a href="https://rubular.com/" target="_blank">Rubular</a> is handy for quickly testing your regular expressions against some example strings.</span></span> that come in handy with <code>gsub</code>, in particular:</p>
 <ul>
 <li><p><code>/\s+/</code> matches all whitespace, so we can use it with <code>gsub</code> to <em>remove</em> all whitespace:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb50-1"><a href="string.html#cb50-1" aria-hidden="true"></a><span class="st">&quot;Hello there,\nfriend&quot;</span>.gsub(<span class="ot">/\s+/</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;Hellothere,friend&quot;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb49"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb49-1"><a href="string.html#cb49-1" aria-hidden="true"></a><span class="st">&quot;Hello there,\nfriend&quot;</span>.gsub(<span class="ot">/\s+/</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;Hellothere,friend&quot;</span></span></code></pre></div></li>
 <li><p><code>/[^0-9]/</code> matches everything <em>except</em> numeric digits, so we can use it with <code>gsub</code> to <em>remove</em> everything except digits:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb51-1"><a href="string.html#cb51-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^0-9]/</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;29&quot;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb50"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb50-1"><a href="string.html#cb50-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^0-9]/</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;29&quot;</span></span></code></pre></div></li>
 <li><p><code>/[^a-z]/i</code> matches everything <em>except</em> letters (case-insensitively using the <code>i</code> mode after the <code>//</code> slashes). So we can use it with <code>gsub</code> to <em>remove</em> everything except letters:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb52-1"><a href="string.html#cb52-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^a-z]/i</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;Marchth&quot;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb51"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb51-1"><a href="string.html#cb51-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^a-z]/i</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;Marchth&quot;</span></span></code></pre></div></li>
 <li><p><code>/[^a-z0-9\s]/i</code> matches everything <em>except</em> letters, digits, and whitespace, so we can use it to remove everything except for those:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb53-1"><a href="string.html#cb53-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^a-z0-9\s]/i</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;March 29th&quot;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb52"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb52-1"><a href="string.html#cb52-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^a-z0-9\s]/i</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;March 29th&quot;</span></span></code></pre></div></li>
 </ul>
 <div class="proj">
 <p>Return to the GitPod <code>String</code> project and work through <code>string_gsub.rb</code></p>
@@ -893,7 +893,7 @@ Proudly published with bookdown</a></li>
 <div id="to_i" class="section level4 unnumbered hasAnchor">
 <h4>to_i<a href="string.html#to_i" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. <code>to_i</code> will attempt to convert a <code>String</code> object into an <code>Integer</code> object.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb54-1"><a href="string.html#cb54-1" aria-hidden="true"></a>p <span class="st">&quot;8&quot;</span>.to_i</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb53-1"><a href="string.html#cb53-1" aria-hidden="true"></a>p <span class="st">&quot;8&quot;</span>.to_i</span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/toi" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -901,7 +901,7 @@ Proudly published with bookdown</a></li>
 <div id="strip" class="section level4 unnumbered hasAnchor">
 <h4>strip<a href="string.html#strip" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>strip</code> removes all leading and trailing whitespace.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb55-1"><a href="string.html#cb55-1" aria-hidden="true"></a>p <span class="st">&quot;   This has a lot of space on the outside     &quot;</span>.strip</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb54-1"><a href="string.html#cb54-1" aria-hidden="true"></a>p <span class="st">&quot;   This has a lot of space on the outside     &quot;</span>.strip</span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/strip" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -909,7 +909,7 @@ Proudly published with bookdown</a></li>
 <div id="capitalize" class="section level4 unnumbered hasAnchor">
 <h4>capitalize<a href="string.html#capitalize" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>capitalize returns a <code>String</code> with the first character converted to uppercase and the remainder to lowercase.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb56-1"><a href="string.html#cb56-1" aria-hidden="true"></a>p <span class="st">&quot;beginning&quot;</span>.capitalize</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb55-1"><a href="string.html#cb55-1" aria-hidden="true"></a>p <span class="st">&quot;beginning&quot;</span>.capitalize</span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/capitalize" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -920,9 +920,9 @@ Proudly published with bookdown</a></li>
 <div id="include" class="section level4 unnumbered hasAnchor">
 <h4>include?<a href="string.html#include" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>include?</code> takes a String argument and returns <code>true</code> or <code>false</code> if the argument exists in the String that <code>include?</code> is called on.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb57-1"><a href="string.html#cb57-1" aria-hidden="true"></a>p <span class="st">&quot;Happy Days&quot;</span>.include?(<span class="st">&quot;H&quot;</span>)</span>
-<span id="cb57-2"><a href="string.html#cb57-2" aria-hidden="true"></a></span>
-<span id="cb57-3"><a href="string.html#cb57-3" aria-hidden="true"></a>p <span class="st">&quot;Happy Days&quot;</span>.include?(<span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb56-1"><a href="string.html#cb56-1" aria-hidden="true"></a>p <span class="st">&quot;Happy Days&quot;</span>.include?(<span class="st">&quot;H&quot;</span>)</span>
+<span id="cb56-2"><a href="string.html#cb56-2" aria-hidden="true"></a></span>
+<span id="cb56-3"><a href="string.html#cb56-3" aria-hidden="true"></a>p <span class="st">&quot;Happy Days&quot;</span>.include?(<span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/stringinclude" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -931,19 +931,19 @@ Proudly published with bookdown</a></li>
 <div id="more-on-adding-strings-together" class="section level3 hasAnchor" number="1.3.3">
 <h3><span class="header-section-number">1.3.3</span> More on adding strings together<a href="string.html#more-on-adding-strings-together" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We spend a lot of time composing strings of output for our users, so let’s see a few more examples. Try this:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb58-1"><a href="string.html#cb58-1" aria-hidden="true"></a>number = <span class="dv">6</span> * <span class="dv">7</span></span>
-<span id="cb58-2"><a href="string.html#cb58-2" aria-hidden="true"></a>message = <span class="st">&quot;Your lucky number for today is &quot;</span> + number + <span class="st">&quot;.&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb57-1"><a href="string.html#cb57-1" aria-hidden="true"></a>number = <span class="dv">6</span> * <span class="dv">7</span></span>
+<span id="cb57-2"><a href="string.html#cb57-2" aria-hidden="true"></a>message = <span class="st">&quot;Your lucky number for today is &quot;</span> + number + <span class="st">&quot;.&quot;</span></span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/String-interpolation" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <p>You’ll see that Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn’t feel comfortable with that.</p>
 <p>The solution is to tell the <code>Integer</code> to convert itself to a <code>String</code> first using the method called <code>.to_s</code>, or “to string”. Try this instead:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb59-1"><a href="string.html#cb59-1" aria-hidden="true"></a>number = <span class="dv">6</span> * <span class="dv">7</span></span>
-<span id="cb59-2"><a href="string.html#cb59-2" aria-hidden="true"></a>message = <span class="st">&quot;Your lucky number for today is &quot;</span> + number.to_s + <span class="st">&quot;.&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb58-1"><a href="string.html#cb58-1" aria-hidden="true"></a>number = <span class="dv">6</span> * <span class="dv">7</span></span>
+<span id="cb58-2"><a href="string.html#cb58-2" aria-hidden="true"></a>message = <span class="st">&quot;Your lucky number for today is &quot;</span> + number.to_s + <span class="st">&quot;.&quot;</span></span></code></pre></div>
 <p>The above technique for composing strings, adding them together with <code>+</code>, is called string addition.</p>
 <p>There’s another technique for composing strings that I personally find a bit easier; it’s called <strong>string interpolation</strong>. Try this instead:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb60-1"><a href="string.html#cb60-1" aria-hidden="true"></a>number = <span class="dv">6</span> * <span class="dv">7</span></span>
-<span id="cb60-2"><a href="string.html#cb60-2" aria-hidden="true"></a>message = <span class="st">&quot;Your lucky number for today is </span><span class="ot">#{</span>number<span class="ot">}</span><span class="st">.&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb59-1"><a href="string.html#cb59-1" aria-hidden="true"></a>number = <span class="dv">6</span> * <span class="dv">7</span></span>
+<span id="cb59-2"><a href="string.html#cb59-2" aria-hidden="true"></a>message = <span class="st">&quot;Your lucky number for today is </span><span class="ot">#{</span>number<span class="ot">}</span><span class="st">.&quot;</span></span></code></pre></div>
 <p>Basically, inside the string, you place <code>#{}</code> where you eventually want your value to go. Inside the curly braces, you can write any Ruby expression without worrying about whether it is a string or not. The expression will be evaluated, converted to a string, and added to the string right in that spot. You can interpolate as many expressions as you want into a single string. Pretty neat!</p>
 <p>If you find interpolation confusing, feel free to just use addition.</p>
 </div>
@@ -951,11 +951,11 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">1.3.4</span> Getting strings from users with gets<a href="string.html#getting-strings-from-users-with-gets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can make our programs much more interesting if we allow the users of the program to interact with them by supplying input. We can do this with the <code>gets</code> method (pronounced “get S”, short for “get string”), which will pause the program and wait for the user to type something in the terminal and press <kbd>return</kbd>. The return value of the <code>gets</code> method will be a <code>String</code> containing what the user typed, which we can store in a variable and then process further like any other <code>String</code>.</p>
 <p>For example, rather than saying “Hello, world!”, let’s have the computer say hello to the user by name instead. When you run this program, it will pause after saying <code>"What's your name?"</code> and you will have to type something in and press <kbd>return</kbd>. <strong>Click on the terminal to put focus there</strong>, and then you’ll be able to type into it:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb61-1"><a href="string.html#cb61-1" aria-hidden="true"></a>p <span class="st">&quot;What&#39;s your name?&quot;</span></span>
-<span id="cb61-2"><a href="string.html#cb61-2" aria-hidden="true"></a></span>
-<span id="cb61-3"><a href="string.html#cb61-3" aria-hidden="true"></a>their_name = gets</span>
-<span id="cb61-4"><a href="string.html#cb61-4" aria-hidden="true"></a></span>
-<span id="cb61-5"><a href="string.html#cb61-5" aria-hidden="true"></a>p <span class="st">&quot;Hello, &quot;</span> + their_name + <span class="st">&quot;!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb60-1"><a href="string.html#cb60-1" aria-hidden="true"></a>p <span class="st">&quot;What&#39;s your name?&quot;</span></span>
+<span id="cb60-2"><a href="string.html#cb60-2" aria-hidden="true"></a></span>
+<span id="cb60-3"><a href="string.html#cb60-3" aria-hidden="true"></a>their_name = gets</span>
+<span id="cb60-4"><a href="string.html#cb60-4" aria-hidden="true"></a></span>
+<span id="cb60-5"><a href="string.html#cb60-5" aria-hidden="true"></a>p <span class="st">&quot;Hello, &quot;</span> + their_name + <span class="st">&quot;!&quot;</span></span></code></pre></div>
 <div class="repl">
 <p><a href="https://repl.it/@raghubetina/Hello-gets" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -963,9 +963,9 @@ Proudly published with bookdown</a></li>
 <div id="puts" class="section level4 unnumbered hasAnchor">
 <h4>puts<a href="string.html#puts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>If you want to see the newline in action, we can use a different printing method called <code>Kernel.puts</code> (pronounced “put S”, short for “put string”). <code>puts</code> is actually the printing method that is used most when crafting the final output of command-line programs; as opposed to <code>Kernel.p</code>, which is used most for <em>making the invisible visible</em> while debugging. Try switching</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb62-1"><a href="string.html#cb62-1" aria-hidden="true"></a>p <span class="st">&quot;Hello, &quot;</span> + their_name + <span class="st">&quot;!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb61-1"><a href="string.html#cb61-1" aria-hidden="true"></a>p <span class="st">&quot;Hello, &quot;</span> + their_name + <span class="st">&quot;!&quot;</span></span></code></pre></div>
 <p>to</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb63-1"><a href="string.html#cb63-1" aria-hidden="true"></a>puts <span class="st">&quot;Hello, &quot;</span> + their_name + <span class="st">&quot;!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb62-1"><a href="string.html#cb62-1" aria-hidden="true"></a>puts <span class="st">&quot;Hello, &quot;</span> + their_name + <span class="st">&quot;!&quot;</span></span></code></pre></div>
 <p>and see how the output is different.</p>
 <p>You can see that the quotes around the string are removed, which makes sense if you’re actually displaying output to a user and not debugging — users should not know or care about the quotes around Ruby string literals. And the newline character causes a line break when a string is printed with <code>puts</code>, as it should.</p>
 <p>Most of the time, we’ll stick with <code>p</code>, since it provides more details while debugging; but it’s good to know that <code>puts</code> exists.</p>
@@ -973,7 +973,7 @@ Proudly published with bookdown</a></li>
 <div id="gets.chomp" class="section level4 unnumbered hasAnchor">
 <h4>gets.chomp<a href="string.html#gets.chomp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We almost never want to keep the <code>\n</code> that results from the <kbd>return</kbd> keypress that submits the user’s input. Fortunately, <a href="string.html#chomp">the handy <code>.chomp</code> method</a> does exactly what we need — if there’s a <code>\n</code> at the end of a string, it will remove it; if there isn’t, it does nothing. So, in practice, when we call <code>gets</code> we almost always tack a <code>.chomp</code> on to it immediately. Try modifying the program to:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb64-1"><a href="string.html#cb64-1" aria-hidden="true"></a>their_name = gets.chomp</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb63-1"><a href="string.html#cb63-1" aria-hidden="true"></a>their_name = gets.chomp</span></code></pre></div>
 <p>and see how it’s different.</p>
 <div class="proj">
 <p>Return to the GitPod <code>String</code> project and work through <code>string_gets.rb</code></p>

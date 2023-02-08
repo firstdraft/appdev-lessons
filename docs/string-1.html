@@ -401,8 +401,8 @@ Proudly published with bookdown</a></li>
 <p>or</p>
 <p><code>String#concat(String) ⇒ String</code></p>
 <p>Appends the given arguments to a string. when given an integer as an argument, it converts the integer into ASCII code.</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb215-1"><a href="string-1.html#cb215-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.concat(<span class="dv">33</span>) <span class="co"># =&gt; &quot;hi!&quot;</span></span></code></pre></div>
-<div class="sourceCode" id="cb216"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb216-1"><a href="string-1.html#cb216-1" aria-hidden="true"></a><span class="st">&quot;Rub&quot;</span>.concat(<span class="dv">121</span>)  <span class="co"># =&gt; &quot;Ruby&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb214-1"><a href="string-1.html#cb214-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.concat(<span class="dv">33</span>) <span class="co"># =&gt; &quot;hi!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb215-1"><a href="string-1.html#cb215-1" aria-hidden="true"></a><span class="st">&quot;Rub&quot;</span>.concat(<span class="dv">121</span>)  <span class="co"># =&gt; &quot;Ruby&quot;</span></span></code></pre></div>
 <p>When given a string literal as an argument, it adds that string to the original string. <code>.+</code> or <code>+</code> is <em>similar</em> to the <code>.concat</code> method. <code>+</code> will return a new combined <code>String</code> instead of modifying the original <code>String</code>. Each line of code below will give the same output.</p>
 <p><code>"hi".concat(" there")</code><br />
 <code>"hi".+(" there")</code><br />
@@ -414,9 +414,9 @@ Proudly published with bookdown</a></li>
 <div id="method" class="section level3 hasAnchor" number="3.4.2">
 <h3><span class="header-section-number">B.4.2</span> * method<a href="string-1.html#method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Multiplies the original string by the given integer and returns the new modified <a href="string.html#string"><code>String</code></a>.</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb217-1"><a href="string-1.html#cb217-1" aria-hidden="true"></a><span class="st">&quot;Ya&quot;</span> * <span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb216-1"><a href="string-1.html#cb216-1" aria-hidden="true"></a><span class="st">&quot;Ya&quot;</span> * <span class="dv">5</span></span></code></pre></div>
 <p>Returns <code>"YaYaYaYaYa"</code></p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb218-1"><a href="string-1.html#cb218-1" aria-hidden="true"></a><span class="st">&quot;Ya&quot;</span> * <span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb217-1"><a href="string-1.html#cb217-1" aria-hidden="true"></a><span class="st">&quot;Ya&quot;</span> * <span class="dv">0</span></span></code></pre></div>
 <p>Returns <code>""</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#string-multiplication-aka-">Full explanation</a></p>
 </div>
@@ -424,7 +424,7 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.4.3</span> .upcase<a href="string-1.html#upcase-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>String#upcase ⇒ String</code></p>
 <p>Converts all lowercase letters to their uppercase counterparts in the given string and returns the new modified <a href="string.html#string"><code>String</code></a>.</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb219-1"><a href="string-1.html#cb219-1" aria-hidden="true"></a><span class="st">&quot;hello&quot;</span>.upcase<span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb218-1"><a href="string-1.html#cb218-1" aria-hidden="true"></a><span class="st">&quot;hello&quot;</span>.upcase<span class="st">`</span></span></code></pre></div>
 <p>Returns</p>
 <p><code>"HELLO"</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#upcase">Full explanation</a></p>
@@ -433,7 +433,7 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.4.4</span> .downcase<a href="string-1.html#downcase-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>String#downcase ⇒ String</code></p>
 <p>Converts all the uppercase letters to their lowercase counterparts from the given <code>String</code>. Returns the new modified <a href="string.html#string"><code>String</code></a>.</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb220-1"><a href="string-1.html#cb220-1" aria-hidden="true"></a><span class="st">&quot;HI&quot;</span>.downcase<span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb219-1"><a href="string-1.html#cb219-1" aria-hidden="true"></a><span class="st">&quot;HI&quot;</span>.downcase<span class="st">`</span></span></code></pre></div>
 <p>Returns</p>
 <p><code>"hi"</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#downcase">Full explanation</a></p>
@@ -442,11 +442,11 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.4.5</span> .swapcase<a href="string-1.html#swapcase-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>String#swapcase ⇒ String</code></p>
 <p>Converts all the uppercase letters to their lowercase counterparts and lowercase letters to their uppercase counterparts from the given string. Returns the new modified <a href="string.html#string"><code>String</code></a>.</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb221-1"><a href="string-1.html#cb221-1" aria-hidden="true"></a><span class="st">&quot;Hi There&quot;</span>.swapcase</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb220-1"><a href="string-1.html#cb220-1" aria-hidden="true"></a><span class="st">&quot;Hi There&quot;</span>.swapcase</span></code></pre></div>
 <p>Returns</p>
 <p><code>"hI tHERE"</code></p>
 <hr />
-<div class="sourceCode" id="cb222"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb222-1"><a href="string-1.html#cb222-1" aria-hidden="true"></a><span class="st">&quot;hI tHERE&quot;</span>.swapcase</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb221-1"><a href="string-1.html#cb221-1" aria-hidden="true"></a><span class="st">&quot;hI tHERE&quot;</span>.swapcase</span></code></pre></div>
 <p>Returns</p>
 <p><code>"Hi There"</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#swapcase">Full explanation</a></p>
@@ -455,7 +455,7 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.4.6</span> .reverse (String)<a href="string-1.html#reverse-string" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>String#reverse ⇒ String</code></p>
 <p>Returns a new <a href="string.html#string"><code>String</code></a> with the characters from the original String in reverse order.</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb223-1"><a href="string-1.html#cb223-1" aria-hidden="true"></a><span class="st">&quot;stressed&quot;</span>.reverse</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb222-1"><a href="string-1.html#cb222-1" aria-hidden="true"></a><span class="st">&quot;stressed&quot;</span>.reverse</span></code></pre></div>
 <p>Returns</p>
 <p><code>"desserts"</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#reversed">Full explanation</a></p>
@@ -464,7 +464,7 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.4.7</span> .length<a href="string-1.html#length-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>String#length ⇒ Integer</code></p>
 <p>Returns the <a href="integer.html#integer"><code>Integer</code></a> number of charactersin the <code>String</code>.</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb224-1"><a href="string-1.html#cb224-1" aria-hidden="true"></a><span class="st">&quot;hippopotamus&quot;</span>.length</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb223-1"><a href="string-1.html#cb223-1" aria-hidden="true"></a><span class="st">&quot;hippopotamus&quot;</span>.length</span></code></pre></div>
 <p>Returns</p>
 <p><code>12</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#length">Full explanation</a></p>
@@ -476,27 +476,27 @@ Proudly published with bookdown</a></li>
 <p><code>String#chomp(String) ⇒ String</code></p>
 <p>When not given any argument, removes the <code>"\n"</code> (newline) character from the end of the string. When given an argument of a charcter or a string, it remove that argument from the <em>end</em> of the orginal string.</p>
 <p>Returns a new <a href="string.html#string"><code>String</code></a> with the character removed.</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb225-1"><a href="string-1.html#cb225-1" aria-hidden="true"></a><span class="st">&quot;Hey!\n&quot;</span>.chomp  </span>
-<span id="cb225-2"><a href="string-1.html#cb225-2" aria-hidden="true"></a><span class="st">&quot;Hey!&quot;</span>.chomp(<span class="st">&quot;!&quot;</span>)  </span>
-<span id="cb225-3"><a href="string-1.html#cb225-3" aria-hidden="true"></a><span class="st">&quot;Hey There&quot;</span>.chomp(<span class="st">&quot;There&quot;</span>)  </span>
-<span id="cb225-4"><a href="string-1.html#cb225-4" aria-hidden="true"></a><span class="st">&quot;Hey!&quot;</span>.chomp(<span class="st">&quot;y&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb226"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb226-1"><a href="string-1.html#cb226-1" aria-hidden="true"></a><span class="st">&quot;Hey!&quot;</span>  </span>
-<span id="cb226-2"><a href="string-1.html#cb226-2" aria-hidden="true"></a><span class="st">&quot;Hey&quot;</span>  </span>
-<span id="cb226-3"><a href="string-1.html#cb226-3" aria-hidden="true"></a><span class="st">&quot;Hey &quot;</span>  </span>
-<span id="cb226-4"><a href="string-1.html#cb226-4" aria-hidden="true"></a><span class="st">&quot;Hey!&quot;</span></span></code></pre></div>
-<div class="sourceCode" id="cb227"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb227-1"><a href="string-1.html#cb227-1" aria-hidden="true"></a>p <span class="st">&quot;What is your name?&quot;</span></span>
-<span id="cb227-2"><a href="string-1.html#cb227-2" aria-hidden="true"></a>name = gets <span class="co"># supposes the user inputs &quot;Clark&quot; and then hits return</span></span>
-<span id="cb227-3"><a href="string-1.html#cb227-3" aria-hidden="true"></a>p <span class="st">&quot;Hi&quot;</span> + name</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb224-1"><a href="string-1.html#cb224-1" aria-hidden="true"></a><span class="st">&quot;Hey!\n&quot;</span>.chomp  </span>
+<span id="cb224-2"><a href="string-1.html#cb224-2" aria-hidden="true"></a><span class="st">&quot;Hey!&quot;</span>.chomp(<span class="st">&quot;!&quot;</span>)  </span>
+<span id="cb224-3"><a href="string-1.html#cb224-3" aria-hidden="true"></a><span class="st">&quot;Hey There&quot;</span>.chomp(<span class="st">&quot;There&quot;</span>)  </span>
+<span id="cb224-4"><a href="string-1.html#cb224-4" aria-hidden="true"></a><span class="st">&quot;Hey!&quot;</span>.chomp(<span class="st">&quot;y&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb225-1"><a href="string-1.html#cb225-1" aria-hidden="true"></a><span class="st">&quot;Hey!&quot;</span>  </span>
+<span id="cb225-2"><a href="string-1.html#cb225-2" aria-hidden="true"></a><span class="st">&quot;Hey&quot;</span>  </span>
+<span id="cb225-3"><a href="string-1.html#cb225-3" aria-hidden="true"></a><span class="st">&quot;Hey &quot;</span>  </span>
+<span id="cb225-4"><a href="string-1.html#cb225-4" aria-hidden="true"></a><span class="st">&quot;Hey!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb226-1"><a href="string-1.html#cb226-1" aria-hidden="true"></a>p <span class="st">&quot;What is your name?&quot;</span></span>
+<span id="cb226-2"><a href="string-1.html#cb226-2" aria-hidden="true"></a>name = gets <span class="co"># supposes the user inputs &quot;Clark&quot; and then hits return</span></span>
+<span id="cb226-3"><a href="string-1.html#cb226-3" aria-hidden="true"></a>p <span class="st">&quot;Hi&quot;</span> + name</span></code></pre></div>
 <p>Prints</p>
 <p><code>"Hi Clark\n"</code></p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb228-1"><a href="string-1.html#cb228-1" aria-hidden="true"></a>p <span class="st">&quot;What is your name?&quot;</span></span>
-<span id="cb228-2"><a href="string-1.html#cb228-2" aria-hidden="true"></a>name = gets <span class="co"># supposes the user inputs &quot;Clark&quot; and then hits return</span></span>
-<span id="cb228-3"><a href="string-1.html#cb228-3" aria-hidden="true"></a>p <span class="st">&quot;Hi&quot;</span> + name.chomp</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb227-1"><a href="string-1.html#cb227-1" aria-hidden="true"></a>p <span class="st">&quot;What is your name?&quot;</span></span>
+<span id="cb227-2"><a href="string-1.html#cb227-2" aria-hidden="true"></a>name = gets <span class="co"># supposes the user inputs &quot;Clark&quot; and then hits return</span></span>
+<span id="cb227-3"><a href="string-1.html#cb227-3" aria-hidden="true"></a>p <span class="st">&quot;Hi&quot;</span> + name.chomp</span></code></pre></div>
 <p>Prints</p>
 <p><code>"Hi Clark"</code></p>
-<div class="sourceCode" id="cb229"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb229-1"><a href="string-1.html#cb229-1" aria-hidden="true"></a>p <span class="st">&quot;What is your name?&quot;</span></span>
-<span id="cb229-2"><a href="string-1.html#cb229-2" aria-hidden="true"></a>name = gets.chomp <span class="co"># supposes the user inputs &quot;Clark&quot; and then hits return</span></span>
-<span id="cb229-3"><a href="string-1.html#cb229-3" aria-hidden="true"></a>p <span class="st">&quot;Hi&quot;</span> + name</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb228-1"><a href="string-1.html#cb228-1" aria-hidden="true"></a>p <span class="st">&quot;What is your name?&quot;</span></span>
+<span id="cb228-2"><a href="string-1.html#cb228-2" aria-hidden="true"></a>name = gets.chomp <span class="co"># supposes the user inputs &quot;Clark&quot; and then hits return</span></span>
+<span id="cb228-3"><a href="string-1.html#cb228-3" aria-hidden="true"></a>p <span class="st">&quot;Hi&quot;</span> + name</span></code></pre></div>
 <p><code>"Hi Clark"</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#chomp">Full explanation</a></p>
 </div>
@@ -504,14 +504,14 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.4.9</span> .gsub<a href="string-1.html#gsub-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>String#gsub(String, String) ⇒ String</code></p>
 <p>Substitutes the all occurances of the first argument with the second argument in original string and returns a new <a href="string.html#string"><code>String</code></a> with the substitutes made.</p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb230-1"><a href="string-1.html#cb230-1" aria-hidden="true"></a><span class="st">&quot;Hello&quot;</span>.gsub(<span class="st">&quot;ello&quot;</span>, <span class="st">&quot;i&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb229-1"><a href="string-1.html#cb229-1" aria-hidden="true"></a><span class="st">&quot;Hello&quot;</span>.gsub(<span class="st">&quot;ello&quot;</span>, <span class="st">&quot;i&quot;</span>)</span></code></pre></div>
 <p>Returns</p>
 <p><code>"Hi"</code></p>
-<div class="sourceCode" id="cb231"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb231-1"><a href="string-1.html#cb231-1" aria-hidden="true"></a><span class="st">&quot;Hi.there&quot;</span>.gsub(<span class="st">&quot;.&quot;</span>, <span class="st">&quot; &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb230-1"><a href="string-1.html#cb230-1" aria-hidden="true"></a><span class="st">&quot;Hi.there&quot;</span>.gsub(<span class="st">&quot;.&quot;</span>, <span class="st">&quot; &quot;</span>)</span></code></pre></div>
 <p>Returns</p>
 <p><code>"Hi there"</code></p>
 <p>Giving an empty string as the second arugment deletes any occurences of the first arugument in the string.</p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb232-1"><a href="string-1.html#cb232-1" aria-hidden="true"></a><span class="st">&quot;example @ ruby.com&quot;</span>.gsub(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb231-1"><a href="string-1.html#cb231-1" aria-hidden="true"></a><span class="st">&quot;example @ ruby.com&quot;</span>.gsub(<span class="st">&quot; &quot;</span>, <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p>Returns</p>
 <p><code>"example@ruby.com"</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#gsub">Full explanation</a></p>
@@ -520,19 +520,19 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.4.10</span> .to_i (String)<a href="string-1.html#to_i-string" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>String#to_i  ⇒ Integer</code></p>
 <p>Converts a string literal that contains a number to an integer. The <a href="integer.html#integer"><code>Integer</code></a> is returned.</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb233-1"><a href="string-1.html#cb233-1" aria-hidden="true"></a><span class="st">&quot;8&quot;</span>.to_i</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb232-1"><a href="string-1.html#cb232-1" aria-hidden="true"></a><span class="st">&quot;8&quot;</span>.to_i</span></code></pre></div>
 <p>Returns</p>
 <p><code>8</code></p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb234-1"><a href="string-1.html#cb234-1" aria-hidden="true"></a>p <span class="st">&quot;What is your lucky number?&quot;</span></span>
-<span id="cb234-2"><a href="string-1.html#cb234-2" aria-hidden="true"></a>lucky_number = gets.chomp <span class="co"># Suppose the user types is &quot;7&quot; and then hits return</span></span>
-<span id="cb234-3"><a href="string-1.html#cb234-3" aria-hidden="true"></a>square = lucky_number ** <span class="dv">2</span> <span class="co"># This will throw an error.</span></span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb233-1"><a href="string-1.html#cb233-1" aria-hidden="true"></a>p <span class="st">&quot;What is your lucky number?&quot;</span></span>
+<span id="cb233-2"><a href="string-1.html#cb233-2" aria-hidden="true"></a>lucky_number = gets.chomp <span class="co"># Suppose the user types is &quot;7&quot; and then hits return</span></span>
+<span id="cb233-3"><a href="string-1.html#cb233-3" aria-hidden="true"></a>square = lucky_number ** <span class="dv">2</span> <span class="co"># This will throw an error.</span></span></code></pre></div>
 <p>Returns</p>
 <p><code>NoMethodError (undefined method '**' for "7":String)</code></p>
 <p>This is where the <code>.to_s</code> method comes handy.</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb235-1"><a href="string-1.html#cb235-1" aria-hidden="true"></a>p <span class="st">&quot;What is your lucky number?&quot;</span></span>
-<span id="cb235-2"><a href="string-1.html#cb235-2" aria-hidden="true"></a>lucky_number = gets.chomp <span class="co"># Suppose the user types is &quot;7&quot; and then hits return</span></span>
-<span id="cb235-3"><a href="string-1.html#cb235-3" aria-hidden="true"></a>square = lucky_numbe.to_i ** <span class="dv">2</span> <span class="co"># This will throw an error.</span></span>
-<span id="cb235-4"><a href="string-1.html#cb235-4" aria-hidden="true"></a>p square</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb234-1"><a href="string-1.html#cb234-1" aria-hidden="true"></a>p <span class="st">&quot;What is your lucky number?&quot;</span></span>
+<span id="cb234-2"><a href="string-1.html#cb234-2" aria-hidden="true"></a>lucky_number = gets.chomp <span class="co"># Suppose the user types is &quot;7&quot; and then hits return</span></span>
+<span id="cb234-3"><a href="string-1.html#cb234-3" aria-hidden="true"></a>square = lucky_numbe.to_i ** <span class="dv">2</span> <span class="co"># This will throw an error.</span></span>
+<span id="cb234-4"><a href="string-1.html#cb234-4" aria-hidden="true"></a>p square</span></code></pre></div>
 <p>Returns</p>
 <p><code>"49"</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#to_i">Full explanation</a></p>
@@ -542,7 +542,7 @@ Proudly published with bookdown</a></li>
 <p><code>String#strip  ⇒ String</code></p>
 <p>Removes all leading and trailing whitespace in the string.</p>
 <p>Returns a new <a href="string.html#string"><code>String</code></a> that has been modified from the original.</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb236-1"><a href="string-1.html#cb236-1" aria-hidden="true"></a><span class="st">&quot;   hi there &quot;</span>.strip</span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb235-1"><a href="string-1.html#cb235-1" aria-hidden="true"></a><span class="st">&quot;   hi there &quot;</span>.strip</span></code></pre></div>
 <p>Returns</p>
 <p><code>"hi there"</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#strip">Full explanation</a></p>
@@ -552,7 +552,7 @@ Proudly published with bookdown</a></li>
 <p><code>String#capitalize ⇒ String</code></p>
 <p>Capitalizes the first character of a string.</p>
 <p>Returns a new <a href="string.html#string"><code>String</code></a> that has been modified from the original.</p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb237-1"><a href="string-1.html#cb237-1" aria-hidden="true"></a><span class="st">&quot;capitalize&quot;</span>.capitalize</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb236-1"><a href="string-1.html#cb236-1" aria-hidden="true"></a><span class="st">&quot;capitalize&quot;</span>.capitalize</span></code></pre></div>
 <p>Returns</p>
 <p><code>"Capitalize"</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#capitalize">Full explanation</a></p>
@@ -564,10 +564,10 @@ Proudly published with bookdown</a></li>
 <p><code>String#split(String) ⇒ Array</code></p>
 <p>Splits a string into an substrings and creates an Array of these substrings. when not given argument, <code>.split</code> uses whitespace to divide the string. when given an argument, <code>.split</code> divides the string on that argument.</p>
 <p>Returns an <a href="array.html#array"><code>Array</code></a> of the divided <a href="string.html#string"><code>String</code></a>.</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb238-1"><a href="string-1.html#cb238-1" aria-hidden="true"></a><span class="st">&quot;Hello hi byebye&quot;</span>.split</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb237-1"><a href="string-1.html#cb237-1" aria-hidden="true"></a><span class="st">&quot;Hello hi byebye&quot;</span>.split</span></code></pre></div>
 <p>Returns</p>
 <p><code>["Hello", "hi", "byebye"]</code></p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb239-1"><a href="string-1.html#cb239-1" aria-hidden="true"></a><span class="st">&quot;one!two!three!&quot;</span>.split(<span class="st">&quot;!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb238-1"><a href="string-1.html#cb238-1" aria-hidden="true"></a><span class="st">&quot;one!two!three!&quot;</span>.split(<span class="st">&quot;!&quot;</span>)</span></code></pre></div>
 <p>Returns</p>
 <p><code>["one", "two", "three"]</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#split">Full explanation</a></p>
@@ -576,10 +576,10 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.4.14</span> .include?<a href="string-1.html#include-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>String#include?(String) ⇒ Boolean</code></p>
 <p>Returns a <a href="conditionals.html#conditionals"><em>boolean</em></a>(<code>true</code> or <code>false</code>) based on whether the string argument is inside the string the method is being called on.</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb240-1"><a href="string-1.html#cb240-1" aria-hidden="true"></a><span class="st">&quot;Happy&quot;</span>.include?(<span class="st">&quot;H&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb239-1"><a href="string-1.html#cb239-1" aria-hidden="true"></a><span class="st">&quot;Happy&quot;</span>.include?(<span class="st">&quot;H&quot;</span>)</span></code></pre></div>
 <p>Returns</p>
 <p><code>true</code></p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb241-1"><a href="string-1.html#cb241-1" aria-hidden="true"></a><span class="st">&quot;Happy&quot;</span>.include?(<span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb240-1"><a href="string-1.html#cb240-1" aria-hidden="true"></a><span class="st">&quot;Happy&quot;</span>.include?(<span class="st">&quot;Z&quot;</span>)</span></code></pre></div>
 <p>Returns</p>
 <p><code>false</code></p>
 <p><a href="https://chapters.firstdraft.com/chapters/757#include">Full explanation</a></p>

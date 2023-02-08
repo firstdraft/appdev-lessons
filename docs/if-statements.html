@@ -397,21 +397,21 @@ Proudly published with bookdown</a></li>
 <h2><span class="header-section-number">1.9</span> If statements<a href="if-statements.html#if-statements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Now that we can get input from our users, we can start to make our programs smart, by behaving differently based on different conditions.</p>
 <p>To do this, we need to add a new grammar to our toolbox: the <code>if</code>/<code>end</code> <strong>keywords</strong>. Here’s how it looks:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb122-1"><a href="if-statements.html#cb122-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">100</span>)</span>
-<span id="cb122-2"><a href="if-statements.html#cb122-2" aria-hidden="true"></a></span>
-<span id="cb122-3"><a href="if-statements.html#cb122-3" aria-hidden="true"></a>p <span class="st">&quot;Your lucky number is &quot;</span> + lucky_number.to_s + <span class="st">&quot;.&quot;</span></span>
-<span id="cb122-4"><a href="if-statements.html#cb122-4" aria-hidden="true"></a></span>
-<span id="cb122-5"><a href="if-statements.html#cb122-5" aria-hidden="true"></a><span class="kw">if</span> lucky_number.odd?</span>
-<span id="cb122-6"><a href="if-statements.html#cb122-6" aria-hidden="true"></a>  p <span class="st">&quot;The number is odd.&quot;</span></span>
-<span id="cb122-7"><a href="if-statements.html#cb122-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb121-1"><a href="if-statements.html#cb121-1" aria-hidden="true"></a>lucky_number = rand(<span class="dv">100</span>)</span>
+<span id="cb121-2"><a href="if-statements.html#cb121-2" aria-hidden="true"></a></span>
+<span id="cb121-3"><a href="if-statements.html#cb121-3" aria-hidden="true"></a>p <span class="st">&quot;Your lucky number is &quot;</span> + lucky_number.to_s + <span class="st">&quot;.&quot;</span></span>
+<span id="cb121-4"><a href="if-statements.html#cb121-4" aria-hidden="true"></a></span>
+<span id="cb121-5"><a href="if-statements.html#cb121-5" aria-hidden="true"></a><span class="kw">if</span> lucky_number.odd?</span>
+<span id="cb121-6"><a href="if-statements.html#cb121-6" aria-hidden="true"></a>  p <span class="st">&quot;The number is odd.&quot;</span></span>
+<span id="cb121-7"><a href="if-statements.html#cb121-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/first-conditional" target="_blank">Click here for a REPL to try it.</a></p>
 <p>Try running this program a few times and see how it behaves. These expressions, which conditonally run some code based on the truth or falseness of some condition, are known as <strong>conditionals</strong> or <strong>if statements</strong>.</p>
 <div id="the-basic-anatomy-of-if-statements" class="section level3 hasAnchor" number="1.9.1">
 <h3><span class="header-section-number">1.9.1</span> The basic anatomy of if statements<a href="if-statements.html#the-basic-anatomy-of-if-statements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The anatomy of an <code>if</code> statement is:</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb123-1"><a href="if-statements.html#cb123-1" aria-hidden="true"></a><span class="kw">if</span> condition</span>
-<span id="cb123-2"><a href="if-statements.html#cb123-2" aria-hidden="true"></a>  <span class="co"># code that runs if the condition is true</span></span>
-<span id="cb123-3"><a href="if-statements.html#cb123-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb122-1"><a href="if-statements.html#cb122-1" aria-hidden="true"></a><span class="kw">if</span> condition</span>
+<span id="cb122-2"><a href="if-statements.html#cb122-2" aria-hidden="true"></a>  <span class="co"># code that runs if the condition is true</span></span>
+<span id="cb122-3"><a href="if-statements.html#cb122-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li>First comes the <code>if</code> keyword.</li>
 <li>After the <code>if</code>, on the same line, comes any Ruby expression, which is evaluated until only one piece of data is left.</li>
@@ -429,27 +429,27 @@ Proudly published with bookdown</a></li>
 <div id="multibranch-if-statements" class="section level3 hasAnchor" number="1.9.2">
 <h3><span class="header-section-number">1.9.2</span> Multibranch if statements<a href="if-statements.html#multibranch-if-statements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can also have <strong>multibranch</strong> <code>if</code> statements, where we specify fallback conditions to check and code to execute if the first condition is falsy:</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb123-1"><a href="if-statements.html#cb123-1" aria-hidden="true"></a>the_temp = rand(<span class="dv">100</span>)</span>
+<span id="cb123-2"><a href="if-statements.html#cb123-2" aria-hidden="true"></a></span>
+<span id="cb123-3"><a href="if-statements.html#cb123-3" aria-hidden="true"></a>p the_temp</span>
+<span id="cb123-4"><a href="if-statements.html#cb123-4" aria-hidden="true"></a></span>
+<span id="cb123-5"><a href="if-statements.html#cb123-5" aria-hidden="true"></a><span class="kw">if</span> the_temp &gt; <span class="dv">75</span></span>
+<span id="cb123-6"><a href="if-statements.html#cb123-6" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;s going to be a great day today&quot;</span></span>
+<span id="cb123-7"><a href="if-statements.html#cb123-7" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb123-8"><a href="if-statements.html#cb123-8" aria-hidden="true"></a>  p <span class="st">&quot;Don&#39;t leave home today&quot;</span></span>
+<span id="cb123-9"><a href="if-statements.html#cb123-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>Or you can have multiple conditions that get checked, one after the other:</p>
 <div class="sourceCode" id="cb124"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb124-1"><a href="if-statements.html#cb124-1" aria-hidden="true"></a>the_temp = rand(<span class="dv">100</span>)</span>
 <span id="cb124-2"><a href="if-statements.html#cb124-2" aria-hidden="true"></a></span>
 <span id="cb124-3"><a href="if-statements.html#cb124-3" aria-hidden="true"></a>p the_temp</span>
 <span id="cb124-4"><a href="if-statements.html#cb124-4" aria-hidden="true"></a></span>
 <span id="cb124-5"><a href="if-statements.html#cb124-5" aria-hidden="true"></a><span class="kw">if</span> the_temp &gt; <span class="dv">75</span></span>
 <span id="cb124-6"><a href="if-statements.html#cb124-6" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;s going to be a great day today&quot;</span></span>
-<span id="cb124-7"><a href="if-statements.html#cb124-7" aria-hidden="true"></a><span class="kw">else</span></span>
-<span id="cb124-8"><a href="if-statements.html#cb124-8" aria-hidden="true"></a>  p <span class="st">&quot;Don&#39;t leave home today&quot;</span></span>
-<span id="cb124-9"><a href="if-statements.html#cb124-9" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>Or you can have multiple conditions that get checked, one after the other:</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb125-1"><a href="if-statements.html#cb125-1" aria-hidden="true"></a>the_temp = rand(<span class="dv">100</span>)</span>
-<span id="cb125-2"><a href="if-statements.html#cb125-2" aria-hidden="true"></a></span>
-<span id="cb125-3"><a href="if-statements.html#cb125-3" aria-hidden="true"></a>p the_temp</span>
-<span id="cb125-4"><a href="if-statements.html#cb125-4" aria-hidden="true"></a></span>
-<span id="cb125-5"><a href="if-statements.html#cb125-5" aria-hidden="true"></a><span class="kw">if</span> the_temp &gt; <span class="dv">75</span></span>
-<span id="cb125-6"><a href="if-statements.html#cb125-6" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;s going to be a great day today&quot;</span></span>
-<span id="cb125-7"><a href="if-statements.html#cb125-7" aria-hidden="true"></a><span class="kw">elsif</span> the_temp &gt; <span class="dv">32</span></span>
-<span id="cb125-8"><a href="if-statements.html#cb125-8" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;ll be an okay day today&quot;</span></span>
-<span id="cb125-9"><a href="if-statements.html#cb125-9" aria-hidden="true"></a><span class="kw">else</span></span>
-<span id="cb125-10"><a href="if-statements.html#cb125-10" aria-hidden="true"></a>  p <span class="st">&quot;Don&#39;t leave home today&quot;</span></span>
-<span id="cb125-11"><a href="if-statements.html#cb125-11" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<span id="cb124-7"><a href="if-statements.html#cb124-7" aria-hidden="true"></a><span class="kw">elsif</span> the_temp &gt; <span class="dv">32</span></span>
+<span id="cb124-8"><a href="if-statements.html#cb124-8" aria-hidden="true"></a>  p <span class="st">&quot;It&#39;ll be an okay day today&quot;</span></span>
+<span id="cb124-9"><a href="if-statements.html#cb124-9" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb124-10"><a href="if-statements.html#cb124-10" aria-hidden="true"></a>  p <span class="st">&quot;Don&#39;t leave home today&quot;</span></span>
+<span id="cb124-11"><a href="if-statements.html#cb124-11" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/multibranch-if" target="_blank">Click here for a REPL to try it.</a></p>
 <ul>
 <li>Note that there is <strong>no space</strong> in the <code>elsif</code> keyword, and that there is <strong>no <code>e</code> in the middle</strong> of the <code>elsif</code> keyword. (In other languages, this construct is <code>elseif</code>, <code>else if</code>, etc; but in Ruby it’s just <code>elsif</code>.)</li>
@@ -472,11 +472,11 @@ Proudly published with bookdown</a></li>
 <li><code>""</code></li>
 <li><code>false</code></li>
 </ul>
-<div class="sourceCode" id="cb126"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb126-1"><a href="if-statements.html#cb126-1" aria-hidden="true"></a><span class="kw">if</span> <span class="dv">1</span> == <span class="dv">1</span> <span class="co"># Replace this with each expression. Which of them count as &quot;truthy&quot;?</span></span>
-<span id="cb126-2"><a href="if-statements.html#cb126-2" aria-hidden="true"></a>  p <span class="st">&quot;The expression is truthy.&quot;</span></span>
-<span id="cb126-3"><a href="if-statements.html#cb126-3" aria-hidden="true"></a><span class="kw">else</span></span>
-<span id="cb126-4"><a href="if-statements.html#cb126-4" aria-hidden="true"></a>  p <span class="st">&quot;The expression is falsy.&quot;</span></span>
-<span id="cb126-5"><a href="if-statements.html#cb126-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb125-1"><a href="if-statements.html#cb125-1" aria-hidden="true"></a><span class="kw">if</span> <span class="dv">1</span> == <span class="dv">1</span> <span class="co"># Replace this with each expression. Which of them count as &quot;truthy&quot;?</span></span>
+<span id="cb125-2"><a href="if-statements.html#cb125-2" aria-hidden="true"></a>  p <span class="st">&quot;The expression is truthy.&quot;</span></span>
+<span id="cb125-3"><a href="if-statements.html#cb125-3" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb125-4"><a href="if-statements.html#cb125-4" aria-hidden="true"></a>  p <span class="st">&quot;The expression is falsy.&quot;</span></span>
+<span id="cb125-5"><a href="if-statements.html#cb125-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/truthiness" target="_blank">Click here for a REPL to try it.</a></p>
 <p>For how many of the above did you correctly predict the output? What did you learn about what objects count as truthy and what objects count as falsy in Ruby?</p>
 <hr />
@@ -489,29 +489,29 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">1.9.4</span> Comparisons<a href="if-statements.html#comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>That said, we’ll mostly use expressions after <code>if</code> that return <code>true</code> or <code>false</code>. There are lot of methods that are designed to do this; we’ve seen <code>Integer</code>’s <code>.odd?</code> and <code>.even?</code>, but there are a lot more.</p>
 <p>For example, most classes have ways to compare <em>instances</em> of the class to one another:</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb127-1"><a href="if-statements.html#cb127-1" aria-hidden="true"></a><span class="dv">1</span> &lt; <span class="dv">2</span>          <span class="co"># &quot;1 is less than 2&quot;</span></span>
-<span id="cb127-2"><a href="if-statements.html#cb127-2" aria-hidden="true"></a><span class="dv">2</span> &lt; <span class="dv">1</span>          <span class="co"># &quot;2 is less than 1&quot;</span></span>
-<span id="cb127-3"><a href="if-statements.html#cb127-3" aria-hidden="true"></a><span class="dv">24</span>*<span class="dv">365</span> &gt; <span class="dv">10000</span> <span class="co"># There are more than 10,000 hours in a year</span></span>
-<span id="cb127-4"><a href="if-statements.html#cb127-4" aria-hidden="true"></a><span class="dv">1</span> == <span class="dv">1</span>         <span class="co"># &quot;1 is equivalent to 1&quot;</span></span>
-<span id="cb127-5"><a href="if-statements.html#cb127-5" aria-hidden="true"></a><span class="dv">1</span> == <span class="dv">2</span>         <span class="co"># &quot;1 is equivalent to 2&quot;</span></span>
-<span id="cb127-6"><a href="if-statements.html#cb127-6" aria-hidden="true"></a><span class="dv">1</span> &lt;= <span class="dv">2</span>         <span class="co"># &quot;1 is less than or equal to 2&quot;</span></span>
-<span id="cb127-7"><a href="if-statements.html#cb127-7" aria-hidden="true"></a><span class="dv">1</span> &gt;= <span class="dv">2</span>         <span class="co"># &quot;1 is greater than or equal to 2&quot;</span></span>
-<span id="cb127-8"><a href="if-statements.html#cb127-8" aria-hidden="true"></a><span class="dv">1</span> != <span class="dv">1</span>         <span class="co"># &quot;1 is NOT equivalent to 1&quot;</span></span>
-<span id="cb127-9"><a href="if-statements.html#cb127-9" aria-hidden="true"></a><span class="dv">1</span> != <span class="dv">2</span>         <span class="co"># &quot;1 is NOT equivalent to 2&quot;</span></span>
-<span id="cb127-10"><a href="if-statements.html#cb127-10" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> &lt; <span class="st">&quot;banana&quot;</span></span>
-<span id="cb127-11"><a href="if-statements.html#cb127-11" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> &gt; <span class="st">&quot;banana&quot;</span></span>
-<span id="cb127-12"><a href="if-statements.html#cb127-12" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> == <span class="st">&quot;banana&quot;</span></span>
-<span id="cb127-13"><a href="if-statements.html#cb127-13" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> != <span class="st">&quot;banana&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb126-1"><a href="if-statements.html#cb126-1" aria-hidden="true"></a><span class="dv">1</span> &lt; <span class="dv">2</span>          <span class="co"># &quot;1 is less than 2&quot;</span></span>
+<span id="cb126-2"><a href="if-statements.html#cb126-2" aria-hidden="true"></a><span class="dv">2</span> &lt; <span class="dv">1</span>          <span class="co"># &quot;2 is less than 1&quot;</span></span>
+<span id="cb126-3"><a href="if-statements.html#cb126-3" aria-hidden="true"></a><span class="dv">24</span>*<span class="dv">365</span> &gt; <span class="dv">10000</span> <span class="co"># There are more than 10,000 hours in a year</span></span>
+<span id="cb126-4"><a href="if-statements.html#cb126-4" aria-hidden="true"></a><span class="dv">1</span> == <span class="dv">1</span>         <span class="co"># &quot;1 is equivalent to 1&quot;</span></span>
+<span id="cb126-5"><a href="if-statements.html#cb126-5" aria-hidden="true"></a><span class="dv">1</span> == <span class="dv">2</span>         <span class="co"># &quot;1 is equivalent to 2&quot;</span></span>
+<span id="cb126-6"><a href="if-statements.html#cb126-6" aria-hidden="true"></a><span class="dv">1</span> &lt;= <span class="dv">2</span>         <span class="co"># &quot;1 is less than or equal to 2&quot;</span></span>
+<span id="cb126-7"><a href="if-statements.html#cb126-7" aria-hidden="true"></a><span class="dv">1</span> &gt;= <span class="dv">2</span>         <span class="co"># &quot;1 is greater than or equal to 2&quot;</span></span>
+<span id="cb126-8"><a href="if-statements.html#cb126-8" aria-hidden="true"></a><span class="dv">1</span> != <span class="dv">1</span>         <span class="co"># &quot;1 is NOT equivalent to 1&quot;</span></span>
+<span id="cb126-9"><a href="if-statements.html#cb126-9" aria-hidden="true"></a><span class="dv">1</span> != <span class="dv">2</span>         <span class="co"># &quot;1 is NOT equivalent to 2&quot;</span></span>
+<span id="cb126-10"><a href="if-statements.html#cb126-10" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> &lt; <span class="st">&quot;banana&quot;</span></span>
+<span id="cb126-11"><a href="if-statements.html#cb126-11" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> &gt; <span class="st">&quot;banana&quot;</span></span>
+<span id="cb126-12"><a href="if-statements.html#cb126-12" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> == <span class="st">&quot;banana&quot;</span></span>
+<span id="cb126-13"><a href="if-statements.html#cb126-13" aria-hidden="true"></a><span class="st">&quot;apple&quot;</span> != <span class="st">&quot;banana&quot;</span></span></code></pre></div>
 <div id="equivalence-vs-assignment" class="section level4 unnumbered hasAnchor">
 <h4>Equivalence vs assignment<a href="if-statements.html#equivalence-vs-assignment" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Note the difference between the <strong>equivalence operator</strong> — two equals signs, <code>==</code> — and the variable assignment operator — one equals sign, <code>=</code>. Mixing up the two of them is probably <em>the</em> most common typo programmers make:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb128-1"><a href="if-statements.html#cb128-1" aria-hidden="true"></a>x = <span class="dv">2</span></span>
-<span id="cb128-2"><a href="if-statements.html#cb128-2" aria-hidden="true"></a></span>
-<span id="cb128-3"><a href="if-statements.html#cb128-3" aria-hidden="true"></a><span class="kw">if</span> x = <span class="dv">3</span></span>
-<span id="cb128-4"><a href="if-statements.html#cb128-4" aria-hidden="true"></a>  p <span class="st">&quot;x is 3&quot;</span></span>
-<span id="cb128-5"><a href="if-statements.html#cb128-5" aria-hidden="true"></a><span class="kw">else</span></span>
-<span id="cb128-6"><a href="if-statements.html#cb128-6" aria-hidden="true"></a>  p <span class="st">&quot;x is not 3&quot;</span></span>
-<span id="cb128-7"><a href="if-statements.html#cb128-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb127-1"><a href="if-statements.html#cb127-1" aria-hidden="true"></a>x = <span class="dv">2</span></span>
+<span id="cb127-2"><a href="if-statements.html#cb127-2" aria-hidden="true"></a></span>
+<span id="cb127-3"><a href="if-statements.html#cb127-3" aria-hidden="true"></a><span class="kw">if</span> x = <span class="dv">3</span></span>
+<span id="cb127-4"><a href="if-statements.html#cb127-4" aria-hidden="true"></a>  p <span class="st">&quot;x is 3&quot;</span></span>
+<span id="cb127-5"><a href="if-statements.html#cb127-5" aria-hidden="true"></a><span class="kw">else</span></span>
+<span id="cb127-6"><a href="if-statements.html#cb127-6" aria-hidden="true"></a>  p <span class="st">&quot;x is not 3&quot;</span></span>
+<span id="cb127-7"><a href="if-statements.html#cb127-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>If you run the code above, what would be printed? Why?</p>
 <p>We accidentally used the assignment operator instead of the equivalence comparison, and in doing so, we <em>set</em> <code>x = 3</code> when we meant to check <code>if x == 3</code>.</p>
 <p>You will 💯 make this typo, we all do at some point — when your conditional always is going into the <code>true</code> branch inexplicably, let this ring a bell!</p>
@@ -520,16 +520,16 @@ Proudly published with bookdown</a></li>
 <div id="combining-conditions-with-and-and-or" class="section level3 hasAnchor" number="1.9.5">
 <h3><span class="header-section-number">1.9.5</span> Combining conditions with AND and OR<a href="if-statements.html#combining-conditions-with-and-and-or" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Finally, another handy thing to have in your toolbelt are the <strong>logical operators</strong> <code>&amp;&amp;</code> (AND) and <code>||</code> (OR). These allow you to combine expressions; try these combined expressions out below:</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb129-1"><a href="if-statements.html#cb129-1" aria-hidden="true"></a><span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.even?</span>
-<span id="cb129-2"><a href="if-statements.html#cb129-2" aria-hidden="true"></a><span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.odd?</span>
-<span id="cb129-3"><a href="if-statements.html#cb129-3" aria-hidden="true"></a><span class="dv">3</span>.even? &amp;&amp; <span class="dv">4</span>.odd?</span>
-<span id="cb129-4"><a href="if-statements.html#cb129-4" aria-hidden="true"></a><span class="dv">3</span>.odd? || <span class="dv">4</span>.even?</span>
-<span id="cb129-5"><a href="if-statements.html#cb129-5" aria-hidden="true"></a><span class="dv">3</span>.odd? || <span class="dv">4</span>.odd?</span>
-<span id="cb129-6"><a href="if-statements.html#cb129-6" aria-hidden="true"></a><span class="dv">3</span>.even? || <span class="dv">4</span>.odd?</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb128-1"><a href="if-statements.html#cb128-1" aria-hidden="true"></a><span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.even?</span>
+<span id="cb128-2"><a href="if-statements.html#cb128-2" aria-hidden="true"></a><span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.odd?</span>
+<span id="cb128-3"><a href="if-statements.html#cb128-3" aria-hidden="true"></a><span class="dv">3</span>.even? &amp;&amp; <span class="dv">4</span>.odd?</span>
+<span id="cb128-4"><a href="if-statements.html#cb128-4" aria-hidden="true"></a><span class="dv">3</span>.odd? || <span class="dv">4</span>.even?</span>
+<span id="cb128-5"><a href="if-statements.html#cb128-5" aria-hidden="true"></a><span class="dv">3</span>.odd? || <span class="dv">4</span>.odd?</span>
+<span id="cb128-6"><a href="if-statements.html#cb128-6" aria-hidden="true"></a><span class="dv">3</span>.even? || <span class="dv">4</span>.odd?</span></code></pre></div>
 <p>When used with <code>if</code> statements, this ability is very powerful:</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb130-1"><a href="if-statements.html#cb130-1" aria-hidden="true"></a><span class="kw">if</span> <span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.even?</span>
-<span id="cb130-2"><a href="if-statements.html#cb130-2" aria-hidden="true"></a>  p <span class="st">&quot;The combined expression is truthy.&quot;</span></span>
-<span id="cb130-3"><a href="if-statements.html#cb130-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb129-1"><a href="if-statements.html#cb129-1" aria-hidden="true"></a><span class="kw">if</span> <span class="dv">3</span>.odd? &amp;&amp; <span class="dv">4</span>.even?</span>
+<span id="cb129-2"><a href="if-statements.html#cb129-2" aria-hidden="true"></a>  p <span class="st">&quot;The combined expression is truthy.&quot;</span></span>
+<span id="cb129-3"><a href="if-statements.html#cb129-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/and-and-or" target="_blank">Click here for a REPL to try it.</a></p>
 <p>Basically, <code>&amp;&amp;</code> is stricter than <code>||</code>; both comparisons have to be true in order for the whole statement to be true when combined with <code>&amp;&amp;</code>; either one being true is sufficient for <code>||</code>.</p>
 <div id="start-the-gitpod-project-4" class="section level5 unnumbered hasAnchor">

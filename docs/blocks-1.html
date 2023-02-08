@@ -409,14 +409,14 @@ end
 
 ⇒ Integer</code></pre>
 <p>The <code>.times</code> method takes a <a href="https://chapters.firstdraft.com/chapters/764#blocks"><code>Block</code></a> as an argument and will execute the code within that block the number of times specified by the integer. A <a href="https://chapters.firstdraft.com/chapters/764#blocks"><code>Block</code></a> of code is the code written in between the keywords <code>do</code> and <code>end</code>. This looping method returns an <a href="integer.html#integer"><code>Integer</code></a> of the number of times the loop ran.</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb268-1"><a href="blocks-1.html#cb268-1" aria-hidden="true"></a><span class="dv">10</span>.times <span class="kw">do</span></span>
-<span id="cb268-2"><a href="blocks-1.html#cb268-2" aria-hidden="true"></a>  p <span class="st">&quot;Hi&quot;</span></span>
-<span id="cb268-3"><a href="blocks-1.html#cb268-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb267-1"><a href="blocks-1.html#cb267-1" aria-hidden="true"></a><span class="dv">10</span>.times <span class="kw">do</span></span>
+<span id="cb267-2"><a href="blocks-1.html#cb267-2" aria-hidden="true"></a>  p <span class="st">&quot;Hi&quot;</span></span>
+<span id="cb267-3"><a href="blocks-1.html#cb267-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>The above block of code will print “Hi” 10 times all on newlines.</p>
 <p>To keep a track of the iteration number, <code>.times</code> can create a <a href="https://chapters.firstdraft.com/chapters/764#block-variables">block variable</a> that starts of counting the iteration number starting at <em>zero</em>. After each execution of the code within the block, the block variable is incremented by 1.</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb269-1"><a href="blocks-1.html#cb269-1" aria-hidden="true"></a><span class="dv">10</span>.times <span class="kw">do</span> |counter|</span>
-<span id="cb269-2"><a href="blocks-1.html#cb269-2" aria-hidden="true"></a>  p counter</span>
-<span id="cb269-3"><a href="blocks-1.html#cb269-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb268-1"><a href="blocks-1.html#cb268-1" aria-hidden="true"></a><span class="dv">10</span>.times <span class="kw">do</span> |counter|</span>
+<span id="cb268-2"><a href="blocks-1.html#cb268-2" aria-hidden="true"></a>  p counter</span>
+<span id="cb268-3"><a href="blocks-1.html#cb268-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>The above block of code will print the numbers 0 to 9 all on newlines.</p>
 <p><a href="https://chapters.firstdraft.com/chapters/764#blocks">Full explanation</a></p>
 <div id="other-methods" class="section level4 hasAnchor" number="3.12.1.1">
@@ -433,9 +433,9 @@ end
 <p>The <code>upto</code> method takes the first <code>Integer</code> the method is called on and uses it to initialize the value of
 the block variable. The second <code>Integer</code> becomes the stopping condition to the loop as the block variable’
 increases by one after each iteration. The method returns an <a href="integer.html#integer"><code>Integer</code></a>; the initial value of the block variable.</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb271-1"><a href="blocks-1.html#cb271-1" aria-hidden="true"></a><span class="dv">5</span>.upto(<span class="dv">10</span>) <span class="kw">do</span> |counter|</span>
-<span id="cb271-2"><a href="blocks-1.html#cb271-2" aria-hidden="true"></a>  <span class="co"># do something</span></span>
-<span id="cb271-3"><a href="blocks-1.html#cb271-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb270-1"><a href="blocks-1.html#cb270-1" aria-hidden="true"></a><span class="dv">5</span>.upto(<span class="dv">10</span>) <span class="kw">do</span> |counter|</span>
+<span id="cb270-2"><a href="blocks-1.html#cb270-2" aria-hidden="true"></a>  <span class="co"># do something</span></span>
+<span id="cb270-3"><a href="blocks-1.html#cb270-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>The above block of code starts the block variable <code>counter</code> at 5 and executes the block until counter is 10.</p>
 </div>
 <div id="downto" class="section level3 hasAnchor" number="3.12.3">
@@ -448,9 +448,9 @@ end
 <p>The <code>downto</code> method takes the first <code>Integer</code> the method is called on and uses it to initialize the value of
 the block variable. The second <code>Integer</code> becomes the stopping condition to the loop as the block variable’
 decreases by one after each iteration. The method returns an <a href="integer.html#integer"><code>Integer</code></a>; the initial value of the block variable.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb273-1"><a href="blocks-1.html#cb273-1" aria-hidden="true"></a><span class="dv">10</span>.downto(<span class="dv">5</span>) <span class="kw">do</span> |counter|</span>
-<span id="cb273-2"><a href="blocks-1.html#cb273-2" aria-hidden="true"></a>  <span class="co"># do something</span></span>
-<span id="cb273-3"><a href="blocks-1.html#cb273-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb272-1"><a href="blocks-1.html#cb272-1" aria-hidden="true"></a><span class="dv">10</span>.downto(<span class="dv">5</span>) <span class="kw">do</span> |counter|</span>
+<span id="cb272-2"><a href="blocks-1.html#cb272-2" aria-hidden="true"></a>  <span class="co"># do something</span></span>
+<span id="cb272-3"><a href="blocks-1.html#cb272-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>The above block of code starts the block variable <code>counter</code> at 10 and executes the block until counter is 5.</p>
 </div>
 <div id="step" class="section level3 hasAnchor" number="3.12.4">
@@ -461,9 +461,9 @@ end
 
 ⇒ Integer</code></pre>
 <p>The <code>step</code> method initializes the block variable to be the value of the <code>Integer</code> that called the method. The first <code>Integer</code> argument is the the value the block variable is when the loop will stop. The last <code>Integer</code>argument is what value to modify the block variable after each iteration. This method returns the <a href="integer.html#integer"><code>Integer</code></a> that called the method.</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb275-1"><a href="blocks-1.html#cb275-1" aria-hidden="true"></a><span class="dv">1</span>.step(<span class="dv">10</span>, <span class="dv">3</span>) <span class="kw">do</span> |counter|</span>
-<span id="cb275-2"><a href="blocks-1.html#cb275-2" aria-hidden="true"></a>  p counter</span>
-<span id="cb275-3"><a href="blocks-1.html#cb275-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb274-1"><a href="blocks-1.html#cb274-1" aria-hidden="true"></a><span class="dv">1</span>.step(<span class="dv">10</span>, <span class="dv">3</span>) <span class="kw">do</span> |counter|</span>
+<span id="cb274-2"><a href="blocks-1.html#cb274-2" aria-hidden="true"></a>  p counter</span>
+<span id="cb274-3"><a href="blocks-1.html#cb274-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <blockquote>
 <p>1<br />
 4<br />
@@ -471,9 +471,9 @@ end
 10</p>
 </blockquote>
 <p>The above block of code starts the block variable <code>counter</code> at 1 and executes the block until counter is 10 but after each iteration the <code>counter</code> will be incremented by 3 instead of 1. <code>.step</code> can also be used to decrement the counter by a certain value.</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb276-1"><a href="blocks-1.html#cb276-1" aria-hidden="true"></a><span class="dv">10</span>.step(<span class="dv">1</span>, <span class="dv">-4</span>) <span class="kw">do</span> |counter|</span>
-<span id="cb276-2"><a href="blocks-1.html#cb276-2" aria-hidden="true"></a>  p counter</span>
-<span id="cb276-3"><a href="blocks-1.html#cb276-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb275-1"><a href="blocks-1.html#cb275-1" aria-hidden="true"></a><span class="dv">10</span>.step(<span class="dv">1</span>, <span class="dv">-4</span>) <span class="kw">do</span> |counter|</span>
+<span id="cb275-2"><a href="blocks-1.html#cb275-2" aria-hidden="true"></a>  p counter</span>
+<span id="cb275-3"><a href="blocks-1.html#cb275-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <blockquote>
 <p>10<br />
 6<br />
