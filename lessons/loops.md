@@ -18,7 +18,10 @@ p numbers
 p len
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){target="_blank"}
+</div>
 
 What do you expect the output of the program to be when you click run? Try to interpret the program yourself before you ask Ruby to.
 
@@ -48,7 +51,10 @@ p numbers
 p len
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){target="_blank"}
+</div>
 
 `while` works almost exactly like `if` — it evaluates the expression next to it, and if the expression is truthy, it executes the code on the lines between it and its `end`; if not, it ignores the code on the lines between it and its `end`.
 
@@ -95,7 +101,10 @@ while mississipis <= 10
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){target="_blank"}
+</div>
 
 Does the code make sense to you?[^incrementing]
 
@@ -113,7 +122,10 @@ mississipis = 1
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){target="_blank"}
+</div>
 
 Notice there's a new keyword here: `do`. This is because the `.times` method, in order to do its job of executing some code 10 times, needs a special argument — _the code to execute_.
 
@@ -131,7 +143,10 @@ But the `.times` method will save us even more trouble than that; we can stop wo
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){target="_blank"}
+</div>
 
 Try running it. Here's what's going on:
 
@@ -156,15 +171,24 @@ In the REPL above, replace `10.times` with each of the following and play around
 10.step(1, -4)
 ```
 
-##### Start the GitPod Project {-}
+<div class="proj">
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/loops-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/loops-chapter/tree/bp-additions){target="_blank"}.
+  Open the GitPod loops project for this chapter and start with the exercise `loops_letter_count.rb`:
 
-<mark>✏️ **Exercise:**</mark> On GitPod in the loops project, work through `loops_letter_count.rb`.
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/loops-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[loops_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>
 
-<mark>✏️ **Exercise:**</mark> When you're done with the first one, work through `loops_multiples.rb`
+<div class="proj">
 
-<mark>✏️ **Exercise:**</mark> And finally, work through `loops_fizzbuzz.rb`
+  When you're done with the first one, work through `loops_multiples.rb`
+</div>
+
+<div class="proj">
+
+  And finally, work through `loops_fizzbuzz.rb`
+</div>
 
 ###  Conclusion
 
