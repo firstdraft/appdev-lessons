@@ -55,8 +55,6 @@ Another maybe unexpected thing: raising a number to a power, e.g. 3<sup>2</sup>,
 3 ** 2
 ```
 
-##### Start the GitPod Project for Integer {-}
-
 Once you've played with the REPL, it's time to move into the graded project environment.
 
 <div class="proj">

@@ -70,11 +70,14 @@ t = Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 t.day # => 16
 ```
 
-##### Start the GitPod Project {-}
+<div class="proj">
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions){target="_blank"}.
+  Open the GitPod `Date` project for this chapter and start with the exercise `date_formatted.rb`:
 
-<mark>✏️ **Exercise:**</mark> On GitPod in the `Date` project, work through `date_formatted.rb`.
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[date_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>
 
 #### Date.parse {-}
 
@@ -97,7 +100,10 @@ days.to_i
  => 88674
 ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Date` project and work through `date_math.rb`
+<div class="proj">
+  
+  Return to the GitPod `Date` project and work through `date_math.rb`
+</div>
 
 #### monday? {-}
 
@@ -135,7 +141,10 @@ Returns the day of week (0-6, Sunday is zero).
 Date.new(2001,2,3).wday #=> 6
 ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Date` project and work through `date_monday.rb`
+<div class="proj">
+  
+  Return to the GitPod `Date` project and work through `date_monday.rb`
+</div>
 
 ### Time
 

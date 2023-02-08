@@ -43,8 +43,6 @@ One other thing to keep in mind: you can use `**` in conjunction with fractions 
 8 ** (1/3.0) # => 2.0
 ```
 
-##### Start the GitPod Project {-}
-
 <div class="proj">
 
   Open the GitPod `Float` project for this chapter and start with the exercise `float_find_hypotenuse.rb`:
