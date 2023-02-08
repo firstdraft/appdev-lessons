@@ -34,7 +34,10 @@ Your program should output the following:
 "ORANGE"
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){target="_blank"}
+</div>
 
 ---
 
@@ -63,7 +66,10 @@ user_words.each do |the_word|
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-iterating-with-each){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-iterating-with-each){target="_blank"}
+</div>
 
 Click "Run" and verify that both programs do the same thing.
 
@@ -103,23 +109,30 @@ Just a sneak peek as to why `.each` is so important to get comfortable with: soo
 
 Code like this is what drives the dozens of dynamic applications you interact with on a daily basis — we pull a list of records from a database table, then we loop over them, and then we format each one using some _markup language_ (in this case HTML for the browser, but it could be XML for native apps, etc).
 
-##### Start the GitPod Project {-}
+<div class="proj">
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions){target="_blank"}.
+  Open the GitPod `.each` project for this chapter and start with the exercise `each_spell_word.rb`:
 
-<mark>✏️ **Exercise:**</mark> On GitPod in the `.each` project, work through `each_spell_word.rb`.
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[each_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>
 
-<mark>✏️ **Exercise:**</mark> When you're done with the first one, work through `each_even_word.rb`
+<div class="proj">
 
-<mark>✏️ **Exercise:**</mark> And finally, work through `each_letter_count.rb`
+  When you're done with the first one, work through `each_even_word.rb`
+</div>
+
+<div class="proj">
+
+  And finally, work through `each_letter_count.rb`
+</div>
 
 ###  Conclusion
 
 That's it for `.each` and loops. It's time to meet a very important data structure class that we will be seeing a lot: `Hash`.
 
 #### Addendum: each_with_index {-}
-
-**BENP: I suggest making this an addendum. May be difficult to grasp at this stage**
 
 There are some rare cases when you are looping over an array and, within the block, you would like access to the element _and_ its index. For example, maybe you want to print a line after every other element. You could fall back to `.times` in these scenarios, but there's also another `Array` method that has your back: `.each_with_index`. It looks like this:
 
@@ -140,6 +153,9 @@ user_words.each_with_index do |the_word, the_index|
 end
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-each-with-index){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-each-with-index){target="_blank"}
+</div>
 
 As you can see, some methods provide more than one block variable. `.each_with_index` allows you to name two variables within the pipes; the first one will receive the element, and the second one will receive the index of the iteration. Within the block you can use both variables as you see fit. In rare cases, handy.
