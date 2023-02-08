@@ -396,28 +396,28 @@ Proudly published with bookdown</a></li>
 <div id="float" class="section level2 hasAnchor" number="1.5">
 <h2><span class="header-section-number">1.5</span> Float<a href="float.html#float" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ruby calls decimal numbers <code>Float</code>s. To create a <code>Float</code> rather than an <code>Integer</code>, just make sure to include a decimal point:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb75-1"><a href="float.html#cb75-1" aria-hidden="true"></a><span class="dv">5</span>.class <span class="co"># =&gt; Integer</span></span>
-<span id="cb75-2"><a href="float.html#cb75-2" aria-hidden="true"></a><span class="fl">5.0</span>.class <span class="co"># =&gt; Float</span></span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb76-1"><a href="float.html#cb76-1" aria-hidden="true"></a><span class="dv">5</span>.class <span class="co"># =&gt; Integer</span></span>
+<span id="cb76-2"><a href="float.html#cb76-2" aria-hidden="true"></a><span class="fl">5.0</span>.class <span class="co"># =&gt; Float</span></span></code></pre></div>
 <div id="methods-2" class="section level3 hasAnchor" number="1.5.1">
 <h3><span class="header-section-number">1.5.1</span> Methods<a href="float.html#methods-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="math" class="section level4 unnumbered hasAnchor">
 <h4>+ - * / ** (math)<a href="float.html#math" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The math methods work mostly like you’d expect, and similarly to <a href="integer.html#integer-math">the ones for integers</a>.</p>
 <p>The main difference to keep in mind is with <code>/</code>. Division with floats works the way that we’re used to — it returns fractional results, as a <code>Float</code>:</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb76-1"><a href="float.html#cb76-1" aria-hidden="true"></a><span class="fl">12.0</span> / <span class="fl">5.0</span> <span class="co"># =&gt; 2.4</span></span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb77-1"><a href="float.html#cb77-1" aria-hidden="true"></a><span class="fl">12.0</span> / <span class="fl">5.0</span> <span class="co"># =&gt; 2.4</span></span></code></pre></div>
 <p>Try the following and see what you get:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb77-1"><a href="float.html#cb77-1" aria-hidden="true"></a><span class="dv">12</span> / <span class="dv">5</span></span>
-<span id="cb77-2"><a href="float.html#cb77-2" aria-hidden="true"></a><span class="fl">12.0</span> / <span class="dv">5</span></span>
-<span id="cb77-3"><a href="float.html#cb77-3" aria-hidden="true"></a><span class="dv">12</span> / <span class="fl">5.0</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb78-1"><a href="float.html#cb78-1" aria-hidden="true"></a><span class="dv">12</span> / <span class="dv">5</span></span>
+<span id="cb78-2"><a href="float.html#cb78-2" aria-hidden="true"></a><span class="fl">12.0</span> / <span class="dv">5</span></span>
+<span id="cb78-3"><a href="float.html#cb78-3" aria-hidden="true"></a><span class="dv">12</span> / <span class="fl">5.0</span></span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/Float-math" target="_blank">Click here for a REPL to try it.</a></p>
 <p>What did you discover? If <em>either</em> side is a float, float division will be performed.</p>
 <p>This is why <code>Integer</code>’s <code>.to_f</code> method can come in handy while doing math; at some point if you need to do division and need a fractional answer, then convert it to a <code>Float</code> first.</p>
 <p>One other thing to keep in mind: you can use <code>**</code> in conjunction with fractions to calculate roots, since 9<sup>1/2</sup> is the same as the square root of 9, 8<sup>1/3</sup> is the same as the cube root of 8, etc.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb78-1"><a href="float.html#cb78-1" aria-hidden="true"></a><span class="dv">9</span> ** <span class="fl">0.5</span> <span class="co"># =&gt; 3.0</span></span>
-<span id="cb78-2"><a href="float.html#cb78-2" aria-hidden="true"></a><span class="dv">8</span> ** (<span class="dv">1</span>/<span class="fl">3.0</span>) <span class="co"># =&gt; 2.0</span></span></code></pre></div>
-<div id="start-the-gitpod-project-1" class="section level5 unnumbered hasAnchor">
-<h5>Start the GitPod Project<a href="float.html#start-the-gitpod-project-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>Open the GitPod project for this chapter and start with the exercises. <a href="integer.html#start-the-gitpod-project-for-integer">See prior steps</a> as a reminder. Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions" target="_blank">https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions</a>.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb79-1"><a href="float.html#cb79-1" aria-hidden="true"></a><span class="dv">9</span> ** <span class="fl">0.5</span> <span class="co"># =&gt; 3.0</span></span>
+<span id="cb79-2"><a href="float.html#cb79-2" aria-hidden="true"></a><span class="dv">8</span> ** (<span class="dv">1</span>/<span class="fl">3.0</span>) <span class="co"># =&gt; 2.0</span></span></code></pre></div>
+<div id="start-the-gitpod-project" class="section level5 unnumbered hasAnchor">
+<h5>Start the GitPod Project<a href="float.html#start-the-gitpod-project" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Open the GitPod project for this chapter and start with the exercises. <a href="string.html#start-gitpod-project">See prior steps</a> as a reminder. Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions" target="_blank">https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions</a>.</p>
 <p><mark>✏️ <strong>Exercise:</strong></mark> On GitPod in the <code>Float</code> project, work through <code>float_find_hypotenuse.rb</code>. <em>Remember</em>: the Pythagorean Theorem says that</p>
 <p><img src="assets/float/pythagorous.png" /></p>
 <p>where <code>a</code> and <code>b</code> are the lengths of the shorter sides, and <code>c</code> is the length of the longest side. Read more about the formula <a href="https://www.mathsisfun.com/pythagoras.html" target="_blank">here</a>.</p>
@@ -426,15 +426,15 @@ Proudly published with bookdown</a></li>
 <div id="round" class="section level4 unnumbered hasAnchor">
 <h4>round<a href="float.html#round" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>Float</code>s can round themselves. Play around with the <code>.round</code> method:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb79-1"><a href="float.html#cb79-1" aria-hidden="true"></a>pi = <span class="fl">3.1415926535897932384626433832795028841976939937510</span></span>
-<span id="cb79-2"><a href="float.html#cb79-2" aria-hidden="true"></a>p pi.round(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb80-1"><a href="float.html#cb80-1" aria-hidden="true"></a>pi = <span class="fl">3.1415926535897932384626433832795028841976939937510</span></span>
+<span id="cb80-2"><a href="float.html#cb80-2" aria-hidden="true"></a>p pi.round(<span class="dv">3</span>)</span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/round" target="_blank">Click here for a REPL to try it.</a></p>
 <p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod <code>Float</code> project and work through <code>float_round.rb</code></p>
 </div>
 <div id="rand-1" class="section level4 unnumbered hasAnchor">
 <h4>rand<a href="float.html#rand-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>rand</code> method that we met earlier can also be called with no arguments, in which case it returns a <code>Float</code> between 0 and 1. This is very handy for e.g. probabilities. Give it a try:</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb80-1"><a href="float.html#cb80-1" aria-hidden="true"></a>p rand</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb81-1"><a href="float.html#cb81-1" aria-hidden="true"></a>p rand</span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/float-rand" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 </div>
@@ -448,12 +448,12 @@ Proudly published with bookdown</a></li>
 <ul>
 <li><p>To use the following methods within Ruby on Rails, you don’t have to do anything.</p></li>
 <li><p>To use the following methods in a plain Ruby script, include the line:</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb81-1"><a href="float.html#cb81-1" aria-hidden="true"></a>require <span class="st">&#39;activesupport&#39;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb82"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb82-1"><a href="float.html#cb82-1" aria-hidden="true"></a>require <span class="st">&#39;activesupport&#39;</span></span></code></pre></div></li>
 </ul>
 <div id="formatting-floats-as-strings" class="section level5 unnumbered hasAnchor">
 <h5>Formatting Floats as Strings<a href="float.html#formatting-floats-as-strings" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>As we know, you can call the <code>.to_s</code> method on a Float to convert the number into a String:</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb82-1"><a href="float.html#cb82-1" aria-hidden="true"></a><span class="fl">10.25</span>.to_s <span class="co"># =&gt; &quot;10.25&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb83-1"><a href="float.html#cb83-1" aria-hidden="true"></a><span class="fl">10.25</span>.to_s <span class="co"># =&gt; &quot;10.25&quot;</span></span></code></pre></div>
 <p>Within a Rails application<span id="fn-14"><!--
 --><label for="fn-14-toggle"><sup>14</sup></label><!--
 --><input type="checkbox" hidden id="fn-14-toggle"/>
@@ -464,25 +464,25 @@ Proudly published with bookdown</a></li>
 </div>
 <div id="phone" class="section level5 unnumbered hasAnchor">
 <h5>Phone<a href="float.html#phone" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb83"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb83-1"><a href="float.html#cb83-1" aria-hidden="true"></a><span class="dv">5551234</span>.to_s(<span class="st">:phone</span>) <span class="co"># =&gt; &quot;555-1234&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb84-1"><a href="float.html#cb84-1" aria-hidden="true"></a><span class="dv">5551234</span>.to_s(<span class="st">:phone</span>) <span class="co"># =&gt; &quot;555-1234&quot;</span></span></code></pre></div>
 <p>In addition to providing a <code>Symbol</code> to the <code>to_s</code> method, you can provide an <em>additional</em> <code>Hash</code><span id="fn-16"><!--
 --><label for="fn-16-toggle"><sup>16</sup></label><!--
 --><input type="checkbox" hidden id="fn-16-toggle"/>
 <span id="fn-content">A <code>Hash</code> is another Class is Ruby that. See the <a href="hash-chapter.html#hash-chapter">Hash chapter</a>. Until you read that chapter, just be aware that this kind of formatting is possible and easy to do in a Rails application.</span></span> argument to tweak the some finer details about how we want to format the Float.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb84-1"><a href="float.html#cb84-1" aria-hidden="true"></a><span class="dv">1235551234</span>.to_s(<span class="st">:phone</span>, { <span class="st">:area_code</span> =&gt; <span class="dv">true</span> }                     <span class="co"># =&gt; &quot;(123) 555-1234&quot;</span></span>
-<span id="cb84-2"><a href="float.html#cb84-2" aria-hidden="true"></a><span class="dv">1235551234</span>.to_s(<span class="st">:phone</span>, { <span class="st">:country_code</span> =&gt; <span class="dv">1</span> } )                   <span class="co"># =&gt; &quot;+1-123-555-1234&quot;</span></span>
-<span id="cb84-3"><a href="float.html#cb84-3" aria-hidden="true"></a><span class="dv">1235551234</span>.to_s(<span class="st">:phone</span>, { <span class="st">:area_code</span> =&gt; <span class="dv">true</span>, <span class="st">:extension</span> =&gt; <span class="dv">555</span> }) <span class="co"># =&gt; (123) 555-1234 x 555</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb85-1"><a href="float.html#cb85-1" aria-hidden="true"></a><span class="dv">1235551234</span>.to_s(<span class="st">:phone</span>, { <span class="st">:area_code</span> =&gt; <span class="dv">true</span> }                     <span class="co"># =&gt; &quot;(123) 555-1234&quot;</span></span>
+<span id="cb85-2"><a href="float.html#cb85-2" aria-hidden="true"></a><span class="dv">1235551234</span>.to_s(<span class="st">:phone</span>, { <span class="st">:country_code</span> =&gt; <span class="dv">1</span> } )                   <span class="co"># =&gt; &quot;+1-123-555-1234&quot;</span></span>
+<span id="cb85-3"><a href="float.html#cb85-3" aria-hidden="true"></a><span class="dv">1235551234</span>.to_s(<span class="st">:phone</span>, { <span class="st">:area_code</span> =&gt; <span class="dv">true</span>, <span class="st">:extension</span> =&gt; <span class="dv">555</span> }) <span class="co"># =&gt; (123) 555-1234 x 555</span></span></code></pre></div>
 </div>
 <div id="currency" class="section level5 unnumbered hasAnchor">
 <h5>Currency<a href="float.html#currency" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb85"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb85-1"><a href="float.html#cb85-1" aria-hidden="true"></a><span class="fl">1234567890.50</span>.to_s(<span class="st">:currency</span>)                  <span class="co"># =&gt; &quot;$1,234,567,890.50&quot;</span></span>
-<span id="cb85-2"><a href="float.html#cb85-2" aria-hidden="true"></a><span class="fl">67890.506</span>.to_s(<span class="st">:currency</span>, { <span class="st">:precision</span> =&gt; <span class="dv">3</span> }) <span class="co"># =&gt; &quot;$67,890.506&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb86-1"><a href="float.html#cb86-1" aria-hidden="true"></a><span class="fl">1234567890.50</span>.to_s(<span class="st">:currency</span>)                  <span class="co"># =&gt; &quot;$1,234,567,890.50&quot;</span></span>
+<span id="cb86-2"><a href="float.html#cb86-2" aria-hidden="true"></a><span class="fl">67890.506</span>.to_s(<span class="st">:currency</span>, { <span class="st">:precision</span> =&gt; <span class="dv">3</span> }) <span class="co"># =&gt; &quot;$67,890.506&quot;</span></span></code></pre></div>
 </div>
 <div id="percentage" class="section level5 unnumbered hasAnchor">
 <h5>Percentage<a href="float.html#percentage" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<div class="sourceCode" id="cb86"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb86-1"><a href="float.html#cb86-1" aria-hidden="true"></a><span class="dv">100</span>.to_s(<span class="st">:percentage</span>)                                            <span class="co"># =&gt; &quot;100.000%&quot;</span></span>
-<span id="cb86-2"><a href="float.html#cb86-2" aria-hidden="true"></a><span class="dv">100</span>.to_s(<span class="st">:percentage</span>, { <span class="st">:precision</span> =&gt; <span class="dv">0</span> } )                      <span class="co"># =&gt; &quot;100%&quot;</span></span>
-<span id="cb86-3"><a href="float.html#cb86-3" aria-hidden="true"></a><span class="dv">1000</span>.to_s(<span class="st">:percentage</span>, { <span class="st">:delimiter</span> =&gt; <span class="st">&quot;.&quot;</span>, <span class="st">:separator</span> =&gt; <span class="st">&quot;,&quot;</span> }) <span class="co"># =&gt; &quot;1.000,000%&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb87-1"><a href="float.html#cb87-1" aria-hidden="true"></a><span class="dv">100</span>.to_s(<span class="st">:percentage</span>)                                            <span class="co"># =&gt; &quot;100.000%&quot;</span></span>
+<span id="cb87-2"><a href="float.html#cb87-2" aria-hidden="true"></a><span class="dv">100</span>.to_s(<span class="st">:percentage</span>, { <span class="st">:precision</span> =&gt; <span class="dv">0</span> } )                      <span class="co"># =&gt; &quot;100%&quot;</span></span>
+<span id="cb87-3"><a href="float.html#cb87-3" aria-hidden="true"></a><span class="dv">1000</span>.to_s(<span class="st">:percentage</span>, { <span class="st">:delimiter</span> =&gt; <span class="st">&quot;.&quot;</span>, <span class="st">:separator</span> =&gt; <span class="st">&quot;,&quot;</span> }) <span class="co"># =&gt; &quot;1.000,000%&quot;</span></span></code></pre></div>
 
 </div>
 </div>

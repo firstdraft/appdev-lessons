@@ -159,7 +159,7 @@ Movie.where({ :title => "The Shawshank Redemption" })
 
 ##### Start the GitPod Project {-}
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions){target="_blank"}.
+Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions){target="_blank"}.
 
 <mark>✏️ **Exercise:**</mark> On GitPod in the `Hash` project, work through `hash_person.rb`.
 

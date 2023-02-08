@@ -105,7 +105,7 @@ Code like this is what drives the dozens of dynamic applications you interact wi
 
 ##### Start the GitPod Project {-}
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions){target="_blank"}.
+Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions){target="_blank"}.
 
 <mark>✏️ **Exercise:**</mark> On GitPod in the `.each` project, work through `each_spell_word.rb`.
 

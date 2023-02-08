@@ -6,7 +6,7 @@ Before we go on, let's stop, take a breath, and try to put what we've learned so
 
 ##### Continue the GitPod Project {-}
 
-Open the GitPod project for the Ruby Gym and continue with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder.
+Open the GitPod project for the Ruby Gym and continue with the exercises. [See prior steps](#start-gitpod-project) as a reminder.
 
 <mark>✏️ **Exercise:**</mark> On GitPod in the Ruby Gym project, work through `count_the.rb`.
 

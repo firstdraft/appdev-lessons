@@ -72,7 +72,7 @@ t.day # => 16
 
 ##### Start the GitPod Project {-}
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions){target="_blank"}.
+Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions){target="_blank"}.
 
 <mark>✏️ **Exercise:**</mark> On GitPod in the `Date` project, work through `date_formatted.rb`.
 

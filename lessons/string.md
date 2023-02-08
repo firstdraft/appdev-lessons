@@ -22,7 +22,9 @@ This will, however, just give us back an empty string `""`. We would then have t
 
 #### Make the invisible visible in GitPod {-}
 
-<mark>✏️ **Exercise:**</mark> Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there.
+<div class="proj">
+   Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there.
+</div>
 
 **BENP: As a template use 00:00:00 to 00:06:15 of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} to transcribe and then re-record an exercise where you first open the `helloruby` project, create `howdy.rb`, run it, then add another `invisible_to_visible.rb` exercise like below:**
 
@@ -100,33 +102,41 @@ my_string.concat(33)
 p my_string # => "Hello, world!"
 ```
 
-<mark>✏️ **Exercise:**</mark> This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
+<div class="repl">
+   This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
+</div>
 
-##### Start the GitPod Project {-}
+#### Start the GitPod Project {- #start-gitpod-project}
 
 Once you've played with the REPL, it's time to move into the graded project environment.
 
-<mark>✏️ **Exercise:**</mark> Open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file. **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`**
+<div class="proj">
+   Open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file.
+</div>
 
-**BENP: how are they starting the project, fork from canvas, gitpod.io/# method (gitpod.io/# would require access token to run rails grade...)** 
+<div class="proj">
 
- 1. Fork the project from GitHub: [https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions){target="_blank"}
- 1. Open the `string_concat.rb` file in the editor window.
- 1. Modify the file per the instructions on top.
- 1. Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the terminal. If we want to run `string_concat.rb`, we can write the command:
+   **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`. Basically the steps outlined below.**
 
-      ```bash
-      ruby string_concat.rb
-      ```
-   
-      Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use **tab completion**!
+   1. LTI{Load assignment}(https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_concat]
+   1. Open the `string_concat.rb` file in the editor window.
+   1. Modify the file per the instructions on top.
+   1. Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the terminal. If we want to run `string_concat.rb`, we can write the command:
 
-1. To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you've run in a terminal.
-1. When you think you have the required output, run `rails grade` and proceed when the test passes without errors.
+         ```bash
+         ruby string_concat.rb
+         ```
+      
+         Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use **tab completion**!
 
-If you are struggling, **try to experiment directly in the IRB environment** by typing `irb` into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start `irb` then the terminal will no longer be in the `bash` environment so things like `rails grade` won't work. You will need to open a second terminal with the plus (+) icon and switch between the `irb` and `bash` terminals as needed. Alternatively type `exit` at the IRB terminal prompt to return to the `bash` environment. **BENP: I wonder if we insert a GIF of this process as a way to help them understand the steps**
+   1. To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you've run in a terminal.
+   1. When you think you have the required output, run `rails grade` and proceed when the test passes without errors.
 
-![](assets/string/irb-gif.gif)
+   If you are struggling, **try to experiment directly in the IRB environment** by typing `irb` into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start `irb` then the terminal will no longer be in the `bash` environment so things like `rails grade` won't work. You will need to open a second terminal with the plus (+) icon and switch between the `irb` and `bash` terminals as needed. Alternatively type `exit` at the IRB terminal prompt to return to the `bash` environment.
+
+   ![](assets/string/irb-gif.gif)
+
+</div>
 
 #### String literals {-}
 
@@ -182,9 +192,13 @@ b = "World"
 p a + b # => "HelloWorld"        # You can add strings together
 ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_addition.rb`
+<div class="proj">
+   Return to the GitPod `String` project and work through `string_addition.rb`
+</div>
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
+</div>
 
 #### String multiplication, a.k.a * {-}
 
@@ -202,7 +216,9 @@ This sort of makes sense, if you think about multiplication as being repeated ad
 p "Hello" * 3
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){target="_blank"}
+</div>
 
 The order matters, though. See what happens when you try:
 
@@ -218,7 +234,9 @@ But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hell
 
 Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line][The bottom line] is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_multiplication.rb`
+<div class="proj">
+   Return to the GitPod `String` project and work through `string_multiplication.rb`
+</div>
 
 #### upcase {-}
 
@@ -228,7 +246,9 @@ The upcase method returns a copy of the `String` with all lowercase letters repl
 p "hello".upcase
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
+</div>
 
 #### downcase {-}
 
@@ -238,7 +258,9 @@ The downcase method returns a copy of the `String` with all uppercase letters re
 p "I'M NOT YELLING AT YOU".downcase
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
+</div>
 
 #### swapcase {-}
 
@@ -248,7 +270,9 @@ The swapcase method returns a copy of the `String` with all uppercase letters re
 p "FaMiLy".swapcase # => "fAmIlY
 ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_case.rb`
+<div class="proj">
+   Return to the GitPod `String` project and work through `string_case.rb`
+</div>
 
 #### reverse {-}
 
@@ -258,7 +282,9 @@ The reverse method returns a new `String` with the characters from the `String` 
 p "I can speak in backwords words".reverse
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
+</div>
 
 #### length {-}
 
@@ -268,7 +294,9 @@ The length method  returns the number of characters (as an `Integer`) that a `St
 p "Supercalifragilisticexpialidocious".length
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
+</div>
 
 #### chomp {-}
 
@@ -288,9 +316,13 @@ This seemingly strange task is very common due to the way that getting user inpu
 "1 apple".chomp("s") # => "1 apple"
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
+</div>
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_chomp.rb`
+<div class="proj">
+   Return to the GitPod `String` project and work through `string_chomp.rb`
+</div>
 
 #### gsub {-}
 
@@ -301,7 +333,9 @@ a = "Hello"
 p a.gsub("ll", "ww")  # => "Hewwo"
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
+</div>
 
 ##### Advanced gsub techniques {-}
 
@@ -334,9 +368,13 @@ For now, we're just going to copy-paste a few simple regexes[^regexone] that com
     "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
     ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub.rb`
+<div class="proj">
+   Return to the GitPod `String` project and work through `string_gsub.rb`
+</div>
 
-<!-- <mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gsub_advanced.rb` -->
+<!-- <div class="proj">
+   Return to the GitPod `String` project and work through `string_gsub_advanced.rb`
+</div> -->
 
 #### to_i {-}
 
@@ -346,7 +384,9 @@ Sometimes you have a string that contains a number, usually input from a user, a
 p "8".to_i
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
+</div>
 
 #### strip {-}
 
@@ -356,7 +396,9 @@ p "8".to_i
 p "   This has a lot of space on the outside     ".strip
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
+</div>
 
 #### capitalize {-}
 
@@ -366,9 +408,13 @@ capitalize returns a `String` with the first character converted to uppercase an
 p "beginning".capitalize
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
+</div>
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_strip.rb`
+<div class="proj">
+   Return to the GitPod `String` project and work through `string_strip.rb`
+</div>
 
 #### include? {-}
 
@@ -380,7 +426,9 @@ p "Happy Days".include?("H")
 p "Happy Days".include?("Z")
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
+</div>
 
 ### More on adding strings together
 
@@ -391,7 +439,9 @@ number = 6 * 7
 message = "Your lucky number for today is " + number + "."
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){target="_blank"}
+</div>
 
 You'll see that Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn't feel comfortable with that.
 
@@ -429,7 +479,9 @@ their_name = gets
 p "Hello, " + their_name + "!"
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){target="_blank"}
+<div class="repl">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){target="_blank"}
+</div>
 
 Great! Our first user input. However, you'll notice a couple of things. First of all, there's a `\n` sneaking into the input. `\n` represents a newline character, and it's in there because of the <kbd>return</kbd> that is pressed to submit the input.
 
@@ -463,7 +515,9 @@ their_name = gets.chomp
 
 and see how it's different.
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `String` project and work through `string_gets.rb`
+<div class="proj">
+   Return to the GitPod `String` project and work through `string_gets.rb`
+</div>
 
 ### Conclusion
 

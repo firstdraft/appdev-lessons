@@ -10,29 +10,33 @@
   width: 90%;
 }
 
-p.repl {
+div.repl {
   background-color: #d4edda;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid black;
   margin-left: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
   border-radius: 5px;
   font-style: normal;
   }
 
-p.repl::before{
+div.repl::before{
   content: "🧪";
 }
 
-p.proj {
+div.proj {
   background-color: #fff3cd;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid black;
   margin-left: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
   border-radius: 5px;
   font-style: normal;
   }
 
-p.proj::before{
+div.proj::before{
   content: "✏️";
 }
 

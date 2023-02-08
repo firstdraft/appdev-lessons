@@ -404,13 +404,13 @@ end
 ⇒ Array</code></pre>
 <p>Given an array, the <code>.each</code> method will loop through each element of the array starting with the very first one.</p>
 <p>Returns the <a href="array.html#array"><code>Array</code></a> the method was called on.</p>
-<div class="sourceCode" id="cb277"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb277-1"><a href="looping-through-arrays.html#cb277-1" aria-hidden="true"></a>cities = [<span class="st">&quot;Chicago&quot;</span>, <span class="st">&quot;LA&quot;</span>, <span class="st">&quot;NYC&quot;</span>]</span>
-<span id="cb277-2"><a href="looping-through-arrays.html#cb277-2" aria-hidden="true"></a>cities.each <span class="kw">do</span> |city|</span>
-<span id="cb277-3"><a href="looping-through-arrays.html#cb277-3" aria-hidden="true"></a>  p city</span>
-<span id="cb277-4"><a href="looping-through-arrays.html#cb277-4" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<div class="sourceCode" id="cb278"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb278-1"><a href="looping-through-arrays.html#cb278-1" aria-hidden="true"></a><span class="st">&quot;Chicago&quot;</span>  </span>
-<span id="cb278-2"><a href="looping-through-arrays.html#cb278-2" aria-hidden="true"></a><span class="st">&quot;LA&quot;</span>  </span>
-<span id="cb278-3"><a href="looping-through-arrays.html#cb278-3" aria-hidden="true"></a><span class="st">&quot;NYC&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb278-1"><a href="looping-through-arrays.html#cb278-1" aria-hidden="true"></a>cities = [<span class="st">&quot;Chicago&quot;</span>, <span class="st">&quot;LA&quot;</span>, <span class="st">&quot;NYC&quot;</span>]</span>
+<span id="cb278-2"><a href="looping-through-arrays.html#cb278-2" aria-hidden="true"></a>cities.each <span class="kw">do</span> |city|</span>
+<span id="cb278-3"><a href="looping-through-arrays.html#cb278-3" aria-hidden="true"></a>  p city</span>
+<span id="cb278-4"><a href="looping-through-arrays.html#cb278-4" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb279-1"><a href="looping-through-arrays.html#cb279-1" aria-hidden="true"></a><span class="st">&quot;Chicago&quot;</span>  </span>
+<span id="cb279-2"><a href="looping-through-arrays.html#cb279-2" aria-hidden="true"></a><span class="st">&quot;LA&quot;</span>  </span>
+<span id="cb279-3"><a href="looping-through-arrays.html#cb279-3" aria-hidden="true"></a><span class="st">&quot;NYC&quot;</span></span></code></pre></div>
 <p>The block variable <code>city</code> holds the value of the elements in the array <code>cities</code>. It starts with the first element <code>"Chicago"</code> and then changes with each interation, holding the value of the next element (<code>"LA"</code>) in the array and so on.</p>
 <p><a href="https://chapters.firstdraft.com/chapters/765#arrays-each-method">Full explanation</a></p>
 </div>
@@ -422,12 +422,12 @@ end
 
 ⇒ Array</code></pre>
 <p>To keep a track of the iteration number while looping through an array, <code>.each_with_index</code> creates an additional block variable that starts of counting the iteration number starting at <em>zero</em>. After each execution of the code within the block, the block variable is incremented by 1.</p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb280-1"><a href="looping-through-arrays.html#cb280-1" aria-hidden="true"></a>cities.each_with_index <span class="kw">do</span> |city, count|</span>
-<span id="cb280-2"><a href="looping-through-arrays.html#cb280-2" aria-hidden="true"></a>  p count.to_s + <span class="st">&quot; &quot;</span> + city</span>
-<span id="cb280-3"><a href="looping-through-arrays.html#cb280-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<div class="sourceCode" id="cb281"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb281-1"><a href="looping-through-arrays.html#cb281-1" aria-hidden="true"></a><span class="st">&quot;0 Chicago&quot;</span>  </span>
-<span id="cb281-2"><a href="looping-through-arrays.html#cb281-2" aria-hidden="true"></a><span class="st">&quot;1 LA&quot;</span>  </span>
-<span id="cb281-3"><a href="looping-through-arrays.html#cb281-3" aria-hidden="true"></a><span class="st">&quot;2 NYC&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb281-1"><a href="looping-through-arrays.html#cb281-1" aria-hidden="true"></a>cities.each_with_index <span class="kw">do</span> |city, count|</span>
+<span id="cb281-2"><a href="looping-through-arrays.html#cb281-2" aria-hidden="true"></a>  p count.to_s + <span class="st">&quot; &quot;</span> + city</span>
+<span id="cb281-3"><a href="looping-through-arrays.html#cb281-3" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb282-1"><a href="looping-through-arrays.html#cb282-1" aria-hidden="true"></a><span class="st">&quot;0 Chicago&quot;</span>  </span>
+<span id="cb282-2"><a href="looping-through-arrays.html#cb282-2" aria-hidden="true"></a><span class="st">&quot;1 LA&quot;</span>  </span>
+<span id="cb282-3"><a href="looping-through-arrays.html#cb282-3" aria-hidden="true"></a><span class="st">&quot;2 NYC&quot;</span></span></code></pre></div>
 <p><code>city</code> holds the value of elements in the array <code>cities</code>. <code>count</code> holds the index of the element that <code>city</code> currently holds.</p>
 <p><strong><em>Note:</em></strong><br />
 Variables created as a block variables can only be used within that block (between <code>do</code> and <code>end</code>). Using that variable outside that block will throw an error.</p>

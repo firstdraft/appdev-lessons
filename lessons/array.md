@@ -183,7 +183,7 @@ We'll be using this technique frequently to make things more interesting.
 
 ##### Start the GitPod Project {-}
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps][Start the GitPod Project for Integer] as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions){target="_blank"}.
+Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions){target="_blank"}.
 
 <mark>✏️ **Exercise:**</mark> On GitPod in the `Array` project, work through `array_element_square.rb`.
 

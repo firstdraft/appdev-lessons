@@ -398,95 +398,95 @@ Proudly published with bookdown</a></li>
 <div id="modeling-real-world-things" class="section level3 hasAnchor" number="1.16.1">
 <h3><span class="header-section-number">1.16.1</span> Modeling real world things<a href="our-own-classes.html#modeling-real-world-things" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can <em>model</em> a person pretty well with an <code>Array</code>:</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb161-1"><a href="our-own-classes.html#cb161-1" aria-hidden="true"></a>a = <span class="dt">Array</span>.new <span class="co"># This is the longhand for a = []</span></span>
-<span id="cb161-2"><a href="our-own-classes.html#cb161-2" aria-hidden="true"></a>a.push(<span class="st">&quot;Raghu&quot;</span>)</span>
-<span id="cb161-3"><a href="our-own-classes.html#cb161-3" aria-hidden="true"></a>a.push(<span class="st">&quot;Betina&quot;</span>)</span>
-<span id="cb161-4"><a href="our-own-classes.html#cb161-4" aria-hidden="true"></a>a.push(<span class="st">&quot;Instructor&quot;</span>)</span>
-<span id="cb161-5"><a href="our-own-classes.html#cb161-5" aria-hidden="true"></a></span>
-<span id="cb161-6"><a href="our-own-classes.html#cb161-6" aria-hidden="true"></a>a <span class="co"># =&gt; [&quot;Raghu&quot;, &quot;Betina&quot;, &quot;Instructor&quot;]</span></span>
-<span id="cb161-7"><a href="our-own-classes.html#cb161-7" aria-hidden="true"></a></span>
-<span id="cb161-8"><a href="our-own-classes.html#cb161-8" aria-hidden="true"></a>a.at(<span class="dv">1</span>) <span class="co"># =&gt; &quot;Betina&quot;</span></span>
-<span id="cb161-9"><a href="our-own-classes.html#cb161-9" aria-hidden="true"></a>a.class <span class="co"># =&gt; Array</span></span></code></pre></div>
-<p>And we can model a person even better with a <code>Hash</code>:</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb162-1"><a href="our-own-classes.html#cb162-1" aria-hidden="true"></a>h = <span class="dt">Hash</span>.new <span class="co"># This is the longhand for h = {}</span></span>
-<span id="cb162-2"><a href="our-own-classes.html#cb162-2" aria-hidden="true"></a>h.store(<span class="st">:first_name</span>, <span class="st">&quot;Raghu&quot;</span>)</span>
-<span id="cb162-3"><a href="our-own-classes.html#cb162-3" aria-hidden="true"></a>h.store(<span class="st">:last_name</span>, <span class="st">&quot;Betina&quot;</span>)</span>
-<span id="cb162-4"><a href="our-own-classes.html#cb162-4" aria-hidden="true"></a>h.store(<span class="st">:role</span>, <span class="st">&quot;Instructor&quot;</span>)</span>
+<div class="sourceCode" id="cb162"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb162-1"><a href="our-own-classes.html#cb162-1" aria-hidden="true"></a>a = <span class="dt">Array</span>.new <span class="co"># This is the longhand for a = []</span></span>
+<span id="cb162-2"><a href="our-own-classes.html#cb162-2" aria-hidden="true"></a>a.push(<span class="st">&quot;Raghu&quot;</span>)</span>
+<span id="cb162-3"><a href="our-own-classes.html#cb162-3" aria-hidden="true"></a>a.push(<span class="st">&quot;Betina&quot;</span>)</span>
+<span id="cb162-4"><a href="our-own-classes.html#cb162-4" aria-hidden="true"></a>a.push(<span class="st">&quot;Instructor&quot;</span>)</span>
 <span id="cb162-5"><a href="our-own-classes.html#cb162-5" aria-hidden="true"></a></span>
-<span id="cb162-6"><a href="our-own-classes.html#cb162-6" aria-hidden="true"></a>h <span class="co"># =&gt; { :first_name =&gt; &quot;Raghu&quot;, :last_name =&gt; &quot;Betina&quot;, :role =&gt; &quot;Instructor&quot; }</span></span>
+<span id="cb162-6"><a href="our-own-classes.html#cb162-6" aria-hidden="true"></a>a <span class="co"># =&gt; [&quot;Raghu&quot;, &quot;Betina&quot;, &quot;Instructor&quot;]</span></span>
 <span id="cb162-7"><a href="our-own-classes.html#cb162-7" aria-hidden="true"></a></span>
-<span id="cb162-8"><a href="our-own-classes.html#cb162-8" aria-hidden="true"></a>h.fetch(<span class="st">:last_name</span>) <span class="co"># =&gt; &quot;Betina&quot;</span></span>
-<span id="cb162-9"><a href="our-own-classes.html#cb162-9" aria-hidden="true"></a>h.class <span class="co"># =&gt; Hash</span></span></code></pre></div>
+<span id="cb162-8"><a href="our-own-classes.html#cb162-8" aria-hidden="true"></a>a.at(<span class="dv">1</span>) <span class="co"># =&gt; &quot;Betina&quot;</span></span>
+<span id="cb162-9"><a href="our-own-classes.html#cb162-9" aria-hidden="true"></a>a.class <span class="co"># =&gt; Array</span></span></code></pre></div>
+<p>And we can model a person even better with a <code>Hash</code>:</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb163-1"><a href="our-own-classes.html#cb163-1" aria-hidden="true"></a>h = <span class="dt">Hash</span>.new <span class="co"># This is the longhand for h = {}</span></span>
+<span id="cb163-2"><a href="our-own-classes.html#cb163-2" aria-hidden="true"></a>h.store(<span class="st">:first_name</span>, <span class="st">&quot;Raghu&quot;</span>)</span>
+<span id="cb163-3"><a href="our-own-classes.html#cb163-3" aria-hidden="true"></a>h.store(<span class="st">:last_name</span>, <span class="st">&quot;Betina&quot;</span>)</span>
+<span id="cb163-4"><a href="our-own-classes.html#cb163-4" aria-hidden="true"></a>h.store(<span class="st">:role</span>, <span class="st">&quot;Instructor&quot;</span>)</span>
+<span id="cb163-5"><a href="our-own-classes.html#cb163-5" aria-hidden="true"></a></span>
+<span id="cb163-6"><a href="our-own-classes.html#cb163-6" aria-hidden="true"></a>h <span class="co"># =&gt; { :first_name =&gt; &quot;Raghu&quot;, :last_name =&gt; &quot;Betina&quot;, :role =&gt; &quot;Instructor&quot; }</span></span>
+<span id="cb163-7"><a href="our-own-classes.html#cb163-7" aria-hidden="true"></a></span>
+<span id="cb163-8"><a href="our-own-classes.html#cb163-8" aria-hidden="true"></a>h.fetch(<span class="st">:last_name</span>) <span class="co"># =&gt; &quot;Betina&quot;</span></span>
+<span id="cb163-9"><a href="our-own-classes.html#cb163-9" aria-hidden="true"></a>h.class <span class="co"># =&gt; Hash</span></span></code></pre></div>
 <p>But we can do even better than a <code>Hash</code>. We can define <em>our own class</em> to represent people with the <code>class</code> keyword:</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb163-1"><a href="our-own-classes.html#cb163-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
-<span id="cb163-2"><a href="our-own-classes.html#cb163-2" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb164-1"><a href="our-own-classes.html#cb164-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
+<span id="cb164-2"><a href="our-own-classes.html#cb164-2" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>Remember, the only time we use capital letters in Ruby is when we’re referring to classes — and this goes for when we’re naming our own classes, too. So <code>class person</code> will not work. If you have a multi-word name, then <code>CamelCase</code> it — <code>class VeryImportantPerson</code>.</p>
 <p>And we can declare what attributes a person can have with the <code>attr_accessor</code> keyword:</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb164-1"><a href="our-own-classes.html#cb164-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
-<span id="cb164-2"><a href="our-own-classes.html#cb164-2" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:first_name</span></span>
-<span id="cb164-3"><a href="our-own-classes.html#cb164-3" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:last_name</span></span>
-<span id="cb164-4"><a href="our-own-classes.html#cb164-4" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:role</span></span>
-<span id="cb164-5"><a href="our-own-classes.html#cb164-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>And now the <code>Person</code> class is a first-class citizen in the language, just like <code>Array</code> and <code>Hash</code>. Compare the code below to the code above for creating <code>Array</code>s and <code>Hash</code>s to store information:</p>
 <div class="sourceCode" id="cb165"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb165-1"><a href="our-own-classes.html#cb165-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
 <span id="cb165-2"><a href="our-own-classes.html#cb165-2" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:first_name</span></span>
 <span id="cb165-3"><a href="our-own-classes.html#cb165-3" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:last_name</span></span>
 <span id="cb165-4"><a href="our-own-classes.html#cb165-4" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:role</span></span>
-<span id="cb165-5"><a href="our-own-classes.html#cb165-5" aria-hidden="true"></a><span class="kw">end</span></span>
-<span id="cb165-6"><a href="our-own-classes.html#cb165-6" aria-hidden="true"></a></span>
-<span id="cb165-7"><a href="our-own-classes.html#cb165-7" aria-hidden="true"></a>c = <span class="dt">Person</span>.new</span>
-<span id="cb165-8"><a href="our-own-classes.html#cb165-8" aria-hidden="true"></a>c.first_name = <span class="st">&quot;Raghu&quot;</span></span>
-<span id="cb165-9"><a href="our-own-classes.html#cb165-9" aria-hidden="true"></a>c.last_name = <span class="st">&quot;Betina&quot;</span></span>
-<span id="cb165-10"><a href="our-own-classes.html#cb165-10" aria-hidden="true"></a>c.role = <span class="st">&quot;Instructor&quot;</span></span>
-<span id="cb165-11"><a href="our-own-classes.html#cb165-11" aria-hidden="true"></a></span>
-<span id="cb165-12"><a href="our-own-classes.html#cb165-12" aria-hidden="true"></a></span>
-<span id="cb165-13"><a href="our-own-classes.html#cb165-13" aria-hidden="true"></a>p c.last_name <span class="co"># =&gt; &quot;Betina&quot;</span></span>
-<span id="cb165-14"><a href="our-own-classes.html#cb165-14" aria-hidden="true"></a>p c.role</span>
-<span id="cb165-15"><a href="our-own-classes.html#cb165-15" aria-hidden="true"></a>p c.class <span class="co"># =&gt; Person</span></span></code></pre></div>
+<span id="cb165-5"><a href="our-own-classes.html#cb165-5" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>And now the <code>Person</code> class is a first-class citizen in the language, just like <code>Array</code> and <code>Hash</code>. Compare the code below to the code above for creating <code>Array</code>s and <code>Hash</code>s to store information:</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb166-1"><a href="our-own-classes.html#cb166-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
+<span id="cb166-2"><a href="our-own-classes.html#cb166-2" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:first_name</span></span>
+<span id="cb166-3"><a href="our-own-classes.html#cb166-3" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:last_name</span></span>
+<span id="cb166-4"><a href="our-own-classes.html#cb166-4" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:role</span></span>
+<span id="cb166-5"><a href="our-own-classes.html#cb166-5" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb166-6"><a href="our-own-classes.html#cb166-6" aria-hidden="true"></a></span>
+<span id="cb166-7"><a href="our-own-classes.html#cb166-7" aria-hidden="true"></a>c = <span class="dt">Person</span>.new</span>
+<span id="cb166-8"><a href="our-own-classes.html#cb166-8" aria-hidden="true"></a>c.first_name = <span class="st">&quot;Raghu&quot;</span></span>
+<span id="cb166-9"><a href="our-own-classes.html#cb166-9" aria-hidden="true"></a>c.last_name = <span class="st">&quot;Betina&quot;</span></span>
+<span id="cb166-10"><a href="our-own-classes.html#cb166-10" aria-hidden="true"></a>c.role = <span class="st">&quot;Instructor&quot;</span></span>
+<span id="cb166-11"><a href="our-own-classes.html#cb166-11" aria-hidden="true"></a></span>
+<span id="cb166-12"><a href="our-own-classes.html#cb166-12" aria-hidden="true"></a></span>
+<span id="cb166-13"><a href="our-own-classes.html#cb166-13" aria-hidden="true"></a>p c.last_name <span class="co"># =&gt; &quot;Betina&quot;</span></span>
+<span id="cb166-14"><a href="our-own-classes.html#cb166-14" aria-hidden="true"></a>p c.role</span>
+<span id="cb166-15"><a href="our-own-classes.html#cb166-15" aria-hidden="true"></a>p c.class <span class="co"># =&gt; Person</span></span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/our-own-classes" target="_blank">Click here for a REPL to try it.</a></p>
 <p>For each attribute that we declared, we get methods that we can call to assign and retrieve values.</p>
 <div id="defining-instance-methods" class="section level4 unnumbered hasAnchor">
 <h4>Defining instance methods<a href="our-own-classes.html#defining-instance-methods" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>There are a few reasons I like using classes more than <code>Hash</code>es to model things, but here is the big one: in addition to just storing a list of attributes about a thing, we can also <em>define our own methods</em> with the <code>def</code> keyword. For example, try adding the following <code>full_name</code> method to the class we defined in the REPL above:</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb166-1"><a href="our-own-classes.html#cb166-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
-<span id="cb166-2"><a href="our-own-classes.html#cb166-2" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:first_name</span></span>
-<span id="cb166-3"><a href="our-own-classes.html#cb166-3" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:last_name</span></span>
-<span id="cb166-4"><a href="our-own-classes.html#cb166-4" aria-hidden="true"></a></span>
-<span id="cb166-5"><a href="our-own-classes.html#cb166-5" aria-hidden="true"></a>  <span class="kw">def</span> full_name</span>
-<span id="cb166-6"><a href="our-own-classes.html#cb166-6" aria-hidden="true"></a>    <span class="kw">return</span> <span class="dv">self</span>.first_name + <span class="st">&quot; &quot;</span> + <span class="dv">self</span>.last_name</span>
-<span id="cb166-7"><a href="our-own-classes.html#cb166-7" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb166-8"><a href="our-own-classes.html#cb166-8" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>Now, in addition to being able to store data (first and last names), I can ask any <code>Person</code> to compute its full name:</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb167-1"><a href="our-own-classes.html#cb167-1" aria-hidden="true"></a>hs = <span class="dt">Person</span>.new</span>
-<span id="cb167-2"><a href="our-own-classes.html#cb167-2" aria-hidden="true"></a>hs.first_name = <span class="st">&quot;Homer&quot;</span></span>
-<span id="cb167-3"><a href="our-own-classes.html#cb167-3" aria-hidden="true"></a>hs.last_name = <span class="st">&quot;Simpson&quot;</span></span>
+<div class="sourceCode" id="cb167"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb167-1"><a href="our-own-classes.html#cb167-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
+<span id="cb167-2"><a href="our-own-classes.html#cb167-2" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:first_name</span></span>
+<span id="cb167-3"><a href="our-own-classes.html#cb167-3" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:last_name</span></span>
 <span id="cb167-4"><a href="our-own-classes.html#cb167-4" aria-hidden="true"></a></span>
-<span id="cb167-5"><a href="our-own-classes.html#cb167-5" aria-hidden="true"></a><span class="st">&quot;Hello, &quot;</span> + hs.full_name + <span class="st">&quot;!&quot;</span> <span class="co"># =&gt; &quot;Hello, Homer Simpson!&quot;</span></span></code></pre></div>
+<span id="cb167-5"><a href="our-own-classes.html#cb167-5" aria-hidden="true"></a>  <span class="kw">def</span> full_name</span>
+<span id="cb167-6"><a href="our-own-classes.html#cb167-6" aria-hidden="true"></a>    <span class="kw">return</span> <span class="dv">self</span>.first_name + <span class="st">&quot; &quot;</span> + <span class="dv">self</span>.last_name</span>
+<span id="cb167-7"><a href="our-own-classes.html#cb167-7" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb167-8"><a href="our-own-classes.html#cb167-8" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>Now, in addition to being able to store data (first and last names), I can ask any <code>Person</code> to compute its full name:</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb168-1"><a href="our-own-classes.html#cb168-1" aria-hidden="true"></a>hs = <span class="dt">Person</span>.new</span>
+<span id="cb168-2"><a href="our-own-classes.html#cb168-2" aria-hidden="true"></a>hs.first_name = <span class="st">&quot;Homer&quot;</span></span>
+<span id="cb168-3"><a href="our-own-classes.html#cb168-3" aria-hidden="true"></a>hs.last_name = <span class="st">&quot;Simpson&quot;</span></span>
+<span id="cb168-4"><a href="our-own-classes.html#cb168-4" aria-hidden="true"></a></span>
+<span id="cb168-5"><a href="our-own-classes.html#cb168-5" aria-hidden="true"></a><span class="st">&quot;Hello, &quot;</span> + hs.full_name + <span class="st">&quot;!&quot;</span> <span class="co"># =&gt; &quot;Hello, Homer Simpson!&quot;</span></span></code></pre></div>
 <p>Two new keywords to note:</p>
 <ul>
 <li>I used the <code>return</code> keyword to signify what value I wanted to replace <code>hs.full_name</code> in the original expression after it’s been evaluated.</li>
 <li>I used the <code>self</code> keyword to refer to the object who was asked to calculate its full name, since I can’t know in advance what (if any) variable name will be used.</li>
 </ul>
 <p>Here’s a slightly more involved example:</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb168-1"><a href="our-own-classes.html#cb168-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
-<span id="cb168-2"><a href="our-own-classes.html#cb168-2" aria-hidden="true"></a>  require(<span class="st">&quot;date&quot;</span>) <span class="co"># We need to pull in the Date class, which is not loaded by default</span></span>
-<span id="cb168-3"><a href="our-own-classes.html#cb168-3" aria-hidden="true"></a></span>
-<span id="cb168-4"><a href="our-own-classes.html#cb168-4" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:birthdate</span></span>
-<span id="cb168-5"><a href="our-own-classes.html#cb168-5" aria-hidden="true"></a></span>
-<span id="cb168-6"><a href="our-own-classes.html#cb168-6" aria-hidden="true"></a>  <span class="kw">def</span> age</span>
-<span id="cb168-7"><a href="our-own-classes.html#cb168-7" aria-hidden="true"></a>    dob = <span class="dt">Date</span>.parse(<span class="dv">self</span>.birthdate)</span>
-<span id="cb168-8"><a href="our-own-classes.html#cb168-8" aria-hidden="true"></a>    now = <span class="dt">Date</span>.today</span>
-<span id="cb168-9"><a href="our-own-classes.html#cb168-9" aria-hidden="true"></a>    age_in_days = now - dob</span>
-<span id="cb168-10"><a href="our-own-classes.html#cb168-10" aria-hidden="true"></a>    age_in_years = age_in_days / <span class="dv">365</span></span>
-<span id="cb168-11"><a href="our-own-classes.html#cb168-11" aria-hidden="true"></a></span>
-<span id="cb168-12"><a href="our-own-classes.html#cb168-12" aria-hidden="true"></a>    <span class="kw">return</span> age_in_years.to_i</span>
-<span id="cb168-13"><a href="our-own-classes.html#cb168-13" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb168-14"><a href="our-own-classes.html#cb168-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
-<p>Now every <code>Person</code> that we create will have the ability to compute their age based on their own dob attribute:</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb169-1"><a href="our-own-classes.html#cb169-1" aria-hidden="true"></a>hs = <span class="dt">Person</span>.new</span>
-<span id="cb169-2"><a href="our-own-classes.html#cb169-2" aria-hidden="true"></a>hs.birthdate = <span class="st">&quot;April 19, 1987&quot;</span></span>
+<div class="sourceCode" id="cb169"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb169-1"><a href="our-own-classes.html#cb169-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
+<span id="cb169-2"><a href="our-own-classes.html#cb169-2" aria-hidden="true"></a>  require(<span class="st">&quot;date&quot;</span>) <span class="co"># We need to pull in the Date class, which is not loaded by default</span></span>
 <span id="cb169-3"><a href="our-own-classes.html#cb169-3" aria-hidden="true"></a></span>
-<span id="cb169-4"><a href="our-own-classes.html#cb169-4" aria-hidden="true"></a>hs.age <span class="co"># =&gt; 32, as of this writing</span></span></code></pre></div>
+<span id="cb169-4"><a href="our-own-classes.html#cb169-4" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:birthdate</span></span>
+<span id="cb169-5"><a href="our-own-classes.html#cb169-5" aria-hidden="true"></a></span>
+<span id="cb169-6"><a href="our-own-classes.html#cb169-6" aria-hidden="true"></a>  <span class="kw">def</span> age</span>
+<span id="cb169-7"><a href="our-own-classes.html#cb169-7" aria-hidden="true"></a>    dob = <span class="dt">Date</span>.parse(<span class="dv">self</span>.birthdate)</span>
+<span id="cb169-8"><a href="our-own-classes.html#cb169-8" aria-hidden="true"></a>    now = <span class="dt">Date</span>.today</span>
+<span id="cb169-9"><a href="our-own-classes.html#cb169-9" aria-hidden="true"></a>    age_in_days = now - dob</span>
+<span id="cb169-10"><a href="our-own-classes.html#cb169-10" aria-hidden="true"></a>    age_in_years = age_in_days / <span class="dv">365</span></span>
+<span id="cb169-11"><a href="our-own-classes.html#cb169-11" aria-hidden="true"></a></span>
+<span id="cb169-12"><a href="our-own-classes.html#cb169-12" aria-hidden="true"></a>    <span class="kw">return</span> age_in_years.to_i</span>
+<span id="cb169-13"><a href="our-own-classes.html#cb169-13" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb169-14"><a href="our-own-classes.html#cb169-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<p>Now every <code>Person</code> that we create will have the ability to compute their age based on their own dob attribute:</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb170-1"><a href="our-own-classes.html#cb170-1" aria-hidden="true"></a>hs = <span class="dt">Person</span>.new</span>
+<span id="cb170-2"><a href="our-own-classes.html#cb170-2" aria-hidden="true"></a>hs.birthdate = <span class="st">&quot;April 19, 1987&quot;</span></span>
+<span id="cb170-3"><a href="our-own-classes.html#cb170-3" aria-hidden="true"></a></span>
+<span id="cb170-4"><a href="our-own-classes.html#cb170-4" aria-hidden="true"></a>hs.age <span class="co"># =&gt; 32, as of this writing</span></span></code></pre></div>
 <p>Note that we had to <code>require("date")</code><span id="fn-22"><!--
 --><label for="fn-22-toggle"><sup>22</sup></label><!--
 --><input type="checkbox" hidden id="fn-22-toggle"/>
@@ -498,27 +498,27 @@ Proudly published with bookdown</a></li>
 <p>The methods <code>full_name</code> and <code>age</code> above are known as <em>instance methods</em>, because we call them on individual <strong>instances</strong> of the <code>Person</code> class (Homer, Mickey, Minnie, etc).</p>
 <p>We can also define <strong>class</strong>-level methods, that we call directly on <code>Person</code> itself. This can be handy if we want to define re-usable utility methods that don’t really belong to any one individual person.</p>
 <p>Here’s an example similar to <code>Date.parse</code> — what if we wanted users of the <code>Person</code> class to quickly be able to create new instances of the class like this:</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb170-1"><a href="our-own-classes.html#cb170-1" aria-hidden="true"></a><span class="dt">Person</span>.parse(<span class="st">&quot;Betina, Raghu&quot;</span>)</span>
-<span id="cb170-2"><a href="our-own-classes.html#cb170-2" aria-hidden="true"></a></span>
-<span id="cb170-3"><a href="our-own-classes.html#cb170-3" aria-hidden="true"></a><span class="co"># =&gt; should return a new person with first</span></span>
-<span id="cb170-4"><a href="our-own-classes.html#cb170-4" aria-hidden="true"></a><span class="co">#    and last name attributes already populated</span></span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb171-1"><a href="our-own-classes.html#cb171-1" aria-hidden="true"></a><span class="dt">Person</span>.parse(<span class="st">&quot;Betina, Raghu&quot;</span>)</span>
+<span id="cb171-2"><a href="our-own-classes.html#cb171-2" aria-hidden="true"></a></span>
+<span id="cb171-3"><a href="our-own-classes.html#cb171-3" aria-hidden="true"></a><span class="co"># =&gt; should return a new person with first</span></span>
+<span id="cb171-4"><a href="our-own-classes.html#cb171-4" aria-hidden="true"></a><span class="co">#    and last name attributes already populated</span></span></code></pre></div>
 <p>Then, we can define the <strong>class-level</strong> method <code>parse</code>, called directly on <code>Person</code>, like this:</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb171-1"><a href="our-own-classes.html#cb171-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
-<span id="cb171-2"><a href="our-own-classes.html#cb171-2" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:first_name</span></span>
-<span id="cb171-3"><a href="our-own-classes.html#cb171-3" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:last_name</span></span>
-<span id="cb171-4"><a href="our-own-classes.html#cb171-4" aria-hidden="true"></a></span>
-<span id="cb171-5"><a href="our-own-classes.html#cb171-5" aria-hidden="true"></a>  <span class="kw">def</span> <span class="dt">Person</span>.parse(last_comma_first)</span>
-<span id="cb171-6"><a href="our-own-classes.html#cb171-6" aria-hidden="true"></a>    last_first_array = last_comma_first.split(<span class="st">&quot;,&quot;</span>)</span>
-<span id="cb171-7"><a href="our-own-classes.html#cb171-7" aria-hidden="true"></a>    the_last_name = last_first_array.at(<span class="dv">0</span>).strip</span>
-<span id="cb171-8"><a href="our-own-classes.html#cb171-8" aria-hidden="true"></a>    the_first_name = last_first_array.at(<span class="dv">1</span>).strip</span>
-<span id="cb171-9"><a href="our-own-classes.html#cb171-9" aria-hidden="true"></a>    </span>
-<span id="cb171-10"><a href="our-own-classes.html#cb171-10" aria-hidden="true"></a>    a_new_person = <span class="dt">Person</span>.new</span>
-<span id="cb171-11"><a href="our-own-classes.html#cb171-11" aria-hidden="true"></a>    a_new_person.first_name = the_first_name</span>
-<span id="cb171-12"><a href="our-own-classes.html#cb171-12" aria-hidden="true"></a>    a_new_person.last_name = the_last_name</span>
-<span id="cb171-13"><a href="our-own-classes.html#cb171-13" aria-hidden="true"></a>    </span>
-<span id="cb171-14"><a href="our-own-classes.html#cb171-14" aria-hidden="true"></a>    <span class="kw">return</span> a_new_person</span>
-<span id="cb171-15"><a href="our-own-classes.html#cb171-15" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb171-16"><a href="our-own-classes.html#cb171-16" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb172-1"><a href="our-own-classes.html#cb172-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
+<span id="cb172-2"><a href="our-own-classes.html#cb172-2" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:first_name</span></span>
+<span id="cb172-3"><a href="our-own-classes.html#cb172-3" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:last_name</span></span>
+<span id="cb172-4"><a href="our-own-classes.html#cb172-4" aria-hidden="true"></a></span>
+<span id="cb172-5"><a href="our-own-classes.html#cb172-5" aria-hidden="true"></a>  <span class="kw">def</span> <span class="dt">Person</span>.parse(last_comma_first)</span>
+<span id="cb172-6"><a href="our-own-classes.html#cb172-6" aria-hidden="true"></a>    last_first_array = last_comma_first.split(<span class="st">&quot;,&quot;</span>)</span>
+<span id="cb172-7"><a href="our-own-classes.html#cb172-7" aria-hidden="true"></a>    the_last_name = last_first_array.at(<span class="dv">0</span>).strip</span>
+<span id="cb172-8"><a href="our-own-classes.html#cb172-8" aria-hidden="true"></a>    the_first_name = last_first_array.at(<span class="dv">1</span>).strip</span>
+<span id="cb172-9"><a href="our-own-classes.html#cb172-9" aria-hidden="true"></a>    </span>
+<span id="cb172-10"><a href="our-own-classes.html#cb172-10" aria-hidden="true"></a>    a_new_person = <span class="dt">Person</span>.new</span>
+<span id="cb172-11"><a href="our-own-classes.html#cb172-11" aria-hidden="true"></a>    a_new_person.first_name = the_first_name</span>
+<span id="cb172-12"><a href="our-own-classes.html#cb172-12" aria-hidden="true"></a>    a_new_person.last_name = the_last_name</span>
+<span id="cb172-13"><a href="our-own-classes.html#cb172-13" aria-hidden="true"></a>    </span>
+<span id="cb172-14"><a href="our-own-classes.html#cb172-14" aria-hidden="true"></a>    <span class="kw">return</span> a_new_person</span>
+<span id="cb172-15"><a href="our-own-classes.html#cb172-15" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb172-16"><a href="our-own-classes.html#cb172-16" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p>The new things to note in the code above:</p>
 <ul>
 <li>When defining the method, we do <code>def Person.parse</code> rather than just <code>def parse</code> to make it a <strong>class method</strong> rather than an <strong>instance method</strong>. That way, we call the method directly on capital-<code>P</code> <code>Person</code>.</li>
@@ -529,56 +529,56 @@ Proudly published with bookdown</a></li>
 <div id="inheritance" class="section level3 hasAnchor" number="1.16.2">
 <h3><span class="header-section-number">1.16.2</span> Inheritance<a href="our-own-classes.html#inheritance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When you define new classes, you can choose to inherit all the power of a “parent” class, and then add some custom behavior:</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb172-1"><a href="our-own-classes.html#cb172-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Instructor</span> &lt; <span class="dt">Person</span></span>
-<span id="cb172-2"><a href="our-own-classes.html#cb172-2" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:role</span></span>
-<span id="cb172-3"><a href="our-own-classes.html#cb172-3" aria-hidden="true"></a><span class="kw">end</span></span>
-<span id="cb172-4"><a href="our-own-classes.html#cb172-4" aria-hidden="true"></a></span>
-<span id="cb172-5"><a href="our-own-classes.html#cb172-5" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Student</span> &lt; <span class="dt">Person</span></span>
-<span id="cb172-6"><a href="our-own-classes.html#cb172-6" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:grade</span></span>
-<span id="cb172-7"><a href="our-own-classes.html#cb172-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb173-1"><a href="our-own-classes.html#cb173-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Instructor</span> &lt; <span class="dt">Person</span></span>
+<span id="cb173-2"><a href="our-own-classes.html#cb173-2" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:role</span></span>
+<span id="cb173-3"><a href="our-own-classes.html#cb173-3" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb173-4"><a href="our-own-classes.html#cb173-4" aria-hidden="true"></a></span>
+<span id="cb173-5"><a href="our-own-classes.html#cb173-5" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Student</span> &lt; <span class="dt">Person</span></span>
+<span id="cb173-6"><a href="our-own-classes.html#cb173-6" aria-hidden="true"></a>  <span class="ot">attr_accessor</span> <span class="st">:grade</span></span>
+<span id="cb173-7"><a href="our-own-classes.html#cb173-7" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><code>Instructor</code>s and <code>Student</code>s can do everything people can, and a little bit more.</p>
 <p>Creating the first individual <strong>instance</strong> of the <code>Instructor</code> class:</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb173-1"><a href="our-own-classes.html#cb173-1" aria-hidden="true"></a>person1 = <span class="dt">Instructor</span>.new</span>
-<span id="cb173-2"><a href="our-own-classes.html#cb173-2" aria-hidden="true"></a>person1.first_name = <span class="st">&quot;Raghu&quot;</span></span>
-<span id="cb173-3"><a href="our-own-classes.html#cb173-3" aria-hidden="true"></a>person1.last_name = <span class="st">&quot;Betina&quot;</span></span>
-<span id="cb173-4"><a href="our-own-classes.html#cb173-4" aria-hidden="true"></a>person1.role = <span class="st">&quot;Lecturer&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb174-1"><a href="our-own-classes.html#cb174-1" aria-hidden="true"></a>person1 = <span class="dt">Instructor</span>.new</span>
+<span id="cb174-2"><a href="our-own-classes.html#cb174-2" aria-hidden="true"></a>person1.first_name = <span class="st">&quot;Raghu&quot;</span></span>
+<span id="cb174-3"><a href="our-own-classes.html#cb174-3" aria-hidden="true"></a>person1.last_name = <span class="st">&quot;Betina&quot;</span></span>
+<span id="cb174-4"><a href="our-own-classes.html#cb174-4" aria-hidden="true"></a>person1.role = <span class="st">&quot;Lecturer&quot;</span></span></code></pre></div>
 <p>Creating the second individual instance of the <code>Instructor</code> class:</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb174-1"><a href="our-own-classes.html#cb174-1" aria-hidden="true"></a>person2 = <span class="dt">Instructor</span>.new</span>
-<span id="cb174-2"><a href="our-own-classes.html#cb174-2" aria-hidden="true"></a>person2.first_name = <span class="st">&quot;Arjun&quot;</span></span>
-<span id="cb174-3"><a href="our-own-classes.html#cb174-3" aria-hidden="true"></a>person2.last_name = <span class="st">&quot;Venkataswamy&quot;</span></span>
-<span id="cb174-4"><a href="our-own-classes.html#cb174-4" aria-hidden="true"></a>person2.role = <span class="st">&quot;Faculty Coach&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb175-1"><a href="our-own-classes.html#cb175-1" aria-hidden="true"></a>person2 = <span class="dt">Instructor</span>.new</span>
+<span id="cb175-2"><a href="our-own-classes.html#cb175-2" aria-hidden="true"></a>person2.first_name = <span class="st">&quot;Arjun&quot;</span></span>
+<span id="cb175-3"><a href="our-own-classes.html#cb175-3" aria-hidden="true"></a>person2.last_name = <span class="st">&quot;Venkataswamy&quot;</span></span>
+<span id="cb175-4"><a href="our-own-classes.html#cb175-4" aria-hidden="true"></a>person2.role = <span class="st">&quot;Faculty Coach&quot;</span></span></code></pre></div>
 <p>Creating the first individual instance of the <code>Student</code> class:</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb175-1"><a href="our-own-classes.html#cb175-1" aria-hidden="true"></a>person3 = <span class="dt">Student</span>.new</span>
-<span id="cb175-2"><a href="our-own-classes.html#cb175-2" aria-hidden="true"></a>person3.first_name = <span class="st">&quot;Trenton&quot;</span></span>
-<span id="cb175-3"><a href="our-own-classes.html#cb175-3" aria-hidden="true"></a>person3.last_name = <span class="st">&quot;Arthur&quot;</span></span>
-<span id="cb175-4"><a href="our-own-classes.html#cb175-4" aria-hidden="true"></a>person3.grade = <span class="st">&quot;A&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb176-1"><a href="our-own-classes.html#cb176-1" aria-hidden="true"></a>person3 = <span class="dt">Student</span>.new</span>
+<span id="cb176-2"><a href="our-own-classes.html#cb176-2" aria-hidden="true"></a>person3.first_name = <span class="st">&quot;Trenton&quot;</span></span>
+<span id="cb176-3"><a href="our-own-classes.html#cb176-3" aria-hidden="true"></a>person3.last_name = <span class="st">&quot;Arthur&quot;</span></span>
+<span id="cb176-4"><a href="our-own-classes.html#cb176-4" aria-hidden="true"></a>person3.grade = <span class="st">&quot;A&quot;</span></span></code></pre></div>
 <p>Creating the second individual instance of the <code>Student</code> class:</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb176-1"><a href="our-own-classes.html#cb176-1" aria-hidden="true"></a>person4 = <span class="dt">Student</span>.new</span>
-<span id="cb176-2"><a href="our-own-classes.html#cb176-2" aria-hidden="true"></a>person4.first_name = <span class="st">&quot;Tom&quot;</span></span>
-<span id="cb176-3"><a href="our-own-classes.html#cb176-3" aria-hidden="true"></a>person4.last_name = <span class="st">&quot;Besio&quot;</span></span>
-<span id="cb176-4"><a href="our-own-classes.html#cb176-4" aria-hidden="true"></a>person4.grade = <span class="st">&quot;Incomplete&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb177-1"><a href="our-own-classes.html#cb177-1" aria-hidden="true"></a>person4 = <span class="dt">Student</span>.new</span>
+<span id="cb177-2"><a href="our-own-classes.html#cb177-2" aria-hidden="true"></a>person4.first_name = <span class="st">&quot;Tom&quot;</span></span>
+<span id="cb177-3"><a href="our-own-classes.html#cb177-3" aria-hidden="true"></a>person4.last_name = <span class="st">&quot;Besio&quot;</span></span>
+<span id="cb177-4"><a href="our-own-classes.html#cb177-4" aria-hidden="true"></a>person4.grade = <span class="st">&quot;Incomplete&quot;</span></span></code></pre></div>
 <p>Now we can use them:</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb177-1"><a href="our-own-classes.html#cb177-1" aria-hidden="true"></a>person1.full_name <span class="co"># =&gt; &quot;Raghu Betina&quot;</span></span>
-<span id="cb177-2"><a href="our-own-classes.html#cb177-2" aria-hidden="true"></a>person1.role <span class="co"># =&gt; &quot;Lecturer&quot;</span></span>
-<span id="cb177-3"><a href="our-own-classes.html#cb177-3" aria-hidden="true"></a>person2.full_name <span class="co"># =&gt; &quot;Arjun Venkataswamy&quot;</span></span>
-<span id="cb177-4"><a href="our-own-classes.html#cb177-4" aria-hidden="true"></a>person2.role <span class="co"># =&gt; &quot;Faculty Coach&quot;</span></span>
-<span id="cb177-5"><a href="our-own-classes.html#cb177-5" aria-hidden="true"></a>person3.full_name <span class="co"># =&gt; &quot;Trenton Arthur&quot;</span></span>
-<span id="cb177-6"><a href="our-own-classes.html#cb177-6" aria-hidden="true"></a>person3.grade <span class="co"># =&gt; &quot;A&quot;</span></span>
-<span id="cb177-7"><a href="our-own-classes.html#cb177-7" aria-hidden="true"></a>person4.full_name <span class="co"># =&gt; &quot;Tom Besio&quot;</span></span>
-<span id="cb177-8"><a href="our-own-classes.html#cb177-8" aria-hidden="true"></a>person4.grade <span class="co"># =&gt; &quot;Incomplete&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb178-1"><a href="our-own-classes.html#cb178-1" aria-hidden="true"></a>person1.full_name <span class="co"># =&gt; &quot;Raghu Betina&quot;</span></span>
+<span id="cb178-2"><a href="our-own-classes.html#cb178-2" aria-hidden="true"></a>person1.role <span class="co"># =&gt; &quot;Lecturer&quot;</span></span>
+<span id="cb178-3"><a href="our-own-classes.html#cb178-3" aria-hidden="true"></a>person2.full_name <span class="co"># =&gt; &quot;Arjun Venkataswamy&quot;</span></span>
+<span id="cb178-4"><a href="our-own-classes.html#cb178-4" aria-hidden="true"></a>person2.role <span class="co"># =&gt; &quot;Faculty Coach&quot;</span></span>
+<span id="cb178-5"><a href="our-own-classes.html#cb178-5" aria-hidden="true"></a>person3.full_name <span class="co"># =&gt; &quot;Trenton Arthur&quot;</span></span>
+<span id="cb178-6"><a href="our-own-classes.html#cb178-6" aria-hidden="true"></a>person3.grade <span class="co"># =&gt; &quot;A&quot;</span></span>
+<span id="cb178-7"><a href="our-own-classes.html#cb178-7" aria-hidden="true"></a>person4.full_name <span class="co"># =&gt; &quot;Tom Besio&quot;</span></span>
+<span id="cb178-8"><a href="our-own-classes.html#cb178-8" aria-hidden="true"></a>person4.grade <span class="co"># =&gt; &quot;Incomplete&quot;</span></span></code></pre></div>
 <p>What would happen if I tried doing <code>person4.role</code>? How about <code>person1.grade</code>? Why? What would the error message be? Try defining all of the above and give it a shot in a REPL:</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb178-1"><a href="our-own-classes.html#cb178-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
-<span id="cb178-2"><a href="our-own-classes.html#cb178-2" aria-hidden="true"></a><span class="kw">end</span></span>
-<span id="cb178-3"><a href="our-own-classes.html#cb178-3" aria-hidden="true"></a></span>
-<span id="cb178-4"><a href="our-own-classes.html#cb178-4" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Instructor</span></span>
-<span id="cb178-5"><a href="our-own-classes.html#cb178-5" aria-hidden="true"></a><span class="kw">end</span></span>
-<span id="cb178-6"><a href="our-own-classes.html#cb178-6" aria-hidden="true"></a></span>
-<span id="cb178-7"><a href="our-own-classes.html#cb178-7" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Student</span></span>
-<span id="cb178-8"><a href="our-own-classes.html#cb178-8" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb179-1"><a href="our-own-classes.html#cb179-1" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Person</span></span>
+<span id="cb179-2"><a href="our-own-classes.html#cb179-2" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb179-3"><a href="our-own-classes.html#cb179-3" aria-hidden="true"></a></span>
+<span id="cb179-4"><a href="our-own-classes.html#cb179-4" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Instructor</span></span>
+<span id="cb179-5"><a href="our-own-classes.html#cb179-5" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb179-6"><a href="our-own-classes.html#cb179-6" aria-hidden="true"></a></span>
+<span id="cb179-7"><a href="our-own-classes.html#cb179-7" aria-hidden="true"></a><span class="kw">class</span> <span class="dt">Student</span></span>
+<span id="cb179-8"><a href="our-own-classes.html#cb179-8" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/our-own-classes-inheritance" target="_blank">Click here for a REPL to try it.</a></p>
-<div id="start-the-gitpod-project-9" class="section level5 unnumbered hasAnchor">
-<h5>Start the GitPod Project<a href="our-own-classes.html#start-the-gitpod-project-9" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>Open the GitPod project for this chapter and start with the exercises. <a href="integer.html#start-the-gitpod-project-for-integer">See prior steps</a> as a reminder. Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions" target="_blank">https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions</a>.</p>
+<div id="start-the-gitpod-project-8" class="section level5 unnumbered hasAnchor">
+<h5>Start the GitPod Project<a href="our-own-classes.html#start-the-gitpod-project-8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Open the GitPod project for this chapter and start with the exercises. <a href="string.html#start-gitpod-project">See prior steps</a> as a reminder. Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions" target="_blank">https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions</a>.</p>
 <p><mark>✏️ <strong>Exercise:</strong></mark> On GitPod in the “our own classes” project, work through <code>class_person.rb</code>.</p>
 
 </div>

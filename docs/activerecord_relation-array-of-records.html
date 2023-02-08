@@ -417,18 +417,18 @@ Proudly published with bookdown</a></li>
 <li><p>The argument to <code>.where</code> is usually a <code>Hash</code>:</p>
 <ul>
 <li><p>Filtering by an exact match within a column:</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb179-1"><a href="activerecord_relation-array-of-records.html#cb179-1" aria-hidden="true"></a>{ <span class="st">:id</span> =&gt; <span class="dv">42</span> }</span></code></pre></div></li>
+<div class="sourceCode" id="cb180"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb180-1"><a href="activerecord_relation-array-of-records.html#cb180-1" aria-hidden="true"></a>{ <span class="st">:id</span> =&gt; <span class="dv">42</span> }</span></code></pre></div></li>
 <li><p>Filter by multiple columns at once:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb180-1"><a href="activerecord_relation-array-of-records.html#cb180-1" aria-hidden="true"></a>{ <span class="st">:photo_id</span> =&gt; <span class="dv">23</span>, <span class="st">:user_id</span> =&gt; <span class="dv">42</span> }</span></code></pre></div></li>
+<div class="sourceCode" id="cb181"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb181-1"><a href="activerecord_relation-array-of-records.html#cb181-1" aria-hidden="true"></a>{ <span class="st">:photo_id</span> =&gt; <span class="dv">23</span>, <span class="st">:user_id</span> =&gt; <span class="dv">42</span> }</span></code></pre></div></li>
 <li><p>Filter using an <code>Array</code> (results will match <em>any</em> of the values in the <code>Array</code>):</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb181-1"><a href="activerecord_relation-array-of-records.html#cb181-1" aria-hidden="true"></a>{ <span class="st">:owner_id</span> =&gt; [<span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">15</span> ] }</span></code></pre></div></li>
+<div class="sourceCode" id="cb182"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb182-1"><a href="activerecord_relation-array-of-records.html#cb182-1" aria-hidden="true"></a>{ <span class="st">:owner_id</span> =&gt; [<span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">15</span> ] }</span></code></pre></div></li>
 <li><p>Filtering within a range of values:</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb182-1"><a href="activerecord_relation-array-of-records.html#cb182-1" aria-hidden="true"></a>{ <span class="st">:dob</span> =&gt; (<span class="dv">1</span>.year.ago..<span class="dt">Date</span>.today) }</span></code></pre></div>
-<div class="sourceCode" id="cb183"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb183-1"><a href="activerecord_relation-array-of-records.html#cb183-1" aria-hidden="true"></a>{ <span class="st">:last_name</span> =&gt; (<span class="st">&quot;A&quot;</span>..<span class="st">&quot;C&quot;</span>) }</span></code></pre></div></li>
+<div class="sourceCode" id="cb183"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb183-1"><a href="activerecord_relation-array-of-records.html#cb183-1" aria-hidden="true"></a>{ <span class="st">:dob</span> =&gt; (<span class="dv">1</span>.year.ago..<span class="dt">Date</span>.today) }</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb184-1"><a href="activerecord_relation-array-of-records.html#cb184-1" aria-hidden="true"></a>{ <span class="st">:last_name</span> =&gt; (<span class="st">&quot;A&quot;</span>..<span class="st">&quot;C&quot;</span>) }</span></code></pre></div></li>
 <li><p>If you <em>really</em> want to, you can omit the curly brackets around the <code>Hash</code> for brevity, and Ruby will figure out what you mean. So, ultimately, you can write something like this:</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb184-1"><a href="activerecord_relation-array-of-records.html#cb184-1" aria-hidden="true"></a><span class="dt">Contact</span>.where(<span class="st">:last_name</span> =&gt; (<span class="st">&quot;A&quot;</span>..<span class="st">&quot;C&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb185-1"><a href="activerecord_relation-array-of-records.html#cb185-1" aria-hidden="true"></a><span class="dt">Contact</span>.where(<span class="st">:last_name</span> =&gt; (<span class="st">&quot;A&quot;</span>..<span class="st">&quot;C&quot;</span>))</span></code></pre></div>
 <p>instead of this:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb185-1"><a href="activerecord_relation-array-of-records.html#cb185-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; (<span class="st">&quot;A&quot;</span>..<span class="st">&quot;C&quot;</span>) })</span></code></pre></div></li>
+<div class="sourceCode" id="cb186"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb186-1"><a href="activerecord_relation-array-of-records.html#cb186-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; (<span class="st">&quot;A&quot;</span>..<span class="st">&quot;C&quot;</span>) })</span></code></pre></div></li>
 </ul></li>
 </ul>
 <p>Related Methods: <code>.where.not</code>, <code>.or</code>, <code>.limit</code>, <code>.order</code></p>
@@ -438,7 +438,7 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.1.3</span> where.not<a href="activerecord_relation-array-of-records.html#where.not" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ActiveRecord_Relation#where.not(Hash) ⇒ ActiveRecord_Relation</code></p>
 <p>Call <code>.where.not</code> on an <code>ActiveRecord_Relation</code> to filter the array of records to <em>exclude</em> records based on the given <code>Hash</code>. <code>.where.not</code> will return an <code>ActiveRecord_Relation</code>.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb186-1"><a href="activerecord_relation-array-of-records.html#cb186-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; <span class="st">&quot;Mouse&quot;</span> }).where.not({ <span class="st">:first_name</span> =&gt; <span class="st">&quot;Mickey&quot;</span> })</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb187-1"><a href="activerecord_relation-array-of-records.html#cb187-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; <span class="st">&quot;Mouse&quot;</span> }).where.not({ <span class="st">:first_name</span> =&gt; <span class="st">&quot;Mickey&quot;</span> })</span></code></pre></div>
 <ul>
 <li>Returns an <a href="activerecord_relation-array-of-records.html#activerecord_relation-array-of-records"><code>ActiveRecord_Relation</code></a>.</li>
 <li>The acceptable arguments to <code>.not</code> are the same as to <code>.where</code>; see that method for a list.</li>
@@ -455,7 +455,7 @@ Proudly published with bookdown</a></li>
 <li>The argument to <code>.or</code> must be another <code>ActiveRecord_Relation</code> <em>from the <strong>same</strong> table</em>.</li>
 <li><em>Broadens</em> the result set.</li>
 </ul>
-<div class="sourceCode" id="cb187"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb187-1"><a href="activerecord_relation-array-of-records.html#cb187-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:first_name</span> =&gt; <span class="st">&quot;Mickey&quot;</span> }).or(<span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; <span class="st">&quot;Betina&quot;</span> }))</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb188-1"><a href="activerecord_relation-array-of-records.html#cb188-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:first_name</span> =&gt; <span class="st">&quot;Mickey&quot;</span> }).or(<span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; <span class="st">&quot;Betina&quot;</span> }))</span></code></pre></div>
 <p><a href="https://chapters.firstdraft.com/chapters/770#wherethisorthat">Full explanation</a></p>
 </div>
 <div id="order" class="section level3 hasAnchor" number="3.1.5">
@@ -464,7 +464,7 @@ Proudly published with bookdown</a></li>
 <p>or</p>
 <p><code>ActiveRecord_Relation.order(Symbol) ⇒ ActiveRecord_Relation</code></p>
 <p>Call <code>.order</code> on an <code>ActiveRecord_Relation</code> to sort the array based on one or more columns. This method returns an <code>ActiveRecord_Relation</code>.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb188-1"><a href="activerecord_relation-array-of-records.html#cb188-1" aria-hidden="true"></a><span class="dt">Contact</span>.all.order({ <span class="st">:last_name</span> =&gt; <span class="st">:asc</span>, <span class="st">:first_name</span> =&gt; <span class="st">:asc</span>, <span class="st">:date_of_birth</span> =&gt; <span class="st">:desc</span> })</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb189-1"><a href="activerecord_relation-array-of-records.html#cb189-1" aria-hidden="true"></a><span class="dt">Contact</span>.all.order({ <span class="st">:last_name</span> =&gt; <span class="st">:asc</span>, <span class="st">:first_name</span> =&gt; <span class="st">:asc</span>, <span class="st">:date_of_birth</span> =&gt; <span class="st">:desc</span> })</span></code></pre></div>
 <ul>
 <li><p>Returns an <a href="activerecord_relation-array-of-records.html#activerecord_relation-array-of-records"><code>ActiveRecord_Relation</code></a>.</p></li>
 <li><p>The argument to <code>.order</code> is usually a <code>Hash</code>.</p>
@@ -474,7 +474,7 @@ Proudly published with bookdown</a></li>
 </ul></li>
 <li><p>The argument to <code>.order</code> can also just be one <code>Symbol</code>, a column name.</p></li>
 </ul>
-<div class="sourceCode" id="cb189"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb189-1"><a href="activerecord_relation-array-of-records.html#cb189-1" aria-hidden="true"></a><span class="dt">Contact</span>.all.order(<span class="st">:last_name</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb190-1"><a href="activerecord_relation-array-of-records.html#cb190-1" aria-hidden="true"></a><span class="dt">Contact</span>.all.order(<span class="st">:last_name</span>)</span></code></pre></div>
 <p>In that case, <code>:asc</code> order is assumed.</p>
 <p><a href="https://chapters.firstdraft.com/chapters/770#order">Full explanation</a></p>
 </div>
@@ -486,7 +486,7 @@ Proudly published with bookdown</a></li>
 <li>Returns an <a href="activerecord_relation-array-of-records.html#activerecord_relation-array-of-records"><code>ActiveRecord_Relation</code></a>.</li>
 <li>The argument to <code>.limit</code> must be an <code>Integer</code>.</li>
 </ul>
-<div class="sourceCode" id="cb190"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb190-1"><a href="activerecord_relation-array-of-records.html#cb190-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; <span class="st">&quot;Mouse&quot;</span> }).limit(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb191-1"><a href="activerecord_relation-array-of-records.html#cb191-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; <span class="st">&quot;Mouse&quot;</span> }).limit(<span class="dv">10</span>)</span></code></pre></div>
 <p><a href="https://chapters.firstdraft.com/chapters/770#limit">Full explanation</a></p>
 </div>
 <div id="offset" class="section level3 hasAnchor" number="3.1.7">
@@ -497,7 +497,7 @@ Proudly published with bookdown</a></li>
 <li>Returns an <a href="activerecord_relation-array-of-records.html#activerecord_relation-array-of-records"><code>ActiveRecord_Relation</code></a>.</li>
 <li>The argument to <code>.offset</code> must be an <code>Integer</code>.</li>
 </ul>
-<div class="sourceCode" id="cb191"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb191-1"><a href="activerecord_relation-array-of-records.html#cb191-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; <span class="st">&quot;Mouse&quot;</span> }).offset(<span class="dv">10</span>).limit(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb192-1"><a href="activerecord_relation-array-of-records.html#cb192-1" aria-hidden="true"></a><span class="dt">Contact</span>.where({ <span class="st">:last_name</span> =&gt; <span class="st">&quot;Mouse&quot;</span> }).offset(<span class="dv">10</span>).limit(<span class="dv">10</span>)</span></code></pre></div>
 <p><a href="https://chapters.firstdraft.com/chapters/770#offset">Full explanation</a></p>
 </div>
 <div id="map_relation_to_array" class="section level3 hasAnchor" number="3.1.8">
@@ -513,18 +513,18 @@ Proudly published with bookdown</a></li>
 <li><p>The argument to <code>.map_relation_to_array</code> must be a <code>Symbol</code> that matches the name of a column in the table.</p></li>
 <li><p>You cannot call <code>.map_relation_to_array</code> on an individual ActiveRecord row. If you want the value in a column for an individual row, simply call the accessor method directly:</p></li>
 </ul>
-<div class="sourceCode" id="cb192"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb192-1"><a href="activerecord_relation-array-of-records.html#cb192-1" aria-hidden="true"></a><span class="dt">Contact</span>.all.map_relation_to_array(<span class="st">:last_name</span>) <span class="co"># =&gt; [&quot;Betina&quot;, &quot;Mouse&quot;, &quot;Woods&quot;]</span></span></code></pre></div>
-<div class="sourceCode" id="cb193"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb193-1"><a href="activerecord_relation-array-of-records.html#cb193-1" aria-hidden="true"></a><span class="co"># for an array of records</span></span>
-<span id="cb193-2"><a href="activerecord_relation-array-of-records.html#cb193-2" aria-hidden="true"></a>people.last_name <span class="co"># undefined method for array; bad</span></span>
-<span id="cb193-3"><a href="activerecord_relation-array-of-records.html#cb193-3" aria-hidden="true"></a>people.map_relation_to_array(<span class="st">:last_name</span>) <span class="co"># =&gt; [&quot;Betina&quot;, &quot;Woods&quot;]; good</span></span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb193-1"><a href="activerecord_relation-array-of-records.html#cb193-1" aria-hidden="true"></a><span class="dt">Contact</span>.all.map_relation_to_array(<span class="st">:last_name</span>) <span class="co"># =&gt; [&quot;Betina&quot;, &quot;Mouse&quot;, &quot;Woods&quot;]</span></span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb194-1"><a href="activerecord_relation-array-of-records.html#cb194-1" aria-hidden="true"></a><span class="co"># for an array of records</span></span>
+<span id="cb194-2"><a href="activerecord_relation-array-of-records.html#cb194-2" aria-hidden="true"></a>people.last_name <span class="co"># undefined method for array; bad</span></span>
+<span id="cb194-3"><a href="activerecord_relation-array-of-records.html#cb194-3" aria-hidden="true"></a>people.map_relation_to_array(<span class="st">:last_name</span>) <span class="co"># =&gt; [&quot;Betina&quot;, &quot;Woods&quot;]; good</span></span></code></pre></div>
 <p><a href="https://chapters.firstdraft.com/chapters/770#map_relation_to_array">Full explanation</a></p>
 </div>
 <div id="maximum" class="section level3 hasAnchor" number="3.1.9">
 <h3><span class="header-section-number">B.1.9</span> .maximum<a href="activerecord_relation-array-of-records.html#maximum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ActiveRecord_Relation#maximum(Symbol) ⇒ Object</code></p>
 <p>Call <code>.maximum</code> on an <code>ActiveRecord_Relation</code> to grab and return the biggest value of a particular column.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb194-1"><a href="activerecord_relation-array-of-records.html#cb194-1" aria-hidden="true"></a><span class="dt">User</span>.all.maximun(<span class="st">:age</span>)</span>
-<span id="cb194-2"><a href="activerecord_relation-array-of-records.html#cb194-2" aria-hidden="true"></a><span class="co"># =&gt; 102</span></span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb195-1"><a href="activerecord_relation-array-of-records.html#cb195-1" aria-hidden="true"></a><span class="dt">User</span>.all.maximun(<span class="st">:age</span>)</span>
+<span id="cb195-2"><a href="activerecord_relation-array-of-records.html#cb195-2" aria-hidden="true"></a><span class="co"># =&gt; 102</span></span></code></pre></div>
 <ul>
 <li>Returns a value from an <code>ActiveRecord</code> column.</li>
 </ul>
@@ -534,8 +534,8 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.1.10</span> .minimum<a href="activerecord_relation-array-of-records.html#minimum" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ActiveRecord_Relation#minimum(Symbol) ⇒ Object</code></p>
 <p>Call <code>.minimum</code> on an <code>ActiveRecord_Relation</code> to grab and return the smallest value of a particular column.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb195-1"><a href="activerecord_relation-array-of-records.html#cb195-1" aria-hidden="true"></a><span class="dt">Photo</span>.all.minimum(<span class="st">:caption</span>) </span>
-<span id="cb195-2"><a href="activerecord_relation-array-of-records.html#cb195-2" aria-hidden="true"></a><span class="co"># =&gt; &quot;... a mind needs books as a sword needs a whetstone, if it is to keep its edge.&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb196-1"><a href="activerecord_relation-array-of-records.html#cb196-1" aria-hidden="true"></a><span class="dt">Photo</span>.all.minimum(<span class="st">:caption</span>) </span>
+<span id="cb196-2"><a href="activerecord_relation-array-of-records.html#cb196-2" aria-hidden="true"></a><span class="co"># =&gt; &quot;... a mind needs books as a sword needs a whetstone, if it is to keep its edge.&quot;</span></span></code></pre></div>
 <ul>
 <li>Returns a value from an <code>ActiveRecord</code> column.</li>
 </ul>
@@ -545,7 +545,7 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.1.11</span> .sum<a href="activerecord_relation-array-of-records.html#sum-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ActiveRecord_Relation#sum(Symbol) ⇒ Integer</code> or <code>⇒ Float</code> or <code>⇒ String</code></p>
 <p>Call <code>.sum</code> on an <code>ActiveRecord_Relation</code> to find the sum of the values in a single column:</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb196-1"><a href="activerecord_relation-array-of-records.html#cb196-1" aria-hidden="true"></a><span class="ot">@poem</span>.scores.sum(<span class="st">:points</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb197-1"><a href="activerecord_relation-array-of-records.html#cb197-1" aria-hidden="true"></a><span class="ot">@poem</span>.scores.sum(<span class="st">:points</span>)</span></code></pre></div>
 <ul>
 <li>Returns an <a href="integer.html#integer"><code>Integer</code></a> or <a href="integer.html#integer"><code>Float</code></a> (or even a <a href="string.html#string"><code>String</code></a>), depending on datatype of the column that was summed.</li>
 <li>The argument to <code>.sum</code> must be a <code>Symbol</code> that matches the name of a column in the table.</li>
@@ -556,7 +556,7 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">B.1.12</span> .average<a href="activerecord_relation-array-of-records.html#average" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ActiveRecord_Relation#average(Symbol) ⇒ Integer</code> or <code>⇒ Float</code></p>
 <p>Call <code>.average</code> on an <code>ActiveRecord_Relation</code> to find the mean of the values in a single column:</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb197-1"><a href="activerecord_relation-array-of-records.html#cb197-1" aria-hidden="true"></a><span class="ot">@restaurant</span>.reviews.average(<span class="st">:rating</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb198-1"><a href="activerecord_relation-array-of-records.html#cb198-1" aria-hidden="true"></a><span class="ot">@restaurant</span>.reviews.average(<span class="st">:rating</span>)</span></code></pre></div>
 <ul>
 <li>Returns an <a href="integer.html#integer"><code>Integer</code></a> or <a href="float.html#float"><code>Float</code></a>, depending on datatype of the column that was averaged.</li>
 <li>The argument to <code>.average</code> must be a <code>Symbol</code> that matches the name of a column in the table.</li>
