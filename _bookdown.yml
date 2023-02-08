@@ -28,18 +28,19 @@ rmd_files:
     "lessons/float.md",
     "lessons/date.md",
     "lessons/array.md",
-    # "lessons/ruby-gym-part1.md", # subsumed into ruby-conclusions.md
     "lessons/conditionals.md",
-    # "lessons/ruby-gym-part2.md", # subsumed into ruby-conclusions.md
     "lessons/loops.md",
     "lessons/each.md",
-    # "lessons/ruby-gym-part3.md", # subsumed into ruby-conclusions.md
     "lessons/hash.md",
-    # "lessons/ruby-gym-part4.md", # subsumed into ruby-conclusions.md
     "lessons/our-own-classes.md",
+    "lessons/ruby-conclusions.md",
+    
     # "lessons/more-on-floats.md", # subsumed into float.md
     # "lessons/ruby-gym.md", # subsumed into ruby-conclusions.md
-    "lessons/ruby-conclusions.md",
+    # "lessons/ruby-gym-part1.md", # subsumed into ruby-conclusions.md
+    # "lessons/ruby-gym-part2.md", # subsumed into ruby-conclusions.md
+    # "lessons/ruby-gym-part3.md", # subsumed into ruby-conclusions.md
+    # "lessons/ruby-gym-part4.md", # subsumed into ruby-conclusions.md
     
     # "lesson/umbrella.md",
     # # "lessons/adding-routes.md", # subsumed into rps-rcav.md
