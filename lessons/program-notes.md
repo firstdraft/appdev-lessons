@@ -101,7 +101,9 @@ Kernel.p(t)
 Kernel.p(u)
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-real-output){target="_blank"}
+<p class="repl">
+    [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-real-output){target="_blank"}
+</p>
 
 Printing values to the terminal is something we're going to want to do _a lot_, and so Ruby makes it easy for us; rather than having to type `Kernel.p`, we can just type the shorthand of `p`. Change `Kernel.p` to `p` above and give it a try.
 
@@ -127,7 +129,7 @@ It can be tedious to wrap every line in parentheses, and it's convenient instead
 
 #### Passing tests {-}
 
-The REPLs are good for experimentation and getting a feel for how things work. But, in the following chapters, we're also going to have a separate GitPod assignment with exercises that include automated tests. You will have to complete these exercises as you go through the chapter and `rails grade` to ensure comprehension. Hopefully this will surface questions — our constant goal.
+The REPLs are good for experimentation and getting a feel for how things work. But, in the following chapters, we're also going to have a separate GitPod assignment with graded exercises that include automated tests. Look out for the ✏️ prompt for those. You will have to complete these exercises as you go through the chapter and `rails grade` to ensure comprehension. Hopefully this will surface questions — our constant goal.
 
 ### Onwards
 
