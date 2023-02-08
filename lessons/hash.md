@@ -68,7 +68,10 @@ p person1
 p person1.fetch(:role)
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){target="_blank"}
+</div>
 
 Click "Run" and see what it looks like to build up a `Hash`. A few things to note:
 
@@ -94,7 +97,10 @@ person1.store(:role, "Instructor")
 p person1.fetch(:last_name)
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){target="_blank"}
+</div>
 
 Beautiful! Now we don't have to remember that position number 1 is last name, position number 2 is role, etc. We can retrieve objects from the list using meaningful labels instead.
 
@@ -115,7 +121,10 @@ p person1.fetch(:first_name) + " is a " + person1.fetch(:role)
 p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){target="_blank"}
+</div>
 
 A few things to try:
 
@@ -138,7 +147,10 @@ p person1.fetch(:first_name, "None provided")
 p person1.fetch(:middle_name, "None provided")
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){target="_blank"}
+</div>
 
 ### Hash literals
 
@@ -157,11 +169,14 @@ In particular, `Hash`es are very often used as the arguments to methods, because
 Movie.where({ :title => "The Shawshank Redemption" })
 ```
 
-##### Start the GitPod Project {-}
+<div class="proj">
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions){target="_blank"}.
+  Open the GitPod `Hash` project for this chapter and start with the exercise `hash_person.rb`:
 
-<mark>✏️ **Exercise:**</mark> On GitPod in the `Hash` project, work through `hash_person.rb`.
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[hash_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>
 
 ### fetch shorthand, []
 
@@ -182,7 +197,10 @@ p person1.fetch(:last_name)
 p person1[:last_name]
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){target="_blank"}
+<div class="experiment">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){target="_blank"}
+</div>
 
 Were you able to find the difference between the two methods?
 
@@ -270,7 +288,10 @@ person_hash.fetch(:age)
 # => 32
 ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Hash` project and work through `hash_dig.rb`
+<div class="proj">
+
+  Return to the GitPod `Hash` project and work through `hash_dig.rb`
+</div>
 
 ### key
 
@@ -285,9 +306,15 @@ h.key(400)   #=> "d"
 h.key(500)   #=> nil
 ```
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Hash` project and work through `hash_find_value.rb`
+<div class="proj">
 
-<mark>✏️ **Exercise:**</mark> Finally, in the GitPod `Hash` project complete `hash_list.rb`
+  Return to the GitPod `Hash` project and work through `hash_find_value.rb`
+</div>
+
+<div class="proj">
+
+  Finally, in the GitPod `Hash` project complete `hash_list.rb`
+</div>
 
 ### Conclusion
 

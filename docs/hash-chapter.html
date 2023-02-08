@@ -441,7 +441,9 @@ Proudly published with bookdown</a></li>
 <span id="cb144-11"><a href="hash-chapter.html#cb144-11" aria-hidden="true"></a>p person1</span>
 <span id="cb144-12"><a href="hash-chapter.html#cb144-12" aria-hidden="true"></a></span>
 <span id="cb144-13"><a href="hash-chapter.html#cb144-13" aria-hidden="true"></a>p person1.fetch(<span class="st">:role</span>)</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/hash-hash-new" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/hash-hash-new" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 <p>Click “Run” and see what it looks like to build up a <code>Hash</code>. A few things to note:</p>
 <ul>
 <li>Ruby represents a <code>Hash</code> with curly brackets, <code>{}</code>, as opposed to the square brackets (<code>[]</code>) of an <code>Array</code>.</li>
@@ -464,7 +466,9 @@ Proudly published with bookdown</a></li>
 <span id="cb145-4"><a href="hash-chapter.html#cb145-4" aria-hidden="true"></a>person1.store(<span class="st">:role</span>, <span class="st">&quot;Instructor&quot;</span>)</span>
 <span id="cb145-5"><a href="hash-chapter.html#cb145-5" aria-hidden="true"></a></span>
 <span id="cb145-6"><a href="hash-chapter.html#cb145-6" aria-hidden="true"></a>p person1.fetch(<span class="st">:last_name</span>)</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/hash-fetch" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/hash-fetch" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 <p>Beautiful! Now we don’t have to remember that position number 1 is last name, position number 2 is role, etc. We can retrieve objects from the list using meaningful labels instead.</p>
 <p>Let’s put it all together with multiple <code>Hash</code>es:</p>
 <pre><code>person1 = Hash.new
@@ -479,7 +483,9 @@ person2.store(:role, &quot;Student&quot;)
 
 p person1.fetch(:first_name) + &quot; is a &quot; + person1.fetch(:role)
 p person2.fetch(:first_name) + &quot; is a &quot; + person2.fetch(:role)</code></pre>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/hash-second-person" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/hash-second-person" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 <p>A few things to try:</p>
 <ul>
 <li>What happens when you try to <code>.fetch</code> using a <code>String</code> like <code>"role"</code>?</li>
@@ -496,7 +502,9 @@ p person2.fetch(:first_name) + &quot; is a &quot; + person2.fetch(:role)</code><
 <span id="cb147-5"><a href="hash-chapter.html#cb147-5" aria-hidden="true"></a></span>
 <span id="cb147-6"><a href="hash-chapter.html#cb147-6" aria-hidden="true"></a>p person1.fetch(<span class="st">:first_name</span>, <span class="st">&quot;None provided&quot;</span>)</span>
 <span id="cb147-7"><a href="hash-chapter.html#cb147-7" aria-hidden="true"></a>p person1.fetch(<span class="st">:middle_name</span>, <span class="st">&quot;None provided&quot;</span>)</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/hash-fetch-with-fallback" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/hash-fetch-with-fallback" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 </div>
 </div>
 <div id="hash-literals" class="section level3 hasAnchor" number="1.14.4">
@@ -507,10 +515,10 @@ p person2.fetch(:first_name) + &quot; is a &quot; + person2.fetch(:role)</code><
 <p>Like with <code>String</code> and <code>Array</code>, this is the style that we’re going to use the vast majority of the time.</p>
 <p>In particular, <code>Hash</code>es are very often used as the arguments to methods, because they let us pass in a list of inputs with nice labels. When we get to Ruby on Rails, especially, we will very often type hash literals directly into the parentheses of method arguments, things like:</p>
 <div class="sourceCode" id="cb149"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb149-1"><a href="hash-chapter.html#cb149-1" aria-hidden="true"></a><span class="dt">Movie</span>.where({ <span class="st">:title</span> =&gt; <span class="st">&quot;The Shawshank Redemption&quot;</span> })</span></code></pre></div>
-<div id="start-the-gitpod-project-1" class="section level5 unnumbered hasAnchor">
-<h5>Start the GitPod Project<a href="hash-chapter.html#start-the-gitpod-project-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>Open the GitPod project for this chapter and start with the exercises. <a href="string.html#start-gitpod-project">See prior steps</a> as a reminder. Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions" target="_blank">https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions</a>.</p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> On GitPod in the <code>Hash</code> project, work through <code>hash_person.rb</code>.</p>
+<div class="proj">
+<p>Open the GitPod <code>Hash</code> project for this chapter and start with the exercise <code>hash_person.rb</code>:</p>
+<p>LTI{Load assignment}(<a href="https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions" class="uri">https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions</a>)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[hash_project]</p>
+<p>For a GitPod refresher, <a href="string.html#start-gitpod-project">see here</a>.</p>
 </div>
 </div>
 <div id="fetch-shorthand" class="section level3 hasAnchor" number="1.14.5">
@@ -524,7 +532,9 @@ p person2.fetch(:first_name) + &quot; is a &quot; + person2.fetch(:role)</code><
 <span id="cb151-2"><a href="hash-chapter.html#cb151-2" aria-hidden="true"></a></span>
 <span id="cb151-3"><a href="hash-chapter.html#cb151-3" aria-hidden="true"></a>p person1.fetch(<span class="st">:last_name</span>)</span>
 <span id="cb151-4"><a href="hash-chapter.html#cb151-4" aria-hidden="true"></a>p person1[<span class="st">:last_name</span>]</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/hash-fetch-shorthand" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/hash-fetch-shorthand" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 <p>Were you able to find the difference between the two methods?</p>
 <hr />
 <p><code>Hash</code>’s <code>.[]</code> method, when used with a key that is not present in the hash, <em>returns <code>nil</code> rather than throwing an error</em>.</p>
@@ -578,7 +588,9 @@ p person2.fetch(:first_name) + &quot; is a &quot; + person2.fetch(:role)</code><
 <p>Once the inner <code>Hash</code> has been retrieved, we can access the value stored under <code>:age</code> using <code>fetch</code>:</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb158-1"><a href="hash-chapter.html#cb158-1" aria-hidden="true"></a>person_hash.fetch(<span class="st">:age</span>)</span>
 <span id="cb158-2"><a href="hash-chapter.html#cb158-2" aria-hidden="true"></a><span class="co"># =&gt; 32</span></span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod <code>Hash</code> project and work through <code>hash_dig.rb</code></p>
+<div class="proj">
+<p>Return to the GitPod <code>Hash</code> project and work through <code>hash_dig.rb</code></p>
+</div>
 </div>
 <div id="key" class="section level3 hasAnchor" number="1.14.10">
 <h3><span class="header-section-number">1.14.10</span> key<a href="hash-chapter.html#key" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -589,8 +601,12 @@ p person2.fetch(:first_name) + &quot; is a &quot; + person2.fetch(:role)</code><
 <span id="cb159-4"><a href="hash-chapter.html#cb159-4" aria-hidden="true"></a>h.key(<span class="dv">300</span>)   <span class="co">#=&gt; &quot;c&quot;</span></span>
 <span id="cb159-5"><a href="hash-chapter.html#cb159-5" aria-hidden="true"></a>h.key(<span class="dv">400</span>)   <span class="co">#=&gt; &quot;d&quot;</span></span>
 <span id="cb159-6"><a href="hash-chapter.html#cb159-6" aria-hidden="true"></a>h.key(<span class="dv">500</span>)   <span class="co">#=&gt; nil</span></span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod <code>Hash</code> project and work through <code>hash_find_value.rb</code></p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Finally, in the GitPod <code>Hash</code> project complete <code>hash_list.rb</code></p>
+<div class="proj">
+<p>Return to the GitPod <code>Hash</code> project and work through <code>hash_find_value.rb</code></p>
+</div>
+<div class="proj">
+<p>Finally, in the GitPod <code>Hash</code> project complete <code>hash_list.rb</code></p>
+</div>
 </div>
 <div id="conclusion-8" class="section level3 hasAnchor" number="1.14.11">
 <h3><span class="header-section-number">1.14.11</span> Conclusion<a href="hash-chapter.html#conclusion-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
