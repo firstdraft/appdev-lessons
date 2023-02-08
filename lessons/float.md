@@ -27,7 +27,10 @@ Try the following and see what you get:
 12 / 5.0
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/Float-math){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/Float-math){target="_blank"}
+</div>
 
 What did you discover? If _either_ side is a float, float division will be performed.
 
@@ -42,13 +45,21 @@ One other thing to keep in mind: you can use `**` in conjunction with fractions 
 
 ##### Start the GitPod Project {-}
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions){target="_blank"}.
+<div class="proj">
 
-<mark>✏️ **Exercise:**</mark> On GitPod in the `Float` project, work through `float_find_hypotenuse.rb`. _Remember_: the Pythagorean Theorem says that
+  Open the GitPod `Float` project for this chapter and start with the exercise `float_find_hypotenuse.rb`:
 
-![](assets/float/pythagorous.png)
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[float_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+  
+  _Remember_: the Pythagorean Theorem says that
 
-where `a` and `b` are the lengths of the shorter sides, and `c` is the length of the longest side. Read more about the formula [here](https://www.mathsisfun.com/pythagoras.html){target="_blank"}.
+  ![](assets/float/pythagorous.png)
+
+  where `a` and `b` are the lengths of the shorter sides, and `c` is the length of the longest side. Read more about the formula [here](https://www.mathsisfun.com/pythagoras.html){target="_blank"}.
+
+</div>
 
 #### round {-}
 
@@ -59,9 +70,15 @@ pi = 3.1415926535897932384626433832795028841976939937510
 p pi.round(3)
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/round){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/round){target="_blank"}
+</div>
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Float` project and work through `float_round.rb`
+<div class="proj">
+
+  Return to the GitPod `Float` project and work through `float_round.rb`
+</div>
 
 #### rand {-}
 
@@ -71,7 +88,10 @@ The `rand` method that we met earlier can also be called with no arguments, in w
 p rand
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/float-rand){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/float-rand){target="_blank"}
+</div>
 
 ###  Conclusion
 

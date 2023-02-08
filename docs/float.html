@@ -409,7 +409,9 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb76"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb76-1"><a href="float.html#cb76-1" aria-hidden="true"></a><span class="dv">12</span> / <span class="dv">5</span></span>
 <span id="cb76-2"><a href="float.html#cb76-2" aria-hidden="true"></a><span class="fl">12.0</span> / <span class="dv">5</span></span>
 <span id="cb76-3"><a href="float.html#cb76-3" aria-hidden="true"></a><span class="dv">12</span> / <span class="fl">5.0</span></span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/Float-math" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/Float-math" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 <p>What did you discover? If <em>either</em> side is a float, float division will be performed.</p>
 <p>This is why <code>Integer</code>’s <code>.to_f</code> method can come in handy while doing math; at some point if you need to do division and need a fractional answer, then convert it to a <code>Float</code> first.</p>
 <p>One other thing to keep in mind: you can use <code>**</code> in conjunction with fractions to calculate roots, since 9<sup>1/2</sup> is the same as the square root of 9, 8<sup>1/3</sup> is the same as the cube root of 8, etc.</p>
@@ -417,10 +419,14 @@ Proudly published with bookdown</a></li>
 <span id="cb77-2"><a href="float.html#cb77-2" aria-hidden="true"></a><span class="dv">8</span> ** (<span class="dv">1</span>/<span class="fl">3.0</span>) <span class="co"># =&gt; 2.0</span></span></code></pre></div>
 <div id="start-the-gitpod-project" class="section level5 unnumbered hasAnchor">
 <h5>Start the GitPod Project<a href="float.html#start-the-gitpod-project" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>Open the GitPod project for this chapter and start with the exercises. <a href="string.html#start-gitpod-project">See prior steps</a> as a reminder. Fork the project from GitHub: <a href="https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions" target="_blank">https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions</a>.</p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> On GitPod in the <code>Float</code> project, work through <code>float_find_hypotenuse.rb</code>. <em>Remember</em>: the Pythagorean Theorem says that</p>
+<div class="proj">
+<p>Open the GitPod <code>Float</code> project for this chapter and start with the exercise <code>float_find_hypotenuse.rb</code>:</p>
+<p>LTI{Load assignment}(<a href="https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions" class="uri">https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions</a>)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[float_project]</p>
+<p>For a GitPod refresher, <a href="string.html#start-gitpod-project">see here</a>.</p>
+<p><em>Remember</em>: the Pythagorean Theorem says that</p>
 <p><img src="assets/float/pythagorous.png" /></p>
 <p>where <code>a</code> and <code>b</code> are the lengths of the shorter sides, and <code>c</code> is the length of the longest side. Read more about the formula <a href="https://www.mathsisfun.com/pythagoras.html" target="_blank">here</a>.</p>
+</div>
 </div>
 </div>
 <div id="round" class="section level4 unnumbered hasAnchor">
@@ -428,14 +434,20 @@ Proudly published with bookdown</a></li>
 <p><code>Float</code>s can round themselves. Play around with the <code>.round</code> method:</p>
 <div class="sourceCode" id="cb78"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb78-1"><a href="float.html#cb78-1" aria-hidden="true"></a>pi = <span class="fl">3.1415926535897932384626433832795028841976939937510</span></span>
 <span id="cb78-2"><a href="float.html#cb78-2" aria-hidden="true"></a>p pi.round(<span class="dv">3</span>)</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/round" target="_blank">Click here for a REPL to try it.</a></p>
-<p><mark>✏️ <strong>Exercise:</strong></mark> Return to the GitPod <code>Float</code> project and work through <code>float_round.rb</code></p>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/round" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
+<div class="proj">
+<p>Return to the GitPod <code>Float</code> project and work through <code>float_round.rb</code></p>
+</div>
 </div>
 <div id="rand-1" class="section level4 unnumbered hasAnchor">
 <h4>rand<a href="float.html#rand-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>rand</code> method that we met earlier can also be called with no arguments, in which case it returns a <code>Float</code> between 0 and 1. This is very handy for e.g. probabilities. Give it a try:</p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb79-1"><a href="float.html#cb79-1" aria-hidden="true"></a>p rand</span></code></pre></div>
-<p><mark>✏️ <strong>Exercise:</strong></mark> <a href="https://repl.it/@raghubetina/float-rand" target="_blank">Click here for a REPL to try it.</a></p>
+<div class="experiment">
+<p><a href="https://repl.it/@raghubetina/float-rand" target="_blank">Click here for a REPL to try it.</a></p>
+</div>
 </div>
 </div>
 <div id="conclusion-2" class="section level3 hasAnchor" number="1.5.2">

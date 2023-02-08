@@ -116,7 +116,8 @@ p my_string # => "Hello, world!"
 Once you've played with the REPL, it's time to move into the graded project environment.
 
 <div class="proj">
-   Open the GitPod project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file.
+
+   Open the GitPod `String` project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file.
 
    **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`. Basically the steps outlined below.**
 

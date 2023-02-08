@@ -61,7 +61,7 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
 <div class="proj">
 
-  Open the GitPod project for this chapter and start with the exercise `integer_math.rb`:
+  Open the GitPod `Integer` project for this chapter and start with the exercise `integer_math.rb`:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/integer-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[integer_project] 
   
