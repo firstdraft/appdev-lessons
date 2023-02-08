@@ -25,9 +25,41 @@ When faced with a task, your first instinct should be: "How can I solve this puz
 
 Your first instinct _shouldn't_ be: "Let me Google for a solution to this problem." Developers do a lot of that, of course, but only after we've tried to solve it with what we already have.
 
-"Google Fu" is a hugely important skill to practice in software development, but in this course you should resist Googling. The answers you find  are not suitable for beginners; they will more than likely slow you down.
+"Google-Fu" is a hugely important skill to practice in software development, but in this course you should resist Googling. The answers you find  are not suitable for beginners; they will more than likely slow you down.
 
 Any assigned task _will_ be achievable using the classes, methods, and keywords introduced in the Ruby Chapters. Your job is to invent a combination of them that gets the job done.
+
+### Ruby Gym
+
+Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the previous sections to write some small programs. These are longer projects than the exercises we've seen so far, and they may require a few different tools to complete; so keep the chapter sections open for reference. 
+
+There are likely a few ways to solve an exercise. Just get the code to pass all of the `rails grade` tests and you are good to move on. Remember, [we are inventors][We are inventors]; don't rely on Google-Fu.
+
+Please follow the instructions below to enter the Ruby Gym for some weight training 🏋️!
+
+<div class="proj">
+
+   Open the GitPod Ruby Gym project and complete the exercises:
+
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/ruby-gym/tree/bp-edits)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[ruby_gym_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+
+  The suggested order to work through the exercises is:
+
+  1. `character_types.rb`
+  1. `two_fer.rb`
+  1. `dice_roll.rb`
+  1. `leap_year.rb`
+  1. `black_jack.rb`
+  1. `raindrops.rb`
+  1. `count_the.rb`
+  1. `sum_odd_integers.rb`
+  1. `accumulate.rb`
+  1. `secret_encoder.rb`
+  1. `secret_decoder.rb`
+  1. `think_fast.rb`
+</div>
 
 
 #### Addendum: Optional Ruby Practice {-}
