@@ -14,7 +14,10 @@ cities = Array.new
 
 Try it out and see what you get if you `p cities`:
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/Arraynew){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/Arraynew){target="_blank"}
+</div>
 
 #### push {-}
 
@@ -79,7 +82,10 @@ p cities
 p cities.at(2)
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-at){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-at){target="_blank"}
+</div>
 
 Whoa! Did you expect `cities.at(2)` to return `"LA"`? I sure didn't, the first time I tried it; I was expecting `"NYC"`.
 
@@ -118,7 +124,10 @@ array = [8, 3, 1, 19, 23, 3]
 p array[2]
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-square-bracket){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-square-bracket){target="_blank"}
+</div>
 
 #### first, last {-}
 
@@ -134,7 +143,10 @@ cities = ["Chicago", "NYC", "LA", "SF", "NOLA"]
 p cities.index("SF")
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-index){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-index){target="_blank"}
+</div>
 
 Some further things for you to experiment with:
 
@@ -177,15 +189,21 @@ p user_numbers
 p "You entered " + length.to_s + " numbers."
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/gets-with-split){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/gets-with-split){target="_blank"}
+</div>
 
 We'll be using this technique frequently to make things more interesting.
 
-##### Start the GitPod Project {-}
+<div class="proj">
 
-Open the GitPod project for this chapter and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions](https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions){target="_blank"}.
+  Open the GitPod `Array` project for this chapter and start with the exercise `array_element_square.rb`:
 
-<mark>✏️ **Exercise:**</mark> On GitPod in the `Array` project, work through `array_element_square.rb`.
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[array_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>
 
 #### count {-}
 
@@ -199,9 +217,15 @@ p a.count
 p a.count(3)
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/count){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/count){target="_blank"}
+</div>
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Array` project and work through `array_count.rb`
+<div class="proj">
+  
+  Return to the GitPod `Array` project and work through `array_count.rb`
+</div>
  
 #### include? {-}
 
@@ -231,9 +255,15 @@ array = [8, 3, 1, 19, 23, 3]
 p array.reverse # => [3, 23, 19, 1, 3, 8]
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-reverse){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-reverse){target="_blank"}
+</div>
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Array` project and work through `array_reverse.rb`
+<div class="proj">
+  
+  Return to the GitPod `Array` project and work through `array_reverse.rb`
+</div>
 
 #### sort {-}
 
@@ -243,7 +273,10 @@ array = [12, 4, 5, 13, 56, 32]
 p array.sort # => [4, 5, 12, 13, 32, 56]
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/sort){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/sort){target="_blank"}
+</div>
 
 #### shuffle {-}
 
@@ -253,7 +286,10 @@ array = [1, 2, 3, 4, 5]
 p array.shuffle # Returns a copy of array in random order
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/shuffle){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/shuffle){target="_blank"}
+</div>
 
 #### sample {-}
 
@@ -263,7 +299,10 @@ array = [8, 3, 1, 19, 23, 3]
 p array.sample # => Returns a single random element from the array
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/sample){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/sample){target="_blank"}
+</div>
 
 #### min {-}
 
@@ -273,7 +312,10 @@ a = [8, 3, 1, 19, 23, 3]
 p a.min # => 1
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/min){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/min){target="_blank"}
+</div>
 
 #### max {-}
 
@@ -283,9 +325,15 @@ a = [8, 3, 1, 19, 23, 3]
 p a.max # => 23
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/max){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/max){target="_blank"}
+</div>
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Array` project and work through `array_min_max_difference.rb`
+<div class="proj">
+  
+  Return to the GitPod `Array` project and work through `array_min_max_difference.rb`
+</div>
 
 #### sum {-}
 
@@ -295,9 +343,15 @@ a = [8, 3, 1, 19, 23, 3]
 p a.sum # => 57
 ```
 
-<mark>✏️ **Exercise:**</mark> [Click here for a REPL to try it.](https://repl.it/@raghubetina/sum){target="_blank"}
+<div class="experiment">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/sum){target="_blank"}
+</div>
 
-<mark>✏️ **Exercise:**</mark> Return to the GitPod `Array` project and work through `array_sum_elements.rb`
+<div class="proj">
+  
+  Return to the GitPod `Array` project and work through `array_sum_elements.rb`
+</div>
 
 #### join {-}
 
