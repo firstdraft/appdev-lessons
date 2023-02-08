@@ -59,7 +59,7 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
 <div class="proj">
 
-  Open the GitPod `Integer` project for this chapter and start with the exercise `integer_math.rb`:
+  Open the GitPod `Integer` project for this chapter and start with the exercise `math.rb`:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/integer-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[integer_project] 
   
@@ -79,7 +79,7 @@ p 7.odd?
 </div>
 
 <div class="proj">
-  Return to the GitPod `Integer` project and work through `integer_odd.rb`
+  Return to the GitPod `Integer` project and work through `odd.rb`
 </div>
 
 #### rand {-}
@@ -133,7 +133,7 @@ Similarly, there's a `to_f` (or "to float") method to convert an `Integer` to a 
 **BENP: maybe combine to_i, to_f and to_s here in a gitpod exercise / modify integer_birth_year. integer_birth_year could move to dates chapter**
 
 <div class="proj">
-  Return to the GitPod `Integer` project and work through `integer_birth_year.rb`
+  Return to the GitPod `Integer` project and work through `birth_year.rb`
 </div>
 
 ###  Conclusion

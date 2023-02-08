@@ -173,7 +173,7 @@ In the REPL above, replace `10.times` with each of the following and play around
 
 <div class="proj">
 
-  Open the GitPod loops project for this chapter and start with the exercise `loops_letter_count.rb`:
+  Open the GitPod loops project for this chapter and start with the exercise `letter_count.rb`:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/loops-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[loops_project] 
   
@@ -182,12 +182,12 @@ In the REPL above, replace `10.times` with each of the following and play around
 
 <div class="proj">
 
-  When you're done with the first one, work through `loops_multiples.rb`
+  When you're done with the first one, work through `multiples.rb`
 </div>
 
 <div class="proj">
 
-  And finally, work through `loops_fizzbuzz.rb`
+  And finally, work through `fizzbuzz.rb`
 </div>
 
 ###  Conclusion

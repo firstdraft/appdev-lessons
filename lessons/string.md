@@ -119,17 +119,17 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
    **Note: these steps go for opening any GitPod project, just change the project and file names.**
 
-   Open the GitPod `String` project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `string_concat.rb` file.
+   Open the GitPod `String` project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
 
    **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`. Basically the steps outlined below.**
 
    1. LTI{Load assignment}(https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_project]
-   1. Open the `string_concat.rb` file in the editor window.
+   1. Open the `concat.rb` file in the editor window.
    1. Modify the file per the instructions on top.
-   1. Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the terminal. If we want to run `string_concat.rb`, we can write the command:
+   1. Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the terminal. If we want to run `concat.rb`, we can write the command:
 
          ```bash
-         ruby string_concat.rb
+         ruby concat.rb
          ```
       
          Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use **tab completion**!
@@ -198,7 +198,7 @@ p a + b # => "HelloWorld"        # You can add strings together
 ```
 
 <div class="proj">
-   Return to the GitPod `String` project and work through `string_addition.rb`
+   Return to the GitPod `String` project and work through `addition.rb`
 </div>
 
 <div class="experiment">
@@ -240,7 +240,7 @@ But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hell
 Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line][The bottom line] is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
 
 <div class="proj">
-   Return to the GitPod `String` project and work through `string_multiplication.rb`
+   Return to the GitPod `String` project and work through `multiplication.rb`
 </div>
 
 #### upcase {-}
@@ -276,7 +276,7 @@ p "FaMiLy".swapcase # => "fAmIlY
 ```
 
 <div class="proj">
-   Return to the GitPod `String` project and work through `string_case.rb`
+   Return to the GitPod `String` project and work through `case.rb`
 </div>
 
 #### reverse {-}
@@ -326,7 +326,7 @@ This seemingly strange task is very common due to the way that getting user inpu
 </div>
 
 <div class="proj">
-   Return to the GitPod `String` project and work through `string_chomp.rb`
+   Return to the GitPod `String` project and work through `chomp.rb`
 </div>
 
 #### gsub {-}
@@ -374,11 +374,11 @@ For now, we're just going to copy-paste a few simple regexes[^regexone] that com
     ```
 
 <div class="proj">
-   Return to the GitPod `String` project and work through `string_gsub.rb`
+   Return to the GitPod `String` project and work through `gsub.rb`
 </div>
 
 <!-- <div class="proj">
-   Return to the GitPod `String` project and work through `string_gsub_advanced.rb`
+   Return to the GitPod `String` project and work through `gsub_advanced.rb`
 </div> -->
 
 #### to_i {-}
@@ -418,7 +418,7 @@ p "beginning".capitalize
 </div>
 
 <div class="proj">
-   Return to the GitPod `String` project and work through `string_strip.rb`
+   Return to the GitPod `String` project and work through `strip.rb`
 </div>
 
 #### include? {-}
@@ -521,7 +521,7 @@ their_name = gets.chomp
 and see how it's different.
 
 <div class="proj">
-   Return to the GitPod `String` project and work through `string_gets.rb`
+   Return to the GitPod `String` project and work through `gets.rb`
 </div>
 
 ### Conclusion

@@ -111,7 +111,7 @@ Code like this is what drives the dozens of dynamic applications you interact wi
 
 <div class="proj">
 
-  Open the GitPod `.each` project for this chapter and start with the exercise `each_spell_word.rb`:
+  Open the GitPod `.each` project for this chapter and start with the exercise `spell_word.rb`:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[each_project] 
   
@@ -120,12 +120,12 @@ Code like this is what drives the dozens of dynamic applications you interact wi
 
 <div class="proj">
 
-  When you're done with the first one, work through `each_even_word.rb`
+  When you're done with the first one, work through `even_word.rb`
 </div>
 
 <div class="proj">
 
-  And finally, work through `each_letter_count.rb`
+  And finally, work through `letter_count.rb`
 </div>
 
 ###  Conclusion

@@ -724,14 +724,14 @@ Proudly published with bookdown</a></li>
 <p>Once you’ve played with the REPL, it’s time to move into the graded project environment.</p>
 <div class="proj">
 <p><strong>Note: these steps go for opening any GitPod project, just change the project and file names.</strong></p>
-<p>Open the GitPod <code>String</code> project for this chapter and start with the exercises. Follow the instructions below and complete the task in the <code>string_concat.rb</code> file.</p>
+<p>Open the GitPod <code>String</code> project for this chapter and start with the exercises. Follow the instructions below and complete the task in the <code>concat.rb</code> file.</p>
 <p><strong>BENP: use second half of <a href="https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&amp;start=146.06" target="_blank">string video</a> as template to re-record opening the workspace and working on a file, including <code>rails grade</code>. Basically the steps outlined below.</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>LTI{Load assignment}(<a href="https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions" class="uri">https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions</a>)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_project]</p></li>
-<li><p>Open the <code>string_concat.rb</code> file in the editor window.</p></li>
+<li><p>Open the <code>concat.rb</code> file in the editor window.</p></li>
 <li><p>Modify the file per the instructions on top.</p></li>
-<li><p>Run your Ruby file by typing <code>ruby</code> and then the name of the file you want to run in the terminal. If we want to run <code>string_concat.rb</code>, we can write the command:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="string.html#cb31-1" aria-hidden="true"></a><span class="ex">ruby</span> string_concat.rb</span></code></pre></div>
+<li><p>Run your Ruby file by typing <code>ruby</code> and then the name of the file you want to run in the terminal. If we want to run <code>concat.rb</code>, we can write the command:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="string.html#cb31-1" aria-hidden="true"></a><span class="ex">ruby</span> concat.rb</span></code></pre></div>
 <p>Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use <strong>tab completion</strong>!</p></li>
 <li><p>To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you’ve run in a terminal.</p></li>
 <li><p>When you think you have the required output, run <code>rails grade</code> and proceed when the test passes without errors.</p></li>
@@ -770,7 +770,7 @@ Proudly published with bookdown</a></li>
 <span id="cb37-2"><a href="string.html#cb37-2" aria-hidden="true"></a>b = <span class="st">&quot;World&quot;</span></span>
 <span id="cb37-3"><a href="string.html#cb37-3" aria-hidden="true"></a>p a + b <span class="co"># =&gt; &quot;HelloWorld&quot;        # You can add strings together</span></span></code></pre></div>
 <div class="proj">
-<p>Return to the GitPod <code>String</code> project and work through <code>string_addition.rb</code></p>
+<p>Return to the GitPod <code>String</code> project and work through <code>addition.rb</code></p>
 </div>
 <div class="experiment">
 <p><a href="https://repl.it/@raghubetina/concatenation" target="_blank">Click here for a REPL to try it.</a></p>
@@ -795,7 +795,7 @@ Proudly published with bookdown</a></li>
 <p>But <code>3 * "Hello"</code> is calling the <code>Integer</code> method <code>*</code> with an argument of <code>"Hello"</code>, which doesn’t make much sense (what would it mean to add <code>3</code> to itself <code>"Hello"</code> times?).</p>
 <p>Thus, we can see why the <code>String</code> version of <code>*</code> and the <code>Integer</code> version of <code>*</code> both need an integer argument. Again, <a href="nouns-verbs-and-grammar.html#the-bottom-line">the bottom line</a> is — at all times as you are writing Ruby, you should be thinking: “What <strong>class</strong> is this object? What <strong>methods</strong> does <em>this</em> class have available?” Even when there’s some syntactic sugar making things <em>look</em> unconventional, don’t forget your basics! It’s still <code>noun.verb</code> under the hood.</p>
 <div class="proj">
-<p>Return to the GitPod <code>String</code> project and work through <code>string_multiplication.rb</code></p>
+<p>Return to the GitPod <code>String</code> project and work through <code>multiplication.rb</code></p>
 </div>
 </div>
 <div id="upcase" class="section level4 unnumbered hasAnchor">
@@ -819,7 +819,7 @@ Proudly published with bookdown</a></li>
 <p>The swapcase method returns a copy of the <code>String</code> with all uppercase letters replaced with their lowercase counterparts, <em>and</em> vice versa.</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb43-1"><a href="string.html#cb43-1" aria-hidden="true"></a>p <span class="st">&quot;FaMiLy&quot;</span>.swapcase <span class="co"># =&gt; &quot;fAmIlY</span></span></code></pre></div>
 <div class="proj">
-<p>Return to the GitPod <code>String</code> project and work through <code>string_case.rb</code></p>
+<p>Return to the GitPod <code>String</code> project and work through <code>case.rb</code></p>
 </div>
 </div>
 <div id="reverse" class="section level4 unnumbered hasAnchor">
@@ -851,7 +851,7 @@ Proudly published with bookdown</a></li>
 <p><a href="https://repl.it/@raghubetina/chomp" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <div class="proj">
-<p>Return to the GitPod <code>String</code> project and work through <code>string_chomp.rb</code></p>
+<p>Return to the GitPod <code>String</code> project and work through <code>chomp.rb</code></p>
 </div>
 </div>
 <div id="gsub" class="section level4 unnumbered hasAnchor">
@@ -881,10 +881,10 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb52"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb52-1"><a href="string.html#cb52-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^a-z0-9\s]/i</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;March 29th&quot;</span></span></code></pre></div></li>
 </ul>
 <div class="proj">
-<p>Return to the GitPod <code>String</code> project and work through <code>string_gsub.rb</code></p>
+<p>Return to the GitPod <code>String</code> project and work through <code>gsub.rb</code></p>
 </div>
 <!-- <div class="proj">
-   Return to the GitPod `String` project and work through `string_gsub_advanced.rb`
+   Return to the GitPod `String` project and work through `gsub_advanced.rb`
 </div> -->
 </div>
 </div>
@@ -912,7 +912,7 @@ Proudly published with bookdown</a></li>
 <p><a href="https://repl.it/@raghubetina/capitalize" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
 <div class="proj">
-<p>Return to the GitPod <code>String</code> project and work through <code>string_strip.rb</code></p>
+<p>Return to the GitPod <code>String</code> project and work through <code>strip.rb</code></p>
 </div>
 </div>
 <div id="include" class="section level4 unnumbered hasAnchor">
@@ -974,7 +974,7 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb63"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb63-1"><a href="string.html#cb63-1" aria-hidden="true"></a>their_name = gets.chomp</span></code></pre></div>
 <p>and see how it’s different.</p>
 <div class="proj">
-<p>Return to the GitPod <code>String</code> project and work through <code>string_gets.rb</code></p>
+<p>Return to the GitPod <code>String</code> project and work through <code>gets.rb</code></p>
 </div>
 </div>
 </div>

@@ -45,7 +45,7 @@ One other thing to keep in mind: you can use `**` in conjunction with fractions 
 
 <div class="proj">
 
-  Open the GitPod `Float` project for this chapter and start with the exercise `float_find_hypotenuse.rb`:
+  Open the GitPod `Float` project for this chapter and start with the exercise `find_hypotenuse.rb`:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[float_project] 
   
@@ -75,7 +75,7 @@ p pi.round(3)
 
 <div class="proj">
 
-  Return to the GitPod `Float` project and work through `float_round.rb`
+  Return to the GitPod `Float` project and work through `round.rb`
 </div>
 
 #### rand {-}

@@ -266,7 +266,7 @@ end
 
 <div class="proj">
 
-  Open the GitPod "our own classes" project for this chapter and start with the exercise `class_person.rb`:
+  Open the GitPod "our own classes" project for this chapter and start with the exercise `person.rb`:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[our_own_classes_project] 
   

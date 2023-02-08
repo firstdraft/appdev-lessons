@@ -72,7 +72,7 @@ t.day # => 16
 
 <div class="proj">
 
-  Open the GitPod `Date` project for this chapter and start with the exercise `date_formatted.rb`:
+  Open the GitPod `Date` project for this chapter and start with the exercise `formatted.rb`:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[date_project] 
   
@@ -102,7 +102,7 @@ days.to_i
 
 <div class="proj">
   
-  Return to the GitPod `Date` project and work through `date_math.rb`
+  Return to the GitPod `Date` project and work through `math.rb`
 </div>
 
 #### monday? {-}
@@ -143,7 +143,7 @@ Date.new(2001,2,3).wday #=> 6
 
 <div class="proj">
   
-  Return to the GitPod `Date` project and work through `date_monday.rb`
+  Return to the GitPod `Date` project and work through `monday.rb`
 </div>
 
 ### Time

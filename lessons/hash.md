@@ -171,7 +171,7 @@ Movie.where({ :title => "The Shawshank Redemption" })
 
 <div class="proj">
 
-  Open the GitPod `Hash` project for this chapter and start with the exercise `hash_person.rb`:
+  Open the GitPod `Hash` project for this chapter and start with the exercise `person.rb`:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[hash_project] 
   
@@ -290,7 +290,7 @@ person_hash.fetch(:age)
 
 <div class="proj">
 
-  Return to the GitPod `Hash` project and work through `hash_dig.rb`
+  Return to the GitPod `Hash` project and work through `dig.rb`
 </div>
 
 ### key
@@ -308,12 +308,12 @@ h.key(500)   #=> nil
 
 <div class="proj">
 
-  Return to the GitPod `Hash` project and work through `hash_find_value.rb`
+  Return to the GitPod `Hash` project and work through `find_value.rb`
 </div>
 
 <div class="proj">
 
-  Finally, in the GitPod `Hash` project complete `hash_list.rb`
+  Finally, in the GitPod `Hash` project complete `list.rb`
 </div>
 
 ### Conclusion

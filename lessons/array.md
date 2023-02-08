@@ -198,7 +198,7 @@ We'll be using this technique frequently to make things more interesting.
 
 <div class="proj">
 
-  Open the GitPod `Array` project for this chapter and start with the exercise `array_element_square.rb`:
+  Open the GitPod `Array` project for this chapter and start with the exercise `element_square.rb`:
 
   LTI{Load assignment}(https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[array_project] 
   
@@ -224,7 +224,7 @@ p a.count(3)
 
 <div class="proj">
   
-  Return to the GitPod `Array` project and work through `array_count.rb`
+  Return to the GitPod `Array` project and work through `count.rb`
 </div>
  
 #### include? {-}
@@ -262,7 +262,7 @@ p array.reverse # => [3, 23, 19, 1, 3, 8]
 
 <div class="proj">
   
-  Return to the GitPod `Array` project and work through `array_reverse.rb`
+  Return to the GitPod `Array` project and work through `reverse.rb`
 </div>
 
 #### sort {-}
@@ -332,7 +332,7 @@ p a.max # => 23
 
 <div class="proj">
   
-  Return to the GitPod `Array` project and work through `array_min_max_difference.rb`
+  Return to the GitPod `Array` project and work through `min_max_difference.rb`
 </div>
 
 #### sum {-}
@@ -350,7 +350,7 @@ p a.sum # => 57
 
 <div class="proj">
   
-  Return to the GitPod `Array` project and work through `array_sum_elements.rb`
+  Return to the GitPod `Array` project and work through `sum_elements.rb`
 </div>
 
 #### join {-}
