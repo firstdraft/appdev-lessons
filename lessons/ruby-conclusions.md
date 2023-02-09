@@ -31,7 +31,7 @@ Any assigned task _will_ be achievable using the classes, methods, and keywords 
 
 ### Ruby Gym
 
-Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the previous sections to write some small programs. These are longer projects than the exercises we've seen so far, and they may require a few different tools to complete; so keep the chapter sections open for reference. 
+Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the previous sections to write some small programs. These are longer projects than the exercises we've seen so far, and they may require a few different tools to complete; so keep the chapter sections open for reference and scan through them for things that may help when you get stuck. All the tools are there.
 
 There are likely a few ways to solve an exercise. Just get the code to pass all of the `rails grade` tests and you are good to move on. Remember, _we are inventors_; don't rely on Google-Fu.
 
@@ -45,20 +45,33 @@ Please follow the instructions below to enter the Ruby Gym for some weight train
   
   For a GitPod refresher, [see here](#start-gitpod-project).
 
-  The suggested order to work through the exercises is:
+  The suggested order (feel free to go in whatever order you'd like) is:
 
-  1. `character_types.rb`
+  1. `think_fast.rb`
   1. `two_fer.rb`
   1. `dice_roll.rb`
-  1. `leap_year.rb`
-  1. `black_jack.rb`
-  1. `raindrops.rb`
-  1. `count_the.rb`
-  1. `sum_odd_integers.rb`
+  1. `character_types.rb`
   1. `accumulate.rb`
   1. `secret_encoder.rb`
   1. `secret_decoder.rb`
-  1. `think_fast.rb`
+  1. `leap_year.rb`
+  1. `raindrops.rb`
+  1. `count_the.rb`
+  1. `sum_odd_integers.rb`
+  1. `black_jack.rb`
+</div>
+
+<div class="proj">
+
+  **Optional stretch goal**
+
+  If you finished the previous exercises, and you want some more, feel free to also work on these _optional_ exercises found in the Ruby Gym:
+
+  1. `anagram.rb`
+  1. `isogram.rb`
+  1. `hamming.rb`
+  1. `darts.rb`
+  1. `phrase.rb`
 </div>
 
 
