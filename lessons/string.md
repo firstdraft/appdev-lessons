@@ -42,7 +42,7 @@ This will, however, just give us back an empty string `""`.
 
    1. With `howdy.rb` open in the editor window, we can add some code like `p "Hello, world!"`, and save the file (or turn on "Auto Save").
 
-   1. Now we can run the file by clicking on the terminal and typing (after the `$`-sign): `ruby howdy.rb`. When we press <kbd>Enter</kbd> on our keyboard, the code in `howdy.rb` will execute and show us the result!
+   1. Now we can run the file by clicking on the terminal and typing (after the `$`-sign): `ruby howdy.rb`. When we press <kbd>return</kbd> on our keyboard, the code in `howdy.rb` will execute and show us the result!
 
    To get more comfortable with these steps, create another file called `invisible_to_visible.rb`, and fill it with this code:
 
@@ -166,7 +166,7 @@ In our [previous steps][Make the invisible visible in GitPod], we opened a GitPo
 
 #### String literals {-}
 
-What a pain! Now that we've shown that, under the hood, even creating a string follows the syntax of `noun.verb` — let's never do it again. From now on, we'll use the shortcut of creating string "**literals**" in place by typing the characters we want within quotes: `"Thank goodness!"`
+Done with `concat.rb`? What a pain! Now that we've shown that, under the hood, even creating a string follows the syntax of `noun.verb` — let's never do it again. From now on, we'll use the shortcut of creating string "**literals**" in place by typing the characters we want within quotes: `"Thank goodness!"`
 
 These kinds of exceptions to the regular grammar in order to make life easier are known as "**syntactic sugar**".
 
@@ -218,12 +218,15 @@ b = "World"
 p a + b # => "HelloWorld"        # You can add strings together
 ```
 
-<div class="proj">
-   Return to the GitPod `String` project and work through `addition.rb`
+<div class="experiment">
+
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
 </div>
 
-<div class="experiment">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
+
+<div class="proj">
+
+   Return to the GitPod `String` project and work through `addition.rb`
 </div>
 
 #### String multiplication, a.k.a * {-}
