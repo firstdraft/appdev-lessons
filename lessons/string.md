@@ -18,14 +18,33 @@ In Ruby, the formal way to create a new object is to use the `.new` method on th
 s = String.new
 ```
 
-This will, however, just give us back an empty string `""`. We would then have to add each character to it one by one. One way to do so is by using the `.concat` method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.
+This will, however, just give us back an empty string `""`.
 
 #### Make the invisible visible in GitPod {-}
 
 <div class="experiment">
-   Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there.
 
-   **BENP: As a template use 00:00:00 to 00:06:15 of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} to transcribe and then re-record an exercise where you first open the `helloruby` project, create `howdy.rb`, run it, then add another `invisible_to_visible.rb` exercise like below:**
+   Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there. The steps are:
+
+   1. Sign up for a [Gitpod.io](https://www.gitpod.io){target="_blank"} account. It will ask you to sign in using your GitHub account.
+
+   1. We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** (i.e., a folder with some code in it). For example, here is a repository:
+   
+         [https://github.com/appdev-projects/helloruby](https://github.com/appdev-projects/helloruby){target="_blank"}
+
+   1. To create a Gitpod workspace based on a repo, in the address bar of your browser enter **https\://gitpod.io/#** and then the URL of the repo. For example,
+
+         **https\://gitpod.io/#https\://github.com/appdev-projects/helloruby**
+
+   1. This creates a blank, brand-new computer. This is not a REPL, nor is it an HTML application like we made for Rock, Paper, Scissors. But Ruby _is_ installed on this computer. 
+   
+   1. We can create a Ruby file by right-clicking in the file explorer and selecting "New File". We can call our file `howdy.rb`, making sure to end it with the extension `.rb`.
+
+   1. With `howdy.rb` open in the editor window, we can add some code like `p "Hello, world!"`, and save the file (or turn on "Auto Save").
+
+   1. Now we can run the file by clicking on the terminal and typing (after the `$`-sign): `ruby howdy.rb`. When we press <kbd>Enter</kbd> on our keyboard, the code in `howdy.rb` will execute and show us the result!
+
+   To get more comfortable with these steps, create another file called `invisible_to_visible.rb`, and fill it with this code:
 
    ```ruby
    # One-by-one, uncomment the p statements 
@@ -38,15 +57,15 @@ This will, however, just give us back an empty string `""`. We would then have t
    # p s
    ```
 
-   The steps are:
-
-   **BENP: see technical-setup.md [Getting started with Gitpod] section. Need to link to that here somehow.**
+   Once the file is saved, remove the leading `#` from the `p`rint statements one by one, and run the code each time with `ruby invisible_to_visible.rb` at the terminal prompt.
 
 </div>
 
 When you are done experimenting, feel free to close the GitPod project window. We will open another project momentarily and only one GitPod tab will limit confusion.
 
 #### ASCII Codes {-}
+
+With the `String.new` approach, we would then have to add each character to our variable `s` one by one. One way to do so is by using the `.concat` method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.
 
 What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1`s); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
 
@@ -114,6 +133,8 @@ p my_string # => "Hello, world!"
 #### Start the GitPod Project {- #start-gitpod-project}
 
 Once you've played with the REPL, it's time to move into the graded project environment.
+
+In our [previous steps][Make the invisible visible in GitPod], we opened a GitPod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on GitPod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button when you see it.
 
 <div class="proj">
 

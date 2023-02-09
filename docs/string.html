@@ -400,12 +400,23 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb27"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb27-1"><a href="string.html#cb27-1" aria-hidden="true"></a>s = <span class="st">&quot;Hello, world!&quot;</span></span></code></pre></div>
 <p>In Ruby, the formal way to create a new object is to use the <code>.new</code> method on the parent class:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb28-1"><a href="string.html#cb28-1" aria-hidden="true"></a>s = <span class="dt">String</span>.new</span></code></pre></div>
-<p>This will, however, just give us back an empty string <code>""</code>. We would then have to add each character to it one by one. One way to do so is by using the <code>.concat</code> method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.</p>
+<p>This will, however, just give us back an empty string <code>""</code>.</p>
 <div id="make-the-invisible-visible-in-gitpod" class="section level4 unnumbered hasAnchor">
 <h4>Make the invisible visible in GitPod<a href="string.html#make-the-invisible-visible-in-gitpod" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="experiment">
-<p>Let’s practice <strong>making the invisible visible</strong>. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there.</p>
-<p><strong>BENP: As a template use 00:00:00 to 00:06:15 of <a href="https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&amp;start=146.06" target="_blank">string video</a> to transcribe and then re-record an exercise where you first open the <code>helloruby</code> project, create <code>howdy.rb</code>, run it, then add another <code>invisible_to_visible.rb</code> exercise like below:</strong></p>
+<p>Let’s practice <strong>making the invisible visible</strong>. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there. The steps are:</p>
+<ol style="list-style-type: decimal">
+<li><p>Sign up for a <a href="https://www.gitpod.io" target="_blank">Gitpod.io</a> account. It will ask you to sign in using your GitHub account.</p></li>
+<li><p>We will create a <strong>workspace</strong> for each project that we work on. Each workspace is based on a GitHub <strong>repository</strong> (i.e., a folder with some code in it). For example, here is a repository:</p>
+<p><a href="https://github.com/appdev-projects/helloruby" target="_blank">https://github.com/appdev-projects/helloruby</a></p></li>
+<li><p>To create a Gitpod workspace based on a repo, in the address bar of your browser enter <strong>https://gitpod.io/#</strong> and then the URL of the repo. For example,</p>
+<p><strong>https://gitpod.io/#https://github.com/appdev-projects/helloruby</strong></p></li>
+<li><p>This creates a blank, brand-new computer. This is not a REPL, nor is it an HTML application like we made for Rock, Paper, Scissors. But Ruby <em>is</em> installed on this computer.</p></li>
+<li><p>We can create a Ruby file by right-clicking in the file explorer and selecting “New File”. We can call our file <code>howdy.rb</code>, making sure to end it with the extension <code>.rb</code>.</p></li>
+<li><p>With <code>howdy.rb</code> open in the editor window, we can add some code like <code>p "Hello, world!"</code>, and save the file (or turn on “Auto Save”).</p></li>
+<li><p>Now we can run the file by clicking on the terminal and typing (after the <code>$</code>-sign): <code>ruby howdy.rb</code>. When we press <kbd>Enter</kbd> on our keyboard, the code in <code>howdy.rb</code> will execute and show us the result!</p></li>
+</ol>
+<p>To get more comfortable with these steps, create another file called <code>invisible_to_visible.rb</code>, and fill it with this code:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb29-1"><a href="string.html#cb29-1" aria-hidden="true"></a><span class="co"># One-by-one, uncomment the p statements </span></span>
 <span id="cb29-2"><a href="string.html#cb29-2" aria-hidden="true"></a><span class="co"># below and rerun the code</span></span>
 <span id="cb29-3"><a href="string.html#cb29-3" aria-hidden="true"></a>s = <span class="dt">String</span>.new</span>
@@ -414,13 +425,13 @@ Proudly published with bookdown</a></li>
 <span id="cb29-6"><a href="string.html#cb29-6" aria-hidden="true"></a><span class="co"># p s</span></span>
 <span id="cb29-7"><a href="string.html#cb29-7" aria-hidden="true"></a>s = s.upcase</span>
 <span id="cb29-8"><a href="string.html#cb29-8" aria-hidden="true"></a><span class="co"># p s</span></span></code></pre></div>
-<p>The steps are:</p>
-<p><strong>BENP: see technical-setup.md [Getting started with Gitpod] section. Need to link to that here somehow.</strong></p>
+<p>Once the file is saved, remove the leading <code>#</code> from the <code>p</code>rint statements one by one, and run the code each time with <code>ruby invisible_to_visible.rb</code> at the terminal prompt.</p>
 </div>
 <p>When you are done experimenting, feel free to close the GitPod project window. We will open another project momentarily and only one GitPod tab will limit confusion.</p>
 </div>
 <div id="ascii-codes" class="section level4 unnumbered hasAnchor">
 <h4>ASCII Codes<a href="string.html#ascii-codes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>With the <code>String.new</code> approach, we would then have to add each character to our variable <code>s</code> one by one. One way to do so is by using the <code>.concat</code> method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.</p>
 <p>What’s an ASCII code? At the hardware level, computers only store integers (specifically, in <em>binary</em> form — using only <code>0</code>s and <code>1</code>s); so all other datatypes need to be encoded somehow as a number. <a href="https://en.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a>, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers<span id="fn-10"><!--
 --><label for="fn-10-toggle"><sup>10</sup></label><!--
 --><input type="checkbox" hidden id="fn-10-toggle"/>
@@ -722,6 +733,7 @@ Proudly published with bookdown</a></li>
 <div id="start-gitpod-project" class="section level4 unnumbered hasAnchor">
 <h4>Start the GitPod Project<a href="string.html#start-gitpod-project" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Once you’ve played with the REPL, it’s time to move into the graded project environment.</p>
+<p>In our <a href="string.html#make-the-invisible-visible-in-gitpod">previous steps</a>, we opened a GitPod workspace via <strong>https://gitpod.io/#[SOME REPO]</strong>. But, for most projects, you will be “forking” an existing GitHub repo to your account, then opening it on GitPod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the <strong>Load assignment</strong> button when you see it.</p>
 <div class="proj">
 <p><strong>Note: these steps go for opening any GitPod project, just change the project and file names.</strong></p>
 <p>Open the GitPod <code>String</code> project for this chapter and start with the exercises. Follow the instructions below and complete the task in the <code>concat.rb</code> file.</p>
