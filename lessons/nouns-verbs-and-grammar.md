@@ -222,7 +222,7 @@ However, one situation in which whitespace _does_ matter has to do with the **pa
 
 Can you spot the difference? **Don't put a space between the method and the opening parenthesis.**
 
-It's a very easy mistake to make, so I just wanted to warn you early on so you that can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:
+It's a very easy mistake to make, so I just wanted to warn you early on so that you can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:
 
 <div class="experiment">
   [Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){target="_blank"}
@@ -232,7 +232,7 @@ It's a very easy mistake to make, so I just wanted to warn you early on so you t
 
 Programming boils down to:
 
- 1. Forming a plan of what you want to do (e.g. "I want to remove any '@'s in this input.")
+ 1. Forming a plan of what you want to do (e.g. "I want to remove any `@`s in this input.")
  1. Typing some code to try and do it.
  1. It _never_ works the first time.
  1. Seeing an error message.
@@ -296,7 +296,7 @@ s
 ```
 
 <div class="experiment">
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){target="_blank"} (Keep this REPL open when you are done, we'll use it in the next few steps.)
 </div>
 
 This creates a box, labels it `s`, and stores the string `"HELLO WORLD!"` in it.
@@ -314,18 +314,16 @@ s = "hello world!".upcase
 out loud, I say "the string hello world dot upcase _is assigned_ to the variable s". I read the right side first, because that's how Ruby reads it too; it first evaluates the expression on the right side of the `=`, and then it stores the resulting value in the variable on the left.
 
 <div class="experiment">
-  Using as many Ruby terms as you can (string, object, assign, etc.), read the following out loud (or maybe in your head if you're in a quiet café): `t = "I like Ruby".gsub("like", "love")`. Carefully reading code with correct terminology is a great way to learn and spot error messages before they occur.
-</div>
+  Now add another line to the previous REPL,
 
-<div class="experiment">
-  Now add another line to the REPL,
-</div>
+  ```ruby
+  s = "hello world!".upcase
+  s.reverse
+  s
+  ```
 
-```ruby
-s = "hello world!".upcase
-s.reverse
-s
-```
+  And keep this REPL open, since we'll be using it below.
+</div>
 
 Great! Now we're making progress.
 

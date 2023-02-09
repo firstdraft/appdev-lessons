@@ -23,7 +23,7 @@
 <meta name="author" content="Ben + Raghu" />
 
 
-<meta name="date" content="2023-02-08" />
+<meta name="date" content="2023-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -543,7 +543,7 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb10"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb10-1"><a href="nouns-verbs-and-grammar.html#cb10-1" aria-hidden="true"></a><span class="st">&quot;Raghu@Bet@ina&quot;</span>.gsub(<span class="st">&quot;@&quot;</span>, <span class="st">&quot;&quot;</span>) <span class="co"># good</span></span>
 <span id="cb10-2"><a href="nouns-verbs-and-grammar.html#cb10-2" aria-hidden="true"></a><span class="st">&quot;Raghu@Bet@ina&quot;</span>.gsub (<span class="st">&quot;@&quot;</span>, <span class="st">&quot;&quot;</span>) <span class="co"># bad!</span></span></code></pre></div>
 <p>Can you spot the difference? <strong>Don’t put a space between the method and the opening parenthesis.</strong></p>
-<p>It’s a very easy mistake to make, so I just wanted to warn you early on so you that can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:</p>
+<p>It’s a very easy mistake to make, so I just wanted to warn you early on so that you can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:</p>
 <div class="experiment">
 <p><a href="https://replit.com/@raghubetina/bad-argument-syntax" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -552,7 +552,7 @@ Proudly published with bookdown</a></li>
 <h3><span class="header-section-number">1.1.8</span> Seriously: please read the error message<a href="nouns-verbs-and-grammar.html#seriously-please-read-the-error-message" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Programming boils down to:</p>
 <ol style="list-style-type: decimal">
-<li>Forming a plan of what you want to do (e.g. “I want to remove any ’@’s in this input.”)</li>
+<li>Forming a plan of what you want to do (e.g. “I want to remove any <code>@</code>s in this input.”)</li>
 <li>Typing some code to try and do it.</li>
 <li>It <em>never</em> works the first time.</li>
 <li>Seeing an error message.</li>
@@ -594,7 +594,7 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb14"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb14-1"><a href="nouns-verbs-and-grammar.html#cb14-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
 <span id="cb14-2"><a href="nouns-verbs-and-grammar.html#cb14-2" aria-hidden="true"></a>s</span></code></pre></div>
 <div class="experiment">
-<p><a href="https://repl.it/@raghubetina/variables-are-boxes" target="_blank">Click here for a REPL to try it.</a></p>
+<p><a href="https://repl.it/@raghubetina/variables-are-boxes" target="_blank">Click here for a REPL to try it.</a> (Keep this REPL open when you are done, we’ll use it in the next few steps.)</p>
 </div>
 <p>This creates a box, labels it <code>s</code>, and stores the string <code>"HELLO WORLD!"</code> in it.</p>
 <div id="the-variable-assignment-operator" class="section level4 unnumbered hasAnchor">
@@ -604,14 +604,12 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb15"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb15-1"><a href="nouns-verbs-and-grammar.html#cb15-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span></code></pre></div>
 <p>out loud, I say “the string hello world dot upcase <em>is assigned</em> to the variable s”. I read the right side first, because that’s how Ruby reads it too; it first evaluates the expression on the right side of the <code>=</code>, and then it stores the resulting value in the variable on the left.</p>
 <div class="experiment">
-<p>Using as many Ruby terms as you can (string, object, assign, etc.), read the following out loud (or maybe in your head if you’re in a quiet café): <code>t = "I like Ruby".gsub("like", "love")</code>. Carefully reading code with correct terminology is a great way to learn and spot error messages before they occur.</p>
-</div>
-<div class="experiment">
-<p>Now add another line to the REPL,</p>
-</div>
+<p>Now add another line to the previous REPL,</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb16-1"><a href="nouns-verbs-and-grammar.html#cb16-1" aria-hidden="true"></a>s = <span class="st">&quot;hello world!&quot;</span>.upcase</span>
 <span id="cb16-2"><a href="nouns-verbs-and-grammar.html#cb16-2" aria-hidden="true"></a>s.reverse</span>
 <span id="cb16-3"><a href="nouns-verbs-and-grammar.html#cb16-3" aria-hidden="true"></a>s</span></code></pre></div>
+<p>And keep this REPL open, since we’ll be using it below.</p>
+</div>
 <p>Great! Now we’re making progress.</p>
 </div>
 <div id="storing-the-next-return-value" class="section level4 unnumbered hasAnchor">
