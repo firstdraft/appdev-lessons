@@ -442,9 +442,9 @@ Proudly published with bookdown</a></li>
 </div>
 <div id="rand" class="section level4 unnumbered hasAnchor">
 <h4>rand<a href="integer.html#rand" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>There’s another special method like <code>p</code> that we are allowed to call “in space”, i.e. not on the right side of a dot<span id="fn-13"><!--
---><label for="fn-13-toggle"><sup>13</sup></label><!--
---><input type="checkbox" hidden id="fn-13-toggle"/>
+<p>There’s another special method like <code>p</code> that we are allowed to call “in space”, i.e. not on the right side of a dot<span id="fn-14"><!--
+--><label for="fn-14-toggle"><sup>14</sup></label><!--
+--><input type="checkbox" hidden id="fn-14-toggle"/>
 <span id="fn-content">This is another method defined on <code>Kernel</code>, so the longhand would be <code>Kernel.rand(6)</code>.</span></span>, called <code>rand</code>. It returns a random number, and is very useful for all kinds of stuff, everything from games to statistical analysis:</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb70-1"><a href="integer.html#cb70-1" aria-hidden="true"></a>rand(<span class="dv">6</span>) <span class="co"># =&gt; returns a random integer between 0 and 5</span></span></code></pre></div>
 <p>Somewhat oddly, <code>rand(n)</code> will return a random integer between <code>0</code> and <code>n - 1</code> rather than between <code>1</code> and <code>n</code>. That may seem surprising, but it’s actually pretty handy because a lot of times what we want to do is generate a random <em>offset</em> and it’s convenient for that to include 0 as a possibility.</p>

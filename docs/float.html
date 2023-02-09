@@ -460,20 +460,20 @@ Proudly published with bookdown</a></li>
 <h5>Formatting Floats as Strings<a href="float.html#formatting-floats-as-strings" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>As we know, you can call the <code>.to_s</code> method on a Float to convert the number into a String:</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb81-1"><a href="float.html#cb81-1" aria-hidden="true"></a><span class="fl">10.25</span>.to_s <span class="co"># =&gt; &quot;10.25&quot;</span></span></code></pre></div>
-<p>Within a Rails application<span id="fn-14"><!--
---><label for="fn-14-toggle"><sup>14</sup></label><!--
---><input type="checkbox" hidden id="fn-14-toggle"/>
-<span id="fn-content">Or anywhere using <code>activesupport</code>.</span></span>, you can provide a <code>Symbol</code><span id="fn-15"><!--
+<p>Within a Rails application<span id="fn-15"><!--
 --><label for="fn-15-toggle"><sup>15</sup></label><!--
 --><input type="checkbox" hidden id="fn-15-toggle"/>
+<span id="fn-content">Or anywhere using <code>activesupport</code>.</span></span>, you can provide a <code>Symbol</code><span id="fn-16"><!--
+--><label for="fn-16-toggle"><sup>16</sup></label><!--
+--><input type="checkbox" hidden id="fn-16-toggle"/>
 <span id="fn-content">A <code>Symbol</code> is a Ruby Class that is similar to a <code>String</code>. Symbols start with a colon (<code>:</code>) at the beginning. See the chapter section <a href="hash-chapter.html#a-brief-interlude-symbols">here</a>.</span></span> as an argument to <code>Float</code>’s <code>to_s</code> method. This allows you to convert the <code>Float</code> to a <code>String</code> <em>and</em> add additional formatting at the same time.</p>
 </div>
 <div id="phone" class="section level5 unnumbered hasAnchor">
 <h5>Phone<a href="float.html#phone" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <div class="sourceCode" id="cb82"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb82-1"><a href="float.html#cb82-1" aria-hidden="true"></a><span class="dv">5551234</span>.to_s(<span class="st">:phone</span>) <span class="co"># =&gt; &quot;555-1234&quot;</span></span></code></pre></div>
-<p>In addition to providing a <code>Symbol</code> to the <code>to_s</code> method, you can provide an <em>additional</em> <code>Hash</code><span id="fn-16"><!--
---><label for="fn-16-toggle"><sup>16</sup></label><!--
---><input type="checkbox" hidden id="fn-16-toggle"/>
+<p>In addition to providing a <code>Symbol</code> to the <code>to_s</code> method, you can provide an <em>additional</em> <code>Hash</code><span id="fn-17"><!--
+--><label for="fn-17-toggle"><sup>17</sup></label><!--
+--><input type="checkbox" hidden id="fn-17-toggle"/>
 <span id="fn-content">A <code>Hash</code> is another Class is Ruby that. See the <a href="hash-chapter.html#hash-chapter">Hash chapter</a>. Until you read that chapter, just be aware that this kind of formatting is possible and easy to do in a Rails application.</span></span> argument to tweak the some finer details about how we want to format the Float.</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb83-1"><a href="float.html#cb83-1" aria-hidden="true"></a><span class="dv">1235551234</span>.to_s(<span class="st">:phone</span>, { <span class="st">:area_code</span> =&gt; <span class="dv">true</span> }                     <span class="co"># =&gt; &quot;(123) 555-1234&quot;</span></span>
 <span id="cb83-2"><a href="float.html#cb83-2" aria-hidden="true"></a><span class="dv">1235551234</span>.to_s(<span class="st">:phone</span>, { <span class="st">:country_code</span> =&gt; <span class="dv">1</span> } )                   <span class="co"># =&gt; &quot;+1-123-555-1234&quot;</span></span>

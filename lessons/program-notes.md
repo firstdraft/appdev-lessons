@@ -33,27 +33,21 @@ Happily, computers are very fast today[^developer_hours], and they can run Ruby 
 
 People often ask "What's the best language for task X?" Depending on the task, sometimes a language is particularly well-suited to it technically; but that is very rare. In general, any programming language can do anything that any other language can (unless maybe there is some kind of proprietary platform lock-out).
 
-However, there's another very important consideration: which language has the largest **community** of developers doing task X? More community means more shared code (known as **libraries**, or in Ruby-land, **gems**), more blog posts, more answers when you Google a question, etc.
+However, there's another very important consideration: which language has the largest **community** of developers doing task X? More community means more shared code (known as **libraries**, or in Ruby-land, **gems**[^gems_are]), more blog posts, more answers when you Google a question, etc.
 
-**BENP: do we need an aside on gems with some more detail here?**
+[^gems_are]: Gems are little collections (folders and files) that contain Ruby objects and methods written by another developer, which we can import into our code and use. Most gems are hosted [here](https://rubygems.org/){target="_blank"}.
 
 For example, Python and Ruby are very similar languages in terms of their technical features and performance profile. However, by some historical accident, Python seems to have gathered more of the scientific/data analysis/machine learning community around it, so more open-source libraries in those areas have been developed and shared in Python than in Ruby; and so now Python is the go-to language for those tasks.
 
 On the other hand, for agile development of database-backed applications, Ruby has a huge and thriving community. In particular, there is an open-source library for building applications called **Ruby on Rails** ("Rails", for short) that makes small teams or even solo developers incredibly productive. The existence of Rails alone makes the Ruby language a good choice[^rails_relevant] for both startups and beginners.
 
-[^rails_relevant]:
-    Here's a longer blog post on why Ruby on Rails is still a good choice in 2019:
-
-    [https://devbrett.com/2019/03/why-i-believe-rails-is-still-relevant-in-2019.html](https://devbrett.com/2019/03/why-i-believe-rails-is-still-relevant-in-2019.html){target="_blank"}
+[^rails_relevant]: Here's a [longer blog post](https://devbrett.com/2019/03/why-i-believe-rails-is-still-relevant-in-2019.html){target="_blank"} on why Ruby on Rails is still a good choice in 2019.
 
 The philosophy of Rails is "convention over configuration" — it makes a lot of decisions on your behalf, and if you go with the flow, then things "just work". (If you want to fiddle with settings, then of course you can, to your heart's content; but you don't _have to_ spend hours or days doing so before anything will even show up, like you do in most other frameworks.) You can focus on building the unique features of _your_ application, not on plumbing that's common to all applications.
 
 There are a lot of other powerful, easy-to-use Ruby libraries that have philosophies similar to Rails. Ruby seems to have gathered a community of developers around it who are more about creating value for our users, and less about [bike shedding](https://en.wiktionary.org/wiki/bikeshedding){target="_blank"} over technical details[^choose_boring].
 
-[^choose_boring]:
-    I, personally, agree with this author who prefers boring technologies over cutting-edge ones:
-
-    [https://mcfunley.com/choose-boring-technology](https://mcfunley.com/choose-boring-technology){target="_blank"}
+[^choose_boring]: I, personally, agree with [this author](https://mcfunley.com/choose-boring-technology){target="_blank"} who prefers boring technologies over cutting-edge ones.
 
 #### MINASWAN {-}
 
@@ -87,7 +81,7 @@ Let's talk a little bit more about how the REPLs work. So far, we've been using 
 
 So, from now one we'll write them in the **editor** on the left side of the REPL window; then we'll run the program by clicking "▶ Run" and seeing the output in the neighboring **terminal**.
 
-![](assets/program-notes/repl-play.png)
+![](assets/program-notes/editor-run.gif)
 
 There won't be any output unless we specifically say what we want to print into the terminal. It turns out there's a special method in Ruby called `Kernel.p` (`p` is short for "print inspect") that will display its argument in the terminal. Try running the following in a REPL:
 
@@ -102,6 +96,7 @@ Kernel.p(u)
 ```
 
 <div class="experiment">
+
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-real-output){target="_blank"}
 </div>
 
@@ -111,7 +106,7 @@ Printing values to the terminal is something we're going to want to do _a lot_, 
 
 To make it even easier to _make the invisible visible_, here's another shortcut:
 
-When we discussed [Arguments][Arguments are inputs], we said that they always come within parentheses. That's not quite true. Ruby allows you to, optionally, leave out the parentheses; so the following will also work:
+When we discussed [arguments][Arguments are inputs], we said that they always come within parentheses. That's not quite true. Ruby allows you to, optionally, leave out the parentheses; so the following will also work:
 
 ```ruby
 p "HELLO WORLD!"

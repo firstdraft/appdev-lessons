@@ -421,9 +421,9 @@ Proudly published with bookdown</a></li>
 </div>
 <div id="ascii-codes" class="section level4 unnumbered hasAnchor">
 <h4>ASCII Codes<a href="string.html#ascii-codes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>What’s an ASCII code? At the hardware level, computers only store integers (specifically, in <em>binary</em> form — using only <code>0</code>s and <code>1</code>s); so all other datatypes need to be encoded somehow as a number. <a href="https://en.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a>, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers<span id="fn-9"><!--
---><label for="fn-9-toggle"><sup>9</sup></label><!--
---><input type="checkbox" hidden id="fn-9-toggle"/>
+<p>What’s an ASCII code? At the hardware level, computers only store integers (specifically, in <em>binary</em> form — using only <code>0</code>s and <code>1</code>s); so all other datatypes need to be encoded somehow as a number. <a href="https://en.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a>, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers<span id="fn-10"><!--
+--><label for="fn-10-toggle"><sup>10</sup></label><!--
+--><input type="checkbox" hidden id="fn-10-toggle"/>
 <span id="fn-content">Nowadays we use much more sophisticated encoding schemes such as <a href="https://en.wikipedia.org/wiki/Unicode" target="_blank">Unicode</a> that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.</span></span>. The codes are as follows:</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; ">
 <table>
@@ -756,9 +756,9 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb32"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb32-1"><a href="string.html#cb32-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.concat(<span class="dv">33</span>) <span class="co"># =&gt; &quot;hi!&quot;</span></span></code></pre></div>
 <p><code>.concat</code> can also accept a string literal as an argument, in which case it just adds the whole thing to the end of the original string.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb33-1"><a href="string.html#cb33-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.concat(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
-<p>There’s also a shorthand for <code>.concat</code>: <code>.+</code>.<span id="fn-10"><!--
---><label for="fn-10-toggle"><sup>10</sup></label><!--
---><input type="checkbox" hidden id="fn-10-toggle"/>
+<p>There’s also a shorthand for <code>.concat</code>: <code>.+</code>.<span id="fn-11"><!--
+--><label for="fn-11-toggle"><sup>11</sup></label><!--
+--><input type="checkbox" hidden id="fn-11-toggle"/>
 <span id="fn-content">This is not <em>quite</em> true. The <code>+</code> method is not just an alias for <code>concat</code> — they do slightly different things. But they’re close enough, for our purposes.</span></span> That may look a little funny, but it’s nothing special, really; it’s just a method with a very short (one letter long) name:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb34-1"><a href="string.html#cb34-1" aria-hidden="true"></a><span class="st">&quot;hi&quot;</span>.+(<span class="st">&quot; there&quot;</span>) <span class="co"># =&gt; &quot;hi there&quot;</span></span></code></pre></div>
 <p>But here’s where it gets interesting; Ruby has another bit of nice <em>syntactic sugar</em> for us. If a class has a method named <code>+</code>, then you are allowed to drop the <code>.</code> before the method name when you call it, and just say:</p>
@@ -778,9 +778,9 @@ Proudly published with bookdown</a></li>
 </div>
 <div id="string-multiplication-a.k.a" class="section level4 unnumbered hasAnchor">
 <h4>String multiplication, a.k.a *<a href="string.html#string-multiplication-a.k.a" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><code>String</code>s can be multiplied by numbers using the <code>*</code> method<span id="fn-11"><!--
---><label for="fn-11-toggle"><sup>11</sup></label><!--
---><input type="checkbox" hidden id="fn-11-toggle"/>
+<p><code>String</code>s can be multiplied by numbers using the <code>*</code> method<span id="fn-12"><!--
+--><label for="fn-12-toggle"><sup>12</sup></label><!--
+--><input type="checkbox" hidden id="fn-12-toggle"/>
 <span id="fn-content">More syntactic sugar here, like with the <code>+</code> method above; you can say <code>"Ya" * 5</code> rather than <code>"Ya".*(5)</code>.</span></span>:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb38-1"><a href="string.html#cb38-1" aria-hidden="true"></a><span class="st">&quot;Ya&quot;</span> * <span class="dv">5</span> <span class="co"># =&gt; &quot;YaYaYaYaYa&quot;</span></span></code></pre></div>
 <p>This sort of makes sense, if you think about multiplication as being repeated addition.</p>
@@ -866,9 +866,9 @@ Proudly published with bookdown</a></li>
 <h5>Advanced gsub techniques<a href="string.html#advanced-gsub-techniques" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><code>gsub</code> also supports accepting a <em>regular expression</em> as its first argument. We won’t get into regular expressions in detail right now, but all languages (C, C++, Python, etc.) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.</p>
 <p>In Ruby, we work with regular expressions the way we work with everything else — via a class, <code>Regexp</code>. We create <code>Regexp</code> <em>literals</em> with forward slashes (like we use quotes to create <code>String</code> literals), and then put the pattern that we’re trying to match between the slashes.</p>
-<p>For now, we’re just going to copy-paste a few simple regexes<span id="fn-12"><!--
---><label for="fn-12-toggle"><sup>12</sup></label><!--
---><input type="checkbox" hidden id="fn-12-toggle"/>
+<p>For now, we’re just going to copy-paste a few simple regexes<span id="fn-13"><!--
+--><label for="fn-13-toggle"><sup>13</sup></label><!--
+--><input type="checkbox" hidden id="fn-13-toggle"/>
 <span id="fn-content">If your project requires scanning text for patterns, then <a href="https://regexone.com/" target="_blank">RegexOne</a> is a good resource for learning more. <a href="https://rubular.com/" target="_blank">Rubular</a> is handy for quickly testing your regular expressions against some example strings.</span></span> that come in handy with <code>gsub</code>, in particular:</p>
 <ul>
 <li><p><code>/\s+/</code> matches all whitespace, so we can use it with <code>gsub</code> to <em>remove</em> all whitespace:</p>
