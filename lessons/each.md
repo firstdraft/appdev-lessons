@@ -47,6 +47,8 @@ After you've got it working, examine [the model solution here](https://repl.it/@
  - On Line 8, we use that length with the `.times` method to kick off a loop with the correct number of iterations.
  - Within the block, we use the block variable (which we named `the_index`) to access the correct element within the array.
 
+**BENP: need an exercise using indexing in a loop here, this method is important in Ruby Gym**
+
 Using `.times` to iterate over an `Array` is not bad at all, especially because `.times`'s block variable starts at `0`, just like array indexing does. Using `.times` is certainly cleaner than using `while`, where we would have to create and increment a counter variable ourselves, and then write a condition to make sure that the loop stops after the correct number of iterations (the length of the array).
 
 ### Array's each method
@@ -91,24 +93,6 @@ The hardest part, I think, is getting your head around the block variable; in th
 
 Try to remember that it's just a name that _we make up_, and `.each` takes care of putting each element in that variable for us behind the scenes. I could have called it `zebra` if I wanted to; there's nothing special about the name — in particular, it doesn't have to match the name of the variable containing the array. Just try to pick something descriptive of an individual element in the list.
 
-### Sneak peek
-
-Just a sneak peek as to why `.each` is so important to get comfortable with: soon, you'll be embedding Ruby loops in your web applications to create dynamic, data-driven pages with code that looks something like this:
-
-```erb
-<% newsfeed_photos.each do |the_photo| %>
-  <div class="card">
-    <img src="<%= the_photo.image_source %>">
-
-    <p>
-      <%= the_photo.caption %>
-    </p>
-  </div>
-<% end %>
-```
-
-Code like this is what drives the dozens of dynamic applications you interact with on a daily basis — we pull a list of records from a database table, then we loop over them, and then we format each one using some _markup language_ (in this case HTML for the browser, but it could be XML for native apps, etc).
-
 <div class="proj">
 
   Open the GitPod `.each` project for this chapter and start with the exercise `spell_word.rb`:
@@ -127,6 +111,24 @@ Code like this is what drives the dozens of dynamic applications you interact wi
 
   And finally, work through `letter_count.rb`
 </div>
+
+### Sneak peek
+
+Just a sneak peek as to why `.each` is so important to get comfortable with: soon, you'll be embedding Ruby loops in your web applications to create dynamic, data-driven pages with code that looks something like this:
+
+```erb
+<% newsfeed_photos.each do |the_photo| %>
+  <div class="card">
+    <img src="<%= the_photo.image_source %>">
+
+    <p>
+      <%= the_photo.caption %>
+    </p>
+  </div>
+<% end %>
+```
+
+Code like this is what drives the dozens of dynamic applications you interact with on a daily basis — we pull a list of records from a database table, then we loop over them, and then we format each one using some _markup language_ (in this case HTML for the browser, but it could be XML for native apps, etc).
 
 ###  Conclusion
 

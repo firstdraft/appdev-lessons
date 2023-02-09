@@ -119,7 +119,7 @@ For how many of the above did you correctly predict the output? What did you lea
 
 ---
 
-<p style="height: 50px"></p>
+<p style="height: 150px"></p>
 
 --- 
 

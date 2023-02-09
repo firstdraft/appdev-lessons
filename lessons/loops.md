@@ -18,14 +18,14 @@ p numbers
 p len
 ```
 
+What do you expect the output of this program to be? Try to interpret the program yourself before you ask Ruby to.
+
 <div class="experiment">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){target="_blank"}
 </div>
 
-What do you expect the output of the program to be when you click run? Try to interpret the program yourself before you ask Ruby to.
-
-Okay, now you can click "▶ Run". Did you guess right?
+Hopefully you clicked "▶ Run". Did you guess right?
 
 We start off with a blank array, `numbers`. If its length is less than `10` (this is true, since length is currently `0`), we push a new random number into it.
 

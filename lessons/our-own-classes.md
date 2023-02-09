@@ -49,7 +49,7 @@ class Person
 end
 ```
 
-And now the `Person` class is a first-class citizen in the language, just like `Array` and `Hash`. Compare the code below to the code above for creating `Array`s and `Hash`s to store information:
+And now the `Person` class is a first-class citizen in the language, just like `Array` and `Hash`. Compare the code below to the code above for creating `Array`s and `Hash`es to store information:
 
 ```ruby
 class Person

@@ -20,9 +20,9 @@ After `require "date"`, we can create a new instance as usual with:
 Date.new # => #<Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
 ```
 
-By default, the new date is January 1st, of the year 4712 BCE! Interesting[^julian], but not very helpful.
+By default, the new date is January 1st, of the year -4712! Interesting[^julian], but not very helpful.
 
-[^julian]: [Julian Period](https://en.wikipedia.org/wiki/Julian_day){target="_blank"}
+[^julian]: Year 1 of the [Julian Period](https://en.wikipedia.org/wiki/Julian_day){target="_blank"} was 4713 BC (−4712).
 
 You can also pass `Date.new` arguments to initialize with a specific year, month, and day:
 

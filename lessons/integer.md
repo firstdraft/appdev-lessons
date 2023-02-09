@@ -102,6 +102,7 @@ p rand(9)
 ```
 
 <div class="experiment">
+
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/rand){target="_blank"}
 </div>
 
@@ -123,6 +124,7 @@ p 98.to_s
 ```
 
 <div class="experiment">
+
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){target="_blank"}
 </div>
 
@@ -133,6 +135,7 @@ Similarly, there's a `to_f` (or "to float") method to convert an `Integer` to a 
 **BENP: maybe combine to_i, to_f and to_s here in a gitpod exercise / modify integer_birth_year. integer_birth_year could move to dates chapter**
 
 <div class="proj">
+
   Return to the GitPod `Integer` project and work through `birth_year.rb`
 </div>
 
