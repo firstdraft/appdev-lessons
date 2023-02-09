@@ -57,7 +57,7 @@ This will, however, just give us back an empty string `""`.
    # p s
    ```
 
-   Once the file is saved, remove the leading `#` from the `p`rint statements one by one, and run the code each time with `ruby invisible_to_visible.rb` at the terminal prompt.
+   Once the file is saved, remove the leading `#` from the `p`rint statements one by one, and run the code each time with `ruby invisible_to_visible.rb` at the terminal prompt. You don't need to type it out every time, you can just press the <kbd>Up ↑</kbd> arrow key when your cursor is at the terminal `$`-sign prompt to cycle to the previous entry.
 
 </div>
 
@@ -65,7 +65,7 @@ When you are done experimenting, feel free to close the GitPod project window. W
 
 #### ASCII Codes {-}
 
-With the `String.new` approach, we would then have to add each character to our variable `s` one by one. One way to do so is by using the `.concat` method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.
+With the `String.new` approach, we would have to add each character to our variable `s` one by one. One way to do so is by using the `.concat` method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.
 
 What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1`s); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
 
@@ -142,11 +142,12 @@ In our [previous steps][Make the invisible visible in GitPod], we opened a GitPo
 
    Open the GitPod `String` project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
 
-   **BENP: use second half of [string video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&start=146.06){target="_blank"} as template to re-record opening the workspace and working on a file, including `rails grade`. Basically the steps outlined below.**
-
    1. LTI{Load assignment}(https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_project]
+
    1. Open the `concat.rb` file in the editor window.
+
    1. Modify the file per the instructions on top.
+
    1. Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the terminal. If we want to run `concat.rb`, we can write the command:
 
          ```bash
@@ -156,11 +157,10 @@ In our [previous steps][Make the invisible visible in GitPod], we opened a GitPo
          Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use **tab completion**!
 
    1. To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you've run in a terminal.
-   1. When you think you have the required output, run `rails grade` and proceed when the test passes without errors.
 
-   If you are struggling, **try to experiment directly in the IRB environment** by typing `irb` into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start `irb` then the terminal will no longer be in the `bash` environment so things like `rails grade` won't work. You will need to open a second terminal with the plus (+) icon and switch between the `irb` and `bash` terminals as needed. Alternatively type `exit` at the IRB terminal prompt to return to the `bash` environment.
+   1. When you think you have the required output, run `rails grade` at the terminal prompt and proceed when the test(s) passes without errors.
 
-   ![](assets/string/irb-gif.gif)
+   If you are struggling, **try to experiment directly in the `irb` environment** by typing `irb` into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start `irb` then the terminal will no longer be in the `bash` environment so things like `rails grade` won't work. You will need to open a second terminal with the plus (+) icon and switch between the `irb` and `bash` terminals as needed. Alternatively type `exit` at the `irb` terminal prompt to return to the `bash` environment. If you ever want to clear the terminal output to see a fresh new line, press <kbd>Ctrl</kbd>+<kbd>K</kbd>. And if you ever close the terminal and need to re-open it, press <kbd>Ctrl</kbd>+<kbd>J</kbd>.
 
 </div>
 
@@ -398,9 +398,9 @@ For now, we're just going to copy-paste a few simple regexes[^regexone] that com
    Return to the GitPod `String` project and work through `gsub.rb`
 </div>
 
-<!-- <div class="proj">
-   Return to the GitPod `String` project and work through `gsub_advanced.rb`
-</div> -->
+<div class="proj">
+   Return to the GitPod `String` project and work through `regex.rb`
+</div>
 
 #### to_i {-}
 

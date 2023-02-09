@@ -425,13 +425,13 @@ Proudly published with bookdown</a></li>
 <span id="cb29-6"><a href="string.html#cb29-6" aria-hidden="true"></a><span class="co"># p s</span></span>
 <span id="cb29-7"><a href="string.html#cb29-7" aria-hidden="true"></a>s = s.upcase</span>
 <span id="cb29-8"><a href="string.html#cb29-8" aria-hidden="true"></a><span class="co"># p s</span></span></code></pre></div>
-<p>Once the file is saved, remove the leading <code>#</code> from the <code>p</code>rint statements one by one, and run the code each time with <code>ruby invisible_to_visible.rb</code> at the terminal prompt.</p>
+<p>Once the file is saved, remove the leading <code>#</code> from the <code>p</code>rint statements one by one, and run the code each time with <code>ruby invisible_to_visible.rb</code> at the terminal prompt. You don’t need to type it out every time, you can just press the <kbd>Up ↑</kbd> arrow key when your cursor is at the terminal <code>$</code>-sign prompt to cycle to the previous entry.</p>
 </div>
 <p>When you are done experimenting, feel free to close the GitPod project window. We will open another project momentarily and only one GitPod tab will limit confusion.</p>
 </div>
 <div id="ascii-codes" class="section level4 unnumbered hasAnchor">
 <h4>ASCII Codes<a href="string.html#ascii-codes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>With the <code>String.new</code> approach, we would then have to add each character to our variable <code>s</code> one by one. One way to do so is by using the <code>.concat</code> method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.</p>
+<p>With the <code>String.new</code> approach, we would have to add each character to our variable <code>s</code> one by one. One way to do so is by using the <code>.concat</code> method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.</p>
 <p>What’s an ASCII code? At the hardware level, computers only store integers (specifically, in <em>binary</em> form — using only <code>0</code>s and <code>1</code>s); so all other datatypes need to be encoded somehow as a number. <a href="https://en.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a>, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers<span id="fn-10"><!--
 --><label for="fn-10-toggle"><sup>10</sup></label><!--
 --><input type="checkbox" hidden id="fn-10-toggle"/>
@@ -737,7 +737,6 @@ Proudly published with bookdown</a></li>
 <div class="proj">
 <p><strong>Note: these steps go for opening any GitPod project, just change the project and file names.</strong></p>
 <p>Open the GitPod <code>String</code> project for this chapter and start with the exercises. Follow the instructions below and complete the task in the <code>concat.rb</code> file.</p>
-<p><strong>BENP: use second half of <a href="https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f2bface6-e571-434c-8de0-abec0031b761&amp;start=146.06" target="_blank">string video</a> as template to re-record opening the workspace and working on a file, including <code>rails grade</code>. Basically the steps outlined below.</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>LTI{Load assignment}(<a href="https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions" class="uri">https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions</a>)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_project]</p></li>
 <li><p>Open the <code>concat.rb</code> file in the editor window.</p></li>
@@ -746,10 +745,9 @@ Proudly published with bookdown</a></li>
 <div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="string.html#cb31-1" aria-hidden="true"></a><span class="ex">ruby</span> concat.rb</span></code></pre></div>
 <p>Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use <strong>tab completion</strong>!</p></li>
 <li><p>To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you’ve run in a terminal.</p></li>
-<li><p>When you think you have the required output, run <code>rails grade</code> and proceed when the test passes without errors.</p></li>
+<li><p>When you think you have the required output, run <code>rails grade</code> at the terminal prompt and proceed when the test(s) passes without errors.</p></li>
 </ol>
-<p>If you are struggling, <strong>try to experiment directly in the IRB environment</strong> by typing <code>irb</code> into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start <code>irb</code> then the terminal will no longer be in the <code>bash</code> environment so things like <code>rails grade</code> won’t work. You will need to open a second terminal with the plus (+) icon and switch between the <code>irb</code> and <code>bash</code> terminals as needed. Alternatively type <code>exit</code> at the IRB terminal prompt to return to the <code>bash</code> environment.</p>
-<p><img src="assets/string/irb-gif.gif" /></p>
+<p>If you are struggling, <strong>try to experiment directly in the <code>irb</code> environment</strong> by typing <code>irb</code> into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start <code>irb</code> then the terminal will no longer be in the <code>bash</code> environment so things like <code>rails grade</code> won’t work. You will need to open a second terminal with the plus (+) icon and switch between the <code>irb</code> and <code>bash</code> terminals as needed. Alternatively type <code>exit</code> at the <code>irb</code> terminal prompt to return to the <code>bash</code> environment. If you ever want to clear the terminal output to see a fresh new line, press <kbd>Ctrl</kbd>+<kbd>K</kbd>. And if you ever close the terminal and need to re-open it, press <kbd>Ctrl</kbd>+<kbd>J</kbd>.</p>
 </div>
 </div>
 <div id="string-literals" class="section level4 unnumbered hasAnchor">
@@ -895,9 +893,9 @@ Proudly published with bookdown</a></li>
 <div class="proj">
 <p>Return to the GitPod <code>String</code> project and work through <code>gsub.rb</code></p>
 </div>
-<!-- <div class="proj">
-   Return to the GitPod `String` project and work through `gsub_advanced.rb`
-</div> -->
+<div class="proj">
+<p>Return to the GitPod <code>String</code> project and work through <code>regex.rb</code></p>
+</div>
 </div>
 </div>
 <div id="to_i" class="section level4 unnumbered hasAnchor">
