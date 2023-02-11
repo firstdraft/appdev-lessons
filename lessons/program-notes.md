@@ -12,7 +12,7 @@ We're going to work from the inside-out. We'll start by learning how to manage i
 
 For all of the above, we're going to use the Ruby language. There are many languages we could have chosen, but Ruby has a lot of advantages for beginners:
 
-#### Developer happiness {-}
+#### Developer happiness 
 
 Compared to other languages, Ruby is a pleasure to write and to read. Here's Yukihiro Matsumoto (a.k.a. "Matz"), the creator of Ruby:
 
@@ -29,7 +29,7 @@ Happily, computers are very fast today[^developer_hours], and they can run Ruby 
 
 [^developer_hours]: From a business perspective, servers are very cheap while developers are _very_ expensive; so you should pick the language that makes developers the most productive.
 
-#### Ruby on Rails and other libraries {-}
+#### Ruby on Rails and other libraries 
 
 People often ask "What's the best language for task X?" Depending on the task, sometimes a language is particularly well-suited to it technically; but that is very rare. In general, any programming language can do anything that any other language can (unless maybe there is some kind of proprietary platform lock-out).
 
@@ -49,13 +49,13 @@ There are a lot of other powerful, easy-to-use Ruby libraries that have philosop
 
 [^choose_boring]: I, personally, agree with [this author](https://mcfunley.com/choose-boring-technology){target="_blank"} who prefers boring technologies over cutting-edge ones.
 
-#### MINASWAN {-}
+#### MINASWAN 
 
 The programming world at large can be pretty competitive and harsh, but I've found that the Ruby community is very inclusive and welcoming, which is a relief for beginners. Maybe this can also be traced back to Matz; from [his Wikipedia page](https://en.wikipedia.org/wiki/Yukihiro_Matsumoto){target="_blank"},
 
 > His demeanor has brought about a motto in the Ruby community: "Matz is nice and so we are nice," commonly abbreviated as MINASWAN.
 
-#### Heroku and other integrations {-}
+#### Heroku and other integrations 
 
 Another way in which the ergonomics of Ruby excels is the amount of tooling that exists around it. For example, [Heroku](https://heroku.com){target="_blank"} was the first "platform as a service", a layer on top of Amazon Web Services that makes it incredibly easy to deploy applications to an industrial-grade infrastructure. Something that would have itself required a whole separate course to learn how to do, we can now do with just one click; and we can focus instead on building features for our users.
 
@@ -65,17 +65,17 @@ Rails was the first platform that Heroku supported, and Rails developers are sti
 
 To go from _complete beginner_ to _deploying a fully functional application_ is quite a bit of ground to cover. Here's how we're going to do it:
 
-#### Cloud editors {-}
+#### Cloud editors 
 
 As you've already seen, we're going to start by writing Ruby right here in your browser. This is the lowest-friction way to get started, and will allow us to focus on learning Ruby without having to waste mental energy on installing tools.
 
 Later, if you decide to continue with software development for the long-term, you may want to install Ruby on your own computer and switch to a more powerful code editor. We'll provide guidance on how to do that.
 
-#### Make the invisible visible {-}
+#### Make the invisible visible 
 
 One of our foundational principles while programming, learning, and almost anything else, is to find a way to **make the invisible visible** — that is, find a way to give yourself concrete feedback on what you're doing. Don't _guess_ what's happening at each step of the program — find a way to _see_ what's happening, if at all possible. **Feedback** is crucial.
 
-##### Printing values {-}
+##### Printing values 
 
 Let's talk a little bit more about how the REPLs work. So far, we've been using IRB to run one line of Ruby at a time. But our programs will be thousands of lines long, ultimately; and we want to save them permanently into files, not type them in one line at a time.
 
@@ -102,7 +102,7 @@ Kernel.p(u)
 
 Printing values to the terminal is something we're going to want to do _a lot_, and so Ruby makes it easy for us; rather than having to type `Kernel.p`, we can just type the shorthand of `p`. Change `Kernel.p` to `p` above and give it a try.
 
-#### Optional parentheses around arguments {-}
+#### Optional parentheses around arguments 
 
 To make it even easier to _make the invisible visible_, here's another shortcut:
 
@@ -116,13 +116,13 @@ And when you are roaming the internet, you will see this style often, especially
 
 My advice to you is: you can drop the parentheses when you are `p`rinting, but other than that, always include them. They help to keep things clear, and they prevent order-of-operations errors.
 
-#### Use p a lot {-}
+#### Use p a lot 
 
 I like to use `p` _a lot_ while I am programming. As I said, one of my fundamental programming principles is **make the invisible visible** — don't try to _guess_ what's going on, find a way to _see_ what's going on. `p` is an excellent tool for that, so I use `p` like crazy, sometimes before almost every line while I am debugging.
 
 It can be tedious to wrap every line in parentheses, and it's convenient instead to just pop a `p` at the beginning of a line. So in this _one_ case, I give you permission to omit the parentheses around arguments to a method. Enjoy!
 
-#### Passing tests {-}
+#### Passing tests 
 
 The REPLs are good for experimentation and getting a feel for how things work. But, in the following chapters, we're also going to have a separate GitPod assignment with graded exercises that include automated tests. Look out for the ✏️ prompt for those. You will have to complete these exercises as you go through the chapter and `rails grade` to ensure comprehension. Hopefully this will surface questions — our constant goal.
 

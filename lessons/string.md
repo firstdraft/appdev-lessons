@@ -20,17 +20,17 @@ s = String.new
 
 This will, however, just give us back an empty string `""`.
 
-#### Make the invisible visible in GitPod {-}
+#### Make the invisible visible in GitPod 
 
 <div class="experiment" markdown="1">
 
    Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there. The steps are:
 
-   1. Sign up for a [Gitpod.io](https://www.gitpod.io){target="_blank"} account. It will ask you to sign in using your GitHub account.
+   1. Sign up for a [Gitpod.io](https://www.gitpod.io){:target="_blank"} account. It will ask you to sign in using your GitHub account.
 
    1. We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** (i.e., a folder with some code in it). For example, here is a repository:
    
-         [https://github.com/appdev-projects/helloruby](https://github.com/appdev-projects/helloruby){target="_blank"}
+         [https://github.com/appdev-projects/helloruby](https://github.com/appdev-projects/helloruby){:target="_blank"}
 
    1. To create a Gitpod workspace based on a repo, in the address bar of your browser enter **https\://gitpod.io/#** and then the URL of the repo. For example,
 
@@ -63,13 +63,13 @@ This will, however, just give us back an empty string `""`.
 
 When you are done experimenting, feel free to close the GitPod project window. We will open another project momentarily and only one GitPod tab will limit confusion.
 
-#### ASCII Codes {-}
+#### ASCII Codes 
 
 With the `String.new` approach, we would have to add each character to our variable `s` one by one. One way to do so is by using the `.concat` method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.
 
-What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1`s); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
+What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1`s); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){:target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
 
-[^unicode]: Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
+[^unicode]: Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){:target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
 
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; ">
    **ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**
@@ -127,10 +127,10 @@ p my_string # => "Hello, world!"
 ```
 
 <div class="experiment" markdown="1">
-   This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
+   This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){:target="_blank"}
 </div>
 
-#### Start the GitPod Project {- #start-gitpod-project}
+#### Start the GitPod Project
 
 Once you've played with the REPL, it's time to move into the graded project environment.
 
@@ -164,7 +164,7 @@ In our [previous steps][Make the invisible visible in GitPod], we opened a GitPo
 
 </div>
 
-#### String literals {-}
+#### String literals 
 
 Done with `concat.rb`? What a pain! Now that we've shown that, under the hood, even creating a string follows the syntax of `noun.verb` — let's never do it again. From now on, we'll use the shortcut of creating string "**literals**" in place by typing the characters we want within quotes: `"Thank goodness!"`
 
@@ -176,7 +176,7 @@ Next, let's familiarize ourselves with some of the `String` class's methods. For
 
 For each method below, we've provided some REPLs. They are there for you to experiment with the code, click "▶ Run", or use the `irb` terminal and see how the methods work. Keep these methods in mind when working on the assignments in Gitpod.
 
-#### String addition, a.k.a. + {-}
+#### String addition, a.k.a. + 
 
 We've already met the `.concat` method. `.concat` can accept an integer as an argument, which it interprets as an [ASCII code][ASCII Codes], translates into a single character, and adds to the original string:
 
@@ -220,7 +220,7 @@ p a + b # => "HelloWorld"        # You can add strings together
 
 <div class="experiment" markdown="1">
 
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){:target="_blank"}
 </div>
 
 
@@ -229,7 +229,7 @@ p a + b # => "HelloWorld"        # You can add strings together
    Return to the GitPod `String` project and work through `addition.rb`
 </div>
 
-#### String multiplication, a.k.a * {-}
+#### String multiplication, a.k.a * 
 
 `String`s can be multiplied by numbers using the `*` method[^more_sugar]:
 
@@ -246,7 +246,7 @@ p "Hello" * 3
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){:target="_blank"}
 </div>
 
 The order matters, though. See what happens when you try:
@@ -267,7 +267,7 @@ Thus, we can see why the `String` version of `*` and the `Integer` version of `*
    Return to the GitPod `String` project and work through `multiplication.rb`
 </div>
 
-#### upcase {-}
+#### upcase 
 
 The upcase method returns a copy of the `String` with all lowercase letters replaced with their uppercase counterparts.
 
@@ -276,10 +276,10 @@ p "hello".upcase
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){:target="_blank"}
 </div>
 
-#### downcase {-}
+#### downcase 
 
 The downcase method returns a copy of the `String` with all uppercase letters replaced with their lowercase counterparts.
 
@@ -288,10 +288,10 @@ p "I'M NOT YELLING AT YOU".downcase
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){:target="_blank"}
 </div>
 
-#### swapcase {-}
+#### swapcase 
 
 The swapcase method returns a copy of the `String` with all uppercase letters replaced with their lowercase counterparts, _and_ vice versa.
 
@@ -303,7 +303,7 @@ p "FaMiLy".swapcase # => "fAmIlY
    Return to the GitPod `String` project and work through `case.rb`
 </div>
 
-#### chomp {-}
+#### chomp 
 
 The `chomp` method is mostly used to remove the `"\n"` (newline) character from the end of a string, if it is present:
 
@@ -322,14 +322,14 @@ This seemingly strange task is very common due to the way that getting user inpu
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){:target="_blank"}
 </div>
 
 <div class="proj" markdown="1">
    Return to the GitPod `String` project and work through `chomp.rb`
 </div>
 
-#### gsub {-}
+#### gsub 
 
 The `gsub` method returns a copy of the `String` it was called on with all occurrences of the first argument substituted for the second argument.
 
@@ -339,14 +339,14 @@ p a.gsub("ll", "ww")  # => "Hewwo"
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){:target="_blank"}
 </div>
 
 <div class="proj" markdown="1">
    Return to the GitPod `String` project and work through `gsub.rb`
 </div>
 
-#### to_i {-}
+#### to_i 
 
 Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. `to_i` will attempt to convert a `String` object into an `Integer` object.
 
@@ -355,10 +355,10 @@ p "8".to_i
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){:target="_blank"}
 </div>
 
-#### strip {-}
+#### strip 
 
 `strip` removes all leading and trailing whitespace.
 
@@ -367,10 +367,10 @@ p "   This has a lot of space on the outside     ".strip
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){:target="_blank"}
 </div>
 
-#### capitalize {-}
+#### capitalize 
 
 capitalize returns a `String` with the first character converted to uppercase and the remainder to lowercase.
 
@@ -379,7 +379,7 @@ p "beginning".capitalize
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){:target="_blank"}
 </div>
 
 <div class="proj" markdown="1">
@@ -396,7 +396,7 @@ message = "Your lucky number for today is " + number + "."
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){:target="_blank"}
 </div>
 
 You'll see that Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn't feel comfortable with that.
@@ -436,12 +436,12 @@ p "Hello, " + their_name + "!"
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){:target="_blank"}
 </div>
 
 Great! Our first user input. However, you'll notice a couple of things. First of all, there's a `\n` sneaking into the input. `\n` represents a newline character, and it's in there because of the <kbd>return</kbd> that is pressed to submit the input.
 
-#### puts {-}
+#### puts 
 
 If you want to see the newline in action, we can use a different printing method called `Kernel.puts` (pronounced "put S", short for "put string"). `puts` is actually the printing method that is used most when crafting the final output of command-line programs; as opposed to `Kernel.p`, which is used most for _making the invisible visible_ while debugging. Try switching
 
@@ -461,7 +461,7 @@ You can see that the quotes around the string are removed, which makes sense if 
 
 Most of the time, we'll stick with `p`, since it provides more details while debugging; but it's good to know that `puts` exists.
 
-#### gets.chomp {-}
+#### gets.chomp 
 
 We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, [the handy `.chomp` method][chomp] does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
 

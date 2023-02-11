@@ -136,7 +136,7 @@ What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try i
 
 ### Error Messages
 
-#### _Do_, or do not. There is no  _read_. {-}
+#### _Do_, or do not. There is no  _read_. 
 
 When you saw the 🧪 exercise prompt, were you typing out every expression in a REPL? 
 
@@ -146,7 +146,7 @@ In fact, not only should you be typing the things I ask you to type, but you sho
 
 _Experiment!_
 
-#### Read. The. Error. Message. (A.k.a., "RTEM") {-}
+#### Read. The. Error. Message. (A.k.a., "RTEM") 
 
 Aha! If you were typing out every expression and running it, then
 
@@ -168,7 +168,7 @@ might mean?
 
 In this case, it is saying: "Hey, friend — there's no method called `even?` for `"Mississippi"`, which is a `String`. Sorry." Fair enough, that makes sense.
 
-#### The bottom line {-}
+#### The bottom line 
 
 The bottom line is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Then, the syntax itself is simple — `my_object.cool_method`.
 
@@ -301,7 +301,7 @@ s
 
 This creates a box, labels it `s`, and stores the string `"HELLO WORLD!"` in it.
 
-#### The variable assignment operator {-}
+#### The variable assignment operator 
 
 The single equals sign, `=`, is called the **variable assignment operator**.
 
@@ -327,7 +327,7 @@ out loud, I say "the string hello world dot upcase _is assigned_ to the variable
 
 Great! Now we're making progress.
 
-#### Storing the next return value {-}
+#### Storing the next return value 
 
 What would you expect to happen if you add a third line so that your program reads:
 
@@ -364,7 +364,7 @@ u
 
 Fortunately, we can create as many variables as we want.
 
-#### Updating variables {-}
+#### Updating variables 
 
 It can get old coming up with different variable names for every step of the program. Instead, we usually want to re-use existing variables. We can throw away what we have in the box and put in something entirely different with the same assignment operator, `=`. Type this:
 
@@ -403,7 +403,7 @@ counter = counter + 1
 
 When we're keeping track of e.g. how many times we've printed something out on the screen. We are taking the original value of `counter`, adding `1` to it, and then replacing the contents of `counter` with that new total.
 
-#### Variable syntax {-}
+#### Variable syntax 
 
 You may have noticed that the variable assignment syntax is a departure from the primary syntax of `object.method`. But we do it all day long, so we need to know it just as well. Our programs will end up looking like this (these are made-up method names, so this code won't work):
 
@@ -420,7 +420,7 @@ storage_box_3 = storage_box_2.third_method.maybe_even("another", "one")
 
 Most programs are just a long succession of statements where we do some work with `object.method` and store the result in some variable, then we do some more work on that variable and store the result in yet another variable, and a hundred steps later we've produced our final result and we display that to our user.
 
-#### Variable naming rules {-}
+#### Variable naming rules 
 
 When you are choosing your variable names, there are some rules:
 

@@ -4,7 +4,7 @@ Here are some more Ruby methods that we didn't cover in the chapters, but which 
 
 ### More String 
 
-#### reverse {-}
+#### reverse 
 
 The reverse method returns a new `String` with the characters from the `String` in reverse order.
 
@@ -13,10 +13,10 @@ p "I can speak in backwords words".reverse
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){:target="_blank"}
 </div>
 
-#### length {-}
+#### length 
 
 The length method  returns the number of characters (as an `Integer`) that a `String` has.
 
@@ -25,10 +25,10 @@ p "Supercalifragilisticexpialidocious".length
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){:target="_blank"}
 </div>
 
-#### include? {-}
+#### include? 
 
 `include?` takes a String argument and returns `true` or `false` if the argument exists in the String that `include?` is called on.
 
@@ -39,10 +39,10 @@ p "Happy Days".include?("Z")
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){:target="_blank"}
 </div>
 
-#### Advanced gsub techniques {-}
+#### Advanced gsub techniques 
 
 `gsub` also supports accepting a _regular expression_ as its first argument. We won't get into regular expressions in detail right now, but all languages (C, C++, Python, etc.) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.
 
@@ -50,7 +50,7 @@ In Ruby, we work with regular expressions the way we work with everything else â
 
 For now, we're just going to copy-paste a few simple regexes[^regexone] that come in handy with `gsub`, in particular:
 
-[^regexone]: If your project requires scanning text for patterns, then [RegexOne](https://regexone.com/){target="_blank"} is a good resource for learning more. [Rubular](https://rubular.com/){target="_blank"} is handy for quickly testing your regular expressions against some example strings.
+[^regexone]: If your project requires scanning text for patterns, then [RegexOne](https://regexone.com/){:target="_blank"} is a good resource for learning more. [Rubular](https://rubular.com/){:target="_blank"} is handy for quickly testing your regular expressions against some example strings.
 
  - `/\s+/` matches all whitespace, so we can use it with `gsub` to _remove_ all whitespace:
 
@@ -86,7 +86,7 @@ Ruby on Rails enhances certain Ruby classes with additional convenience methods 
     require 'activesupport'
     ```
 
-#### Formatting Floats as Strings {-}
+#### Formatting Floats as Strings 
 
 As we know, you can call the `.to_s` method on a Float to convert the number into a String:
 
@@ -100,7 +100,7 @@ Within a Rails application[^Rails], you can provide a `Symbol`[^Symbol] as an ar
 
 [^Symbol]: A `Symbol` is a Ruby Class that is similar to a `String`. Symbols start with a colon (`:`) at the beginning. See the chapter section [here][A brief interlude: Symbols]. 
 
-##### Phone {-}
+##### Phone 
 
 ```ruby
 5551234.to_s(:phone) # => "555-1234"
@@ -116,14 +116,14 @@ In addition to providing a `Symbol` to the `to_s` method, you can provide an _ad
 
 [^Hash]: A `Hash` is another Class is Ruby that. See the [Hash chapter](#hash-chapter). Until you read that chapter, just be aware that this kind of formatting is possible and easy to do in a Rails application.
 
-##### Currency {-}
+##### Currency 
 
 ```ruby
 1234567890.50.to_s(:currency)                  # => "$1,234,567,890.50"
 67890.506.to_s(:currency, { :precision => 3 }) # => "$67,890.506"
 ```
 
-##### Percentage {-}
+##### Percentage 
 
 ```ruby
 100.to_s(:percentage)                                            # => "100.000%"

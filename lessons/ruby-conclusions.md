@@ -15,7 +15,7 @@ At this point we have all the **building blocks**:
 
 That's all we _need_. We can build anything with these, using just some careful thought and what you can find in these chapters.
 
-#### We are inventors {-}
+#### We are inventors 
 
 When you signed up to learn how to program, you signed up to _become an inventor_.
 
@@ -77,17 +77,17 @@ Please follow the instructions below to enter the Ruby Gym for some weight train
 </div>
 
 
-#### Addendum: Optional Ruby Practice {-}
+#### Addendum: Optional Ruby Practice 
 
 If this is your first time programming, then it's a lot of new concepts to absorb! Sometimes hearing the same concepts in different words helps. Here are some other optional resources you can go through at your leisure if you'd like more Ruby practice:
 
-  - Treehouse's [Ruby Basics](https://teamtreehouse.com/library/ruby-basics-2){target="_blank"}
+  - Treehouse's [Ruby Basics](https://teamtreehouse.com/library/ruby-basics-2){:target="_blank"}
 
 Other than the introduction to Ruby that I’ve written specifically for our purposes, Treehouse's is the one I like best.
 
 If you would like even more practice before we get to our own introduction to Ruby, then there’s also:
 
-  - CodeCademy's [Learn Ruby track](https://www.codecademy.com/learn/learn-ruby){target="_blank"}, up to and including Part 4 (Arrays and Hashes). (After Part 4, they touch on quite a few concepts that we won’t use much during AppDev, but are useful in the long run if you continue with Ruby.)
+  - CodeCademy's [Learn Ruby track](https://www.codecademy.com/learn/learn-ruby){:target="_blank"}, up to and including Part 4 (Arrays and Hashes). (After Part 4, they touch on quite a few concepts that we won’t use much during AppDev, but are useful in the long run if you continue with Ruby.)
 
 Both Treehouse and CodeCademy have an in-browser programming environment, so it's easy to just start learning right away (no installing of things on your laptop required).
 
