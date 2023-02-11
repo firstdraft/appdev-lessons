@@ -142,7 +142,7 @@ In our [previous steps][Make the invisible visible in GitPod], we opened a GitPo
 
    Open the GitPod `String` project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
 
-   1. LTI{Load assignment}(https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_project]
+   1. LTI{Load assignment}(https://github.com/appdev-projects/string-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_project]
 
    1. Open the `concat.rb` file in the editor window.
 

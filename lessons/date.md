@@ -72,7 +72,7 @@ t.day # => 16
 
   Open the GitPod `Date` project for this chapter and start with the exercise `formatted.rb`:
 
-  LTI{Load assignment}(https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[date_project] 
+  LTI{Load assignment}(https://github.com/appdev-projects/date-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[date_project] 
   
   For a GitPod refresher, [see here](#start-gitpod-project).
 </div>

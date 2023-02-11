@@ -47,7 +47,7 @@ One other thing to keep in mind: you can use `**` in conjunction with fractions 
 
   Open the GitPod `Float` project for this chapter and start with the exercise `find_hypotenuse.rb`:
 
-  LTI{Load assignment}(https://github.com/bpurinton-appdev/float-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[float_project] 
+  LTI{Load assignment}(https://github.com/appdev-projects/float-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[float_project] 
   
   For a GitPod refresher, [see here](#start-gitpod-project).
   

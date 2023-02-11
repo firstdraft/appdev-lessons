@@ -202,7 +202,7 @@ We'll be using this technique frequently to make things more interesting.
 
   Open the GitPod `Array` project for this chapter and start with the exercise `element_square.rb`:
 
-  LTI{Load assignment}(https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[array_project] 
+  LTI{Load assignment}(https://github.com/appdev-projects/array-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[array_project] 
   
   For a GitPod refresher, [see here](#start-gitpod-project).
 </div>

@@ -175,7 +175,7 @@ In the REPL above, replace `10.times` with each of the following and play around
 
   Open the GitPod loops project for this chapter and start with the exercise `letter_count.rb`:
 
-  LTI{Load assignment}(https://github.com/bpurinton-appdev/loops-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[loops_project] 
+  LTI{Load assignment}(https://github.com/appdev-projects/loops-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[loops_project] 
   
   For a GitPod refresher, [see here](#start-gitpod-project).
 </div>
