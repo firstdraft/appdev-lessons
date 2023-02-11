@@ -13,7 +13,7 @@ At this point we have all the **building blocks**:
   - **Conditionals** (If statements).
   - **Loops**.
 
-That's all we _need_. We can build anything with these, using just some careful thought and the [technical reference][The One Ruby Reference].
+That's all we _need_. We can build anything with these, using just some careful thought and what you can find in these chapters.
 
 #### We are inventors {-}
 
@@ -32,6 +32,8 @@ Any assigned task _will_ be achievable using the classes, methods, and keywords 
 ### Ruby Gym
 
 Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the previous sections to write some small programs. These are longer projects than the exercises we've seen so far, and they may require a few different tools to complete; so keep the chapter sections open for reference and scan through them for things that may help when you get stuck. All the tools are there.
+
+Well, almost all the tools! [There's a few more][Addendum: Some more Ruby methods] collected in the next section that you may find useful for some of the exercises. Look through them when you get stuck.
 
 There are likely a few ways to solve an exercise. Just get the code to pass all of the `rails grade` tests and you are good to move on. Remember, _we are inventors_; don't rely on Google-Fu.
 

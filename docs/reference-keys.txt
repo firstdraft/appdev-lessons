@@ -74,6 +74,7 @@ inheritance
 ruby-conclusions
 our-technical-reference-vs.-google-fu
 ruby-gym
+addendum-some-more-ruby-methods
 the-one-ruby-reference
 activerecord_relation-array-of-records
 all-array-methods

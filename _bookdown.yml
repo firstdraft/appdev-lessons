@@ -34,6 +34,7 @@ rmd_files:
     "lessons/hash.md",
     "lessons/our-own-classes.md",
     "lessons/ruby-conclusions.md",
+    "lessons/some-more-ruby-methods.md",
     
     # "lessons/more-on-floats.md", # subsumed into float.md
     # "lessons/ruby-gym.md", # subsumed into ruby-conclusions.md
