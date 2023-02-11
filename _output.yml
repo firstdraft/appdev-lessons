@@ -13,8 +13,8 @@ bookdown::gitbook:
       collapse: section # section or subsection (if the TOC is getting too long), none
       scroll_highlight: true
       before: |
-        <li>AppDev</li>
-        <li>Raghu + Ben</li>
+        <li>Application Development</li>
+        <li>Raghu Betina</li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="_blank">
         Proudly published with bookdown</a></li>

@@ -1,5 +1,5 @@
-view: https://github.com/firstdraft/appdev-textbook/blob/main/%s
-edit: https://github.com/firstdraft/appdev-textbook/edit/main/%s
+view: https://github.com/firstdraft/appdev-textbook/tree/bp-ruby-chapter-rewrite/%s
+edit: https://github.com/firstdraft/appdev-textbook/tree/bp-ruby-chapter-rewrite/%s
 output_dir: "docs"
 
 # here is the list of lessons in order as they appear in the textbook
@@ -114,7 +114,7 @@ rmd_files:
     # "lessons/sample_data.md",
     
     # # glossaries
-    "glossaries/terminology-technical-reference.md", 
+    # "glossaries/terminology-technical-reference.md", 
     "glossaries/the-one-reference.md",
     "glossaries/optional-syntaxes-in-ruby.md",
     # "glossaries/html-reference.md",

@@ -1,8 +1,8 @@
 ---
-title: "AD1"
-author: "Ben + Raghu"
+title: "Application Development"
+author: "Raghu Betina"
 date: "`r Sys.Date()`"
-description: "This book covers the AD1 course at UChicago"
+description: "These chapters offer an introduction to the Ruby programming language."
 url: # 'https\://bookdown.org/john/awesome/'
 github-repo: "firstdraft/appdev-textbook"
 site: bookdown::bookdown_site 
@@ -12,4 +12,4 @@ favicon: "assets/favicon.ico"
 
 # Welcome! {-}
 
-This is the AD1 Textbook. Enjoy.
+In the following chapters, we will learn to program in Ruby. Hooray! 🎉

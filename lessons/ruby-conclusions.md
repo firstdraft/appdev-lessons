@@ -25,7 +25,7 @@ When faced with a task, your first instinct should be: "How can I solve this puz
 
 Your first instinct _shouldn't_ be: "Let me Google for a solution to this problem." Developers do a lot of that, of course, but only after we've tried to solve it with what we already have.
 
-"Google-Fu" is a hugely important skill to practice in software development, but in this course you should resist Googling. The answers you find  are not suitable for beginners; they will more than likely slow you down.
+"Google-Fu" is a hugely important skill to practice in software development, but in this course you should resist Googling. The answers you find are not suitable for beginners; they will more than likely slow you down. For example, many of those posts will use [different syntax][Different Ruby Styles] than we've seen up until now, and that will be confusing!
 
 Any assigned task _will_ be achievable using the classes, methods, and keywords introduced in the Ruby Chapters. Your job is to invent a combination of them that gets the job done.
 

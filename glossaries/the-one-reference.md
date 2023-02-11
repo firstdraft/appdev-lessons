@@ -1,3 +1,5 @@
+# (APPENDIX) Glossaries {-}
+
 # The One Ruby Reference
 
 This glossary should be used as a quick reference for Ruby; for more depth, click through to the "Full Explanation"s.
