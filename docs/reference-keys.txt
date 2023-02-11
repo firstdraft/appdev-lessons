@@ -75,7 +75,8 @@ ruby-conclusions
 our-technical-reference-vs.-google-fu
 ruby-gym
 addendum-some-more-ruby-methods
-string-1
+more-string
+more-float
 the-one-ruby-reference
 activerecord_relation-array-of-records
 all-array-methods
@@ -97,7 +98,7 @@ association-helper-methods
 belongs_to
 has_many
 has_manythrough
-string-2
+string-1
 concat-.
 method
 upcase-1

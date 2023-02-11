@@ -386,20 +386,6 @@ p "beginning".capitalize
    Return to the GitPod `String` project and work through `strip.rb`
 </div>
 
-#### include? {-}
-
-`include?` takes a String argument and returns `true` or `false` if the argument exists in the String that `include?` is called on.
-
-```ruby
-p "Happy Days".include?("H")
-
-p "Happy Days".include?("Z")
-```
-
-<div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
-</div>
-
 ### More on adding strings together
 
 We spend a lot of time composing strings of output for our users, so let's see a few more examples. Try this:

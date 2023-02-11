@@ -132,8 +132,6 @@ p 98.to_s
 
 Similarly, there's a `to_f` (or "to float") method to convert an `Integer` to a `Float`, which is often handy for doing math, as we'll see next.
 
-**BENP: maybe combine to_i, to_f and to_s here in a gitpod exercise / modify integer_birth_year. integer_birth_year could move to dates chapter**
-
 <div class="proj" markdown="1">
 
   Return to the GitPod `Integer` project and work through `birth_year.rb`
