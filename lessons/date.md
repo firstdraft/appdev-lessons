@@ -10,7 +10,7 @@ The `Date` class isn't loaded into every Ruby program by default, so to use it w
 require "date"
 ```
 
-(Usually we [omit the parentheses][Optional parentheses around arguments] around the string argument to the `require` method. Just like when we use `p "Hello, world!"` as opposed to `p("Hello, World!")`.)
+(Usually we omit the parentheses around the string argument to the `require` method. Just like when we use `p "Hello, world!"` as opposed to `p("Hello, World!")`.)
 
 #### Date.new
 

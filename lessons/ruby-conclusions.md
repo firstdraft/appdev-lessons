@@ -25,7 +25,7 @@ When faced with a task, your first instinct should be: "How can I solve this puz
 
 Your first instinct _shouldn't_ be: "Let me Google for a solution to this problem." Developers do a lot of that, of course, but only after we've tried to solve it with what we already have.
 
-"Google-Fu" is a hugely important skill to practice in software development, but in this course you should resist Googling. The answers you find are not suitable for beginners; they will more than likely slow you down. For example, many of those posts will use [different syntax][Different Ruby Styles] than we've seen up until now, and that will be confusing!
+"Google-Fu" is a hugely important skill to practice in software development, but in this course you should resist Googling. The answers you find are not suitable for beginners; they will more than likely slow you down. For example, many of those posts will use different syntax than we've seen up until now, and that will be confusing!
 
 Any assigned task _will_ be achievable using the classes, methods, and keywords introduced in the Ruby Chapters. Your job is to invent a combination of them that gets the job done.
 
@@ -33,7 +33,7 @@ Any assigned task _will_ be achievable using the classes, methods, and keywords 
 
 Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the previous sections to write some small programs. These are longer projects than the exercises we've seen so far, and they may require a few different tools to complete; so keep the chapter sections open for reference and scan through them for things that may help when you get stuck. All the tools are there.
 
-Well, almost all the tools! [There's a few more][Addendum: Some more Ruby methods] collected in the next section that you may find useful for some of the exercises. Look through them when you get stuck.
+Well, almost all the tools! There's a few more collected in the next section that you may find useful for some of the exercises. Look through them when you get stuck.
 
 There are likely a few ways to solve an exercise. Just get the code to pass all of the `rails grade` tests and you are good to move on. Remember, _we are inventors_; don't rely on Google-Fu.
 

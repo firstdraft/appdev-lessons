@@ -1,6 +1,6 @@
 ## Addendum: Some more Ruby methods
 
-Here are some more Ruby methods that we didn't cover in the chapters, but which will likely come in handy in some of the Ruby Gym exercises. Of course, many of these are also collected in [the long Ruby reference][The One Ruby Reference].
+Here are some more Ruby methods that we didn't cover in the chapters, but which will likely come in handy in some of the Ruby Gym exercises. Of course, many of these are also collected in the long Ruby reference.
 
 ### More String 
 
@@ -98,7 +98,7 @@ Within a Rails application[^Rails], you can provide a `Symbol`[^Symbol] as an ar
 
 [^Rails]:  Or anywhere using `activesupport`.
 
-[^Symbol]: A `Symbol` is a Ruby Class that is similar to a `String`. Symbols start with a colon (`:`) at the beginning. See the chapter section [here][A brief interlude: Symbols]. 
+[^Symbol]: A `Symbol` is a Ruby Class that is similar to a `String`. Symbols start with a colon (`:`) at the beginning. See the chapter section. 
 
 ##### Phone 
 
