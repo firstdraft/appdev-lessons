@@ -409,15 +409,15 @@ Proudly published with bookdown</a></li>
 <p>For example, for the input:</p>
 <pre><code>apple banana orange</code></pre>
 <p>Your program should output the following:</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb135-1"><a href="each.html#cb135-1" aria-hidden="true"></a><span class="st">&quot;Apple&quot;</span></span>
-<span id="cb135-2"><a href="each.html#cb135-2" aria-hidden="true"></a><span class="st">&quot;elppa&quot;</span></span>
-<span id="cb135-3"><a href="each.html#cb135-3" aria-hidden="true"></a><span class="st">&quot;APPLE&quot;</span></span>
-<span id="cb135-4"><a href="each.html#cb135-4" aria-hidden="true"></a><span class="st">&quot;Banana&quot;</span></span>
-<span id="cb135-5"><a href="each.html#cb135-5" aria-hidden="true"></a><span class="st">&quot;ananab&quot;</span></span>
-<span id="cb135-6"><a href="each.html#cb135-6" aria-hidden="true"></a><span class="st">&quot;BANANA&quot;</span></span>
-<span id="cb135-7"><a href="each.html#cb135-7" aria-hidden="true"></a><span class="st">&quot;Orange&quot;</span></span>
-<span id="cb135-8"><a href="each.html#cb135-8" aria-hidden="true"></a><span class="st">&quot;egnaro&quot;</span></span>
-<span id="cb135-9"><a href="each.html#cb135-9" aria-hidden="true"></a><span class="st">&quot;ORANGE&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb131-1"><a href="each.html#cb131-1" aria-hidden="true"></a><span class="st">&quot;Apple&quot;</span></span>
+<span id="cb131-2"><a href="each.html#cb131-2" aria-hidden="true"></a><span class="st">&quot;elppa&quot;</span></span>
+<span id="cb131-3"><a href="each.html#cb131-3" aria-hidden="true"></a><span class="st">&quot;APPLE&quot;</span></span>
+<span id="cb131-4"><a href="each.html#cb131-4" aria-hidden="true"></a><span class="st">&quot;Banana&quot;</span></span>
+<span id="cb131-5"><a href="each.html#cb131-5" aria-hidden="true"></a><span class="st">&quot;ananab&quot;</span></span>
+<span id="cb131-6"><a href="each.html#cb131-6" aria-hidden="true"></a><span class="st">&quot;BANANA&quot;</span></span>
+<span id="cb131-7"><a href="each.html#cb131-7" aria-hidden="true"></a><span class="st">&quot;Orange&quot;</span></span>
+<span id="cb131-8"><a href="each.html#cb131-8" aria-hidden="true"></a><span class="st">&quot;egnaro&quot;</span></span>
+<span id="cb131-9"><a href="each.html#cb131-9" aria-hidden="true"></a><span class="st">&quot;ORANGE&quot;</span></span></code></pre></div>
 <div class="experiment" markdown="1">
 <p><a href="https://repl.it/@_jelaniwoods/userwordstimes" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -434,16 +434,16 @@ Proudly published with bookdown</a></li>
 <div id="arrays-each-method" class="section level3 hasAnchor" number="1.10.2">
 <h3><span class="header-section-number">1.10.2</span> Array’s each method<a href="each.html#arrays-each-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>But we can do even better than using <code>Integer</code>’s <code>.times</code> method to iterate over an <code>Array</code>. There’s a method that you can call directly on the <code>Array</code> itself called <code>.each</code>. Compare the code below to the model solution above and try to find the differences:</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb136-1"><a href="each.html#cb136-1" aria-hidden="true"></a>p <span class="st">&quot;Enter at least 2 words, separated by spaces:&quot;</span></span>
-<span id="cb136-2"><a href="each.html#cb136-2" aria-hidden="true"></a>user_words = gets.chomp.split</span>
-<span id="cb136-3"><a href="each.html#cb136-3" aria-hidden="true"></a>p <span class="st">&quot;user_words:&quot;</span></span>
-<span id="cb136-4"><a href="each.html#cb136-4" aria-hidden="true"></a>p user_words</span>
-<span id="cb136-5"><a href="each.html#cb136-5" aria-hidden="true"></a></span>
-<span id="cb136-6"><a href="each.html#cb136-6" aria-hidden="true"></a>user_words.each <span class="kw">do</span> |the_word|</span>
-<span id="cb136-7"><a href="each.html#cb136-7" aria-hidden="true"></a>  p the_word.capitalize</span>
-<span id="cb136-8"><a href="each.html#cb136-8" aria-hidden="true"></a>  p the_word.reverse</span>
-<span id="cb136-9"><a href="each.html#cb136-9" aria-hidden="true"></a>  p the_word.upcase</span>
-<span id="cb136-10"><a href="each.html#cb136-10" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb132-1"><a href="each.html#cb132-1" aria-hidden="true"></a>p <span class="st">&quot;Enter at least 2 words, separated by spaces:&quot;</span></span>
+<span id="cb132-2"><a href="each.html#cb132-2" aria-hidden="true"></a>user_words = gets.chomp.split</span>
+<span id="cb132-3"><a href="each.html#cb132-3" aria-hidden="true"></a>p <span class="st">&quot;user_words:&quot;</span></span>
+<span id="cb132-4"><a href="each.html#cb132-4" aria-hidden="true"></a>p user_words</span>
+<span id="cb132-5"><a href="each.html#cb132-5" aria-hidden="true"></a></span>
+<span id="cb132-6"><a href="each.html#cb132-6" aria-hidden="true"></a>user_words.each <span class="kw">do</span> |the_word|</span>
+<span id="cb132-7"><a href="each.html#cb132-7" aria-hidden="true"></a>  p the_word.capitalize</span>
+<span id="cb132-8"><a href="each.html#cb132-8" aria-hidden="true"></a>  p the_word.reverse</span>
+<span id="cb132-9"><a href="each.html#cb132-9" aria-hidden="true"></a>  p the_word.upcase</span>
+<span id="cb132-10"><a href="each.html#cb132-10" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <div class="experiment" markdown="1">
 <p><a href="https://repl.it/@raghubetina/each-iterating-with-each" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -452,9 +452,9 @@ Proudly published with bookdown</a></li>
 <ul>
 <li><p>We don’t need to count the length of the array; <code>.each</code> does it for us and will take care of looping for the correct number of iterations.</p></li>
 <li><p>The block variable, rather than containing an integer that we can use to access the correct element, will contain <strong>the element itself</strong>.</p>
-<p>So now when we name the block variable, we should choose a name<span id="fn-21"><!--
---><label for="fn-21-toggle"><sup>21</sup></label><!--
---><input type="checkbox" hidden id="fn-21-toggle"/>
+<p>So now when we name the block variable, we should choose a name<span id="fn-20"><!--
+--><label for="fn-20-toggle"><sup>20</sup></label><!--
+--><input type="checkbox" hidden id="fn-20-toggle"/>
 <span id="fn-content">I like to name the variables that contain arrays <em>plurally</em> (e.g. <code>photos</code>), and block variables <em>singularly</em> (e.g. <code>photo</code>) to make it clear to myself which is which — the list itself versus one element within the list. Whatever you do, don’t name the block variable plurally — that’s very confusing when you come back to your code later and have to make sense of it.</span></span> that reflects what each element in the list is.</p>
 <p><code>.each</code> will, behind the scenes, pull the correct element out of the array before each iteration begins and assign it to that block variable.</p>
 <p>Then, <strong>we just use that variable directly</strong>, and we don’t have to worry about accessing the array with <code>.at</code>.</p></li>
@@ -493,20 +493,20 @@ Proudly published with bookdown</a></li>
 <div id="addendum-each_with_index" class="section level4 unnumbered hasAnchor">
 <h4>Addendum: each_with_index<a href="each.html#addendum-each_with_index" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>There are some rare cases when you are looping over an array and, within the block, you would like access to the element <em>and</em> its index. For example, maybe you want to print a line after every other element. You could fall back to <code>.times</code> in these scenarios, but there’s also another <code>Array</code> method that has your back: <code>.each_with_index</code>. It looks like this:</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb138-1"><a href="each.html#cb138-1" aria-hidden="true"></a>p <span class="st">&quot;Enter at least 2 words, separated by spaces:&quot;</span></span>
-<span id="cb138-2"><a href="each.html#cb138-2" aria-hidden="true"></a>user_words = gets.chomp.split</span>
-<span id="cb138-3"><a href="each.html#cb138-3" aria-hidden="true"></a>p <span class="st">&quot;user_words:&quot;</span></span>
-<span id="cb138-4"><a href="each.html#cb138-4" aria-hidden="true"></a>p user_words</span>
-<span id="cb138-5"><a href="each.html#cb138-5" aria-hidden="true"></a></span>
-<span id="cb138-6"><a href="each.html#cb138-6" aria-hidden="true"></a>user_words.each_with_index <span class="kw">do</span> |the_word, the_index|</span>
-<span id="cb138-7"><a href="each.html#cb138-7" aria-hidden="true"></a>  p the_word.capitalize</span>
-<span id="cb138-8"><a href="each.html#cb138-8" aria-hidden="true"></a>  p the_word.reverse</span>
-<span id="cb138-9"><a href="each.html#cb138-9" aria-hidden="true"></a>  p the_word.upcase</span>
-<span id="cb138-10"><a href="each.html#cb138-10" aria-hidden="true"></a></span>
-<span id="cb138-11"><a href="each.html#cb138-11" aria-hidden="true"></a>  <span class="kw">if</span> the_index.odd?</span>
-<span id="cb138-12"><a href="each.html#cb138-12" aria-hidden="true"></a>    p <span class="st">&quot;=&quot;</span> * <span class="dv">20</span></span>
-<span id="cb138-13"><a href="each.html#cb138-13" aria-hidden="true"></a>  <span class="kw">end</span></span>
-<span id="cb138-14"><a href="each.html#cb138-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb134-1"><a href="each.html#cb134-1" aria-hidden="true"></a>p <span class="st">&quot;Enter at least 2 words, separated by spaces:&quot;</span></span>
+<span id="cb134-2"><a href="each.html#cb134-2" aria-hidden="true"></a>user_words = gets.chomp.split</span>
+<span id="cb134-3"><a href="each.html#cb134-3" aria-hidden="true"></a>p <span class="st">&quot;user_words:&quot;</span></span>
+<span id="cb134-4"><a href="each.html#cb134-4" aria-hidden="true"></a>p user_words</span>
+<span id="cb134-5"><a href="each.html#cb134-5" aria-hidden="true"></a></span>
+<span id="cb134-6"><a href="each.html#cb134-6" aria-hidden="true"></a>user_words.each_with_index <span class="kw">do</span> |the_word, the_index|</span>
+<span id="cb134-7"><a href="each.html#cb134-7" aria-hidden="true"></a>  p the_word.capitalize</span>
+<span id="cb134-8"><a href="each.html#cb134-8" aria-hidden="true"></a>  p the_word.reverse</span>
+<span id="cb134-9"><a href="each.html#cb134-9" aria-hidden="true"></a>  p the_word.upcase</span>
+<span id="cb134-10"><a href="each.html#cb134-10" aria-hidden="true"></a></span>
+<span id="cb134-11"><a href="each.html#cb134-11" aria-hidden="true"></a>  <span class="kw">if</span> the_index.odd?</span>
+<span id="cb134-12"><a href="each.html#cb134-12" aria-hidden="true"></a>    p <span class="st">&quot;=&quot;</span> * <span class="dv">20</span></span>
+<span id="cb134-13"><a href="each.html#cb134-13" aria-hidden="true"></a>  <span class="kw">end</span></span>
+<span id="cb134-14"><a href="each.html#cb134-14" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
 <div class="experiment" markdown="1">
 <p><a href="https://repl.it/@raghubetina/each-each-with-index" target="_blank">Click here for a REPL to try it.</a></p>
 </div>

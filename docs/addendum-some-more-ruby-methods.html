@@ -401,7 +401,7 @@ Proudly published with bookdown</a></li>
 <div id="reverse-1" class="section level4 unnumbered hasAnchor">
 <h4>reverse<a href="addendum-some-more-ruby-methods.html#reverse-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The reverse method returns a new <code>String</code> with the characters from the <code>String</code> in reverse order.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb176-1"><a href="addendum-some-more-ruby-methods.html#cb176-1" aria-hidden="true"></a>p <span class="st">&quot;I can speak in backwords words&quot;</span>.reverse</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb172-1"><a href="addendum-some-more-ruby-methods.html#cb172-1" aria-hidden="true"></a>p <span class="st">&quot;I can speak in backwords words&quot;</span>.reverse</span></code></pre></div>
 <div class="experiment" markdown="1">
 <p><a href="https://repl.it/@raghubetina/reverse" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
@@ -409,10 +409,29 @@ Proudly published with bookdown</a></li>
 <div id="length" class="section level4 unnumbered hasAnchor">
 <h4>length<a href="addendum-some-more-ruby-methods.html#length" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The length method returns the number of characters (as an <code>Integer</code>) that a <code>String</code> has.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb177-1"><a href="addendum-some-more-ruby-methods.html#cb177-1" aria-hidden="true"></a>p <span class="st">&quot;Supercalifragilisticexpialidocious&quot;</span>.length</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb173-1"><a href="addendum-some-more-ruby-methods.html#cb173-1" aria-hidden="true"></a>p <span class="st">&quot;Supercalifragilisticexpialidocious&quot;</span>.length</span></code></pre></div>
 <div class="experiment" markdown="1">
 <p><a href="https://repl.it/@raghubetina/length" target="_blank">Click here for a REPL to try it.</a></p>
 </div>
+</div>
+<div id="advanced-gsub-techniques" class="section level4 unnumbered hasAnchor">
+<h4>Advanced gsub techniques<a href="addendum-some-more-ruby-methods.html#advanced-gsub-techniques" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><code>gsub</code> also supports accepting a <em>regular expression</em> as its first argument. We won’t get into regular expressions in detail right now, but all languages (C, C++, Python, etc.) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.</p>
+<p>In Ruby, we work with regular expressions the way we work with everything else — via a class, <code>Regexp</code>. We create <code>Regexp</code> <em>literals</em> with forward slashes (like we use quotes to create <code>String</code> literals), and then put the pattern that we’re trying to match between the slashes.</p>
+<p>For now, we’re just going to copy-paste a few simple regexes<span id="fn-23"><!--
+--><label for="fn-23-toggle"><sup>23</sup></label><!--
+--><input type="checkbox" hidden id="fn-23-toggle"/>
+<span id="fn-content">If your project requires scanning text for patterns, then <a href="https://regexone.com/" target="_blank">RegexOne</a> is a good resource for learning more. <a href="https://rubular.com/" target="_blank">Rubular</a> is handy for quickly testing your regular expressions against some example strings.</span></span> that come in handy with <code>gsub</code>, in particular:</p>
+<ul>
+<li><p><code>/\s+/</code> matches all whitespace, so we can use it with <code>gsub</code> to <em>remove</em> all whitespace:</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb174-1"><a href="addendum-some-more-ruby-methods.html#cb174-1" aria-hidden="true"></a><span class="st">&quot;Hello there,\nfriend&quot;</span>.gsub(<span class="ot">/\s+/</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;Hellothere,friend&quot;</span></span></code></pre></div></li>
+<li><p><code>/[^0-9]/</code> matches everything <em>except</em> numeric digits, so we can use it with <code>gsub</code> to <em>remove</em> everything except digits:</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb175-1"><a href="addendum-some-more-ruby-methods.html#cb175-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^0-9]/</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;29&quot;</span></span></code></pre></div></li>
+<li><p><code>/[^a-z]/i</code> matches everything <em>except</em> letters (case-insensitively using the <code>i</code> mode after the <code>//</code> slashes). So we can use it with <code>gsub</code> to <em>remove</em> everything except letters:</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb176-1"><a href="addendum-some-more-ruby-methods.html#cb176-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^a-z]/i</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;Marchth&quot;</span></span></code></pre></div></li>
+<li><p><code>/[^a-z0-9\s]/i</code> matches everything <em>except</em> letters, digits, and whitespace, so we can use it to remove everything except for those:</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb177-1"><a href="addendum-some-more-ruby-methods.html#cb177-1" aria-hidden="true"></a><span class="st">&quot;March 29th!&quot;</span>.gsub(<span class="ot">/[^a-z0-9\s]/i</span>, <span class="st">&quot;&quot;</span>) <span class="co"># =&gt; &quot;March 29th&quot;</span></span></code></pre></div></li>
+</ul>
 
 </div>
 </div>

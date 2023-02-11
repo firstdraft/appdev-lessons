@@ -399,20 +399,20 @@ Proudly published with bookdown</a></li>
 <div id="creating-a-date" class="section level3 hasAnchor" number="1.6.1">
 <h3><span class="header-section-number">1.6.1</span> Creating a date<a href="date.html#creating-a-date" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <code>Date</code> class isn’t loaded into every Ruby program by default, so to use it we first need to say</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb84-1"><a href="date.html#cb84-1" aria-hidden="true"></a>require <span class="st">&quot;date&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb80-1"><a href="date.html#cb80-1" aria-hidden="true"></a>require <span class="st">&quot;date&quot;</span></span></code></pre></div>
 <p>(Usually we <a href="a-few-program-notes.html#optional-parentheses-around-arguments">omit the parentheses</a> around the string argument to the <code>require</code> method. Just like when we use <code>p "Hello, world!"</code> as opposed to <code>p("Hello, World!")</code>.)</p>
 <div id="date.new" class="section level4 hasAnchor" number="1.6.1.1">
 <h4><span class="header-section-number">1.6.1.1</span> Date.new<a href="date.html#date.new" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>After <code>require "date"</code>, we can create a new instance as usual with:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb85-1"><a href="date.html#cb85-1" aria-hidden="true"></a><span class="dt">Date</span>.new <span class="co"># =&gt; #&lt;Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)&gt;</span></span></code></pre></div>
-<p>By default, the new date is January 1st, of the year -4712! Interesting<span id="fn-18"><!--
---><label for="fn-18-toggle"><sup>18</sup></label><!--
---><input type="checkbox" hidden id="fn-18-toggle"/>
+<div class="sourceCode" id="cb81"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb81-1"><a href="date.html#cb81-1" aria-hidden="true"></a><span class="dt">Date</span>.new <span class="co"># =&gt; #&lt;Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)&gt;</span></span></code></pre></div>
+<p>By default, the new date is January 1st, of the year -4712! Interesting<span id="fn-17"><!--
+--><label for="fn-17-toggle"><sup>17</sup></label><!--
+--><input type="checkbox" hidden id="fn-17-toggle"/>
 <span id="fn-content">Year 1 of the <a href="https://en.wikipedia.org/wiki/Julian_day" target="_blank">Julian Period</a> was 4713 BC (−4712).</span></span>, but not very helpful.</p>
 <p>You can also pass <code>Date.new</code> arguments to initialize with a specific year, month, and day:</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb86-1"><a href="date.html#cb86-1" aria-hidden="true"></a><span class="dt">Date</span>.new(<span class="dv">2001</span>)            <span class="co">#=&gt; #&lt;Date: 2001-01-01 ...&gt;</span></span>
-<span id="cb86-2"><a href="date.html#cb86-2" aria-hidden="true"></a><span class="dt">Date</span>.new(<span class="dv">2001</span>,<span class="dv">2</span>,<span class="dv">3</span>)        <span class="co">#=&gt; #&lt;Date: 2001-02-03 ...&gt;</span></span>
-<span id="cb86-3"><a href="date.html#cb86-3" aria-hidden="true"></a><span class="dt">Date</span>.new(<span class="dv">2001</span>,<span class="dv">2</span>,-<span class="dv">1</span>)       <span class="co">#=&gt; #&lt;Date: 2001-02-28 ...&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb82-1"><a href="date.html#cb82-1" aria-hidden="true"></a><span class="dt">Date</span>.new(<span class="dv">2001</span>)            <span class="co">#=&gt; #&lt;Date: 2001-01-01 ...&gt;</span></span>
+<span id="cb82-2"><a href="date.html#cb82-2" aria-hidden="true"></a><span class="dt">Date</span>.new(<span class="dv">2001</span>,<span class="dv">2</span>,<span class="dv">3</span>)        <span class="co">#=&gt; #&lt;Date: 2001-02-03 ...&gt;</span></span>
+<span id="cb82-3"><a href="date.html#cb82-3" aria-hidden="true"></a><span class="dt">Date</span>.new(<span class="dv">2001</span>,<span class="dv">2</span>,-<span class="dv">1</span>)       <span class="co">#=&gt; #&lt;Date: 2001-02-28 ...&gt;</span></span></code></pre></div>
 </div>
 </div>
 <div id="date-methods" class="section level3 hasAnchor" number="1.6.2">
@@ -420,25 +420,25 @@ Proudly published with bookdown</a></li>
 <div id="date.today" class="section level4 unnumbered hasAnchor">
 <h4>Date.today<a href="date.html#date.today" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>Date.today</code> method returns an object initialized to the current date.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb87-1"><a href="date.html#cb87-1" aria-hidden="true"></a><span class="dt">Date</span>.today <span class="co"># =&gt; #&lt;Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb83-1"><a href="date.html#cb83-1" aria-hidden="true"></a><span class="dt">Date</span>.today <span class="co"># =&gt; #&lt;Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)&gt;</span></span></code></pre></div>
 </div>
 <div id="year" class="section level4 unnumbered hasAnchor">
 <h4>year<a href="date.html#year" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Call the <code>year</code> method on a <code>Date</code> object to return just the year of the date as an <code>Integer</code>.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb88-1"><a href="date.html#cb88-1" aria-hidden="true"></a>t = <span class="dt">Date</span>.today <span class="co"># =&gt; #&lt;Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)&gt;</span></span>
-<span id="cb88-2"><a href="date.html#cb88-2" aria-hidden="true"></a>t.year <span class="co"># =&gt; 2019</span></span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb84-1"><a href="date.html#cb84-1" aria-hidden="true"></a>t = <span class="dt">Date</span>.today <span class="co"># =&gt; #&lt;Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)&gt;</span></span>
+<span id="cb84-2"><a href="date.html#cb84-2" aria-hidden="true"></a>t.year <span class="co"># =&gt; 2019</span></span></code></pre></div>
 </div>
 <div id="month" class="section level4 unnumbered hasAnchor">
 <h4>month<a href="date.html#month" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Call the <code>month</code> method on a <code>Date</code> object to return just the month of the date as an <code>Integer</code>.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb89-1"><a href="date.html#cb89-1" aria-hidden="true"></a>t = <span class="dt">Date</span>.today <span class="co"># =&gt; #&lt;Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)&gt;</span></span>
-<span id="cb89-2"><a href="date.html#cb89-2" aria-hidden="true"></a>t.month <span class="co"># =&gt; 4</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb85-1"><a href="date.html#cb85-1" aria-hidden="true"></a>t = <span class="dt">Date</span>.today <span class="co"># =&gt; #&lt;Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)&gt;</span></span>
+<span id="cb85-2"><a href="date.html#cb85-2" aria-hidden="true"></a>t.month <span class="co"># =&gt; 4</span></span></code></pre></div>
 </div>
 <div id="day" class="section level4 unnumbered hasAnchor">
 <h4>day<a href="date.html#day" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Call the <code>day</code> method on a <code>Date</code> object to return just the day of the date as an <code>Integer</code>.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb90-1"><a href="date.html#cb90-1" aria-hidden="true"></a>t = <span class="dt">Date</span>.today <span class="co"># =&gt; #&lt;Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)&gt;</span></span>
-<span id="cb90-2"><a href="date.html#cb90-2" aria-hidden="true"></a>t.day <span class="co"># =&gt; 16</span></span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb86-1"><a href="date.html#cb86-1" aria-hidden="true"></a>t = <span class="dt">Date</span>.today <span class="co"># =&gt; #&lt;Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)&gt;</span></span>
+<span id="cb86-2"><a href="date.html#cb86-2" aria-hidden="true"></a>t.day <span class="co"># =&gt; 16</span></span></code></pre></div>
 <div class="proj" markdown="1">
 <p>Open the GitPod <code>Date</code> project for this chapter and start with the exercise <code>formatted.rb</code>:</p>
 <p>LTI{Load assignment}(<a href="https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions" class="uri">https://github.com/bpurinton-appdev/date-chapter/tree/bp-additions</a>)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[date_project]</p>
@@ -448,17 +448,17 @@ Proudly published with bookdown</a></li>
 <div id="date.parse" class="section level4 unnumbered hasAnchor">
 <h4>Date.parse<a href="date.html#date.parse" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>Date.parse()</code> method accepts a <code>String</code> argument and tries to interpret it as a date, initializing a <code>Date</code> object.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb91-1"><a href="date.html#cb91-1" aria-hidden="true"></a><span class="dt">Date</span>.parse(<span class="st">&quot;2001-02-03&quot;</span>) <span class="co">#=&gt; #&lt;Date: 2001-02-03 ...&gt;</span></span>
-<span id="cb91-2"><a href="date.html#cb91-2" aria-hidden="true"></a><span class="dt">Date</span>.parse(<span class="st">&quot;20010203&quot;</span>) <span class="co">#=&gt; #&lt;Date: 2001-02-03 ...&gt;</span></span>
-<span id="cb91-3"><a href="date.html#cb91-3" aria-hidden="true"></a><span class="dt">Date</span>.parse(<span class="st">&quot;3rd Feb 2001&quot;</span>) <span class="co">#=&gt; #&lt;Date: 2001-02-03 ...&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb87-1"><a href="date.html#cb87-1" aria-hidden="true"></a><span class="dt">Date</span>.parse(<span class="st">&quot;2001-02-03&quot;</span>) <span class="co">#=&gt; #&lt;Date: 2001-02-03 ...&gt;</span></span>
+<span id="cb87-2"><a href="date.html#cb87-2" aria-hidden="true"></a><span class="dt">Date</span>.parse(<span class="st">&quot;20010203&quot;</span>) <span class="co">#=&gt; #&lt;Date: 2001-02-03 ...&gt;</span></span>
+<span id="cb87-3"><a href="date.html#cb87-3" aria-hidden="true"></a><span class="dt">Date</span>.parse(<span class="st">&quot;3rd Feb 2001&quot;</span>) <span class="co">#=&gt; #&lt;Date: 2001-02-03 ...&gt;</span></span></code></pre></div>
 </div>
 <div id="subtraction" class="section level4 unnumbered hasAnchor">
 <h4>Subtraction<a href="date.html#subtraction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>You can subtract two dates from one another, which will return the number of days between them. The return value class is a <code>Rational</code>, which can be converted to a regular <code>Integer</code> with <code>.to_i</code>:</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb92-1"><a href="date.html#cb92-1" aria-hidden="true"></a>number_of_days = <span class="dt">Date</span>.today - <span class="dt">Date</span>.parse(<span class="st">&quot;July 4, 1776&quot;</span>)</span>
-<span id="cb92-2"><a href="date.html#cb92-2" aria-hidden="true"></a> =&gt; (<span class="dv">88674</span>/<span class="dv">1</span>)</span>
-<span id="cb92-3"><a href="date.html#cb92-3" aria-hidden="true"></a>days.to_i</span>
-<span id="cb92-4"><a href="date.html#cb92-4" aria-hidden="true"></a> =&gt; <span class="dv">88674</span></span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb88-1"><a href="date.html#cb88-1" aria-hidden="true"></a>number_of_days = <span class="dt">Date</span>.today - <span class="dt">Date</span>.parse(<span class="st">&quot;July 4, 1776&quot;</span>)</span>
+<span id="cb88-2"><a href="date.html#cb88-2" aria-hidden="true"></a> =&gt; (<span class="dv">88674</span>/<span class="dv">1</span>)</span>
+<span id="cb88-3"><a href="date.html#cb88-3" aria-hidden="true"></a>days.to_i</span>
+<span id="cb88-4"><a href="date.html#cb88-4" aria-hidden="true"></a> =&gt; <span class="dv">88674</span></span></code></pre></div>
 <div class="proj" markdown="1">
 <p>Return to the GitPod <code>Date</code> project and work through <code>math.rb</code></p>
 </div>
@@ -494,7 +494,7 @@ Proudly published with bookdown</a></li>
 <div id="wday" class="section level4 unnumbered hasAnchor">
 <h4>wday<a href="date.html#wday" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Returns the day of week (0-6, Sunday is zero).</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb93-1"><a href="date.html#cb93-1" aria-hidden="true"></a><span class="dt">Date</span>.new(<span class="dv">2001</span>,<span class="dv">2</span>,<span class="dv">3</span>).wday <span class="co">#=&gt; 6</span></span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb89-1"><a href="date.html#cb89-1" aria-hidden="true"></a><span class="dt">Date</span>.new(<span class="dv">2001</span>,<span class="dv">2</span>,<span class="dv">3</span>).wday <span class="co">#=&gt; 6</span></span></code></pre></div>
 <div class="proj" markdown="1">
 <p>Return to the GitPod <code>Date</code> project and work through <code>monday.rb</code></p>
 </div>
@@ -503,17 +503,17 @@ Proudly published with bookdown</a></li>
 <div id="time" class="section level3 hasAnchor" number="1.6.3">
 <h3><span class="header-section-number">1.6.3</span> Time<a href="date.html#time" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ruby has a <code>Time</code> class as well, that shares most of its methods with the <code>Date</code> class.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb94-1"><a href="date.html#cb94-1" aria-hidden="true"></a><span class="dt">Time</span>.now.wday <span class="co"># =&gt; 6</span></span>
-<span id="cb94-2"><a href="date.html#cb94-2" aria-hidden="true"></a><span class="dt">Time</span>.now.saturday? <span class="co"># =&gt; true</span></span>
-<span id="cb94-3"><a href="date.html#cb94-3" aria-hidden="true"></a><span class="dt">Time</span>.now.day <span class="co"># =&gt; 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb90-1"><a href="date.html#cb90-1" aria-hidden="true"></a><span class="dt">Time</span>.now.wday <span class="co"># =&gt; 6</span></span>
+<span id="cb90-2"><a href="date.html#cb90-2" aria-hidden="true"></a><span class="dt">Time</span>.now.saturday? <span class="co"># =&gt; true</span></span>
+<span id="cb90-3"><a href="date.html#cb90-3" aria-hidden="true"></a><span class="dt">Time</span>.now.day <span class="co"># =&gt; 3</span></span></code></pre></div>
 <div id="strftime" class="section level4 unnumbered hasAnchor">
 <h4>strftime<a href="date.html#strftime" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>strftime</code> method is used on a <code>Date</code> or <code>Time</code> object. It requires a <code>String</code> argument that will be used to format the Date or Time in a particular way.</p>
 <p><em>Assuming today is Monday, September 7th 2020</em></p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb95-1"><a href="date.html#cb95-1" aria-hidden="true"></a><span class="dt">Time</span>.now.strftime(<span class="st">&quot;%A&quot;</span>) <span class="co"># =&gt; &quot;Monday&quot;</span></span>
-<span id="cb95-2"><a href="date.html#cb95-2" aria-hidden="true"></a><span class="dt">Time</span>.now.strftime(<span class="st">&quot;%B&quot;</span>) <span class="co"># =&gt; &quot;September&quot;</span></span>
-<span id="cb95-3"><a href="date.html#cb95-3" aria-hidden="true"></a><span class="dt">Time</span>.now.strftime(<span class="st">&quot;%b&quot;</span>) <span class="co"># =&gt; &quot;Sep&quot;</span></span>
-<span id="cb95-4"><a href="date.html#cb95-4" aria-hidden="true"></a><span class="dt">Time</span>.now.strftime(<span class="st">&quot;%a %e, %R %p&quot;</span>) <span class="co"># =&gt; &quot;Mon, 7 14:35 PM&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb91-1"><a href="date.html#cb91-1" aria-hidden="true"></a><span class="dt">Time</span>.now.strftime(<span class="st">&quot;%A&quot;</span>) <span class="co"># =&gt; &quot;Monday&quot;</span></span>
+<span id="cb91-2"><a href="date.html#cb91-2" aria-hidden="true"></a><span class="dt">Time</span>.now.strftime(<span class="st">&quot;%B&quot;</span>) <span class="co"># =&gt; &quot;September&quot;</span></span>
+<span id="cb91-3"><a href="date.html#cb91-3" aria-hidden="true"></a><span class="dt">Time</span>.now.strftime(<span class="st">&quot;%b&quot;</span>) <span class="co"># =&gt; &quot;Sep&quot;</span></span>
+<span id="cb91-4"><a href="date.html#cb91-4" aria-hidden="true"></a><span class="dt">Time</span>.now.strftime(<span class="st">&quot;%a %e, %R %p&quot;</span>) <span class="co"># =&gt; &quot;Mon, 7 14:35 PM&quot;</span></span></code></pre></div>
 <p>You should <strong>not</strong> try to memorize what these patterns mean. Tools like <a href="http://www.strftime.net" target="_blank">strftime.net</a> and <a href="https://www.foragoodstrftime.com/" target="_blank">For a Good Strftime</a> exist to help compose the formatting string argument.</p>
 </div>
 </div>
