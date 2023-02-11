@@ -303,30 +303,6 @@ p "FaMiLy".swapcase # => "fAmIlY
    Return to the GitPod `String` project and work through `case.rb`
 </div>
 
-#### reverse {-}
-
-The reverse method returns a new `String` with the characters from the `String` in reverse order.
-
-```ruby
-p "I can speak in backwords words".reverse
-```
-
-<div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
-</div>
-
-#### length {-}
-
-The length method  returns the number of characters (as an `Integer`) that a `String` has.
-
-```ruby
-p "Supercalifragilisticexpialidocious".length
-```
-
-<div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
-</div>
-
 #### chomp {-}
 
 The `chomp` method is mostly used to remove the `"\n"` (newline) character from the end of a string, if it is present:
