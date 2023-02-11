@@ -27,7 +27,7 @@ Try the following and see what you get:
 12 / 5.0
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/Float-math){target="_blank"}
 </div>
@@ -43,7 +43,7 @@ One other thing to keep in mind: you can use `**` in conjunction with fractions 
 8 ** (1/3.0) # => 2.0
 ```
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod `Float` project for this chapter and start with the exercise `find_hypotenuse.rb`:
 
@@ -68,12 +68,12 @@ pi = 3.1415926535897932384626433832795028841976939937510
 p pi.round(3)
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/round){target="_blank"}
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Return to the GitPod `Float` project and work through `round.rb`
 </div>
@@ -86,7 +86,7 @@ The `rand` method that we met earlier can also be called with no arguments, in w
 p rand
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/float-rand){target="_blank"}
 </div>

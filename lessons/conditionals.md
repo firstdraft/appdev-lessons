@@ -14,7 +14,7 @@ if lucky_number.odd?
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-conditional){target="_blank"}
 </div>
@@ -77,7 +77,7 @@ else
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/multibranch-if){target="_blank"}
 </div>
@@ -110,7 +110,7 @@ else
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){target="_blank"}
 </div>
@@ -188,14 +188,14 @@ if 3.odd? && 4.even?
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/and-and-or){target="_blank"}
 </div>
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod `if` statements project for this chapter and start with the exercise `rps.rb`:
 
@@ -204,7 +204,7 @@ Basically, `&&` is stricter than `||`; both comparisons have to be true in order
   For a GitPod refresher, [see here](#start-gitpod-project).
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Also, work through `palindrome.rb`
 </div>

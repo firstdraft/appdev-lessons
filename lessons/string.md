@@ -22,7 +22,7 @@ This will, however, just give us back an empty string `""`.
 
 #### Make the invisible visible in GitPod {-}
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
    Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there. The steps are:
 
@@ -126,7 +126,7 @@ my_string.concat(33)
 p my_string # => "Hello, world!"
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
 </div>
 
@@ -136,7 +136,7 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
 In our [previous steps][Make the invisible visible in GitPod], we opened a GitPod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on GitPod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button when you see it.
 
-<div class="proj">
+<div class="proj" markdown="1">
 
    **Note: these steps go for opening any GitPod project, just change the project and file names.**
 
@@ -218,13 +218,13 @@ b = "World"
 p a + b # => "HelloWorld"        # You can add strings together
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
 </div>
 
 
-<div class="proj">
+<div class="proj" markdown="1">
 
    Return to the GitPod `String` project and work through `addition.rb`
 </div>
@@ -245,7 +245,7 @@ This sort of makes sense, if you think about multiplication as being repeated ad
 p "Hello" * 3
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){target="_blank"}
 </div>
 
@@ -263,7 +263,7 @@ But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hell
 
 Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line][The bottom line] is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
 
-<div class="proj">
+<div class="proj" markdown="1">
    Return to the GitPod `String` project and work through `multiplication.rb`
 </div>
 
@@ -275,7 +275,7 @@ The upcase method returns a copy of the `String` with all lowercase letters repl
 p "hello".upcase
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
 </div>
 
@@ -287,7 +287,7 @@ The downcase method returns a copy of the `String` with all uppercase letters re
 p "I'M NOT YELLING AT YOU".downcase
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
 </div>
 
@@ -299,7 +299,7 @@ The swapcase method returns a copy of the `String` with all uppercase letters re
 p "FaMiLy".swapcase # => "fAmIlY
 ```
 
-<div class="proj">
+<div class="proj" markdown="1">
    Return to the GitPod `String` project and work through `case.rb`
 </div>
 
@@ -311,7 +311,7 @@ The reverse method returns a new `String` with the characters from the `String` 
 p "I can speak in backwords words".reverse
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
 </div>
 
@@ -323,7 +323,7 @@ The length method  returns the number of characters (as an `Integer`) that a `St
 p "Supercalifragilisticexpialidocious".length
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
 </div>
 
@@ -345,11 +345,11 @@ This seemingly strange task is very common due to the way that getting user inpu
 "1 apple".chomp("s") # => "1 apple"
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
    Return to the GitPod `String` project and work through `chomp.rb`
 </div>
 
@@ -362,7 +362,7 @@ a = "Hello"
 p a.gsub("ll", "ww")  # => "Hewwo"
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
 </div>
 
@@ -397,11 +397,11 @@ For now, we're just going to copy-paste a few simple regexes[^regexone] that com
     "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
     ```
 
-<div class="proj">
+<div class="proj" markdown="1">
    Return to the GitPod `String` project and work through `gsub.rb`
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
    Return to the GitPod `String` project and work through `regex.rb`
 </div>
 
@@ -413,7 +413,7 @@ Sometimes you have a string that contains a number, usually input from a user, a
 p "8".to_i
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
 </div>
 
@@ -425,7 +425,7 @@ p "8".to_i
 p "   This has a lot of space on the outside     ".strip
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
 </div>
 
@@ -437,11 +437,11 @@ capitalize returns a `String` with the first character converted to uppercase an
 p "beginning".capitalize
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
    Return to the GitPod `String` project and work through `strip.rb`
 </div>
 
@@ -455,7 +455,7 @@ p "Happy Days".include?("H")
 p "Happy Days".include?("Z")
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
 </div>
 
@@ -468,7 +468,7 @@ number = 6 * 7
 message = "Your lucky number for today is " + number + "."
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){target="_blank"}
 </div>
 
@@ -508,7 +508,7 @@ their_name = gets
 p "Hello, " + their_name + "!"
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){target="_blank"}
 </div>
 
@@ -544,7 +544,7 @@ their_name = gets.chomp
 
 and see how it's different.
 
-<div class="proj">
+<div class="proj" markdown="1">
    Return to the GitPod `String` project and work through `gets.rb`
 </div>
 

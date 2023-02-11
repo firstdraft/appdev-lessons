@@ -78,7 +78,7 @@ Here's a real example:
 "Hello, world!".upcase
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
 
   ![](assets/nouns-verbs-and-grammar/replit-fork-hd.png)
@@ -124,7 +124,7 @@ Different **classes**[^everything_is_object] (string being one) can perform diff
 "Your Name".swapcase
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){target="_blank"}
 </div>
 
@@ -180,7 +180,7 @@ Alright, so the **primary syntax** in Ruby is straightforward — `object.method
 "Java is a joy".gsub("Java", "Ruby")
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/arguments-are-inputs){target="_blank"}
 </div>
 
@@ -188,7 +188,7 @@ Alright, so the **primary syntax** in Ruby is straightforward — `object.method
 
 In order to do its job, the `gsub` method needs to know what substring to get rid of and what to replace it with. So we give it inputs, or **arguments**, which must come in parentheses _immediately_ following the method. If the method takes multiple arguments, as `gsub` does, then they are separated by commas.
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   Try replacing `"Java is a joy"` with any string you like, and experiment with different arguments instead of `"Java"` and `"Ruby"`. For example, use `gsub` to change `"Hello, world!"` to say `"Hello, you there!"`. Then, start with `"resume"` and try to transform it into `"résumé"`. What is the purpose of `gsub`'s first argument, and what is the purpose of the second argument?
 </div>
 
@@ -224,7 +224,7 @@ Can you spot the difference? **Don't put a space between the method and the open
 
 It's a very easy mistake to make, so I just wanted to warn you early on so that you can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   [Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){target="_blank"}
 </div>
 
@@ -280,7 +280,7 @@ However, so far we haven't been doing much with the **return value** of each exp
 # "hello world".reverse
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-drop-on-the-ground){target="_blank"} Did it work? Did you copy-paste and forget to remove the leading `#` symbol..?
 </div>
 
@@ -295,7 +295,7 @@ s = "hello world!".upcase
 s
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){target="_blank"} (Keep this REPL open when you are done, we'll use it in the next few steps.)
 </div>
 
@@ -313,7 +313,7 @@ s = "hello world!".upcase
 
 out loud, I say "the string hello world dot upcase _is assigned_ to the variable s". I read the right side first, because that's how Ruby reads it too; it first evaluates the expression on the right side of the `=`, and then it stores the resulting value in the variable on the left.
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   Now add another line to the previous REPL,
 
   ```ruby
@@ -337,7 +337,7 @@ s.reverse
 s.gsub("L", "Z")
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   Do it! Type the above code into your current REPL.
 </div>
 
@@ -358,7 +358,7 @@ u = t.gsub("L", "Z")
 u
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   Do it! Type the above code into your current REPL.
 </div>
 
@@ -374,7 +374,7 @@ s = 2.odd?
 s
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   Do it! Type the above code into your current REPL.
 </div>
 
@@ -387,7 +387,7 @@ s = s.reverse
 s
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   Do it! Type the above code into your current REPL.
 </div>
 

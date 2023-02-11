@@ -20,7 +20,7 @@ p len
 
 What do you expect the output of this program to be? Try to interpret the program yourself before you ask Ruby to.
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){target="_blank"}
 </div>
@@ -51,7 +51,7 @@ p numbers
 p len
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){target="_blank"}
 </div>
@@ -101,7 +101,7 @@ while mississipis <= 10
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){target="_blank"}
 </div>
@@ -122,7 +122,7 @@ mississipis = 1
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){target="_blank"}
 </div>
@@ -143,7 +143,7 @@ But the `.times` method will save us even more trouble than that; we can stop wo
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){target="_blank"}
 </div>
@@ -171,7 +171,7 @@ In the REPL above, replace `10.times` with each of the following and play around
 10.step(1, -4)
 ```
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod loops project for this chapter and start with the exercise `letter_count.rb`:
 
@@ -180,12 +180,12 @@ In the REPL above, replace `10.times` with each of the following and play around
   For a GitPod refresher, [see here](#start-gitpod-project).
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   When you're done with the first one, work through `multiples.rb`
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   And finally, work through `fizzbuzz.rb`
 </div>

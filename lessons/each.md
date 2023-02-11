@@ -34,7 +34,7 @@ Your program should output the following:
 "ORANGE"
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){target="_blank"}
 </div>
@@ -68,7 +68,7 @@ user_words.each do |the_word|
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-iterating-with-each){target="_blank"}
 </div>
@@ -93,7 +93,7 @@ The hardest part, I think, is getting your head around the block variable; in th
 
 Try to remember that it's just a name that _we make up_, and `.each` takes care of putting each element in that variable for us behind the scenes. I could have called it `zebra` if I wanted to; there's nothing special about the name — in particular, it doesn't have to match the name of the variable containing the array. Just try to pick something descriptive of an individual element in the list.
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod `.each` project for this chapter and start with the exercise `spell_word.rb`:
 
@@ -102,12 +102,12 @@ Try to remember that it's just a name that _we make up_, and `.each` takes care 
   For a GitPod refresher, [see here](#start-gitpod-project).
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   When you're done with the first one, work through `even_word.rb`
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   And finally, work through `letter_count.rb`
 </div>
@@ -155,7 +155,7 @@ user_words.each_with_index do |the_word, the_index|
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-each-with-index){target="_blank"}
 </div>

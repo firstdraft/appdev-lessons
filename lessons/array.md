@@ -14,7 +14,7 @@ cities = Array.new
 
 Try it out and see what you get if you `p cities`:
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/Arraynew){target="_blank"}
 </div>
@@ -82,7 +82,7 @@ p cities
 p cities.at(2)
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-at){target="_blank"}
 </div>
@@ -124,7 +124,7 @@ array = [8, 3, 1, 19, 23, 3]
 p array[2]
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-square-bracket){target="_blank"}
 </div>
@@ -143,7 +143,7 @@ cities = ["Chicago", "NYC", "LA", "SF", "NOLA"]
 p cities.index("SF")
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-index){target="_blank"}
 </div>
@@ -191,14 +191,14 @@ p user_numbers
 p "You entered " + length.to_s + " numbers."
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/gets-with-split){target="_blank"}
 </div>
 
 We'll be using this technique frequently to make things more interesting.
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod `Array` project for this chapter and start with the exercise `element_square.rb`:
 
@@ -221,12 +221,12 @@ p a.count(3)
 
 **BENP: add project with count() with an argument, becomes important again in .each**
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/count){target="_blank"}
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
   
   Return to the GitPod `Array` project and work through `count.rb`
 </div>
@@ -259,12 +259,12 @@ array = [8, 3, 1, 19, 23, 3]
 p array.reverse # => [3, 23, 19, 1, 3, 8]
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-reverse){target="_blank"}
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
   
   Return to the GitPod `Array` project and work through `reverse.rb`
 </div>
@@ -277,7 +277,7 @@ array = [12, 4, 5, 13, 56, 32]
 p array.sort # => [4, 5, 12, 13, 32, 56]
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/sort){target="_blank"}
 </div>
@@ -290,7 +290,7 @@ array = [1, 2, 3, 4, 5]
 p array.shuffle # Returns a copy of array in random order
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/shuffle){target="_blank"}
 </div>
@@ -303,7 +303,7 @@ array = [8, 3, 1, 19, 23, 3]
 p array.sample # => Returns a single random element from the array
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/sample){target="_blank"}
 </div>
@@ -316,7 +316,7 @@ a = [8, 3, 1, 19, 23, 3]
 p a.min # => 1
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/min){target="_blank"}
 </div>
@@ -329,12 +329,12 @@ a = [8, 3, 1, 19, 23, 3]
 p a.max # => 23
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/max){target="_blank"}
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
   
   Return to the GitPod `Array` project and work through `min_max_difference.rb`
 </div>
@@ -347,12 +347,12 @@ a = [8, 3, 1, 19, 23, 3]
 p a.sum # => 57
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/sum){target="_blank"}
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
   
   Return to the GitPod `Array` project and work through `sum_elements.rb`
 </div>

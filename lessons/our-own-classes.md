@@ -69,7 +69,7 @@ p c.role
 p c.class # => Person
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){target="_blank"}
 </div>
@@ -259,12 +259,12 @@ class Student
 end
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){target="_blank"}
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod "our own classes" project for this chapter and start with the exercise `person.rb`:
 

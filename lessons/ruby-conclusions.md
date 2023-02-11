@@ -37,7 +37,7 @@ There are likely a few ways to solve an exercise. Just get the code to pass all 
 
 Please follow the instructions below to enter the Ruby Gym for some weight training 🏋️!
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod Ruby Gym project and complete the exercises:
 
@@ -61,7 +61,7 @@ Please follow the instructions below to enter the Ruby Gym for some weight train
   1. `black_jack.rb`
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   **Optional stretch goal**
 

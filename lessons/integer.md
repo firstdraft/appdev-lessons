@@ -37,7 +37,7 @@ Try each of the following:
 12 / 5
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/add-subtract-multiply-divide-exponent){target="_blank"}
 </div>
 
@@ -57,7 +57,7 @@ Another maybe unexpected thing: raising a number to a power, e.g. 3<sup>2</sup>,
 
 Once you've played with the REPL, it's time to move into the graded project environment.
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod `Integer` project for this chapter and start with the exercise `math.rb`:
 
@@ -74,11 +74,11 @@ The `.odd?` and `.even?` methods return `true` or `false` based on whether the n
 p 7.odd?
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/odd){target="_blank"}
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
   Return to the GitPod `Integer` project and work through `odd.rb`
 </div>
 
@@ -101,7 +101,7 @@ Give it a try:
 p rand(9)
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/rand){target="_blank"}
 </div>
@@ -123,7 +123,7 @@ It turns out that `String`'s `+` method can only add two strings together, not a
 p 98.to_s
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){target="_blank"}
 </div>
@@ -134,7 +134,7 @@ Similarly, there's a `to_f` (or "to float") method to convert an `Integer` to a 
 
 **BENP: maybe combine to_i, to_f and to_s here in a gitpod exercise / modify integer_birth_year. integer_birth_year could move to dates chapter**
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Return to the GitPod `Integer` project and work through `birth_year.rb`
 </div>

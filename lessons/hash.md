@@ -68,7 +68,7 @@ p person1
 p person1.fetch(:role)
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){target="_blank"}
 </div>
@@ -97,7 +97,7 @@ person1.store(:role, "Instructor")
 p person1.fetch(:last_name)
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){target="_blank"}
 </div>
@@ -121,7 +121,7 @@ p person1.fetch(:first_name) + " is a " + person1.fetch(:role)
 p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){target="_blank"}
 </div>
@@ -147,7 +147,7 @@ p person1.fetch(:first_name, "None provided")
 p person1.fetch(:middle_name, "None provided")
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){target="_blank"}
 </div>
@@ -169,7 +169,7 @@ In particular, `Hash`es are very often used as the arguments to methods, because
 Movie.where({ :title => "The Shawshank Redemption" })
 ```
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod `Hash` project for this chapter and start with the exercise `person.rb`:
 
@@ -197,7 +197,7 @@ p person1.fetch(:last_name)
 p person1[:last_name]
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){target="_blank"}
 </div>
@@ -288,7 +288,7 @@ person_hash.fetch(:age)
 # => 32
 ```
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Return to the GitPod `Hash` project and work through `dig.rb`
 </div>
@@ -306,12 +306,12 @@ h.key(400)   #=> "d"
 h.key(500)   #=> nil
 ```
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Return to the GitPod `Hash` project and work through `find_value.rb`
 </div>
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Finally, in the GitPod `Hash` project complete `list.rb`
 </div>

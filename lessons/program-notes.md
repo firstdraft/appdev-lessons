@@ -95,7 +95,7 @@ Kernel.p(t)
 Kernel.p(u)
 ```
 
-<div class="experiment">
+<div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-real-output){target="_blank"}
 </div>

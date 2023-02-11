@@ -68,7 +68,7 @@ t = Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 t.day # => 16
 ```
 
-<div class="proj">
+<div class="proj" markdown="1">
 
   Open the GitPod `Date` project for this chapter and start with the exercise `formatted.rb`:
 
@@ -98,7 +98,7 @@ days.to_i
  => 88674
 ```
 
-<div class="proj">
+<div class="proj" markdown="1">
   
   Return to the GitPod `Date` project and work through `math.rb`
 </div>
@@ -139,7 +139,7 @@ Returns the day of week (0-6, Sunday is zero).
 Date.new(2001,2,3).wday #=> 6
 ```
 
-<div class="proj">
+<div class="proj" markdown="1">
   
   Return to the GitPod `Date` project and work through `monday.rb`
 </div>
