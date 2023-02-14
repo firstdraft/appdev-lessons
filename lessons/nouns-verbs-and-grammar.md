@@ -85,10 +85,6 @@ Here's a real example:
 
   In the black window that appears on the right side under the `>_ Console` tab, type:
 
-<aside>
-The `>_ Console` tab is a "command-line" or "terminal". You enter text commands here by typing them out *exactly*, and the computer will execute them, similar to how you click on a program with your mouse to run it. You've already seen another terminal in your GitPod workspaces for running commands like `bin/server` and `rails grade`.
-</aside>
-
   ```bash
   irb
   ```
@@ -100,9 +96,13 @@ The `>_ Console` tab is a "command-line" or "terminal". You enter text commands 
   ![](assets/nouns-verbs-and-grammar/irb-new.png)
 </div>
 
+<aside markdown="1">
+The `>_ Console` tab is a "command-line" or "terminal". You enter text commands here by typing them out *exactly*, and the computer will execute them, similar to how you click on a program with your mouse to run it. You've already seen another terminal in your GitPod workspaces for running commands like `bin/server` and `rails grade`.
+</aside>
+
 If all went well, you should have seen `=> "HELLO, WORLD!"` output by the command. Yay! What just happened?
 
-<aside>
+<aside markdown="1">
 It is [a time-honored tradition](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program){:target="_blank"} that the very first thing a programmer does in a new language is print out "Hello, World!" Congratulations — you're now one of us 🙌🏾
 </aside>
 
@@ -112,7 +112,7 @@ The computer then evaluates that expression and **returns** a new piece of data 
 
 In this case, we asked `"Hello, world!"`, which is a string (Ruby's name for a piece of text), to `upcase` itself, which it (very) happily does, and we're left with `"HELLO, WORLD!"` at the end of the day.
 
-<aside>
+<aside markdown="1">
 The name "string" is used in pretty much every programming language for the datatype that holds a piece of text, and refers to a string of _characters_; a holdover from back when we used to have to worry about conserving the computer's physical storage space and had a separate datatype for an individual character. Now we usually don't have to worry about storage space anymore, but the name "string" stuck with us.
 </aside>
 
@@ -120,7 +120,7 @@ The name "string" is used in pretty much every programming language for the data
 
 Different **classes** (string being one) can perform different **methods**. Here are a few expressions to try out. Type each one into IRB.
 
-<aside>
+<aside markdown="1">
 Almost everything in Ruby is an **object**. That's the idea behind [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming){:target="_blank"}. Text like `"Hello, world!"` is an object — specifically a **string class object**.
 </aside>
 
