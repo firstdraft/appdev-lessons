@@ -22,32 +22,41 @@ Compared to other languages, Ruby is a pleasure to write and to read. Here's Yuk
 
 Matz's focus when he designed Ruby was on "developer happiness", which was pretty bold back in 1995 when Ruby was first released. Optimizing for human readability rather than computer readability meant paying a cost in terms of performance, and computers were slow back then; but Matz didn't care.
 
-Happily, computers are very fast today[^developer_hours], and they can run Ruby just fine; so now we beginners can have the best of both worlds. Besides, once you've learned the basic concepts of programming, they're not hard to translate into the syntax of another language[^right_tool].
+Happily, computers are very fast today, and they can run Ruby just fine; so now we beginners can have the best of both worlds. Besides, once you've learned the basic concepts of programming, they're not hard to translate into the syntax of another language.
 
-[^right_tool]: 
-    If you decide to pursue software development, you'll end up learning at _least_ half-a-dozen languages. Whatever challenge is thrown your way, you'll choose the right tool for the job.
+<aside markdown="1">
+If you decide to pursue software development, you'll end up learning at _least_ half-a-dozen languages. Whatever challenge is thrown your way, you'll choose the right tool for the job.
+</aside>
 
-[^developer_hours]: From a business perspective, servers are very cheap while developers are _very_ expensive; so you should pick the language that makes developers the most productive.
+<aside markdown="1">
+From a business perspective, servers are very cheap while developers are _very_ expensive; so you should pick the language that makes developers the most productive.
+</aside>
 
 #### Ruby on Rails and other libraries 
 
 People often ask "What's the best language for task X?" Depending on the task, sometimes a language is particularly well-suited to it technically; but that is very rare. In general, any programming language can do anything that any other language can (unless maybe there is some kind of proprietary platform lock-out).
 
-However, there's another very important consideration: which language has the largest **community** of developers doing task X? More community means more shared code (known as **libraries**, or in Ruby-land, **gems**[^gems_are]), more blog posts, more answers when you Google a question, etc.
+However, there's another very important consideration: which language has the largest **community** of developers doing task X? More community means more shared code (known as **libraries**, or in Ruby-land, **gems**), more blog posts, more answers when you Google a question, etc.
 
-[^gems_are]: Gems are little collections (folders and files) that contain Ruby objects and methods written by another developer, which we can import into our code and use. Most gems are hosted [here](https://rubygems.org/){:target="_blank"}.
+<aside markdown="1">
+Gems are little collections (folders and files) that contain Ruby objects and methods written by another developer, which we can import into our code and use. Most gems are hosted [here](https://rubygems.org/){:target="_blank"}.
+</aside>
 
 For example, Python and Ruby are very similar languages in terms of their technical features and performance profile. However, by some historical accident, Python seems to have gathered more of the scientific/data analysis/machine learning community around it, so more open-source libraries in those areas have been developed and shared in Python than in Ruby; and so now Python is the go-to language for those tasks.
 
-On the other hand, for agile development of database-backed applications, Ruby has a huge and thriving community. In particular, there is an open-source library for building applications called **Ruby on Rails** ("Rails", for short) that makes small teams or even solo developers incredibly productive. The existence of Rails alone makes the Ruby language a good choice[^rails_relevant] for both startups and beginners.
+On the other hand, for agile development of database-backed applications, Ruby has a huge and thriving community. In particular, there is an open-source library for building applications called **Ruby on Rails** ("Rails", for short) that makes small teams or even solo developers incredibly productive. The existence of Rails alone makes the Ruby language a good choice for both startups and beginners.
 
-[^rails_relevant]: Here's a [longer blog post](https://devbrett.com/2019/03/why-i-believe-rails-is-still-relevant-in-2019.html){:target="_blank"} on why Ruby on Rails is still a good choice in 2019.
+<aside markdown="1">
+Here's a [longer blog post](https://devbrett.com/2019/03/why-i-believe-rails-is-still-relevant-in-2019.html){:target="_blank"} on why Ruby on Rails is still a good choice in 2019.
+</aside>
 
 The philosophy of Rails is "convention over configuration" — it makes a lot of decisions on your behalf, and if you go with the flow, then things "just work". (If you want to fiddle with settings, then of course you can, to your heart's content; but you don't _have to_ spend hours or days doing so before anything will even show up, like you do in most other frameworks.) You can focus on building the unique features of _your_ application, not on plumbing that's common to all applications.
 
-There are a lot of other powerful, easy-to-use Ruby libraries that have philosophies similar to Rails. Ruby seems to have gathered a community of developers around it who are more about creating value for our users, and less about [bike shedding](https://en.wiktionary.org/wiki/bikeshedding){:target="_blank"} over technical details[^choose_boring].
+There are a lot of other powerful, easy-to-use Ruby libraries that have philosophies similar to Rails. Ruby seems to have gathered a community of developers around it who are more about creating value for our users, and less about [bike shedding](https://en.wiktionary.org/wiki/bikeshedding){:target="_blank"} over technical details.
 
-[^choose_boring]: I, personally, agree with [this author](https://mcfunley.com/choose-boring-technology){:target="_blank"} who prefers boring technologies over cutting-edge ones.
+<aside markdown="1">
+I, personally, agree with [this author](https://mcfunley.com/choose-boring-technology){:target="_blank"} who prefers boring technologies over cutting-edge ones.
+</aside>
 
 #### MINASWAN 
 
