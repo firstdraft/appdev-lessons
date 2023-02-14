@@ -46,16 +46,16 @@ This will, however, just give us back an empty string `""`.
 
    To get more comfortable with these steps, create another file called `invisible_to_visible.rb`, and fill it with this code:
 
-   ```ruby
-   # One-by-one, uncomment the p statements 
-   # below and rerun the code
-   s = String.new
-   # p s 
-   s = "Hello, world!"
-   # p s
-   s = s.upcase
-   # p s
-   ```
+```ruby
+# One-by-one, uncomment the p statements 
+# below and rerun the code
+s = String.new
+# p s 
+s = "Hello, world!"
+# p s
+s = s.upcase
+# p s
+```
 
    Once the file is saved, remove the leading `#` from the `p`rint statements one by one, and run the code each time with `ruby invisible_to_visible.rb` at the terminal prompt. You don't need to type it out every time, you can just press the <kbd>Up ↑</kbd> arrow key when your cursor is at the terminal `$`-sign prompt to cycle to the previous entry.
 
@@ -67,30 +67,32 @@ When you are done experimenting, feel free to close the GitPod project window. W
 
 With the `String.new` approach, we would have to add each character to our variable `s` one by one. One way to do so is by using the `.concat` method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.
 
-What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1`s); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){:target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
+What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1`s); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){:target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers. The codes are as follows:
 
-[^unicode]: Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){:target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
+<aside markdown="1">
+Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){:target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
+</aside>
 
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; ">
-   **ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**
-   :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
-   32|(space)|48|`0`|64|`@`|80|`P`|96|<code>\`</code>|112|`p`
-   33|`!`|49|`1`|65|`A`|81|`Q`|97|`a`|113|`q`
-   34|`"`|50|`2`|66|`B`|82|`R`|98|`b`|114|`r`
-   35|`#`|51|`3`|67|`C`|83|`S`|99|`c`|115|`s`
-   36|`$`|52|`4`|68|`D`|84|`T`|100|`d`|116|`t`
-   37|`%`|53|`5`|69|`E`|85|`U`|101|`e`|117|`u`
-   38|`&`|54|`6`|70|`F`|86|`V`|102|`f`|118|`v`
-   39|`'`|55|`7`|71|`G`|87|`W`|103|`g`|119|`w`
-   40|`(`|56|`8`|72|`H`|88|`X`|104|`h`|120|`x`
-   41|`)`|57|`9`|73|`I`|89|`Y`|105|`i`|121|`y`
-   42|`*`|58|`:`|74|`J`|90|`Z`|106|`j`|122|`z`
-   43|`+`|59|`;`|75|`K`|91|`[`|107|`k`|123|`{`
-   44|`,`|60|`<`|76|`L`|92|`\`|108|`l`|124|`|`
-   45|`-`|61|`=`|77|`M`|93|`]`|109|`m`|125|`}`
-   46|`.`|62|`>`|78|`N`|94|`^`|110|`n`|126|`~`
-   47|`/`|63|`?`|79|`O`|95|`_`|111|`o`|
-</div>
+
+**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**
+:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
+32|(space)|48|`0`|64|`@`|80|`P`|96|<code>`</code>|112|`p`
+33|`!`|49|`1`|65|`A`|81|`Q`|97|`a`|113|`q`
+34|`"`|50|`2`|66|`B`|82|`R`|98|`b`|114|`r`
+35|`#`|51|`3`|67|`C`|83|`S`|99|`c`|115|`s`
+36|`$`|52|`4`|68|`D`|84|`T`|100|`d`|116|`t`
+37|`%`|53|`5`|69|`E`|85|`U`|101|`e`|117|`u`
+38|`&`|54|`6`|70|`F`|86|`V`|102|`f`|118|`v`
+39|`'`|55|`7`|71|`G`|87|`W`|103|`g`|119|`w`
+40|`(`|56|`8`|72|`H`|88|`X`|104|`h`|120|`x`
+41|`)`|57|`9`|73|`I`|89|`Y`|105|`i`|121|`y`
+42|`*`|58|`:`|74|`J`|90|`Z`|106|`j`|122|`z`
+43|`+`|59|`;`|75|`K`|91|`[`|107|`k`|123|`{`
+44|`,`|60|`<`|76|`L`|92|`\`|108|`l`|124|`|`
+45|`-`|61|`=`|77|`M`|93|`]`|109|`m`|125|`}`
+46|`.`|62|`>`|78|`N`|94|`^`|110|`n`|126|`~`
+47|`/`|63|`?`|79|`O`|95|`_`|111|`o`|
+{: .bleed-full }
 
 Given those ASCII codes, we can now build up a new string from scratch like so:
 
@@ -134,7 +136,7 @@ p my_string # => "Hello, world!"
 
 Once you've played with the REPL, it's time to move into the graded project environment.
 
-In our previous steps, we opened a GitPod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on GitPod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button when you see it.
+In our previous steps, we opened a GitPod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on GitPod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button on Canvas, as described below.
 
 <div class="proj" markdown="1">
 
@@ -142,7 +144,11 @@ In our previous steps, we opened a GitPod workspace via **https\://gitpod.io/#[S
 
    Open the GitPod `String` project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
 
-   1. LTI{Load assignment}(https://github.com/appdev-projects/string-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_project]
+   <!-- 1. LTI{Load assignment}(https://github.com/appdev-projects/ruby-project-string-1)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(100)[string_project] -->
+
+   1. On Canvas, open the project assignment that follows this reading. Click on the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will open a new project for you to work on! **Keep this Gitpod tab open, there may be more than one exercise per chapter**. If you close the Gitpod window, you can always click the Canvas link again, but this time click "Find existing workspace in Gitpod Dashboard".
+
+   <!-- ![](assets/string/canvas-gitpod-start-project.png) -->
 
    1. Open the `concat.rb` file in the editor window.
 
@@ -190,9 +196,11 @@ We've already met the `.concat` method. `.concat` can accept an integer as an ar
 "hi".concat(" there") # => "hi there"
 ```
 
-There's also a shorthand for `.concat`: `.+`.[^concat_lie] That may look a little funny, but it's nothing special, really; it's just a method with a very short (one letter long) name:
+There's also a shorthand for `.concat`: `.+`. That may look a little funny, but it's nothing special, really; it's just a method with a very short (one letter long) name:
 
-[^concat_lie]: This is not _quite_ true. The `+` method is not just an alias for `concat` — they do slightly different things. But they're close enough, for our purposes.
+<aside markdown="1">
+`.concat` as a shorthand for `.+` is not _quite_ true. The `+` method is not just an alias for `concat` — they do slightly different things. But they're close enough, for our purposes.
+</aside>
 
 ```ruby
 "hi".+(" there") # => "hi there"
@@ -231,7 +239,7 @@ p a + b # => "HelloWorld"        # You can add strings together
 
 #### String multiplication, a.k.a * 
 
-`String`s can be multiplied by numbers using the `*` method[^more_sugar]:
+`String`s can be multiplied by numbers using the `*` method:
 
 ```ruby
 "Ya" * 5 # => "YaYaYaYaYa"
@@ -239,7 +247,9 @@ p a + b # => "HelloWorld"        # You can add strings together
 
 This sort of makes sense, if you think about multiplication as being repeated addition.
 
-[^more_sugar]: More syntactic sugar here, like with the `+` method above; you can say `"Ya" * 5` rather than `"Ya".*(5)`.
+<aside markdown="1">
+More syntactic sugar here, like with the `+` method above; you can say `"Ya" * 5` rather than `"Ya".*(5)`.
+</aside>
 
 ```ruby
 p "Hello" * 3
