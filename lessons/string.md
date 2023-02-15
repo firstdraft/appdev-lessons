@@ -142,7 +142,7 @@ In our previous steps, we opened a GitPod workspace via **https\://gitpod.io/#[S
 
    **Note: these steps go for opening any GitPod project, just change the project and file names.**
 
-   Open the GitPod `String` project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
+   Open the GitPod `String` project on Canvas that follows this reading and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
 
    <!-- 1. LTI{Load assignment}(https://github.com/appdev-projects/ruby-project-string-1)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(100)[string_project] -->
 

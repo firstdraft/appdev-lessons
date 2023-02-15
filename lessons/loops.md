@@ -173,11 +173,9 @@ In the REPL above, replace `10.times` with each of the following and play around
 
 <div class="proj" markdown="1">
 
-  Open the GitPod loops project for this chapter and start with the exercise `letter_count.rb`:
+  Open the GitPod loops project on Canvas that follows this reading and start with the exercise `letter_count.rb`.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/loops-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[loops_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 </div>
 
 <div class="proj" markdown="1">

@@ -59,11 +59,9 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Integer` project for this chapter and start with the exercise `math.rb`:
+  Open the GitPod `Integer` project on Canvas that follows this reading and start with the exercise `math.rb`.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/integer-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[integer_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 </div>
 
 #### odd? and even? 
@@ -84,9 +82,11 @@ p 7.odd?
 
 #### rand 
 
-There's another special method like `p` that we are allowed to call "in space", i.e. not on the right side of a dot[^rand_implicit_receiver], called `rand`. It returns a random number, and is very useful for all kinds of stuff, everything from games to statistical analysis:
+There's another special method like `p` that we are allowed to call "in space", i.e. not on the right side of a dot, called `rand`. It returns a random number, and is very useful for all kinds of stuff, everything from games to statistical analysis:
 
-[^rand_implicit_receiver]: This is another method defined on `Kernel`, so the longhand would be `Kernel.rand(6)`.
+<aside markdown="1">
+`rand` is another method defined on `Kernel`, so the longhand would be `Kernel.rand(6)`.
+</aside>
 
 ```ruby
 rand(6) # => returns a random integer between 0 and 5

@@ -197,11 +197,9 @@ Basically, `&&` is stricter than `||`; both comparisons have to be true in order
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `if` statements project for this chapter and start with the exercise `rps.rb`:
+  Open the GitPod `if` statements project on Canvas that follows this reading and start with the exercise `rps.rb`.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/if-statements-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[conditionals_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 </div>
 
 <div class="proj" markdown="1">

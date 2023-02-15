@@ -171,11 +171,9 @@ Movie.where({ :title => "The Shawshank Redemption" })
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Hash` project for this chapter and start with the exercise `person.rb`:
+  Open the GitPod `Hash` project on Canvas that follows this reading and start with the exercise `person.rb`.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/hash-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[hash_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 </div>
 
 ### fetch shorthand, []

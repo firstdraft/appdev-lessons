@@ -41,11 +41,9 @@ Please follow the instructions below to enter the Ruby Gym for some weight train
 
 <div class="proj" markdown="1">
 
-  Open the GitPod Ruby Gym project and complete the exercises:
+  Open the GitPod Ruby Gym project that follows this reading and complete the exercises.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/ruby-gym/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[ruby_gym_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 
   The suggested order (feel free to go in whatever order you'd like) is:
 

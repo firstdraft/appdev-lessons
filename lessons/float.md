@@ -45,11 +45,9 @@ One other thing to keep in mind: you can use `**` in conjunction with fractions 
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Float` project for this chapter and start with the exercise `find_hypotenuse.rb`:
+  Open the GitPod `Float` project on Canvas that follows this reading and start with the exercise `find_hypotenuse.rb`.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/float-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[float_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
   
   _Remember_: the Pythagorean Theorem says that
 

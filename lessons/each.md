@@ -95,11 +95,9 @@ Try to remember that it's just a name that _we make up_, and `.each` takes care 
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `.each` project for this chapter and start with the exercise `spell_word.rb`:
+  Open the GitPod `.each` project on Canvas that follows this reading and start with the exercise `spell_word.rb`.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/each-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[each_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 </div>
 
 <div class="proj" markdown="1">
