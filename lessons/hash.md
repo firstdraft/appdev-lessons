@@ -78,11 +78,9 @@ Click "Run" and see what it looks like to build up a `Hash`. A few things to not
  - Ruby represents a `Hash` with curly brackets, `{}`, as opposed to the square brackets (`[]`) of an `Array`.
  - We use the `.store` method to add elements to a `Hash`, as opposed to the `.push` method of `Array`.
  - The `.store` method takes _two_ arguments, not one: the first argument is the label, or **key** to store the element under; and the second argument is the piece of data itself, or the **value**.
- - Ruby represents each key/value pair by separating them with a `=>`, known as a "hash rocket"[^rubyists_are_weird].
+ - Ruby represents each key/value pair by separating them with a `=>`, known as a "hash rocket" (Rubyists are weird).
  - As in `Array`s, elements in the list (each element is one key/value _pair_) are separated by commas.
  - If the key already exists when you try to `.store` something under it, its value will be replaced.
-
-[^rubyists_are_weird]: Rubyists are weird.
 
 ### fetch
 
@@ -178,7 +176,7 @@ Movie.where({ :title => "The Shawshank Redemption" })
 
 ### fetch shorthand, []
 
-Much like [`Array`'s shorthand for `.at`][at shorthand, []], `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
+Much like `Array`'s shorthand for `.at`, `[]`, `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
 
 ```ruby
 person1 = { :first_name => "Raghu", :last_name => "Betina", :role => "Instructor" }
