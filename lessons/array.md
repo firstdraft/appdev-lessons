@@ -172,7 +172,7 @@ a.at(0) # => "H"
 a.at(-1) # => "!"
 ```
 
-**BENP: need an exercise here, split("") is important in .each project. Also, first time with negative indexing? Maybe insert something about this earlier in section (with exercise)**
+<!-- **BENP: need an exercise here, split("") is important in .each project. Also, first time with negative indexing? Maybe insert something about this earlier in section (with exercise)** -->
 
 This is particularly handy for us because it allows us to get a `String` of input from users with `gets` and then transform it into an `Array` for processing:
 
@@ -216,7 +216,7 @@ p a.count
 p a.count(3)
 ```
 
-**BENP: add project with count() with an argument, becomes important again in .each**
+<!-- **BENP: add project with count() with an argument, becomes important again in .each** -->
 
 <div class="experiment" markdown="1">
   

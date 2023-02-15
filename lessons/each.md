@@ -47,7 +47,7 @@ After you've got it working, examine [the model solution here](https://repl.it/@
  - On Line 8, we use that length with the `.times` method to kick off a loop with the correct number of iterations.
  - Within the block, we use the block variable (which we named `the_index`) to access the correct element within the array.
 
-**BENP: need an exercise using indexing in a loop here, this method is important in Ruby Gym**
+<!-- **BENP: need an exercise using indexing in a loop here, this method is important in Ruby Gym** -->
 
 Using `.times` to iterate over an `Array` is not bad at all, especially because `.times`'s block variable starts at `0`, just like array indexing does. Using `.times` is certainly cleaner than using `while`, where we would have to create and increment a counter variable ourselves, and then write a condition to make sure that the loop stops after the correct number of iterations (the length of the array).
 
