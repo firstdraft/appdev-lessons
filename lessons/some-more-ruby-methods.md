@@ -48,9 +48,11 @@ p "Happy Days".include?("Z")
 
 In Ruby, we work with regular expressions the way we work with everything else — via a class, `Regexp`. We create `Regexp` _literals_ with forward slashes (like we use quotes to create `String` literals), and then put the pattern that we're trying to match between the slashes.
 
-For now, we're just going to copy-paste a few simple regexes[^regexone] that come in handy with `gsub`, in particular:
+For now, we're just going to copy-paste a few simple regexes that come in handy with `gsub`, in particular:
 
-[^regexone]: If your project requires scanning text for patterns, then [RegexOne](https://regexone.com/){:target="_blank"} is a good resource for learning more. [Rubular](https://rubular.com/){:target="_blank"} is handy for quickly testing your regular expressions against some example strings.
+<aside markdown="1">
+If your project requires scanning text for patterns, then [RegexOne](https://regexone.com/){:target="_blank"} is a good resource for learning more. [Rubular](https://rubular.com/){:target="_blank"} is handy for quickly testing your regular expressions against some example strings.
+</aside>
 
  - `/\s+/` matches all whitespace, so we can use it with `gsub` to _remove_ all whitespace:
 
@@ -94,11 +96,11 @@ As we know, you can call the `.to_s` method on a Float to convert the number int
 10.25.to_s # => "10.25"
 ```
 
-Within a Rails application[^Rails], you can provide a `Symbol`[^Symbol] as an argument to `Float`'s `to_s` method. This allows you to convert the `Float` to a `String` _and_ add additional formatting at the same time.
+Within a Rails application (or anywhere using `activesupport`), you can provide a `Symbol` as an argument to `Float`'s `to_s` method. This allows you to convert the `Float` to a `String` _and_ add additional formatting at the same time.
 
-[^Rails]:  Or anywhere using `activesupport`.
-
-[^Symbol]: A `Symbol` is a Ruby Class that is similar to a `String`. Symbols start with a colon (`:`) at the beginning. See the chapter section. 
+<aside markdown="1">
+Recall, a `Symbol` is a Ruby Class that is similar to a `String`. Symbols start with a colon (`:`) at the beginning. See the Hash chapter for details. 
+</aside>
 
 ##### Phone 
 
@@ -106,15 +108,13 @@ Within a Rails application[^Rails], you can provide a `Symbol`[^Symbol] as an ar
 5551234.to_s(:phone) # => "555-1234"
 ```
 
-In addition to providing a `Symbol` to the `to_s` method, you can provide an _additional_ `Hash`[^Hash] argument to tweak the some finer details about how we want to format the Float.
+In addition to providing a `Symbol` to the `to_s` method, you can provide an _additional_ `Hash` argument to tweak the some finer details about how we want to format the Float.
 
 ```ruby
 1235551234.to_s(:phone, { :area_code => true }                     # => "(123) 555-1234"
 1235551234.to_s(:phone, { :country_code => 1 } )                   # => "+1-123-555-1234"
 1235551234.to_s(:phone, { :area_code => true, :extension => 555 }) # => (123) 555-1234 x 555
 ```
-
-[^Hash]: A `Hash` is another Class is Ruby that. See the Hash chapter. Until you read that chapter, just be aware that this kind of formatting is possible and easy to do in a Rails application.
 
 ##### Currency 
 
