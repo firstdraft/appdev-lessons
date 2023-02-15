@@ -134,9 +134,11 @@ hs.birthdate = "April 19, 1987"
 hs.age # => 32, as of this writing
 ```
 
-Note that we had to `require("date")`[^require] in order to load the `Date` class into the program; Ruby doesn't load this class into every program by default, like it does with the core classes (`String`, `Integer`, etc).
+Note that we had to `require("date")` in order to load the `Date` class into the program; Ruby doesn't load this class into every program by default, like it does with the core classes (`String`, `Integer`, etc).
 
-[^require]: The parentheses are almost always dropped after `require`.
+<aside markdown="1">
+The parentheses are almost always dropped after `require`, so it would be `require "date"`.
+</aside>
 
 So, rather than using a `Hash` to model real world things, it's a good idea to create classes, and then empower them with *behavior* (methods) in addition to information.
 
