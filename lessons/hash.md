@@ -1,4 +1,4 @@
-## Hash {#hash-chapter}
+## Hash
 
 `Array` is a very good structure for containing multiple objects, but it's not the only one. In some situations, another structure is a better tool for the job: `Hash`.
 
