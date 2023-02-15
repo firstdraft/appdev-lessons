@@ -114,7 +114,7 @@ In addition to providing a `Symbol` to the `to_s` method, you can provide an _ad
 1235551234.to_s(:phone, { :area_code => true, :extension => 555 }) # => (123) 555-1234 x 555
 ```
 
-[^Hash]: A `Hash` is another Class is Ruby that. See the [Hash chapter](#hash-chapter). Until you read that chapter, just be aware that this kind of formatting is possible and easy to do in a Rails application.
+[^Hash]: A `Hash` is another Class is Ruby that. See the Hash chapter. Until you read that chapter, just be aware that this kind of formatting is possible and easy to do in a Rails application.
 
 ##### Currency 
 

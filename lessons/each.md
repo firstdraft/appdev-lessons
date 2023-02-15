@@ -6,7 +6,7 @@ Therefore, the most common reason we'll have to write loops is to **visit each e
 
 ### Iterating over arrays with Integer's times method
 
-Try transforming the words in an Array using what you've learned so far about [loops](#loops-chapter):
+Try transforming the words in an Array using what you've learned so far about loops:
 
 Write a program that, given a list of words from the user, would take each word and print it in three forms:
 
