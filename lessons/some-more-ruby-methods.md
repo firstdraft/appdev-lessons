@@ -193,3 +193,33 @@ You can think of `Array`'s `.join` method as the inverse of `String`'s `.split` 
 ```
 
 That is, the `.split` method is called on a `String` and returns an `Array` of substrings; while the `.join` method is called on an `Array` (where each element must be a `String`) and returns a single `String`.
+
+### More .each
+
+#### each_with_index 
+
+There are some rare cases when you are looping over an array and, within the block, you would like access to the element _and_ its index. For example, maybe you want to print a line after every other element. You could fall back to `.times` in these scenarios, but there's also another `Array` method that has your back: `.each_with_index`. It looks like this:
+
+```ruby
+p "Enter at least 2 words, separated by spaces:"
+user_words = gets.chomp.split
+p "user_words:"
+p user_words
+
+user_words.each_with_index do |the_word, the_index|
+  p the_word.capitalize
+  p the_word.reverse
+  p the_word.upcase
+
+  if the_index.odd?
+    p "=" * 20
+  end
+end
+```
+
+<div class="experiment" markdown="1">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-each-with-index){:target="_blank"}
+</div>
+
+As you can see, some methods provide more than one block variable. `.each_with_index` allows you to name two variables within the pipes; the first one will receive the element, and the second one will receive the index of the iteration. Within the block you can use both variables as you see fit. In rare cases, handy.
