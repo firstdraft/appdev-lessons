@@ -130,3 +130,66 @@ In addition to providing a `Symbol` to the `to_s` method, you can provide an _ad
 100.to_s(:percentage, { :precision => 0 } )                      # => "100%"
 1000.to_s(:percentage, { :delimiter => ".", :separator => "," }) # => "1.000,000%"
 ```
+
+### More Array
+
+#### include? 
+
+A thin convenience layer on top of `.count`, `.include?` will quickly tell you whether a value is present within an `Array`:
+
+```ruby
+a = [ "a", "b", "c" ]
+a.include?("b")   # => true
+a.include?("z")   # => false
+```
+
+#### exclude? 
+
+Similar to `.include?`, but the opposite:
+
+```ruby
+a = [ "a", "b", "c" ]
+a.exclude?("b")   # => false
+a.exclude?("z")   # => true
+```
+
+#### sort 
+
+```ruby
+array = [12, 4, 5, 13, 56, 32]
+
+p array.sort # => [4, 5, 12, 13, 32, 56]
+```
+
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/sort){:target="_blank"}
+</div>
+
+#### shuffle 
+
+```ruby
+array = [1, 2, 3, 4, 5]
+
+p array.shuffle # Returns a copy of array in random order
+```
+
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/shuffle){:target="_blank"}
+</div>
+
+#### join 
+
+You can think of `Array`'s `.join` method as the inverse of `String`'s `.split` method:
+
+```ruby
+
+"hello!".split("")
+# => ["h", "e", "l", "l", "o", "!"]
+
+["h", "e", "l", "l", "o", "!"].join
+# => "hello!"
+```
+
+That is, the `.split` method is called on a `String` and returns an `Array` of substrings; while the `.join` method is called on an `Array` (where each element must be a `String`) and returns a single `String`.
