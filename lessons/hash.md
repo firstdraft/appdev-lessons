@@ -133,7 +133,7 @@ A few things to try:
 
 Get used to those error messages. You're going to see them a _lot_.
 
-#### fetch fallback {- #fetch-fallback}
+#### fetch fallback
 
 Sometimes you may want to call `.fetch` using a key that may not be present in the `Hash`, and you don't want the program to crash with the "key not found" error message. In that case, you can provide a second argument which will be used as a fallback return value:
 

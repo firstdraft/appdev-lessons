@@ -132,7 +132,7 @@ Code like this is what drives the dozens of dynamic applications you interact wi
 
 That's it for `.each` and loops. It's time to meet a very important data structure class that we will be seeing a lot: `Hash`.
 
-#### Addendum: each_with_index {-}
+#### Addendum: each_with_index 
 
 There are some rare cases when you are looping over an array and, within the block, you would like access to the element _and_ its index. For example, maybe you want to print a line after every other element. You could fall back to `.times` in these scenarios, but there's also another `Array` method that has your back: `.each_with_index`. It looks like this:
 

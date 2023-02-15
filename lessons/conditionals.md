@@ -37,7 +37,7 @@ end
  1. If the final return value of `condition` is "falsy", then the code on the lines between the `if` and `end` keywords is ignored.
  1. Either way, the program picks up execution on the next line after the `end` keyword and continues on.
 
-#### Don't forget the end {-}
+#### Don't forget the end 
 
 Every `if` requires a matching `end`, and forgetting it is a _very_ common mistake.
 
@@ -147,7 +147,7 @@ For example, most classes have ways to compare _instances_ of the class to one a
 "apple" != "banana"
 ```
 
-#### Equivalence vs assignment {-}
+#### Equivalence vs assignment 
 
 Note the difference between the **equivalence operator** — two equals signs, `==` — and the variable assignment operator — one equals sign, `=`. Mixing up the two of them is probably _the_ most common typo programmers make:
 

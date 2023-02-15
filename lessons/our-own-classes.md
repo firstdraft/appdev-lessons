@@ -76,7 +76,7 @@ p c.class # => Person
 
 For each attribute that we declared, we get methods that we can call to assign and retrieve values.
 
-#### Defining instance methods {-}
+#### Defining instance methods 
 
 There are a few reasons I like using classes more than `Hash`es to model things, but here is the big one: in addition to just storing a list of attributes about a thing, we can also _define our own methods_ with the `def` keyword. For example, try adding the following `full_name` method to the class we defined in the REPL above:
 
@@ -140,7 +140,7 @@ Note that we had to `require("date")`[^require] in order to load the `Date` clas
 
 So, rather than using a `Hash` to model real world things, it's a good idea to create classes, and then empower them with *behavior* (methods) in addition to information.
 
-#### Defining class methods {-}
+#### Defining class methods 
 
 The methods `full_name` and `age` above are known as _instance methods_, because we call them on individual **instances** of the `Person` class (Homer, Mickey, Minnie, etc).
 
