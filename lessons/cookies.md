@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`cookies.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies.md){target="_blank"}
+  - Copied from [`cookies.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies.md){:target="_blank"}
 
 We've come a long way:
 
@@ -11,7 +11,7 @@ We've come a long way:
  - We learned how to generate dynamic responses on the fly when a URL is visited.
  - We learned how to react to user input using the params hash.
 
-We're able to build some pretty useful applications! For example, [our translation service](https://form-intro.matchthetarget.com/){target="_blank"} using Google's Translate API and Twilio's SMS API is pretty amazing.
+We're able to build some pretty useful applications! For example, [our translation service](https://form-intro.matchthetarget.com/){:target="_blank"} using Google's Translate API and Twilio's SMS API is pretty amazing.
 
 Now let's learn about a third part of the HTTP request besides the URL and the params: **cookies**. This is going to be the first tool in our kits that will allow us to _persist information between requests_.
 
@@ -19,13 +19,13 @@ As of now, with the HTML, Ruby, R→C→A→V, and `params` that we've learned, 
 
 However! With the addition of cookies, our first storage mechanism, we'll be able to upgrade our little calculator to this, our new target:
 
-[https://cookies-intro.matchthetarget.com/](https://cookies-intro.matchthetarget.com/){target="_blank"}
+[https://cookies-intro.matchthetarget.com/](https://cookies-intro.matchthetarget.com/){:target="_blank"}
 
 As you fill out the forms and browse around, then come back to a form you filled out previously, note that the calculators now remember the results of previous calculations. Handy! Let's learn how to achieve this.
 
 ## Cookies are placed in the visitor's browser
 
-While looking at the [target](https://cookies-intro.matchthetarget.com/){target="_blank"} in Chrome, open your Developer Tools. Click the "Application" tab, then click "<i class="fas fa-cookie-bite"></i> Cookies" in the left sidebar, and then find `https://cookies-intro.matchthetarget.com` in the list of domains.
+While looking at the [target](https://cookies-intro.matchthetarget.com/){:target="_blank"} in Chrome, open your Developer Tools. Click the "Application" tab, then click "<i class="fas fa-cookie-bite"></i> Cookies" in the left sidebar, and then find `https://cookies-intro.matchthetarget.com` in the list of domains.
 
 You're looking at your cookie jar!
 
@@ -33,13 +33,13 @@ Here's the deal: each domain that you visit is allowed to store a list of key/va
 
 Try filling out a few of the calculator forms in the target, and watch what happens in your cookie jar. You can see that the values you enter are being saved as cookies. You can delete an individual cookie by clicking on it and pressing <kbd>delete</kbd>, or you can clear all of the cookies for the domain by clicking the <i class="fas fa-ban"></i> icon at the top of the list. If you do so, the app "forgets" your calculations.
 
-Try a few more calculations, [open a new tab](https://cookies-intro.matchthetarget.com/){target="_blank"}, and check the cookie jar there. Your cookies are all still stored, even in the new tab! You could come back tomorrow and the results of your calculations today would be waiting for you.
+Try a few more calculations, [open a new tab](https://cookies-intro.matchthetarget.com/){:target="_blank"}, and check the cookie jar there. Your cookies are all still stored, even in the new tab! You could come back tomorrow and the results of your calculations today would be waiting for you.
 
 Now, one last thing: try visiting the target in a different browser, or from a different device. Your old calculations will not be there. Cookies are browser-specific; not computer-specific, network-specific, or person-specific.
 
 ## Cookies are sent back to the server with every subsequent request
 
-So, when you click submit on any of the forms, you can see that the target, in addition to doing the calculation, also stores a cookie in your browser. We'll practice how to do this shortly — it's not really anything new; we [add a key/value pair](https://chapters.firstdraft.com/chapters/767#creating-hashes){target="_blank"} to a `Hash` that Rails provides called `cookies`.
+So, when you click submit on any of the forms, you can see that the target, in addition to doing the calculation, also stores a cookie in your browser. We'll practice how to do this shortly — it's not really anything new; we [add a key/value pair](https://chapters.firstdraft.com/chapters/767#creating-hashes){:target="_blank"} to a `Hash` that Rails provides called `cookies`.
 
 The key thing to wrap our heads around is: the user's browser sends back the entire `cookies` hash with _every subsequent request the user makes_. In other words, after we add a key/value pair to `cookies` for a particular user, every time that user visits us again, we'll see that key/value pair in the `cookies` hash (unless they clear their cookies).
 
@@ -77,7 +77,7 @@ h.store(:color, "pink")
 h.fetch(:color) # => "pink"
 ```
 
-For more of a refresher, you might want to refresh your memory by [playing around with the REPLs in the Hash Chapter](https://chapters.firstdraft.com/chapters/767#creating-hashes){target="_blank"}.
+For more of a refresher, you might want to refresh your memory by [playing around with the REPLs in the Hash Chapter](https://chapters.firstdraft.com/chapters/767#creating-hashes){:target="_blank"}.
 
 ### The cookies hash
 

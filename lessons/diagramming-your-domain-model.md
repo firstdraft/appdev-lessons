@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`diagramming-your-domain-model.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/diagramming-your-domain-model.md){target="_blank"}
+  - Copied from [`diagramming-your-domain-model.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/diagramming-your-domain-model.md){:target="_blank"}
 
 [ideas.firstdraft.com](https://ideas.firstdraft.com) is a tool designed to help you plan out your app idea from an information-storage perspective.
 

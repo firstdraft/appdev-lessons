@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`draft-layout.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-layout.md){target="_blank"}
+  - Copied from [`draft-layout.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-layout.md){:target="_blank"}
 
 To generate an application layout file that includes links to Bootstrap, Font Awesome, and some boilerplate markup for a nav bar and alert messages, run the command
 

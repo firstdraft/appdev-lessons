@@ -22,7 +22,7 @@ What do you expect the output of this program to be? Try to interpret the progra
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){:target="_blank"}
 </div>
 
 Hopefully you clicked "▶ Run". Did you guess right?
@@ -53,7 +53,7 @@ p len
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){:target="_blank"}
 </div>
 
 `while` works almost exactly like `if` — it evaluates the expression next to it, and if the expression is truthy, it executes the code on the lines between it and its `end`; if not, it ignores the code on the lines between it and its `end`.
@@ -103,7 +103,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){:target="_blank"}
 </div>
 
 Does the code make sense to you?[^incrementing]
@@ -124,7 +124,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){:target="_blank"}
 </div>
 
 Notice there's a new keyword here: `do`. This is because the `.times` method, in order to do its job of executing some code 10 times, needs a special argument — _the code to execute_.
@@ -145,7 +145,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){:target="_blank"}
 </div>
 
 Try running it. Here's what's going on:

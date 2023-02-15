@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - [Day 7 video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6da49302-4503-454a-9659-aedf005f678f){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/very-best-debug-video.md){target="_blank"}
+  - [Day 7 video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6da49302-4503-454a-9659-aedf005f678f){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/very-best-debug-video.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/very-best-debug](https://github.com/appdev-projects/very-best-debug){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/very-best-debug](https://github.com/appdev-projects/very-best-debug){:target="_blank"}
 
-  - Target: [https://very-best-debug.matchthetarget.com/](https://very-best-debug.matchthetarget.com/){target="_blank"}
+  - Target: [https://very-best-debug.matchthetarget.com/](https://very-best-debug.matchthetarget.com/){:target="_blank"}
 
 
 **BENP: Right now there is a starting from scratch tutorial including draft generators in Day 7 recording from 00:30:00 to 00:50:20. I am not transcribing this yet but can come back for it! See my note in [Video Segment: Homepage Debugging][Video Segment: Homepage Debugging] in this lesson. This probably needs a dedicated video and to be zipped with the starting from scratch and draft:generator chapters.**
@@ -75,7 +75,7 @@ end
 
 And we see there is no `home` action defined in our controller. Hence the error message. 
 
-Let's look at the [target](https://very-best-debug.matchthetarget.com/){target="_blank"} homepage at the URL path **/**. What is the behavior? It looks like this is just a list of users. And what's the conventional name for an action that just lists things in a Rails app? `index`! Back to our controller:
+Let's look at the [target](https://very-best-debug.matchthetarget.com/){:target="_blank"} homepage at the URL path **/**. What is the behavior? It looks like this is just a list of users. And what's the conventional name for an action that just lists things in a Rails app? `index`! Back to our controller:
 
 ```ruby
 # app/controllers/users_controller.rb

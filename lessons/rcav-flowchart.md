@@ -2,7 +2,7 @@
 
 - Notes:
 
-    - Copied from [`rcav-flowchart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rcav-flowchart.md){target="_blank"}
+    - Copied from [`rcav-flowchart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rcav-flowchart.md){:target="_blank"}
 
 Our apps are nothing more than a collection of URLs that we decide to allow users to access:
 

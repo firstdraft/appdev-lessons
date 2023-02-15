@@ -188,7 +188,7 @@ end
 
 Enough theory. It's time to open the GitPod project so we can visualize the steps and see some results. We'll finally make our Rock, Paper, Scissors game work, by having the computer opponent randomly choose a move rather than always playing paper. We will then be able to compute outcomes based on the computer's move.
 
-[Here](https://github.com/appdev-projects/rps-rcav){target="_blank"} is the assignment. As usual:
+[Here](https://github.com/appdev-projects/rps-rcav){:target="_blank"} is the assignment. As usual:
 
   1. Start the web server by running `bin/server`.
   2. Navigate to your live application preview.
@@ -198,7 +198,7 @@ Enough theory. It's time to open the GitPod project so we can visualize the step
 
 If you need a refresher in starting the workspace, see the [Technical Setup][Technical Setup]
 
-The [target](https://rps-rcav.matchthetarget.com/){target="_blank"} for this project, looks similar to what we have produced. But, the key difference is that the computer plays different moves, so the application is finally *dynamic*. 
+The [target](https://rps-rcav.matchthetarget.com/){:target="_blank"} for this project, looks similar to what we have produced. But, the key difference is that the computer plays different moves, so the application is finally *dynamic*. 
 
 
 ## Our First RCAV
@@ -616,7 +616,7 @@ If you haven't, now would be a good time to run `rails grade` at the GitPod term
 
 Before we go on with the embedded Ruby, let's reinforce RCAV a couple of times.
 
-The [target](https://rps-rcav.matchthetarget.com/){target="_blank"} has a homepage at the root URL, **/**. In the old days, we would create a file in `public/` called `index.html`, but from here on we will connect any URL with routes. 
+The [target](https://rps-rcav.matchthetarget.com/){:target="_blank"} has a homepage at the root URL, **/**. In the old days, we would create a file in `public/` called `index.html`, but from here on we will connect any URL with routes. 
 
 Open the `config/routes.rb` file and add a homepage route:
 
@@ -1128,7 +1128,7 @@ end
 
 ## Linking Pages with Layouts
 
-Before you tackle the rest of the project on your own, it would now be nice to add some links (like in our [target](https://rps-rcav.matchthetarget.com/){target="_blank"}), so we don't need to keep typing in the URL addresses.
+Before you tackle the rest of the project on your own, it would now be nice to add some links (like in our [target](https://rps-rcav.matchthetarget.com/){:target="_blank"}), so we don't need to keep typing in the URL addresses.
 
 Start with our `user_paper.html.erb` view template:
 
@@ -1250,9 +1250,9 @@ class ApplicationController < ActionController::Base
 
 The rest of the project is up to you to finish. 
 
-Here is the project: [https://github.com/appdev-projects/rps-rcav](https://github.com/appdev-projects/rps-rcav){target="_blank"}
+Here is the project: [https://github.com/appdev-projects/rps-rcav](https://github.com/appdev-projects/rps-rcav){:target="_blank"}
 
-And the target: [https://rps-rcav.matchthetarget.com](https://rps-rcav.matchthetarget.com){target="_blank"}
+And the target: [https://rps-rcav.matchthetarget.com](https://rps-rcav.matchthetarget.com){:target="_blank"}
 
 Visit the <mark>specs</mark> and wire them all up. You have all the tools now. Use the resources in this chapter, including an [RCAV cheat-sheet][Addendum: RCAV Flowchart]. 
 

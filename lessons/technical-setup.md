@@ -12,11 +12,11 @@
 
 - Notes:
 
-  - Copied from [`day-2-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-2-notes.md){target="_blank"}
+  - Copied from [`day-2-notes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/day-2-notes.md){:target="_blank"}
 
 ### Get a GitHub account
 
-Sign up for a free GitHub account at [github.com/join](https://github.com/join){target="_blank"}
+Sign up for a free GitHub account at [github.com/join](https://github.com/join){:target="_blank"}
     
 I recommend using your `.edu` email address, as that will qualify you for some discounts and coupons that you might want to use later. Remember to verify your email address after signing up.
 
@@ -34,7 +34,7 @@ If you already have a GitHub account, I recommend making a new one for this clas
 
 ### Get a Heroku account
 
-Sign up for a free Heroku account at [signup.heroku.com](https://signup.heroku.com/){target="_blank"}
+Sign up for a free Heroku account at [signup.heroku.com](https://signup.heroku.com/){:target="_blank"}
 
 If asked what your primary development language is, say Ruby. You can use any one of your email addresses, but remember to verify it.
 
@@ -48,8 +48,8 @@ If asked what your primary development language is, say Ruby. You can use any on
 
 While you're waiting for everyone to finish creating accounts, read up on GitHub and Heroku. Think of question:
 
- - Read about GitHub: [http://bit.ly/2skLlYx](http://bit.ly/2skLlYx){target="_blank"}
- - Read about Heroku: [http://bit.ly/2uLVTAP](http://bit.ly/2uLVTAP){target="_blank"}
+ - Read about GitHub: [http://bit.ly/2skLlYx](http://bit.ly/2skLlYx){:target="_blank"}
+ - Read about Heroku: [http://bit.ly/2uLVTAP](http://bit.ly/2uLVTAP){:target="_blank"}
 
 ## GitPod
 
@@ -63,7 +63,7 @@ While you're waiting for everyone to finish creating accounts, read up on GitHub
 
 - Notes:
 
-  - Copied from [`getting-started-with-gitpod.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/getting-started-with-gitpod.md){target="_blank"}
+  - Copied from [`getting-started-with-gitpod.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/getting-started-with-gitpod.md){:target="_blank"}
 
 One of the most painful parts of learning how to program, in the old days, was simply setting up your computer to be able to write and run code. At a minimum, we needed to install:
 
@@ -107,7 +107,7 @@ Gitpod.io is a great new service that provides instantaneous, full-fledged cloud
 
 - Notes: 
 
-  - Copied from [`hard-reload.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hard-reload.md){target="_blank"}
+  - Copied from [`hard-reload.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/hard-reload.md){:target="_blank"}
 
 Sometimes, when we update a CSS stylesheet, our page appears not to change. This is especially frequent when we're working on static HTML files in the `public/` folder.
 
@@ -137,7 +137,7 @@ Your HTML document should now have the latest CSS and any other linked assets (l
 
 - Notes:
 
-  - Copied from [`tips-and-tricks.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/tips-and-tricks.md){target="_blank"}
+  - Copied from [`tips-and-tricks.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/tips-and-tricks.md){:target="_blank"}
 
 #### Important Terminal keystrokes to know
 
@@ -310,7 +310,7 @@ Windows: <kbd>Ctrl</kbd> + <kbd>~</kbd> (i.e. <kbd>Ctrl</kbd> + <kbd>Shift</kbd>
 
 - Notes:
 
-  - Copied from [`using-git-to-experiement-and-save-work.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/using-git-to-experiement-and-save-work.md){target="_blank"}
+  - Copied from [`using-git-to-experiement-and-save-work.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/using-git-to-experiement-and-save-work.md){:target="_blank"}
 
 ### What Git is
 
@@ -404,7 +404,7 @@ Now you should be all set to push your commits to GitHub!
 
 - Notes:
 
-  - Copied from [`rails-grade.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rails-grade.md){target="_blank"}
+  - Copied from [`rails-grade.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rails-grade.md){:target="_blank"}
 
 #### Join GitHub
 
@@ -502,7 +502,7 @@ You can run `rails grade` in your Terminal as many times as you want, and you wi
 
 - Notes:
 
-  - Copied from [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){target="_blank"}
+  - Copied from [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){:target="_blank"}
 
 Once upon a time, we all [created our own GitHub organizations](https://chapters.firstdraft.com/chapters/777#create-github-organization) to keep our classwork separate from our personal projects.
 
@@ -575,7 +575,7 @@ Then, return to the third-party app and "Sign in with..." again to start over fr
 
 - Notes:
 
-  - Copied from [`gitpod-snapshot.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/gitpod-snapshot.md){target="_blank"}
+  - Copied from [`gitpod-snapshot.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/gitpod-snapshot.md){:target="_blank"}
 
 It's often helpful to share a snapshot of the state of your entire Gitpod workspace with someone else.
 

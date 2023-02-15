@@ -2,7 +2,7 @@
 
   - Un-graded assignment, but there are tests built in
 
-  - Project: [https://github.com/appdev-projects/msm-validations](https://github.com/appdev-projects/msm-validations){target="_blank"}
+  - Project: [https://github.com/appdev-projects/msm-validations](https://github.com/appdev-projects/msm-validations){:target="_blank"}
 
   - Useful chapters:
 

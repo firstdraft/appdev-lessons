@@ -1,6 +1,6 @@
 # Outline Notes
 
-Although originally based on the chronological assignments on Canvas in ["BUSN 36110 81 (Summer 2022) Application Development"](https://canvas.uchicago.edu/courses/41147){target="_blank"}, this book may have some re-ordering. Also the original chapters at [chapters.firstdraft](https://chapters.firstdraft.com/){target="_blank"} were zipped in here.
+Although originally based on the chronological assignments on Canvas in ["BUSN 36110 81 (Summer 2022) Application Development"](https://canvas.uchicago.edu/courses/41147){:target="_blank"}, this book may have some re-ordering. Also the original chapters at [chapters.firstdraft](https://chapters.firstdraft.com/){:target="_blank"} were zipped in here.
 
 ## Diátaxis
 
@@ -16,7 +16,7 @@ Although originally based on the chronological assignments on Canvas in ["BUSN 3
 
 ### Original Outline Diátaxis
 
-In an effort towards [Diátaxis](https://diataxis.fr/){target="_blank"}, the content is identified by small chunks of material with tags:
+In an effort towards [Diátaxis](https://diataxis.fr/){:target="_blank"}, the content is identified by small chunks of material with tags:
 
   1. **da="Tutorial"**
       - *pratical-study quadrant*
@@ -43,7 +43,7 @@ In an effort towards [Diátaxis](https://diataxis.fr/){target="_blank"}, the con
 
 The "TechRef" (glossaries) and "Exercise" (quizzes + projects) tags are obvious, so content in these categories is not explicitly labelled in the outline.
 
-Note, the difference between "Tutorials" and "HowTo" [here](https://diataxis.fr/tutorials-how-to/#whats-the-difference-between-a-tutorial-and-how-to-guide){target="_blank"}. They are distinguished by the user needs: *study* ("Tutorial") vs. *work* ("HowTo"). Tutorials provide a learning experience, how-to-guides help the user accomplish a task. Any **video walkthroughs are "Tutorials"** and their **written accompaniments are "HowTos"**. How-to-guides should never be videos, because a user should be able to quickly refer to what they need, without buffering or scrubbing.
+Note, the difference between "Tutorials" and "HowTo" [here](https://diataxis.fr/tutorials-how-to/#whats-the-difference-between-a-tutorial-and-how-to-guide){:target="_blank"}. They are distinguished by the user needs: *study* ("Tutorial") vs. *work* ("HowTo"). Tutorials provide a learning experience, how-to-guides help the user accomplish a task. Any **video walkthroughs are "Tutorials"** and their **written accompaniments are "HowTos"**. How-to-guides should never be videos, because a user should be able to quickly refer to what they need, without buffering or scrubbing.
 
 ## Technical References: Code vs. Terminology
 
@@ -54,12 +54,12 @@ Both of these glossaries could be built up through the class, meaning the studen
 These code references already exist:
   
   - Ruby:
-    - [Ruby Foundations Slides](https://firstdraft.slides.com/raghubetina/05-ruby-foundations?token=SFyjvCyP){target="_blank"}
+    - [Ruby Foundations Slides](https://firstdraft.slides.com/raghubetina/05-ruby-foundations?token=SFyjvCyP){:target="_blank"}
     - [The One Ruby Reference][The One Ruby Reference]
     - [Different Ruby Styles][Different Ruby Styles]
 
   - HTML + CSS:  
-    - [HTML + CSS Recap Slides](https://firstdraft.slides.com/raghubetina/html-and-css-recap?token=8gU8ghvw){target="_blank"}
+    - [HTML + CSS Recap Slides](https://firstdraft.slides.com/raghubetina/html-and-css-recap?token=8gU8ghvw){:target="_blank"}
     - [HTML Reference][HTML Reference]
     - [HTML Cheatsheet][HTML Cheatsheet]
     - [Classbook][Classbook]
@@ -84,7 +84,7 @@ Running list of things TODO:
 
   - Dedicated video + text for ideas.firstdraft.com with domain model for OfferUp. **See [Domain Modeling][Domain Modeling]**
 
-  - Video tutorial for [https://association-accessors.firstdraft.com/](https://association-accessors.firstdraft.com/){target="_blank"}. This is in the last 10 minutes of Day 7 recording right now. Maybe a dedicated chapter for `belongs_to`, `has_many`, `scope`, `through`, and use of `.joins()` for queries. Covered in [Refactoring MSM Again][Refactoring MSM Again] and [Photogram Associations][Photogram Associations].
+  - Video tutorial for [https://association-accessors.firstdraft.com/](https://association-accessors.firstdraft.com/){:target="_blank"}. This is in the last 10 minutes of Day 7 recording right now. Maybe a dedicated chapter for `belongs_to`, `has_many`, `scope`, `through`, and use of `.joins()` for queries. Covered in [Refactoring MSM Again][Refactoring MSM Again] and [Photogram Associations][Photogram Associations].
 
   - Dedicated video + text content for starting from scratch, generator resources, and migration. This is spread across videos (e.g., Day 7 video, Day 8 short video, Photogram and MSM signin), chapters (e.g., [ActiveRecord][ActiveRecord], [draft:resource generator][draft:resource generator], [draft:account generator][draft:account generator]), classroom examples (Day 8 recordings). **See [Starting from Scratch with Generators][Starting from Scratch with Generators]**
 

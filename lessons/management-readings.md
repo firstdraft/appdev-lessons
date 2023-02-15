@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`management-readings.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/management-readings.md){target="_blank"}
+  - Copied from [`management-readings.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/management-readings.md){:target="_blank"}
 
 A grab-bag of readings that I found helpful. These are all just opinions; there's not _one true way_ of doing anything. It depends on the project and on the team. However, the below readings should give you a good place to start and iterate from.
 

@@ -70,7 +70,7 @@ p person1.fetch(:role)
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){:target="_blank"}
 </div>
 
 Click "Run" and see what it looks like to build up a `Hash`. A few things to note:
@@ -99,7 +99,7 @@ p person1.fetch(:last_name)
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){:target="_blank"}
 </div>
 
 Beautiful! Now we don't have to remember that position number 1 is last name, position number 2 is role, etc. We can retrieve objects from the list using meaningful labels instead.
@@ -123,7 +123,7 @@ p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){:target="_blank"}
 </div>
 
 A few things to try:
@@ -149,7 +149,7 @@ p person1.fetch(:middle_name, "None provided")
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){:target="_blank"}
 </div>
 
 ### Hash literals
@@ -197,7 +197,7 @@ p person1[:last_name]
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){:target="_blank"}
 </div>
 
 Were you able to find the difference between the two methods?

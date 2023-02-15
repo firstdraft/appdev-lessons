@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`ransack.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/ransack.md){target="_blank"}
+  - Copied from [`ransack.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/ransack.md){:target="_blank"}
 
 The Ransack gem provides us with a powerful, flexible, easy-to-integrate search/filter form.
 

@@ -2,7 +2,7 @@
 
 - Notes:
 
-   - Copied from [`storing-credentials-securely.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/storing-credentials-securely.md){target="_blank"}
+   - Copied from [`storing-credentials-securely.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/storing-credentials-securely.md){:target="_blank"}
 
 Many times we have API credentials or other sensitive information that we don't want to paste directly into our code, because then the information would be exposed on GitHub. Unsavory types like to scrape GitHub for sensitive information like API keys and run up huge bills for compromised users.
 

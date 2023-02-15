@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`exporting-data-into-a-csv.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/exporting-data-into-a-csv.md){target="_blank"}
+  - Copied from [`exporting-data-into-a-csv.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/exporting-data-into-a-csv.md){:target="_blank"}
 
 ## Define a Class method
 For example, if you wanted to export Photos records from Photogram.

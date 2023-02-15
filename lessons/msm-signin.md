@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - [Day 8 long video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0325615f-63d3-473f-be6b-ae4b00eaec85){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-signin.md){target="_blank"}
+  - [Day 8 long video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0325615f-63d3-473f-be6b-ae4b00eaec85){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-signin.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/msm-signin](https://github.com/appdev-projects/msm-signin){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/msm-signin](https://github.com/appdev-projects/msm-signin){:target="_blank"}
 
-  - Target: [https://msm-signin.matchthetarget.com/](https://msm-signin.matchthetarget.com/){target="_blank"}
+  - Target: [https://msm-signin.matchthetarget.com/](https://msm-signin.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
     - [draft:resource generator][draft:resource generator]
@@ -28,7 +28,7 @@
 
 This version of MSM - Must See Movies **BENP: this is like the first time this acronym was said maybe?**, is the final form of our app.
 
-Instead of just a directory of movies like IMDB, in this version we can sign up for an account. In the [target](https://msm-signin.matchthetarget.com){target="_blank"}, visit the **/user_sign_up** URL (or click the navbar link), and try to create an account with a random email ("alice@example.com"), a first ("Alice") and last ("Smith") name, and a password ("password").
+Instead of just a directory of movies like IMDB, in this version we can sign up for an account. In the [target](https://msm-signin.matchthetarget.com){:target="_blank"}, visit the **/user_sign_up** URL (or click the navbar link), and try to create an account with a random email ("alice@example.com"), a first ("Alice") and last ("Smith") name, and a password ("password").
 
 After you signup, you should be redirected to the homepage with a notice of "User account created successfully" at the top of the page. And now, when we browse around to a given movie details page like **/movies/1**, the key difference we note is that there is now a "Bookmark this movie!" button. If we click this button as our user "Alice", then we are brought to the URL path **/bookmarks**, showing *only* Alice's personal bookmarked movies.
 
@@ -174,7 +174,7 @@ Instead of `rails generate model`, there's another generator that we want to use
 rails generate draft:resource movie title:string description:text director_id:integer
 ```
 
-The command is `rails generate draft:resource`. The other command-line inputs are the same as before. This, and many other generators prepared for this course, are available as an open-soruce gem on GitHub at [https://github.com/firstdraft/draft_generators](https://github.com/firstdraft/draft_generators){target="_blank"}. 
+The command is `rails generate draft:resource`. The other command-line inputs are the same as before. This, and many other generators prepared for this course, are available as an open-soruce gem on GitHub at [https://github.com/firstdraft/draft_generators](https://github.com/firstdraft/draft_generators){:target="_blank"}. 
 
 Now, when we enter that command, the output will look like:
 
@@ -333,7 +333,7 @@ Then `rails db:migrate`, check it out, and **/git** commit.
   - use `belongs_to` and `has_many` on the table models
   - can use https://association-accessors.firstdraft.com
 
-Now that we have all our model files, we should add the association accessor methods for all of our 1-N and N-N relationships. You can use the [association accessors tool](https://association-accessors.firstdraft.com){target="_blank"}, or just type it out if you remember how it works for each of our models, starting with `Movie`:
+Now that we have all our model files, we should add the association accessor methods for all of our 1-N and N-N relationships. You can use the [association accessors tool](https://association-accessors.firstdraft.com){:target="_blank"}, or just type it out if you remember how it works for each of our models, starting with `Movie`:
 
 ```ruby
 # app/models/movie.rb
@@ -403,7 +403,7 @@ end
 ```
 {: mark_lines="8"}
 
-In the above accessors, we are just going straight away into some different Ruby syntaxes than we may be used to. You can re-read [this](https://chapters.firstdraft.com/chapters/787){target="_blank"} for reference. As you go out and begin reading StackOverflow or blog posts to figure things out, you need to be aware of and comfortable with the common syntaxes used.
+In the above accessors, we are just going straight away into some different Ruby syntaxes than we may be used to. You can re-read [this](https://chapters.firstdraft.com/chapters/787){:target="_blank"} for reference. As you go out and begin reading StackOverflow or blog posts to figure things out, you need to be aware of and comfortable with the common syntaxes used.
 
 We should definitely make another **/git** commit now.
 
@@ -464,7 +464,7 @@ Let's quickly add a navbar so we can click around in our app without manually en
 
 Now that the app is looking good with a navbar, the next step is to run `rails sample_data` to get some random data into MSM. This is just like before. 
 
-But for your own work, you would need to write this `sample_data` script yourself to get test data. There are two chapters to help you with that: [loading data from a CSV](https://chapters.firstdraft.com/chapters/791){target="_blank"} and [adding a `sample_data` rake task](https://chapters.firstdraft.com/chapters/852){target="_blank"}. 
+But for your own work, you would need to write this `sample_data` script yourself to get test data. There are two chapters to help you with that: [loading data from a CSV](https://chapters.firstdraft.com/chapters/791){:target="_blank"} and [adding a `sample_data` rake task](https://chapters.firstdraft.com/chapters/852){:target="_blank"}. 
 
 **BENP: this sample_data stuff comes up again later for random user data? or is that in the Bootstrap Task List?**
 
@@ -480,7 +480,7 @@ But for your own work, you would need to write this `sample_data` script yoursel
   - add `validates :title, :presence => true` to `app/models/movie.rb`
   - summarize starting from scratch steps
 
-To summarize, the standard setup steps when building any app is: first domain modeling, then generating resources once the table names and columns are defined, and then adding associations add validations (we skipped this, but there is a reading [here](https://chapters.firstdraft.com/chapters/845){target="_blank"}).
+To summarize, the standard setup steps when building any app is: first domain modeling, then generating resources once the table names and columns are defined, and then adding associations add validations (we skipped this, but there is a reading [here](https://chapters.firstdraft.com/chapters/845){:target="_blank"}).
 
 Let's return to validations, which are ways of checking that only "good" data is entered into our database. We can add a validation to the `Movie` class:
 
@@ -528,7 +528,7 @@ Once you have them all done, be sure to **/git** commit.
   - getting `users` table with `draft:account`
   - explore new CRUD routes, models, and actions
 
-Let's talk about the next table, `users`. In our [target](https://msm-signin.matchthetarget.com){target="_blank"}, the new functionality is that a signed in user can bookmark movies, so we need accounts, and we're going to need a `bookmarks` table.
+Let's talk about the next table, `users`. In our [target](https://msm-signin.matchthetarget.com){:target="_blank"}, the new functionality is that a signed in user can bookmark movies, so we need accounts, and we're going to need a `bookmarks` table.
 
 We can model this in firstdraft and then use co-pilot to get the generator code. **BENP: from 00:47:40 to 00: there is a brief show-and-tell of domain modeling in firstdraft with a users table and bookmarks table and then using co-pilot to get the command line code. There is also an aside into trying to generate the users with draft:resource and why that doesn't work. Not transcribing this, because it is very visual.**
 
@@ -861,7 +861,7 @@ We will walk through this process, because it's important. If you can do this, y
 
 So how do we do this? 
 
-Let's identify what CRUD actions are happening in the database when a user clicks the "Bookmark this movie!" button in our [target](https://msm-signin.matchthetarget.com){target="_blank"}. In this case, a record is being created in the `bookmarks` table that has a value for the signed in user's ID and for the movie's ID, which we called `user_id` and `movie_id`.
+Let's identify what CRUD actions are happening in the database when a user clicks the "Bookmark this movie!" button in our [target](https://msm-signin.matchthetarget.com){:target="_blank"}. In this case, a record is being created in the `bookmarks` table that has a value for the signed in user's ID and for the movie's ID, which we called `user_id` and `movie_id`.
 
 Even though there's nothing for the user to fill out, since we are creating a record, we will use a form in our movie details view template for this:
 

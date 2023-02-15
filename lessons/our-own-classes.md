@@ -71,7 +71,7 @@ p c.class # => Person
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){:target="_blank"}
 </div>
 
 For each attribute that we declared, we get methods that we can call to assign and retrieve values.
@@ -261,7 +261,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){:target="_blank"}
 </div>
 
 <div class="proj" markdown="1">

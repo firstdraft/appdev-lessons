@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - Copied from [`photogram-final.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-final.md){target="_blank"}
+  - Copied from [`photogram-final.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-final.md){:target="_blank"}
 
 Here is your target:
 
-[https://photogram-final.matchthetarget.com/](https://photogram-final.matchthetarget.com/){target="_blank"}
+[https://photogram-final.matchthetarget.com/](https://photogram-final.matchthetarget.com/){:target="_blank"}
 
 Explore it and see what's different relative to previous Photogram targets.
 

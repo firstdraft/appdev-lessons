@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - Copied from [`towerofbabel.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/towerofbabel.md){target="_blank"}
+  - Copied from [`towerofbabel.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/towerofbabel.md){:target="_blank"}
 
 Here is your target:
 
-[https://towerofbabel.matchthetarget.com/](https://towerofbabel.matchthetarget.com/){target="_blank"}
+[https://towerofbabel.matchthetarget.com/](https://towerofbabel.matchthetarget.com/){:target="_blank"}
 
 ## Getting started
 

@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/dynamic-routes.md){target="_blank"}
+  - Copied from [`dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/dynamic-routes.md){:target="_blank"}
 
 ## The Limit of Static Routes
 

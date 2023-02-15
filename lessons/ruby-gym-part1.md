@@ -6,6 +6,6 @@ Before we go on, let's stop, take a breath, and try to put what we've learned so
 
 ##### Start the GitPod Project {-}
 
-Open the GitPod project for the Ruby Gym and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/ruby-gym/tree/bp-edits](https://github.com/bpurinton-appdev/ruby-gym/tree/bp-edits){target="_blank"}.
+Open the GitPod project for the Ruby Gym and start with the exercises. [See prior steps](#start-gitpod-project) as a reminder. Fork the project from GitHub: [https://github.com/bpurinton-appdev/ruby-gym/tree/bp-edits](https://github.com/bpurinton-appdev/ruby-gym/tree/bp-edits){:target="_blank"}.
 
 <mark>✏️ **Exercise:**</mark> On GitPod in the Ruby Gym project, work through `character_types.rb`.

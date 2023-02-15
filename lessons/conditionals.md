@@ -16,7 +16,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-conditional){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-conditional){:target="_blank"}
 </div>
 
 Try running this program a few times and see how it behaves. These expressions, which conditonally run some code based on the truth or falseness of some condition, are known as **conditionals** or **if statements**.
@@ -79,7 +79,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/multibranch-if){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/multibranch-if){:target="_blank"}
 </div>
 
  - Note that there is **no space** in the `elsif` keyword, and that there is **no `e` in the middle** of the `elsif` keyword. (In other languages, this construct is `elseif`, `else if`, etc; but in Ruby it's just `elsif`.)
@@ -112,7 +112,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){:target="_blank"}
 </div>
 
 For how many of the above did you correctly predict the output? What did you learn about what objects count as truthy and what objects count as falsy in Ruby?
@@ -190,7 +190,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/and-and-or){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/and-and-or){:target="_blank"}
 </div>
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.

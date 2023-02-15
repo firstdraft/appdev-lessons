@@ -3,15 +3,15 @@
 - Notes:
 
   - This could be a sub-section in [Technical Setup][Technical Setup]
-  - The [video](https://canvas.uchicago.edu/courses/41147/pages/video-deploying-to-heroku){target="_blank"} is not yet transcribed and may change
+  - The [video](https://canvas.uchicago.edu/courses/41147/pages/video-deploying-to-heroku){:target="_blank"} is not yet transcribed and may change
 
   - Project: N/A
 
   - Target: N/A
 
-  - See [Canvas](https://canvas.uchicago.edu/courses/47526/assignments/523302){target="_blank"} for some updated instructions
+  - See [Canvas](https://canvas.uchicago.edu/courses/47526/assignments/523302){:target="_blank"} for some updated instructions
 
-  - Copied from [`deploying-to-heroku.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/deploying-to-heroku.md){target="_blank"}
+  - Copied from [`deploying-to-heroku.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/deploying-to-heroku.md){:target="_blank"}
 
 ### Sign in to your Heroku account (once per workspace)
 
@@ -37,7 +37,7 @@
     Logged in as demostudent10@firstdraft.com
     ```
 
-[^mfa]: If you have [Multi-Factor Authentication](https://devcenter.heroku.com/articles/multi-factor-authentication){target="_blank"} enabled, then instead of your password you'll need to paste an API Key. Generate and copy your API Key under your [Account Settings in the Heroku Dashboard](https://dashboard.heroku.com/account){target="_blank"}:
+[^mfa]: If you have [Multi-Factor Authentication](https://devcenter.heroku.com/articles/multi-factor-authentication){:target="_blank"} enabled, then instead of your password you'll need to paste an API Key. Generate and copy your API Key under your [Account Settings in the Heroku Dashboard](https://dashboard.heroku.com/account){:target="_blank"}:
 
     ![](assets/deploying-to-heroku/heroku-api-key.png)
 
@@ -87,7 +87,7 @@ heroku stack:set heroku-20
 
 ### Set environment variables
 
-If you need to set any environment variables on Heroku to mirror [the ones you have locally](https://chapters.firstdraft.com/chapters/792) (to e.g. store credentials securely), you can do it in [the application's settings in your Heroku dashboard](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard){target="_blank"}. (Heroku refers to environment variables as "Config Vars".)
+If you need to set any environment variables on Heroku to mirror [the ones you have locally](https://chapters.firstdraft.com/chapters/792) (to e.g. store credentials securely), you can do it in [the application's settings in your Heroku dashboard](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard){:target="_blank"}. (Heroku refers to environment variables as "Config Vars".)
 
 ### Optional: set a custom domain
 

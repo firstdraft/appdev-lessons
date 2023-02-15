@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`data-integrity-with-validations.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/data-integrity-with-validations.md){target="_blank"}
+  - Copied from [`data-integrity-with-validations.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/data-integrity-with-validations.md){:target="_blank"}
 
 > If you want to type along with this reading, you can use the [MSM Validations](https://github.com/appdev-projects/msm-validations) project.
 
@@ -223,4 +223,4 @@ You can read a lot more about validations at the official Rails Guides:
 
 [https://guides.rubyonrails.org/active_record_validations.html](https://guides.rubyonrails.org/active_record_validations.html)
 
-But don't forget that the official Rails Guides use a lot of optional Ruby syntaxes to write more concise code than we like to in AppDev. Review [the Chapter on Optional Ruby Syntaxes](https://chapters.firstdraft.com/chapters/787){target="_blank"} on it if the code examples seem confusing.
+But don't forget that the official Rails Guides use a lot of optional Ruby syntaxes to write more concise code than we like to in AppDev. Review [the Chapter on Optional Ruby Syntaxes](https://chapters.firstdraft.com/chapters/787){:target="_blank"} on it if the code examples seem confusing.

@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`html-cheatsheet.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/html-cheatsheet.md){target="_blank"}
+  - Copied from [`html-cheatsheet.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/html-cheatsheet.md){:target="_blank"}
 
 ## Basic Syntax
 

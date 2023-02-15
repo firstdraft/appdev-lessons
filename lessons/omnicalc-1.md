@@ -4,11 +4,11 @@
 
   - Forms and Query Strings
 
-  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-omnicalc-1-forms-and-query-strings){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/forms-query-strings-and-params-Omnicalc-Part1.md){target="_blank"}
+  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-omnicalc-1-forms-and-query-strings){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/forms-query-strings-and-params-Omnicalc-Part1.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/omnicalc-1](https://github.com/appdev-projects/omnicalc-1){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/omnicalc-1](https://github.com/appdev-projects/omnicalc-1){:target="_blank"}
 
-  - Target: [https://omnicalc-1.matchthetarget.com/](https://omnicalc-1.matchthetarget.com/){target="_blank"}
+  - Target: [https://omnicalc-1.matchthetarget.com/](https://omnicalc-1.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
 
@@ -34,7 +34,7 @@ Let's practice building forms. Forms are incredibly important to us. That is the
 
 **BENP: this setup is also occurring some more around 4 minutes in the midst of the first RCAV**
 
-[Here is the assignment](https://github.com/appdev-projects/omnicalc-1){target="_blank"}. As usual:
+[Here is the assignment](https://github.com/appdev-projects/omnicalc-1){:target="_blank"}. As usual:
 
 1. Start the web server by running `bin/server`.
 2. Navigate to your live application preview.
@@ -44,7 +44,7 @@ Let's practice building forms. Forms are incredibly important to us. That is the
 
 **BENP: possible image(s) (better, GIFs?) of starting a workspace, opening /git, organizing tabs, noting the target favicon. But these are probably in a different chapter.**
 
-The target for this project is [here](https://omnicalc-1.matchthetarget.com/){target="_blank"}. 
+The target for this project is [here](https://omnicalc-1.matchthetarget.com/){:target="_blank"}. 
 
 **BENP: Exploring the Target, 00:01:05 to 00:02:26**
 
@@ -171,7 +171,7 @@ We can go into our view template for the current form and do the following:
 
 We have an opening and closing tag (`<form></form>`) to bracket the form, then a label tag (`<label></label>`), then an input tag (`<input>`, no closing necessary), then a button tag (`<button></button>`). These are the essential form elements.
 
-Now what about the copy? Let's have a look at our [target URL](https://omnicalc-1.matchthetarget.com/square/new){target="_blank"} so we can get the copy right, because `rails grade` will be looking for it -- you have to build to the spec that you've been "hired" to build. You can just make up your own copy willy nilly. Once we have the copy, we go back to our view template and add some more:
+Now what about the copy? Let's have a look at our [target URL](https://omnicalc-1.matchthetarget.com/square/new){:target="_blank"} so we can get the copy right, because `rails grade` will be looking for it -- you have to build to the spec that you've been "hired" to build. You can just make up your own copy willy nilly. Once we have the copy, we go back to our view template and add some more:
 
 ```html
 <!-- app/views/calculation_templates/square_form.html.erb -->
@@ -318,7 +318,7 @@ We begin by adding some formatting and HTML to our view template in `app/views/c
 ```
 {: mark_lines="3-11"}
 
-We use a description list (`<dl>`) containing description terms (`<dt>`) and data (`<dd>`), as per the copy (remember to right click and "View Source") in the [target](https://omnicalc-1.matchthetarget.com/square/results?number=42){target="_blank"}.
+We use a description list (`<dl>`) containing description terms (`<dt>`) and data (`<dd>`), as per the copy (remember to right click and "View Source") in the [target](https://omnicalc-1.matchthetarget.com/square/results?number=42){:target="_blank"}.
 
 Refresh out app, and everything should look okay on this page. But we just put in some placeholders for the result. Let's actually make it dynamic. We need to put the original number in the first `something` and calculate the square to put the result in `something squared`.
 
@@ -460,7 +460,7 @@ Time for a **/git** commit (perhaps with the title message "Square form and calc
   - time stamp 00:31:46 to 00:43:13
   - use **/random/results** RCAV developed *before* **/random/new** to highlight independence of routes
 
-You will complete most of the rest of the assignment on your own, but let's talk about one more thing using the **/random/new** URL path. We can have a look at the [target](https://omnicalc-1.matchthetarget.com/random/new){target="_blank"} and see that when we type in the "Minimum" using "1.5" and "Maximum" using "4.5" and click the button, we are routed to **/random/results?user_min=1.5&user_max=4.5**. So this is the route we want to work.
+You will complete most of the rest of the assignment on your own, but let's talk about one more thing using the **/random/new** URL path. We can have a look at the [target](https://omnicalc-1.matchthetarget.com/random/new){:target="_blank"} and see that when we type in the "Minimum" using "1.5" and "Maximum" using "4.5" and click the button, we are routed to **/random/results?user_min=1.5&user_max=4.5**. So this is the route we want to work.
 
 I want to point out here that in theory the **/random/new** page with the form and the **/random/results** page with the result are entirely independent. I could just build **/random/results** without **/random/new**, but then the user would need to manually type into the address bar their inputs after a query string: **?user_min=1.5&user_max=4.5**. 
 
@@ -624,7 +624,7 @@ The way the assignment should work is:
  - If I visit the ROUTE **/random/new**, I should see a form with labels and inputs to enter two numbers, a minimum and a maximum.
     - If I submit that form, I should see a random number that falls between the numbers that I entered.
 
-You can compare your app against the [target](http://omnicalc-1.matchthetarget.com/){target="_blank"}, including doing "View Source" to look at some of the static HTML.
+You can compare your app against the [target](http://omnicalc-1.matchthetarget.com/){:target="_blank"}, including doing "View Source" to look at some of the static HTML.
 
 
 ### Valid, Accessible Forms

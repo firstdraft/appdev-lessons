@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/Omnicalc-Part2.md){target="_blank"}
+  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/Omnicalc-Part2.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/omnicalc-2](https://github.com/appdev-projects/omnicalc-2){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/omnicalc-2](https://github.com/appdev-projects/omnicalc-2){:target="_blank"}
 
-  - Target: [https://omnicalc-2.matchthetarget.com/](https://omnicalc-2.matchthetarget.com/){target="_blank"}
+  - Target: [https://omnicalc-2.matchthetarget.com/](https://omnicalc-2.matchthetarget.com/){:target="_blank"}
     - username: appdev
     - password: fullstack
 
@@ -42,7 +42,7 @@ Rails.application.routes.draw do
 end
 ```
 
-So will need to build up the [target](https://omnicalc-2.matchthetarget.com/){target="_blank"} step-by-step. When you open this app, you need to enter a username (*appdev*) and password (*fullstack*). The reason for this, is because, if we have time, we're going to do some more fun things than we've done so far. Instead of just getting numbers and doing some math, we'll be doing some more fun things.
+So will need to build up the [target](https://omnicalc-2.matchthetarget.com/){:target="_blank"} step-by-step. When you open this app, you need to enter a username (*appdev*) and password (*fullstack*). The reason for this, is because, if we have time, we're going to do some more fun things than we've done so far. Instead of just getting numbers and doing some math, we'll be doing some more fun things.
 
 For example if we look in the target, there's a "Street to Coordinates" calculator. If you type in and address here, like "5807 S Woodlawn Ave" and click "Lookup Coordinates", then it displays latitude and longitude. So all the form entry steps are the same as what you've already done, but the application does much more here. How did we get from a street address to these coordinates? What's the Ruby for that? Well, we're going to learn how to do that.
 
@@ -324,24 +324,24 @@ We just put the new template again in the `app/views/math_templates/` folder, ju
 
 And here is a bunch of handy links (**BENP: originally from README, can we remove some links? yes definitely**) with information on APIs:
 
- - [JSONView Chrome extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en){target="_blank"}
- - [Dark Sky forecast at the Merchandise Mart for humans](https://darksky.net/forecast/41.8887,-87.6355/us12/en){target="_blank"}
+ - [JSONView Chrome extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en){:target="_blank"}
+ - [Dark Sky forecast at the Merchandise Mart for humans](https://darksky.net/forecast/41.8887,-87.6355/us12/en){:target="_blank"}
  - Dark Sky forecast at the Merchandise Mart for machines:
  
      
      **https://api.darksky.net/forecast/REPLACE_THIS_PATH_SEGMENT_WITH_YOUR_API_TOKEN/41.8887,-87.6355**
 
- - [Dark Sky API docs](https://darksky.net/dev/docs){target="_blank"}
- - [Map of Merchandise Mart for humans](https://goo.gl/maps/2mXdvBnHSGuMq98m6){target="_blank"}
+ - [Dark Sky API docs](https://darksky.net/dev/docs){:target="_blank"}
+ - [Map of Merchandise Mart for humans](https://goo.gl/maps/2mXdvBnHSGuMq98m6){:target="_blank"}
  - Map of Merchandise Mart for machines:
 
     **https://maps.googleapis.com/maps/api/geocode/json?address=Merchandise%20Mart%20Chicago&key=REPLACE_THIS_QUERY_STRING_PARAMETER_WITH_YOUR_API_TOKEN**
 
- - [Google Geocoding API docs](https://developers.google.com/maps/documentation/geocoding/start){target="_blank"}
- - [How to store secrets securely on Gitpod](https://chapters.firstdraft.com/chapters/792){target="_blank"}
+ - [Google Geocoding API docs](https://developers.google.com/maps/documentation/geocoding/start){:target="_blank"}
+ - [How to store secrets securely on Gitpod](https://chapters.firstdraft.com/chapters/792){:target="_blank"}
 
 
-If we look at the [target](https://omnicalc-2.matchthetarget.com/){target="_blank"} and navigate to "Street to Coordinates", **BENP: video cuts out** ... the reason for that is, it costs money. Each time we're making an API call, they are tracking our use and charging us if we are above some limit. GoogleMaps has a very high limit of API calls before charging begins, but the text messaging in the "Translate" page costs money for every message. That is why we have password secured the target in this case. So this is something to keep in mind: if you start to play around with APIs and sign up for an account with a credit card, then be careful with your API credentials!
+If we look at the [target](https://omnicalc-2.matchthetarget.com/){:target="_blank"} and navigate to "Street to Coordinates", **BENP: video cuts out** ... the reason for that is, it costs money. Each time we're making an API call, they are tracking our use and charging us if we are above some limit. GoogleMaps has a very high limit of API calls before charging begins, but the text messaging in the "Translate" page costs money for every message. That is why we have password secured the target in this case. So this is something to keep in mind: if you start to play around with APIs and sign up for an account with a credit card, then be careful with your API credentials!
 
 In this project any necessary API credentials are made available to you **BENP: these are from Canvas and probably should not be / or should be changed in the final material. ALL API KEYS LABELLED AS `TODO`**:
 
@@ -363,7 +363,7 @@ So you can feel free to play around. But with your own credentials, be careful a
 
 How do I begin to think about tackling "Street to Coordinates"?
 
-I have an address and I want the latitude and longitude. I don't want to use my company resources to building up a huge database of this information that I can lookup in. So let's use [Google's Geocoding API](https://developers.google.com/maps/documentation/geocoding/start){target="_blank"}.
+I have an address and I want the latitude and longitude. I don't want to use my company resources to building up a huge database of this information that I can lookup in. So let's use [Google's Geocoding API](https://developers.google.com/maps/documentation/geocoding/start){:target="_blank"}.
 
 The first step of any API work is doing some homework. Search around on the internet for different options and read through some of the documentation. If we look around in the Google documentation, we would find a URL:
 
@@ -407,7 +407,7 @@ And when we enter this address in the tab, we should see a very long JSON file d
 }     
 ```
 
-There may be several hundred lines displayed and it may not be broken into readable lines if you don't have a third party extension like [JSON Viewer for Chrome](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh){target="_blank"}.
+There may be several hundred lines displayed and it may not be broken into readable lines if you don't have a third party extension like [JSON Viewer for Chrome](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh){:target="_blank"}.
 
 If you examine the page, you will see lots of information about the address we entered. *JSON*, or *Javascript Object Notation*, is not the same format as HTML. JSON is somewhat similar to CSV, and there is another format called XML that many APIs use. These are all just different data formats that are much easier to parse programmatically compared to HTML.
 
@@ -581,7 +581,7 @@ Now, we hard-coded an address `5807 S Woodlawn Ave` into our `experiment` action
 
 - Notes:
 
-  - from [https://github.com/appdev-targets/omnicalc-2-api-starting-point#using-gems-to-interact-with-apis](https://github.com/appdev-targets/omnicalc-2-api-starting-point#using-gems-to-interact-with-apis){target="_blank"}
+  - from [https://github.com/appdev-targets/omnicalc-2-api-starting-point#using-gems-to-interact-with-apis](https://github.com/appdev-targets/omnicalc-2-api-starting-point#using-gems-to-interact-with-apis){:target="_blank"}
 
 Interacting with APIs can be easier if someone has written a Ruby library (or "gem") with methods that already know the URLs, parse the JSON, and return exactly the values we want.
 

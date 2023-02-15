@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`google-map.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/google-map.md){target="_blank"}
+  - Copied from [`google-map.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/google-map.md){:target="_blank"}
 
 ## Step 1
 

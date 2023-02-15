@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`draft-account.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-account.md){target="_blank"}
+  - Copied from [`draft-account.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/draft-account.md){:target="_blank"}
 
 ## A special sort of table: user accounts
 
