@@ -80,14 +80,15 @@ Nice! `.each` has two clear benefits over using `.times`:
  - We don't need to count the length of the array; `.each` does it for us and will take care of looping for the correct number of iterations.
  - The block variable, rather than containing an integer that we can use to access the correct element, will contain **the element itself**.
 
-     So now when we name the block variable, we should choose a name[^singular_vs_plural] that reflects what each element in the list is.
+     So now when we name the block variable, we should choose a name that reflects what each element in the list is.
 
      `.each` will, behind the scenes, pull the correct element out of the array before each iteration begins and assign it to that block variable.
 
      Then, **we just use that variable directly**, and we don't have to worry about accessing the array with `.at`.
 
-[^singular_vs_plural]:
-    I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and block variables _singularly_ (e.g. `photo`) to make it clear to myself which is which — the list itself versus one element within the list. Whatever you do, don't name the block variable plurally — that's very confusing when you come back to your code later and have to make sense of it.
+<aside markdown="1">
+I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and block variables _singularly_ (e.g. `photo`) to make it clear to myself which is which — the list itself versus one element within the list. Whatever you do, don't name the block variable plurally — that's very confusing when you come back to your code later and have to make sense of it.
+</aside>
 
 The hardest part, I think, is getting your head around the block variable; in this case, `|the_word|`. It takes some practice.
 
