@@ -1,5 +1,5 @@
-view: https://github.com/firstdraft/appdev-textbook/tree/bp-ruby-chapter-rewrite/%s
-edit: https://github.com/firstdraft/appdev-textbook/tree/bp-ruby-chapter-rewrite/%s
+view: https://github.com/firstdraft/appdev-textbook/tree/main/%s
+edit: https://github.com/firstdraft/appdev-textbook/tree/main/%s
 output_dir: "docs"
 
 # here is the list of lessons in order as they appear in the textbook
@@ -47,7 +47,7 @@ rmd_files:
     # # "lessons/adding-routes.md", # subsumed into rps-rcav.md
     # # "lessons/rcav-flowchart.md", # subsumed into rps-rcav.md
     # # "lessons/routing.md", # subsumed into rps-rcav.md
-    # "lessons/rps-rcav.md",
+    "lessons/rps-rcav.md",
     # "lessons/forms-query-strings-and-params.md",
     # "lessons/omnicalc-1.md",
     # "lessons/fortune-teller.md",
