@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.2 RCAV: Route | Application Development</title>
+  <meta name="description" content="WIP Textbook for AppDev" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.2 RCAV: Route | Application Development" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="WIP Textbook for AppDev" />
+  <meta name="github-repo" content="firstdraft/appdev-textbook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.2 RCAV: Route | Application Development" />
+  
+  <meta name="twitter:description" content="WIP Textbook for AppDev" />
+  
+
+<meta name="author" content="Raghu Betina" />
+
+
+<meta name="date" content="2023-02-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="urls-and-specs.html"/>
+<link rel="next" href="rcav-controller-action-view.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!-- https://stackoverflow.com/questions/62305956/fivethirtyeight-style-in-text-footnotes-for-bookdown -->
+<!-- https://github.com/wjakethompson/bd-reprex/blob/master/assets/style.html -->
+
+<style>
+  input[type=checkbox][id|=fn] ~ span {display:none;}
+  input[type=checkbox][id|=fn]:checked ~ span {display:block;}
+  input[type=checkbox][id|=fn] {display:none;}
+</style>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/styling/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li>Application Development</li>
+<li>Raghu Betina</li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome!</a></li>
+<li class="chapter" data-level="1" data-path="intro-to-ruby.html"><a href="intro-to-ruby.html"><i class="fa fa-check"></i><b>1</b> Intro to Ruby</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html"><i class="fa fa-check"></i><b>1.1</b> Nouns, verbs, and grammar</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#you-already-know-how-to-program"><i class="fa fa-check"></i><b>1.1.1</b> You already know how to program</a></li>
+<li class="chapter" data-level="1.1.2" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#rubys-vocabulary"><i class="fa fa-check"></i><b>1.1.2</b> Ruby’s vocabulary</a></li>
+<li class="chapter" data-level="1.1.3" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#rubys-primary-syntax"><i class="fa fa-check"></i><b>1.1.3</b> Ruby’s primary syntax</a></li>
+<li class="chapter" data-level="1.1.4" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#every-class-has-different-methods"><i class="fa fa-check"></i><b>1.1.4</b> Every class has different methods</a></li>
+<li class="chapter" data-level="1.1.5" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#error-messages"><i class="fa fa-check"></i><b>1.1.5</b> Error Messages</a></li>
+<li class="chapter" data-level="1.1.6" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#arguments-are-inputs"><i class="fa fa-check"></i><b>1.1.6</b> Arguments are inputs</a></li>
+<li class="chapter" data-level="1.1.7" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#one-of-the-only-times-when-whitespace-matters"><i class="fa fa-check"></i><b>1.1.7</b> One of the only times when whitespace matters</a></li>
+<li class="chapter" data-level="1.1.8" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#seriously-please-read-the-error-message"><i class="fa fa-check"></i><b>1.1.8</b> Seriously: please read the error message</a></li>
+<li class="chapter" data-level="1.1.9" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#an-aside-code-comments"><i class="fa fa-check"></i><b>1.1.9</b> An aside: Code comments</a></li>
+<li class="chapter" data-level="1.1.10" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#variables-are-boxes"><i class="fa fa-check"></i><b>1.1.10</b> Variables are boxes</a></li>
+<li class="chapter" data-level="1.1.11" data-path="nouns-verbs-and-grammar.html"><a href="nouns-verbs-and-grammar.html#thats-it"><i class="fa fa-check"></i><b>1.1.11</b> That’s it</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html"><i class="fa fa-check"></i><b>1.2</b> A few program notes</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html#whats-our-goal"><i class="fa fa-check"></i><b>1.2.1</b> What’s our goal?</a></li>
+<li class="chapter" data-level="1.2.2" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html#why-ruby"><i class="fa fa-check"></i><b>1.2.2</b> Why Ruby?</a></li>
+<li class="chapter" data-level="1.2.3" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html#how-are-we-going-to-go-from-zero-to-heroku"><i class="fa fa-check"></i><b>1.2.3</b> How are we going to go from zero to Hero(ku)?</a></li>
+<li class="chapter" data-level="1.2.4" data-path="a-few-program-notes.html"><a href="a-few-program-notes.html#onwards"><i class="fa fa-check"></i><b>1.2.4</b> Onwards</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="string.html"><a href="string.html"><i class="fa fa-check"></i><b>1.3</b> String</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="string.html"><a href="string.html#creating-strings"><i class="fa fa-check"></i><b>1.3.1</b> Creating strings</a></li>
+<li class="chapter" data-level="1.3.2" data-path="string.html"><a href="string.html#methods"><i class="fa fa-check"></i><b>1.3.2</b> Methods</a></li>
+<li class="chapter" data-level="1.3.3" data-path="string.html"><a href="string.html#more-on-adding-strings-together"><i class="fa fa-check"></i><b>1.3.3</b> More on adding strings together</a></li>
+<li class="chapter" data-level="1.3.4" data-path="string.html"><a href="string.html#getting-strings-from-users-with-gets"><i class="fa fa-check"></i><b>1.3.4</b> Getting strings from users with gets</a></li>
+<li class="chapter" data-level="1.3.5" data-path="string.html"><a href="string.html#conclusion"><i class="fa fa-check"></i><b>1.3.5</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="integer.html"><a href="integer.html"><i class="fa fa-check"></i><b>1.4</b> Integer</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="integer.html"><a href="integer.html#syntax"><i class="fa fa-check"></i><b>1.4.1</b> Syntax</a></li>
+<li class="chapter" data-level="1.4.2" data-path="integer.html"><a href="integer.html#methods-1"><i class="fa fa-check"></i><b>1.4.2</b> Methods</a></li>
+<li class="chapter" data-level="1.4.3" data-path="integer.html"><a href="integer.html#conclusion-1"><i class="fa fa-check"></i><b>1.4.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="float.html"><a href="float.html"><i class="fa fa-check"></i><b>1.5</b> Float</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="float.html"><a href="float.html#methods-2"><i class="fa fa-check"></i><b>1.5.1</b> Methods</a></li>
+<li class="chapter" data-level="1.5.2" data-path="float.html"><a href="float.html#conclusion-2"><i class="fa fa-check"></i><b>1.5.2</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="date.html"><a href="date.html"><i class="fa fa-check"></i><b>1.6</b> Date</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="date.html"><a href="date.html#creating-a-date"><i class="fa fa-check"></i><b>1.6.1</b> Creating a date</a></li>
+<li class="chapter" data-level="1.6.2" data-path="date.html"><a href="date.html#date-methods"><i class="fa fa-check"></i><b>1.6.2</b> Date Methods</a></li>
+<li class="chapter" data-level="1.6.3" data-path="date.html"><a href="date.html#time"><i class="fa fa-check"></i><b>1.6.3</b> Time</a></li>
+<li class="chapter" data-level="1.6.4" data-path="date.html"><a href="date.html#conclusion-3"><i class="fa fa-check"></i><b>1.6.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="array.html"><a href="array.html"><i class="fa fa-check"></i><b>1.7</b> Array</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="array.html"><a href="array.html#creating-arrays"><i class="fa fa-check"></i><b>1.7.1</b> Creating arrays</a></li>
+<li class="chapter" data-level="1.7.2" data-path="array.html"><a href="array.html#methods-3"><i class="fa fa-check"></i><b>1.7.2</b> Methods</a></li>
+<li class="chapter" data-level="1.7.3" data-path="array.html"><a href="array.html#conclusion-4"><i class="fa fa-check"></i><b>1.7.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="if-statements.html"><a href="if-statements.html"><i class="fa fa-check"></i><b>1.8</b> If statements</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="if-statements.html"><a href="if-statements.html#the-basic-anatomy-of-if-statements"><i class="fa fa-check"></i><b>1.8.1</b> The basic anatomy of if statements</a></li>
+<li class="chapter" data-level="1.8.2" data-path="if-statements.html"><a href="if-statements.html#multibranch-if-statements"><i class="fa fa-check"></i><b>1.8.2</b> Multibranch if statements</a></li>
+<li class="chapter" data-level="1.8.3" data-path="if-statements.html"><a href="if-statements.html#truthiness-and-falsiness"><i class="fa fa-check"></i><b>1.8.3</b> truthiness and falsiness</a></li>
+<li class="chapter" data-level="1.8.4" data-path="if-statements.html"><a href="if-statements.html#comparisons"><i class="fa fa-check"></i><b>1.8.4</b> Comparisons</a></li>
+<li class="chapter" data-level="1.8.5" data-path="if-statements.html"><a href="if-statements.html#combining-conditions-with-and-and-or"><i class="fa fa-check"></i><b>1.8.5</b> Combining conditions with AND and OR</a></li>
+<li class="chapter" data-level="1.8.6" data-path="if-statements.html"><a href="if-statements.html#conclusion-5"><i class="fa fa-check"></i><b>1.8.6</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="loops-chapter.html"><a href="loops-chapter.html"><i class="fa fa-check"></i><b>1.9</b> Loops</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="loops-chapter.html"><a href="loops-chapter.html#if-conditionally-doing-something-once"><i class="fa fa-check"></i><b>1.9.1</b> if: conditionally doing something once</a></li>
+<li class="chapter" data-level="1.9.2" data-path="loops-chapter.html"><a href="loops-chapter.html#while-conditionally-doing-something-multiple-times"><i class="fa fa-check"></i><b>1.9.2</b> while: conditionally doing something multiple times</a></li>
+<li class="chapter" data-level="1.9.3" data-path="loops-chapter.html"><a href="loops-chapter.html#blocks"><i class="fa fa-check"></i><b>1.9.3</b> Blocks</a></li>
+<li class="chapter" data-level="1.9.4" data-path="loops-chapter.html"><a href="loops-chapter.html#conclusion-6"><i class="fa fa-check"></i><b>1.9.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="each.html"><a href="each.html"><i class="fa fa-check"></i><b>1.10</b> Each</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="each.html"><a href="each.html#iterating-over-arrays-with-integers-times-method"><i class="fa fa-check"></i><b>1.10.1</b> Iterating over arrays with Integer’s times method</a></li>
+<li class="chapter" data-level="1.10.2" data-path="each.html"><a href="each.html#arrays-each-method"><i class="fa fa-check"></i><b>1.10.2</b> Array’s each method</a></li>
+<li class="chapter" data-level="1.10.3" data-path="each.html"><a href="each.html#sneak-peek"><i class="fa fa-check"></i><b>1.10.3</b> Sneak peek</a></li>
+<li class="chapter" data-level="1.10.4" data-path="each.html"><a href="each.html#conclusion-7"><i class="fa fa-check"></i><b>1.10.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="hash-chapter.html"><a href="hash-chapter.html"><i class="fa fa-check"></i><b>1.11</b> Hash</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="hash-chapter.html"><a href="hash-chapter.html#a-brief-interlude-symbols"><i class="fa fa-check"></i><b>1.11.1</b> A brief interlude: Symbols</a></li>
+<li class="chapter" data-level="1.11.2" data-path="hash-chapter.html"><a href="hash-chapter.html#creating-hashes-and-storing-values"><i class="fa fa-check"></i><b>1.11.2</b> Creating hashes and storing values</a></li>
+<li class="chapter" data-level="1.11.3" data-path="hash-chapter.html"><a href="hash-chapter.html#fetch"><i class="fa fa-check"></i><b>1.11.3</b> fetch</a></li>
+<li class="chapter" data-level="1.11.4" data-path="hash-chapter.html"><a href="hash-chapter.html#hash-literals"><i class="fa fa-check"></i><b>1.11.4</b> Hash literals</a></li>
+<li class="chapter" data-level="1.11.5" data-path="hash-chapter.html"><a href="hash-chapter.html#fetch-shorthand"><i class="fa fa-check"></i><b>1.11.5</b> fetch shorthand, []</a></li>
+<li class="chapter" data-level="1.11.6" data-path="hash-chapter.html"><a href="hash-chapter.html#store-shorthand"><i class="fa fa-check"></i><b>1.11.6</b> store shorthand, []=</a></li>
+<li class="chapter" data-level="1.11.7" data-path="hash-chapter.html"><a href="hash-chapter.html#use-.keys-to-explore"><i class="fa fa-check"></i><b>1.11.7</b> Use .keys to explore</a></li>
+<li class="chapter" data-level="1.11.8" data-path="hash-chapter.html"><a href="hash-chapter.html#keys-can-be-anything"><i class="fa fa-check"></i><b>1.11.8</b> keys can be anything</a></li>
+<li class="chapter" data-level="1.11.9" data-path="hash-chapter.html"><a href="hash-chapter.html#values-can-be-anything"><i class="fa fa-check"></i><b>1.11.9</b> values can be anything</a></li>
+<li class="chapter" data-level="1.11.10" data-path="hash-chapter.html"><a href="hash-chapter.html#key"><i class="fa fa-check"></i><b>1.11.10</b> key</a></li>
+<li class="chapter" data-level="1.11.11" data-path="hash-chapter.html"><a href="hash-chapter.html#conclusion-8"><i class="fa fa-check"></i><b>1.11.11</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="our-own-classes.html"><a href="our-own-classes.html"><i class="fa fa-check"></i><b>1.12</b> Our own classes</a>
+<ul>
+<li class="chapter" data-level="1.12.1" data-path="our-own-classes.html"><a href="our-own-classes.html#modeling-real-world-things"><i class="fa fa-check"></i><b>1.12.1</b> Modeling real world things</a></li>
+<li class="chapter" data-level="1.12.2" data-path="our-own-classes.html"><a href="our-own-classes.html#inheritance"><i class="fa fa-check"></i><b>1.12.2</b> Inheritance</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="ruby-conclusions.html"><a href="ruby-conclusions.html"><i class="fa fa-check"></i><b>1.13</b> Ruby Conclusions</a>
+<ul>
+<li class="chapter" data-level="1.13.1" data-path="ruby-conclusions.html"><a href="ruby-conclusions.html#our-technical-reference-vs.-google-fu"><i class="fa fa-check"></i><b>1.13.1</b> Our Technical Reference vs. Google-Fu</a></li>
+<li class="chapter" data-level="1.13.2" data-path="ruby-conclusions.html"><a href="ruby-conclusions.html#ruby-gym"><i class="fa fa-check"></i><b>1.13.2</b> Ruby Gym</a></li>
+</ul></li>
+<li class="chapter" data-level="1.14" data-path="addendum-some-more-ruby-methods.html"><a href="addendum-some-more-ruby-methods.html"><i class="fa fa-check"></i><b>1.14</b> Addendum: Some more Ruby methods</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="adding-routes.html"><a href="adding-routes.html"><i class="fa fa-check"></i><b>2</b> Rock, Paper, Scissors RCAV</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="urls-and-specs.html"><a href="urls-and-specs.html"><i class="fa fa-check"></i><b>2.1</b> URLs and Specs</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="urls-and-specs.html"><a href="urls-and-specs.html#quiz-question"><i class="fa fa-check"></i><b>2.1.1</b> Quiz Question</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="rcav-route.html"><a href="rcav-route.html"><i class="fa fa-check"></i><b>2.2</b> RCAV: Route</a></li>
+<li class="chapter" data-level="2.3" data-path="rcav-controller-action-view.html"><a href="rcav-controller-action-view.html"><i class="fa fa-check"></i><b>2.3</b> RCAV: Controller, Action, View</a></li>
+<li class="chapter" data-level="2.4" data-path="dropping-self..html"><a href="dropping-self..html"><i class="fa fa-check"></i><b>2.4</b> Dropping <code>self.</code></a></li>
+<li class="chapter" data-level="2.5" data-path="starting-our-gitpod-workspace.html"><a href="starting-our-gitpod-workspace.html"><i class="fa fa-check"></i><b>2.5</b> Starting Our GitPod Workspace</a></li>
+<li class="chapter" data-level="2.6" data-path="our-first-rcav.html"><a href="our-first-rcav.html"><i class="fa fa-check"></i><b>2.6</b> Our First RCAV</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="our-first-rcav.html"><a href="our-first-rcav.html#our-first-rcav-completed-code"><i class="fa fa-check"></i><b>2.6.1</b> Our First RCAV: Completed Code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="render-html.html"><a href="render-html.html"><i class="fa fa-check"></i><b>2.7</b> Render HTML</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="render-html.html"><a href="render-html.html#completed-code"><i class="fa fa-check"></i><b>2.7.1</b> Completed Code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="embedded-ruby-tags.html"><a href="embedded-ruby-tags.html"><i class="fa fa-check"></i><b>2.8</b> Embedded Ruby Tags</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="embedded-ruby-tags.html"><a href="embedded-ruby-tags.html#completed-code-1"><i class="fa fa-check"></i><b>2.8.1</b> Completed Code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="control-flow-with-embedded-ruby.html"><a href="control-flow-with-embedded-ruby.html"><i class="fa fa-check"></i><b>2.9</b> Control Flow with Embedded Ruby</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="control-flow-with-embedded-ruby.html"><a href="control-flow-with-embedded-ruby.html#completed-code-2"><i class="fa fa-check"></i><b>2.9.1</b> Completed Code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="reinforce-rcav-with.html"><a href="reinforce-rcav-with.html"><i class="fa fa-check"></i><b>2.10</b> Reinforce RCAV with /</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="reinforce-rcav-with.html"><a href="reinforce-rcav-with.html#completed-code-3"><i class="fa fa-check"></i><b>2.10.1</b> Completed Code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="reinforce-rcav-with-paper.html"><a href="reinforce-rcav-with-paper.html"><i class="fa fa-check"></i><b>2.11</b> Reinforce RCAV with /paper</a>
+<ul>
+<li class="chapter" data-level="2.11.1" data-path="reinforce-rcav-with-paper.html"><a href="reinforce-rcav-with-paper.html#completed-code-4"><i class="fa fa-check"></i><b>2.11.1</b> Completed Code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.12" data-path="embedded-ruby-in-the-controller-with-instance-variables.html"><a href="embedded-ruby-in-the-controller-with-instance-variables.html"><i class="fa fa-check"></i><b>2.12</b> Embedded Ruby in the Controller with Instance Variables</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="embedded-ruby-in-the-controller-with-instance-variables.html"><a href="embedded-ruby-in-the-controller-with-instance-variables.html#completed-code-5"><i class="fa fa-check"></i><b>2.12.1</b> Completed Code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.13" data-path="linking-pages-with-layouts.html"><a href="linking-pages-with-layouts.html"><i class="fa fa-check"></i><b>2.13</b> Linking Pages with Layouts</a>
+<ul>
+<li class="chapter" data-level="2.13.1" data-path="linking-pages-with-layouts.html"><a href="linking-pages-with-layouts.html#completed-code-6"><i class="fa fa-check"></i><b>2.13.1</b> Completed Code</a></li>
+</ul></li>
+<li class="chapter" data-level="2.14" data-path="finish-and-submit-rps-rcav.html"><a href="finish-and-submit-rps-rcav.html"><i class="fa fa-check"></i><b>2.14</b> Finish and Submit RPS RCAV</a></li>
+<li class="chapter" data-level="2.15" data-path="addendum-rcav-flowchart.html"><a href="addendum-rcav-flowchart.html"><i class="fa fa-check"></i><b>2.15</b> Addendum: RCAV Flowchart</a></li>
+<li class="chapter" data-level="2.16" data-path="addendum-custom-controller-files.html"><a href="addendum-custom-controller-files.html"><i class="fa fa-check"></i><b>2.16</b> Addendum: Custom Controller Files</a></li>
+<li class="chapter" data-level="2.17" data-path="addendum-rendering-json.html"><a href="addendum-rendering-json.html"><i class="fa fa-check"></i><b>2.17</b> Addendum: Rendering JSON</a></li>
+</ul></li>
+<li class="appendix"><span><b>Glossaries</b></span></li>
+<li class="chapter" data-level="A" data-path="the-one-ruby-reference.html"><a href="the-one-ruby-reference.html"><i class="fa fa-check"></i><b>A</b> The One Ruby Reference</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html"><i class="fa fa-check"></i><b>A.1</b> ActiveRecord_Relation (array of records)</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#all-array-methods"><i class="fa fa-check"></i><b>A.1.1</b> All Array methods</a></li>
+<li class="chapter" data-level="A.1.2" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#where"><i class="fa fa-check"></i><b>A.1.2</b> .where</a></li>
+<li class="chapter" data-level="A.1.3" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#where.not"><i class="fa fa-check"></i><b>A.1.3</b> where.not</a></li>
+<li class="chapter" data-level="A.1.4" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#or"><i class="fa fa-check"></i><b>A.1.4</b> .or</a></li>
+<li class="chapter" data-level="A.1.5" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#order"><i class="fa fa-check"></i><b>A.1.5</b> .order</a></li>
+<li class="chapter" data-level="A.1.6" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#limit"><i class="fa fa-check"></i><b>A.1.6</b> .limit</a></li>
+<li class="chapter" data-level="A.1.7" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#offset"><i class="fa fa-check"></i><b>A.1.7</b> .offset</a></li>
+<li class="chapter" data-level="A.1.8" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#map_relation_to_array"><i class="fa fa-check"></i><b>A.1.8</b> .map_relation_to_array</a></li>
+<li class="chapter" data-level="A.1.9" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#maximum"><i class="fa fa-check"></i><b>A.1.9</b> .maximum</a></li>
+<li class="chapter" data-level="A.1.10" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#minimum"><i class="fa fa-check"></i><b>A.1.10</b> .minimum</a></li>
+<li class="chapter" data-level="A.1.11" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#sum-1"><i class="fa fa-check"></i><b>A.1.11</b> .sum</a></li>
+<li class="chapter" data-level="A.1.12" data-path="activerecord_relation-array-of-records.html"><a href="activerecord_relation-array-of-records.html#average"><i class="fa fa-check"></i><b>A.1.12</b> .average</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="activerecord-a-single-record.html"><a href="activerecord-a-single-record.html"><i class="fa fa-check"></i><b>A.2</b> <code>ActiveRecord</code> (A single record)</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="activerecord-a-single-record.html"><a href="activerecord-a-single-record.html#all-column-names"><i class="fa fa-check"></i><b>A.2.1</b> All column names</a></li>
+<li class="chapter" data-level="A.2.2" data-path="activerecord-a-single-record.html"><a href="activerecord-a-single-record.html#any-other-instance-methods-you-define-in-the-class"><i class="fa fa-check"></i><b>A.2.2</b> Any other instance methods you define in the class</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="association-helper-methods.html"><a href="association-helper-methods.html"><i class="fa fa-check"></i><b>A.3</b> Association Helper Methods</a>
+<ul>
+<li class="chapter" data-level="A.3.1" data-path="association-helper-methods.html"><a href="association-helper-methods.html#belongs_to"><i class="fa fa-check"></i><b>A.3.1</b> belongs_to</a></li>
+<li class="chapter" data-level="A.3.2" data-path="association-helper-methods.html"><a href="association-helper-methods.html#has_many"><i class="fa fa-check"></i><b>A.3.2</b> has_many</a></li>
+<li class="chapter" data-level="A.3.3" data-path="association-helper-methods.html"><a href="association-helper-methods.html#has_manythrough"><i class="fa fa-check"></i><b>A.3.3</b> has_many/through</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="string-1.html"><a href="string-1.html"><i class="fa fa-check"></i><b>A.4</b> String</a>
+<ul>
+<li class="chapter" data-level="A.4.1" data-path="string-1.html"><a href="string-1.html#concat-."><i class="fa fa-check"></i><b>A.4.1</b> .concat (.+)</a></li>
+<li class="chapter" data-level="A.4.2" data-path="string-1.html"><a href="string-1.html#method"><i class="fa fa-check"></i><b>A.4.2</b> * method</a></li>
+<li class="chapter" data-level="A.4.3" data-path="string-1.html"><a href="string-1.html#upcase-1"><i class="fa fa-check"></i><b>A.4.3</b> .upcase</a></li>
+<li class="chapter" data-level="A.4.4" data-path="string-1.html"><a href="string-1.html#downcase-1"><i class="fa fa-check"></i><b>A.4.4</b> .downcase</a></li>
+<li class="chapter" data-level="A.4.5" data-path="string-1.html"><a href="string-1.html#swapcase-1"><i class="fa fa-check"></i><b>A.4.5</b> .swapcase</a></li>
+<li class="chapter" data-level="A.4.6" data-path="string-1.html"><a href="string-1.html#reverse-string"><i class="fa fa-check"></i><b>A.4.6</b> .reverse (String)</a></li>
+<li class="chapter" data-level="A.4.7" data-path="string-1.html"><a href="string-1.html#length-1"><i class="fa fa-check"></i><b>A.4.7</b> .length</a></li>
+<li class="chapter" data-level="A.4.8" data-path="string-1.html"><a href="string-1.html#chomp-1"><i class="fa fa-check"></i><b>A.4.8</b> .chomp</a></li>
+<li class="chapter" data-level="A.4.9" data-path="string-1.html"><a href="string-1.html#gsub-1"><i class="fa fa-check"></i><b>A.4.9</b> .gsub</a></li>
+<li class="chapter" data-level="A.4.10" data-path="string-1.html"><a href="string-1.html#to_i-string"><i class="fa fa-check"></i><b>A.4.10</b> .to_i (String)</a></li>
+<li class="chapter" data-level="A.4.11" data-path="string-1.html"><a href="string-1.html#strip-1"><i class="fa fa-check"></i><b>A.4.11</b> .strip</a></li>
+<li class="chapter" data-level="A.4.12" data-path="string-1.html"><a href="string-1.html#capitalize-1"><i class="fa fa-check"></i><b>A.4.12</b> .capitalize</a></li>
+<li class="chapter" data-level="A.4.13" data-path="string-1.html"><a href="string-1.html#split"><i class="fa fa-check"></i><b>A.4.13</b> .split</a></li>
+<li class="chapter" data-level="A.4.14" data-path="string-1.html"><a href="string-1.html#include-2"><i class="fa fa-check"></i><b>A.4.14</b> .include?</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="integer-1.html"><a href="integer-1.html"><i class="fa fa-check"></i><b>A.5</b> Integer</a>
+<ul>
+<li class="chapter" data-level="A.5.1" data-path="integer-1.html"><a href="integer-1.html#math-operations-for-the-integer-class"><i class="fa fa-check"></i><b>A.5.1</b> Math Operations for the Integer Class</a></li>
+<li class="chapter" data-level="A.5.2" data-path="integer-1.html"><a href="integer-1.html#modulus-operator"><i class="fa fa-check"></i><b>A.5.2</b> <code>%</code> (modulus) operator</a></li>
+<li class="chapter" data-level="A.5.3" data-path="integer-1.html"><a href="integer-1.html#operator-integer"><i class="fa fa-check"></i><b>A.5.3</b> <code>**</code> operator Integer</a></li>
+<li class="chapter" data-level="A.5.4" data-path="integer-1.html"><a href="integer-1.html#odd-and-.even-method"><i class="fa fa-check"></i><b>A.5.4</b> .odd? and .even? method</a></li>
+<li class="chapter" data-level="A.5.5" data-path="integer-1.html"><a href="integer-1.html#rand-2"><i class="fa fa-check"></i><b>A.5.5</b> rand</a></li>
+<li class="chapter" data-level="A.5.6" data-path="integer-1.html"><a href="integer-1.html#to_s-1"><i class="fa fa-check"></i><b>A.5.6</b> .to_s</a></li>
+<li class="chapter" data-level="A.5.7" data-path="integer-1.html"><a href="integer-1.html#to_f-1"><i class="fa fa-check"></i><b>A.5.7</b> .to_f</a></li>
+</ul></li>
+<li class="chapter" data-level="A.6" data-path="float-1.html"><a href="float-1.html"><i class="fa fa-check"></i><b>A.6</b> Float</a>
+<ul>
+<li class="chapter" data-level="A.6.1" data-path="float-1.html"><a href="float-1.html#math-operations-for-the-float-class"><i class="fa fa-check"></i><b>A.6.1</b> Math Operations for the Float Class</a></li>
+<li class="chapter" data-level="A.6.2" data-path="float-1.html"><a href="float-1.html#float-operator"><i class="fa fa-check"></i><b>A.6.2</b> <code>**</code> Float operator</a></li>
+<li class="chapter" data-level="A.6.3" data-path="float-1.html"><a href="float-1.html#round-1"><i class="fa fa-check"></i><b>A.6.3</b> .round</a></li>
+<li class="chapter" data-level="A.6.4" data-path="float-1.html"><a href="float-1.html#to_i-float"><i class="fa fa-check"></i><b>A.6.4</b> .to_i (Float)</a></li>
+</ul></li>
+<li class="chapter" data-level="A.7" data-path="date-1.html"><a href="date-1.html"><i class="fa fa-check"></i><b>A.7</b> Date</a>
+<ul>
+<li class="chapter" data-level="A.7.1" data-path="date-1.html"><a href="date-1.html#creating-a-date-1"><i class="fa fa-check"></i><b>A.7.1</b> Creating a Date</a></li>
+<li class="chapter" data-level="A.7.2" data-path="date-1.html"><a href="date-1.html#date.new-1"><i class="fa fa-check"></i><b>A.7.2</b> Date.new</a></li>
+<li class="chapter" data-level="A.7.3" data-path="date-1.html"><a href="date-1.html#date.today-1"><i class="fa fa-check"></i><b>A.7.3</b> Date.today</a></li>
+<li class="chapter" data-level="A.7.4" data-path="date-1.html"><a href="date-1.html#date.parse-1"><i class="fa fa-check"></i><b>A.7.4</b> Date.parse()</a></li>
+<li class="chapter" data-level="A.7.5" data-path="date-1.html"><a href="date-1.html#subtraction-1"><i class="fa fa-check"></i><b>A.7.5</b> Subtraction</a></li>
+<li class="chapter" data-level="A.7.6" data-path="date-1.html"><a href="date-1.html#date.mday"><i class="fa fa-check"></i><b>A.7.6</b> Date.mday</a></li>
+<li class="chapter" data-level="A.7.7" data-path="date-1.html"><a href="date-1.html#date.wday"><i class="fa fa-check"></i><b>A.7.7</b> Date.wday</a></li>
+<li class="chapter" data-level="A.7.8" data-path="date-1.html"><a href="date-1.html#days-of-the-week"><i class="fa fa-check"></i><b>A.7.8</b> Days of the Week</a></li>
+</ul></li>
+<li class="chapter" data-level="A.8" data-path="array-1.html"><a href="array-1.html"><i class="fa fa-check"></i><b>A.8</b> Array</a>
+<ul>
+<li class="chapter" data-level="A.8.1" data-path="array-1.html"><a href="array-1.html#creating-an-array"><i class="fa fa-check"></i><b>A.8.1</b> Creating an Array</a></li>
+<li class="chapter" data-level="A.8.2" data-path="array-1.html"><a href="array-1.html#push-1"><i class="fa fa-check"></i><b>A.8.2</b> .push</a></li>
+<li class="chapter" data-level="A.8.3" data-path="array-1.html"><a href="array-1.html#at"><i class="fa fa-check"></i><b>A.8.3</b> .at()</a></li>
+<li class="chapter" data-level="A.8.4" data-path="array-1.html"><a href="array-1.html#first-and-.last"><i class="fa fa-check"></i><b>A.8.4</b> .first and .last</a></li>
+<li class="chapter" data-level="A.8.5" data-path="array-1.html"><a href="array-1.html#index-1"><i class="fa fa-check"></i><b>A.8.5</b> .index</a></li>
+<li class="chapter" data-level="A.8.6" data-path="array-1.html"><a href="array-1.html#count-1"><i class="fa fa-check"></i><b>A.8.6</b> .count</a></li>
+<li class="chapter" data-level="A.8.7" data-path="array-1.html"><a href="array-1.html#reverse-array"><i class="fa fa-check"></i><b>A.8.7</b> .reverse (Array)</a></li>
+<li class="chapter" data-level="A.8.8" data-path="array-1.html"><a href="array-1.html#sort-1"><i class="fa fa-check"></i><b>A.8.8</b> .sort</a></li>
+<li class="chapter" data-level="A.8.9" data-path="array-1.html"><a href="array-1.html#shuffle-1"><i class="fa fa-check"></i><b>A.8.9</b> .shuffle</a></li>
+<li class="chapter" data-level="A.8.10" data-path="array-1.html"><a href="array-1.html#sample-1"><i class="fa fa-check"></i><b>A.8.10</b> .sample</a></li>
+<li class="chapter" data-level="A.8.11" data-path="array-1.html"><a href="array-1.html#min-and-.max"><i class="fa fa-check"></i><b>A.8.11</b> .min and .max</a></li>
+<li class="chapter" data-level="A.8.12" data-path="array-1.html"><a href="array-1.html#sum-array"><i class="fa fa-check"></i><b>A.8.12</b> .sum (Array)</a></li>
+</ul></li>
+<li class="chapter" data-level="A.9" data-path="hash.html"><a href="hash.html"><i class="fa fa-check"></i><b>A.9</b> Hash</a>
+<ul>
+<li class="chapter" data-level="A.9.1" data-path="hash.html"><a href="hash.html#interlude-symbol"><i class="fa fa-check"></i><b>A.9.1</b> Interlude: Symbol</a></li>
+<li class="chapter" data-level="A.9.2" data-path="hash.html"><a href="hash.html#creating-a-hash"><i class="fa fa-check"></i><b>A.9.2</b> Creating a Hash</a></li>
+<li class="chapter" data-level="A.9.3" data-path="hash.html"><a href="hash.html#store"><i class="fa fa-check"></i><b>A.9.3</b> .store</a></li>
+<li class="chapter" data-level="A.9.4" data-path="hash.html"><a href="hash.html#fetch-1"><i class="fa fa-check"></i><b>A.9.4</b> .fetch</a></li>
+</ul></li>
+<li class="chapter" data-level="A.10" data-path="conditionals.html"><a href="conditionals.html"><i class="fa fa-check"></i><b>A.10</b> Conditionals</a></li>
+<li class="chapter" data-level="A.11" data-path="loops.html"><a href="loops.html"><i class="fa fa-check"></i><b>A.11</b> Loops</a></li>
+<li class="chapter" data-level="A.12" data-path="blocks-1.html"><a href="blocks-1.html"><i class="fa fa-check"></i><b>A.12</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="A.12.1" data-path="blocks-1.html"><a href="blocks-1.html#times"><i class="fa fa-check"></i><b>A.12.1</b> .times</a></li>
+<li class="chapter" data-level="A.12.2" data-path="blocks-1.html"><a href="blocks-1.html#upto"><i class="fa fa-check"></i><b>A.12.2</b> .upto</a></li>
+<li class="chapter" data-level="A.12.3" data-path="blocks-1.html"><a href="blocks-1.html#downto"><i class="fa fa-check"></i><b>A.12.3</b> .downto</a></li>
+<li class="chapter" data-level="A.12.4" data-path="blocks-1.html"><a href="blocks-1.html#step"><i class="fa fa-check"></i><b>A.12.4</b> .step</a></li>
+</ul></li>
+<li class="chapter" data-level="A.13" data-path="looping-through-arrays.html"><a href="looping-through-arrays.html"><i class="fa fa-check"></i><b>A.13</b> Looping through Arrays</a>
+<ul>
+<li class="chapter" data-level="A.13.1" data-path="looping-through-arrays.html"><a href="looping-through-arrays.html#each-1"><i class="fa fa-check"></i><b>A.13.1</b> .each</a></li>
+<li class="chapter" data-level="A.13.2" data-path="looping-through-arrays.html"><a href="looping-through-arrays.html#each_with_index"><i class="fa fa-check"></i><b>A.13.2</b> .each_with_index</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="different-ruby-styles.html"><a href="different-ruby-styles.html"><i class="fa fa-check"></i><b>B</b> Different Ruby Styles</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="no-parentheses-around-arguments.html"><a href="no-parentheses-around-arguments.html"><i class="fa fa-check"></i><b>B.1</b> No parentheses around arguments</a></li>
+<li class="chapter" data-level="B.2" data-path="curly-braces-around-hash-arguments.html"><a href="curly-braces-around-hash-arguments.html"><i class="fa fa-check"></i><b>B.2</b> Curly braces around hash arguments</a></li>
+<li class="chapter" data-level="B.3" data-path="new-hash-syntax.html"><a href="new-hash-syntax.html"><i class="fa fa-check"></i><b>B.3</b> New Hash Syntax</a></li>
+<li class="chapter" data-level="B.4" data-path="putting-it-all-together.html"><a href="putting-it-all-together.html"><i class="fa fa-check"></i><b>B.4</b> Putting it all together</a></li>
+<li class="chapter" data-level="B.5" data-path="single-line-blocks.html"><a href="single-line-blocks.html"><i class="fa fa-check"></i><b>B.5</b> Single line blocks</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="_blank">
+Proudly published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Application Development</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rcav-route" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> RCAV: Route<a href="rcav-route.html#rcav-route" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The key is <em>routes</em>. <em>Routes</em> are how we connect a URL to an <em>action</em>.</p>
+<p>The <code>config/routes.rb</code><span id="fn-25"><!--
+--><label for="fn-25-toggle"><sup>25</sup></label><!--
+--><input type="checkbox" hidden id="fn-25-toggle"/>
+<span id="fn-content">It’s finally time to move out of our <code>public/</code> and <code>tasks/</code> folders, and use more of our Rails application by working in the <code>app/</code> folder, where most of our code goes, and with this one file <code>routes.rb</code> that is in the <code>config/</code> folder.</span></span> file included in every Rails app lists all of the URLs (<em>routes</em>) that a user can visit. When someone visits the URL we say which class and which method Rails should execute to handle the request. Here is an example of a route:</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb178-1"><a href="rcav-route.html#cb178-1" aria-hidden="true"></a><span class="co"># config/routes.rb</span></span>
+<span id="cb178-2"><a href="rcav-route.html#cb178-2" aria-hidden="true"></a></span>
+<span id="cb178-3"><a href="rcav-route.html#cb178-3" aria-hidden="true"></a><span class="dv">self</span>.get(<span class="st">&quot;/rock&quot;</span>, { <span class="st">:controller</span> =&gt; <span class="st">&quot;application&quot;</span>, <span class="st">:action</span> =&gt; <span class="st">&quot;play_rock&quot;</span> })</span></code></pre></div>
+<p>The method here is <code>get</code><span id="fn-26"><!--
+--><label for="fn-26-toggle"><sup>26</sup></label><!--
+--><input type="checkbox" hidden id="fn-26-toggle"/>
+<span id="fn-content">Later we’ll use other methods, like <code>post</code>, if we want to support requests using the other HTTP verbs.</span></span> and there are parentheses for its <em>two arguments</em>:</p>
+<ol style="list-style-type: decimal">
+<li><p>A <code>String</code>: the <em>path</em> that we want users to be able to visit (the <mark>path</mark> is the portion of the URL that comes after the <mark>domain name</mark>). Here it is <code>"/rock"</code>.</p></li>
+<li><p>A <code>Hash</code>: this is where we tell Rails which method to call when a user visits the path in the first argument. (We’ll have to actually write this method in the next step, after we write the route.)</p></li>
+</ol>
+<p>The <code>Hash</code> must have two key/value pairs:</p>
+<ul>
+<li><p><code>:controller</code>: The value for this key is what we’re going to name the Class that <em>contains</em> the method we want Rails to call when the user visits the path. For now we’re going to default this value to <code>"application"</code>.</p></li>
+<li><p><code>:action</code>: The value for this key is what we’re going to name the method itself. <em>Action</em> is the term used to refer to Ruby methods that are triggered by users visiting URLs.</p></li>
+</ul>
+<p>The <code>Hash</code> is saying: <em>“Use a <code>Class</code> (controller) called <code>application_controller</code>, and in that <code>Class</code> use a <code>method</code> (action) called <code>play_rock</code> to generate a response for the user.”</em></p>
+<p>Don’t be confused by the key names <code>:controller</code> and <code>:action</code>, these are equivalent to a Ruby Class and method. They just have special names in the lingo of web applications.</p>
+<p>The <code>get</code> method is <em>inherited</em>, we don’t need to build this method ourselves, which saves us a lot of time. We get the plumbing for free and we just need to tell Rails how we want each request to be handled by declaring our routes.</p>
+</div>
+<!-- https://community.rstudio.com/t/insertion-of-javascript-into-bookdown-project/44176 -->
+<!-- https://stackoverflow.com/questions/6822945/add-target-blank-to-link-with-javascript -->
+<!-- https://stackoverflow.com/a/6823034 -->
+
+<script>
+  var links = document.getElementsByTagName('a');
+  var len = links.length;
+
+  for(var i=0; i<len; i++)
+  {
+    links[i].target = "_blank";
+  }
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="urls-and-specs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rcav-controller-action-view.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/firstdraft/appdev-textbook/tree/main/lessons/rps-rcav.md",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/firstdraft/appdev-textbook/tree/main/lessons/rps-rcav.md",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>
