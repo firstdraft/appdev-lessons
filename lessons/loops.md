@@ -1,9 +1,4 @@
-## Loops in Ruby
-
-- Notes:
-
-  - Copied from [`loops.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/loops.md){target="_blank"}
-  - See [Ruby Practice: Loops][Ruby Practice: Loops] for project: [https://github.com/appdev-projects/loops-chapter](https://github.com/appdev-projects/loops-chapter){target="_blank"}
+## Loops {#loops-chapter}
 
 ### if: conditionally doing something once
 
@@ -23,11 +18,14 @@ p numbers
 p len
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){target="_blank"}
+What do you expect the output of this program to be? Try to interpret the program yourself before you ask Ruby to.
 
-What do you expect the output of the program to be when you click run? Try to interpret the program yourself before you ask Ruby to.
+<div class="experiment" markdown="1">
 
-Okay, now you can click "run ▶". Did you guess right?
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){target="_blank"}
+</div>
+
+Hopefully you clicked "▶ Run". Did you guess right?
 
 We start off with a blank array, `numbers`. If its length is less than `10` (this is true, since length is currently `0`), we push a new random number into it.
 
@@ -53,11 +51,14 @@ p numbers
 p len
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){target="_blank"}
+<div class="experiment" markdown="1">
 
-`while` works almost exactly like `if` — it evaluates the expression next to it, and if the expression is truthy, it executes the code on the lines between it and it's `end`; if not, it ignores the code on the lines between it and it's `end`.
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){target="_blank"}
+</div>
 
-There is one key difference: if the condition next to a `while` is truthy, after we reach it's `end`, the execution of the program **jumps back up to the `while` statement**.
+`while` works almost exactly like `if` — it evaluates the expression next to it, and if the expression is truthy, it executes the code on the lines between it and its `end`; if not, it ignores the code on the lines between it and its `end`.
+
+There is one key difference: if the condition next to a `while` is truthy, after we reach its `end`, the execution of the program **jumps back up to the `while` statement**.
 
 Then the condition is evaluated *again*. **If it is *still* true, then the code inside the `while` statement is executed _again_.** And then the execution of the program jumps back up to the `while` statement *again*. Etc.
 
@@ -80,7 +81,7 @@ What we've seen here is our very first **loop**; code that is executed multiple 
 
 Fundamentally, all looping is implemented with `while`; but, this being Ruby, there are all sorts of convenience methods on top to make it as easy as possible to create loops for various contexts. For example, let's say I wanted to print:
 
-```
+```bash
 "1 Mississippi"
 "2 Mississippi"
 "3 Mississippi"
@@ -100,11 +101,14 @@ while mississipis <= 10
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){target="_blank"}
+<div class="experiment" markdown="1">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){target="_blank"}
+</div>
 
 Does the code make sense to you?[^incrementing]
 
-[^incrementing]: If the line `mississipis = missippis + 1` looks a little odd to you, you're not alone. [Remember, this is _variable assignment_](https://chapters.firstdraft.com/chapters/754#updating-variables){target="_blank"}, not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
+[^incrementing]: If the line `mississipis = mississipis + 1` looks a little odd to you, you're not alone. [Remember, this is _variable assignment_][Updating variables], not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
 
 Or, rather than `while`, I could use `Integer`'s `.times` method, like this:
 
@@ -118,7 +122,10 @@ mississipis = 1
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){target="_blank"}
+<div class="experiment" markdown="1">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){target="_blank"}
+</div>
 
 Notice there's a new keyword here: `do`. This is because the `.times` method, in order to do its job of executing some code 10 times, needs a special argument — _the code to execute_.
 
@@ -126,7 +133,7 @@ In order to pass a method _some lines of code_ as an argument, we need to wrap t
 
 So, given a **block** of code, the `10.times` method will execute it for us exactly 10 times; this saves us the trouble of writing a condition for `while`.
 
-#### Block variables
+#### Block variables {-}
 
 But the `.times` method will save us even more trouble than that; we can stop worrying about creating and incrementing the counter variable, `mississipis`, too. The `.times` method will create a **block variable** and assign values to it for us automatically, but we have to choose a name for it using some new syntax after the `do`: the vertical bars, `| |`, or "pipes". It looks like this:
 
@@ -136,7 +143,10 @@ But the `.times` method will save us even more trouble than that; we can stop wo
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){target="_blank"}
+<div class="experiment" markdown="1">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){target="_blank"}
+</div>
 
 Try running it. Here's what's going on:
 
@@ -148,9 +158,7 @@ Try running it. Here's what's going on:
  - The `.times` method executed the block of code the second time.
  - Etc.
 
-Why does `.times` start by assigning `0` to its block variable during the first iteration, rather than `1`? Well, that's just how the author of the `.times` method made it work.
-
-**BENP: isn't the reason for starting at 0 because of 0-indexing? If so, this is a good place to reiterate that.**
+Why does `.times` start by assigning `0` to its block variable during the first iteration, rather than `1`? Well, that's just how the author of the `.times` method made it work. Remember, Ruby, like many other languages [uses zero-indexing](#at-zero-indexing).
 
 Fortunately, Ruby provides lots of other looping convenience methods that we can take advantage of instead, and each one assigns different values to its block variable.
 
@@ -163,85 +171,25 @@ In the REPL above, replace `10.times` with each of the following and play around
 10.step(1, -4)
 ```
 
-## Ruby Practice: Loops
+<div class="proj" markdown="1">
 
-- Notes:
+  Open the GitPod loops project for this chapter and start with the exercise `letter_count.rb`:
 
-  - Copied from project README: [https://github.com/appdev-projects/loops-chapter](https://github.com/appdev-projects/loops-chapter){target="_blank"}
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/loops-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[loops_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>
 
-Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
+<div class="proj" markdown="1">
 
-If we want to run `loops_multiples.rb`, we can write the command:
+  When you're done with the first one, work through `multiples.rb`
+</div>
 
-```bash
-ruby loops_multiples.rb
-```
+<div class="proj" markdown="1">
 
-To re-run this command, you can use the UP and DOWN arrow keys to look at the history of commands you've run in a Terminal.
+  And finally, work through `fizzbuzz.rb`
+</div>
 
-### loops_letter_count.rb
-Write a program that:
+###  Conclusion
 
-Asks the user to input a word and counts from 1 to however long the word is.
-
-Example (`apple` is the input):
-```bash
-"Enter a word:"
-apple
-1
-2
-3
-4
-5
-"apple is 5 letters long!"
-```
-
-### loops_multiples.rb
-Write a program that:
-
-Asks the user to input a number. The program should print multiplication table of entered number from 1 to 10.
-
-Example (`2` is the input):
-```bash
-"Enter a number:"
-2
-2
-4
-6
-8
-10
-12
-14
-16
-18
-20
-```
-
-### loops_fizzbuzz.rb
-Write a program that prints the numbers from 1 to 100, except
-
-for multiples of three print “Fizz” instead of the number
-for multiples of five print “Buzz” instead of the number
-for numbers which are multiples of both three and five print “FizzBuzz”
-
-Your output should look something like
-```bash
-1
-2
-"Fizz"
-4
-"Buzz"
-"Fizz"
-7
-8
-"Fizz"
-"Buzz"
-11
-"Fizz"
-13
-14
-"FizzBuzz"
-16
-# etc
-```
-Hint: if x is a multiple of y, that means that we can divide x by y and have nothing leftover. Do we have anything in our Ruby toolbox that can help find remainders? Look through your older readings.
+Now that we have an understanding of loops, we can have a look at the super important `.each` method for iterating over data structures.

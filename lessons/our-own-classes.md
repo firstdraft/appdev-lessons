@@ -1,10 +1,5 @@
 ## Our own classes
 
-- Notes:
-
-  - Copied from [`our-own-classes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/our-own-classes.md){target="_blank"}
-  - See [Ruby Practice: Our own classes][Ruby Practice: Our own classes] for project: [https://github.com/appdev-projects/our-own-classes-chapter](https://github.com/appdev-projects/our-own-classes-chapter){target="_blank"}
-
 ### Modeling real world things
 
 We can *model* a person pretty well with an `Array`:
@@ -54,7 +49,7 @@ class Person
 end
 ```
 
-And now the `Person` class is a first-class citizen in the language, just like `Array` and `Hash`. Compare the code below to the code above for creating `Array`s and `Hash`s to store information:
+And now the `Person` class is a first-class citizen in the language, just like `Array` and `Hash`. Compare the code below to the code above for creating `Array`s and `Hash`es to store information:
 
 ```ruby
 class Person
@@ -74,11 +69,14 @@ p c.role
 p c.class # => Person
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){target="_blank"}
+<div class="experiment" markdown="1">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){target="_blank"}
+</div>
 
 For each attribute that we declared, we get methods that we can call to assign and retrieve values.
 
-#### Defining instance methods
+#### Defining instance methods {-}
 
 There are a few reasons I like using classes more than `Hash`es to model things, but here is the big one: in addition to just storing a list of attributes about a thing, we can also _define our own methods_ with the `def` keyword. For example, try adding the following `full_name` method to the class we defined in the REPL above:
 
@@ -142,7 +140,7 @@ Note that we had to `require("date")`[^require] in order to load the `Date` clas
 
 So, rather than using a `Hash` to model real world things, it's a good idea to create classes, and then empower them with *behavior* (methods) in addition to information.
 
-#### Defining class methods
+#### Defining class methods {-}
 
 The methods `full_name` and `age` above are known as _instance methods_, because we call them on individual **instances** of the `Person` class (Homer, Mickey, Minnie, etc).
 
@@ -261,43 +259,16 @@ class Student
 end
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){target="_blank"}
+<div class="experiment" markdown="1">
 
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){target="_blank"}
+</div>
 
+<div class="proj" markdown="1">
 
-## Ruby Practice: Our own classes
+  Open the GitPod "our own classes" project for this chapter and start with the exercise `person.rb`:
 
-- Notes:
-
-  - Copied from project README: [https://github.com/appdev-projects/our-own-classes-chapter](https://github.com/appdev-projects/our-own-classes-chapter){target="_blank"}
-
-Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
-
-If we want to run `class_person.rb`, we can write the command:
-
-```bash
-ruby class_person.rb
-```
-
-To re-run this command, you can use the UP and DOWN arrow keys to look at the history of commands you've run in a Terminal.
-
-### class_person.rb
-Define a class Person with:
-
- - An attribute first_name
- - An attribute last_name
- - An attribute birthdate (we just assign a string to this attribute, e.g. "April 19, 1987")
- - An instance method, full_name, that puts first_name and last_name together
- - An instance method, age, that calculates the number of years between today and birthdate
-
-These methods should **return** an values; they shouldn't print anything to the terminal.
-
-Example
-```ruby
-dev = Person.new
-dev.first_name = "James"
-dev.last_name = "Baldwin"
-dev.birthdate = "November 16, 1953"
-dev.full_name # => "James Baldwin"
-dev.age # => 67
-```
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[our_own_classes_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>

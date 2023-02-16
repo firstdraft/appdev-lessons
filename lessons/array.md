@@ -1,17 +1,8 @@
 ## Array
 
-- Notes:
+Next, we have a _very_ important class: `Array`. Most of what we do as developers is manage _lists of things_. Lists of photos, likes, followers, reviews, listings, messages, rides, events, concerts, projects, etc etc etc.
 
-  - Copied from [`array.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/array.md){target="_blank"}
-  - See [Ruby Practice: Array][Ruby Practice: Array] for project: [https://github.com/appdev-projects/array-chapter](https://github.com/appdev-projects/array-chapter){target="_blank"}
-
-Next, we have a _very_ important class: `Array`. Most of what we do as
-developers is manage _lists of things_. Lists of photos, likes, followers,
-reviews, listings, messages, rides, events, concerts, projects, etc etc etc.
-
-The first data type we're going to learn to help us manage lists of things is
-`Array`. This class, unlike the ones we've seen until now, is really just a
-_container_ for other objects, and can hold however many objects we want.
+The first data type we're going to learn to help us manage lists of things is `Array`. This class, unlike the ones we've seen until now, is really just a _container_ for other objects, and can hold however many objects we want.
 
 ### Creating arrays
 
@@ -23,9 +14,12 @@ cities = Array.new
 
 Try it out and see what you get if you `p cities`:
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/Arraynew){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/Arraynew){target="_blank"}
+</div>
 
-#### push
+#### push {-}
 
 As you can see, Ruby represents an `Array` with square brackets, `[]`. The brand new array is empty; let's add some **elements** to it with the `.push` method. Try this:
 
@@ -44,6 +38,9 @@ p cities
 Now we're talking! We've stored multiple strings within a single array using the `.push` method[^push_alias]. Ruby separates the elements in an array with commas.
 
 [^push_alias]:
+    You might come across a shorthand for `.push`, the `<<` method, known as the "shovel" operator. This allows you to write something like: `cities.<<("Chicago")`. Or with the syntactic sugar that we're very accustomed to by now: `cities << "Chicago"` I personally prefer `.push` — I think it's more readable — but feel free to use the shovel if you like it better.
+
+<!-- [^push_alias]:
     You might come across a shorthand for `.push`, the `<<` method, known as the "shovel" operator. This allows you to write something like:
 
     ```ruby
@@ -56,9 +53,9 @@ Now we're talking! We've stored multiple strings within a single array using the
     cities << "Chicago"
     ```
 
-    I personally prefer `.push` — I think it's more readable — but feel free to use the shovel if you like it better.
+    I personally prefer `.push` — I think it's more readable — but feel free to use the shovel if you like it better. -->
 
-#### Array literals
+#### Array literals {-}
 
 Much like with `String`s, there's a shortcut to creating `Array`s. Rather than starting with `Array.new` and building it up from scratch one `.push` at a time, we can type an array "**literal**" directly into the code:
 
@@ -70,9 +67,9 @@ This is the technique that we'll be using most often.
 
 ### Methods
 
-Now let's familiarize ourselves with some of `Array`s methods.
+Now let's familiarize ourselves with some of `Array`'s methods.
 
-#### at
+#### at {- #at-zero-indexing}
 
 After adding elements to the list, the next most important thing we need to be able to do is retrieve an element back out from the list. Our first tool for doing that is `.at`.
 
@@ -85,7 +82,10 @@ p cities
 p cities.at(2)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-at){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-at){target="_blank"}
+</div>
 
 Whoa! Did you expect `cities.at(2)` to return `"LA"`? I sure didn't, the first time I tried it; I was expecting `"NYC"`.
 
@@ -98,7 +98,7 @@ A couple of other things for you to experiment with:
     This is our first contact with `nil`, an object that represents **the absence of anything**. When you use an index "outside" the array, you might have expected to see an error message; but instead, Ruby returns `nil`.
  - What happens when you use a negative index?
 
-#### at shorthand, []
+#### at shorthand, [] {-}
 
 There's a shorthand for `.at()` which is very common, so you should be familiar with it. It's the `.[]` method, so we _could_ write:
 
@@ -124,13 +124,16 @@ array = [8, 3, 1, 19, 23, 3]
 p array[2]
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-square-bracket){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-square-bracket){target="_blank"}
+</div>
 
-#### first, last
+#### first, last {-}
 
 Since retrieving the elements at positions `0` (the first one) and `-1` (the last one) is so common, there are handy shortcut methods for those: `.first` and `.last`. Give them a try.
 
-#### index
+#### index {-}
 
 The `.index` method is sort of the inverse of `.at`: given an object, `.index` searches within the array and returns the index where it resides. Give it a try:
 
@@ -140,16 +143,19 @@ cities = ["Chicago", "NYC", "LA", "SF", "NOLA"]
 p cities.index("SF")
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-index){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-index){target="_blank"}
+</div>
 
 Some further things for you to experiment with:
 
  - What will `.index` return if the element is present in the array more than once?
  - What will `.index` return if the element is not present in the array at all?
 
-#### String#split
+#### String#split {-}
 
-Before we proceed with more `Array` methods, I want to go back for a minute and talk about [the `.split` method from the `String` class](https://chapters.firstdraft.com/chapters/757#split){target="_blank"}. This method, when called on a `String`, will return an `Array` of substrings:
+Before we proceed with more `Array` methods, I want to go back for a minute and talk about a method for the `String` class: `.split`. This method, when called on a `String`, will return an `Array` of substrings:
 
 ```ruby
 "alice bob carol".split # => ["alice", "bob", "carol"]
@@ -167,6 +173,8 @@ a.at(0) # => "H"
 a.at(-1) # => "!"
 ```
 
+**BENP: need an exercise here, split("") is important in .each project. Also, first time with negative indexing? Maybe insert something about this earlier in section (with exercise)**
+
 This is particularly handy for us because it allows us to get a `String` of input from users with `gets` and then transform it into an `Array` for processing:
 
 ```ruby
@@ -183,11 +191,23 @@ p user_numbers
 p "You entered " + length.to_s + " numbers."
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/gets-with-split){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/gets-with-split){target="_blank"}
+</div>
 
-We'll be using this technique for the remainder of our test REPLs, to make things more interesting.
+We'll be using this technique frequently to make things more interesting.
 
-#### count
+<div class="proj" markdown="1">
+
+  Open the GitPod `Array` project for this chapter and start with the exercise `element_square.rb`:
+
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/array-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[array_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
+</div>
+
+#### count {-}
 
 `.count` counts how many elements are in the list, if called with no arguments. If an argument is provided, it counts how many times that argument occurs in the list.
 
@@ -199,9 +219,19 @@ p a.count
 p a.count(3)
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/count){target="_blank"}
+**BENP: add project with count() with an argument, becomes important again in .each**
+
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/count){target="_blank"}
+</div>
+
+<div class="proj" markdown="1">
+  
+  Return to the GitPod `Array` project and work through `count.rb`
+</div>
  
-#### include?
+#### include? {-}
 
 A thin convenience layer on top of `.count`, `.include?` will quickly tell you whether a value is present within an `Array`:
 
@@ -211,7 +241,7 @@ a.include?("b")   # => true
 a.include?("z")   # => false
 ```
 
-#### exclude?
+#### exclude? {-}
 
 Similar to `.include?`, but the opposite:
 
@@ -221,7 +251,7 @@ a.exclude?("b")   # => false
 a.exclude?("z")   # => true
 ```
 
-#### reverse
+#### reverse {-}
 
 ```ruby
 array = [8, 3, 1, 19, 23, 3]
@@ -229,9 +259,17 @@ array = [8, 3, 1, 19, 23, 3]
 p array.reverse # => [3, 23, 19, 1, 3, 8]
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/array-reverse){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-reverse){target="_blank"}
+</div>
 
-#### sort
+<div class="proj" markdown="1">
+  
+  Return to the GitPod `Array` project and work through `reverse.rb`
+</div>
+
+#### sort {-}
 
 ```ruby
 array = [12, 4, 5, 13, 56, 32]
@@ -239,9 +277,12 @@ array = [12, 4, 5, 13, 56, 32]
 p array.sort # => [4, 5, 12, 13, 32, 56]
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/sort){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/sort){target="_blank"}
+</div>
 
-#### shuffle
+#### shuffle {-}
 
 ```ruby
 array = [1, 2, 3, 4, 5]
@@ -249,9 +290,12 @@ array = [1, 2, 3, 4, 5]
 p array.shuffle # Returns a copy of array in random order
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/shuffle){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/shuffle){target="_blank"}
+</div>
 
-#### sample
+#### sample {-}
 
 ```ruby
 array = [8, 3, 1, 19, 23, 3]
@@ -259,9 +303,12 @@ array = [8, 3, 1, 19, 23, 3]
 p array.sample # => Returns a single random element from the array
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/sample){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/sample){target="_blank"}
+</div>
 
-#### min
+#### min {-}
 
 ```ruby
 a = [8, 3, 1, 19, 23, 3]
@@ -269,9 +316,12 @@ a = [8, 3, 1, 19, 23, 3]
 p a.min # => 1
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/min){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/min){target="_blank"}
+</div>
 
-#### max
+#### max {-}
 
 ```ruby
 a = [8, 3, 1, 19, 23, 3]
@@ -279,9 +329,17 @@ a = [8, 3, 1, 19, 23, 3]
 p a.max # => 23
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/max){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/max){target="_blank"}
+</div>
 
-#### sum
+<div class="proj" markdown="1">
+  
+  Return to the GitPod `Array` project and work through `min_max_difference.rb`
+</div>
+
+#### sum {-}
 
 ```ruby
 a = [8, 3, 1, 19, 23, 3]
@@ -289,9 +347,17 @@ a = [8, 3, 1, 19, 23, 3]
 p a.sum # => 57
 ```
 
-[Click here for a REPL to try it.](https://repl.it/@raghubetina/sum){target="_blank"}
+<div class="experiment" markdown="1">
+  
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/sum){target="_blank"}
+</div>
 
-#### join
+<div class="proj" markdown="1">
+  
+  Return to the GitPod `Array` project and work through `sum_elements.rb`
+</div>
+
+#### join {-}
 
 You can think of `Array`'s `.join` method as the inverse of `String`'s `.split` method:
 
@@ -306,55 +372,6 @@ You can think of `Array`'s `.join` method as the inverse of `String`'s `.split` 
 
 That is, the `.split` method is called on a `String` and returns an `Array` of substrings; while the `.join` method is called on an `Array` (where each element must be a `String`) and returns a single `String`.
 
-## Ruby Practice: Array
+###  Conclusion
 
-- Notes:
-
-  - Copied from project README: [https://github.com/appdev-projects/array-chapter](https://github.com/appdev-projects/array-chapter){target="_blank"}
-
-Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the Terminal.
-
-If we want to run `array_count.rb`, we can write the command:
-
-```bash
-ruby array_count.rb
-```
-
-To re-run this command, you can use the UP and DOWN arrow keys to look at the history of commands you've run in a Terminal.
-
-### array_element_square.rb
-Print the square of the second-to-last number that the user enters.
-
-The expected output will be something like:
-```
-"Enter at least 2 numbers, separated by spaces:"
-9.0
-```
-### array_count.rb
-Create an Array and use the count method to print how many elements are in that Array.
-
-Expected output:
-```
-"Enter at least 2 numbers, separated by spaces:"
-2
-```
-### array_reverse.rb
-Create an Array and use the reverse method to return the array in reverse order.
-
-Expected output: 
-```
-"Enter at least 2 values, separated by spaces:"
-["second", "first", 0]
-```
-
-### array_min_max_difference.rb
-Create an Array of numbers and output the number with the lowest value in the array, the number with the highest value in the array, and the difference between the highest value and the lowest value.
-```
-lowest_number
-highest_number
-difference
-```
-
-### array_sum_elements.rb
-Output the sum value of all the elements in the array.
-
+That's it for `Array`s. Now we'll have a look at **conditionals** with `if` statements.
