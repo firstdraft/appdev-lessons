@@ -92,23 +92,25 @@ end
 
 Why did I say "truthy" and "falsy" instead of just `true` and `false`? Because many — most — Ruby expressions return values other than `true` or `false`. _Any_ expression can appear next to an `if`, and some will cause the code inside the `if` statement to execute (these values are known as "truthy") and some will not (these are "falsy").
 
-In the REPL below, try replacing `1 == 1` with each of the following. Before clicking "run" for each one, ask yourself, do you expect to see the output `"The expression is truthy."` or not?
+In the REPL below, try replacing `true` with each of the following. Before clicking "run" for each one, ask yourself, do you expect to see the output `"The expression is truthy."` or not?
 
  - `0`
  - `"false"`
  - `[]`
  - `nil`
- - `true`
+ - `1 == 1`
  - `""`
  - `false`
 
 ```ruby
-if 1 == 1 # Replace this with each expression. Which of them count as "truthy"?
+if true # Replace this with each expression. Which of them count as "truthy"?
   p "The expression is truthy."
 else
   p "The expression is falsy."
 end
 ```
+
+For 
 
 <div class="experiment" markdown="1">
 
