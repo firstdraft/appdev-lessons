@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`loading-data-from-a-csv-file-into-your-database.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/loading-data-from-a-csv-file-into-your-database.md){target="_blank"}
+  - Copied from [`loading-data-from-a-csv-file-into-your-database.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/loading-data-from-a-csv-file-into-your-database.md){:target="_blank"}
 
 ## 1. Setup
 

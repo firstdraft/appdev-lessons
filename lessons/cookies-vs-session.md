@@ -2,9 +2,9 @@
 
 - Notes:
 
-   - Copied from [`cookies-vs-session.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-vs-session.md){target="_blank"}
+   - Copied from [`cookies-vs-session.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-vs-session.md){:target="_blank"}
 
-Rails provides a few different ways to work with browser cookies, in addition to the `cookies` hash that [we've already read about](https://chapters.firstdraft.com/chapters/842){target="_blank"}.
+Rails provides a few different ways to work with browser cookies, in addition to the `cookies` hash that [we've already read about](https://chapters.firstdraft.com/chapters/842){:target="_blank"}.
 
 ## Flash messages
 

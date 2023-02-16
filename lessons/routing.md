@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`routing.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/routing.md){target="_blank"}
+  - Copied from [`routing.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/routing.md){:target="_blank"}
 
 Our users place **requests** by visiting URLs in our app. In order to respond to requests _dynamically_ (as opposed to sending back _static_, unchanging pages of HTML), we need to **route** each request to a Ruby method that can do the desired work (reading from an API, picking a random number, CRUDing from the database, etc) and then send back the output (formatted in HTML[^jsonapi]).
 

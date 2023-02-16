@@ -2,17 +2,17 @@
 
 - Notes:
 
-  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fortune-teller.md){target="_blank"}
+  - [Original video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c2e54f8-4bed-47d2-82b2-aeca0102f92c){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fortune-teller.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/fortune-teller](https://github.com/appdev-projects/fortune-teller){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/fortune-teller](https://github.com/appdev-projects/fortune-teller){:target="_blank"}
 
-  - Target: [https://fortune-teller.matchthetarget.com/](https://fortune-teller.matchthetarget.com/){target="_blank"}
+  - Target: [https://fortune-teller.matchthetarget.com/](https://fortune-teller.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
 
     - [Addendum: RCAV Flowchart][Addendum: RCAV Flowchart]
     - [RCAV Flowchart][RCAV Flowchart]
-    - [Routing - RCAV Slides](https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q){target="_blank"}
+    - [Routing - RCAV Slides](https://firstdraft.slides.com/raghubetina/06-routing-rcav?token=43w7FD8Q){:target="_blank"}
 
 ## Video Segment: Routes and Controllers in Fortune Teller
 
@@ -339,7 +339,7 @@ Time for a **/git** commit, and maybe even a `rails grade` to see what's left to
   - debug **/zodiacs/aries** together
   - RTEM
 
-In the [target](https://fortune-teller.matchthetarget.com){target="_blank"}, there are three navbar sections. We already did the top lottery section. 
+In the [target](https://fortune-teller.matchthetarget.com){:target="_blank"}, there are three navbar sections. We already did the top lottery section. 
 
 There are twelve links in the horoscopes section. If you click the link you will see that each displays some text and then lucky numbers again. Below the horoscipes there is a section for dice, which simulates rolling a certain number of dice with a certain number of sides. For instance, "5d6" means roll five six-sided dice. 
 

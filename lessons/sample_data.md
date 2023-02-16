@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`sample_data.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/sample_data.md){target="_blank"}
+  - Copied from [`sample_data.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/sample_data.md){:target="_blank"}
 
 ## Getting started
 

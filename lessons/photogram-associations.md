@@ -8,7 +8,7 @@
 
   - using https://association-accessors.firstdraft.com/ (needs a video tutorial, see notes in [Refactoring MSM Again][Refactoring MSM Again]
 
-  - Below copied from project: [https://github.com/appdev-projects/photogram-associations](https://github.com/appdev-projects/photogram-associations){target="_blank"}
+  - Below copied from project: [https://github.com/appdev-projects/photogram-associations](https://github.com/appdev-projects/photogram-associations){:target="_blank"}
 
 
 In this project, we'll re-write our association accessor methods using [ActiveRecord's powerful Association helpers](https://guides.rubyonrails.org/association_basics.html).

@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`handling-exceptions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/handling-exceptions.md){target="_blank"}
+  - Copied from [`handling-exceptions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/handling-exceptions.md){:target="_blank"}
 
 In Ruby, an unwanted or unexpected event results in an _exception_, which in the normal flow of things results in our program terminating with an error message. Usually, this is a good thing; we should **R**ead **T**he **E**rror **M**essage, learn from it, and improve our code to make it error-proof.
 
@@ -26,6 +26,6 @@ Most commonly, the method we use on the exception is `.message`, which returns a
 
 Using `begin`/`rescue`/`end` should be pretty rare. Most of the time, if you have an exception in your code, you should debug it. But for the rare times that you are legitimately interfacing with an unreliable external system, it's a handy tool in your belt.
 
-The above usage of `begin`/`rescue`/`end` will get the job done 95% of the time, but [here is some further reading on a lot more ways of using it](https://stackify.com/rescue-exceptions-ruby/){target="_blank"}.
+The above usage of `begin`/`rescue`/`end` will get the job done 95% of the time, but [here is some further reading on a lot more ways of using it](https://stackify.com/rescue-exceptions-ruby/){:target="_blank"}.
 
 

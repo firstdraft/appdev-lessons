@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`omnicalc-api.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/omnicalc-api.md){target="_blank"}
+  - Copied from [`omnicalc-api.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/omnicalc-api.md){:target="_blank"}
 
 At present, this is a brand new, blank Rails application. The **specifications** (_specs_, for short) for the application — in other words, the URLs that we need to build — are below. The URLs will look like `/flexible/square_root/42`, and the page will display the square root of the number at the end.
 

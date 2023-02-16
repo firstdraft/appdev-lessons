@@ -1,4 +1,4 @@
-## Hash {#hash-chapter}
+## Hash
 
 `Array` is a very good structure for containing multiple objects, but it's not the only one. In some situations, another structure is a better tool for the job: `Hash`.
 
@@ -70,7 +70,7 @@ p person1.fetch(:role)
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-hash-new){:target="_blank"}
 </div>
 
 Click "Run" and see what it looks like to build up a `Hash`. A few things to note:
@@ -78,11 +78,9 @@ Click "Run" and see what it looks like to build up a `Hash`. A few things to not
  - Ruby represents a `Hash` with curly brackets, `{}`, as opposed to the square brackets (`[]`) of an `Array`.
  - We use the `.store` method to add elements to a `Hash`, as opposed to the `.push` method of `Array`.
  - The `.store` method takes _two_ arguments, not one: the first argument is the label, or **key** to store the element under; and the second argument is the piece of data itself, or the **value**.
- - Ruby represents each key/value pair by separating them with a `=>`, known as a "hash rocket"[^rubyists_are_weird].
+ - Ruby represents each key/value pair by separating them with a `=>`, known as a "hash rocket" (Rubyists are weird).
  - As in `Array`s, elements in the list (each element is one key/value _pair_) are separated by commas.
  - If the key already exists when you try to `.store` something under it, its value will be replaced.
-
-[^rubyists_are_weird]: Rubyists are weird.
 
 ### fetch
 
@@ -99,7 +97,7 @@ p person1.fetch(:last_name)
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch){:target="_blank"}
 </div>
 
 Beautiful! Now we don't have to remember that position number 1 is last name, position number 2 is role, etc. We can retrieve objects from the list using meaningful labels instead.
@@ -123,7 +121,7 @@ p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){:target="_blank"}
 </div>
 
 A few things to try:
@@ -133,7 +131,7 @@ A few things to try:
 
 Get used to those error messages. You're going to see them a _lot_.
 
-#### fetch fallback {- #fetch-fallback}
+#### fetch fallback
 
 Sometimes you may want to call `.fetch` using a key that may not be present in the `Hash`, and you don't want the program to crash with the "key not found" error message. In that case, you can provide a second argument which will be used as a fallback return value:
 
@@ -149,7 +147,7 @@ p person1.fetch(:middle_name, "None provided")
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){:target="_blank"}
 </div>
 
 ### Hash literals
@@ -171,16 +169,14 @@ Movie.where({ :title => "The Shawshank Redemption" })
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Hash` project for this chapter and start with the exercise `person.rb`:
+  Open the GitPod `Hash` project on Canvas that follows this reading and start with the exercise `person.rb`.
 
-  LTI{Load assignment}(https://github.com/bpurinton-appdev/hash-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[hash_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 </div>
 
 ### fetch shorthand, []
 
-Much like [`Array`'s shorthand for `.at`][at shorthand, []], `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
+Much like `Array`'s shorthand for `.at`, `[]`, `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
 
 ```ruby
 person1 = { :first_name => "Raghu", :last_name => "Betina", :role => "Instructor" }
@@ -199,7 +195,7 @@ p person1[:last_name]
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-shorthand){:target="_blank"}
 </div>
 
 Were you able to find the difference between the two methods?
@@ -208,7 +204,7 @@ Were you able to find the difference between the two methods?
 
 `Hash`'s `.[]` method, when used with a key that is not present in the hash, _returns `nil` rather than throwing an error_.
 
-I personally prefer getting the descriptive error message if the key is not present in the hash, because it means that I probably made a typo or some other mistake, and I prefer being alerted to that fact rather than the program proceeding quietly only to fail elsewhere. In the rare case that it should be possible for a key to be optionally present in a hash, then I can use a fallback second argument to `.fetch`, as [described above](#fetch-fallback).
+I personally prefer getting the descriptive error message if the key is not present in the hash, because it means that I probably made a typo or some other mistake, and I prefer being alerted to that fact rather than the program proceeding quietly only to fail elsewhere. In the rare case that it should be possible for a key to be optionally present in a hash, then I can use a fallback second argument to `.fetch`, as described above.
 
 That said, out on the internet, using `.[]` is the most prevalent style of accessing hashes, so you should be familiar with it. But in this text, I will stick with `.fetch`.
 

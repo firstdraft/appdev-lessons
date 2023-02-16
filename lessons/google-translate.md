@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`google-translate.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/google-translate.md){target="_blank"}
+  - Copied from [`google-translate.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/google-translate.md){:target="_blank"}
 
 [Google Cloud Translation](https://cloud.google.com/translate)
 

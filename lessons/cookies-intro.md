@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-cookies-intro){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-with-video.md){target="_blank"}
+  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-cookies-intro){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/cookies-with-video.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/cookies-intro](https://github.com/appdev-projects/cookies-intro){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/cookies-intro](https://github.com/appdev-projects/cookies-intro){:target="_blank"}
 
-  - Target: [https://cookies-intro.matchthetarget.com/](https://cookies-intro.matchthetarget.com/){target="_blank"}
+  - Target: [https://cookies-intro.matchthetarget.com/](https://cookies-intro.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
     - [Cookies][Cookies]
@@ -23,7 +23,7 @@
 
 This is much like Omnicalc, but the difference is, when we type in some values and go back to previous pages, it remembers my previous inputs. Somehow this application is storing information between requests. 
 
-We could have done that with a database and tables, storing the information that was put in the forms. But if we open another browser, navigate to the [target](https://cookies-intro.matchthetarget.com/){target="_blank"}, and enter some new calculations, then we can see that it remembers the information only from the current browser. So we are not just storing information in a database and retrieving the most recent record to show to everyone.
+We could have done that with a database and tables, storing the information that was put in the forms. But if we open another browser, navigate to the [target](https://cookies-intro.matchthetarget.com/){:target="_blank"}, and enter some new calculations, then we can see that it remembers the information only from the current browser. So we are not just storing information in a database and retrieving the most recent record to show to everyone.
 
 Each individual user is seeing their own previous calculation. Now with cookies we have the tools to do this.
 

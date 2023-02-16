@@ -2,13 +2,13 @@
 
 - Notes:
 
-  - The [video](https://canvas.uchicago.edu/courses/41147/pages/video-rps-html-intro-to-gitpod-and-html){target="_blank"} is not yet transcribed and may change
+  - The [video](https://canvas.uchicago.edu/courses/41147/pages/video-rps-html-intro-to-gitpod-and-html){:target="_blank"} is not yet transcribed and may change
 
   - GitPod setup is contained in the video. This is an applied example and the [Technical Setup][Technical Setup] chapter can be referred to as a how-to guide.
 
-  - Project (graded): [https://github.com/appdev-projects/rps-html](https://github.com/appdev-projects/rps-html){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/rps-html](https://github.com/appdev-projects/rps-html){:target="_blank"}
 
-  - Target: [https://rps-html.matchthetarget.com](https://rps-html.matchthetarget.com){target="_blank"}
+  - Target: [https://rps-html.matchthetarget.com](https://rps-html.matchthetarget.com){:target="_blank"}
 
   - Useful chapters:
 

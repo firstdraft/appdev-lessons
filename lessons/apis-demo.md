@@ -7,10 +7,10 @@
   - No video, just the chapters below
   
   - Project:
-    - Start: [https://github.com/appdev-targets/omnicalc-2-api-starting-point](https://github.com/appdev-targets/omnicalc-2-api-starting-point){target="_blank"}
-    - Solution: [https://github.com/appdev-targets/omnicalc-2-api-starting-point/tree/translate-solution](https://github.com/appdev-targets/omnicalc-2-api-starting-point/tree/translate-solution){target="_blank"}
+    - Start: [https://github.com/appdev-targets/omnicalc-2-api-starting-point](https://github.com/appdev-targets/omnicalc-2-api-starting-point){:target="_blank"}
+    - Solution: [https://github.com/appdev-targets/omnicalc-2-api-starting-point/tree/translate-solution](https://github.com/appdev-targets/omnicalc-2-api-starting-point/tree/translate-solution){:target="_blank"}
 
-  - Target: [https://omnicalc-2.matchthetarget.com/](https://omnicalc-2.matchthetarget.com/){target="_blank"}
+  - Target: [https://omnicalc-2.matchthetarget.com/](https://omnicalc-2.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
     - [Storing credentials securely][Storing credentials securely]

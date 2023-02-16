@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - [Original day 6 recording video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=69b47533-78a4-40f4-80a1-aed9010f30f8){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-MSM-queries.md){target="_blank"}
+  - [Original day 6 recording video](https://uchicago.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=69b47533-78a4-40f4-80a1-aed9010f30f8){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-MSM-queries.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/refactoring-msm-queries-1](https://github.com/appdev-projects/refactoring-msm-queries-1){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/refactoring-msm-queries-1](https://github.com/appdev-projects/refactoring-msm-queries-1){:target="_blank"}
 
-  - Target: [https://msm-queries.matchthetarget.com/](https://msm-queries.matchthetarget.com/){target="_blank"}
+  - Target: [https://msm-queries.matchthetarget.com/](https://msm-queries.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
 
@@ -27,7 +27,7 @@ So the first thing that you should do is look through the starting point for ref
 
 Practice *reading* the code and reasoning your way through it, line by line; explain it to yourself, or to your rubber ducky. Developers read far more code than we write.
 
-[Here is the assignment](https://github.com/appdev-projects/refactoring-msm-queries-1){target="_blank"}. As usual:
+[Here is the assignment](https://github.com/appdev-projects/refactoring-msm-queries-1){:target="_blank"}. As usual:
 
 1. Start the web server by running `bin/server`.
 2. Navigate to your live application preview.
@@ -37,7 +37,7 @@ Practice *reading* the code and reasoning your way through it, line by line; exp
 
 **BENP: possible image(s) (better, GIFs?) of starting a workspace, opening /git, organizing tabs, noting the target favicon. But these are probably in a different chapter.**
 
-The target for this project is [here](https://msm-queries.matchthetarget.com){target="_blank"}. It is the same as MSM Queries, because the functionality is unchanged, just refactored!
+The target for this project is [here](https://msm-queries.matchthetarget.com){:target="_blank"}. It is the same as MSM Queries, because the functionality is unchanged, just refactored!
 
 A refactoring will not change the visual appearance, or anything related to functionality. On a team, when you go through a refactoring sprint or chunk of work, your users should not be affected.
 
@@ -646,7 +646,7 @@ You should try to define the six methods needed:
 
 Defining these last four is your job. Try and do this on your own based on the two sides of the 1-N that we defined, and run `rails grade` and **/git** commit as you get things working!
 
-Keep in mind there is some reference (written notes) for this project [here](https://chapters.firstdraft.com/chapters/843){target="_blank"}, including a section [reviewing instance methods](https://chapters.firstdraft.com/chapters/843#instance-method-review){target="_blank"}.
+Keep in mind there is some reference (written notes) for this project [here](https://chapters.firstdraft.com/chapters/843){:target="_blank"}, including a section [reviewing instance methods](https://chapters.firstdraft.com/chapters/843#instance-method-review){:target="_blank"}.
 
 ### Text Companion: Additional Association Accessor Methods
 

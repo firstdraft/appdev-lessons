@@ -71,12 +71,12 @@ p c.class # => Person
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes){:target="_blank"}
 </div>
 
 For each attribute that we declared, we get methods that we can call to assign and retrieve values.
 
-#### Defining instance methods {-}
+#### Defining instance methods 
 
 There are a few reasons I like using classes more than `Hash`es to model things, but here is the big one: in addition to just storing a list of attributes about a thing, we can also _define our own methods_ with the `def` keyword. For example, try adding the following `full_name` method to the class we defined in the REPL above:
 
@@ -134,13 +134,15 @@ hs.birthdate = "April 19, 1987"
 hs.age # => 32, as of this writing
 ```
 
-Note that we had to `require("date")`[^require] in order to load the `Date` class into the program; Ruby doesn't load this class into every program by default, like it does with the core classes (`String`, `Integer`, etc).
+Note that we had to `require("date")` in order to load the `Date` class into the program; Ruby doesn't load this class into every program by default, like it does with the core classes (`String`, `Integer`, etc).
 
-[^require]: The parentheses are almost always dropped after `require`.
+<aside markdown="1">
+The parentheses are almost always dropped after `require`, so it would be `require "date"`.
+</aside>
 
 So, rather than using a `Hash` to model real world things, it's a good idea to create classes, and then empower them with *behavior* (methods) in addition to information.
 
-#### Defining class methods {-}
+#### Defining class methods 
 
 The methods `full_name` and `age` above are known as _instance methods_, because we call them on individual **instances** of the `Person` class (Homer, Mickey, Minnie, etc).
 
@@ -261,14 +263,12 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){:target="_blank"}
 </div>
 
 <div class="proj" markdown="1">
 
-  Open the GitPod "our own classes" project for this chapter and start with the exercise `person.rb`:
+  Open the GitPod "our own classes" project on Canvas that follows this reading and start with the exercise `person.rb`.
 
-  LTI{Load assignment}(https://github.com/bpurinton-appdev/our-own-classes-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[our_own_classes_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 </div>
