@@ -5,6 +5,4 @@ We can now use HTML and CSS for designing web pages, and Ruby for writing progra
 We already have all the tools to build our first <mark>dynamic web application</mark>. But, before we begin building, we need to understand the URL request lifecycle of _Route, Controller, Action, View (RCAV)_.
 
 In this lesson, we will explore routing. In practice, the project we work through will make our Rock, Paper, Scissors webpage dynamic; meaning it will actually work.
-
-TESTING2233
    
