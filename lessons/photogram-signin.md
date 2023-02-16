@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-signin-intro-to-authentication){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-signin.md){target="_blank"}
+  - [Cookies Intro video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-signin-intro-to-authentication){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-signin.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/photogram-signin](https://github.com/appdev-projects/photogram-signin){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/photogram-signin](https://github.com/appdev-projects/photogram-signin){:target="_blank"}
 
-  - Target: [https://photogram-signin.matchthetarget.com/](https://photogram-signin.matchthetarget.com/){target="_blank"}
+  - Target: [https://photogram-signin.matchthetarget.com/](https://photogram-signin.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
     - [More ways of using cookies][More ways of using cookies]
@@ -56,7 +56,7 @@ What we do instead is scramble up a user's password in a deterministic way, so t
 
 **BENP: at this point in video we use active record chapter as reference to steps**
 
-We can add a column using our [reference](https://chapters.firstdraft.com/chapters/770#adding-or-removing-columns-from-your-table){target="_blank"}.
+We can add a column using our [reference](https://chapters.firstdraft.com/chapters/770#adding-or-removing-columns-from-your-table){:target="_blank"}.
 
 First we need a migration file, just the file because we already have the model. Then we can write a method in there to add or remove a column.
 
@@ -547,7 +547,7 @@ end
 ```
 {: mark_lines="15"}
 
-Note that we are using `session`, rather than `cookies`. These are simliar but `session` is more secure, and you can read about it [here](https://chapters.firstdraft.com/chapters/850){target="_blank"}. 
+Note that we are using `session`, rather than `cookies`. These are simliar but `session` is more secure, and you can read about it [here](https://chapters.firstdraft.com/chapters/850){:target="_blank"}. 
 
 We use the conventional name for the cookie key, which is `user_id`, and we assign this key our value of the current `user.id`. This ID number was assigned as soon as we saved the user to the database with `.save` above.
 

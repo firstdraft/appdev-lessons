@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - Copied from [`qr-code-ruby.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/qr-code-ruby.md){target="_blank"}
+  - Copied from [`qr-code-ruby.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/qr-code-ruby.md){:target="_blank"}
 
 In this project, we'll write a command-line program that generates QR code images. We'll be using a gem called `rqrcode` to do most of the heavy lifting for us[^how_qr_codes_work].
 
-[^how_qr_codes_work]: If you're curious how QR codes actually work, you can [read up on them here](https://typefully.com/DanHollick/qr-codes-T7tLlNi){target="_blank"}; but fortunately the gem encapsulates all of this logic for us.
+[^how_qr_codes_work]: If you're curious how QR codes actually work, you can [read up on them here](https://typefully.com/DanHollick/qr-codes-T7tLlNi){:target="_blank"}; but fortunately the gem encapsulates all of this logic for us.
 
 ## Explore the target
 
@@ -47,7 +47,7 @@ gem install rqrcode
 
 The rqrcode gem has a lot of different options[^rqrcode] for rendering QR codes — as PNG files, as `<svg>` elements, and more.
 
-[^rqrcode]: If you're curious, you can read about them in [the gem's README file](https://github.com/whomwah/rqrcode){target="_blank"}.
+[^rqrcode]: If you're curious, you can read about them in [the gem's README file](https://github.com/whomwah/rqrcode){:target="_blank"}.
 
 For now, we're going to render PNG images only. To do so, here's how it works:
 
@@ -130,7 +130,7 @@ Then use their input to generate the QR code dynamically.
 
 Optionally, write some code that will keep generating QR codes until the user chooses to exit.
 
-The `while`, `next`, and `break` keywords might come in handy. [Read more here.](https://www.geeksforgeeks.org/ruby-break-and-next-statement/){target="_blank"}
+The `while`, `next`, and `break` keywords might come in handy. [Read more here.](https://www.geeksforgeeks.org/ruby-break-and-next-statement/){:target="_blank"}
 
 ## To submit
 

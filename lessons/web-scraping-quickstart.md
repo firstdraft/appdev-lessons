@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`web-scraping-quickstart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/web-scraping-quickstart.md){target="_blank"}
+  - Copied from [`web-scraping-quickstart.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/web-scraping-quickstart.md){:target="_blank"}
 
 Add this to your `Gemfile` and run `bundle install` in the Terminal.
 

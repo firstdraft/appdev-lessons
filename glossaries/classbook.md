@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`classbook.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/classbook.md){target="_blank"}
+  - Copied from [`classbook.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/classbook.md){:target="_blank"}
 
 In this project, we'll create our very first HTML page; a profile of ourselves. 
 

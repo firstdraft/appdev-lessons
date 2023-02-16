@@ -2,12 +2,12 @@
 
 - Notes:
 
-  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-dashboards-dynamic-route-segments){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/dashboards.md){target="_blank"}
+  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-dashboards-dynamic-route-segments){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/dashboards.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/dashboards](https://github.com/appdev-projects/dashboards){target="_blank"}
-    - And [here](https://gitpod.io/#snapshot/f960df8d-c502-40c4-a9bb-f224196aa028){target="_blank"} is a snapshot of the Omnicalc 2 workspace, which may be useful as reference.
+  - Project (graded): [https://github.com/appdev-projects/dashboards](https://github.com/appdev-projects/dashboards){:target="_blank"}
+    - And [here](https://gitpod.io/#snapshot/f960df8d-c502-40c4-a9bb-f224196aa028){:target="_blank"} is a snapshot of the Omnicalc 2 workspace, which may be useful as reference.
 
-  - Target: [http://dashboards.matchthetarget.com/](http://dashboards.matchthetarget.com/){target="_blank"}
+  - Target: [http://dashboards.matchthetarget.com/](http://dashboards.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
 
@@ -22,7 +22,7 @@
   - using **/chapters/841** as example
   - wildcards
 
-The modern world revolves around the humble URL. And now I hope you're staring to notice these and understand them a little bit better. For example the [refactoring Fortune Teller chapter](https://chapters.firstdraft.com/chapters/841){target="_blank"}:
+The modern world revolves around the humble URL. And now I hope you're staring to notice these and understand them a little bit better. For example the [refactoring Fortune Teller chapter](https://chapters.firstdraft.com/chapters/841){:target="_blank"}:
 
 **https://chapters.firstdraft.com/chapters/841**
 
@@ -47,7 +47,7 @@ So this is a second form of user input. The first form was *query stings* in the
 
 In this next project, let's finally use some more realistic data. Enough with random numbers and rock, paper, scissors. Let's get some actual data from APIs like we did with the umbrella project. **BENP: did they do this project?**
 
-The first API that we're going to use is called [**https://api.exchangerate.host/symbols**](https://api.exchangerate.host/symbols){target="_blank"}. It gives us back JSON that looks like this:
+The first API that we're going to use is called [**https://api.exchangerate.host/symbols**](https://api.exchangerate.host/symbols){:target="_blank"}. It gives us back JSON that looks like this:
 
 ```json
 // 20221219122429
@@ -104,7 +104,7 @@ Then we get back:
 
 This is great for us to practice our dynamic routes and APIs.
 
-We'll use the two **api.exchangerate.host** endpoints for listing symbols **/symbols** and converting currencies **/convert** to build our [target](https://dashboards.matchthetarget.com){target="_blank"}. Full documentation for the API can be found [here](https://exchangerate.host/#/#docs){target="_blank"}
+We'll use the two **api.exchangerate.host** endpoints for listing symbols **/symbols** and converting currencies **/convert** to build our [target](https://dashboards.matchthetarget.com){:target="_blank"}. Full documentation for the API can be found [here](https://exchangerate.host/#/#docs){:target="_blank"}
 
 ### Text Companion: Exchange Rate API Intro
 
@@ -115,9 +115,9 @@ We'll use the two **api.exchangerate.host** endpoints for listing symbols **/sym
   - time stamp 00:03:56 to 00:22:39
   - RCAV **/forex** URL that lists all available currency symbols from JSON keys at https://api.exchangerate.host/symbols
 
-The first thing we're going to build and the required part of this homework is a route that looks like **/forex** ([**https://dashboards.matchthetarget.com/forex**](https://dashboards.matchthetarget.com){target="_blank"} in our target). 
+The first thing we're going to build and the required part of this homework is a route that looks like **/forex** ([**https://dashboards.matchthetarget.com/forex**](https://dashboards.matchthetarget.com){:target="_blank"} in our target). 
 
-This URL should list all of the available symbols, and if I click on one of the links it should take me to a page with the path: [**/forex/EUR**](http://dashboards.matchthetarget.com/forex/EUR){target="_blank"}, where the second segment is the currency I clicked. And on that page it should give me all of the symbols, including the current symbol itself. Clicking on a given link there (like "Convert 1 EUR to USD..."), will take me to the URL: [**/forex/EUR/USD**](http://dashboards.matchthetarget.com/forex/EUR/USD){target="_blank"}, where I will see the conversion rate.
+This URL should list all of the available symbols, and if I click on one of the links it should take me to a page with the path: [**/forex/EUR**](http://dashboards.matchthetarget.com/forex/EUR){:target="_blank"}, where the second segment is the currency I clicked. And on that page it should give me all of the symbols, including the current symbol itself. Clicking on a given link there (like "Convert 1 EUR to USD..."), will take me to the URL: [**/forex/EUR/USD**](http://dashboards.matchthetarget.com/forex/EUR/USD){:target="_blank"}, where I will see the conversion rate.
 
 Of course I could type in manually, like:
 
@@ -169,7 +169,7 @@ We made up names for our view templates folder (`"currency_templates/"`) and fil
 hi
 ```
 
-Now everything should be wired up correctly and we can think about the actual work to be done. It can be helpful to start by just mocking up the document with some static HTML to form an outline. We can right-click and "View Source" on the [target](http://dashboards.matchthetarget.com/forex){target="_blank"} to help us with the proper HTML tags. We can just copy-paste in the first lines of the body in this case and clean it up a bit. 
+Now everything should be wired up correctly and we can think about the actual work to be done. It can be helpful to start by just mocking up the document with some static HTML to form an outline. We can right-click and "View Source" on the [target](http://dashboards.matchthetarget.com/forex){:target="_blank"} to help us with the proper HTML tags. We can just copy-paste in the first lines of the body in this case and clean it up a bit. 
 
 ```html
 <!-- app/views/currency_templates/step_one.html.erb -->
@@ -190,7 +190,7 @@ Now everything should be wired up correctly and we can think about the actual wo
 
 So now we have a starting point. What we need is to get a list of all the symbols like `AED` above from the API, and print them out in an unordered list of links. We don't want to hard code the list, we want to get it fresh everytime in case the list of symbols (currencies) changes. 
 
-From our API endpoint [**https://api.exchangerate.host/symbols**](https://api.exchangerate.host/symbols){target="_blank"}, we just need the currency symbols from the JSON. It might be nice to show the currency name (`description`):
+From our API endpoint [**https://api.exchangerate.host/symbols**](https://api.exchangerate.host/symbols){:target="_blank"}, we just need the currency symbols from the JSON. It might be nice to show the currency name (`description`):
 
 ```json
 ...
@@ -527,9 +527,9 @@ The last step is to build the second currency symbol route, like **/forex/AWG/US
 
 - Notes:
 
-  - covid tracking README text at bottom of [https://github.com/appdev-projects/dashboards](https://github.com/appdev-projects/dashboards){target="_blank"}
+  - covid tracking README text at bottom of [https://github.com/appdev-projects/dashboards](https://github.com/appdev-projects/dashboards){:target="_blank"}
 
 ### The COVID Tracking Project
 
-- API endpoint for a single state (Illinois): [**https://api.covidtracking.com/v1/states/ca/current.json**](https://api.covidtracking.com/v1/states/ca/current.json){target="_blank"}
-- [Full documentation](https://covidtracking.com/data/api){target="_blank"}
+- API endpoint for a single state (Illinois): [**https://api.covidtracking.com/v1/states/ca/current.json**](https://api.covidtracking.com/v1/states/ca/current.json){:target="_blank"}
+- [Full documentation](https://covidtracking.com/data/api){:target="_blank"}

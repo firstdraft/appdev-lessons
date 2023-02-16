@@ -2,18 +2,18 @@
 
 - Notes:
 
-  - Copied from [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){target="_blank"}
+  - Copied from [`refactoring-fortune-teller-with-dynamic-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/refactoring-fortune-teller-with-dynamic-routes.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/refactoring-fortune-teller](https://github.com/appdev-projects/refactoring-fortune-teller){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/refactoring-fortune-teller](https://github.com/appdev-projects/refactoring-fortune-teller){:target="_blank"}
 
-  - Target: [https://refactoring-fortune-teller.matchthetarget.com](https://refactoring-fortune-teller.matchthetarget.com){target="_blank"}
+  - Target: [https://refactoring-fortune-teller.matchthetarget.com](https://refactoring-fortune-teller.matchthetarget.com){:target="_blank"}
 
   - Useful chapters:
   
     - [RCAV Flowchart][RCAV Flowchart]
 
 
-This chapter is the companion to [the refactoring-fortune-teller project](https://github.com/appdev-projects/refactoring-fortune-teller){target="_blank"}, which is the sequel to the [the fortune-teller project](https://github.com/appdev-projects/fortune-teller){target="_blank"}.
+This chapter is the companion to [the refactoring-fortune-teller project](https://github.com/appdev-projects/refactoring-fortune-teller){:target="_blank"}, which is the sequel to the [the fortune-teller project](https://github.com/appdev-projects/fortune-teller){:target="_blank"}.
 
 ## Part 1: Dice
 
@@ -27,11 +27,11 @@ Our starting point code for refactoring-fortune-teller is the target code for fo
 
 In refactoring-fortune-teller, our goal is to keep everything working exactly the same way that it is; we're not going to add much. But we're going to get rid of 90% of the lines of code, while keeping the functionality the same. How? With **dynamic route segments**. Consider our new target:
 
-[**https://refactoring-fortune-teller.matchthetarget.com/roll/2/6**](https://refactoring-fortune-teller.matchthetarget.com/roll/2/6){target="_blank"}
+[**https://refactoring-fortune-teller.matchthetarget.com/roll/2/6**](https://refactoring-fortune-teller.matchthetarget.com/roll/2/6){:target="_blank"}
 
 Seems like the same thing that we had before, right? Well, try this URL instead:
 
-[**https://refactoring-fortune-teller.matchthetarget.com/roll/42/1337**](https://refactoring-fortune-teller.matchthetarget.com/roll/42/1337){target="_blank"}
+[**https://refactoring-fortune-teller.matchthetarget.com/roll/42/1337**](https://refactoring-fortune-teller.matchthetarget.com/roll/42/1337){:target="_blank"}
 
 That's a lot of 1337-sided dice. Try any combination of two numbers you want in the second and third segments of the path. You'll see that they all work!
 
@@ -236,7 +236,7 @@ Imagine you had a hash of hashes that had all of the signs and horoscopes within
 
 Fortunately, you do. I've created a class called `Zodiac`, and I gave it class-level method called `list` which returns that exact hash above[^could_you].
 
-[^could_you]: Can you define a class and a class-level method like this? You ought to be able to, with what you've learned about [Our own classes](https://chapters.firstdraft.com/chapters/769){target="_blank"} and [Hashes](https://chapters.firstdraft.com/chapters/767){target="_blank"}.
+[^could_you]: Can you define a class and a class-level method like this? You ought to be able to, with what you've learned about [Our own classes](https://chapters.firstdraft.com/chapters/769){:target="_blank"} and [Hashes](https://chapters.firstdraft.com/chapters/767){:target="_blank"}.
 
 Give the `Zodiac` class a try. For example, in the `FireController#ram` action, you can replace:
 
@@ -307,7 +307,7 @@ With the `.to_sym` method in hand, you should be able to use `params` and `Zodia
 
 ## Regressions
 
-How can you be _sure_ that it functions exactly the same as before? Well, in this case, since we had automated tests for Part 2, you can run `rails grade`! Isn't it a nice, safe feeling to be able to run the tests to know that you didn't introduce any [regressions](https://en.wikipedia.org/wiki/Software_regression#:~:text=A%20software%20regression%20is%20a,change%20to%20daylight%20saving%20time){target="_blank"}?
+How can you be _sure_ that it functions exactly the same as before? Well, in this case, since we had automated tests for Part 2, you can run `rails grade`! Isn't it a nice, safe feeling to be able to run the tests to know that you didn't introduce any [regressions](https://en.wikipedia.org/wiki/Software_regression#:~:text=A%20software%20regression%20is%20a,change%20to%20daylight%20saving%20time){:target="_blank"}?
 
 
 ## Refactoring
@@ -316,11 +316,11 @@ What we just did is called **refactoring**:
 
 > In computer programming and software design, **code refactoring** is the process of restructuring existing computer code — changing the factoring — without changing its external behavior. Refactoring is intended to improve the design, structure, and/or implementation of the software (its _non-functional_ attributes), while preserving its functionality. Potential advantages of refactoring may include improved code readability and reduced complexity; these can improve the source code's maintainability and create a simpler, cleaner, or more expressive internal architecture or object model to improve extensibility.
 >
-> Wikipedia, "[Code refactoring](https://en.wikipedia.org/wiki/Code_refactoring){target="_blank"}" 
+> Wikipedia, "[Code refactoring](https://en.wikipedia.org/wiki/Code_refactoring){:target="_blank"}" 
 
 Refactoring is a crucial part of the software development process. First, we write messy, clunky, repetitive, but easy to understand and most importantly _functional_ code; then, only after having wrapped our heads around the problem by _solving_ it, we sit back and take a moment to think about whether there might be a more readable or less complex or more performant solution.
 
-However, once we have a working solution, it's often very tempting to just leave it alone; why mess with a good thing and risk introducing bugs? Especially if you're dealing with a large, old, complicated system that you didn't build entirely yourself; it can be irresponsible to refactor willy nilly if you don't fully understand what you're changing (see [Chesterton's fence](https://en.wikipedia.org/wiki/Wikipedia:Chesterton%27s_fence){target="_blank"}).
+However, once we have a working solution, it's often very tempting to just leave it alone; why mess with a good thing and risk introducing bugs? Especially if you're dealing with a large, old, complicated system that you didn't build entirely yourself; it can be irresponsible to refactor willy nilly if you don't fully understand what you're changing (see [Chesterton's fence](https://en.wikipedia.org/wiki/Wikipedia:Chesterton%27s_fence){:target="_blank"}).
 
 And yet, we do need to make changes to our codebase over time; even if we're satisfied to never refactor, we at some point _have_ to add new features or make security patches. How do we make sure we don't inadvertently break anything or introduce bugs? No matter how good our quality assurance team is, it's not realistic to expect them to manually examine every user path through the app and verify that it still works, with every combination of possible inputs, every single time any developer makes any change.
 

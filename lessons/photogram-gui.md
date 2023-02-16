@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - [Video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-gui){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-gui.md){target="_blank"}
+  - [Video](https://canvas.uchicago.edu/courses/41147/pages/video-photogram-gui){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/photogram-gui.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/photogram-gui](https://github.com/appdev-projects/photogram-gui){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/photogram-gui](https://github.com/appdev-projects/photogram-gui){:target="_blank"}
 
-  - Target: [https://photogram-gui.matchthetarget.com/](https://photogram-gui.matchthetarget.com/){target="_blank"}
+  - Target: [https://photogram-gui.matchthetarget.com/](https://photogram-gui.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
 
@@ -38,7 +38,7 @@ Let's give them some forms (`<form></form>`) to fill out so that they can tell u
 
 In the past, we just computed some stuff and then kind of showed them some output and then forgot about all that stuff. Or maybe we put it into a *cookie* that we store in their browser, which is useful for a whole bunch of stuff, especially sign-in and sign-up in the next week. **BENP: we didn't talk about cookies up to this point, maybe leave out**
 
-Now, we're going to take all that information from the user and **save it into a record in our database**, rather than us, the developers, using `rails console`, **/rails/db**, and/or `rails sample_data`. And so it's all going to finally come together. Everything we learned about routing, RCAV, `params`, forms, all that stuff. And everything we've been learning about `ActiveRecord` and databases, that's finally going to come together, and we're going to build our [target Photogram app](https://photogram-gui.matchthetarget.com/){target="_blank"}.
+Now, we're going to take all that information from the user and **save it into a record in our database**, rather than us, the developers, using `rails console`, **/rails/db**, and/or `rails sample_data`. And so it's all going to finally come together. Everything we learned about routing, RCAV, `params`, forms, all that stuff. And everything we've been learning about `ActiveRecord` and databases, that's finally going to come together, and we're going to build our [target Photogram app](https://photogram-gui.matchthetarget.com/){:target="_blank"}.
 
 
 
@@ -55,11 +55,11 @@ Now, we're going to take all that information from the user and **save it into a
 
 It's very simple. Right now it's just a list of users and photos. Next week, we're going to add the final piece of this, which is *cookies* for sign-in and sign-up. But right now, anybody can just add users and it just adds the record to the table. So there are no accounts yet. It's just like adding an actor or adding a director. We are just adding records to the table right now.
 
-There's a form to add [**/users**](https://photogram-gui.matchthetarget.com/users){target="_blank"}. There's a form to add [**/photos**](https://photogram-gui.matchthetarget.com/photos){target="_blank"}. And that's what we have to wire up. 
+There's a form to add [**/users**](https://photogram-gui.matchthetarget.com/users){:target="_blank"}. There's a form to add [**/photos**](https://photogram-gui.matchthetarget.com/photos){:target="_blank"}. And that's what we have to wire up. 
 
-In addition to that, if we go into the details page of a user, like [**/users/desmond**](https://photogram-gui.matchthetarget.com/users/desmond){target="_blank"}, there's also a form with the username pre-populated. Notice this URL **/users/desmond** isn't an ID number, but it's a username, and follows the same principle as putting the ID number. We know how to build a route where this can vary, and then take that information and use it to populate a page. We did that! We're going to do that again, but now we're going put a form in here and let them update some information. If we change the username with the form to "desmond2" and click "Update user", I come back to the same URL, but now changed to **/users/desmond2**. 
+In addition to that, if we go into the details page of a user, like [**/users/desmond**](https://photogram-gui.matchthetarget.com/users/desmond){:target="_blank"}, there's also a form with the username pre-populated. Notice this URL **/users/desmond** isn't an ID number, but it's a username, and follows the same principle as putting the ID number. We know how to build a route where this can vary, and then take that information and use it to populate a page. We did that! We're going to do that again, but now we're going put a form in here and let them update some information. If we change the username with the form to "desmond2" and click "Update user", I come back to the same URL, but now changed to **/users/desmond2**. 
 
-Now, similarly, you've got **/photos**, and you can go to the details page of one, say [**/photos/861**](https://photogram-gui.matchthetarget.com/photos/861){target="_blank"}. There's a another edit form here, and again if I change something and click "Update photo", I'll end up back on the details page and that change has been persisted. And I can delete the photo. 
+Now, similarly, you've got **/photos**, and you can go to the details page of one, say [**/photos/861**](https://photogram-gui.matchthetarget.com/photos/861){:target="_blank"}. There's a another edit form here, and again if I change something and click "Update photo", I'll end up back on the details page and that change has been persisted. And I can delete the photo. 
 
 If I scroll down farther on the photo details page, there's a section for "Comments", and I can add a new comment. Now, when I'm adding a new comment, I have to type in an "Author ID", which is kind of annoying. You have to provide a valid ID number, or it's not going to work. So there's a new concept of *validation*. 
 
@@ -67,7 +67,7 @@ If I scroll down farther on the photo details page, there's a section for "Comme
 
 Okay, so there's some work to be done to get here to this target. Believe it or not, little of this is new. We've done forms, we've done `params`, we've done dynamic routes, we've done `ActiveRecord`, and we've done CRUD at the `rails console` (e.g., with `.new`, then add attribute values, then `.save`). 
 
-It might help to actually keep that [CRUD chapter section](https://chapters.firstdraft.com/chapters/770#time-to-crud){target="_blank"} handy for reference. In fact, another useful chapter to keep open for reference is the compendium [one reference chapter](https://chapters.firstdraft.com/chapters/774){target="_blank"}, which is a concise class and method reference. **BENP: editorialized that last sentence, which you bring up a few minutes later in video**
+It might help to actually keep that [CRUD chapter section](https://chapters.firstdraft.com/chapters/770#time-to-crud){:target="_blank"} handy for reference. In fact, another useful chapter to keep open for reference is the compendium [one reference chapter](https://chapters.firstdraft.com/chapters/774){:target="_blank"}, which is a concise class and method reference. **BENP: editorialized that last sentence, which you bring up a few minutes later in video**
 
 Let's get started.
 
@@ -224,7 +224,7 @@ Now we create the view template `user_templates/index.html.erb`, place some copy
 <h1>hi</h1>
 ```
 
-We can view the [target](https://photogram-gui.matchthetarget.com/){target="_blank"}, and see that we want a table with a list of users here. So let's put some mockup in our view template based on what we see there:
+We can view the [target](https://photogram-gui.matchthetarget.com/){:target="_blank"}, and see that we want a table with a list of users here. So let's put some mockup in our view template based on what we see there:
 
 ```html
 <!--- app/views/user_templates/index.html.erb --->
@@ -487,7 +487,7 @@ These are all the familiar patterns of `.each` looping over table records and ac
 
 Note that we could have easily just used the `@the_user.username` to fill the "Owner" column, because we are on that user's page. But we showed off another association accessor method, by going from the photo `a_photo` through the method in the `Photo` model `poster` (have a look in `app/models/photo.rb` and see for yourself), to give us back the user that posted that image, and call `username` there.
 
-As an aside, we generated all this random data with a gem called [Faker](https://github.com/faker-ruby/faker){target="_blank"}. Very useful for testing purposes.
+As an aside, we generated all this random data with a gem called [Faker](https://github.com/faker-ruby/faker){:target="_blank"}. Very useful for testing purposes.
 
 
 
@@ -983,9 +983,9 @@ Let's make a **/git** commit!
 
 We're done with reading and deleting, so now let's do the trickier ones. Create and update. 
 
-For create, in the [target](https://photogram-gui.matchthetarget.com/photos){target="_blank"} at **/photos**, there is a form above the table with all the photos.
+For create, in the [target](https://photogram-gui.matchthetarget.com/photos){:target="_blank"} at **/photos**, there is a form above the table with all the photos.
 
-As an example we can choose a URL, maybe one of the images on the Chicago Booth [homepage](https://www.chicagobooth.edu/){target="_blank"}, like [this one](https://www.chicagobooth.edu/-/media/project/chicago-booth/why-booth/a-global-footprint/building-connections-across-asia/chicago-booth-hong-kong-location.jpg){target="_blank"}. You can right click on any image of your choosing on the page and click on "Copy image address" to get the URL. **BENP: might want to change the image in case this URL changes**
+As an example we can choose a URL, maybe one of the images on the Chicago Booth [homepage](https://www.chicagobooth.edu/){:target="_blank"}, like [this one](https://www.chicagobooth.edu/-/media/project/chicago-booth/why-booth/a-global-footprint/building-connections-across-asia/chicago-booth-hong-kong-location.jpg){:target="_blank"}. You can right click on any image of your choosing on the page and click on "Copy image address" to get the URL. **BENP: might want to change the image in case this URL changes**
 
 Now we can take our URL back to the target, paste it into the first input on the form, and put some caption in the second input (maybe "UChicago Campus"). For the last input on the form, "Owner ID", if you put in a user ID that doesn't exist, like "1", then it's not going to add the photo to the table. Why? Because we have a validation on this `Photo` model:
 
@@ -1264,7 +1264,7 @@ One last thing to do! We did read, we did delete, and we now did create. So it's
 
 So everything is working, but we need to zoom in on the `<dd>Form goes here</dd>` tag and place a form for updating the photo right there.
 
-We can go to a photo details page in our [target](https://photogram-gui.matchthetarget.com/photos/777){target="_blank"} and save some time by just viewing the page source (right click, "View source"), then copy-pasting the relevant form into our own view template:
+We can go to a photo details page in our [target](https://photogram-gui.matchthetarget.com/photos/777){:target="_blank"} and save some time by just viewing the page source (right click, "View source"), then copy-pasting the relevant form into our own view template:
 
 ```html
 <!--- app/views/photo_templates/show.html.erb --->
@@ -1391,7 +1391,7 @@ The remaining tasks you see on the `rails grade` results page are up to you to c
 
 - Notes:
 
-  - Copied from README at [https://github.com/appdev-projects/photogram-gui#readme](https://github.com/appdev-projects/photogram-gui#readme){target="_blank"}
+  - Copied from README at [https://github.com/appdev-projects/photogram-gui#readme](https://github.com/appdev-projects/photogram-gui#readme){:target="_blank"}
 
 ### Tasks
 

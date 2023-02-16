@@ -24,7 +24,7 @@ We'll learn about integers first.
 
 Let's experiment with some common methods for `Integer`s:
 
-#### + - * / % ** (math) {- #integer-math}
+#### + - * / % ** (math)
 
 We, of course, have the standard math methods, like the calculator language. These methods all have the same syntactic sugar that the `String` versions did, so we can say `12 + 5` rather than `12.+(5)` (thankfully).
 
@@ -38,7 +38,7 @@ Try each of the following:
 ```
 
 <div class="experiment" markdown="1">
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/add-subtract-multiply-divide-exponent){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/add-subtract-multiply-divide-exponent){:target="_blank"}
 </div>
 
 Whoa! Did you get what you expected for that last one?
@@ -59,14 +59,12 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Integer` project for this chapter and start with the exercise `math.rb`:
+  Open the GitPod `Integer` project on Canvas that follows this reading and start with the exercise `math.rb`.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/integer-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[integer_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 </div>
 
-#### odd? and even? {-}
+#### odd? and even? 
 
 The `.odd?` and `.even?` methods return `true` or `false` based on whether the number is, well, odd or even. Don't be thrown off by the question mark at the end of the method name — it's nothing special, just another letter. Rubyists like to end method names with a question mark when methods return `true` or `false`.
 
@@ -75,18 +73,20 @@ p 7.odd?
 ```
 
 <div class="experiment" markdown="1">
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/odd){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/odd){:target="_blank"}
 </div>
 
 <div class="proj" markdown="1">
   Return to the GitPod `Integer` project and work through `odd.rb`
 </div>
 
-#### rand {-}
+#### rand 
 
-There's another special method like `p` that we are allowed to call "in space", i.e. not on the right side of a dot[^rand_implicit_receiver], called `rand`. It returns a random number, and is very useful for all kinds of stuff, everything from games to statistical analysis:
+There's another special method like `p` that we are allowed to call "in space", i.e. not on the right side of a dot, called `rand`. It returns a random number, and is very useful for all kinds of stuff, everything from games to statistical analysis:
 
-[^rand_implicit_receiver]: This is another method defined on `Kernel`, so the longhand would be `Kernel.rand(6)`.
+<aside markdown="1">
+`rand` is another method defined on `Kernel`, so the longhand would be `Kernel.rand(6)`.
+</aside>
 
 ```ruby
 rand(6) # => returns a random integer between 0 and 5
@@ -103,10 +103,10 @@ p rand(9)
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/rand){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/rand){:target="_blank"}
 </div>
 
-#### to_s {-}
+#### to_s 
 
 We often will want to combine our `Integer`s with `String`s when crafting output for our users. Give it a try:
 
@@ -115,7 +115,7 @@ lucky_number = rand(100)
 p "Your lucky number is" + lucky_number
 ```
 
-Uh oh! [RTEM!][Seriously: please read the error message]
+Uh oh! RTEM!
 
 It turns out that `String`'s `+` method can only add two strings together, not a string and an object of some other class. So, a lot of times we'll need to convert an `Integer` into a `String` prior to output. Fortunately `Integer` has a handy method, `to_s` (or "to string"), that does just that:
 
@@ -125,10 +125,10 @@ p 98.to_s
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){:target="_blank"}
 </div>
 
-#### to_f {-}
+#### to_f 
 
 Similarly, there's a `to_f` (or "to float") method to convert an `Integer` to a `Float`, which is often handy for doing math, as we'll see next.
 

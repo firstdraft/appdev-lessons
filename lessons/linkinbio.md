@@ -4,16 +4,16 @@
 
   - No video for this, only chapter
   
-  - Project (graded, submit a link): [https://github.com/appdev-projects/linkinbio](https://github.com/appdev-projects/linkinbio){target="_blank"}
+  - Project (graded, submit a link): [https://github.com/appdev-projects/linkinbio](https://github.com/appdev-projects/linkinbio){:target="_blank"}
 
-  - Target: [https://rag.hu/04-layout](https://rag.hu/04-layout){target="_blank"}
+  - Target: [https://rag.hu/04-layout](https://rag.hu/04-layout){:target="_blank"}
 
-  - Copied from [`linkinbio.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/linkinbio.md){target="_blank"}
+  - Copied from [`linkinbio.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/linkinbio.md){:target="_blank"}
 
 
 Some social media apps, in particular Instagram, do not allow you to include links to other pages in posts. The only place you can include a URL is in your bio, and you can only include one. This soon led to a trend of people promoting something with a post, but including "Link in bio!" in the caption. They would then update the solitary link in their bio to the latest thing they wanted to promote.
 
-Soon, a bunch of services cropped up that allow people to manage multiple links in a single, mobile-friendly page; and include a link to that page in their bio. The most popular of these is [Linktree](https://techcrunch.com/2020/10/26/linktree-raises-10-7m-for-its-lightweight-link-centric-user-profiles/){target="_blank"}, but there are many others.
+Soon, a bunch of services cropped up that allow people to manage multiple links in a single, mobile-friendly page; and include a link to that page in their bio. The most popular of these is [Linktree](https://techcrunch.com/2020/10/26/linktree-raises-10-7m-for-its-lightweight-link-centric-user-profiles/){:target="_blank"}, but there are many others.
 
 Linktree has many users, from media companies to celebrities to, most likely, some of your friends — and maybe even you? Here are some examples:
 
@@ -35,7 +35,7 @@ And Katy Perry's list of links:
 
 ---
 
-In this project, we're going to build our own mobile-friendly list of links that we can include in our social media profiles or anywhere else that we like. [Here's mine](https://rag.hu){target="_blank"}:
+In this project, we're going to build our own mobile-friendly list of links that we can include in our social media profiles or anywhere else that we like. [Here's mine](https://rag.hu){:target="_blank"}:
 
 ![](assets/linkinbio/linkinbio-raghu-final.png)
 
@@ -45,7 +45,7 @@ There are several benefits to writing our own rather than using a service like L
 - We don't have to pay. Linktree has a free tier with limited design options, but if you want access to the fun themes, analytics, or to remove the Linktree branding, you have to subscribe to their $5/mo or $9/mo plan.
 - We have all the power of CSS at our fingerprints to customize the design. Linktree, like all "no code" tools, limits you to a set of pre-defined constraints that you have to work within. Not so if you're writing the code yourself.
     
-    For example, if you [click through to mine](https://rag.hu/){target="_blank"}, you'll notice a lot of touches that aren't available options even on the paid Linktree plans: an animated background, a "frosted glass" effect on the links, etc.
+    For example, if you [click through to mine](https://rag.hu/){:target="_blank"}, you'll notice a lot of touches that aren't available options even on the paid Linktree plans: an animated background, a "frosted glass" effect on the links, etc.
 - It's just plain fun!
 
 Let's get started.
@@ -73,13 +73,13 @@ Let's get started.
 
 To start with, we need content. You'll probably want to gather:
 
-- A profile picture for the top of the page. This doesn't have to be an image of you; it can be anything. [Unsplash](https://unsplash.com/){target="_blank"} is a great resource for high quality stock images if you don't want to use an image of yourself.
+- A profile picture for the top of the page. This doesn't have to be an image of you; it can be anything. [Unsplash](https://unsplash.com/){:target="_blank"} is a great resource for high quality stock images if you don't want to use an image of yourself.
 - The URLs of your social media profiles. I used my GitHub, LinkedIn, Instagram, and Twitter pages.
-- A list of links you want to share. I used a handful of essays and short stories that I find myself sharing with people often. [Here are some examples that you can peruse for inspiration](https://clickydrip.com/linktree-examples/){target="_blank"}.
+- A list of links you want to share. I used a handful of essays and short stories that I find myself sharing with people often. [Here are some examples that you can peruse for inspiration](https://clickydrip.com/linktree-examples/){:target="_blank"}.
 - A thumbnail image for each link. I used a few strategies to find an image for each link:
-    - [Search Google images](https://images.google.com/){target="_blank"} and look for one hosted on wikimedia.org.
-    - Searched [Unsplash](https://unsplash.com/){target="_blank"} for a relevant image.
-    - [Generate an image with AI](https://dezgo.com/){target="_blank"}.
+    - [Search Google images](https://images.google.com/){:target="_blank"} and look for one hosted on wikimedia.org.
+    - Searched [Unsplash](https://unsplash.com/){:target="_blank"} for a relevant image.
+    - [Generate an image with AI](https://dezgo.com/){:target="_blank"}.
 
 I downloaded the image and then uploaded it to my Gitpod workspace by drag-and-dropping it into the `public/` folder.
 
@@ -143,7 +143,7 @@ Let's add our images, copy, and links. I wrapped each block of content in a `<di
 <!-- Etc, for as many links as you want -->
 ```
 
-Of course, I also have [the standard HTML boilerplate](https://chapters.firstdraft.com/chapters/771#housekeeping){target="_blank"} (`<html>`, `<head>`, `<body`, etc) in order to make it a valid document.
+Of course, I also have [the standard HTML boilerplate](https://chapters.firstdraft.com/chapters/771#housekeeping){:target="_blank"} (`<html>`, `<head>`, `<body`, etc) in order to make it a valid document.
 
 Two things to notice:
 
@@ -158,13 +158,13 @@ Two things to notice:
 
         I do _not_ include `/public` in the URL.
 
-At this stage, your page technically serves its purpose — a collection of links people can click on — but it probably looks terrible, [like this](https://rag.hu/01-content){target="_blank"}.
+At this stage, your page technically serves its purpose — a collection of links people can click on — but it probably looks terrible, [like this](https://rag.hu/01-content){:target="_blank"}.
 
 ## HTML Validator
 
-If at any point your HTML breaks, or you suspect you e.g. forgot a closing tag but can't find it, [the W3C HTML Validator](https://validator.w3.org/#validate_by_input){target="_blank"} might come in handy. Paste in your entire HTML document and click "Check", and it will give you a list of feedback. Some of them are yellow warnings and can be safely ignored for now, but any critical mistakes (like missing closing tags or quotation marks) will show up as red errors.
+If at any point your HTML breaks, or you suspect you e.g. forgot a closing tag but can't find it, [the W3C HTML Validator](https://validator.w3.org/#validate_by_input){:target="_blank"} might come in handy. Paste in your entire HTML document and click "Check", and it will give you a list of feedback. Some of them are yellow warnings and can be safely ignored for now, but any critical mistakes (like missing closing tags or quotation marks) will show up as red errors.
 
-For example, if you run your HTML through the validator right now (try it), it will display a bunch of errors because we don't have `alt=""` attributes on our `<img>`s. These are important to include for accessibility reasons, and just in case the image breaks for some reason (i.e. the URL changes). We should add [descriptive alternative text](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#accessibility_concerns){target="_blank"} for each image.
+For example, if you run your HTML through the validator right now (try it), it will display a bunch of errors because we don't have `alt=""` attributes on our `<img>`s. These are important to include for accessibility reasons, and just in case the image breaks for some reason (i.e. the URL changes). We should add [descriptive alternative text](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#accessibility_concerns){:target="_blank"} for each image.
 
 ## View Source
 
@@ -204,7 +204,7 @@ Then, let's make the banner image 128 pixels by 128 pixels:
 </style>
 ```
 
-Unless your original image was exactly square, this probably will look squished when you check out the results. To solve this problem, we can use [the `object-fit` property](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit){target="_blank"}:
+Unless your original image was exactly square, this probably will look squished when you check out the results. To solve this problem, we can use [the `object-fit` property](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit){:target="_blank"}:
 
 ```css
 .banner-image {
@@ -225,7 +225,7 @@ It's quite common to see circular profile pictures. If you want to, set a large 
 }
 ```
 
-I didn't use one on my profile picture, but you should feel free to get creative with [borders](https://developer.mozilla.org/en-US/docs/Web/CSS/border){target="_blank"}, as well.
+I didn't use one on my profile picture, but you should feel free to get creative with [borders](https://developer.mozilla.org/en-US/docs/Web/CSS/border){:target="_blank"}, as well.
 
 Similarly, let's size all of the thumbnail images as 48px by 48px:
 
@@ -238,15 +238,15 @@ Similarly, let's size all of the thumbnail images as 48px by 48px:
 }
 ```
 
-Don't forget to add the class to the relevant `<img>` elements. Now, your page should look [something like this](https://rag.hu/02-size-images){target="_blank"} — much better.
+Don't forget to add the class to the relevant `<img>` elements. Now, your page should look [something like this](https://rag.hu/02-size-images){:target="_blank"} — much better.
 
 ## Basic colors
 
 Let's add some color to make it easier to see how much space each element is occupying. We'll, at a minimum, need a color for the background of the entire page and for each link.
 
-You can come up with your own palette, or you can use [Happy Hues](https://www.happyhues.co/){target="_blank"}, a nice set of curated color palettes.
+You can come up with your own palette, or you can use [Happy Hues](https://www.happyhues.co/){:target="_blank"}, a nice set of curated color palettes.
 
-I used [this palette](https://www.happyhues.co/palettes/10){target="_blank"}. I used the background color, headline color, button color, and button text color like this:
+I used [this palette](https://www.happyhues.co/palettes/10){:target="_blank"}. I used the background color, headline color, button color, and button text color like this:
 
 ```css
 body {
@@ -274,7 +274,7 @@ body {
 
 As you can see, I also removed the underlines from links with `text-decoration: none`.
 
-Notice that I used the [descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator){target="_blank"}:
+Notice that I used the [descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator){:target="_blank"}:
 
 ```css
 .link a {
@@ -284,9 +284,9 @@ Notice that I used the [descendant combinator](https://developer.mozilla.org/en-
 
 This selector targets only `<a>` elements that are descendants of elements with class `link`. This is a handy alternative to adding a new class to all of the elements I'm interested in targeting.[^css_diner]
 
-[^css_diner]: If you want to become a pro at writing CSS selectors, I recommend an interactive tutorial/game called [CSS Diner](https://flukeout.github.io/){target="_blank"}. If you make it through all 32 levels, you'll be better than most front-end developers at writing advanced CSS selectors. In addition to making it easier to style your own pages, knowing how to write advanced selectors will pay dividends if you're interested in doing any web scraping.
+[^css_diner]: If you want to become a pro at writing CSS selectors, I recommend an interactive tutorial/game called [CSS Diner](https://flukeout.github.io/){:target="_blank"}. If you make it through all 32 levels, you'll be better than most front-end developers at writing advanced CSS selectors. In addition to making it easier to style your own pages, knowing how to write advanced selectors will pay dividends if you're interested in doing any web scraping.
 
-My page now [looks like this](https://rag.hu/03-basic-colors){target="_blank"}.
+My page now [looks like this](https://rag.hu/03-basic-colors){:target="_blank"}.
 
 ## Layout
 
@@ -387,7 +387,7 @@ This puts a thin red border around every element. Your page should now look some
 
 We can see that the `<a>` elements are only just wide enough to fit their content, so centering within them isn't doing anything. Instead, we want the `<a>` element to occupy all of the available space to the right of the thumbnail.
 
-To achieve, this we can use [the `flex-grow` property](https://css-tricks.com/almanac/properties/f/flex-grow/){target="_blank"}:
+To achieve, this we can use [the `flex-grow` property](https://css-tricks.com/almanac/properties/f/flex-grow/){:target="_blank"}:
 
 ```css
 .link a {
@@ -404,7 +404,7 @@ Now the `<a>` element grows to fill any available space, while the `<img>` eleme
 
 Now let's take care of centering the profile picture and name, as well as putting some breathing room between the social links.
 
-Flexbox has [a wonderful property called `justify-content`](https://css-tricks.com/almanac/properties/j/justify-content/){target="_blank"} that will help with all of these things:
+Flexbox has [a wonderful property called `justify-content`](https://css-tricks.com/almanac/properties/j/justify-content/){:target="_blank"} that will help with all of these things:
 
 ```css
 .name {
@@ -462,7 +462,7 @@ Let's add a little bit of padding inside our `div.link`s:
 
 It should now be safe to remove the `* { border: thin red solid; }` hack, unless you want to continue playing with layout, padding, etc.
 
-Our page now looks [something like this](https://rag.hu/04-layout){target="_blank"}.
+Our page now looks [something like this](https://rag.hu/04-layout){:target="_blank"}.
 
 ## Deploy!
 
@@ -489,7 +489,7 @@ Here's what to do to get your first GitHub Pages site going:
 - That's it! In a few minutes, your site should be live at `https://your-username.github.io`!
 - Eventually, consider adding some other pages to your site besides just `index.html` --- a list of projects that you've built, for example.
 - If you want to use a custom domain name like `yourname.com` rather than something like `your-username.github.io`, then you'll first have to purchase a domain.
-    - I recommend [Porkbun](https://porkbun.com/){target="_blank"}, or, for more exotic top-level domains, [Gandi.net](https://www.gandi.net/en){target="_blank"}. 
+    - I recommend [Porkbun](https://porkbun.com/){:target="_blank"}, or, for more exotic top-level domains, [Gandi.net](https://www.gandi.net/en){:target="_blank"}. 
     - [Here is a guide to adding your own domain to your Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site). Let me know if you get stuck.
 
 You can create as many GitHub Pages sites as you want --- one per repo. [Read more about GitHub Pages here.](https://docs.github.com/en/pages/quickstart)
@@ -521,50 +521,50 @@ To use Font Awesome icons (for example, for your LinkedIn/GitHub/Twitter/etc lin
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
 ```
 
-Then peruse [the icon list](https://fontawesome.com/search?m=free){target="_blank"} and copy-paste the code examples into your HTML.
+Then peruse [the icon list](https://fontawesome.com/search?m=free){:target="_blank"} and copy-paste the code examples into your HTML.
 
 #### Fonts
 
-- [The Ultimate Collection of Google Font Pairings (Displayed Beautifully with Classic Art)](https://heyreliable.com/ultimate-google-font-pairings/){target="_blank"}
-- Reading: [Typography in Ten Minutes](https://practicaltypography.com/typography-in-ten-minutes.html){target="_blank"}
+- [The Ultimate Collection of Google Font Pairings (Displayed Beautifully with Classic Art)](https://heyreliable.com/ultimate-google-font-pairings/){:target="_blank"}
+- Reading: [Typography in Ten Minutes](https://practicaltypography.com/typography-in-ten-minutes.html){:target="_blank"}
 
 #### Images
 
-- [Unsplash](https://unsplash.com/){target="_blank"}: Search engine for free stock images.
-- [Dezgo](https://dezgo.com/){target="_blank"}: AI image generation.
-- [Image Optimizer](http://www.imageoptimizer.net/){target="_blank"}: Reduce your images' filesize in case they're taking too long to load.
-- [Clippy](https://bennettfeely.com/clippy/){target="_blank"}: Create geometric masks for your images.
+- [Unsplash](https://unsplash.com/){:target="_blank"}: Search engine for free stock images.
+- [Dezgo](https://dezgo.com/){:target="_blank"}: AI image generation.
+- [Image Optimizer](http://www.imageoptimizer.net/){:target="_blank"}: Reduce your images' filesize in case they're taking too long to load.
+- [Clippy](https://bennettfeely.com/clippy/){:target="_blank"}: Create geometric masks for your images.
   
 #### Color palettes
 
-- [Happy Hues](https://www.happyhues.co/){target="_blank"}
+- [Happy Hues](https://www.happyhues.co/){:target="_blank"}
 
 #### Shadow generators
 
-- [CSS Shadow Palette Generator](https://www.joshwcomeau.com/shadow-palette/){target="_blank"}
+- [CSS Shadow Palette Generator](https://www.joshwcomeau.com/shadow-palette/){:target="_blank"}
 
 #### Gradient generators
 
-- [Vivid Gradient Generator](https://learnui.design/tools/gradient-generator.html){target="_blank"}
-- [Easing Gradients](https://larsenwork.com/easing-gradients/){target="_blank"}
+- [Vivid Gradient Generator](https://learnui.design/tools/gradient-generator.html){:target="_blank"}
+- [Easing Gradients](https://larsenwork.com/easing-gradients/){:target="_blank"}
 
 #### Patterns
 
-- [CSS Background Patterns](https://www.magicpattern.design/tools/css-backgrounds){target="_blank"}
-- [Repper](https://repper.app/){target="_blank"}
-- [Pocoloco](https://pocoloco.io/){target="_blank"}
+- [CSS Background Patterns](https://www.magicpattern.design/tools/css-backgrounds){:target="_blank"}
+- [Repper](https://repper.app/){:target="_blank"}
+- [Pocoloco](https://pocoloco.io/){:target="_blank"}
 
 #### Generative art
 
-- [Silk](http://weavesilk.com/){target="_blank"}
-- [Haikei](https://app.haikei.app/){target="_blank"}
-- [Tabbied](https://tabbied.com/select-artwork){target="_blank"}
-- [Broider](https://maxbittker.github.io/broider/){target="_blank"}
+- [Silk](http://weavesilk.com/){:target="_blank"}
+- [Haikei](https://app.haikei.app/){:target="_blank"}
+- [Tabbied](https://tabbied.com/select-artwork){:target="_blank"}
+- [Broider](https://maxbittker.github.io/broider/){:target="_blank"}
 
 #### Filters
 
-- [https://css-tricks.com/almanac/properties/b/backdrop-filter/](https://css-tricks.com/almanac/properties/b/backdrop-filter/){target="_blank"}
-- [https://css-tricks.com/almanac/properties/f/filter/](https://css-tricks.com/almanac/properties/f/filter/){target="_blank"}
+- [https://css-tricks.com/almanac/properties/b/backdrop-filter/](https://css-tricks.com/almanac/properties/b/backdrop-filter/){:target="_blank"}
+- [https://css-tricks.com/almanac/properties/f/filter/](https://css-tricks.com/almanac/properties/f/filter/){:target="_blank"}
 
 ---
 

@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-msm-queries-intro-to-databases){target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-queries.md){target="_blank"}
+  - [Original video](https://canvas.uchicago.edu/courses/41147/pages/video-msm-queries-intro-to-databases){:target="_blank"} transcription copied below is in [here](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/MSM-queries.md){:target="_blank"}
 
-  - Project (graded): [https://github.com/appdev-projects/msm-queries](https://github.com/appdev-projects/msm-queries){target="_blank"}
+  - Project (graded): [https://github.com/appdev-projects/msm-queries](https://github.com/appdev-projects/msm-queries){:target="_blank"}
 
-  - Target: [https://msm-queries.matchthetarget.com/](https://msm-queries.matchthetarget.com/){target="_blank"}
+  - Target: [https://msm-queries.matchthetarget.com/](https://msm-queries.matchthetarget.com/){:target="_blank"}
 
   - Useful chapters:
 
@@ -37,7 +37,7 @@ In other words, we're going to build Software as a Service. So let's get started
 
 **BENP: Starting our GitPod Workspace, 00:01:45 to 00:01:54**
 
-[Here is the assignment](https://github.com/appdev-projects/msm-queries){target="_blank"}. As usual:
+[Here is the assignment](https://github.com/appdev-projects/msm-queries){:target="_blank"}. As usual:
 
 1. Start the web server by running `bin/server`.
 2. Navigate to your live application preview.
@@ -47,7 +47,7 @@ In other words, we're going to build Software as a Service. So let's get started
 
 **BENP: possible image(s) (better, GIFs?) of starting a workspace, opening /git, organizing tabs, noting the target favicon. But these are probably in a different chapter.**
 
-The target for this project is [here](https://msm-queries.matchthetarget.com){target="_blank"}. 
+The target for this project is [here](https://msm-queries.matchthetarget.com){:target="_blank"}. 
 
 If we take a look at the target homepage at the path **/**, we will see the familiar movies, directors, and actors database content that we have been diagramming. We will build a simple web application that displays this data in a very straightforward manner.
 
@@ -198,7 +198,7 @@ end
 
 Each filename is the table (singular), and it contains the same (but capitalized) classname. For instance, the table `actors` has a file `app/models/actor.rb`, containing a class `Actor`. 
 
-It's been a long-time, and if you're rusty that's understandable. Now might be a good time to review the idea of defining classes [here](https://chapters.firstdraft.com/chapters/769){target="_blank"}. **BENP: could include a few code blocks from this doc here**
+It's been a long-time, and if you're rusty that's understandable. Now might be a good time to review the idea of defining classes [here](https://chapters.firstdraft.com/chapters/769){:target="_blank"}. **BENP: could include a few code blocks from this doc here**
 
 We haven't used the `app/models/` folder yet, but that's where all of our database-related Ruby code goes. In some sense, it's the most important folder to us, as that's where all of our business logic goes **BENP: what is business logic?**. 
 
@@ -221,7 +221,7 @@ Importantly, in the above files, we inherit `<` from a base class called `Applic
 
 Before we proceed, as you know there's no point in writing code or doing anything unless you have a way of seeing what is happening as you go. There's a bunch of ways we could do this. 
 
-Let's pick a page to work on. How about the first page linked in the [target](https://msm-queries.matchthetarget.com){target="_blank"}, the list of all directors: **/directors**.
+Let's pick a page to work on. How about the first page linked in the [target](https://msm-queries.matchthetarget.com){:target="_blank"}, the list of all directors: **/directors**.
 
 So we navigate our app browser to that URL and begin debugging our RCAV. I am also going to keep open the tab **/rails/db** because it's a useful visual reference. 
 
@@ -503,7 +503,7 @@ So we `.all` to get the records, `.at()` to select one of the records, and then 
 
 **BENP: Rails Console Creating Records, 00:34:35 to 00:36:35**
 
-Now, let's move onto **C**reating records. Let's create a new `actor` in our `actors` database table. This is just like how we created a new `Person` in our [previous exercises](https://chapters.firstdraft.com/chapters/769#our-own-classes){target="_blank"}. There's even a reference for how to do it in this case [here](https://chapters.firstdraft.com/chapters/770#new){target="_blank"}. 
+Now, let's move onto **C**reating records. Let's create a new `actor` in our `actors` database table. This is just like how we created a new `Person` in our [previous exercises](https://chapters.firstdraft.com/chapters/769#our-own-classes){:target="_blank"}. There's even a reference for how to do it in this case [here](https://chapters.firstdraft.com/chapters/770#new){:target="_blank"}. 
 
 Again, in the `rails console`, enter line-by-line:
 
@@ -618,7 +618,7 @@ pry(main)> Director.count
 
 We will need to read data more precisely than just listing it all out for our task.
 
-Before we do that, though, if we look at our [target](https://msm-queries.matchthetarget.com){target="_blank"}, and go to the list of all directors: **/directors**, then we will see that we have the necessary data to finish that page in our app.
+Before we do that, though, if we look at our [target](https://msm-queries.matchthetarget.com){:target="_blank"}, and go to the list of all directors: **/directors**, then we will see that we have the necessary data to finish that page in our app.
 
 If you go back to the **/directors** page in our app, it actually looks like the only thing different compared to the target is that we have the information listed as bullets, and the target has it in a table with links for "Show details". We will just need to work on the formatting.
 
@@ -718,7 +718,7 @@ Remember, we can embed Ruby code in the HTML tag attributes, so we've done that 
 
 Using `.each` for looping over an `ActiveRecord_Relation` (an array of database rows) like `@list_of_directors`, and pulling out attributes to put them into embedded Ruby HTML documents is a huge part of our job!
 
-As a brief aside, if those images aren't showing up on the page (for instance because the scraped image URLs are being blocked, which sometimes occurs), there's actually another way that we can get some dummy images to fill in our table: using [https://robohash.org](https://robohash.org){target="_blank"}. RoboHash lets developers put sample images into mockups while building stuff. Unique images are generated from any text (including our entire URL strings). All we need to do is replace `src="<%= a_director.image %>"` with `src="https://robohash.org/<%= a_director.image %>"`. **BENP: I note that the director image URLs do seem to work now so maybe this aside can be eliminated**
+As a brief aside, if those images aren't showing up on the page (for instance because the scraped image URLs are being blocked, which sometimes occurs), there's actually another way that we can get some dummy images to fill in our table: using [https://robohash.org](https://robohash.org){:target="_blank"}. RoboHash lets developers put sample images into mockups while building stuff. Unique images are generated from any text (including our entire URL strings). All we need to do is replace `src="<%= a_director.image %>"` with `src="https://robohash.org/<%= a_director.image %>"`. **BENP: I note that the director image URLs do seem to work now so maybe this aside can be eliminated**
 
 Okay, now let's see how we can get the bio out of our table (it's not in the target) and into the director's detail page, which should be linked with "Show details". In the target, if I click a link it will take me to a URL that looks like **/director/1**. The second path segment is the `id` column value of that director, the *primary key*!
 
@@ -794,7 +794,7 @@ Now when we click the link "Show details", we are being brought to the correct p
   - put query into `wisest` action, and put `@oldest` director into view template `app/views/director_templates/eldest.html.erb`
   - http://strftime.net/ to get `.dob` formatted
 
-Let's work on something else first. In our target we have those pages for [youngest](https://msm-queries.matchthetarget.com/directors/youngest){target="_blank"} and [eldest](https://msm-queries.matchthetarget.com/directors/eldest){target="_blank"} .
+Let's work on something else first. In our target we have those pages for [youngest](https://msm-queries.matchthetarget.com/directors/youngest){:target="_blank"} and [eldest](https://msm-queries.matchthetarget.com/directors/eldest){:target="_blank"} .
 
 We will start with the **/directors/eldest** URL path in our app. As always, the first job is to make it say hello by following our RCAV:
 
@@ -864,13 +864,13 @@ Now, how are we going to find the oldest director? What methods do we have at ou
 
 We have many wonderful methods avaiable from `ActiveRecord`, so let's familiarize ourselves with some of them. **BENP: some of these notes come directly from zipping in [ActiveRecord][ActiveRecord] chapter content, could just be linked here.**
 
-We will use the ["Time to CRUD" section of this chapter](https://chapters.firstdraft.com/chapters/770#time-to-crud){target="_blank"} as reference. We see much of the things we have already discussed in this section: how to use the console, how to create records and save them, and how to read. Please read the section, so you can see some of the methods you have available that we haven't covered.
+We will use the ["Time to CRUD" section of this chapter](https://chapters.firstdraft.com/chapters/770#time-to-crud){:target="_blank"} as reference. We see much of the things we have already discussed in this section: how to use the console, how to create records and save them, and how to read. Please read the section, so you can see some of the methods you have available that we haven't covered.
 
-For now, let's have a look at one in particular, [`.order`](https://chapters.firstdraft.com/chapters/770#order){target="_blank"}. This sorts an `ActiveRecord_Relation` based on some specified column and a specified direction: `:asc` for ascending, or `:desc` for descending.
+For now, let's have a look at one in particular, [`.order`](https://chapters.firstdraft.com/chapters/770#order){:target="_blank"}. This sorts an `ActiveRecord_Relation` based on some specified column and a specified direction: `:asc` for ascending, or `:desc` for descending.
 
-In addition to this handy method, we have the all-important [`.where`](https://chapters.firstdraft.com/chapters/770#where){target="_blank"}. `.where` is, if I had to pick one, the *most* important of the read methods. This is how we filter the table based on some criteria. We pick a column and a criteria and we can filter the records down. And you can do this as many times as you want until you are left with just the records you need (in our case, one record).
+In addition to this handy method, we have the all-important [`.where`](https://chapters.firstdraft.com/chapters/770#where){:target="_blank"}. `.where` is, if I had to pick one, the *most* important of the read methods. This is how we filter the table based on some criteria. We pick a column and a criteria and we can filter the records down. And you can do this as many times as you want until you are left with just the records you need (in our case, one record).
 
-Let's put these read methods to the test in querying our database for the oldest director! Can you take a moment in your console and try to do this yourself with the reference material linked? In particular [this is important to keep in mind](https://chapters.firstdraft.com/chapters/770#where-always-returns-a-collection-not-a-single-row){target="_blank"}.
+Let's put these read methods to the test in querying our database for the oldest director! Can you take a moment in your console and try to do this yourself with the reference material linked? In particular [this is important to keep in mind](https://chapters.firstdraft.com/chapters/770#where-always-returns-a-collection-not-a-single-row){:target="_blank"}.
 
 It's a little tricky, but I'll wait...
 
@@ -898,7 +898,7 @@ But wait, the above console query returns:
 
 That's not right! Kátia Lund is definitely not the eldest director, and look, the `dob` is `nil`, or empty. The value `nil` actually counts as smaller than 0 in our ordering. We're going to need to *chain* another query method if we want to avoid any `nil` values. 
 
-How about `.where`? Or better yet, [`.where.not`](https://chapters.firstdraft.com/chapters/770#wherenotthis){target="_blank"}. Try to solve this yourself!
+How about `.where`? Or better yet, [`.where.not`](https://chapters.firstdraft.com/chapters/770#wherenotthis){:target="_blank"}. Try to solve this yourself!
 
 Okay, if you didn't already, try to enter something like:
 
@@ -967,7 +967,7 @@ Now refresh **/directors/eldest**. Looking good!
 
 We can pretty easily get the director name to link to the director's page like we did with the "Show details" links on **/directors** (we haven't RCAV'd these links yet, but we will soon).
 
-Now, how can we get the formatting for the date of birth to match the target? Well for that we can use [http://strftime.net/](http://strftime.net/){target="_blank"}. 
+Now, how can we get the formatting for the date of birth to match the target? Well for that we can use [http://strftime.net/](http://strftime.net/){:target="_blank"}. 
 
 You never need to memorize these odd string formating characters for dates. Just use a resource for `strftime`, and over time you may beging to grow familiar with them. With the help of that tool we can reformat the date like so:
 
@@ -1335,7 +1335,7 @@ Now, after a `rails grade` and potentially a **/git** commit if everything is wo
 
 - Notes:
 
-  - Copied from [https://github.com/appdev-projects/msm-queries#tasks](https://github.com/appdev-projects/msm-queries#tasks){target="_blank"}
+  - Copied from [https://github.com/appdev-projects/msm-queries#tasks](https://github.com/appdev-projects/msm-queries#tasks){:target="_blank"}
 
 #### Finding a movie by title
 

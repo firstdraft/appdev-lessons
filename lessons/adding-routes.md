@@ -2,7 +2,7 @@
 
 - Notes:
 
-  - Copied from [`adding-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/adding-routes.md){target="_blank"}
+  - Copied from [`adding-routes.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/adding-routes.md){:target="_blank"}
 
 We're now pretty proficient in writing Ruby programs, especially with the aid of gems and APIs. Great! However, if we (the developers) are the only ones that can _run_ these programs (from the command line through the `ruby` interpreter), then they aren't much use.
 

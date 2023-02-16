@@ -10,7 +10,7 @@ The `Date` class isn't loaded into every Ruby program by default, so to use it w
 require "date"
 ```
 
-(Usually we [omit the parentheses][Optional parentheses around arguments] around the string argument to the `require` method. Just like when we use `p "Hello, world!"` as opposed to `p("Hello, World!")`.)
+(Usually we omit the parentheses around the string argument to the `require` method. Just like when we use `p "Hello, world!"` as opposed to `p("Hello, World!")`.)
 
 #### Date.new
 
@@ -20,9 +20,11 @@ After `require "date"`, we can create a new instance as usual with:
 Date.new # => #<Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
 ```
 
-By default, the new date is January 1st, of the year -4712! Interesting[^julian], but not very helpful.
+By default, the new date is January 1st, of the year −4712! Interesting, but not very helpful.
 
-[^julian]: Year 1 of the [Julian Period](https://en.wikipedia.org/wiki/Julian_day){target="_blank"} was 4713 BC (−4712).
+<aside markdown="1">
+Year 1 of the [Julian Period](https://en.wikipedia.org/wiki/Julian_day){:target="_blank"} was 4713 BC (−4712).
+</aside>
 
 You can also pass `Date.new` arguments to initialize with a specific year, month, and day:
 
@@ -34,7 +36,7 @@ Date.new(2001,2,-1)       #=> #<Date: 2001-02-28 ...>
 
 ### Date Methods
 
-#### Date.today {-}
+#### Date.today 
 
 The `Date.today` method returns an object initialized to the current date.
 
@@ -42,7 +44,7 @@ The `Date.today` method returns an object initialized to the current date.
 Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 ```
 
-#### year {-}
+#### year 
 
 Call the `year` method on a `Date` object to return just the year of the date as an `Integer`.
 
@@ -50,7 +52,7 @@ Call the `year` method on a `Date` object to return just the year of the date as
 t = Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 t.year # => 2019
 ```
-#### month {-}
+#### month 
 
 Call the `month` method on a `Date` object to return just the month of the date as an `Integer`.
 
@@ -59,7 +61,7 @@ t = Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 t.month # => 4
 ```
 
-#### day {-}
+#### day 
 
 Call the `day` method on a `Date` object to return just the day of the date as an `Integer`.
 
@@ -70,14 +72,12 @@ t.day # => 16
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Date` project for this chapter and start with the exercise `formatted.rb`:
+  Open the GitPod `Date` project on Canvas that follows this reading and start with the exercise `formatted.rb`.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/date-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[date_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
 </div>
 
-#### Date.parse {-}
+#### Date.parse 
 
 The `Date.parse()` method accepts a `String` argument and tries to interpret it as a date, initializing a `Date` object.
 
@@ -87,7 +87,7 @@ Date.parse("20010203") #=> #<Date: 2001-02-03 ...>
 Date.parse("3rd Feb 2001") #=> #<Date: 2001-02-03 ...>
 ```
 
-#### Subtraction {-}
+#### Subtraction 
 
 You can subtract two dates from one another, which will return the number of days between them. The return value class is a `Rational`, which can be converted to a regular `Integer` with `.to_i`:
 
@@ -103,35 +103,35 @@ days.to_i
   Return to the GitPod `Date` project and work through `math.rb`
 </div>
 
-#### monday? {-}
+#### monday? 
 
 Returns `true` if the date is a Monday.
 
-#### tuesday? {-}
+#### tuesday? 
 
 Returns `true` if the date is a Tuesday.
 
-#### wednesday? {-}
+#### wednesday? 
 
 Returns `true` if the date is a Wednesday.
 
-#### thursday? {-}
+#### thursday? 
 
 Returns `true` if the date is a Thursday.
 
-#### friday? {-}
+#### friday? 
 
 Returns `true` if the date is a Friday.
 
-#### saturday? {-}
+#### saturday? 
 
 Returns `true` if the date is a Saturday.
 
-#### sunday? {-}
+#### sunday? 
 
 Returns `true` if the date is a Sunday.
 
-#### wday {-}
+#### wday 
 
 Returns the day of week (0-6, Sunday is zero).
 
@@ -154,7 +154,7 @@ Time.now.saturday? # => true
 Time.now.day # => 3
 ```
 
-#### strftime {-}
+#### strftime 
 
 The `strftime` method is used on a `Date` or `Time` object. It requires a `String` argument that will be used to format the Date or Time in a particular way.
 
@@ -168,7 +168,7 @@ Time.now.strftime("%b") # => "Sep"
 Time.now.strftime("%a %e, %R %p") # => "Mon, 7 14:35 PM"
 ```
 
-You should **not** try to memorize what these patterns mean. Tools like [strftime.net](http://www.strftime.net){target="_blank"} and [For a Good Strftime](https://www.foragoodstrftime.com/){target="_blank"} exist to help compose the formatting string argument.
+You should **not** try to memorize what these patterns mean. Tools like [strftime.net](http://www.strftime.net){:target="_blank"} and [For a Good Strftime](https://www.foragoodstrftime.com/){:target="_blank"} exist to help compose the formatting string argument.
 
 ###  Conclusion
 

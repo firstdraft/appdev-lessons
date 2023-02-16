@@ -2,7 +2,7 @@
 
 - Notes
 
-  - Copied from [`image-uploads.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/image-uploads.md){target="_blank"}
+  - Copied from [`image-uploads.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/image-uploads.md){:target="_blank"}
 
 The CarrierWave and Cloudinary gems provide us with an easy way to allow image
 uploads through forms.
@@ -151,7 +151,7 @@ end
 ### Retrieve Cloudinary API info
 
 Next, you'll need to [sign up for a Cloudinary
-account](https://cloudinary.com/users/register/free){target="_blank"}. and get
+account](https://cloudinary.com/users/register/free){:target="_blank"}. and get
 your API info. You can find your cloud name by going to Settings and clicking
 the Account tab. You can find your API key and secret by going to Settings and
 clicking the Security tab.
@@ -160,11 +160,11 @@ clicking the Security tab.
 
 For security, it's best to store your keys in environment variables. Read more
 on the how and why this is important in the guide on [storing your credientials
-securely](https://chapters.firstdraft.com/chapters/792){target="_blank"}.
+securely](https://chapters.firstdraft.com/chapters/792){:target="_blank"}.
 
 After pushing to Heroku, you'll need to [manually add these environment
 variables (Heroku calls them "Config Vars") in the Settings tab of your
-application](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard){target="_blank"}.
+application](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard){:target="_blank"}.
 
 ### Store Cloudinairy API info in an intializer
 
@@ -181,9 +181,9 @@ end
 
 ## Further Reading
 
-- [Official docs](https://github.com/carrierwaveuploader/carrierwave){target="_blank"}
-- [Railscast #253](http://railscasts.com/episodes/253-carrierwave-file-uploads){target="_blank"}
-- [Cloudinary Carrierwave integration](https://cloudinary.com/documentation/rails_carrierwave){target="_blank"}
-- [Heroku Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars){target="_blank"}
+- [Official docs](https://github.com/carrierwaveuploader/carrierwave){:target="_blank"}
+- [Railscast #253](http://railscasts.com/episodes/253-carrierwave-file-uploads){:target="_blank"}
+- [Cloudinary Carrierwave integration](https://cloudinary.com/documentation/rails_carrierwave){:target="_blank"}
+- [Heroku Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars){:target="_blank"}
 
 ---

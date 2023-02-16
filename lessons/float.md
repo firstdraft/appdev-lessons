@@ -9,9 +9,9 @@ Ruby calls decimal numbers `Float`s. To create a `Float` rather than an `Integer
 
 ### Methods
 
-#### + - * / ** (math) {-}
+#### + - * / ** (math) 
 
-The math methods work mostly like you'd expect, and similarly to [the ones for integers](#integer-math).
+The math methods work mostly like you'd expect, and similarly to the ones for integers.
 
 The main difference to keep in mind is with `/`. Division with floats works the way that we're used to — it returns fractional results, as a `Float`:
 
@@ -29,7 +29,7 @@ Try the following and see what you get:
 
 <div class="experiment" markdown="1">
   
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/Float-math){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/Float-math){:target="_blank"}
 </div>
 
 What did you discover? If _either_ side is a float, float division will be performed.
@@ -45,21 +45,19 @@ One other thing to keep in mind: you can use `**` in conjunction with fractions 
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Float` project for this chapter and start with the exercise `find_hypotenuse.rb`:
+  Open the GitPod `Float` project on Canvas that follows this reading and start with the exercise `find_hypotenuse.rb`.
 
-  LTI{Load assignment}(https://github.com/appdev-projects/float-chapter/tree/winter-2023)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[float_project] 
-  
-  For a GitPod refresher, [see here](#start-gitpod-project).
+  For a GitPod refresher, see the `String` reading where we opened our first workspace.
   
   _Remember_: the Pythagorean Theorem says that
 
   ![](assets/float/pythagorous.png)
 
-  where `a` and `b` are the lengths of the shorter sides, and `c` is the length of the longest side. Read more about the formula [here](https://www.mathsisfun.com/pythagoras.html){target="_blank"}.
+  where `a` and `b` are the lengths of the shorter sides, and `c` is the length of the longest side. Read more about the formula [here](https://www.mathsisfun.com/pythagoras.html){:target="_blank"}.
 
 </div>
 
-#### round {-}
+#### round 
 
 `Float`s can round themselves. Play around with the `.round` method:
 
@@ -70,7 +68,7 @@ p pi.round(3)
 
 <div class="experiment" markdown="1">
   
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/round){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/round){:target="_blank"}
 </div>
 
 <div class="proj" markdown="1">
@@ -78,7 +76,7 @@ p pi.round(3)
   Return to the GitPod `Float` project and work through `round.rb`
 </div>
 
-#### rand {-}
+#### rand 
 
 The `rand` method that we met earlier can also be called with no arguments, in which case it returns a `Float` between 0 and 1. This is very handy for e.g. probabilities. Give it a try:
 
@@ -88,7 +86,7 @@ p rand
 
 <div class="experiment" markdown="1">
   
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/float-rand){target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/float-rand){:target="_blank"}
 </div>
 
 ###  Conclusion

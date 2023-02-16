@@ -2,11 +2,11 @@
 
 - Notes:
 
-  - AppDev Winter 2023 [Day 3 recording](https://uchicago.zoom.us/rec/share/HEKQs5jnflOBOiTR6Gts3LUNAfNc5gX2c9CDgeY2JtasHs2MG3IUUpJtpFtYzzT0.Jj6g-DqTCOJXm7Th?startTime=1674168732000){target="_blank"} with a walkthrough of project is not transcribed
+  - AppDev Winter 2023 [Day 3 recording](https://uchicago.zoom.us/rec/share/HEKQs5jnflOBOiTR6Gts3LUNAfNc5gX2c9CDgeY2JtasHs2MG3IUUpJtpFtYzzT0.Jj6g-DqTCOJXm7Th?startTime=1674168732000){:target="_blank"} with a walkthrough of project is not transcribed
   
-  - Project (graded, submit a link): [https://github.com/appdev-projects/umbrella](https://github.com/appdev-projects/umbrella){target="_blank"}
+  - Project (graded, submit a link): [https://github.com/appdev-projects/umbrella](https://github.com/appdev-projects/umbrella){:target="_blank"}
 
-  - Copied from [project README](https://github.com/appdev-projects/umbrella#readme){target="_blank"}
+  - Copied from [project README](https://github.com/appdev-projects/umbrella#readme){:target="_blank"}
 
 In this project, we'll write a Ruby program that uses the Google Maps API and Dark Sky API to tell the user whether or not they need to carry an umbrella with them.
 
