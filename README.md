@@ -26,4 +26,4 @@ Here are a few things that need to be changed:
 
  1. The README for the Gitpod project should be reduced. All instructions should be contained in the lesson.
 
- 1. Once the lesson is copied onto learn, you need to do a Ctrl+F to look for any `![`, which indicate images. These images need to be dragged and dropped into those locations.
+ 1. Once the lesson is copied onto learn, you need to do a Ctrl+F to look for any `![` or `assets`, which indicate images. These images need to be dragged and dropped into those locations. Possibly add `{: .bleed-full }` to make it wide.

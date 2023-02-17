@@ -2,49 +2,21 @@
 
 We can now use HTML and CSS for designing web pages, and Ruby for writing programs. However, if we (the developers) are the only ones that can _run_ these programs (through the `ruby` interpreter), then they aren't much use. It's time to start adding an _interface_ on top of our Ruby programs so that external users can interact with them.
 
-We already have all the tools to build our first <mark>dynamic web application</mark>. But, before we begin building, we need to understand the URL request lifecycle of _Route, Controller, Action, View (RCAV)_.
+We already have all the tools to build our first **dynamic web application**. But, before we begin building, we need to understand the URL request lifecycle of _Route, Controller, Action, View (RCAV)_.
 
-In this lesson, we will explore routing. In practice, the project we work through will make our Rock, Paper, Scissors webpage dynamic; meaning it will actually work.
+In this lesson, we will explore routing. In practice, the project we work through will make our Rock, Paper, Scissors webpage dynamic; meaning it will actually work by having the computer opponent randomly choose a move rather than always playing paper. We will then be able to compute outcomes based on the computer's move.
 
-## Starting Our GitPod Workspace
+## Starting Our Gitpod Workspace
 
-Before you proceed, let's get the GitPod project for this chapter
+Before we proceed, let's get the Gitpod project setup for this lesson.
 
 <div class="proj" markdown="1">
 
-   **Note: these steps go for opening any GitPod project, just change the project and file names.**
+  Open the Gitpod RPS-RCAV project on Canvas by clicking the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will fork the workspace to your appdev organization.
 
-   Open the GitPod `String` project on Canvas that follows this reading and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
-
-   <!-- 1. LTI{Load assignment}(https://github.com/appdev-projects/ruby-project-string-1)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(100)[string_project] -->
-
-   1. On Canvas, open the project assignment that follows this reading. Click on the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will open a new project for you to work on! **Keep this Gitpod tab open, there may be more than one exercise per chapter**. If you close the Gitpod window, you can always click the Canvas link again, but this time click "Find existing workspace in Gitpod Dashboard".
-
-   <!-- ![](assets/string/canvas-gitpod-start-project.png) -->
-
-   1. Open the `concat.rb` file in the editor window.
-
-   1. Modify the file per the instructions on top.
-
-   1. Run your Ruby file by typing `ruby ` and then the name of the file you want to run in the terminal. If we want to run `concat.rb`, we can write the command:
-
-         ```bash
-         ruby concat.rb
-         ```
-      
-         Remember, if there are multiple files with similar names, start typing the name and then just press <kbd>Tab</kbd> on your keyboard to let the terminal complete the name. You rarely need to type full filenames out — use **tab completion**!
-
-   1. To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you've run in a terminal.
-
-   1. When you think you have the required output, run `rails grade` at the terminal prompt and proceed when the test(s) passes without errors.
-
-   If you are struggling, **try to experiment directly in the `irb` environment** by typing `irb` into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start `irb` then the terminal will no longer be in the `bash` environment so things like `rails grade` won't work. You will need to open a second terminal with the plus (+) icon and switch between the `irb` and `bash` terminals as needed. Alternatively type `exit` at the `irb` terminal prompt to return to the `bash` environment. If you ever want to clear the terminal output to see a fresh new line, press <kbd>Ctrl</kbd>+<kbd>K</kbd>. And if you ever close the terminal and need to re-open it, press <kbd>Ctrl</kbd>+<kbd>J</kbd>.
-
-</div>
-
-Enough theory. It's time to open the GitPod project so we can visualize the steps and see some results. We'll finally make our Rock, Paper, Scissors game work, by having the computer opponent randomly choose a move rather than always playing paper. We will then be able to compute outcomes based on the computer's move.
-
-[Here](https://github.com/appdev-projects/rps-rcav){:target="_blank"} is the assignment. As usual:
+  <!-- [Here](https://github.com/appdev-projects/rps-rcav){:target="_blank"} is the assignment.  -->
+  
+  As usual:
 
   1. Start the web server by running `bin/server`.
   2. Navigate to your live application preview.
@@ -52,7 +24,229 @@ Enough theory. It's time to open the GitPod project so we can visualize the step
   4. Organize your workspace tabs.
   5. Run `rails grade` as often as you like to see how you are doing, but make sure you *test your app manually first* to make sure it matches the target's behavior.
 
-If you need a refresher in starting the workspace, see the [Technical Setup][Technical Setup]
+  The [target](https://rps-rcav.matchthetarget.com/){:target="_blank"} for this project, looks similar to what we have produced. But, the key difference is that the computer plays different moves, so the application is finally *dynamic*.
 
-The [target](https://rps-rcav.matchthetarget.com/){:target="_blank"} for this project, looks similar to what we have produced. But, the key difference is that the computer plays different moves, so the application is finally *dynamic*. 
-   
+   Keep the Gitpod tab open. If you close the Gitpod workspace, you can always click the Canvas link again, but this time click "Find existing workspace in Gitpod Dashboard". In a separate tab in the same browser window, keep the [target](https://rps-rcav.matchthetarget.com/){:target="_blank"} open. Also, keep this lesson open in another tab.
+
+</div>
+
+#### Quiz Question
+
+- Were you able to start the Gitpod workspace, including running `bin/server` and opening the browser?
+- Yes
+    - Great, you are ready to move on.
+- No
+    - Debug the issue before proceeding, you need the workspace open and working.
+{: .choose_best #open_gitpod points="10" answer="1" }
+
+
+## URLs and Specs
+
+For an application that runs on a server and transmits information across the internet (i.e. Software as a Service, **SaaS**), the interface consists of a set of Uniform Resource Locators (**URL**s) that a user can visit, and receive some information relevant and valuable to them.
+
+![](assets/rps-rcav/airbnb-url.png)
+
+Each URL will either:
+
+ - _display_ a page with some information (`get` in **HTTP** terminology)
+ - trigger the _storing_ of some information (`post` in HTTP terminology)
+ - trigger the _deleting_ of some information (`delete` in HTTP terminology)
+ - trigger the _updating_ of some information (`patch` in HTTP terminology)
+ - forward to another URL
+ - or some combination of the above
+
+Most obviously, the user might be visiting the URLs in their browser by typing into the address bar or clicking on links. Or, more and more commonly, users might be visiting from native iPhone or Android apps without even knowing that, behind the scenes, they are visiting URLs to store and retrieve the information they need. 
+
+But make no mistake: if there is information being stored in a central database, then there's a **web server** running somewhere and URLs are being visited with each _action_ a user takes. When somebody puts that URL into the address bar and hits <kbd>Enter</kbd>, they are triggering a specific Ruby method.
+
+In the background, there is a a _noun_ (the object) and a _verb_ (the instance method): `Object#method`. This method does the work of drawing the correct page of information for the user. Our job is to write those Ruby methods (called _actions_), and allow users to trigger them when they visit each URL. 
+
+<aside markdown="1">
+Recall that `Object#method` notation symbolizes an **_instance_ method**, while `Object.method` notation symbolizes a **_class_ method**.
+</aside>
+
+We can write any Ruby we want in those **action methods**. We can generate random numbers, read from **API**s, calculate things, send text messages, and more. But every action must do one of two things:
+
+1. ***Render*** a response, by sending back some HTML and displaying a new page
+
+2. ***Redirect***, or forward the user onward to another URL.
+
+And that's _everything_ that happens between the user visiting a URL and getting a response, it is a complete **_request lifecycle_**. Every URL is mapped to one Ruby method, and then we wire everything together so that Rails will listen for user visits. When someone visits a particular URL, then Rails will call the method we prepared, which will handle getting any database information, wrapping it in bootstrapped markup, and sending the HTML to the user's browser. 
+
+You can fully _specify_ a web application by listing out the URLs that users can visit, and what happens when each URL is visited. For example, let's say we wanted to build an interactive game of Rock, Paper, Scissors. The complete specifications (or **_specs_**, for short) for this app might look like this:
+
+ - **http\://[APP DOMAIN]/rock** — Should display "You played rock.", a random move by the computer, and the outcome.
+ - **http\://[APP DOMAIN]/paper** — Should display "You played paper.", a random move by the computer, and the outcome.
+ - **http\://[APP DOMAIN]/scissors** — Should display "You played scissors.", a random move by the computer, and the outcome.
+ - **http\://[APP DOMAIN]/** — A welcome page that displays some information and the rules of the game.
+
+Now — how do we get our web server to perform the above tasks when users visit the above URLs?
+
+#### Quiz Question
+
+- What happens when a user in our app visits a URL from their address bar?
+- A Ruby Class is created for the page
+    - Not quite, recall the term **instance method**
+- This URL is added to our specs
+    - No, because we the developers specify the available URLs
+- A Ruby method connected to the URL is called
+    - That's right! This is the _action method_ that does the work of rendering or redirecting
+{: .choose_best #user_visits_url points="10" answer="3" }
+
+
+# What's an RCAV?
+
+**For the next few sections, just follow along with the text, in the next part of the lesson, we will actually be typing things out in our Gitpod workspace.**
+
+## RCAV: Route
+
+The key is _routes_. _Routes_ are how we connect a URL to an _action_. 
+
+The `config/routes.rb` file included in every Rails app lists all of the URLs (_routes_) that a user can visit. When someone visits the URL we say which class and which method Rails should execute to handle the request. Here is an example of a route:
+
+<aside markdown="1">
+It's finally time to move out of our `public/` and `tasks/` folders, and use more of our Rails application by working in the `app/` folder, where most of our code goes, and with this one file `routes.rb` that is in the `config/` folder.
+</aside>
+
+```ruby
+# config/routes.rb
+
+self.get("/rock", { :controller => "application", :action => "play_rock" })
+```
+
+The method here is `get` and there are parentheses for its _two arguments_: 
+
+<aside markdown="1">
+Later we'll use other methods besides `get`, like `post`, if we want to support requests using the other HTTP verbs.
+</aside>
+
+  1. A `String`: the _path_ that we want users to be able to visit (the **path** is the portion of the URL that comes after the **domain name**). Here it is `"/rock"`.
+
+  2. A `Hash`: this is where we tell Rails which method to call when a user visits the path in the first argument. (We'll have to actually write this method in the next step, after we write the route.)
+
+The `Hash` must have two key/value pairs:
+
+  - `:controller`: The value for this key is what we're going to name the Class that _contains_ the method we want Rails to call when the user visits the path. For now we're going to default this value to `"application"`.
+
+  - `:action`: The value for this key is what we're going to name the method itself. _Action_ is the term used to refer to Ruby methods that are triggered by users visiting URLs.
+
+The `Hash` is saying: _"Use a `Class` (controller) called `application_controller`, and in that `Class` use a `method` (action) called `play_rock` to generate a response for the user."_
+
+Don't be confused by the key names `:controller` and `:action`, these are equivalent to a Ruby Class and method. They just have special names in the lingo of web applications.
+
+The `get` method is _inherited_, we don't need to build this method ourselves, which saves us a lot of time. We get the plumbing for free and we just need to tell Rails how we want each request to be handled by declaring our routes. 
+
+#### Quiz Question
+
+- What are the `:controller` and `:action` arguments in the `get` function equivalent to?
+- They both indicate methods (_verbs_) that we call on an object (_noun_)
+    - Not quite, only one of them is a method, which one?
+- `:controller` indicates a Class object and `:action` is a method in that Class
+    - That's right, the Class is `application_controller` and the method is `play_rock`.
+- `:controller` indicates a method and `:action` is the Class that method is in
+    - Not quite, it's actually the other way around.
+{: .choose_best #controller_action points="10" answer="2" }
+
+
+## RCAV: Controller, Action, View
+
+All of our controller Classes will be in the `app/controllers/` folder. There's already one controller that comes with every Rails app: `ApplicationController`, found in `app/controllers/application_controller.rb`. _This_ is the controller that the `get("/rock", ...)` route is referring to. We will just use this default controller for now. Later we will make separate controllers to keep our code organized.
+
+Here is an example of an action in the controller:
+
+```ruby
+# app/controllers/application_controller.rb
+
+class ApplicationController < ActionController::Base
+  def play_rock
+    self.redirect_to("https://www.wikipedia.org")
+  end 
+end
+```
+
+We get the Class definition "for free":
+
+```ruby
+class ApplicationController < ActionController::Base
+```
+
+`ApplicationController` inherits, with the symbol `<`, from the `ActionController::Base` Class, which is inside the Rails **`gem`**.
+
+<aside markdown="1">
+Since the `ActionController::Base` Class is contained in the Rails `gem` in our `Gemfile`, we would need to go to GitHub to actually look at it.
+</aside>
+
+Inside of this Class, we define a method:
+
+```ruby
+def play_rock
+```
+
+We could write whatever Ruby steps we want in this method, like getting a random number, calling APIs, etc. But, in the end, the job of an _action_ is to send back a response to the user. A response can be either:
+
+ 1. _Rendering_ some data, in any one of many formats:
+    - Plain text.
+    - HTML for their browser to draw — we'll learn this soon.
+    - JSON for an application to consume — we'll see JSON when we cover APIs.
+    - Less commonly, any other format: CSV, PDF, XML, etc.
+
+ 2. Or, the action can _redirect_ the user to _another_ URL. 
+
+In fact, we inherited (via `< ActionController::Base`) a method for each of these: `render` for the first, and `redirect_to` for the second.
+ 
+In our example, we chose to _redirect_ to another URL:
+
+```ruby
+self.redirect_to("https://www.wikipedia.org")
+```
+
+The argument to `redirect_to` is a `String` which contains some URL that we want the user to be forwarded to. 
+
+This is the _V_ in _RCAV_. We defined a _route_ to the URL path **/rock**, and in that route we indicated a _controller_ and an _action_ within that controller. After creating this Class and method, we give the user something to _view_ in their browser.
+
+More often, we will `render` some HTML for the user, but `redirect_to` will come in handy in later projects. For example, when we want to send the user directly back to a list of all photos after they've deleted a photo.
+
+#### Quiz Question
+
+- How did we get the `redirect_to` function?
+- We got it from `ActionController::Base`
+    - Yes, via the `<` notation for *inherited*. And that Class where the function lives is in the Rails `gem`
+- We don't have access to this function.
+    - Not quite, look above at the term *inherited*.
+- We defined it ourselved.
+    - Not quite, look above at the term *inherited*.
+{: .choose_best #redirect_to points="10" answer="1" }
+
+## Dropping `self.`
+
+Before proceeding, let's get something out of the way. 
+
+We are using the `self` keyword in our example because we are calling these methods on the Class (`ApplicationController`) that we are defining the action (`play_rock`) for. Recall when we learned about the `Person` Class, with the instance methods `first_name` and `last_name`. If we wanted a `full_name` method we called `self.first_name + self.last_name`. 
+
+In our example, we're defining `play_rock` and we want use the method `redirect` that already exists on `ApplicationController`. We don't see `def redirect` in our Class, since it's inherited via `< ActionController::Base` and is defined there. So, we are using a method that already exists in the Class to build our new method, hence `self.redirect_to`. 
+
+But, in Ruby, when we call a method on `self`, we can drop the `self.`, and Ruby will figure it out. Before anything, Ruby will look to see if that object exists in the Class, no `self.` required! 
+
+In practice, that means we can re-write the code to:
+
+```ruby
+# config/routes.rb
+
+get("/rock", { :controller => "application", :action => "play_rock" })
+```
+{: mark_lines="3" }
+
+and
+
+```ruby
+# app/controllers/application_controller.rb
+
+class ApplicationController < ActionController::Base
+  def play_rock
+    redirect_to("https://www.wikipedia.org")
+  end 
+end
+```
+{: mark_lines="5" }
+
+Okay, that was a lot of information. It's time to actually move over into our Gitpod project space and start typing things out to get our application running! Proceed to the next part of the lesson for that.
