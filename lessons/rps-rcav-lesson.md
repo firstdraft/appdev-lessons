@@ -192,9 +192,9 @@ end
 {: mark_lines="5" }
 
 
-## Starting Our GitPod Workspace
+## Starting Our Gitpod Workspace
 
-Enough theory. It's time to open the GitPod project so we can visualize the steps and see some results. We'll finally make our Rock, Paper, Scissors game work, by having the computer opponent randomly choose a move rather than always playing paper. We will then be able to compute outcomes based on the computer's move.
+Enough theory. It's time to open the Gitpod project so we can visualize the steps and see some results. We'll finally make our Rock, Paper, Scissors game work, by having the computer opponent randomly choose a move rather than always playing paper. We will then be able to compute outcomes based on the computer's move.
 
 [Here](https://github.com/appdev-projects/rps-rcav){:target="_blank"} is the assignment. As usual:
 
@@ -287,7 +287,7 @@ end
 
 Go back to the browser and refresh the URL **/rock**. You should be sent to Wikipedia. Boom! We just created a full RCAV *request lifecycle*. 
 
-Check out the server log in your GitPod workspace. That is the terminal running `bin/server`. (Use <kbd>Ctrl</kbd> + <kbd>J</kbd> to open and close the terminal pane, find the `bin/server` terminal, and possibly use <kbd>Ctrl</kbd> + <kbd>K</kbd> to clear it for a cleaner view.) We should see something like:
+Check out the server log in your Gitpod workspace. That is the terminal running `bin/server`. (Use <kbd>Ctrl</kbd> + <kbd>J</kbd> to open and close the terminal pane, find the `bin/server` terminal, and possibly use <kbd>Ctrl</kbd> + <kbd>K</kbd> to clear it for a cleaner view.) We should see something like:
 
 ![](assets/rps-rcav/rock-to-wikipedia-server-log.png)
 
@@ -352,7 +352,7 @@ Rather than `redirect_to`, we'll use another inherited method to complete the re
 
 This method, takes a `Hash` as an argument with a key/value pair. The key has many options, here we use `:plain`, which will just send back plain text. A boring response, but good to start with.
 
-Now, pretend you're a user and visit **/rock** in the GitPod browser. You should see a mostly empty page with the text "Hello, world!" rendered. 
+Now, pretend you're a user and visit **/rock** in the Gitpod browser. You should see a mostly empty page with the text "Hello, world!" rendered. 
 
 Congratulations! You've wired up a route; prepare to do it a million more times, because all developers do all day is pick the next *spec*, wire up the route for the URL so that a user can visit it, and then implement the logic to send back the correct information.
 
@@ -440,7 +440,7 @@ We want to keep things organized and put different templates in different sub-fo
 
 First make a new folder in `app/views/` by right-clicking on the folder and selecting "New Folder...", then naming the folder `game_templates`. Then, right-click on this new folder, select "New File...", and create `user_rock.html.erb`. The entire filepath will look like `app/views/game_templates/user_rock.html.erb`.
 
-**BENP: insert gif of create new folder and create new file steps in GitPod**
+**BENP: insert gif of create new folder and create new file steps in Gitpod**
 
 By using `:template =>` in `render`, Rails knows to look in `app/views/`. We could call the `game_templates/user_rock.html.erb` folder and file whatever we want. The user will not see the folder or the file, they will only see **/rock**, the specified route, in their browser.
 
@@ -599,7 +599,7 @@ Do you understand this added code? *Read* it carefully and try to understand the
 
 We used hidden `<% %>` embedded Ruby tags in our **control flow** on each line we wanted to hide from the user. Only the result of this control flow `<h2>We tied!</h2>`, `<h2>We lost!</h2>`, or `<h2>We won!</h2>` will be rendered, *depending on the randomly sampled `comp_move` variable*. Refresh **/rock** a few times to see. 
 
-If you haven't, now would be a good time to run `rails grade` at the GitPod terminal to check your progress. And remember to *Always Be Committing (ABC)*, by making a **/git** commit. We have a lot done, but we still have a lot to do.
+If you haven't, now would be a good time to run `rails grade` at the Gitpod terminal to check your progress. And remember to *Always Be Committing (ABC)*, by making a **/git** commit. We have a lot done, but we still have a lot to do.
 
 ### Completed Code
 
