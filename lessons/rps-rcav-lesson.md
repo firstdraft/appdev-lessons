@@ -1283,7 +1283,7 @@ Our apps are nothing more than a collection of URLs that we decide to allow user
 
 So remember: everything always starts with a *route* between an *address* we want users to be able to visit and a *Ruby method* that will be responsible for generating a response to the user's browser.
 
-In order to support a URL in your app such as **https://3000-your-gitpod-workspace.gitpod.io/home**, there are a lot of dots to connect!
+In order to support a URL in your app such as **https\://3000-your-gitpod-workspace.gitpod.io/home**, there are a lot of dots to connect!
 
 ![](assets/rps-rcav/rcav-chart.png)
 
