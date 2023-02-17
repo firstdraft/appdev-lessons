@@ -17,10 +17,9 @@ Here are a few things that need to be changed:
  1. Any `**https:` should be replaced with `**https\:` when the intention is just to indicate a path (don't add the backslash on links out)
 
  1. Begin putting the lesson into sub-lessons by creating new files and appending `-part-01.md` after `-lesson`. So: 
- 
-   - `rps-rcav.md` is the original bookdown format, 
-   - `rps-rcav-lesson.md` is the syntax changes for learn, and 
-   - `rps-rcav-lesson-part-XX.md` is each part of the lesson which becomes a separate lesson on learn.
+    - `rps-rcav.md` is the original bookdown format, 
+    - `rps-rcav-lesson.md` is the syntax changes for learn, and 
+    - `rps-rcav-lesson-part-XX.md` is each part of the lesson which becomes a separate lesson on learn.
 
 
  1. References to Gitpod workspace and/or REPLs need to get a `<div class="proj / experiment" markdown="1"></div>` tag. Instructions to open a Gitpod should be consistent. As of now, it will direct the students to Canvas.
