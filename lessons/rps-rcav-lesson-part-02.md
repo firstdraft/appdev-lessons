@@ -93,6 +93,15 @@ Check out the server log in your Gitpod workspace. That is the terminal running 
 
 The server log tells us *exactly* what happened. Someone tried to `GET "/rock"` from a given IP address at a given time, we found a route with instructions to use `ApplicationController#play_rock`, calling this controller/action pair resulted in a redirect to the given URL (`https://www.wikipedia.org`), and the entire request lifecycle completed in the stated time with no errors. Hooray!
 
+#### Quiz Question
+
+- In the browser for our app, when you visited the **/rock** URL path, what happened?
+- I ended up on Wikipedia
+    - Great, you are ready to move on.
+- I got an error message, or did not end up on Wikipedia
+    - Debug the issue before proceeding, you need to get this first RCAV working before you proceed. Consider using the "Completed code" below from the previous section.
+{: .choose_best #first_rcav points="10" answer="1" }
+
 ### Completed Code
 
 ```ruby
@@ -255,6 +264,19 @@ Open the newly created `user_rock.html.erb` file and add some HTML to render:
 And now when we refresh **/rock**, we get the text from our *new file* rendered in HTML.
 
 After all of that, we have an HTML page that does what we could have done quickly if we made a file called `rock.html` in the `public/` folder. But we can do something way better with this new system. 
+
+#### Quiz Question
+
+- Where do we put all of the HTML pages we want the user to be able to view in our app?
+- The `public/` folder
+    - Not quite, we used to put those pages there, but we have a better place now.
+- The `app/views/` folder
+    - That's almost correct, but we actually want to keep things more organized with sub-folders.
+- The `config/` folder
+    - No, but the routes that we define do live in that folder in the `routes.rb` file.
+- Sub-folders in the `app/views/` folder, like `app/views/games/`
+    - Yes! We put all the views that our actions point to in organized sub-folders within `views/`
+{: .choose_best #views_folder points="10" answer="4" }
 
 ### Completed Code
 
