@@ -77,6 +77,17 @@ Now refresh **/**. There is no error and our HTML template is rendered. And we d
   - create an *action* in that controller, 
   - and *view* the result.
 
+#### Quiz Question
+
+- I got **/** wired up with my RCAV.
+- Yes!
+    - Great, you are ready to move on.
+- No.
+    - What is the error message? Carefully go through the previous code and get your second RCAV working.
+{: .choose_best #second_rcav points="10" answer="1" }
+
+**TODO:** ellipse rendering badly and punctuation being added to pop-up boxes
+
 ### Completed Code
 
 ```ruby
@@ -205,6 +216,30 @@ Back to our new error, we RTEM, and that tells us to go and make the new `game_t
 ```
 
 Refresh **/paper**. No error message? A successful RCAV!
+
+#### Quiz Question
+
+- I got **/paper** wired up with my RCAV.
+- Yes.
+    - Great, you're well on your way to becoming an RCAV pro.
+- No.
+    - What is the error message? Carefully go through the previous code and get your third RCAV working.
+{: .choose_best #third_rcav points="10" answer="1" }
+
+**TODO:** ellipse rendering badly and punctuation being added to pop-up boxes
+
+#### Quiz Question
+
+- When I get error messages, I can do the following:
+- Scan my code for typos, because I need _exactly_ the right words (code) in _exactly_ the right order
+    - Yes!
+- Delete what I wrote and start from scratch if I can't find the typo.
+    - Yes!
+- Explain the code out loud to myself, my pet, or someone else in the room.
+    - Yes!
+- Give up.
+    - Never give up! Try going back to square one when all else fails. Read every character you type and try to understand the meaning as you build up the code.
+{: .choose_all #debugging points="10" answer="[1,2,3]" }
 
 ### Completed Code
 

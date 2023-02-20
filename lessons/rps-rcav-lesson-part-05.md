@@ -211,6 +211,19 @@ Most computation work like this should go in the controller as we have done it h
 
 If **/paper** appears to work when you test it manually, then it's time for a `rails grade` and a **/git** commit.
 
+#### Quiz Question
+
+- What is the difference between a local variable and an instance variable?
+- There is no difference, we just name them differently because they are in different files of the `app/` folder
+    - No, please carefully read the previous section. This is important!
+- An instance variable is only used one time and local variables are re-used.
+    - No, please carefully read the previous section. This is important!
+- Instance variables are available as long as the object they are called from exists. Local variables only exist in the scope that they are defined.
+    - Yes, and we define instance variables by pre-prending the name with an `@`-symbol.
+- Local variables are available as long as the object they are called from exists. Instance variables only exist in the scope that they are defined.
+    - No, please carefully read the previous section. This is important!
+{: .choose_best #instance_vs_local points="10" answer="3" }
+
 ### Completed Code
 
 ```ruby
@@ -358,6 +371,17 @@ render({ :template => "game_templates/user_rock.html.erb", :layout => "wrapper.h
 This additional `:layout` argument would then only put the navbar and footer from `wrapper.html.erb` on the **/rock** route.
 
 Time for a `rails grade` and a **/git** commit! 
+
+#### Quiz Question
+
+- What does the keyword `yield` in an embedded Ruby template mean, and where do we normally find it?
+- This is an object that is only available to files in the `public/` folder.
+    - No, we're pretty much done thinking about the `public/` folder. Try again, and maybe re-read the previous section.
+- This keyword can be used in the `.html.erb` layout file that wraps our other pages. When we see the keyword, it means "put the page content right here".
+    - Yes!
+- This keyword is used in our `.rb` controller files, and it means "slow down".
+    - No, please carefully read the previous section.
+{: .choose_best #yield points="10" answer="2" }
 
 ### Completed Code
 
