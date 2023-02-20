@@ -83,6 +83,19 @@ Alright, we are now finally building dynamic web applications. We are able to re
   - `<% %>` for *hidden* content, and 
   - `<%= %>` for *rendered* content.
 
+#### Quiz Question
+
+- Using the RCAV approach, we can:
+- Create actions (methods) in controllers (classes) that trigger rendering or redirecting for our users visiting URLs
+    - Yes, that's the basic idea behind RCAVing.
+- Do exactly the same thing as placing HTML files in the `public/` folder
+    - No, we can do so much more!
+- Create actions on-the-fly when a user visits any URL.
+    - No, we (the developers) still need to define the available URLs that a user can visit.
+- Use embedded Ruby HTML files (`.html.erb`) to put Ruby code on our pages
+    - Yes! And that opens a world of possibilities
+{: .choose_all #why_rcav points="10" answer="[1,4]" }
+
 ### Completed Code
 
 ```html
@@ -133,6 +146,17 @@ Do you understand this added code? *Read* it carefully and try to understand the
 We used hidden `<% %>` embedded Ruby tags in our **control flow** on each line we wanted to hide from the user. Only the result of this control flow `<h2>We tied!</h2>`, `<h2>We lost!</h2>`, or `<h2>We won!</h2>` will be rendered, *depending on the randomly sampled `comp_move` variable*. Refresh **/rock** a few times to see. 
 
 If you haven't, now would be a good time to run `rails grade` at the Gitpod terminal to check your progress. And remember to *Always Be Committing (ABC)*, by making a **/git** commit. We have a lot done, but we still have a lot to do.
+
+#### Quiz Question
+
+- What is the `.html.erb` syntax for hidden versus shown Ruby output?
+- We can't hide the output Ruby in these files
+    - Actually, we can, there's two different tags.
+- `<% %>` for hidden content, `<%= %>` for shown content
+    - Yes!
+- `<%= %>` for hidden content, `<% %>` for shown content
+    - Nope, have another look at the previous code we added to the view file.
+{: .choose_best #ruby_tags points="10" answer="2" }
 
 ### Completed Code
 
