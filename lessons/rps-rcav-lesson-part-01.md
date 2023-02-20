@@ -44,7 +44,8 @@ Before we proceed, let's get the Gitpod project setup for this lesson.
 
 For an application that runs on a server and transmits information across the internet (i.e. Software as a Service, **SaaS**), the interface consists of a set of Uniform Resource Locators (**URL**s) that a user can visit, and receive some information relevant and valuable to them.
 
-![](assets/rps-rcav/airbnb-url.png)
+<!-- ![](assets/rps-rcav/airbnb-url.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676597248/airbnb-url_ywgt3x.png)
 
 Each URL will either:
 

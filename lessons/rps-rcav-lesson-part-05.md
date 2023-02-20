@@ -113,7 +113,8 @@ So let's try to visit **/paper** again. Oops, we get this error:
 undefined local variable or method `comp_move' for #<#Class...
 ```
 
-![](assets/rps-rcav/err-undefined-local-var-or-meth.png)
+<!-- ![](assets/rps-rcav/err-undefined-local-var-or-meth.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676657545/err-undefined-local-var-or-meth_f58lll.png)
 
 This error is coming from our `user_paper.html.erb` view template, when the browser gets to the first embedded Ruby tag:
 

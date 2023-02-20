@@ -29,7 +29,8 @@ In the browser, pretend to be a user and navigate to the URL **/** in the addres
 The action 'play_rock' could not be found for ApplicationController
 ```
 
-![](assets/rps-rcav/err-action-not-in-contoller.png)
+<!-- ![](assets/rps-rcav/err-action-not-in-contoller.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676657214/err-action-not-in-contoller_g2tpbg.png)
 
 This is good! That means we defined the route correctly. If you still see a "No route matches" error, then double-check your route syntax in the `get` method, save the changes, and get that error to go away before you proceed. 
 
@@ -184,7 +185,8 @@ Refresh **/paper**, and we'll get a new error message:
 Missing template game_templates/user_paper.html.erb
 ```
 
-![](assets/rps-rcav/err-missing-view-template.png)
+<!-- ![](assets/rps-rcav/err-missing-view-template.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676657230/err-missing-view-template_xennnd.png)
 
 If you keep getting the same error message, there are a few steps you can try:
 

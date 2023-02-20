@@ -19,7 +19,8 @@ At **/rock**, you should see an error message:
 No route matches [GET] "/rock".
 ```
 
-![](assets/rps-rcav/err-no-routes-match.png)
+<!-- ![](assets/rps-rcav/err-no-routes-match.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676598633/err-no-routes-match_zhhpzp.png)
 
 We need to *Read The Error Message (**RTEM**)*. This error message is telling us that we need to define the route. 
 
@@ -87,7 +88,8 @@ Go back to the browser and refresh the URL **/rock**. You should be sent to Wiki
 
 Check out the server log in your Gitpod workspace. That is the terminal running `bin/server`. (Use <kbd>Ctrl</kbd> + <kbd>J</kbd> to open and close the terminal pane, find the `bin/server` terminal, and possibly use <kbd>Ctrl</kbd> + <kbd>K</kbd> to clear it for a cleaner view.) We should see something like:
 
-![](assets/rps-rcav/rock-to-wikipedia-server-log.png)
+<!-- ![](assets/rps-rcav/rock-to-wikipedia-server-log.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676598649/rock-to-wikipedia-server-log_gczkva.png)
 
 The server log tells us *exactly* what happened. Someone tried to `GET "/rock"` from a given IP address at a given time, we found a route with instructions to use `ApplicationController#play_rock`, calling this controller/action pair resulted in a redirect to the given URL (`https://www.wikipedia.org`), and the entire request lifecycle completed in the stated time with no errors. Hooray!
 
