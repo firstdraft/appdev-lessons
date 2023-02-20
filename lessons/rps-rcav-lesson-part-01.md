@@ -39,6 +39,8 @@ Before we proceed, let's get the Gitpod project setup for this lesson.
     - Debug the issue before proceeding, you need the workspace open and working.
 {: .choose_best #open_gitpod points="10" answer="1" }
 
+**TODO:** "debug the issue" isn't very helpful. add a long "lesson" with technical setup, point them to a video, point them to an old chapter or the appdev-textbook?
+
 
 ## URLs and Specs
 
@@ -85,19 +87,22 @@ Now — how do we get our web server to perform the above tasks when users visi
 
 #### Quiz Question
 
-- What happens when a user in our app visits a URL from their address bar?
+- What happens when a user in our app visits a URL from their address bar? Choose all that apply.
 - A Ruby Class is created for the page
     - Not quite, recall the term **instance method**
 - This URL is added to our specs
     - No, because we the developers specify the available URLs
 - A Ruby method connected to the URL is called
     - That's right! This is the _action method_ that does the work of rendering or redirecting
-{: .choose_best #user_visits_url points="10" answer="3" }
+- The user is redirected somewhere, or some content is rendered for them
+    - That's right! These are typically the two actions that result from someone visiting a URL
+{: .choose_all #user_visits_url points="10" answer="[3,4]" }
 
+**TODO:** check the functionality of `.choose_all` question above. does it work when only one right answer is given? Also, markdown is not interpreted properly in the answer pop-up box.
 
 # What's an RCAV?
 
-**For the next few sections, just follow along with the text, in the next part of the lesson, we will actually be typing things out in our Gitpod workspace.**
+For the next few sections, just follow along with the text, in the next part of the lesson, we will actually be typing things out in our Gitpod workspace.
 
 ## RCAV: Route
 
@@ -148,6 +153,21 @@ The `get` method is _inherited_, we don't need to build this method ourselves, w
     - Not quite, it's actually the other way around.
 {: .choose_best #controller_action points="10" answer="2" }
 
+#### Quiz Question
+
+- Based on the `Hash` input to our `get` method, which action will be triggered when the user visits the URL path **/rock**?
+- :controller
+    - The `:controller` is a key to the `Hash`, but what is it pointing it?
+- :action
+    - The `:action` is a key to the `Hash`, but what is it pointing it?
+- application
+    - The `"application"` value for the `:controller` key indicates _where_ the action that we want to call is. That is, which Class the action method is inside of.
+- play_rock
+    - Correct! The `play_rock` action is indicated by `:action` in the `Hash`.
+{: .free_text #play_rock points="10" answer="4" }
+
+**TODO:** for `.free_text` method above, is this a good use of it? Seems highly dependent on very exact typing. Also, information does not come up for incorrect answers, just says "Thank you for your submission".
+
 
 ## RCAV: Controller, Action, View
 
@@ -174,7 +194,7 @@ class ApplicationController < ActionController::Base
 `ApplicationController` inherits, with the symbol `<`, from the `ActionController::Base` Class, which is inside the Rails **`gem`**.
 
 <aside markdown="1">
-Since the `ActionController::Base` Class is contained in the Rails `gem` in our `Gemfile`, we would need to go to GitHub to actually look at it.
+Since the `ActionController::Base` Class is contained in the Rails `gem` in our `Gemfile`, we would need to go to GitHub to actually look at it. Remember, `gem`s are just Ruby code libraries written by other developers that we import into our project to avoid reinventing the wheel.
 </aside>
 
 Inside of this Class, we define a method:
@@ -218,6 +238,19 @@ More often, we will `render` some HTML for the user, but `redirect_to` will come
     - Not quite, look above at the term *inherited*.
 {: .choose_best #redirect_to points="10" answer="1" }
 
+#### Quiz Question
+
+- What does the _V_ in RCAV actually mean?
+- Very good job rendering the page.
+    - Nope, re-read the previous section and try again.
+- Value has been added to the software we are building by adding a page.
+    - Nope, re-read the previous section and try again.
+- View the result as the developer and check it looks good.
+    - Not quite, can we be more specific with one of the other answers here?
+- Setup the action to either render or redirect the user somewhere (i.e., setup a new "view" for them).
+    - Yes, this is the last step in the RCAV, where we provide the user with some result.
+{: .choose_best #v_in_rcav points="10" answer="4" }
+
 ## Dropping `self.`
 
 Before proceeding, let's get something out of the way. 
@@ -249,5 +282,18 @@ class ApplicationController < ActionController::Base
 end
 ```
 {: mark_lines="5" }
+
+#### Quiz Question
+
+- What does the `self` keyword refer to?
+- The user
+    - Nope, re-read the previous section and try again.
+- The developer
+    - Nope, re-read the previous section and try again.
+- The Class that a given object or method is being called from within
+    - Yes, that's correct.
+{: .choose_best #drop_self points="10" answer="3" }
+
+**TODO:** I don't think the point totals are updating correctly.
 
 Okay, that was a lot of information. It's time to actually move over into our Gitpod project space and start typing things out to get our application running! Proceed to the next part of the lesson for that.
