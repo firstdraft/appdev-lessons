@@ -10,7 +10,8 @@ Once you do these steps once, you can jump right ahead to **TODO: link to lower 
 
 If you haven't already, [sign up for a free GitHub account](https://github.com/join) (or sign in to yours if you already have one):
 
-![](assets/technical-setup/join-github.png)
+<!-- ![](assets/technical-setup/join-github.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020920/join-github_czxbwn.png)
 
 In this example screenshot, I chose a username of `demolearner1` — remember yours. Also, don't forget to check your email and verify the address you entered.
 
@@ -22,15 +23,18 @@ To keep things organized, we're going to create a separate GitHub organization a
 
 Click the `+` on the right side of the navbar and select "New organization":
 
-![](assets/technical-setup/new-organization.png)
+<!-- ![](assets/technical-setup/new-organization.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020945/new-organization_f3zevo.png)
 
 Choose any name for the organization; most students choose `[YOUR USERNAME]-appdev`. In this example screenshot, I chose `demolearner1-appdev`:
 
-![](assets/technical-setup/org-name.png)
+<!-- ![](assets/technical-setup/org-name.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020982/org-name_y98heg.png)
 
 You can "Skip" or "Finish" the rest of the screens:
 
-![](assets/technical-setup/finish-org.png)
+<!-- ![](assets/technical-setup/finish-org.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021002/finish-org_wpmmlc.png)
 
 ### Starting a Gitpod Assignment
 
@@ -51,32 +55,38 @@ Gitpod will delete an inactive workspace after **14 days**. If you want to save 
 
 Open up the Assignments tab and make sure they're sorted by type.
 
-![](assets/technical-setup/login-canvas.png)
+<!-- ![](assets/technical-setup/login-canvas.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021025/login-canvas_pvxmxw.png)
 
 Scroll down to the assignment you want to start and click the link that says 'Load [your assignment name] in a new window' (the name of the project will vary).
 
-![](assets/technical-setup/load-assignment.png)
+<!-- ![](assets/technical-setup/load-assignment.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021039/load-assignment_gcto1x.png)
 
 **_Before_ you click "Authorize", make sure to click the "Grant" button next to the organization that you created earlier.** Only then, click authorize to allow the firstdraft Grades application to access your account. 
 
-![](assets/technical-setup/authorize-first-draft.png)
+<!-- ![](assets/technical-setup/authorize-first-draft.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021048/authorize-first-draft_towhmr.png)
 
 Select the name of your GitHub **organization** and submit the form.
 
-![](assets/technical-setup/add-github-org-name.png)
+<!-- ![](assets/technical-setup/add-github-org-name.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021058/add-github-org-name_lyvxvd.png)
 
 The next screen will ask you to accept an invitation to a GitHub team. You can click the link on that screen to accept, or you'll have an invitation in your email inbox as well.
 
 Once you've joined, you should see feedback that you're now a member of appdev-projects:
 
-![](assets/technical-setup/github-joined-org-feedback.png)
+<!-- ![](assets/technical-setup/github-joined-org-feedback.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021072/github-joined-org-feedback_byfx9u.png)
 
 
 ## Daily workflow
 
 The stuff above about setting up your organization and permissions was just a one-time thing. From now on, you'll just head to Canvas and click "Load assignment in a new tab". You should see something like the following (the name of the project will vary):
 
-![](assets/technical-setup/grade-setup-instructions.png)
+<!-- ![](assets/technical-setup/grade-setup-instructions.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021088/grade-setup-instructions_jo0tzw.png)
 
 We will automatically make a copy (a "fork", in GitHub parlance) of the repository under your new GitHub organization. Then, you can choose to either "Create new workspace in Gitpod" or head to your "Gitpod Dashboard" to view existing workspaces.
 
@@ -110,23 +120,28 @@ rails grade
 
 You'll be asked for your access token; **copy-paste it carefully from the grades.firstdraft.com page that you loaded from Canvas**.
 
-![](assets/technical-setup/gitpod-enter-token.png)
+<!-- ![](assets/technical-setup/gitpod-enter-token.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021108/gitpod-enter-token_rxuau9.png)
 
 You should see output that looks like:
 
-![](assets/technical-setup/gitpod-rails-grade.png)
+<!-- ![](assets/technical-setup/gitpod-rails-grade.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021116/gitpod-rails-grade_cw3zpg.png)
 
 Copy-paste the Results URL into a new tab, or click on it (but make sure it isn't truncated).
 
-![](assets/technical-setup/gitpod-rails-grade-open.png)
+<!-- ![](assets/technical-setup/gitpod-rails-grade-open.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021124/gitpod-rails-grade-open_x94mpt.png)
 
-![](assets/technical-setup/rails-grade-results.png)
+<!-- ![](assets/technical-setup/rails-grade-results.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021139/rails-grade-results_jhfzhn.png)
 
 **(Some projects aren't graded; in that case there may only be one dummy test listed.)**
 
 You can click on one of the tests to get more feedback on what might have gone wrong:
 
-![](assets/technical-setup/rails-grade-results-details.png)
+<!-- ![](assets/technical-setup/rails-grade-results-details.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021147/rails-grade-results-details_v9q2o4.png)
 
 In this case, the test expected to find an element with a class of `word_count` that contains the number 10, but instead it only found the content "Replace this string with your answer". 
 
@@ -144,35 +159,31 @@ It's often helpful to share a snapshot of the state of your entire Gitpod worksp
 
 From the hamburger menu in the top-left corner of your IDE, select `Gitpod: Share Workspace Snapshot`:
 
-![](assets/technical-setup/gitpod-snapshot-file-menu.png)
+<!-- ![](assets/technical-setup/gitpod-snapshot-file-menu.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021161/gitpod-snapshot-file-menu_ih8ihp.png)
 
 #### Copy the snapshot URL
 
 It will take a moment to create the snapshot. Then a dialog will pop up in the bottom-right corner that will give you the URL to copy and share:
 
-![](assets/technical-setup/gitpod-snapshot-copy-url.png)
+<!-- ![](assets/technical-setup/gitpod-snapshot-copy-url.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021172/gitpod-snapshot-copy-url_zdlmmn.png)
 
-##### The URL should look like this:
+**The URL should look like this:**
 
-The URL that you share should look something like this:
-
-**https\://gitpod.io#snapshot/5a47e40d-e279-44e5-96bc-ae33cd48f151**
+  - **https\://gitpod.io#snapshot/5a47e40d-e279-44e5-96bc-ae33cd48f151**
 
 Note the `#snapshot` fragment of the URL. That means you have the right one.
 
-##### The URL should NOT look like these:
+**The URL should NOT look like these:**
 
-The URL should _not_ look something like this:
+  - **https\://ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io/**
 
-**https\://ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io/**
+    That is the URL of your own IDE, which no one else can access.
 
-That is the URL of your own IDE, which no one else can access.
+  - **https\://3000-ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io**
 
-The URL should _not_ look something like this:
-
-**https\://3000-ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io**
-
-Note the `3000-` at the start. That is the URL of the live preview of your app.
+    Note the `3000-` at the start. That is the URL of the live preview of your app.
 
 #### Snapshots are completely independent
 
