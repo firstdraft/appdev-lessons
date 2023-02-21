@@ -38,7 +38,11 @@ Here are a few things that need to be changed for the files in this repository:
 All contained in the `lessons/` (or sometimes `glossaries/`) folder:
 
   - Technical Setup
-    - 
+    - technical-setup-lesson-part-01.md, https://learn.firstdraft.com/lessons/28
+    - technical-setup-lesson-part-02.md, https://learn.firstdraft.com/lessons/29
+    - technical-setup-lesson-part-03.md, https://learn.firstdraft.com/lessons/30
+    - technical-setup-lesson-part-04.md, https://learn.firstdraft.com/lessons/31
+    - technical-setup-lesson-part-05.md, https://learn.firstdraft.com/lessons/32
   - Intro to Ruby
     - intro-to-ruby.md, https://learn.firstdraft.com/lessons/5
     - nouns-verbs-and-grammar.md, https://learn.firstdraft.com/lessons/7

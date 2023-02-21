@@ -8,7 +8,7 @@ I recommend using your `.edu` email address, as that will qualify you for some d
 
 If you already have a GitHub account, I recommend making a new one for this class, because some of the tools that we use will ask for permission to view _all_ of your repositories. If you have access to e.g. private work repositories, then you should make a new account and keep things separate.
 
-![](assets/technical-setup/1-github-join.png)
+<!-- ![](assets/technical-setup/1-github-join.png)
 
 ![](assets/technical-setup/2-github-plan.png)
 
@@ -16,7 +16,18 @@ If you already have a GitHub account, I recommend making a new one for this clas
 
 ![](assets/technical-setup/4-github-complete.png)
 
-![](assets/technical-setup/5-github-verify-email.png)
+![](assets/technical-setup/5-github-verify-email.png) -->
+
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020490/1-github-join_qnfiek.png)
+
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020490/2-github-plan_mkpjii.png)
+
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020490/3-github-survey_btnmpe.png)
+
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020489/4-github-complete_r4sfvp.png)
+
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020490/5-github-verify-email_anezs3.png)
+
 
 ## Get a Heroku account
 
@@ -24,11 +35,17 @@ Sign up for a free Heroku account at [signup.heroku.com](https://signup.heroku.c
 
 If asked what your primary development language is, say Ruby. You can use any one of your email addresses, but remember to verify it.
 
-![](assets/technical-setup/6-heroku-join.png)
+<!-- ![](assets/technical-setup/6-heroku-join.png)
 
 ![](assets/technical-setup/7-heroku-verify-email.png)
 
-![](assets/technical-setup/8-heroku-welcome.png)
+![](assets/technical-setup/8-heroku-welcome.png) -->
+
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020563/6-heroku-join_ejfe1z.png)
+
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020562/7-heroku-verify-email_tvjyc2.png)
+
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677020562/8-heroku-welcome_wwcn8v.png)
 
 ## GitHub and Heroku readings
 
