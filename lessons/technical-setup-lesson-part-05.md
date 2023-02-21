@@ -1,10 +1,6 @@
 # Technical Setup: Fixing your organization permissions
 
-- Notes:
-
-  - Copied from [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){:target="_blank"}
-
-Once upon a time, we all [created our own GitHub organizations](https://chapters.firstdraft.com/chapters/777#create-github-organization) to keep our classwork separate from our personal projects.
+Once upon a time, we all [created our own GitHub organizations]\(**TODO:** link to lesson for: https://chapters.firstdraft.com/chapters/777#create-github-organization) to keep our classwork separate from our personal projects.
 
 Since then, whenever we gave permission to a third-party (like Gitpod or grades.firstdraft.com) to access our GitHub accounts, we were supposed to remember to grant access to our organization too. **If you forgot to click "Grant" next to the organization that you created before you clicked "Authorize", you're going to run into problems.** Let's fix it.
 
@@ -44,15 +40,15 @@ You should see a message confirming that access has been granted:
 
 Repeat for the other third-party app if necessary.
 
-#### Make sure that you've accepted your team invitation
+## Make sure that you've accepted your team invitation
 
 Visit [this page](https://github.com/appdev-projects) and make sure that you _don't_ have a banner across the top asking you to accept our team invitation. (This invitation was sent a while ago via email; if you've already accepted it, the banner won't appear.)
 
-#### Launch an assignment from within Canvas
+## Launch an assignment from within Canvas
 
 Head back to Canvas and click on whichever assignment you want to work on again **(don't just refresh it if you already had it up)**. You might be asked to enter your organization name — be sure to enter _your_ organization name, the one you created; not `appdev-projects`.
 
-#### Resetting OAuth permissions to square one
+## Resetting OAuth permissions to square one
 
 If for some reason you need to make a single-sign-on provider (like GitHub, Twitter, or Facebook) "forget" that you ever authorized a third-party app, maybe because you don't use it anymore or maybe because you want to change the permissions that you gave it, you need to delete or revoke the "access token" that you previously issued to it.
 
