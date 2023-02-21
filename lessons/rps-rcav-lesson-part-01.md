@@ -8,11 +8,11 @@ In this lesson, we will explore routing. In practice, the project we work throug
 
 ## Starting Our Gitpod Workspace
 
-Before we proceed, let's get the Gitpod project setup for this lesson.
+Before we proceed, let's get the Gitpod project setup for this lesson. The basic steps are outlined below, but you can refresh your memory on the details [here](https://learn.firstdraft.com/lessons/29){:target="_blank"}.
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod [RPS-RCAV](https://github.com/appdev-projects/rps-rcav-v2) project on Canvas by clicking the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will fork the workspace to your appdev organization.
+  Open the Gitpod [RPS-RCAV](https://github.com/appdev-projects/rps-rcav-v2){:target="_blank"} project on Canvas by clicking the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will fork the workspace to your appdev organization.
 
   <!-- [Here](https://github.com/appdev-projects/rps-rcav){:target="_blank"} is the assignment.  -->
   
@@ -36,15 +36,14 @@ Before we proceed, let's get the Gitpod project setup for this lesson.
 - Yes
     - Great, you are ready to move on.
 - No
-    - Debug the issue before proceeding, you need the workspace open and working.
+    - Debug the issue by visiting these instructions: https://learn.firstdraft.com/lessons/29 before proceeding, you need the workspace open and working.
 {: .choose_best #open_gitpod points="10" answer="1" }
 
-**TODO:** "debug the issue" isn't very helpful. add a long "lesson" with technical setup, point them to a video, point them to an old chapter or the appdev-textbook?
-
+<!-- **TODO:** hide URL in No answer when we get HTML rendering properly there -->
 
 ## URLs and Specs
 
-For an application that runs on a server and transmits information across the internet (i.e. Software as a Service, **SaaS**), the interface consists of a set of Uniform Resource Locators (**URL**s) that a user can visit, and receive some information relevant and valuable to them.
+For an application that runs on a server and transmits information across the internet (i.e. Software as a Service, **SaaS**), the interface consists of a set of Uniform Resource Locators (**URLs**) that a user can visit, and receive some information relevant and valuable to them.
 
 <!-- ![](assets/rps-rcav/airbnb-url.png) -->
 ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676597248/airbnb-url_ywgt3x.png)
