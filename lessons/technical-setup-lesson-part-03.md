@@ -1,22 +1,18 @@
 # Technical Setup: /git
 
-## Using Git to freely experiment and save work
+If you got your Canvas + Gitpod + Github trifecta setup and you can load assignments, work on projects on Gitpod, and run `rails grade` for feedback, you are in great shape! But, if you want to save all that work you are doing on Gitpod, you will need to learn about and use **git**. Read all the way to the end, your work will *not* be saved if you do not **push to Github** **TODO: link to section below**.
 
-- Notes:
-
-  - Copied from [`using-git-to-experiement-and-save-work.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/using-git-to-experiement-and-save-work.md){:target="_blank"}
-
-### What Git is
+## What Git is
 
 [Git](https://en.wikipedia.org/wiki/Git) is an extremely powerful **version-control system** created by Linus Torvalds in 2005 for development of the Linux kernel, which is one of the largest open-source software projects in existence. It makes it possible for large numbers of contributors to work on various features, all within a single codebase (which could be comprised of hundreds or thousands of files).
 
-Bitbucket, GitLab, and especially GitHub (all private companies) rode the rise of Git (the protocol) to become the center of the software development universe. All of these companies basically offer cloud-based storage for codebases using Git for version-control (we refer to these codebases as **repositories**), as well as a web-based interface for collaborating on them — following, commenting, etc.
+Bitbucket, GitLab, and especially GitHub (all private companies) rode the rise of Git (the protocol) to become the center of the software development universe. All of these companies basically offer cloud-based storage for codebases using Git for version-control (we refer to these codebases as **repositories** or **repos**), as well as a web-based interface for collaborating on them — following, commenting, etc.
 
-### Why we care
+## Using /git in your projects
 
 In this course, we're going to use one simple but effective Git-based workflow to save versions of our work. This will allow us to freely experiment with different approaches, while never having to throw away code.
 
-In all of our Rails apps, after you start the server, you can navigate to the address **/git** in your live application. If you're using Gitpod, the URL will look like:
+In all of our Rails apps, after you start the server by running `bin/server`, you can navigate to the address **/git** in your live application. If you're using Gitpod, the URL will look like:
 
     **https\://[YOUR GITPOD WORKSPACE URL].gitpod.io/git**
 
@@ -75,6 +71,10 @@ If you're ever unsure of what branch you're on, the top of the page should list 
 ### Push to GitHub
 
 Gitpod workspaces are not permanent. Even if we make git commits, if the workspace is deleted so is all of our work! This is where GitHub comes in. We can push all of the commits we've made to our repository on GitHub where it will live forever. If our Gitpod workspace gets destroyed we can just re-create another one from the latest commit on GitHub!
+
+<aside markdown="1">
+Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can push your changes to Github as explained in this section.
+</aside>
 
 Before you can push to GitHub, you need to give Gitpod access. Head over to the [Integrations under your account settings](https://gitpod.io/integrations) in Gitpod and make sure you check "public repos" and click "Update". 
 

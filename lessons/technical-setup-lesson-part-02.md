@@ -1,10 +1,10 @@
-# Technical Setup: Gitpod Assignments
+# Technical Setup: Gitpod Projects
 
-The assignments in this course will mostly follow the workflow outlined below. Many of these steps only need to be done the first time you set up the Canvas + Gitpod + Github trifecta. 
+The assignments in this course will mostly follow the workflow outlined below. Many of these steps only need to be done the first time you set up the Canvas + Gitpod + Github trifecta. **If you are getting errors with the steps outlined below, carefully follow the instructions [here] TODO: link to part 05 fixing permissions**
 
 ## First time set up
 
-Once you do these steps, you can jump right ahead to **TODO: link to lower part of lesson** if you need a referesher in the daily workflow of working on a Gitpod assignment and gettng feedback.
+Once you do these steps once, you can jump right ahead to **TODO: link to lower part of lesson** if you need a referesher in the daily workflow of working on a Gitpod assignment and gettng feedback.
 
 ### Join GitHub
 
@@ -71,6 +71,7 @@ Once you've joined, you should see feedback that you're now a member of appdev-p
 
 ![](assets/technical-setup/github-joined-org-feedback.png)
 
+
 ## Daily workflow
 
 The stuff above about setting up your organization and permissions was just a one-time thing. From now on, you'll just head to Canvas and click "Load assignment in a new tab". You should see something like the following (the name of the project will vary):
@@ -83,9 +84,11 @@ We will automatically make a copy (a "fork", in GitHub parlance) of the reposito
 
 ### Working on a Gitpod project
 
+<!-- **TODO: short video for this whole section** -->
+
 The general steps for working on _any_ Gitpod project for this course are:
 
-1. Start the web server by running `bin/server` at the terminal.
+1. Start the web server by running `bin/server` at the terminal. <!-- **TODO: section on terminal environment and commands** -->
 2. Navigate to your live application preview.
 3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*. **TODO: link to git sections**
 4. Organize your workspace tabs.
@@ -133,7 +136,7 @@ You can run `rails grade` in your terminal as many times as you want, and you wi
 
 **Remember that your first job is always to make your app work as described and test it manually yourself. You should not rely exclusively on the automated tests; they are a terrible way to debug.**
 
-### Sharing a Gitpod Snapshot
+### Sharing a Gitpod snapshot
 
 It's often helpful to share a snapshot of the state of your entire Gitpod workspace with someone else.
 
@@ -149,7 +152,7 @@ It will take a moment to create the snapshot. Then a dialog will pop up in the b
 
 ![](assets/technical-setup/gitpod-snapshot-copy-url.png)
 
-##### The correct URL looks like this
+##### The URL should look like this:
 
 The URL that you share should look something like this:
 
@@ -157,15 +160,13 @@ The URL that you share should look something like this:
 
 Note the `#snapshot` fragment of the URL. That means you have the right one.
 
-##### Not this
+##### The URL should NOT look like these:
 
 The URL should _not_ look something like this:
 
 **https\://ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io/**
 
 That is the URL of your own IDE, which no one else can access.
-
-##### Or this
 
 The URL should _not_ look something like this:
 
