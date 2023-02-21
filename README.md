@@ -16,6 +16,8 @@ Here are a few things that need to be changed for the files in this repository:
 
  1. Any internal cross-references need to be removed by searching for `][`. These can maybe be put back when we figure out anchor links.
 
+ 1. Remove links to old chapters, possibly replace with internal cross-references or references to other lessons.
+
  1. Any `**https:` should be replaced with `**https\:` when the intention is just to indicate a path (don't add the backslash on links out)
 
  1. Begin putting the lesson into sub-lessons by creating new files and appending `-part-01.md` after `-lesson`. So: 
@@ -34,8 +36,10 @@ Here are a few things that need to be changed for the files in this repository:
 
 ## List of Prepared Lessons
 
-All contained in the `lessons/` folder:
+All contained in the `lessons/` (or sometimes `glossaries/`) folder:
 
+  - Technical Setup
+    - 
   - Intro to Ruby
     - intro-to-ruby.md, https://learn.firstdraft.com/lessons/5
     - nouns-verbs-and-grammar.md, https://learn.firstdraft.com/lessons/7
