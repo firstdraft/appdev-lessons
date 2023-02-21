@@ -30,30 +30,32 @@ Here are a few things that need to be changed for the files in this repository:
 
  1. Once the lesson is copied onto learn, you need to do a Ctrl+F to look for any `![` or `assets`, which indicate images. These images need to be dragged and dropped into those locations. Possibly add `{: .bleed-full }` to make it wide. Once the images are added, go back to this repository and comment out the old image path in the lesson and add in the new drag-n-dropped URL.
 
+ 1. Add lesson to the list below, including URL.
+
 ## List of Prepared Lessons
 
 All contained in the `lessons/` folder:
 
   - Intro to Ruby
-    - intro-to-ruby.md
-    - nouns-verbs-and-grammar.md
-    - program-notes.md
-    - string.md
-    - integer.md
-    - float.md
-    - date.md
-    - array.md
-    - conditionals.md
-    - loops.md
-    - each.md
-    - hash.md
-    - our-own-classes.md
-    - ruby-conclusions.md
-    - some-more-ruby-methods.md
+    - intro-to-ruby.md, https://learn.firstdraft.com/lessons/5
+    - nouns-verbs-and-grammar.md, https://learn.firstdraft.com/lessons/7
+    - program-notes.md, https://learn.firstdraft.com/lessons/8
+    - string.md, https://learn.firstdraft.com/lessons/9
+    - integer.md, https://learn.firstdraft.com/lessons/10
+    - float.md, https://learn.firstdraft.com/lessons/11
+    - date.md, https://learn.firstdraft.com/lessons/12
+    - array.md, https://learn.firstdraft.com/lessons/14
+    - conditionals.md, https://learn.firstdraft.com/lessons/15
+    - loops.md, https://learn.firstdraft.com/lessons/16
+    - each.md, https://learn.firstdraft.com/lessons/17
+    - hash.md, https://learn.firstdraft.com/lessons/18
+    - our-own-classes.md, https://learn.firstdraft.com/lessons/19
+    - ruby-conclusions.md, https://learn.firstdraft.com/lessons/20
+    - some-more-ruby-methods.md, https://learn.firstdraft.com/lessons/21
   - RPS-RCAV
-    - rps-rcav-lesson-part-01.md
-    - rps-rcav-lesson-part-02.md
-    - rps-rcav-lesson-part-03.md
-    - rps-rcav-lesson-part-04.md
-    - rps-rcav-lesson-part-05.md
-    - rps-rcav-lesson-part-06.md
+    - rps-rcav-lesson-part-01.md, https://learn.firstdraft.com/lessons/22
+    - rps-rcav-lesson-part-02.md, https://learn.firstdraft.com/lessons/23
+    - rps-rcav-lesson-part-03.md, https://learn.firstdraft.com/lessons/24
+    - rps-rcav-lesson-part-04.md, https://learn.firstdraft.com/lessons/25
+    - rps-rcav-lesson-part-05.md, https://learn.firstdraft.com/lessons/26
+    - rps-rcav-lesson-part-06.md, https://learn.firstdraft.com/lessons/27
