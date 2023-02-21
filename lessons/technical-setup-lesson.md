@@ -94,7 +94,7 @@ Gitpod.io is a great new service that provides instantaneous, full-fledged cloud
 
 3.  To create a Gitpod workspace based on a repo, in the address bar of your browser enter `https://gitpod.io/#` and then the URL of the repo. For example,
 
-    [https://gitpod.io/#https://github.com/appdev-projects/helloruby](https://gitpod.io/#https://github.com/appdev-projects/helloruby)
+    **https\://gitpod.io/#https\://github.com/appdev-projects/helloruby**
 
 4.  To make that process easier, [Gitpod has a browser extension](https://www.gitpod.io/docs/20_browser_extension/) that you can install if you want to.
 
@@ -326,7 +326,7 @@ In this course, we're going to use one simple but effective Git-based workflow t
 
 In all of our Rails apps, after you start the server, you can navigate to the address **/git** in your live application. If you're using Gitpod, the URL will look like:
 
-    https://[YOUR GITPOD WORKSPACE URL].gitpod.io/git
+    **https\://[YOUR GITPOD WORKSPACE URL].gitpod.io/git**
 
 That will open a page that looks like this:
 
@@ -597,9 +597,7 @@ It will take a moment to create the snapshot. Then a dialog will pop up in the b
 
 The URL that you share should look something like this:
 
-```
-https://gitpod.io#snapshot/5a47e40d-e279-44e5-96bc-ae33cd48f151
-```
+**https\://gitpod.io#snapshot/5a47e40d-e279-44e5-96bc-ae33cd48f151**
 
 Note the `#snapshot` fragment of the URL. That means you have the right one.
 
@@ -607,9 +605,7 @@ Note the `#snapshot` fragment of the URL. That means you have the right one.
 
 The URL should _not_ look something like this:
 
-```
-https://ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io/
-```
+**https\://ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io/**
 
 That is the URL of your own IDE, which no one else can access.
 
@@ -617,9 +613,7 @@ That is the URL of your own IDE, which no one else can access.
 
 The URL should _not_ look something like this:
 
-```
-https://3000-ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io
-```
+**https\://3000-ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io**
 
 Note the `3000-` at the start. That is the URL of the live preview of your app.
 
