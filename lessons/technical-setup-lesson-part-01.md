@@ -1,4 +1,4 @@
-# Technical Setup: Accounts and Gitpod
+# Technical Setup Part 1: Accounts and Gitpod
 
 ## Get a GitHub account
 

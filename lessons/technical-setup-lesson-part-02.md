@@ -1,4 +1,4 @@
-# Technical Setup: Gitpod Projects
+# Technical Setup Part 2: Gitpod Projects
 
 The assignments in this course will mostly follow the workflow outlined below. Many of these steps only need to be done the first time you set up the Canvas + Gitpod + Github trifecta. **If you are getting errors with the steps outlined below, carefully follow the instructions [here] TODO: link to part 05 fixing permissions**
 

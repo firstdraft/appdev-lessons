@@ -1,4 +1,4 @@
-# Technical Setup: /git
+# Technical Setup Part 3: /git
 
 If you got your Canvas + Gitpod + Github trifecta setup and you can load assignments, work on projects on Gitpod, and run `rails grade` for feedback, you are in great shape! But, if you want to save all that work you are doing on Gitpod, you will need to learn about and use **git**. Read all the way to the end, your work will *not* be saved if you do not **push to Github** **TODO: link to section below**.
 
@@ -14,15 +14,17 @@ In this course, we're going to use one simple but effective Git-based workflow t
 
 In all of our Rails apps, after you start the server by running `bin/server`, you can navigate to the address **/git** in your live application. If you're using Gitpod, the URL will look like:
 
-    **https\://[YOUR GITPOD WORKSPACE URL].gitpod.io/git**
+  **https\://[YOUR GITPOD WORKSPACE URL].gitpod.io/git**
 
 That will open a page that looks like this:
 
-![](assets/technical-setup/git-clean.png)
+<!-- ![](assets/technical-setup/git-clean.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021729/git-clean_xaw62f.png)
 
 As soon as you make any changes to any of the code in the project, and refresh this page, the lines that you changed will appear:
 
-![](assets/technical-setup/git-changes.png)
+<!-- ![](assets/technical-setup/git-changes.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021737/git-changes_yqutre.png)
 
 On the left, you see the code as it was previously; on the right, you see the new code. Lines added are highlighted in green, lines removed are highlighted in red.
 
@@ -36,11 +38,13 @@ The most important thing for you to remember is simple: **commit early and commi
 
 To commit, enter a title for the snapshot (required), and, optionally, a longer description:
 
-![](assets/technical-setup/git-commit.png)
+<!-- ![](assets/technical-setup/git-commit.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021745/git-commit_xvfzmr.png)
 
 After you commit, you will no longer have any pending changes:
 
-![](assets/technical-setup/git-changes-committed.png)
+<!-- ![](assets/technical-setup/git-changes-committed.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021753/git-changes-committed_ik5gza.png)
 
 If you edit your code again, then you can make further commits.
 
@@ -56,7 +60,8 @@ In the History dialog at the bottom, you can see a list of all of the commits yo
 
 It will snap all of the files in the project back to that point in time, and you can now make further commits along a new path — while still retaining all of your old commits on the old path.
 
-![](assets/technical-setup/git-jump-back.png)
+<!-- ![](assets/technical-setup/git-jump-back.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021770/git-jump-back_qwhe7v.png)
 
 You can easily jump to any commit from any branch at any time — so feel free to experiment! Make a commit to save your current work, then jump back to a previous commit to try a different approach.
 
@@ -64,7 +69,8 @@ You can easily jump to any commit from any branch at any time — so feel free t
 
 Have you gone back in time and decided your first attempt was better? Turn your attention to the "Existing Branches" panel on the right. This will list any branches your project has— `master` is the default starting branch. To switch to a different branch, click the blue double arrow button next to the name of the branch you want to switch to.
 
-![](assets/technical-setup/git-switch-branch.png)
+<!-- ![](assets/technical-setup/git-switch-branch.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021790/git-switch-branch_vxshtm.png)
 
 If you're ever unsure of what branch you're on, the top of the page should list "On branch \_\_\_".
 
@@ -78,12 +84,14 @@ Gitpod will delete an inactive workspace after **14 days**. If you want to save 
 
 Before you can push to GitHub, you need to give Gitpod access. Head over to the [Integrations under your account settings](https://gitpod.io/integrations) in Gitpod and make sure you check "public repos" and click "Update". 
 
-![](assets/technical-setup/gitpod-integration-settings.png)
+<!-- ![](assets/technical-setup/gitpod-integration-settings.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021803/gitpod-integration-settings_kj5kdk.png)
 
 This should open a GitHub authorization dialogue.
 
 **Make sure to click "Grant" next to the GitHub organization you created for class**
 
-![](assets/technical-setup/gitpod-github-organization-permissions.png)
+<!-- ![](assets/technical-setup/gitpod-github-organization-permissions.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021814/gitpod-github-organization-permissions_tk39h3.png)
 
 Now you should be all set to push your commits to GitHub!

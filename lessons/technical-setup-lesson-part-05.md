@@ -1,4 +1,4 @@
-# Technical Setup: Fixing your organization permissions
+# Technical Setup Part 5: Fixing your organization permissions
 
 Once upon a time, we all [created our own GitHub organizations]\(**TODO:** link to lesson for: https://chapters.firstdraft.com/chapters/777#create-github-organization) to keep our classwork separate from our personal projects.
 
@@ -6,37 +6,45 @@ Since then, whenever we gave permission to a third-party (like Gitpod or grades.
 
 Go to GitHub and sign in. In this example, I am signed in as the user `demolearner1`. Click on the user icon in the top-right and find "Settings":
 
-![](assets/technical-setup/github-settings.jpg)
+<!-- ![](assets/technical-setup/github-settings.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022363/github-settings_sjzhtp.jpg)
 
 Next, click on "Organizations" in the left sidebar:
 
-![](assets/technical-setup/github-orgs.jpg)
+<!-- ![](assets/technical-setup/github-orgs.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022371/github-orgs_rqlj1u.jpg)
 
 Find the organization that **_you_ created**. You likely picked a name like `[YOUR USERNAME]-appdev`:
 
-![](assets/technical-setup/org-list.jpg)
+<!-- ![](assets/technical-setup/org-list.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022380/org-list_pleoa9.jpg)
 
 Next, go to the Settings of the organization:
 
-![](assets/technical-setup/find-org-settings.jpg)
+<!-- ![](assets/technical-setup/find-org-settings.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022388/find-org-settings_vgtf4z.jpg)
 
 In the left sidebar, find "Third-party access":
 
-![](assets/technical-setup/third-party-access.jpg)
+<!-- ![](assets/technical-setup/third-party-access.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022396/third-party-access_ahahxe.jpg)
 
 -   If it says that you approved both, then you are good to go and you can go to the next section.
 -   If neither Cloud9 nor Grades appears in this list, click the "Remove restrictions" button instead and you can go to the next section.
 -   If it says that access is Denied next to Cloud9 or Grades, then proceed.
 
-![](assets/technical-setup/access-denied.jpg)
+<!-- ![](assets/technical-setup/access-denied.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022403/access-denied_uf0ydj.jpg)
 
 Click on whichever one you denied and Grant Access:
 
-![](assets/technical-setup/grant-access.jpg)
+<!-- ![](assets/technical-setup/grant-access.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022415/grant-access_xh18n4.jpg)
 
 You should see a message confirming that access has been granted:
 
-![](assets/technical-setup/access-granted-flash.jpg)
+<!-- ![](assets/technical-setup/access-granted-flash.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022423/access-granted-flash_bnzgzg.jpg)
 
 Repeat for the other third-party app if necessary.
 
@@ -54,14 +62,17 @@ If for some reason you need to make a single-sign-on provider (like GitHub, Twit
 
 In the case of GitHub, go to your personal settings:
 
-![](assets/technical-setup/github-personal-settings.jpg)
+<!-- ![](assets/technical-setup/github-personal-settings.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022434/github-personal-settings_rutito.jpg)
 
 Find "Applications" in the left sidebar:
 
-![](assets/technical-setup/github-applications.jpg)
+<!-- ![](assets/technical-setup/github-applications.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022441/github-applications_n1zibg.jpg)
 
 Click the "Authorized OAuth Apps" tab and then click "Revoke" next to whichever one you want to "forget":
 
-![](assets/technical-setup/github-revoke-oauth.jpg)
+<!-- ![](assets/technical-setup/github-revoke-oauth.jpg) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677022448/github-revoke-oauth_ml8tzd.jpg)
 
 Then, return to the third-party app and "Sign in with..." again to start over from scratch. In our case, click on an assignment from within Canvas again to re-start the authorization process — and this time don't forget to grant access to the organization that **_you_ created**.
