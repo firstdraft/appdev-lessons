@@ -98,7 +98,6 @@ Now — how do we get our web server to perform the above tasks when users visi
     - That's right! These are typically the two actions that result from someone visiting a URL
 {: .choose_all #user_visits_url points="10" answer="[3,4]" }
 
-**TODO:** check the functionality of `.choose_all` question above. does it work when only one right answer is given? Also, markdown is not interpreted properly in the answer pop-up box.
 
 # What's an RCAV?
 
@@ -165,8 +164,6 @@ The `get` method is _inherited_, we don't need to build this method ourselves, w
 - play_rock
     - Correct! The `play_rock` action is indicated by `:action` in the `Hash`.
 {: .free_text #play_rock points="10" answer="4" }
-
-**TODO:** for `.free_text` method above, is this a good use of it? Seems highly dependent on very exact typing. Also, information does not come up for incorrect answers, just says "Thank you for your submission".
 
 
 ## RCAV: Controller, Action, View
@@ -293,7 +290,5 @@ end
 - The Class that a given object or method is being called from within
     - Yes, that's correct.
 {: .choose_best #drop_self points="10" answer="3" }
-
-**TODO:** I don't think the point totals are updating correctly.
 
 Okay, that was a lot of information. It's time to actually move over into our Gitpod project space and start typing things out to get our application running! Proceed to the next part of the lesson for that.
