@@ -66,22 +66,20 @@ Gitpod.io is a great new service that provides instantaneous, full-fledged cloud
 ### Getting Started With Gitpod
 
 1.  Sign up for a [Gitpod.io](https://www.gitpod.io) account. It will ask you to sign in using your GitHub account.
-2.  We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** (i.e., a folder with some code in it).
+2.  We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** (i.e., a folder with some code in it; a.k.a., **repo**).
 
     For example, here is a repository:
 
     [https://github.com/appdev-projects/helloruby](https://github.com/appdev-projects/helloruby)
 
-3.  To create a Gitpod workspace based on a repo, in the address bar of your browser enter `https://gitpod.io/#` and then the URL of the repo. For example,
+3.  To create a Gitpod workspace based on a repo, in the address bar of your browser enter **https\://gitpod.io/#** and then the URL of the repo. For example,
 
     **https\://gitpod.io/#https\://github.com/appdev-projects/helloruby**
 
-4.  To make that process easier, [Gitpod has a browser extension](https://www.gitpod.io/docs/20_browser_extension/) that you can install if you want to.
-
-5.  Typically, we will assign you a project in Canvas. The assignment will include a button that says "Load assignment in a new window". When you click on that button, it will create a fork (i.e. a copy) of the repository (i.e. the folder of code) on your own GitHub account.
-
-    You will then create a Gitpod workspace based on _your_ fork, so that you can save the work that you do back to your own GitHub account. A button to create your Gitpod workspace will appear within the assignment, so usually all you need to do is click on it after clicking "Load assignment in a new window". And then you can get right to work, with the exact right version of all of the project's dependencies ready to go!
-
 <aside markdown="1">
-Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github]\(**TODO:** lessons link for: https://chapters.firstdraft.com/chapters/839#push-to-github).
+To make the process of opening a workspace with **https\://gitpod.io/#** easier, [Gitpod has a browser extension](https://www.gitpod.io/docs/20_browser_extension/) that you can install if you want to.
 </aside>
+
+4. This creates a blank, brand-new computer. This is not a simple interactive terminal, nor is it an HTML application like we made for our early Rock, Paper, Scissors project. But Ruby _is_ installed on this computer. 
+
+Typically, we will assign you a Gitpod project in Canvas. The assignment will include a button that says "Load assignment in a new window". When you click on that button, it will create a fork (i.e. a copy) of the repository (i.e. the folder of code) on your own GitHub account. More on the technical steps to set up the projects [here], and for saving work on github [here] **TODO:** link next two technical setup instructions

@@ -1,5 +1,15 @@
 # Technical Setup: `rails grade`
 
+Typically, we will assign you a project in Canvas. The assignment will include a button that says "Load assignment in a new window". When you click on that button, it will create a fork (i.e. a copy) of the repository (i.e. the folder of code) on your own GitHub account.
+
+    You will then create a Gitpod workspace based on _your_ fork, so that you can save the work that you do back to your own GitHub account. A button to create your Gitpod workspace will appear within the assignment, so usually all you need to do is click on it after clicking "Load assignment in a new window". And then you can get right to work, with the exact right version of all of the project's dependencies ready to go!
+
+**TODO:** link next git chapter to show how to save work
+
+<aside markdown="1">
+Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github]\(**TODO:** lessons link for: https://chapters.firstdraft.com/chapters/839#push-to-github).
+</aside>
+
 - Notes:
 
   - manually checking work, rails grade, git commiting
