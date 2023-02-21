@@ -76,22 +76,64 @@ If you're ever unsure of what branch you're on, the top of the page should list 
 
 ### Push to GitHub
 
-Gitpod workspaces are not permanent. Even if we make git commits, if the workspace is deleted so is all of our work! This is where GitHub comes in. We can push all of the commits we've made to our repository on GitHub where it will live forever. If our Gitpod workspace gets destroyed we can just re-create another one from the latest commit on GitHub!
+Gitpod workspaces are not permanent! Even if we make git commits, if the workspace is deleted so is all of our work! This is where GitHub comes in. We can push all of the commits we've made to our repository on GitHub where it will live forever. If our Gitpod workspace gets destroyed we can just re-create another one from the latest commit on GitHub!
 
 <aside markdown="1">
 Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can push your changes to Github as explained in this section.
 </aside>
 
-Before you can push to GitHub, you need to give Gitpod access. Head over to the [Integrations under your account settings](https://gitpod.io/integrations) in Gitpod and make sure you check "public repos" and click "Update". 
+<!-- Before you can push to GitHub, you need to give Gitpod access. Head over to the [Integrations under your account settings](https://gitpod.io/integrations) in Gitpod and make sure you check "public repos" and click "Update". 
 
-<!-- ![](assets/technical-setup/gitpod-integration-settings.png) -->
+![](assets/technical-setup/gitpod-integration-settings.png)
 ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021803/gitpod-integration-settings_kj5kdk.png)
 
 This should open a GitHub authorization dialogue.
 
 **Make sure to click "Grant" next to the GitHub organization you created for class**
 
-<!-- ![](assets/technical-setup/gitpod-github-organization-permissions.png) -->
+![](assets/technical-setup/gitpod-github-organization-permissions.png)
 ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677021814/gitpod-github-organization-permissions_tk39h3.png)
 
-Now you should be all set to push your commits to GitHub!
+Now you should be all set to push your commits to GitHub! -->
+
+Before we can push our code from our Gitpod workspace to our GitHub account (for eternal safekeeping), we need to give Gitpod permission to manage our repositories and to interact with our organization.
+
+1. If you try clicking "Push to GitHub" and see an authentication error like this:
+
+    ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1675450072/image-1675450068951.png.png)
+
+1. Visit the Gitpod dashboard, click your icon in the top-right corner, and select "Settings":
+
+    ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1675436202/image-1675436201460.png.png)
+
+1. Click "Integrations" in the left sidebar, click the "..." next to "GitHub",  and select "Edit Permissions":
+
+    ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1675436351/image-1675436351144.png.png)
+		
+1. Make sure that **public_repo** and **repo** are checked, and then "Update Permissions" if necessary:
+
+    ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1675436485/image-1675436484581.png.png)
+		
+1. Next, "Manage on GitHub":
+
+    ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1675436748/image-1675436747740.png.png)
+		
+1. Ensure that your organization has permission. If not, click "Grant" next to its name:
+
+    ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1675436779/image-1675436779288.png.png)
+
+1. Finally, try clicking "Push to GitHub" again:
+
+    ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1675450219/image-1675450216406.png.png)
+		
+		
+Now, you should get into the habit of pushing your code to GitHub very often. If you do, then you're certain never to lose your work, among many other benefits of using GitHub to store your code.
+
+#### Quiz Question
+
+- Were you able to follow the steps above and push to GitHub successfully?
+- Yes
+    - Great! 
+- No
+    - Please find an instructor for help. Pushing to GitHub is important! We need to get it sorted ASAP.
+{: .choose_best #completion points="1" answer="1" }
