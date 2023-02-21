@@ -24,7 +24,6 @@ Here are a few things that need to be changed for the files in this repository:
     - `rps-rcav.md` is the original bookdown format, 
     - `rps-rcav-lesson.md` is the syntax changes for learn, and 
     - `rps-rcav-lesson-part-XX.md` is each part of the lesson which becomes a separate lesson on learn.
-    - **alternatively** use another signifier for the parts, like `technical-setup-lesson-rails-grade.md`
 
  1. References to Gitpod workspace and/or REPLs need to get a `<div class="proj / experiment" markdown="1"></div>` tag. Instructions to open a Gitpod should be consistent. As of now, it will direct the students to Canvas.
 
