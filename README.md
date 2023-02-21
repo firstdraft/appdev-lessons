@@ -16,13 +16,14 @@ Here are a few things that need to be changed for the files in this repository:
 
  1. Any internal cross-references need to be removed by searching for `][`. These can maybe be put back when we figure out anchor links.
 
+ 1. Remove links to old chapters, possibly replace with internal cross-references or references to other lessons.
+
  1. Any `**https:` should be replaced with `**https\:` when the intention is just to indicate a path (don't add the backslash on links out)
 
  1. Begin putting the lesson into sub-lessons by creating new files and appending `-part-01.md` after `-lesson`. So: 
     - `rps-rcav.md` is the original bookdown format, 
     - `rps-rcav-lesson.md` is the syntax changes for learn, and 
     - `rps-rcav-lesson-part-XX.md` is each part of the lesson which becomes a separate lesson on learn.
-
 
  1. References to Gitpod workspace and/or REPLs need to get a `<div class="proj / experiment" markdown="1"></div>` tag. Instructions to open a Gitpod should be consistent. As of now, it will direct the students to Canvas.
 
@@ -34,8 +35,14 @@ Here are a few things that need to be changed for the files in this repository:
 
 ## List of Prepared Lessons
 
-All contained in the `lessons/` folder:
+All contained in the `lessons/` (or sometimes `glossaries/`) folder:
 
+  - Technical Setup
+    - technical-setup-lesson-part-01.md, https://learn.firstdraft.com/lessons/28
+    - technical-setup-lesson-part-02.md, https://learn.firstdraft.com/lessons/29
+    - technical-setup-lesson-part-03.md, https://learn.firstdraft.com/lessons/30
+    - technical-setup-lesson-part-04.md, https://learn.firstdraft.com/lessons/31
+    - technical-setup-lesson-part-05.md, https://learn.firstdraft.com/lessons/32
   - Intro to Ruby
     - intro-to-ruby.md, https://learn.firstdraft.com/lessons/5
     - nouns-verbs-and-grammar.md, https://learn.firstdraft.com/lessons/7

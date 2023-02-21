@@ -12,7 +12,7 @@ Before we proceed, let's get the Gitpod project setup for this lesson.
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod RPS-RCAV project on Canvas by clicking the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will fork the workspace to your appdev organization.
+  Open the Gitpod [RPS-RCAV](https://github.com/appdev-projects/rps-rcav-v2) project on Canvas by clicking the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will fork the workspace to your appdev organization.
 
   <!-- [Here](https://github.com/appdev-projects/rps-rcav){:target="_blank"} is the assignment.  -->
   
