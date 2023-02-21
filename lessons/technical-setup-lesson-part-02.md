@@ -1,26 +1,12 @@
-# Technical Setup: `rails grade`
+# Technical Setup: Gitpod Assignments
 
-Typically, we will assign you a project in Canvas. The assignment will include a button that says "Load assignment in a new window". When you click on that button, it will create a fork (i.e. a copy) of the repository (i.e. the folder of code) on your own GitHub account.
+The assignments in this course will mostly follow the workflow outlined below. Many of these steps only need to be done the first time you set up the Canvas + Gitpod + Github trifecta. 
 
-    You will then create a Gitpod workspace based on _your_ fork, so that you can save the work that you do back to your own GitHub account. A button to create your Gitpod workspace will appear within the assignment, so usually all you need to do is click on it after clicking "Load assignment in a new window". And then you can get right to work, with the exact right version of all of the project's dependencies ready to go!
+## First time set up
 
-**TODO:** link next git chapter to show how to save work
+Once you do these steps, you can jump right ahead to **TODO: link to lower part of lesson** if you need a referesher in the daily workflow of working on a Gitpod assignment and gettng feedback.
 
-<aside markdown="1">
-Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github]\(**TODO:** lessons link for: https://chapters.firstdraft.com/chapters/839#push-to-github).
-</aside>
-
-- Notes:
-
-  - manually checking work, rails grade, git commiting
-
-### Getting automated feedback with rails grade
-
-- Notes:
-
-  - Copied from [`rails-grade.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/rails-grade.md){:target="_blank"}
-
-#### Join GitHub
+### Join GitHub
 
 If you haven't already, [sign up for a free GitHub account](https://github.com/join) (or sign in to yours if you already have one):
 
@@ -30,7 +16,7 @@ In this example screenshot, I chose a username of `demolearner1` — remember yo
 
 For now, think of GitHub like Dropbox-for-programmers; it's where we're going to store all of our code.
 
-#### Create GitHub organization
+### Create GitHub organization
 
 To keep things organized, we're going to create a separate GitHub organization account for you to store your AppDev projects under (to keep them separate from the personal projects that you'll hopefully be building soon!).
 
@@ -45,6 +31,21 @@ Choose any name for the organization; most students choose `[YOUR USERNAME]-appd
 You can "Skip" or "Finish" the rest of the screens:
 
 ![](assets/technical-setup/finish-org.png)
+
+### Starting a Gitpod Assignment
+
+Typically, we will assign you a project in Canvas. The assignment will include a button that says "Load assignment in a new window". When you click on that button, it will create a fork (i.e. a copy) of the repository (i.e. the folder of code) on your own GitHub account.
+
+You will then create a Gitpod workspace based on _your_ fork, so that you can save the work that you do back to your own GitHub account. A button to create your Gitpod workspace will appear within the assignment, so usually all you need to do is click on it after clicking "Load assignment in a new window". And then you can get right to work, with the exact right version of all of the project's dependencies ready to go!
+
+That's the power of Gitpod.
+
+**TODO:** link next git chapter to show how to save work
+
+<aside markdown="1">
+Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github]\(**TODO:** lessons link for: https://chapters.firstdraft.com/chapters/839#push-to-github).
+</aside>
+
 
 #### Login to Canvas
 
@@ -70,7 +71,7 @@ Once you've joined, you should see feedback that you're now a member of appdev-p
 
 ![](assets/technical-setup/github-joined-org-feedback.png)
 
-#### Daily workflow
+## Daily workflow
 
 The stuff above about setting up your organization and permissions was just a one-time thing. From now on, you'll just head to Canvas and click "Load assignment in a new tab". You should see something like the following (the name of the project will vary):
 
@@ -78,7 +79,27 @@ The stuff above about setting up your organization and permissions was just a on
 
 We will automatically make a copy (a "fork", in GitHub parlance) of the repository under your new GitHub organization. Then, you can choose to either "Create new workspace in Gitpod" or head to your "Gitpod Dashboard" to view existing workspaces.
 
-Either way, once you're in the workspace, we can get the project loaded up and try out the feedback feature. After the `bin/setup` script is done running, start working on the project to do whatever the instructions tell you. **When you're ready for feedback**, try a new command at a new Terminal prompt:
+**If you are getting errors with this process, carefully follow the instructions [here] TODO: link to part 05 fixing permissions**
+
+### Working on a Gitpod project
+
+The general steps for working on _any_ Gitpod project for this course are:
+
+1. Start the web server by running `bin/server` at the terminal.
+2. Navigate to your live application preview.
+3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*. **TODO: link to git sections**
+4. Organize your workspace tabs.
+5. Run `rails grade` as often as you like to see how you are doing, but make sure you *test your app manually first* to make sure it matches the target's behavior. **TODO: link to section below**
+
+If some of those steps seem mysterious at the moment, read on! All will be explained shortly. You will get very comfortable with the steps while working on the several projects for the course.
+
+Remember to keep the Gitpod and live application browser tabs open as you work. If you close the Gitpod workspace, you can always click the Canvas link again, but this time click "Find existing workspace in Gitpod Dashboard".
+
+### Getting automated feedback with `rails grade`
+
+**If you are getting errors with the below process, carefully follow the instructions [here] TODO: link to part 05 fixing permissions**
+
+Once you're in the workspace on Gitpod, after the `bin/setup` script is done running, start working on the project to do whatever the instructions tell you. **When you're ready for feedback**, try a new command at a new terminal prompt (i.e., not in the terminal running the server that you previously ran `bin/server` in):
 
 ```
 rails grade
@@ -108,88 +129,11 @@ In this case, the test expected to find an element with a class of `word_count` 
 
 You can click the "Examine Test" button to read the actual Ruby of the automated test; it's surprisingly readable. Ruby's testing libraries use method names that are supposed to make tests readable even for non-technical managers and clients. You can see specifically what flow is being tested and what inputs are being used and what the expected output is, and try to reproduce the issue in your own app manually using the same inputs.
 
-You can run `rails grade` in your Terminal as many times as you want, and you will get a new updated build report each time. It will only report your highest score back to Canvas.
+You can run `rails grade` in your terminal as many times as you want, and you will get a new updated build report each time. It will only report your highest score back to Canvas.
 
 **Remember that your first job is always to make your app work as described and test it manually yourself. You should not rely exclusively on the automated tests; they are a terrible way to debug.**
 
-### Fixing your organization permissions
-
-- Notes:
-
-  - Copied from [`fixing-your-organization-permissions.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/fixing-your-organization-permissions.md){:target="_blank"}
-
-Once upon a time, we all [created our own GitHub organizations](https://chapters.firstdraft.com/chapters/777#create-github-organization) to keep our classwork separate from our personal projects.
-
-Since then, whenever we gave permission to a third-party (like Gitpod or grades.firstdraft.com) to access our GitHub accounts, we were supposed to remember to grant access to our organization too. **If you forgot to click "Grant" next to the organization that you created before you clicked "Authorize", you're going to run into problems.** Let's fix it.
-
-Go to GitHub and sign in. In this example, I am signed in as the user `demolearner1`. Click on the user icon in the top-right and find "Settings":
-
-![](assets/technical-setup/github-settings.jpg)
-
-Next, click on "Organizations" in the left sidebar:
-
-![](assets/technical-setup/github-orgs.jpg)
-
-Find the organization that **_you_ created**. You likely picked a name like `[YOUR USERNAME]-appdev`:
-
-![](assets/technical-setup/org-list.jpg)
-
-Next, go to the Settings of the organization:
-
-![](assets/technical-setup/find-org-settings.jpg)
-
-In the left sidebar, find "Third-party access":
-
-![](assets/technical-setup/third-party-access.jpg)
-
--   If it says that you approved both, then you are good to go and you can go to the next section.
--   If neither Cloud9 nor Grades appears in this list, click the "Remove restrictions" button instead and you can go to the next section.
--   If it says that access is Denied next to Cloud9 or Grades, then proceed.
-
-![](assets/technical-setup/access-denied.jpg)
-
-Click on whichever one you denied and Grant Access:
-
-![](assets/technical-setup/grant-access.jpg)
-
-You should see a message confirming that access has been granted:
-
-![](assets/technical-setup/access-granted-flash.jpg)
-
-Repeat for the other third-party app if necessary.
-
-#### Make sure that you've accepted your team invitation
-
-Visit [this page](https://github.com/appdev-projects) and make sure that you _don't_ have a banner across the top asking you to accept our team invitation. (This invitation was sent a while ago via email; if you've already accepted it, the banner won't appear.)
-
-#### Launch an assignment from within Canvas
-
-Head back to Canvas and click on whichever assignment you want to work on again **(don't just refresh it if you already had it up)**. You might be asked to enter your organization name — be sure to enter _your_ organization name, the one you created; not `appdev-projects`.
-
-#### Resetting OAuth permissions to square one
-
-If for some reason you need to make a single-sign-on provider (like GitHub, Twitter, or Facebook) "forget" that you ever authorized a third-party app, maybe because you don't use it anymore or maybe because you want to change the permissions that you gave it, you need to delete or revoke the "access token" that you previously issued to it.
-
-In the case of GitHub, go to your personal settings:
-
-![](assets/technical-setup/github-personal-settings.jpg)
-
-Find "Applications" in the left sidebar:
-
-![](assets/technical-setup/github-applications.jpg)
-
-Click the "Authorized OAuth Apps" tab and then click "Revoke" next to whichever one you want to "forget":
-
-![](assets/technical-setup/github-revoke-oauth.jpg)
-
-Then, return to the third-party app and "Sign in with..." again to start over from scratch. In our case, click on an assignment from within Canvas again to re-start the authorization process — and this time don't forget to grant access to the organization that **_you_ created**.
-
-
 ### Sharing a Gitpod Snapshot
-
-- Notes:
-
-  - Copied from [`gitpod-snapshot.md`](https://github.com/firstdraft/appdev-chapters/blob/benp-edits/gitpod-snapshot.md){:target="_blank"}
 
 It's often helpful to share a snapshot of the state of your entire Gitpod workspace with someone else.
 
