@@ -35,7 +35,7 @@ Finally it's time for us to store the information that users are typing into for
 
 In other words, we're going to build Software as a Service. So let's get started.
 
-**BENP: Starting our GitPod Workspace, 00:01:45 to 00:01:54**
+**BENP: Starting our Gitpod Workspace, 00:01:45 to 00:01:54**
 
 [Here is the assignment](https://github.com/appdev-projects/msm-queries){:target="_blank"}. As usual:
 
@@ -63,7 +63,7 @@ Finally, if I go to the details page of a given director, at the bottom there is
 
 It doesn't look like much, but our target has all of the elements of IMDB. It isn't styled well, but we could throw some bootstrap in and make it look nice. Right now there are one-to-many and many-to-many connections, and if we throw some cookies in here for authentification sign-in and sign-out, then we would have a full application.
 
-Moving away from the target, let's get going now in our Rails app on GitPod. We have a lot of work to do in our application.
+Moving away from the target, let's get going now in our Rails app on Gitpod. We have a lot of work to do in our application.
 
 
 
@@ -82,7 +82,7 @@ How do we create a database table? How do we put data into the table? How do we 
 
 Here's a couple things that are going to make our job easier, the README and a chapter [ActiveRecord][ActiveRecord]. **BENP: these two items need to be zipped in to this doc**
 
-There's also a couple of tools included in this (and every other) GitPod Rails project:
+There's also a couple of tools included in this (and every other) Gitpod Rails project:
 
 - **http://[YOUR APP DOMAIN]/rails/info**: shows all visitable routes in the applications
 - **http://[YOUR APP DOMAIN]/rails/db**: shows a visual interface for the database
@@ -166,7 +166,7 @@ So `ActiveRecord`, called an *object relational mapper*, is a perfect, elegant m
   - review [Our own classes][Our own classes]
   - inheritance from `ApplicationRecord`
 
-Okay, so let's do this. First we'll go back to our Rails application and create Ruby classes for the four tables in our database. We need to create four files, each containing a new class in the GitPod folder `app/models/`:
+Okay, so let's do this. First we'll go back to our Rails application and create Ruby classes for the four tables in our database. We need to create four files, each containing a new class in the Gitpod folder `app/models/`:
 
 ```ruby
 # app/models/actor.rb
@@ -388,7 +388,7 @@ Alright, now that we have all four classes in our `app/models/` folder we can co
 
 One thing we may have noted is that it's a bit cumbersome to play with our models in a view template, where we need to keep going to the `app/views/` folder, modifying the template's embedded Ruby tags, and then refreshing our browser URL to see the results. 
 
-Let's look at a better place to do this, the Rails console. We've already seen this a bit. Go to GitPod, make sure your terminal window is open (<kbd>Ctrl</kbd> + <kbd>J</kbd>:), and open a new terminal (keep the `bin/server` terminal running so the browser tab doesn't crash). You can can open a new terminal by going to the top menu "Terminal" and selecting "New Terminal". 
+Let's look at a better place to do this, the Rails console. We've already seen this a bit. Go to Gitpod, make sure your terminal window is open (<kbd>Ctrl</kbd> + <kbd>J</kbd>:), and open a new terminal (keep the `bin/server` terminal running so the browser tab doesn't crash). You can can open a new terminal by going to the top menu "Terminal" and selecting "New Terminal". 
 
 Now at this fresh terminal you can enter `rails console` (or just `rails c` for short will do the same thing):
 
@@ -574,7 +574,7 @@ But wait, stop! That would take forever. In the real world, someone would initia
 
 Luckily for us we don't need to do any of this manual entering for this project! We have included a handy program that you can run.
 
-If you open a fresh terminal on GitPod, get back to your regular `$`-sign command prompt, and run the command `rails sample_data`:
+If you open a fresh terminal on Gitpod, get back to your regular `$`-sign command prompt, and run the command `rails sample_data`:
 
 ```ruby
 gitpod /workspace/msm-queries $ rails sample_data
@@ -1028,7 +1028,7 @@ Long story short, if you define a flexible route that matches a static route tha
 
 Now let's make our director's pages working. We know already about flexible routes. **BENP: link to content / assignment here?**
 
-We can get `:an_id` above out from our `params` variable. Visit a "Show details" link on the **/directors** page, and note in the GitPod terminal running `bin/server`:
+We can get `:an_id` above out from our `params` variable. Visit a "Show details" link on the **/directors** page, and note in the Gitpod terminal running `bin/server`:
 
 ```
 ...

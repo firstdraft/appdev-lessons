@@ -199,9 +199,9 @@ We'll be using this technique frequently to make things more interesting.
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Array` project on Canvas that follows this reading and start with the exercise `element_square.rb`.
+  Open the Gitpod `Array` project on Canvas that follows this reading and start with the exercise `element_square.rb`.
   
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
 
 #### count 
@@ -225,7 +225,7 @@ p a.count(3)
 
 <div class="proj" markdown="1">
   
-  Return to the GitPod `Array` project and work through `count.rb`
+  Return to the Gitpod `Array` project and work through `count.rb`
 </div>
  
 
@@ -244,7 +244,7 @@ p array.reverse # => [3, 23, 19, 1, 3, 8]
 
 <div class="proj" markdown="1">
   
-  Return to the GitPod `Array` project and work through `reverse.rb`
+  Return to the Gitpod `Array` project and work through `reverse.rb`
 </div>
 
 #### sample 
@@ -288,7 +288,7 @@ p a.max # => 23
 
 <div class="proj" markdown="1">
   
-  Return to the GitPod `Array` project and work through `min_max_difference.rb`
+  Return to the Gitpod `Array` project and work through `min_max_difference.rb`
 </div>
 
 #### sum 
@@ -306,7 +306,7 @@ p a.sum # => 57
 
 <div class="proj" markdown="1">
   
-  Return to the GitPod `Array` project and work through `sum_elements.rb`
+  Return to the Gitpod `Array` project and work through `sum_elements.rb`
 </div>
 
 

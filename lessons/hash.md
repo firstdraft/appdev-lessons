@@ -169,9 +169,9 @@ Movie.where({ :title => "The Shawshank Redemption" })
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Hash` project on Canvas that follows this reading and start with the exercise `person.rb`.
+  Open the Gitpod `Hash` project on Canvas that follows this reading and start with the exercise `person.rb`.
 
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
 
 ### fetch shorthand, []
@@ -286,7 +286,7 @@ person_hash.fetch(:age)
 
 <div class="proj" markdown="1">
 
-  Return to the GitPod `Hash` project and work through `dig.rb`
+  Return to the Gitpod `Hash` project and work through `dig.rb`
 </div>
 
 ### key
@@ -304,12 +304,12 @@ h.key(500)   #=> nil
 
 <div class="proj" markdown="1">
 
-  Return to the GitPod `Hash` project and work through `find_value.rb`
+  Return to the Gitpod `Hash` project and work through `find_value.rb`
 </div>
 
 <div class="proj" markdown="1">
 
-  Finally, in the GitPod `Hash` project complete `list.rb`
+  Finally, in the Gitpod `Hash` project complete `list.rb`
 </div>
 
 ### Conclusion

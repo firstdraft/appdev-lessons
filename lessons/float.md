@@ -45,13 +45,14 @@ One other thing to keep in mind: you can use `**` in conjunction with fractions 
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Float` project on Canvas that follows this reading and start with the exercise `find_hypotenuse.rb`.
+  Open the Gitpod `Float` project on Canvas that follows this reading and start with the exercise `find_hypotenuse.rb`.
 
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
   
   _Remember_: the Pythagorean Theorem says that
 
-  ![](assets/float/pythagorous.png)
+  <!-- ![](assets/float/pythagorous.png) -->
+  ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677034341/pythagorous_axrds0.png)
 
   where `a` and `b` are the lengths of the shorter sides, and `c` is the length of the longest side. Read more about the formula [here](https://www.mathsisfun.com/pythagoras.html){:target="_blank"}.
 
@@ -73,7 +74,7 @@ p pi.round(3)
 
 <div class="proj" markdown="1">
 
-  Return to the GitPod `Float` project and work through `round.rb`
+  Return to the Gitpod `Float` project and work through `round.rb`
 </div>
 
 #### rand 

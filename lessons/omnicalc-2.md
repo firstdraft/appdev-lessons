@@ -107,7 +107,7 @@ hi
 
 Now if we didn't make any typos and visit or refresh **/wizard_add**, we will see our rendered HTML. You will also already see a navbar, that we included in the app, and this, as you have already seen, is in the `app/views/layout/application.html.erb` file that is applied to every page.
 
-Now if a user includes a query string in the URL, like **/wizard_add?zebra=bob**, there is no effect on the routing when we press enter. But if we look into our server log in the GitPod terminal tab running your server ([Cmd-K or Ctrl-K to clear it out](https://chapters.firstdraft.com/chapters/834#clear-terminal)), we can find:
+Now if a user includes a query string in the URL, like **/wizard_add?zebra=bob**, there is no effect on the routing when we press enter. But if we look into our server log in the Gitpod terminal tab running your server ([Cmd-K or Ctrl-K to clear it out](https://chapters.firstdraft.com/chapters/834#clear-terminal)), we can find:
 
 ```
 ...
@@ -428,7 +428,7 @@ Then the JSON information will change to give me information on that address `58
 
 Ahh, just what we needed to display on our "Street to Coordinates" result page! Wow, APIs seem intimidating, but in reality it's just a URL that we provide and we get back information from a database owned by some company. Once we get to the stage of entering a URL with some form data and receiving a response, then it's actually pretty simple to finish our app.
 
-Now it's time to actually get our form and results working. We'll start by just copying our working URL into the `experiment` action in our GitPod app:
+Now it's time to actually get our form and results working. We'll start by just copying our working URL into the `experiment` action in our Gitpod app:
 
 ```ruby
 # app/controllers/application_controller.rb

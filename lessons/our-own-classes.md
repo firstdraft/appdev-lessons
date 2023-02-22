@@ -268,7 +268,7 @@ end
 
 <div class="proj" markdown="1">
 
-  Open the GitPod "our own classes" project on Canvas that follows this reading and start with the exercise `person.rb`.
+  Open the Gitpod "our own classes" project on Canvas that follows this reading and start with the exercise `person.rb`.
 
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>

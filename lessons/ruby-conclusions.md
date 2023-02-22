@@ -41,9 +41,9 @@ Please follow the instructions below to enter the Ruby Gym for some weight train
 
 <div class="proj" markdown="1">
 
-  Open the GitPod Ruby Gym project that follows this reading and complete the exercises.
+  Open the Gitpod Ruby Gym project that follows this reading and complete the exercises.
 
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 
   The suggested order (feel free to go in whatever order you'd like) is:
 

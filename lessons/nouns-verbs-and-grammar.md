@@ -97,7 +97,7 @@ Here's a real example:
 </div>
 
 <aside markdown="1">
-The `>_ Console` tab is a "command-line" or "terminal". You enter text commands here by typing them out *exactly*, and the computer will execute them, similar to how you click on a program with your mouse to run it. You've already seen another terminal in your GitPod workspaces for running commands like `bin/server` and `rails grade`.
+The `>_ Console` tab is a "command-line" or "terminal". You enter text commands here by typing them out *exactly*, and the computer will execute them, similar to how you click on a program with your mouse to run it. You've already seen another terminal in your Gitpod workspaces for running commands like `bin/server` and `rails grade`.
 </aside>
 
 If all went well, you should have seen `=> "HELLO, WORLD!"` output by the command. Yay! What just happened?

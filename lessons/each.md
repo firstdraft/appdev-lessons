@@ -96,9 +96,9 @@ Try to remember that it's just a name that _we make up_, and `.each` takes care 
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `.each` project on Canvas that follows this reading and start with the exercise `spell_word.rb`.
+  Open the Gitpod `.each` project on Canvas that follows this reading and start with the exercise `spell_word.rb`.
 
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
 
 <div class="proj" markdown="1">

@@ -133,7 +133,7 @@ It can be tedious to wrap every line in parentheses, and it's convenient instead
 
 #### Passing tests 
 
-The REPLs are good for experimentation and getting a feel for how things work. But, in the following chapters, we're also going to have a separate GitPod assignment with graded exercises that include automated tests. Look out for the ✏️ prompt for those. You will have to complete these exercises as you go through the chapter and `rails grade` to ensure comprehension. Hopefully this will surface questions — our constant goal.
+The REPLs are good for experimentation and getting a feel for how things work. But, in the following chapters, we're also going to have a separate Gitpod assignment with graded exercises that include automated tests. Look out for the ✏️ prompt for those. You will have to complete these exercises as you go through the chapter and `rails grade` to ensure comprehension. Hopefully this will surface questions — our constant goal.
 
 ### Onwards
 

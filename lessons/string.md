@@ -20,15 +20,17 @@ s = String.new
 
 This will, however, just give us back an empty string `""`.
 
-#### Make the invisible visible in GitPod 
+#### Make the invisible visible in Gitpod 
+
+In the technical setup, we saw [how we can start a workspace with Gitpod](https://learn.firstdraft.com/lessons/28#getting-started-with-gitpod){:target="_blank"}. Let's refresh here and actually make use of a Gitpod workspace to write some code in.
 
 <div class="experiment" markdown="1">
 
-   Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there. The steps are:
+   Let's practice **making the invisible visible**. We will spend a moment getting a Gitpod workspace set up, and then running Ruby programs from the terminal there. The steps are:
 
-   1. Sign up for a [Gitpod.io](https://www.gitpod.io){:target="_blank"} account. It will ask you to sign in using your GitHub account.
+   1. If you didn't already, sign up for a [Gitpod.io](https://www.gitpod.io){:target="_blank"} account. It will ask you to sign in using your GitHub account.
 
-   1. We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** (i.e., a folder with some code in it). For example, here is a repository:
+   1. We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** or **repo** (i.e., a folder with some code in it). For example, here is a repository:
    
          [https://github.com/appdev-projects/helloruby](https://github.com/appdev-projects/helloruby){:target="_blank"}
 
@@ -61,7 +63,7 @@ s = s.upcase
 
 </div>
 
-When you are done experimenting, feel free to close the GitPod project window. We will open another project momentarily and only one GitPod tab will limit confusion.
+When you are done experimenting, feel free to close the Gitpod project window. We will open another project momentarily and only one Gitpod tab will limit confusion.
 
 #### ASCII Codes 
 
@@ -132,17 +134,19 @@ p my_string # => "Hello, world!"
    This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){:target="_blank"}
 </div>
 
-#### Start the GitPod Project
+#### Start the Gitpod Project
 
 Once you've played with the REPL, it's time to move into the graded project environment.
 
-In our previous steps, we opened a GitPod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on GitPod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button on Canvas, as described below.
+In our previous steps, we opened a Gitpod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on Gitpod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button on Canvas, as described below.
+
+If you need a full refresher on working with gitpod, see the [technical setup instructions](https://learn.firstdraft.com/lessons/29){:target="_blank"}.
 
 <div class="proj" markdown="1">
 
-   **Note: these steps go for opening any GitPod project, just change the project and file names.**
+   **Note: these steps go for opening any Gitpod project for the Ruby lessons, just change the project and file names.**
 
-   Open the GitPod `String` project on Canvas that follows this reading and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
+   Open the Gitpod `String` project on Canvas that follows this reading and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
 
    <!-- 1. LTI{Load assignment}(https://github.com/appdev-projects/ruby-project-string-1)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(100)[string_project] -->
 
@@ -178,7 +182,7 @@ These kinds of exceptions to the regular grammar in order to make life easier ar
 
 ### Methods
 
-Next, let's familiarize ourselves with some of the `String` class's methods. For each method below, there is a an `.rb` exercise in the GitPod project. So keep that project window open and work through it with `rails grade` as you go!
+Next, let's familiarize ourselves with some of the `String` class's methods. For each method below, there is a an `.rb` exercise in the Gitpod project. So keep that project window open and work through it with `rails grade` as you go!
 
 For each method below, we've provided some REPLs. They are there for you to experiment with the code, click "▶ Run", or use the `irb` terminal and see how the methods work. Keep these methods in mind when working on the assignments in Gitpod.
 
@@ -234,7 +238,7 @@ p a + b # => "HelloWorld"        # You can add strings together
 
 <div class="proj" markdown="1">
 
-   Return to the GitPod `String` project and work through `addition.rb`
+   Return to the Gitpod `String` project and work through `addition.rb`
 </div>
 
 #### String multiplication, a.k.a * 
@@ -274,7 +278,7 @@ But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hell
 Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, the bottom line is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
 
 <div class="proj" markdown="1">
-   Return to the GitPod `String` project and work through `multiplication.rb`
+   Return to the Gitpod `String` project and work through `multiplication.rb`
 </div>
 
 #### upcase 
@@ -310,7 +314,7 @@ p "FaMiLy".swapcase # => "fAmIlY
 ```
 
 <div class="proj" markdown="1">
-   Return to the GitPod `String` project and work through `case.rb`
+   Return to the Gitpod `String` project and work through `case.rb`
 </div>
 
 #### chomp 
@@ -336,7 +340,7 @@ This seemingly strange task is very common due to the way that getting user inpu
 </div>
 
 <div class="proj" markdown="1">
-   Return to the GitPod `String` project and work through `chomp.rb`
+   Return to the Gitpod `String` project and work through `chomp.rb`
 </div>
 
 #### gsub 
@@ -353,7 +357,7 @@ p a.gsub("ll", "ww")  # => "Hewwo"
 </div>
 
 <div class="proj" markdown="1">
-   Return to the GitPod `String` project and work through `gsub.rb`
+   Return to the Gitpod `String` project and work through `gsub.rb`
 </div>
 
 #### to_i 
@@ -393,7 +397,7 @@ p "beginning".capitalize
 </div>
 
 <div class="proj" markdown="1">
-   Return to the GitPod `String` project and work through `strip.rb`
+   Return to the Gitpod `String` project and work through `strip.rb`
 </div>
 
 ### More on adding strings together
@@ -482,7 +486,7 @@ their_name = gets.chomp
 and see how it's different.
 
 <div class="proj" markdown="1">
-   Return to the GitPod `String` project and work through `gets.rb`
+   Return to the Gitpod `String` project and work through `gets.rb`
 </div>
 
 ### Conclusion

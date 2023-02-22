@@ -60,13 +60,13 @@ We can add a column using our [reference](https://chapters.firstdraft.com/chapte
 
 First we need a migration file, just the file because we already have the model. Then we can write a method in there to add or remove a column.
 
-At the terminal in our GitPod app, we can first do:
+At the terminal in our Gitpod app, we can first do:
 
 ```
 rails g migration AddPasswordDigestToUsers
 ```
 
-Running that just creates a file in the `db/migrate/` GitPod workspace folder for me, and gives the file the correct name, like: `db/migrate/[TIME OF GENERATION]_add_password_digest_to_users.rb`.
+Running that just creates a file in the `db/migrate/` Gitpod workspace folder for me, and gives the file the correct name, like: `db/migrate/[TIME OF GENERATION]_add_password_digest_to_users.rb`.
 
 The timestamp in the filename is important, because this orders the filenames correctly in the `db/migrate/` folder. Once we push this code to our production server and run `rails db:migrate`, it needs to run the migrations in order. For instance, we want the user table to be generated before we try to add a column to it!
 
@@ -118,7 +118,7 @@ end
 ```
 {: mark_lines="11"}
 
-This declaration in our active record model, is actually coming from the `Gemfile` in our GitPod root folder. 
+This declaration in our active record model, is actually coming from the `Gemfile` in our Gitpod root folder. 
 
 We haven't discussed the `Gemfile` much **BENP: see notes in previous videos, it has been brought up a bit, might need early dedicated information**, but it's very important. It contains a list of all the libraries that our application is relying on, including Rails itself:
 

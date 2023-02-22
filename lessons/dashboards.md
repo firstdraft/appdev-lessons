@@ -129,7 +129,7 @@ So you're job is to build all of that. It should be doable with what you know ab
 
 **BENP: suggested pause point at 00:06:00**
 
-I'm going to do my usual thing. Start up GitPod, start the server, type in the URL I want to build as a user in the browser, and just start debugging the error messages.
+I'm going to do my usual thing. Start up Gitpod, start the server, type in the URL I want to build as a user in the browser, and just start debugging the error messages.
 
 Let's visit `config/routes.rb`, and we will see it is a completely blank Rails app that we are dealing with. We will start by building **/forex**. So let's add the route:
 
@@ -457,7 +457,7 @@ end
 
 Okay, it looks close. But we need to get the information out of our dynamic route **/forex/SYMBOL** to make our page change with each currency. 
 
-Well everytime we visit a given route (by typing or clicking a link) like **/forex/AWG**, or **/forex/INR**, or **/forex/EUR**, because I defined my route dynamically in `config/routes.rb` as `"/forex/:from_currency"`, if we view our server log in the GitPod terminal window when we visit the page, then we will see:
+Well everytime we visit a given route (by typing or clicking a link) like **/forex/AWG**, or **/forex/INR**, or **/forex/EUR**, because I defined my route dynamically in `config/routes.rb` as `"/forex/:from_currency"`, if we view our server log in the Gitpod terminal window when we visit the page, then we will see:
 
 ```
 Parameters: {"from_currency"=>"EUR"}
