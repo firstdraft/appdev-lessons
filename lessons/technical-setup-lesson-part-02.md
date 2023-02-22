@@ -1,6 +1,6 @@
 # Technical Setup Part 2: Gitpod Projects
 
-The assignments in this course will mostly follow the workflow outlined below. Many of these steps only need to be done the first time you set up the Canvas + Gitpod + Github trifecta. **If you are getting errors with the steps outlined below, carefully follow the instructions [here] TODO: link to part 05 fixing permissions**
+The assignments in this course will mostly follow the workflow outlined below. Many of these steps only need to be done the first time you set up the Canvas + Gitpod + Github trifecta. **If you are getting errors with the steps outlined below, carefully follow the instructions [here](https://learn.firstdraft.com/lessons/32){:target="_blank"}.**
 
 ## First time set up
 
@@ -44,10 +44,8 @@ You will then create a Gitpod workspace based on _your_ fork, so that you can sa
 
 That's the power of Gitpod.
 
-**TODO:** link next git chapter to show how to save work
-
 <aside markdown="1">
-Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github]\(**TODO:** lessons link for: https://chapters.firstdraft.com/chapters/839#push-to-github).
+Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github](https://learn.firstdraft.com/lessons/30){:target="_blank"}.
 </aside>
 
 
@@ -90,7 +88,7 @@ The stuff above about setting up your organization and permissions was just a on
 
 We will automatically make a copy (a "fork", in GitHub parlance) of the repository under your new GitHub organization. Then, you can choose to either "Create new workspace in Gitpod" or head to your "Gitpod Dashboard" to view existing workspaces.
 
-**If you are getting errors with this process, carefully follow the instructions [here] TODO: link to part 05 fixing permissions**
+**If you are getting errors with the steps outlined below, carefully follow the instructions [here](https://learn.firstdraft.com/lessons/32){:target="_blank"}.**
 
 ### Working on a Gitpod project
 
@@ -100,7 +98,7 @@ The general steps for working on _any_ Gitpod project for this course are:
 
 1. Start the web server by running `bin/server` at the terminal. <!-- **TODO: section on terminal environment and commands** -->
 2. Navigate to your live application preview.
-3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*. **TODO: link to git sections**
+3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*. See more details on git [here](https://learn.firstdraft.com/lessons/30){:target="_blank"}.
 4. Organize your workspace tabs.
 5. Run `rails grade` as often as you like to see how you are doing, but make sure you *test your app manually first* to make sure it matches the target's behavior. **TODO: link to section below**
 
@@ -110,7 +108,7 @@ Remember to keep the Gitpod and live application browser tabs open as you work. 
 
 ### Getting automated feedback with `rails grade`
 
-**If you are getting errors with the below process, carefully follow the instructions [here] TODO: link to part 05 fixing permissions**
+**If you are getting errors with the steps outlined below, carefully follow the instructions [here](https://learn.firstdraft.com/lessons/32){:target="_blank"}.**
 
 Once you're in the workspace on Gitpod, after the `bin/setup` script is done running, start working on the project to do whatever the instructions tell you. **When you're ready for feedback**, try a new command at a new terminal prompt (i.e., not in the terminal running the server that you previously ran `bin/server` in):
 
