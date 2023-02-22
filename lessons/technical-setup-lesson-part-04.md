@@ -2,7 +2,7 @@
 
 Here is a collection of useful tips for working on your projects. In particular, there are many Gitpod keyboard shortcuts below that you may find useful.
 
-Remember, Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github]\(**TODO:** lessons link for: https://chapters.firstdraft.com/chapters/839#push-to-github).
+Remember, Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github](https://learn.firstdraft.com/lessons/30){:target="_blank"}.
 
 ## Forcing Chrome to "Hard" Refresh
 
