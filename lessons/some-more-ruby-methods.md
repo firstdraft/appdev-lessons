@@ -1,6 +1,6 @@
-## Addendum: Some more Ruby methods
+## Some more Ruby methods
 
-Here are some more Ruby methods that we didn't cover in the chapters, but which will likely come in handy in some of the Ruby Gym exercises. Of course, many of these are also collected in [The One Ruby Reference](https://chapters.firstdraft.com/chapters/774){:target="_blank"}.
+Here are some more Ruby methods that we didn't cover in the previous sections, but which will likely come in handy in some of the Ruby Gym exercises. Of course, these are also collected in [The One Ruby Reference](https://learn.firstdraft.com/lessons/33){:target="_blank"} for quick reference.
 
 ### More String 
 
@@ -44,7 +44,7 @@ p "Happy Days".include?("Z")
 
 #### Advanced gsub techniques 
 
-`gsub` also supports accepting a _regular expression_ as its first argument. We won't get into regular expressions in detail right now, but all languages (C, C++, Python, etc.) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.
+[`gsub`](https://learn.firstdraft.com/lessons/9#gsub){:target="_blank"} also supports accepting a _regular expression_ as its first argument. We won't get into regular expressions in detail right now, but all languages (C, C++, Python, etc.) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.
 
 In Ruby, we work with regular expressions the way we work with everything else — via a class, `Regexp`. We create `Regexp` _literals_ with forward slashes (like we use quotes to create `String` literals), and then put the pattern that we're trying to match between the slashes.
 
@@ -99,7 +99,7 @@ As we know, you can call the `.to_s` method on a Float to convert the number int
 Within a Rails application (or anywhere using `activesupport`), you can provide a `Symbol` as an argument to `Float`'s `to_s` method. This allows you to convert the `Float` to a `String` _and_ add additional formatting at the same time.
 
 <aside markdown="1">
-Recall, a `Symbol` is a Ruby Class that is similar to a `String`. Symbols start with a colon (`:`) at the beginning. See the Hash chapter for details. 
+Recall from the [`Hash` chapter](https://learn.firstdraft.com/lessons/18#a-brief-interlude-symbols){:target="_blank"}, a `Symbol` is a Ruby Class that is similar to a `String`. Symbols start with a colon (`:`) at the beginning.
 </aside>
 
 ##### Phone 
@@ -181,7 +181,7 @@ p array.shuffle # Returns a copy of array in random order
 
 #### join 
 
-You can think of `Array`'s `.join` method as the inverse of `String`'s `.split` method:
+You can think of `Array`'s `.join` method as the inverse of [`String`'s `.split` method](https://learn.firstdraft.com/lessons/14#stringsplit){:target="_blank"}:
 
 ```ruby
 

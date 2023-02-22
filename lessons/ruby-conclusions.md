@@ -4,7 +4,7 @@ That's it for our crash course! Congratulations, you're ready to begin using Rub
 
 ### Our Technical Reference vs. Google-Fu
 
-Much of what we covered in the previous sections is collected in the [The One Ruby Reference](https://chapters.firstdraft.com/chapters/774){:target="_blank"}. This is intended to be a quick reference of the classes and methods, and includes many things yet to come in the course. Nevertheless, it's very handy to keep open.
+Much of what we covered in the previous sections is collected in the first part of [The One Ruby Reference](https://learn.firstdraft.com/lessons/33){:target="_blank"}. This is intended to be a quick reference of the Classes and methods you have seen so far. There are also references to [some more Ruby methods](https://learn.firstdraft.com/lessons/21){:target="_blank"} that will help you in the upcoming gym exercise below.
 
 At this point we have all the **building blocks**:
 
@@ -13,7 +13,7 @@ At this point we have all the **building blocks**:
   - **Conditionals** (If statements).
   - **Loops**.
 
-That's all we _need_. We can build anything with these, using just some careful thought and what you can find in these chapters.
+That's all we _need_. We can build anything with these, using just some careful thought.
 
 #### We are inventors 
 
@@ -27,13 +27,15 @@ Your first instinct _shouldn't_ be: "Let me Google for a solution to this proble
 
 "Google-Fu" is a hugely important skill to practice in software development, but in this course you should resist Googling. The answers you find are not suitable for beginners; they will more than likely slow you down. For example, many of those posts will use different syntax than we've seen up until now, and that will be confusing!
 
-Any assigned task _will_ be achievable using the classes, methods, and keywords introduced in the Ruby Chapters. Your job is to invent a combination of them that gets the job done.
+Any assigned task _will_ be achievable using the Classes, methods, and keywords introduced in the Ruby Chapters. Your job is to **invent** a combination of them that gets the job done using the [previous chapters](https://learn.firstdraft.com/lessons/5){:target="_blank"}, the additional methods in [the next section](https://learn.firstdraft.com/lessons/21){:target="_blank"}, and [The One Ruby Reference](https://learn.firstdraft.com/lessons/33){:target="_blank"} for quick referencing.
 
 ### Ruby Gym
 
-Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the previous sections to write some small programs. These are longer projects than the exercises we've seen so far, and they may require a few different tools to complete; so keep the chapter sections open for reference and scan through them for things that may help when you get stuck. All the tools are there.
+Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the [previous](https://learn.firstdraft.com/lessons/5){:target="_blank"} sections to write some small programs. 
 
-Well, almost all the tools! There's a few more collected in the **next section** that you may find useful for some of the exercises. Look through them when you get stuck.
+These are longer projects than the exercises we've seen so far, and they may require a few different tools to complete; so keep the chapter sections open for reference and scan through them for things that may help when you get stuck. All the tools are there.
+
+Well, almost all the tools! There's a few more collected in the [**next section**](https://learn.firstdraft.com/lessons/21){:target="_blank"} that you may find useful for some of the exercises. Look through them when you get stuck.
 
 There are likely a few ways to solve an exercise. Just get the code to pass all of the `rails grade` tests and you are good to move on. Remember, _we are inventors_; don't rely on Google-Fu.
 
