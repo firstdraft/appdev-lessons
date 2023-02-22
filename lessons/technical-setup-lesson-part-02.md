@@ -4,7 +4,7 @@ The assignments in this course will mostly follow the workflow outlined below. M
 
 ## First time set up
 
-Once you do these steps once, you can jump right ahead to **TODO: link to lower part of lesson** if you need a referesher in the daily workflow of working on a Gitpod assignment and gettng feedback.
+Once you do these steps once, you can jump right ahead to the [daily workflow below](https://learn.firstdraft.com/lessons/29#daily-workflow){:target="_blank"} if you need a referesher in the daily workflow of working on a Gitpod assignment and gettng feedback.
 
 ### Join GitHub
 
@@ -45,7 +45,7 @@ You will then create a Gitpod workspace based on _your_ fork, so that you can sa
 That's the power of Gitpod.
 
 <aside markdown="1">
-Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github](https://learn.firstdraft.com/lessons/30){:target="_blank"}.
+Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github](https://learn.firstdraft.com/lessons/30#push-to-github){:target="_blank"}.
 </aside>
 
 
@@ -100,7 +100,7 @@ The general steps for working on _any_ Gitpod project for this course are:
 2. Navigate to your live application preview.
 3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*. See more details on git [here](https://learn.firstdraft.com/lessons/30){:target="_blank"}.
 4. Organize your workspace tabs.
-5. Run `rails grade` as often as you like to see how you are doing, but make sure you *test your app manually first* to make sure it matches the target's behavior. **TODO: link to section below**
+5. Run `rails grade` as often as you like to see how you are doing, but make sure you *test your app manually first* to make sure it matches the target's behavior. See more details in the [section below](https://learn.firstdraft.com/lessons/29#getting-automated-feedback-with-rails-grade){:target="_blank"}.
 
 If some of those steps seem mysterious at the moment, read on! All will be explained shortly. You will get very comfortable with the steps while working on the several projects for the course.
 
