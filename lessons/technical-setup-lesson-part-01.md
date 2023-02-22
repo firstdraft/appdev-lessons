@@ -82,21 +82,19 @@ Gitpod.io is a great new service that provides instantaneous, full-fledged cloud
 
 ### Getting Started With Gitpod
 
-1.  Sign up for a [Gitpod.io](https://www.gitpod.io) account. It will ask you to sign in using your GitHub account.
-2.  We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** (i.e., a folder with some code in it; a.k.a., **repo**).
+  1. Sign up for a [Gitpod.io](https://www.gitpod.io) account. It will ask you to sign in using your GitHub account.
+  1. We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** (i.e., a folder with some code in it; a.k.a., **repo**).
 
-    For example, here is a repository:
+      - For example, here is a repository: [https://github.com/appdev-projects/helloruby](https://github.com/appdev-projects/helloruby)
 
-    [https://github.com/appdev-projects/helloruby](https://github.com/appdev-projects/helloruby)
+  1. To create a Gitpod workspace based on a repo, in the address bar of your browser enter **https\://gitpod.io/#** and then the URL of the repo. For example,
 
-3.  To create a Gitpod workspace based on a repo, in the address bar of your browser enter **https\://gitpod.io/#** and then the URL of the repo. For example,
+      - **https\://gitpod.io/#https\://github.com/appdev-projects/helloruby**
 
-    **https\://gitpod.io/#https\://github.com/appdev-projects/helloruby**
+  1. This creates a blank, brand-new computer. This is not a simple interactive terminal, nor is it an HTML application like we made for our early Rock, Paper, Scissors project. But Ruby _is_ installed on this computer. 
 
 <aside markdown="1">
 To make the process of opening a workspace with **https\://gitpod.io/#** easier, [Gitpod has a browser extension](https://www.gitpod.io/docs/20_browser_extension/) that you can install if you want to.
 </aside>
-
-4. This creates a blank, brand-new computer. This is not a simple interactive terminal, nor is it an HTML application like we made for our early Rock, Paper, Scissors project. But Ruby _is_ installed on this computer. 
 
 Typically, we will assign you a Gitpod project in Canvas. The assignment will include a button that says "Load assignment in a new window". When you click on that button, it will create a fork (i.e. a copy) of the repository (i.e. the folder of code) on your own GitHub account. More on those technical set up steps [here](https://learn.firstdraft.com/lessons/29){:target="_blank"}, and for saving work on github [here](https://learn.firstdraft.com/lessons/30){:target="_blank"}.
