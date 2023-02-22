@@ -46,13 +46,13 @@ When given a string literal as an argument, it adds that string to the original 
 `"hi" +(" there")`  
 `"hi" + " there"`  
 
-This method returns a new [`String`](#string){:target="_blank"}
+This method returns a new `String`.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#string-addition-aka-){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#string-addition-aka-){:target="_blank"} 
 
 ### \* method
 
-Multiplies the original string by the given integer and returns the new modified [`String`](#string){:target="_blank"}.  
+Multiplies the original string by the given integer and returns the new modified `String`.
 
 ```ruby
 "Ya" * 5
@@ -66,13 +66,13 @@ Returns `"YaYaYaYaYa"`
 
 Returns `""`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#string-multiplication-aka-){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#string-multiplication-aka-){:target="_blank"}
 
 ### .upcase
 
 `String#upcase ⇒ String`
 
-Converts all lowercase letters to their uppercase counterparts in the given string and returns the new modified [`String`](#string){:target="_blank"}.  
+Converts all lowercase letters to their uppercase counterparts in the given string and returns the new modified `String`.  
 
 ```ruby
 "hello".upcase`
@@ -82,13 +82,13 @@ Returns
 
 `"HELLO"`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#upcase){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#upcase){:target="_blank"}
 
 ### .downcase
 
 `String#downcase ⇒ String`
 
-Converts all the uppercase letters to their lowercase counterparts from the given `String`. Returns the new modified [`String`](#string){:target="_blank"}. 
+Converts all the uppercase letters to their lowercase counterparts from the given `String`. Returns the new modified `String`. 
 
 ```ruby
 "HI".downcase`
@@ -98,13 +98,13 @@ Returns
 
 `"hi"`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#downcase){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#downcase){:target="_blank"}
 
 ### .swapcase
 
 `String#swapcase ⇒ String`
 
-Converts all the uppercase letters to their lowercase counterparts and lowercase letters to their uppercase counterparts from the given string. Returns the new modified [`String`](#string){:target="_blank"}.  
+Converts all the uppercase letters to their lowercase counterparts and lowercase letters to their uppercase counterparts from the given string. Returns the new modified `String`.  
 
 ```ruby
 "Hi There".swapcase
@@ -124,13 +124,13 @@ Returns
 
 `"Hi There"`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#swapcase){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#swapcase){:target="_blank"}
 
 ### .reverse (String)
 
 `String#reverse ⇒ String`
 
-Returns a new [`String`](#string){:target="_blank"} with the characters from the original String in reverse order.  
+Returns a new `String` with the characters from the original String in reverse order.  
 
 ```ruby
 "stressed".reverse
@@ -140,13 +140,13 @@ Returns
 
 `"desserts"`  
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#reversed){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/21#reverse){:target="_blank"}
 
 ### .length
 
 `String#length ⇒ Integer`
 
-Returns the [`Integer`](#integer){:target="_blank"} number of charactersin the `String`.  
+Returns the `Integer` number of charactersin the `String`.  
 
 ```ruby
 "hippopotamus".length
@@ -156,7 +156,7 @@ Returns
 
 `12`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#length){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/21#length){:target="_blank"}
 
 ### .chomp
 
@@ -168,7 +168,7 @@ or
 
 When not given any argument, removes the `"\n"` (newline) character from the end of the string. When given an argument of a charcter or a string, it remove that argument from the _end_ of the orginal string. 
 
-Returns a new [`String`](#string){:target="_blank"} with the character removed. 
+Returns a new `String` with the character removed. 
 
 ```ruby
 "Hey!\n".chomp  
@@ -212,13 +212,13 @@ p "Hi" + name
 
 `"Hi Clark"`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#chomp){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#chomp){:target="_blank"}
 
 ### .gsub
 
 `String#gsub(String, String) ⇒ String`
 
-Substitutes the all occurances of the first argument with the second argument in original string and returns a new [`String`](#string){:target="_blank"} with the substitutes made.  
+Substitutes the all occurances of the first argument with the second argument in original string and returns a new `String` with the substitutes made.  
 
 ```ruby
 "Hello".gsub("ello", "i")
@@ -246,13 +246,13 @@ Returns
 
 `"example@ruby.com"` 
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#gsub){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#gsub){:target="_blank"}, and [explanation of advanced gsub](https://learn.firstdraft.com/lessons/21#advanced-gsub-techniques){:target="_blank"} with `Regexp`.
 
 ### .to_i (String)
 
 `String#to_i  ⇒ Integer`
 
-Converts a string literal that contains a number to an integer. The [`Integer`](#integer){:target="_blank"} is returned.  
+Converts a string literal that contains a number to an integer. The `Integer` is returned.  
 
 ```ruby
 "8".to_i
@@ -285,7 +285,7 @@ Returns
 
 `"49"`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#to_i){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#to_i){:target="_blank"}
 
 ### .strip
 
@@ -293,7 +293,7 @@ Returns
 
 Removes all leading and trailing whitespace in the string.  
 
-Returns a new [`String`](#string){:target="_blank"} that has been modified from the original. 
+Returns a new `String` that has been modified from the original. 
 
 ```ruby
 "   hi there ".strip
@@ -303,7 +303,7 @@ Returns
 
 `"hi there"`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#strip){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#strip){:target="_blank"}
 
 ### .capitalize
 
@@ -311,7 +311,7 @@ Returns
 
 Capitalizes the first character of a string.
 
-Returns a new [`String`](#string){:target="_blank"} that has been modified from the original.
+Returns a new `String` that has been modified from the original.
 
 ```ruby
 "capitalize".capitalize
@@ -321,7 +321,7 @@ Returns
 
 `"Capitalize"`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#capitalize){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/9#capitalize){:target="_blank"}
 
 ### .split
 
@@ -333,7 +333,7 @@ or
 
 Splits a string into an substrings and creates an Array of these substrings. when not given argument, `.split` uses whitespace to divide the string. when given an argument, `.split` divides the string on that argument.
 
-Returns an [`Array`](#array) of the divided [`String`](#string){:target="_blank"}.
+Returns an `Array` of the divided `String`.
 
 ```ruby
 "Hello hi byebye".split
@@ -351,13 +351,13 @@ Returns
 
 `["one", "two", "three"]`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#split){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/14#stringsplit){:target="_blank"}
 
 ### .include?
 
 `String#include?(String) ⇒ Boolean`
 
-Returns a [_boolean_](#conditionals)(`true` or `false`){:target="_blank"} based on whether the string argument is inside the string the method is being called on.
+Returns a `Boolean` (`true` or `false`) based on whether the string argument is inside the string the method is being called on.
 
 ```ruby
 "Happy".include?("H")
@@ -375,11 +375,11 @@ Returns
 
 `false`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/757#include){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/21#include){:target="_blank"}
 
 ## Integer
 
-whole numbers
+Whole numbers.
 
 ### Math Operations for the Integer Class
 
@@ -389,13 +389,13 @@ whole numbers
 `12 / 5 # => 2`  
 The `/` operator for integers only returns a whole number and omits the remainder.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/760#-------math){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/10#-------math){:target="_blank"}
 
 ### `%` (modulus) operator
 
 `Integer % Integer ⇒ Integer`
 
-Returns the [`Integer`](#integer){:target="_blank"} remainder from a divisions.  
+Returns the `Integer` remainder from a divisions.  
 
 ```ruby
 13 / 5
@@ -405,18 +405,20 @@ Returns
 
 `3`
 
+[Full explanation](https://learn.firstdraft.com/lessons/10#-------math){:target="_blank"}
+
 ### `**` operator Integer
 
 `Integer ** Integer ⇒ Integer`
 
 Raises a number to a power.  
 
-Returns an [`Integer`](#integer){:target="_blank"}
+Returns an `Integer`
 
 `3 ** 2 # => 9`  
 `2 ** 3 # => 8`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/760#-------math){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/10#-------math){:target="_blank"}
 
 ### .odd? and .even? method
 
@@ -426,7 +428,7 @@ or
 
 `Integer#even? ⇒ Boolean`
 
-Returns a [_boolean_](#conditionals)(`true` or `false`){:target="_blank"} based on whether the integer is odd or even.
+Returns a `Boolean` (`true` or `false`) based on whether the integer is odd or even.
 
 `7.odd?`
 
@@ -452,7 +454,7 @@ Returns
 
 `false`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/760#odd-and-even){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/10#odd-and-even){:target="_blank"}
 
 ### rand
 
@@ -466,9 +468,9 @@ or
 
 `Integer#rand(Range) ⇒ Integer`
 
--   Creates a random [`Float`](#float){:target="_blank"} between 0 to 1
--   Can be given an optional `Integer` argument that will generate and return an [`Integer`](#integer){:target="_blank"} between 0 and the argument.
--   Can be given an optional argument of a `Range` that will generate a random [`Integer`](#integer){:target="_blank"} that between the `Range`.
+-   Creates a random `Float` (decimal number) between 0 to 1
+-   Can be given an optional `Integer` argument that will generate and return an `Integer` between 0 and the argument.
+-   Can be given an optional argument of a `Range` that will generate a random `Integer` that between the `Range`.
 
 ```ruby
 rand           # returns => 0.21374618638...
@@ -476,7 +478,7 @@ rand(10)       # returns => 7
 rand((10..20)) # returns => 19
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/760#rand){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/10#rand){:target="_blank"}
 
 ### .to_s
 
@@ -484,7 +486,7 @@ rand((10..20)) # returns => 19
 
 Converts an integer to a string literal.
 
-Returns a [`String`](#string){:target="_blank"}
+Returns a `String`
 
 `8.to_s`
 
@@ -512,13 +514,13 @@ p "My lucky number is " + lucky_number.to_s + "!"
 
 > "There are 7 pineapples"
 
-[Full explanation](https://chapters.firstdraft.com/chapters/760#to_s){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/10#to_s){:target="_blank"}
 
 ### .to_f
 
 `Integer#to_f ⇒ Float`
 
-converts an integer to a [`Float`](#float)(decimal){:target="_blank"}.  
+converts an integer to a `Float` (decimal number).  
 `7.to_f`
 
 > 7.0
@@ -529,13 +531,13 @@ p number / 3      # Returns => 3
 p number.to_f / 3 # Returns => 3.3333333333333335
 ```
 
-[More examples](#integer-and-float-division-examples){:target="_blank"}
+[More examples below](https://learn.firstdraft.com/lessons/33#integer-and-float-division-examples){:target="_blank"}
 
-[Full explanation](https://chapters.firstdraft.com/chapters/760#to_f){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/10#to_f){:target="_blank"}
 
 ## Float
 
-decimals
+Decimal numbers.
 
 ### Math Operations for the Float Class
 
@@ -559,7 +561,7 @@ The `**`operator for Floats can additionally be used to calculate roots.
 8 ** (1/3.0) # => 2.0, since 8^(1/3) = cuberoot of 8  
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/759#------math){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/11#------math){:target="_blank"}
 
 ### .round
 
@@ -569,14 +571,14 @@ or
 
 `Float#round(Integer) ⇒ Float`
 
--   Returns the whole part ([`Integer`](#integer)){:target="_blank"} of a decimal when not given any argument.  
--   When given an argument, returns a [`Float`](#float){:target="_blank"} rounded to the number of decimal places specified by the argument.  
+-   Returns the whole part (`Integer` of a decimal when not given any argument.  
+-   When given an argument, returns a `Float` rounded to the number of decimal places specified by the argument.  
 
 `3.14159.round # => 3`  
 `3.14159.round(3) # => 3.142`  
 `3.14139.round(3) # => 3.141`  
 
-[Full explanation](https://chapters.firstdraft.com/chapters/759#round){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/11#round){:target="_blank"}
 
 ### .to_i (Float)
 
@@ -584,7 +586,7 @@ or
 
 Converts a float to an integer by rounding the float down to closest whole number.
 
-Returns an [`Integer`](#integer){:target="_blank"}  
+Returns an `Integer`  
 
 `"8.9".to_i`  
 
@@ -609,7 +611,9 @@ Returns an [`Integer`](#integer){:target="_blank"}
 
 To use the Date class in a Ruby program, we need to say:  
 `require "date"`  
+
 **_Note:_**
+
 Only _Ruby_ programs need to have a `require` statement for the Date class. _Rails_ already does this for you.
 
 ### Date.new
@@ -625,7 +629,7 @@ Date.new(2001,2,3)        # => #<Date: 2001-02-03 ...>
 Date.new(2001,2,-1)       # => #<Date: 2001-02-28 ...>
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/768#datenew){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/12#datenew){:target="_blank"}
 
 ### Date.today
 
@@ -633,17 +637,17 @@ Date.new(2001,2,-1)       # => #<Date: 2001-02-28 ...>
 
 Initializes a Date object to the current date.
 
-Returns a [`Date`](#date){:target="_blank"}
+Returns a `Date`
 
 `Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>`  
 
-[Full explanation](https://chapters.firstdraft.com/chapters/768#datetoday){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/12#datetoday){:target="_blank"}
 
 ### Date.parse()
 
 `Date.parse(String) ⇒ Date`
 
-Returns a [`Date`](#date){:target="_blank"} object initialized to a date, interpreted from the given String argument.
+Returns a `Date` object initialized to a date, interpreted from the given String argument.
 
 ```ruby
 Date.parse("2001-02-03")   # => #<Date: 2001-02-03 ...>
@@ -651,11 +655,11 @@ Date.parse("20010203")     # => #<Date: 2001-02-03 ...>
 Date.parse("3rd Feb 2001") # => #<Date: 2001-02-03 ...>
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/768#dateparse){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/12#dateparse){:target="_blank"}
 
 ### Subtraction
 
-Two dates can be subtracted from one another. The `-` operator returns a `Rational` which can be converted into an [`Integer`](#integer){:target="_blank"} to find the days in between the two dates.  
+Two dates can be subtracted from one another. The `-` operator returns a `Rational` which can be converted into an `Integer` to find the days in between the two dates.  
 
 ```ruby
 number_of_days = Date.today - Date.parse("July 4, 1776") 
@@ -663,7 +667,7 @@ number_of_days = Date.today - Date.parse("July 4, 1776")
 number_of_days.to_i # => 88674
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/768#subtraction){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/12#subtraction){:target="_blank"}
 
 ### Date.mday
 
@@ -676,20 +680,20 @@ held_on = Date.new(2001,2,3)
 held_on.mday # => 3
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/768#day){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/12#day){:target="_blank"}
 
 ### Date.wday
 
 `Date.wday ⇒ Integer`
 
-Returns the day of the week as an [`Integer`](#integer) (0-6, Sunday is 0){:target="_blank"}.
+Returns the day of the week as an `Integer` (0-6, Sunday is 0).
 
 ```ruby
 held_on = Date.new(2001,2,3)
 held_on.wday # => 6
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/768#wday){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/12#wday){:target="_blank"}
 
 ### Days of the Week
 
@@ -706,13 +710,13 @@ date.saturday?  # => true if date is a Saturday.
 date.sunday?    # => true if date is a Sunday.
 ```
 
-Returns a [`Boolean`](#boolean){:target="_blank"}, `true` or `false`, if this given `Date` is a particular day of the week.
+Returns a `Boolean` (`true` or `false`), if this given `Date` is a particular day of the week.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/768#monday){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/12#monday){:target="_blank"}
 
 ## Array
 
-list of objects represented with square brackets, \[].
+List of objects represented with square brackets, \[].
 
 ### Creating an Array
 
@@ -720,15 +724,19 @@ list of objects represented with square brackets, \[].
 
 initializes a new empty Array.  
 
+[Full explanation](https://learn.firstdraft.com/lessons/14#creating-arrays){:target="_blank"}
+
 `cities = Array.new # => cities = []`  
 or  
 `cities = [] # => cities = []` 
+
+[Full explanation](https://learn.firstdraft.com/lessons/14#array-literals){:target="_blank"}
 
 ### .push
 
 `Array#push(Object) ⇒ Array`
 
-Adds elements to the end of an Array. Returns the modified [`Array`](#array){:target="_blank"}.
+Adds elements to the end of an Array. Returns the modified `Array`.
 
 ```ruby
 cities.push("Chicago")
@@ -742,6 +750,8 @@ or
 cities = ["Chicago", "Los Angeles", "New York City"]
 # Initializes and adds elements to an Array
 ```
+
+[Full explanation](https://learn.firstdraft.com/lessons/14#push){:target="_blank"}
 
 ### .at()
 
@@ -770,7 +780,7 @@ cities[2]
 `cities.at(-3) # => "Chicago"`  
 `cities.at(-4) # => nil` 
 
-[Full explanation](https://chapters.firstdraft.com/chapters/758#at){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/14#at){:target="_blank"}
 
 ### .first and .last
 
@@ -783,18 +793,22 @@ Returns an `Object`
 `cities.first # => "Chicago"`  
 `cities.last) # => "New York City"`
 
+[Full explanation](https://learn.firstdraft.com/lessons/14#first-last){:target="_blank"}
+
 ### .index
 
 `Array#index(Object) ⇒ Integer`
 
-Returns an [`Integer`](#integer){:target="_blank"} that is the index of an element.  
+Returns an `Integer` that is the index of an element.  
 `cities.index("Los Angeles") # => 1`
+
+[Full explanation](https://learn.firstdraft.com/lessons/14#index){:target="_blank"}
 
 ### .count
 
 `Array#count ⇒ Integer` or `Array#count(Object) ⇒ Integer`
 
-Returns the number of elements in a list, when give no arguments. If given an argument, returns the number of times that arguments occurs in the array. In both instances, this method returns an [`Integer`](#integer){:target="_blank"}
+Returns the number of elements in a list, when give no arguments. If given an argument, returns the number of times that arguments occurs in the array. In both instances, this method returns an `Integer`
 
 ```ruby
 nums = [8, 3, 1, 19, 23, 3]
@@ -803,23 +817,25 @@ nums.count(3) # => 2
 nums.count(2) # => 0
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/758#count){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/14#count){:target="_blank"}
 
 ### .reverse (Array)
 
 `Array#reverse ⇒ Array`
 
-Returns a new [`Array`](#array){:target="_blank"}Array with the elements of the original Array but in the reversed order.  
+Returns a new `Array`Array with the elements of the original Array but in the reversed order.  
 `nums.reverse # => [3, 23, 19, 1, 3, 8]`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/758#reverse){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/14#reverse){:target="_blank"}
 
 ### .sort
 
 `Array#.sort ⇒ Array`
 
-Returns a new [`Array`](#array){:target="_blank"} with the elements of the original Array but in the sorted in increasing order.  
+Returns a new `Array` with the elements of the original Array but in the sorted in increasing order.  
 `nums.sort # => [1, 3, 3, 8, 19, 23]`
+
+[Full explanation](https://learn.firstdraft.com/lessons/21#sort){:target="_blank"}
 
 #### Example: Sorting an Array in decreasing order
 ```ruby
@@ -832,11 +848,11 @@ nums.sort.reverse # => [23, 19, 8, 3, 3, 1], first sorts then reverses the Array
 
 `Array#shuffle ⇒ Array`
 
-Returns a new [`Array`](#array){:target="_blank"} with the elements of the original Array but with the order shuffled randomly.  
+Returns a new `Array` with the elements of the original Array but with the order shuffled randomly.  
 `nums.shuffle # => [3, 23, 8, 19, 1, 3]`  
 `nums.shuffle # => [19, 3, 1, 8, 3, 23]` 
 
-[Full explanation](https://chapters.firstdraft.com/chapters/758#shuffle){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/21#shuffle){:target="_blank"}
 
 ### .sample
 
@@ -846,7 +862,7 @@ Returns a random element from the array.
 `nums.sample # => 23`  
 `nums.sample # => 3`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/758#sample){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/14#sample){:target="_blank"}
 
 ### .min and .max
 
@@ -856,7 +872,7 @@ Retrieve the elements of minimum and the maximum values in the array.
 `nums.min # => 1`  
 `nums.max # => 23`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/758#min){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/14#min){:target="_blank"}
 
 ### .sum (Array)
 
@@ -865,20 +881,20 @@ Retrieve the elements of minimum and the maximum values in the array.
 Returns the sum of all the elements in the array.  
 `nums.sum # => 57`
 
-**Note** This method only works in the elements in the `Array` are _not_ a [`Hash`](#hash){:target="_blank"}
+**Note** This method only works in the elements in the `Array` are _not_ a `Hash`.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/758#sum){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/14#sum){:target="_blank"}
 
 ## Hash
 
-list of objects represented with curly brackets, {}. Unlike Arrays, each cell is not automatically numbered but given a label by us.
+List of objects represented with curly brackets, {}. Unlike Arrays, each cell is not automatically numbered, but is rather given a label by us.
 
 ### Interlude: Symbol
 
 Symbols are a sequence of characters and are used to to label something internally in the code. They are created by starting them off with a colon and follow the same naming conventions as variables, `:hello`.  
 `:hello.class # => Symbol`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/767#a-brief-interlude-symbols){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/18#a-brief-interlude-symbols){:target="_blank"}
 
 ### Creating a Hash
 
@@ -912,7 +928,7 @@ or we can fill up a hash by typing in the hash literal
 1. Ruby represents each key/value pair by separating them with a `=>`, known as a "hash rocket."
 2. If the value associated with a key already exists when you try to `.store` something under it, its value will be replaced.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/767#creating-hashes){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/18#creating-hashes-and-storing-values){:target="_blank"}
 
 ### .fetch
 
@@ -931,7 +947,7 @@ If `.fetch` is given key that is not present in the hash, it will throw an error
 Fallback: pass in a second default argument that `.fetch` will return if the key is not present in the hash.  
 `person1.fetch(:middle_name, "None provided") # => "None provided"`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/767#fetch){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/18#fetch){:target="_blank"}
 
 ## Conditionals
 
@@ -963,7 +979,7 @@ end
 
 **Don't forget the `end` keyword.**
 
-[Full explanation](https://chapters.firstdraft.com/chapters/763#conditionals){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/15){:target="_blank"}
 
 ## Loops
 
@@ -1004,7 +1020,7 @@ end
 If the condition next to the `while` always evaluates to be "truthy," then the program will be stuck in a neverending loop, infamously known as an
 **infinite loop**.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/764#while-conditionally-doing-something-multiple-times){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/16#while-conditionally-doing-something-multiple-times){:target="_blank"}
 
 ## Blocks
 
@@ -1028,7 +1044,7 @@ end
 ⇒ Integer
 ```
 
-The `.times` method takes a [`Block`](https://chapters.firstdraft.com/chapters/764#blocks) as an argument and will execute the code within that block the number of times specified by the integer. A [`Block`](https://chapters.firstdraft.com/chapters/764#blocks) of code is the code written in between the keywords `do` and `end`. This looping method returns an [`Integer`](#integer){:target="_blank"} of the number of times the loop ran.
+The `.times` method takes a [`Block`](https://learn.firstdraft.com/lessons/16#blocks){:target="_blank"} as an argument and will execute the code within that block the number of times specified by the integer. A `Block` of code is the code written in between the keywords `do` and `end`. This looping method returns an `Integer` of the number of times the loop ran.
 
 ```ruby
 10.times do
@@ -1038,7 +1054,7 @@ end
 
 The above block of code will print "Hi" 10 times all on newlines. 
 
-To keep a track of the iteration number, `.times` can create a [block variable](https://chapters.firstdraft.com/chapters/764#block-variables){:target="_blank"} that starts of counting the iteration number starting at _zero_. After each execution of the code within the block, the block variable is incremented by 1.  
+To keep a track of the iteration number, `.times` can create a [block variable](https://learn.firstdraft.com/lessons/16#block-variables){:target="_blank"} that starts of counting the iteration number starting at _zero_. After each execution of the code within the block, the block variable is incremented by 1.  
 
 ```ruby
 10.times do |counter|
@@ -1048,7 +1064,7 @@ end
 
 The above block of code will print the numbers 0 to 9 all on newlines.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/764#blocks){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/16#blocks){:target="_blank"}
 
 #### Other methods
 
@@ -1063,7 +1079,7 @@ end
 ```
 The `upto` method takes the first `Integer` the method is called on and uses it to initialize the value of
 the block variable. The second `Integer` becomes the stopping condition to the loop as the block variable'
-increases by one after each iteration. The method returns an [`Integer`](#integer){:target="_blank"}; the initial value of the block variable. 
+increases by one after each iteration. The method returns an `Integer`; the initial value of the block variable. 
 
 ```ruby
 5.upto(10) do |counter|
@@ -1084,7 +1100,7 @@ end
 ```
 The `downto` method takes the first `Integer` the method is called on and uses it to initialize the value of
 the block variable. The second `Integer` becomes the stopping condition to the loop as the block variable'
-decreases by one after each iteration. The method returns an [`Integer`](#integer){:target="_blank"}; the initial value of the block variable.
+decreases by one after each iteration. The method returns an `Integer`; the initial value of the block variable.
 
 ```ruby
 10.downto(5) do |counter|
@@ -1103,7 +1119,7 @@ end
 
 ⇒ Integer
 ```
-The `step` method initializes the block variable to be the value of the `Integer` that called the method. The first `Integer` argument is the the value the block variable is when the loop will stop. The last `Integer`argument is what value to modify the block variable  after each iteration. This method returns the [`Integer`](#integer){:target="_blank"} that called the method. 
+The `step` method initializes the block variable to be the value of the `Integer` that called the method. The first `Integer` argument is the the value the block variable is when the loop will stop. The last `Integer`argument is what value to modify the block variable  after each iteration. This method returns the `Integer` that called the method. 
 
 ```ruby
 1.step(10, 3) do |counter|
@@ -1142,7 +1158,7 @@ end
 
 Given an array, the `.each` method will loop through each element of the array starting with the very first one.
 
-Returns the [`Array`](#array){:target="_blank"} the method was called on.
+Returns the `Array` the method was called on.
 
 ```ruby
 cities = ["Chicago", "LA", "NYC"]
@@ -1159,7 +1175,7 @@ end
 
 The block variable `city` holds the value of the elements in the array `cities`. It starts with the first element `"Chicago"` and then changes with each interation, holding the value of the next element (`"LA"`) in the array and so on.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/765#arrays-each-method){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/17#arrays-each-method){:target="_blank"}
 
 ### .each_with_index
 
@@ -1190,4 +1206,4 @@ end
 **_Note:_**  
 Variables created as a block variables can only be used within that block (between `do` and `end`). Using that variable outside that block will throw an error.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/765#each_with_index){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/21#each_with_index){:target="_blank"}

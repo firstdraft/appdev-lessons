@@ -4,7 +4,7 @@ This glossary should be used as a quick reference for `ActiveRecord` and associa
 
 #### How to interpret this reference
 
-Use the table of contents to find a section that interests you. This reference is arranged in a similar manner to the [first Ruby reference](){:target="\_blank"}. As with that reference, each section describes a Ruby _method_. For example, here's what the section `String#split` looks like:
+Use the table of contents to find a section that interests you. This reference is arranged in a similar manner to the [first Ruby reference](https://learn.firstdraft.com/lessons/33){:target="_blank"}. As with that reference, each section describes a Ruby _method_. For example, here's what the section `String#split` looks like:
 
 <!-- ![](assets/the-one-reference/how-to-use-the-one-reference.png) -->
 ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1677087530/how-to-use-the-one-reference_hseuda.png)
@@ -19,26 +19,26 @@ Use the table of contents to find a section that interests you. This reference i
 
 Please let us know if you find errors, omissions, or have any other suggestions or comments. Thank you!
 
-## ActiveRecord_Relation (array of records)
+## `ActiveRecord_Relation` (array of records)
 
 ### All Array methods
 
-`ActiveRecord_Relation`s [inherit](https://chapters.firstdraft.com/chapters/769#inheritance){:target="_blank"} from `Array`, so all `Array` methods work:
+`ActiveRecord_Relation`s [inherit](https://learn.firstdraft.com/lessons/19#inheritance){:target="_blank"} from `Array`, so all `Array` methods work:
 
-- [`.each`](#looping-through-arrays){:target="_blank"}
-- [`.at()` (and its aliases `[]`, `.first` for `.at(0)`, `.last` for `.at(-1)`)](#at){:target="_blank"}
-- [`.count`](#count){:target="_blank"}
-- [`.reverse`](#reverse-Array){:target="_blank"}
-- [`.sample`](#sample){:target="_blank"}
-- [`.shuffle`](#shuffle){:target="_blank"}
+- [`.each`](https://learn.firstdraft.com/lessons/33#looping-through-arrays){:target="_blank"}
+- [`.at()` (and its aliases `[]`, `.first` for `.at(0)`, `.last` for `.at(-1)`)](https://learn.firstdraft.com/lessons/33#at){:target="_blank"}
+- [`.count`](https://learn.firstdraft.com/lessons/33#count){:target="_blank"}
+- [`.reverse`](https://learn.firstdraft.com/lessons/33#reverse-array){:target="_blank"}
+- [`.sample`](https://learn.firstdraft.com/lessons/33#sample){:target="_blank"}
+- [`.shuffle`](https://learn.firstdraft.com/lessons/33#shuffle){:target="_blank"}
 
 ### .where
 
-ActiveRecord_Relation#where(Hash) ⇒ ActiveRecord_Relation
+`ActiveRecord_Relation#where(Hash) ⇒ ActiveRecord_Relation`
 
 Call `.where` on an `ActiveRecord_Relation` to filter the array of records based on some criteria.
 
-`where` returns an [`ActiveRecord_Relation`](#activerecord_relation-array-of-records){:target="_blank"} based on the given `Hash`. 
+`where` returns an `ActiveRecord_Relation` based on the given `Hash`. 
 
 -   `.where` returns an `ActiveRecord_Relation` **regardless of how many results there are**. In particular, even if there is only one result, _the return value will still be another `ActiveRecord_Relation`_.
 
@@ -86,7 +86,7 @@ Call `.where` on an `ActiveRecord_Relation` to filter the array of records based
 
 Related Methods: `.where.not`, `.or`, `.limit`, `.order`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#where){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#where){:target="_blank"}
 
 ### where.not
 
@@ -98,12 +98,12 @@ Call `.where.not` on an `ActiveRecord_Relation` to filter the array of records t
 Contact.where({ :last_name => "Mouse" }).where.not({ :first_name => "Mickey" })
 ```
 
--   Returns an [`ActiveRecord_Relation`](#activerecord_relation-array-of-records){:target="_blank"}.
+-   Returns an `ActiveRecord_Relation`.
 -   The acceptable arguments to `.not` are the same as to `.where`; see that method for a list.
 
 Related methods: `.where`, `.order`, `.limit`
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#wherenotthis){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#wherenotthis){:target="_blank"}
 
 ### .or
 
@@ -111,7 +111,7 @@ Related methods: `.where`, `.order`, `.limit`
 
 Call `.or` on an `ActiveRecord_Relation` to _combine_ the array of records with another array of records:
 
--   Returns an [`ActiveRecord_Relation`](#activerecord_relation-array-of-records){:target="_blank"}.
+-   Returns an `ActiveRecord_Relation`.
 -   The argument to `.or` must be another `ActiveRecord_Relation` _from the **same** table_.
 -   _Broadens_ the result set.
 
@@ -119,7 +119,7 @@ Call `.or` on an `ActiveRecord_Relation` to _combine_ the array of records with 
 Contact.where({ :first_name => "Mickey" }).or(Contact.where({ :last_name => "Betina" }))
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#wherethisorthat){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#wherethisorthat){:target="_blank"}
 
 ### .order
 
@@ -135,11 +135,11 @@ Call `.order` on an `ActiveRecord_Relation` to sort the array based on one or mo
 Contact.all.order({ :last_name => :asc, :first_name => :asc, :date_of_birth => :desc })
 ```
 
--   Returns an [`ActiveRecord_Relation`](#activerecord_relation-array-of-records){:target="_blank"}.
+-   Returns an `ActiveRecord_Relation`.
 
 -   The argument to `.order` is usually a `Hash`.
 
-    -   The keys in the `Hash` must be [`Symbol`](#Interlude:-Symbol){:target="_blank"}s that match names of columns in the table. These are the columns that will be used for sorting. If there are multiple keys, the order in which they are provided will be used to break ties.
+    -   The keys in the `Hash` must be [`Symbol`s](https://learn.firstdraft.com/lessons/33#interlude-symbol){:target="_blank"} that match names of columns in the table. These are the columns that will be used for sorting. If there are multiple keys, the order in which they are provided will be used to break ties.
     -   The value associated to each key must be either `:asc` (for ascending order) or `:desc` (for descending order).
 
 -   The argument to `.order` can also just be one `Symbol`, a column name.
@@ -150,7 +150,7 @@ Contact.all.order(:last_name)
 
 In that case, `:asc` order is assumed.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#order){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#order){:target="_blank"}
 
 ### .limit
 
@@ -158,14 +158,14 @@ In that case, `:asc` order is assumed.
 
 Call `.limit` on an `ActiveRecord_Relation` to cap the number of records in the array.
 
--   Returns an [`ActiveRecord_Relation`](#activerecord_relation-array-of-records){:target="_blank"}.
+-   Returns an `ActiveRecord_Relation`.
 -   The argument to `.limit` must be an `Integer`.
 
 ```ruby
 Contact.where({ :last_name => "Mouse" }).limit(10)
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#limit){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#limit){:target="_blank"}
 
 ### .offset
 
@@ -173,14 +173,14 @@ Contact.where({ :last_name => "Mouse" }).limit(10)
 
 Call `.offset` on an `ActiveRecord_Relation` to discard the first few records in the array:
 
--   Returns an [`ActiveRecord_Relation`](#activerecord_relation-array-of-records){:target="_blank"}.
+-   Returns an `ActiveRecord_Relation`.
 -   The argument to `.offset` must be an `Integer`.
 
 ```ruby
 Contact.where({ :last_name => "Mouse" }).offset(10).limit(10)
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#offset){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#offset){:target="_blank"}
 
 ### .map_relation_to_array
 
@@ -188,7 +188,7 @@ Contact.where({ :last_name => "Mouse" }).offset(10).limit(10)
 
 Call `.map_relation_to_array` on an `ActiveRecord_Relation` to retrieve the values stored in _just one column_ of the records, and discard all other data.
 
--   `.map_relation_to_array` returns a regular Ruby [`Array`](#array){:target="_blank"} of scalar values in the column.
+-   `.map_relation_to_array` returns a regular Ruby `Array` of scalar values in the column.
 
     -   _Not_ a single value, even if there was only one record in the `ActiveRecord_Relation`.
     -   _Not_ an `ActiveRecord_Relation`, so you can no longer use methods like `.where`, `.order`, etc. You can use `Array` methods like `.sort`, `.sample`, etc.
@@ -207,7 +207,7 @@ people.last_name # undefined method for array; bad
 people.map_relation_to_array(:last_name) # => ["Betina", "Woods"]; good
 ```
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#map_relation_to_array){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#map_relation_to_array){:target="_blank"}
 
 ### .maximum
 
@@ -222,7 +222,7 @@ User.all.maximun(:age)
 
 -   Returns a value from an `ActiveRecord` column.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#maximum){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#maximum){:target="_blank"}
 
 ### .minimum
 
@@ -237,7 +237,7 @@ Photo.all.minimum(:caption)
 
 -   Returns a value from an `ActiveRecord` column.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#minimum){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#minimum){:target="_blank"}
 
 ### .sum
 
@@ -249,10 +249,10 @@ Call `.sum` on an `ActiveRecord_Relation` to find the sum of the values in a sin
 @poem.scores.sum(:points)
 ```
 
--   Returns an [`Integer`](#integer) or [`Float`](#integer) (or even a [`String`](#string)){:target="_blank"}, depending on datatype of the column that was summed.
+-   Returns an `Integer` or `Float` (or even a `String`), depending on datatype of the column that was summed.
 -   The argument to `.sum` must be a `Symbol` that matches the name of a column in the table.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#sum){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#sum){:target="_blank"}
 
 ### .average
 
@@ -264,10 +264,10 @@ Call `.average` on an `ActiveRecord_Relation` to find the mean of the values in 
 @restaurant.reviews.average(:rating)
 ```
 
--   Returns an [`Integer`](#integer) or [`Float`](#float){:target="_blank"}, depending on datatype of the column that was averaged.
+-   Returns an `Integer` or `Float`, depending on datatype of the column that was averaged.
 -   The argument to `.average` must be a `Symbol` that matches the name of a column in the table.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#average){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#average){:target="_blank"}
 
 ## `ActiveRecord` (A single record)
 
@@ -277,7 +277,7 @@ You get a method for every column in the table; for example, if you have retriev
 
 This means that every `ActiveRecord` object will have methods `.id`, `.created_at`, and `.updated_at`, since every table has those columns.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/770#attribute-getter-methods){:target="_blank"}
+[Full explanation]\(**TODO:** replace with ActiveRecord lesson URL\#attribute-getter-methods){:target="_blank"}
 
 ### Any other instance methods you define in the class
 
@@ -293,7 +293,7 @@ end
 
 You would then be able to call `.full_name` anywhere in the application that you wind up with an individual `Contact` object.
 
-[Full explanation](https://chapters.firstdraft.com/chapters/769#defining-instance-methods){:target="_blank"}
+[Full explanation](https://learn.firstdraft.com/lessons/19#defining-instance-methods){:target="_blank"}
 
 ## Association Helper Methods
 
