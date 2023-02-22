@@ -8,7 +8,7 @@ Much of what we covered in the previous sections is collected in the first part 
 
 At this point we have all the **building blocks**:
 
-  - **Expressions**: object.method(argument) # => returns a value
+  - **Expressions**: `object.method(argument) # => returns a value`
   - **Variables** to save the results of expressions.
   - **Conditionals** (If statements).
   - **Loops**.
