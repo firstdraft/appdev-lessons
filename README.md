@@ -66,3 +66,6 @@ All contained in the `lessons/` (or sometimes `glossaries/`) folder:
     - rps-rcav-lesson-part-04.md, https://learn.firstdraft.com/lessons/25
     - rps-rcav-lesson-part-05.md, https://learn.firstdraft.com/lessons/26
     - rps-rcav-lesson-part-06.md, https://learn.firstdraft.com/lessons/27
+  - The One Reference
+    - the-one-reference-part-01.md, https://learn.firstdraft.com/lessons/33
+    - the-one-reference-part-02.md, https://learn.firstdraft.com/lessons/34
