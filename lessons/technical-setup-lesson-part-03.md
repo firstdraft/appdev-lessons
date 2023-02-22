@@ -1,6 +1,6 @@
 # Technical Setup Part 3: /git
 
-If you got your Canvas + Gitpod + Github trifecta setup and you can load assignments, work on projects on Gitpod, and run `rails grade` for feedback, you are in great shape! But, if you want to save all that work you are doing on Gitpod, you will need to learn about and use **git**. Read all the way to the end, your work will *not* be saved if you do not **push to Github** **TODO: link to section below**.
+If you got your Canvas + Gitpod + Github trifecta setup and you can load assignments, work on projects on Gitpod, and run `rails grade` for feedback, you are in great shape! But, if you want to save all that work you are doing on Gitpod, you will need to learn about and use **git**. Read all the way to the end, your work will *not* be saved if you do not **push to Github** (see [below]**TODO: link to section below**).
 
 ## What Git is
 
