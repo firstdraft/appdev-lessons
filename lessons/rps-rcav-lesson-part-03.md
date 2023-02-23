@@ -197,6 +197,6 @@ If you haven't, now would be a good time to run `rails grade` at the Gitpod term
 
 We have a lot done, but we still have a lot to do. 
 
-<span style="font-size: x-large">[Proceed to the next part of the lesson](https://learn.firstdraft.com/lessons/25){:target="_blank"}</span>
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
 
 ----

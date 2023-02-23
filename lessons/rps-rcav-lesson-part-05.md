@@ -433,6 +433,6 @@ class ApplicationController < ActionController::Base
 
 You are ready to finish the project! You now have all the skills needed.
 
-<span style="font-size: x-large">[Proceed to the next part of the lesson](https://learn.firstdraft.com/lessons/27){:target="_blank"}</span>
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
 
 ----

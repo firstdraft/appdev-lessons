@@ -314,6 +314,6 @@ end
 
 Okay, that was a lot of information. It's time to actually move over into our Gitpod project space and start typing things out to get our application running! 
 
-<span style="font-size: x-large">[Proceed to the next part of the lesson](https://learn.firstdraft.com/lessons/23){:target="_blank"}</span>
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
 
 ----

@@ -312,6 +312,6 @@ end
 
 Now that we have a bunch of practice wiring up our RCAVs, we can wrap up this lesson in the next part before you finish the project on your own.
 
-<span style="font-size: x-large">[Proceed to the next part of the lesson](https://learn.firstdraft.com/lessons/26){:target="_blank"}</span>
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
 
 ----
