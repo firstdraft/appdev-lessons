@@ -531,9 +531,9 @@ p number / 3      # Returns => 3
 p number.to_f / 3 # Returns => 3.3333333333333335
 ```
 
-[More examples below](https://learn.firstdraft.com/lessons/33#integer-and-float-division-examples){:target="_blank"}
-
 [Full explanation](https://learn.firstdraft.com/lessons/10#to_f){:target="_blank"}
+
+[More examples below](#integer-and-float-division-examples)
 
 ## Float
 
