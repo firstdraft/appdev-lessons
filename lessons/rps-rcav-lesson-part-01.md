@@ -312,7 +312,7 @@ end
 
 ## Conclusions
 
-Okay, that was a lot of information. It's time to actually move over into our [Gitpod project space](https://learn.firstdraft.com/lessons/22#starting-our-gitpod-workspace){:target="_blank"} and start typing things out to get our application running! 
+Okay, that was a lot of information. It's time to actually move over into our Gitpod project space and start typing things out to get our application running! 
 
 <span style="font-size: x-large">[Proceed to the next part of the lesson](https://learn.firstdraft.com/lessons/23){:target="_blank"}</span>
 
