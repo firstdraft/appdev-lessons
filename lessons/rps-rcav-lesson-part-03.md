@@ -145,7 +145,9 @@ Do you understand this added code? *Read* it carefully and try to understand the
 
 We used hidden `<% %>` embedded Ruby tags in our **control flow** on each line we wanted to hide from the user. Only the result of this control flow `<h2>We tied!</h2>`, `<h2>We lost!</h2>`, or `<h2>We won!</h2>` will be rendered, *depending on the randomly sampled `comp_move` variable*. Refresh **/rock** a few times to see. 
 
-If you haven't, now would be a good time to run `rails grade` at the Gitpod terminal to check your progress. And remember to *Always Be Committing (ABC)*, by making a **/git** commit. We have a lot done, but we still have a lot to do.
+If you haven't, now would be a good time to run `rails grade` at the Gitpod terminal to check your progress. And remember to *Always Be Committing (ABC)*, by making a **/git** commit. We have a lot done, but we still have a lot to do. 
+
+Let's continue the lesson in the [next part](https://learn.firstdraft.com/lessons/25){:target="_blank"}.
 
 #### Quiz Question
 

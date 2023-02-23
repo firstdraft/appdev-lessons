@@ -86,7 +86,7 @@ Now refresh **/**. There is no error and our HTML template is rendered. And we d
     - What is the error message? Carefully go through the previous code and get your second RCAV working.
 {: .choose_best #second_rcav points="10" answer="1" }
 
-**TODO:** ellipse rendering badly and punctuation being added to pop-up boxes
+<!-- **TODO:** ellipse rendering badly and punctuation being added to pop-up boxes -->
 
 ### Completed Code
 
@@ -215,7 +215,7 @@ Back to our new error, we RTEM, and that tells us to go and make the new `game_t
 </h2>
 ```
 
-Refresh **/paper**. No error message? A successful RCAV!
+Refresh **/paper**. No error message? A successful RCAV! After you answer the quiz questions, it's time for [the last part](https://learn.firstdraft.com/lessons/26){:target="_blank"} of this lesson.
 
 #### Quiz Question
 
@@ -225,8 +225,6 @@ Refresh **/paper**. No error message? A successful RCAV!
 - No.
     - What is the error message? Carefully go through the previous code and get your third RCAV working.
 {: .choose_best #third_rcav points="10" answer="1" }
-
-**TODO:** ellipse rendering badly and punctuation being added to pop-up boxes
 
 #### Quiz Question
 

@@ -6,9 +6,9 @@ That was a lot of information! RCAV, embedded Ruby, instance variables, layouts.
 
 The rest of the project is up to you to finish. Continue working on Gitpod, keeping in mind the [target](https://rps-rcav.matchthetarget.com){:target="_blank"}.
 
-Visit the **specs** (URLs) and wire them all up. You have all the tools now. Use the resources in the previous sections. There is also an RCAV cheatsheet flowchart below that may help.
+Visit the **specs** (URLs) and wire them all up. You have all the tools now. Use the resources in the previous sections. There is also an [RCAV cheatsheet flowchart below](https://learn.firstdraft.com/lessons/27#addendum-rcav-flowchart){:target="_blank"} that may help.
 
-Remember to use `rails grade` and **/git** commit, and if you need help, you can always share a Gitpod snapshot along the way.
+Remember to use [`rails grade`](https://learn.firstdraft.com/lessons/29#getting-automated-feedback-with-rails-grade){:target="_blank"} and [**/git** commit](https://learn.firstdraft.com/lessons/30){:target="_blank"}, and if you need help, you can always [share a Gitpod snapshot](https://learn.firstdraft.com/lessons/29#sharing-a-gitpod-snapshot){:target="_blank"} along the way.
 
 There are also two additional addendums below regarding custom controller files and rendering JSON, which you're welcome to *optionally* read through and play with.
 

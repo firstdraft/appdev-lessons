@@ -370,7 +370,9 @@ render({ :template => "game_templates/user_rock.html.erb", :layout => "wrapper.h
 
 This additional `:layout` argument would then only put the navbar and footer from `wrapper.html.erb` on the **/rock** route.
 
-Time for a `rails grade` and a **/git** commit! 
+Time for a `rails grade` and a **/git** commit!
+
+When you answer the quiz question below, you are ready to finish the project as shown in [the next part](https://learn.firstdraft.com/lessons/27){:target="_blank"}.
 
 #### Quiz Question
 

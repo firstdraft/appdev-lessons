@@ -8,13 +8,11 @@ In this lesson, we will explore routing. In practice, the project we work throug
 
 ## Starting Our Gitpod Workspace
 
-Before we proceed, let's get the Gitpod project setup for this lesson.
+Before we proceed, let's get the Gitpod project setup for this lesson. The basic steps are outlined below, but you can refresh your memory on the details [here](https://learn.firstdraft.com/lessons/29){:target="_blank"}.
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod RPS-RCAV project on Canvas by clicking the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will fork the workspace to your appdev organization.
-
-  <!-- [Here](https://github.com/appdev-projects/rps-rcav){:target="_blank"} is the assignment.  -->
+  Open the Gitpod [RPS-RCAV](https://github.com/appdev-projects/rps-rcav-v2){:target="_blank"} project on Canvas by clicking the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will fork the workspace to your appdev organization.
   
   As usual:
 
@@ -36,15 +34,14 @@ Before we proceed, let's get the Gitpod project setup for this lesson.
 - Yes
     - Great, you are ready to move on.
 - No
-    - Debug the issue before proceeding, you need the workspace open and working.
+    - Debug the issue by visiting these instructions: https://learn.firstdraft.com/lessons/29 before proceeding, you need the workspace open and working.
 {: .choose_best #open_gitpod points="10" answer="1" }
 
-**TODO:** "debug the issue" isn't very helpful. add a long "lesson" with technical setup, point them to a video, point them to an old chapter or the appdev-textbook?
-
+<!-- **TODO:** hide URL in No answer when we get HTML rendering properly there -->
 
 ## URLs and Specs
 
-For an application that runs on a server and transmits information across the internet (i.e. Software as a Service, **SaaS**), the interface consists of a set of Uniform Resource Locators (**URL**s) that a user can visit, and receive some information relevant and valuable to them.
+For an application that runs on a server and transmits information across the internet (i.e. Software as a Service, **SaaS**), the interface consists of a set of Uniform Resource Locators (**URLs**) that a user can visit, and receive some information relevant and valuable to them.
 
 <!-- ![](assets/rps-rcav/airbnb-url.png) -->
 ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676597248/airbnb-url_ywgt3x.png)
@@ -65,7 +62,7 @@ But make no mistake: if there is information being stored in a central database,
 In the background, there is a a _noun_ (the object) and a _verb_ (the instance method): `Object#method`. This method does the work of drawing the correct page of information for the user. Our job is to write those Ruby methods (called _actions_), and allow users to trigger them when they visit each URL. 
 
 <aside markdown="1">
-Recall that `Object#method` notation symbolizes an **_instance_ method**, while `Object.method` notation symbolizes a **_class_ method**.
+Recall that `Object#method` notation symbolizes an [**_instance_ method**](https://learn.firstdraft.com/lessons/19#defining-instance-methods){:target="_blank"}, while `Object.method` notation symbolizes a [**_class_ method**](https://learn.firstdraft.com/lessons/19#defining-class-methods){:target="_blank"}.
 </aside>
 
 We can write any Ruby we want in those **action methods**. We can generate random numbers, read from **API**s, calculate things, send text messages, and more. But every action must do one of two things:
@@ -252,7 +249,7 @@ More often, we will `render` some HTML for the user, but `redirect_to` will come
 
 Before proceeding, let's get something out of the way. 
 
-We are using the `self` keyword in our example because we are calling these methods on the Class (`ApplicationController`) that we are defining the action (`play_rock`) for. Recall when we learned about the `Person` Class, with the instance methods `first_name` and `last_name`. If we wanted a `full_name` method we called `self.first_name + self.last_name`. 
+We are using the `self` keyword in our example because we are calling these methods on the Class (`ApplicationController`) that we are defining the action (`play_rock`) for. [Recall](https://learn.firstdraft.com/lessons/19#defining-instance-methods){:target="_blank"} when we learned about the `Person` Class, with the instance methods `first_name` and `last_name`. If we wanted a `full_name` method we called `self.first_name + self.last_name`. 
 
 In our example, we're defining `play_rock` and we want use the method `redirect` that already exists on `ApplicationController`. We don't see `def redirect` in our Class, since it's inherited via `< ActionController::Base` and is defined there. So, we are using a method that already exists in the Class to build our new method, hence `self.redirect_to`. 
 
@@ -291,4 +288,4 @@ end
     - Yes, that's correct.
 {: .choose_best #drop_self points="10" answer="3" }
 
-Okay, that was a lot of information. It's time to actually move over into our Gitpod project space and start typing things out to get our application running! Proceed to the next part of the lesson for that.
+Okay, that was a lot of information. It's time to actually move over into our Gitpod project space and start typing things out to get our application running! Proceed to the [next part](https://learn.firstdraft.com/lessons/23){:target="_blank"} of the lesson for that.

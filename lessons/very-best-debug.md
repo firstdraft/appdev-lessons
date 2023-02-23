@@ -20,7 +20,7 @@
   - RTEM to slowly debug **/**
   - `better_errors` page console aside (da="Explain")
 
-When we open our app in a GitPod browser with `bin/server`, right away on the **/** homepage, we are greeted with an error:
+When we open our app in a Gitpod browser with `bin/server`, right away on the **/** homepage, we are greeted with an error:
 
 ```
 The action 'home' could not be found for UsersController
@@ -137,13 +137,13 @@ Back to the current error message on **/**:
 Missing template users_templates/all_users.html.erb
 ```
 
-Let's look in our folder on GitPod for this file. We see right away when we take a look for it that the folder is called `user_templates/`, whereas we have in our action `users_templates/`, with an extra `s` after `user`. 
+Let's look in our folder on Gitpod for this file. We see right away when we take a look for it that the folder is called `user_templates/`, whereas we have in our action `users_templates/`, with an extra `s` after `user`. 
 
 We could change the foldername, or we could change the path for the rendered template in our action. So far our convention has been to use the singular name of the record, so we will change the `index` action to `render({ :template => "user_templates/all_users.html.erb"})`. 
 
-Now when we refresh **/** in our app's browser, the page loads without an error. If for some reason you still have an error on the page, you may need to close down the server terminal, and restart it. This is just a bug in GitPod **BENP: is this still a bug?**.
+Now when we refresh **/** in our app's browser, the page loads without an error. If for some reason you still have an error on the page, you may need to close down the server terminal, and restart it. This is just a bug in Gitpod **BENP: is this still a bug?**.
 
-And remember, the database in our new app is empty, so that's why you may not see any records in your "List of users". We need to run `rails sample_data` in a terminal on GitPod to get some toy data.
+And remember, the database in our new app is empty, so that's why you may not see any records in your "List of users". We need to run `rails sample_data` in a terminal on Gitpod to get some toy data.
 
 **BENP: 00:08:30 to 00:10:55 had to deal with project bug, showing that `faker` is missing from the gem file. Maybe too advanced to show to class? At this point you go into all this stuff about the GEM file and `bundle install`.**
 

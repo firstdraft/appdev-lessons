@@ -263,7 +263,7 @@ Open the newly created `user_rock.html.erb` file and add some HTML to render:
 
 And now when we refresh **/rock**, we get the text from our *new file* rendered in HTML.
 
-After all of that, we have an HTML page that does what we could have done quickly if we made a file called `rock.html` in the `public/` folder. But we can do something way better with this new system. 
+After all of that, we have an HTML page that does what we could have done quickly if we made a file called `rock.html` in the `public/` folder. But we can do something way better with this new system. Let's see that in the [next part](https://learn.firstdraft.com/lessons/24){:target="_blank"}.
 
 #### Quiz Question
 

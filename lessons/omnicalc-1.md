@@ -28,9 +28,9 @@
 
 Our users don't want to type input into the address bar; they want to type into forms! 
 
-Let's practice building forms. Forms are incredibly important to us. That is the primary way in which users give us information that we will eventually be storing in our *databases*, the heart of our applications as we have talked about since day 1. For now we don't have a database, but we will be doing some calculations, sending text messages, even doing some pretty cool API work with that information. Geocoding it, machine learning, all kinds of stuff. Next week we will have databases to store that information as well. We have a project called Omnicalc Part 1 to work on this, so we'll create a GitPod workspace for it.
+Let's practice building forms. Forms are incredibly important to us. That is the primary way in which users give us information that we will eventually be storing in our *databases*, the heart of our applications as we have talked about since day 1. For now we don't have a database, but we will be doing some calculations, sending text messages, even doing some pretty cool API work with that information. Geocoding it, machine learning, all kinds of stuff. Next week we will have databases to store that information as well. We have a project called Omnicalc Part 1 to work on this, so we'll create a Gitpod workspace for it.
 
-**BENP: Starting Our GitPod Workspace, 00:00:44 to 00:01:05**
+**BENP: Starting Our Gitpod Workspace, 00:00:44 to 00:01:05**
 
 **BENP: this setup is also occurring some more around 4 minutes in the midst of the first RCAV**
 
@@ -76,7 +76,7 @@ No route matches [GET] "/square/new"
 ```
 **BENP: in RPS-RCAV I added screenshots for error messages, probably fine to just do as here with code blocks**
 
-So step one is opening `config/routes.rb` in our GitPod workspace, and add some code to it:
+So step one is opening `config/routes.rb` in our Gitpod workspace, and add some code to it:
 
 ```ruby
 # config/routes.rb
@@ -237,7 +237,7 @@ One of the key problems I have is not naming my `input`, so let's do that in our
 
 Just to be silly **BENP: again, maybe use realistic for, id, name from this point already** we named the `input` `"elephant"`. And now when I **refresh** (the **back** arrow won't change anything) the form at **/square/new**, and enter in 42 again then hit the calculate button, I will see a new URL string: **/square/new?elephant=42**.
 
-Now even though the form isn't taking me to another place, at least the value I typed is getting preserved in the *query string* in the URL. And because of the way that Rails work, that value, if it's in a query string, Rails is going to parse it and put it in a very special `Hash`. We can view that `Hash` in our GitPod terminal (<kbd>Ctrl</kbd> + <kbd>J</kbd>: to open or close it):
+Now even though the form isn't taking me to another place, at least the value I typed is getting preserved in the *query string* in the URL. And because of the way that Rails work, that value, if it's in a query string, Rails is going to parse it and put it in a very special `Hash`. We can view that `Hash` in our Gitpod terminal (<kbd>Ctrl</kbd> + <kbd>J</kbd>: to open or close it):
 
 ![](assets/omnicalc-1/params-elephant-gitpod-terminal.png)
 
@@ -322,13 +322,13 @@ We use a description list (`<dl>`) containing description terms (`<dt>`) and dat
 
 Refresh out app, and everything should look okay on this page. But we just put in some placeholders for the result. Let's actually make it dynamic. We need to put the original number in the first `something` and calculate the square to put the result in `something squared`.
 
-If I add a query string on the end of any URL in Rails (e.g., I can go to my app and add **/square/results?user_number=42**), and then I hit return, it doesn't change anything. For the purposes of routing anything after the **?** in a query string is ignored, but in the server log (GitPod terminal where we ran `bin/server`), we saw previously that everything after the **?** is added as key/value pairs in the `Parameters` `Hash`:
+If I add a query string on the end of any URL in Rails (e.g., I can go to my app and add **/square/results?user_number=42**), and then I hit return, it doesn't change anything. For the purposes of routing anything after the **?** in a query string is ignored, but in the server log (Gitpod terminal where we ran `bin/server`), we saw previously that everything after the **?** is added as key/value pairs in the `Parameters` `Hash`:
 
 ```
 Parameters: {"user_number" => "42"}
 ```
 
-We could add a bunch of variables to our query string with **&** and all of them would be separated in the `Parameters`. If we typed into our address bar  **/square/results?user_number=42&zebra=12&giraffe=82**, hit enter, and return to our server log on GitPod, we would find:
+We could add a bunch of variables to our query string with **&** and all of them would be separated in the `Parameters`. If we typed into our address bar  **/square/results?user_number=42&zebra=12&giraffe=82**, hit enter, and return to our server log on Gitpod, we would find:
 
 ```
 Parameters: {"user_number" => "42", "zebra" => "12", "giraffe" => "82"}
@@ -527,7 +527,7 @@ Now we refresh our browser, RTEM, and add the new view template that we named an
 
 And if we refresh and get no error message, our RCAV is complete and now we just need to get the view template to actually render what we want. 
 
-Try to manually navigate the URL to **/random/results?user_min=1.5&user_max=4.5**. Now go to the GitPod server terminal (as usual <kbd>Ctrl</kbd> + <kbd>J</kbd>: to open or close it, and <kbd>Ctrl</kbd> + <kbd>K</kbd>: to clear the log for a better view) and you will see the query string transcribed in the `Parameters` `Hash`, which we know is accessible anywhere in our Rails app by `params = { key => value}`, or, in this case: `params = { "user_min" => "1.5", "user_max" => "4.5" }`. 
+Try to manually navigate the URL to **/random/results?user_min=1.5&user_max=4.5**. Now go to the Gitpod server terminal (as usual <kbd>Ctrl</kbd> + <kbd>J</kbd>: to open or close it, and <kbd>Ctrl</kbd> + <kbd>K</kbd>: to clear the log for a better view) and you will see the query string transcribed in the `Parameters` `Hash`, which we know is accessible anywhere in our Rails app by `params = { key => value}`, or, in this case: `params = { "user_min" => "1.5", "user_max" => "4.5" }`. 
 
 Okay so let's get this out in our action:
 

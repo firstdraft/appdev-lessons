@@ -77,9 +77,11 @@ One of the most painful parts of learning how to program, in the old days, was s
 
 There are so many different combinations of hardware, operating systems, previously installed software, permission levels (for example if you are using a work-owned computer), that just getting these things installed would often stop you before you started writing your first program. We can't allow that!
 
-Instead, we're going to use a write our code using a _cloud_ computer. "Cloud" just means that it's a computer that's sitting in someone's warehouse[^datacenter] somewhere, and we rent it from them. It already has all of the software that we need installed on it, and we access it through our browsers. No muss, no fuss!
+Instead, we're going to use a write our code using a _cloud_ computer. "Cloud" just means that it's a computer that's sitting in someone's warehouse somewhere, and we rent it from them. It already has all of the software that we need installed on it, and we access it through our browsers. No muss, no fuss!
 
-[^datacenter]: A warehouse full of computers that people rent and connect to via the internet is called a "data center". Some data centers have their own power plants, and some are even earthquake-proofed.
+<aside markdown="1">
+A warehouse full of computers that people rent and connect to via the internet is called a "data center". Some data centers have their own power plants, and some are even earthquake-proofed.
+</aside>
 
 Gitpod.io is a great new service that provides instantaneous, full-fledged cloud development environments from any codebase that is on GitHub.com — which is great, because we (and 98% of other teams) use GitHub to store all of our projects, homeworks, etc. The text editor they provide is based on Microsoft's VSCode — my editor of choice. It will have the exact right version of Ruby, Rails, and everything else we need. And they have a very generous free tier. Great!
 
@@ -92,15 +94,17 @@ Gitpod.io is a great new service that provides instantaneous, full-fledged cloud
 
 3.  To create a Gitpod workspace based on a repo, in the address bar of your browser enter `https://gitpod.io/#` and then the URL of the repo. For example,
 
-    [https://gitpod.io/#https://github.com/appdev-projects/helloruby](https://gitpod.io/#https://github.com/appdev-projects/helloruby)
+    **https\://gitpod.io/#https\://github.com/appdev-projects/helloruby**
 
 4.  To make that process easier, [Gitpod has a browser extension](https://www.gitpod.io/docs/20_browser_extension/) that you can install if you want to.
 
 5.  Typically, we will assign you a project in Canvas. The assignment will include a button that says "Load assignment in a new window". When you click on that button, it will create a fork (i.e. a copy) of the repository (i.e. the folder of code) on your own GitHub account.
 
-    You will then create a Gitpod workspace[^workspace] based on _your_ fork, so that you can save the work that you do back to your own GitHub account. A button to create your Gitpod workspace will appear within the assignment, so usually all you need to do is click on it after clicking "Load assignment in a new window". And then you can get right to work, with the exact right version of all of the project's dependencies ready to go!
+    You will then create a Gitpod workspace based on _your_ fork, so that you can save the work that you do back to your own GitHub account. A button to create your Gitpod workspace will appear within the assignment, so usually all you need to do is click on it after clicking "Load assignment in a new window". And then you can get right to work, with the exact right version of all of the project's dependencies ready to go!
 
-[^workspace]: Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github](https://chapters.firstdraft.com/chapters/839#push-to-github).
+<aside markdown="1">
+Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can [push your changes to Github](https://chapters.firstdraft.com/chapters/839#push-to-github).
+</aside>
 
 
 ### Forcing Chrome to "Hard" Refresh
@@ -163,12 +167,10 @@ Use your up and down arrows to scroll through your command history so that you d
 
 Mac OS: <kbd>Command</kbd> + <kbd>K</kbd>
 
-Windows: Disabled by default[^windows-clear]
+Windows: Disabled by default. A recent Gitpod update removed this keyboard shortcut for Windows, so you'll need to configure it yourself.
 
 ![](assets/technical-setup/clear_terminal.gif)
 
-
-[^windows-clear]: A recent Gitpod update removed this keyboard shortcut for Windows, so you'll need to configure it yourself.
 
 From the menu open Preferences and select Keyboard shortcuts.
 
@@ -324,7 +326,7 @@ In this course, we're going to use one simple but effective Git-based workflow t
 
 In all of our Rails apps, after you start the server, you can navigate to the address **/git** in your live application. If you're using Gitpod, the URL will look like:
 
-    https://[YOUR GITPOD WORKSPACE URL].gitpod.io/git
+    **https\://[YOUR GITPOD WORKSPACE URL].gitpod.io/git**
 
 That will open a page that looks like this:
 
@@ -595,9 +597,7 @@ It will take a moment to create the snapshot. Then a dialog will pop up in the b
 
 The URL that you share should look something like this:
 
-```
-https://gitpod.io#snapshot/5a47e40d-e279-44e5-96bc-ae33cd48f151
-```
+**https\://gitpod.io#snapshot/5a47e40d-e279-44e5-96bc-ae33cd48f151**
 
 Note the `#snapshot` fragment of the URL. That means you have the right one.
 
@@ -605,9 +605,7 @@ Note the `#snapshot` fragment of the URL. That means you have the right one.
 
 The URL should _not_ look something like this:
 
-```
-https://ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io/
-```
+**https\://ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io/**
 
 That is the URL of your own IDE, which no one else can access.
 
@@ -615,9 +613,7 @@ That is the URL of your own IDE, which no one else can access.
 
 The URL should _not_ look something like this:
 
-```
-https://3000-ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io
-```
+**https\://3000-ac1bde40-34e8-421d-a102-6425971fb9db.ws-eu38.gitpod.io**
 
 Note the `3000-` at the start. That is the URL of the live preview of your app.
 

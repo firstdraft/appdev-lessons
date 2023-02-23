@@ -72,9 +72,9 @@ t.day # => 16
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `Date` project on Canvas that follows this reading and start with the exercise `formatted.rb`.
+  Open the Gitpod `Date` project on Canvas that follows this reading and start with the exercise `formatted.rb`.
 
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String` , where we opened our first workspace.
 </div>
 
 #### Date.parse 
@@ -100,7 +100,7 @@ days.to_i
 
 <div class="proj" markdown="1">
   
-  Return to the GitPod `Date` project and work through `math.rb`
+  Return to the Gitpod `Date` project and work through `math.rb`
 </div>
 
 #### monday? 
@@ -141,7 +141,7 @@ Date.new(2001,2,3).wday #=> 6
 
 <div class="proj" markdown="1">
   
-  Return to the GitPod `Date` project and work through `monday.rb`
+  Return to the Gitpod `Date` project and work through `monday.rb`
 </div>
 
 ### Time

@@ -27,9 +27,9 @@ Our plan for today is to practice the very important thing for this week which i
 
 This fortune teller project will be the first in a series of *debugging* projects. So rather than building up an app from scratch, we'll start with a completed app that we have planted pernicious bugs in. You have to go through and figure out how to *Read The Error Messages, RTEM*. Again, RTEM is the most important skill to develop, not being able to just scan the code and spot what's wrong. Let the error messages help you.
 
-If navigate to your app in the browser, you should be on the homepage **/lottery/lucky** which shows you five lucky numbers in a bulleted list. Each time we refresh, the numbers are changing. So this is a dynamic page and not a static page in the `/public` folder on GitPod. 
+If navigate to your app in the browser, you should be on the homepage **/lottery/lucky** which shows you five lucky numbers in a bulleted list. Each time we refresh, the numbers are changing. So this is a dynamic page and not a static page in the `/public` folder on Gitpod. 
 
-Let's see what we are starting out with by going to our application on the GitPod workspace and opening our file `config/routes.rb`:
+Let's see what we are starting out with by going to our application on the Gitpod workspace and opening our file `config/routes.rb`:
 
 ```ruby
 # config/routes.rb
@@ -447,7 +447,7 @@ Did you mean? FiresController
 
 Hmm. This means we have not defined the class `FireController`. So let's look in our `app/controllers/` directory and we see a controller called `fires_controller.rb`. There is an extra `s` on `fires`, whereas we wrote in our route: `:controller => "fire"`. So rename the controller to `fire_controller.rb` and refresh again **/zodiacs/aries**, and we succeeded!
 
-One thing to note. If you think you did everything correctly but are still getting error messages, then go to GitPod, shut down your server in the terminal by using `Ctrl + C`, and restart with `bin/server`. This sometimes happens with filename or foldername changes.
+One thing to note. If you think you did everything correctly but are still getting error messages, then go to Gitpod, shut down your server in the terminal by using `Ctrl + C`, and restart with `bin/server`. This sometimes happens with filename or foldername changes.
 
 Time for a **/git** commit, and maybe even a `rails grade` to see what's left to do.
 
