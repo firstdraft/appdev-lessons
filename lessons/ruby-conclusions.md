@@ -27,11 +27,17 @@ Your first instinct _shouldn't_ be: "Let me Google for a solution to this proble
 
 "Google-Fu" is a hugely important skill to practice in software development, but in this course you should resist Googling. The answers you find are not suitable for beginners; they will more than likely slow you down. For example, many of those posts will use different syntax than we've seen up until now, and that will be confusing!
 
-Any assigned task _will_ be achievable using the Classes, methods, and keywords introduced in the Ruby Chapters. Your job is to **invent** a combination of them that gets the job done using the [previous chapters](https://learn.firstdraft.com/lessons/5){:target="_blank"}, the additional methods in [the next section](https://learn.firstdraft.com/lessons/21){:target="_blank"}, and [The One Ruby Reference](https://learn.firstdraft.com/lessons/33){:target="_blank"} for quick referencing.
+Any assigned task _will_ be achievable using the Classes, methods, and keywords introduced in the Ruby Chapters. Your job is to **invent** a combination of them that gets the job done using:
+
+  - The previous Ruby sections (e.g., [`String`](https://learn.firstdraft.com/lessons/9){:target="_blank"}, [`Array`](https://learn.firstdraft.com/lessons/14){:target="_blank"}, [loops](https://learn.firstdraft.com/lessons/16){:target="_blank"}, etc.)
+
+  - The additional methods in [the next section](https://learn.firstdraft.com/lessons/21){:target="_blank"}
+
+  - [The One Ruby Reference](https://learn.firstdraft.com/lessons/33){:target="_blank"} for quick referencing.
 
 ### Ruby Gym
 
-Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the [previous](https://learn.firstdraft.com/lessons/5){:target="_blank"} sections to write some small programs. 
+Before we go on, let's stop, take a breath, and try to put what we've learned so far to good use. The idea with the following exercises is to use the building blocks from the previous sections to write some small programs. 
 
 These are longer projects than the exercises we've seen so far, and they may require a few different tools to complete; so keep the chapter sections open for reference and scan through them for things that may help when you get stuck. All the tools are there.
 
