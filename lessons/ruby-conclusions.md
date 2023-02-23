@@ -98,3 +98,5 @@ If you would like even more practice before we get to our own introduction to Ru
 Both Treehouse and CodeCademy have an in-browser programming environment, so it's easy to just start learning right away (no installing of things on your laptop required).
 
 However, be warned that both Treehouse and CodeCademy mention some language features of Ruby that I deliberately cut out in order to keep our learning load as slim as possible. It's not necessarily bad to see them, but we won't be using them in class.
+
+----

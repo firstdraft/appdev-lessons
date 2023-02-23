@@ -223,3 +223,5 @@ end
 </div>
 
 As you can see, some methods provide more than one block variable. `.each_with_index` allows you to name two variables within the pipes; the first one will receive the element, and the second one will receive the index of the iteration. Within the block you can use both variables as you see fit. In rare cases, handy.
+
+----

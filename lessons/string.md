@@ -140,7 +140,7 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
 In our previous steps, we opened a Gitpod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on Gitpod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button on Canvas, as described below.
 
-If you need a full refresher on working with gitpod, see the [technical setup instructions](https://learn.firstdraft.com/lessons/29){:target="_blank"}.
+If you need a full refresher on working with Gitpod, see the [technical setup instructions](https://learn.firstdraft.com/lessons/29){:target="_blank"}.
 
 <div class="proj" markdown="1">
 
