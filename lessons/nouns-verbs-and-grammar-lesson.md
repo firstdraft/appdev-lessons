@@ -177,6 +177,23 @@ What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try i
 "Mississippi".even?
 ```
 
+----
+
+#### Quiz Question
+
+- `"Mississippi".even?` returned...
+- true
+    - Really? Did you try it?
+- false
+    - Really? Did you try it?
+- nothing
+    - Really? Did you try it?
+- a long message
+    - Sweet, you got your first error message!
+{: .choose_best #first_rtem points="10" answer="4" }
+
+----
+
 ### Error Messages
 
 #### _Do_, or do not. There is no  _read_. 
@@ -210,6 +227,23 @@ undefined method `even?' for "Mississippi":String
 might mean?
 
 In this case, it is saying: "Hey, friend — there's no method called `even?` for `"Mississippi"`, which is a `String`. Sorry." Fair enough, that makes sense.
+
+----
+
+#### Quiz Question
+
+- `"Mississippi".length.even?` returned...
+- true
+    - Really? Did you try it?
+- false
+    - Yes it did!
+- nothing
+    - Really? Did you try it?
+- a long message
+    - Really? Did you try it?
+{: .choose_best #length_even points="10" answer="2" }
+
+----
 
 #### The bottom line 
 
