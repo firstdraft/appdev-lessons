@@ -6,7 +6,8 @@ Programming is the art of getting a computer to do useful things with informatio
 
 If you think about it that way, then you already know at least one programming language:
 
-![](assets/nouns-verbs-and-grammar/youalreadyknow.png)
+<!-- ![](assets/nouns-verbs-and-grammar/youalreadyknow.png) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676403771/youalreadyknow_s6uitc.png)
 
 In the case of a calculator, the "information" is numbers and the "useful things" are adding, subtracting, multiplying, etc. Like any computer (or person), we get the calculator to do useful work by writing instructions that it can understand.
 
@@ -41,6 +42,21 @@ There are only a few rules:
 It's a very small language, but it demonstrates the same parts as any other programming language: **data**, **methods**, and **syntax**.
 
 Got it? Good, because that's basically all that there is to any other programming language, too! It's just that its vocabulary will be bigger, and it will have more grammar rules.
+
+----
+
+#### Quiz Question
+
+- In a general sense, how can we think about the building blocks for a programming language?
+- Numbers are nouns and actions are verbs. Grammar is important for some operations.
+    - Not quite, grammar is very important always, and can you be more specific than "actions"
+- Numbers or text are data and we do math on them based on some grammatical rules
+    - That's only partially right, but we can have more types of data and we're not just limited to classic math
+- Any data can be a noun, methods that we apply to the data are verbs, the syntax defines the grammatical rules
+    - Yes!
+{: .choose_best #nouns_n_verbs points="10" answer="3" }
+
+----
 
 ### Ruby's vocabulary
 
@@ -81,9 +97,10 @@ Here's a real example:
 <div class="experiment" markdown="1">
   You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){:target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
 
-  ![](assets/nouns-verbs-and-grammar/replit-fork-hd.png)
+  <!-- ![](assets/nouns-verbs-and-grammar/replit-fork-hd.png) -->
+  ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676403791/replit-fork-hd_frirw0.png)
 
-  In the black window that appears on the right side under the `>_ Console` tab, type:
+  In the black window that appears on the right side under the `>_ Console` tab (see margin note, this is a **terminal**), type:
 
   ```bash
   irb
@@ -93,7 +110,8 @@ Here's a real example:
 
   At the `irb(main)` prompt that appears, you can now try out `"Hello, world!".upcase`:
 
-  ![](assets/nouns-verbs-and-grammar/irb-new.png)
+  <!-- ![](assets/nouns-verbs-and-grammar/irb-new.png) -->
+  ![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676415645/irb-new_sdqwjz.png)
 </div>
 
 <aside markdown="1">
@@ -115,6 +133,23 @@ In this case, we asked `"Hello, world!"`, which is a string (Ruby's name for a p
 <aside markdown="1">
 The name "string" is used in pretty much every programming language for the datatype that holds a piece of text, and refers to a string of _characters_; a holdover from back when we used to have to worry about conserving the computer's physical storage space and had a separate datatype for an individual character. Now we usually don't have to worry about storage space anymore, but the name "string" stuck with us.
 </aside>
+
+----
+
+#### Quiz Question
+
+- From our first program, in the framework of nouns, verbs, and grammar...
+- `"Hello, world!"` is the grammar, `upcase` is the noun, and `.` is the verb
+    - Not quite, try looking through the previous sections again.
+- `"Hello, world!"` is the verb, `upcase` is the grammar, and `.` is the noun
+    - Not quite, try looking through the previous sections again.
+- `"Hello, world!"` is the noun, `upcase` is the verb, and `noun.verb` is the grammar
+    - Yes! And remember noun = data; verb = method; and grammar = syntax.
+- There is only a double verb syntax, with no data in our program.
+    - Not quite, try looking through the previous sections again.
+{: .choose_best #hello_world points="10" answer="3" }
+
+----
 
 ### Every class has different methods
 
@@ -449,3 +484,7 @@ storage_box = noun.verb(input1, input2)
 It's not _that_ much worse than the calculator language, is it? Of course, there's a bit more syntax (like how to define our own nouns and verbs) that we need to learn, but for the most part, `object.method` is the bulk of what we do.
 
 Now we need to spend some time expanding our _vocabulary_ — what are the most commonly used data types in Ruby, and what are some of their methods? That's coming up next.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
