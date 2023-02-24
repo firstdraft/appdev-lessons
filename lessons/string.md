@@ -168,7 +168,9 @@ If you need a full refresher on working with Gitpod, see the [technical setup in
 
    1. To re-run this command, you can use the <kbd>Up ↑</kbd> and <kbd>Down ↓</kbd> arrow keys to look at the history of commands you've run in a terminal.
 
-   1. When you think you have the required output, run `rails grade` at the terminal prompt and proceed when the test(s) passes without errors.
+   1. When you think you have the required output, [run `rails grade`](https://learn.firstdraft.com/lessons/29#getting-automated-feedback-with-rails-grade){:target="_blank"} at the terminal prompt and proceed when the test(s) passes without errors.
+
+   1. If you want to save your work on Github (because Gitpod will delete the workspace), from the terminal you need to start the app browser with `bin/server` and then navigate to the **/git** URL path to bring up the commit and push interface, [as we usually do](https://learn.firstdraft.com/lessons/30#using-git-in-your-projects){:target="_blank"}.
 
    If you are struggling, **try to experiment directly in the `irb` environment** by typing `irb` into the terminal and pressing enter. This will start an interactive Ruby terminal, where you can enter individual lines of Ruby to see their output. If you start `irb` then the terminal will no longer be in the `bash` environment so things like `rails grade` won't work. You will need to open a second terminal with the plus (+) icon and switch between the `irb` and `bash` terminals as needed. Alternatively type `exit` at the `irb` terminal prompt to return to the `bash` environment. If you ever want to clear the terminal output to see a fresh new line, press <kbd>Ctrl</kbd>+<kbd>K</kbd>. And if you ever close the terminal and need to re-open it, press <kbd>Ctrl</kbd>+<kbd>J</kbd>.
 
