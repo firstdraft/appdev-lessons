@@ -211,8 +211,6 @@ Most computation work like this should go in the controller as we have done it h
 
 If **/paper** appears to work when you test it manually, then it's time for a `rails grade` and a **/git** commit.
 
-----
-
 #### Quiz Question
 
 - What is the difference between a local variable and an instance variable?
@@ -225,8 +223,6 @@ If **/paper** appears to work when you test it manually, then it's time for a `r
 - Local variables are available as long as the object they are called from exists. Instance variables only exist in the scope that they are defined.
     - No, please carefully read the previous section. This is important!
 {: .choose_best #instance_vs_local points="10" answer="3" }
-
-----
 
 ### Completed Code
 
@@ -285,8 +281,6 @@ end
     We <%= @outcome %>!
 </h2>
 ```
-
-----
 
 ## Linking Pages with Layouts
 
@@ -376,11 +370,9 @@ render({ :template => "game_templates/user_rock.html.erb", :layout => "wrapper.h
 
 This additional `:layout` argument would then only put the navbar and footer from `wrapper.html.erb` on the **/rock** route.
 
-Time for a [`rails grade`](https://learn.firstdraft.com/lessons/29#getting-automated-feedback-with-rails-grade){:target="_blank"} and a [**/git**](https://learn.firstdraft.com/lessons/30#using-git-in-your-projects){:target="_blank"} commit!
+Time for a `rails grade` and a **/git** commit!
 
-Answer the quiz question below and have a look at the completed code for this section. Then find the next part of the lesson at the bottom of this page.
-
-----
+When you answer the quiz question below, you are ready to finish the project as shown in [the next part](https://learn.firstdraft.com/lessons/27){:target="_blank"}.
 
 #### Quiz Question
 
@@ -392,8 +384,6 @@ Answer the quiz question below and have a look at the completed code for this se
 - This keyword is used in our `.rb` controller files, and it means "slow down".
     - No, please carefully read the previous section.
 {: .choose_best #yield points="10" answer="2" }
-
-----
 
 ### Completed Code
 
@@ -426,13 +416,3 @@ class ApplicationController < ActionController::Base
   layout("wrapper.html.erb")
   ...
 ```
-
-----
-
-## Conclusions
-
-You are ready to finish the project! You now have all the skills needed.
-
-<span style="font-size: x-large">[Proceed to the next part of the lesson](https://learn.firstdraft.com/lessons/27){:target="_blank"}</span>
-
-----

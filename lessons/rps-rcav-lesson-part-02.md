@@ -1,6 +1,6 @@
 # RPS RCAV Part 2
 
-Let's start working in our Gitpod workspace to reinforce some of the theory in Part 1. If you haven't opened the project yet, visit the [instructions in the previous section](https://learn.firstdraft.com/lessons/22#starting-our-gitpod-workspace){:target="_blank"} to do so now.
+Let's start working in our Gitpod workspace to reinforce some of the theory in Part 1.
 
 ## Our First RCAV
 
@@ -8,13 +8,10 @@ Our workflow for a ***dynamic web application*** is always the same: Route, Cont
 
 Navigate to the route **/rock** in your Rails browser. 
 
-<aside markdown="1">
-From now on, we won't write out the entire URL path, like: 
-
-**http\://[APP DOMAIN]/rock** 
- 
-A lone **/** signifies the homepage and anything else is another route (page) in the app.
-</aside>
+<div class="experiment" markdown="1">
+  
+  *We will no longer write out the entire URL path* with **http\://[APP DOMAIN]** preceeding the route of interest. A lone **/** signifies the homepage and anything else is another route (page) in the app.
+</div>
 
 At **/rock**, you should see an error message: 
 
@@ -96,8 +93,6 @@ Check out the server log in your Gitpod workspace. That is the terminal running 
 
 The server log tells us *exactly* what happened. Someone tried to `GET "/rock"` from a given IP address at a given time, we found a route with instructions to use `ApplicationController#play_rock`, calling this controller/action pair resulted in a redirect to the given URL (`https://www.wikipedia.org`), and the entire request lifecycle completed in the stated time with no errors. Hooray!
 
-----
-
 #### Quiz Question
 
 - In the browser for our app, when you visited the **/rock** URL path, what happened?
@@ -106,8 +101,6 @@ The server log tells us *exactly* what happened. Someone tried to `GET "/rock"` 
 - I got an error message, or did not end up on Wikipedia
     - Debug the issue before proceeding, you need to get this first RCAV working before you proceed. Consider using the "Completed code" below from the previous section.
 {: .choose_best #first_rcav points="10" answer="1" }
-
-----
 
 ### Completed Code
 
@@ -137,8 +130,6 @@ class ApplicationController < ActionController::Base
   end
 end
 ```
-
-----
 
 ## Render HTML
 
@@ -272,7 +263,7 @@ Open the newly created `user_rock.html.erb` file and add some HTML to render:
 
 And now when we refresh **/rock**, we get the text from our *new file* rendered in HTML.
 
-----
+After all of that, we have an HTML page that does what we could have done quickly if we made a file called `rock.html` in the `public/` folder. But we can do something way better with this new system. Let's see that in the [next part](https://learn.firstdraft.com/lessons/24){:target="_blank"}.
 
 #### Quiz Question
 
@@ -286,8 +277,6 @@ And now when we refresh **/rock**, we get the text from our *new file* rendered 
 - Sub-folders in the `app/views/` folder, like `app/views/games/`
     - Yes! We put all the views that our actions point to in organized sub-folders within `views/`
 {: .choose_best #views_folder points="10" answer="4" }
-
-----
 
 ### Completed Code
 
@@ -317,13 +306,3 @@ end
 
 <h2>We played rock!</h2>
 ```
-
-----
-
-## Conclusions
-
-After all of that, we have an HTML page that does what we could have done quickly if we made a file called `rock.html` in the `public/` folder. But we can do something way better with this new system. 
-
-<span style="font-size: x-large">[Proceed to the next part of the lesson](https://learn.firstdraft.com/lessons/24){:target="_blank"}</span>
-
-----
