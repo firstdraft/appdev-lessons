@@ -98,7 +98,7 @@ The general steps for working on _any_ Gitpod project for this course are:
 
 1. Start the web server by running `bin/server` at the terminal. <!-- **TODO: section on terminal environment and commands** -->
 2. Navigate to your live application preview.
-3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*. See more details on git [here](https://learn.firstdraft.com/lessons/30#using-git-in-your-projects){:target="_blank"}.
+3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*. See more details on git [here](https://learn.firstdraft.com/lessons/30){:target="_blank"}.
 4. Organize your workspace tabs.
 5. Run `rails grade` as often as you like to see how you are doing, but make sure you *test your app manually first* to make sure it matches the target's behavior. See more details in the [section below](https://learn.firstdraft.com/lessons/29#getting-automated-feedback-with-rails-grade){:target="_blank"}.
 

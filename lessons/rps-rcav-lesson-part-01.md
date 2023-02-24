@@ -28,8 +28,6 @@ Before we proceed, let's get the Gitpod project setup for this lesson. The basic
 
 </div>
 
-----
-
 #### Quiz Question
 
 - Were you able to start the Gitpod workspace, including running `bin/server` and opening the browser?
@@ -40,8 +38,6 @@ Before we proceed, let's get the Gitpod project setup for this lesson. The basic
 {: .choose_best #open_gitpod points="10" answer="1" }
 
 <!-- **TODO:** hide URL in No answer when we get HTML rendering properly there -->
-
-----
 
 ## URLs and Specs
 
@@ -86,8 +82,6 @@ You can fully _specify_ a web application by listing out the URLs that users can
 
 Now — how do we get our web server to perform the above tasks when users visit the above URLs?
 
-----
-
 #### Quiz Question
 
 - What happens when a user in our app visits a URL from their address bar? Choose all that apply.
@@ -101,7 +95,6 @@ Now — how do we get our web server to perform the above tasks when users visi
     - That's right! These are typically the two actions that result from someone visiting a URL
 {: .choose_all #user_visits_url points="10" answer="[3,4]" }
 
-----
 
 # What's an RCAV?
 
@@ -145,8 +138,6 @@ Don't be confused by the key names `:controller` and `:action`, these are equiva
 
 The `get` method is _inherited_, we don't need to build this method ourselves, which saves us a lot of time. We get the plumbing for free and we just need to tell Rails how we want each request to be handled by declaring our routes. 
 
-----
-
 #### Quiz Question
 
 - What are the `:controller` and `:action` arguments in the `get` function equivalent to?
@@ -157,8 +148,6 @@ The `get` method is _inherited_, we don't need to build this method ourselves, w
 - `:controller` indicates a method and `:action` is the Class that method is in
     - Not quite, it's actually the other way around.
 {: .choose_best #controller_action points="10" answer="2" }
-
-----
 
 #### Quiz Question
 
@@ -173,7 +162,6 @@ The `get` method is _inherited_, we don't need to build this method ourselves, w
     - Correct! The `play_rock` action is indicated by `:action` in the `Hash`.
 {: .free_text #play_rock points="10" answer="4" }
 
-----
 
 ## RCAV: Controller, Action, View
 
@@ -233,8 +221,6 @@ This is the _V_ in _RCAV_. We defined a _route_ to the URL path **/rock**, and i
 
 More often, we will `render` some HTML for the user, but `redirect_to` will come in handy in later projects. For example, when we want to send the user directly back to a list of all photos after they've deleted a photo.
 
-----
-
 #### Quiz Question
 
 - How did we get the `redirect_to` function?
@@ -245,8 +231,6 @@ More often, we will `render` some HTML for the user, but `redirect_to` will come
 - We defined it ourselved.
     - Not quite, look above at the term *inherited*.
 {: .choose_best #redirect_to points="10" answer="1" }
-
-----
 
 #### Quiz Question
 
@@ -260,8 +244,6 @@ More often, we will `render` some HTML for the user, but `redirect_to` will come
 - Setup the action to either render or redirect the user somewhere (i.e., setup a new "view" for them).
     - Yes, this is the last step in the RCAV, where we provide the user with some result.
 {: .choose_best #v_in_rcav points="10" answer="4" }
-
-----
 
 ## Dropping `self.`
 
@@ -295,8 +277,6 @@ end
 ```
 {: mark_lines="5" }
 
-----
-
 #### Quiz Question
 
 - What does the `self` keyword refer to?
@@ -308,12 +288,4 @@ end
     - Yes, that's correct.
 {: .choose_best #drop_self points="10" answer="3" }
 
-----
-
-## Conclusions
-
-Okay, that was a lot of information. It's time to actually move over into our Gitpod project space and start typing things out to get our application running! 
-
-<span style="font-size: x-large">[Proceed to the next part of the lesson](https://learn.firstdraft.com/lessons/23){:target="_blank"}</span>
-
-----
+Okay, that was a lot of information. It's time to actually move over into our Gitpod project space and start typing things out to get our application running! Proceed to the [next part](https://learn.firstdraft.com/lessons/23){:target="_blank"} of the lesson for that.
