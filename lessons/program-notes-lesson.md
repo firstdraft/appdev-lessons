@@ -84,7 +84,7 @@ Later, if you decide to continue with software development for the long-term, yo
 
 One of our foundational principles while programming, learning, and almost anything else, is to find a way to **make the invisible visible** — that is, find a way to give yourself concrete feedback on what you're doing. Don't _guess_ what's happening at each step of the program — find a way to _see_ what's happening, if at all possible. **Feedback** is crucial.
 
-##### Printing values 
+#### Printing values 
 
 Let's talk a little bit more about how the REPLs work. So far, we've been using IRB to run one line of Ruby at a time. But our programs will be thousands of lines long, ultimately; and we want to save them permanently into files, not type them in one line at a time.
 
