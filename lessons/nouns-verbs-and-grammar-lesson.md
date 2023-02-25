@@ -319,6 +319,19 @@ Programming boils down to:
 
 Your skill level as a programmer is essentially **the number of error messages that you have encountered in the past and now recognize**. So start paying attention to them now — we want to collect 'em all!
 
+---
+
+#### Quiz Question
+
+- What do you call the things we put inside of the parentheses after a method?
+- arguments
+    - Yes! 
+- variables
+    - Sure, they can be variables, but what kind specifically when they are inside the `()` after a method?
+{: .free_text #arguments points="10" answer="1" }
+
+----
+
 ### An aside: Code comments
 
 Here's a debate that will rage until the end of time: what do you call this symbol?
@@ -441,6 +454,19 @@ u
 
 Fortunately, we can create as many variables as we want.
 
+----
+
+#### Quiz Question
+
+- In the previous example, what did the variable `t` contain?
+- !DLROW OLLEH
+    - Yes! 
+- hello world!
+    - Nope, please run the code to see.
+{: .free_text #storing_returns points="10" answer="1" }
+
+----
+
 #### Updating variables 
 
 It can get old coming up with different variable names for every step of the program. Instead, we usually want to re-use existing variables. We can throw away what we have in the box and put in something entirely different with the same assignment operator, `=`. Type this:
@@ -496,6 +522,25 @@ storage_box_3 = storage_box_2.third_method.maybe_even("another", "one")
 *Then*, that value will be placed in the variable named on the left side of the assignment operator, which will be created if it doesn't exist, or will have its value replaced if it does exist.
 
 Most programs are just a long succession of statements where we do some work with `object.method` and store the result in some variable, then we do some more work on that variable and store the result in yet another variable, and a hundred steps later we've produced our final result and we display that to our user.
+
+----
+
+#### Quiz Question
+
+- The `=` character in Ruby is...
+- called the variable assignment operator.
+    - Yes! 
+- works the same as the classic `=` sign from math class.
+    - Nope, please reread the previous sections.
+- used to store objects (e.g., data) in variables.
+    - Yes!
+- can have the same variable on the left and right side.
+    - Yes!
+- can only have one operation on the right side.
+    - Nope, please reread the previous sections.
+{: .choose_all #assignment points="10" answer="[1,3,4]" }
+
+----
 
 #### Variable naming rules 
 
