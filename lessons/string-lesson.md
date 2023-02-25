@@ -138,7 +138,7 @@ p my_string # => "Hello, world!"
 
 Once you've played with the REPL, it's time to move into the graded project environment.
 
-In our previous steps, we opened a Gitpod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on Gitpod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button on Canvas, as described below.
+In our [previous steps](#make-the-invisible-visible-in-gitpod), we opened a Gitpod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on Gitpod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button on Canvas, as described below.
 
 If you need a full refresher on working with Gitpod, see the [technical setup instructions](https://learn.firstdraft.com/lessons/29){:target="_blank"}.
 
@@ -218,13 +218,13 @@ But here's where it gets interesting; Ruby has another bit of nice _syntactic su
 "hi" +(" there") # => "hi there"
 ```
 
-Wild! And, as we learned earlier when we were introduced to the `p` method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:
+Wild! And, as we learned earlier when we were [introduced to the `p` method](https://learn.firstdraft.com/lessons/8#make-the-invisible-visible){:target="_blank"}, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:
 
 ```ruby
 "hi" + " there" # => "hi there"
 ```
 
-Now this is really starting to look familiar! It's a lot like the calculator language, actually. Developer happiness, indeed.
+Now this is really starting to look familiar! It's a lot like the calculator language, actually. [Developer happiness](https://learn.firstdraft.com/lessons/8#developer-happiness){:target="_blank"}, indeed.
 
 ```ruby
 a = "Hello"
@@ -271,13 +271,13 @@ The order matters, though. See what happens when you try:
 3 * "Hello"
 ```
 
-Read The Error Message (RTEM)!
+[Read The Error Message (RTEM)](https://learn.firstdraft.com/lessons/7#seriously-please-read-the-error-message){:target="_blank"}!
 
 Does this make sense? `"Hello" * 3` is calling the `String` method `*` with an argument of `3`, which kinda makes sense (add `"Hello"` to itself `3` times).
 
 But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hello"`, which doesn't make much sense (what would it mean to add `3` to itself `"Hello"` times?).
 
-Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, the bottom line is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
+Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line](https://learn.firstdraft.com/lessons/7#the-bottom-line){:target="_blank"} is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
 
 <div class="proj" markdown="1">
    Return to the Gitpod `String` project and work through `multiplication.rb`
@@ -479,7 +479,7 @@ Most of the time, we'll stick with `p`, since it provides more details while deb
 
 #### gets.chomp 
 
-We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, the handy `.chomp` method does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
+We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, the handy `.chomp` method we saw above does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
 
 ```ruby
 their_name = gets.chomp
