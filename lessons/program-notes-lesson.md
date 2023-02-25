@@ -90,7 +90,9 @@ Let's talk a little bit more about how the REPLs work. So far, we've been using 
 
 So, from now one we'll write them in the **editor** on the left side of the REPL window; then we'll run the program by clicking "▶ Run" and seeing the output in the neighboring **terminal**.
 
-![](assets/program-notes/editor-run.gif)
+<!-- ![](assets/program-notes/editor-run.gif) -->
+![file](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1676404553/editor-run_ighqfc.gif)
+{: .bleed-full }
 
 There won't be any output unless we specifically say what we want to print into the terminal. It turns out there's a special method in Ruby called `Kernel.p` (`p` is short for "print inspect") that will display its argument in the terminal. Try running the following in a REPL:
 
@@ -111,11 +113,28 @@ Kernel.p(u)
 
 Printing values to the terminal is something we're going to want to do _a lot_, and so Ruby makes it easy for us; rather than having to type `Kernel.p`, we can just type the shorthand of `p`. Change `Kernel.p` to `p` above and give it a try.
 
+----
+
+#### Quiz Question
+
+- What do we mean by "terminal" (sometimes also called "shell" or "command line") versus "editor"?
+- The terminal is a place where we can write long code
+    - No, the terminal is where we usually enter a single command at a time to see the output or run an operation like `bin/server`
+- The editor can be used to run code
+    - Not quite, the editor is where we _write_ code
+- The terminal interprets code and commands that we give it
+    - Yes!
+- The editor is where we write and save longer codes
+    - Yes!
+{: .choose_all #terminal points="10" answer="[3,4]" }
+
+----
+
 #### Optional parentheses around arguments 
 
 To make it even easier to _make the invisible visible_, here's another shortcut:
 
-When we discussed arguments, we said that they always come within parentheses. That's not quite true. Ruby allows you to, optionally, leave out the parentheses; so the following will also work:
+When we discussed [arguments](https://learn.firstdraft.com/lessons/7#arguments-are-inputs){:target="_blank"}, we said that they always come within parentheses. That's not quite true. Ruby allows you to, optionally, leave out the parentheses; so the following will also work:
 
 ```ruby
 p "HELLO WORLD!"
