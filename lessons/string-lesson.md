@@ -576,7 +576,7 @@ and see how it's different.
 - As a placeholder before we added it to the string
     - It's not just a placeholder, what does it contain?
 - To hold the typed result of calling the method `gets`
-    - Yes! We need to store the user's input in a variable
+    - Yes! We need to store the user's input in a variable to use later in our code
 - We actually didn't need it and could have skipped this step
     - Technically, yes, we could have not used this, but look at the other possible answers
 {: .choose_best #their_name points="10" answer="2" }
