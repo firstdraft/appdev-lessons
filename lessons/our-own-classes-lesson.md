@@ -144,6 +144,8 @@ So, rather than using a `Hash` to model real world things, it's a good idea to c
 
 #### Defining class methods 
 
+**BENP, note # vs . notation**
+
 The methods `full_name` and `age` above are known as _instance methods_, because we call them on individual **instances** of the `Person` class (Homer, Mickey, Minnie, etc).
 
 We can also define **class**-level methods, that we call directly on `Person` itself. This can be handy if we want to define re-usable utility methods that don't really belong to any one individual person.

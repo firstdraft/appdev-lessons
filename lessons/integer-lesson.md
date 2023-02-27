@@ -106,9 +106,24 @@ p rand(9)
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/rand){:target="_blank"}
 </div>
 
+----
+
+#### Quiz Question
+
+- Trying to run `rand("9")` results in...
+- `no implicit coversion of String into Integer`
+    - Yes! Another error message! We'll see how to solve it below.
+- A random number between 0 and 8
+    - Really? Did you try it?
+- `no implicit conversion of Integer into String`
+    - Really? Did you try it?
+{: .choose_best #rand_string points="10" answer="1" }
+
+----
+
 #### String#to_i 
 
-Let's go back to `String` for a moment and talk about the method `to_i`. 
+Let's go back to `String` for a moment and talk about the method `to_i`. (We write `Object#method` often, and we'll see in a later lesson how it is different from `Object.method`.)
 
 Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. `to_i` will attempt to convert a `String` object into an `Integer` object.
 
@@ -119,6 +134,23 @@ p "8".to_i
 <div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){:target="_blank"}
 </div>
+
+----
+
+#### Quiz Question
+
+- What would you add to the previous error code `rand("9")` to get it working?
+- `rand("9").to_i`
+    - Not quite. Think about the order of operations
+- `rand.to_i("9")`
+    - No, we want the argument "9" passed to `rand` not `to_i`
+- `rand(9)`
+    - Technically yes, but what would we _add_ to the code that we just learned about?
+- `rand("9".to_i)`
+    - Yes!
+{: .choose_best #rand_fixed points="10" answer="4" }
+
+----
 
 #### to_s 
 
