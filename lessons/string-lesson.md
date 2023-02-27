@@ -63,7 +63,25 @@ s = s.upcase
 
 </div>
 
-When you are done experimenting, feel free to close the Gitpod project window. We will open another project momentarily and only one Gitpod tab will limit confusion.
+When you are done experimenting, and you've answered the quiz question below, feel free to close the Gitpod project window. We will open another project momentarily and only one Gitpod tab will limit confusion.
+
+----
+
+#### Quiz Question
+
+- In the `invisible_to_visible.rb` code that you wrote above, which of the following is true?
+- The variable `s` contained *both* `"Hello, world!"` and `"HELLO, WORLD!"` in the end
+    - Really? Did you try it?
+- We completely overwrote the original `"Hello, world!"` content of `s`
+    - Yes! Remember we can have `s` on both sides of a variable assignment operator
+- We overwrote the variable `s` with new content, but we should never do that in real Ruby code in our apps
+    - Nope. This is a very common step and you should get used to seeing it.
+- None of the above
+    - Not quite, experiment with the code a bit more.
+{: .choose_best #invis_to_vis points="10" answer="2" }
+
+----
+
 
 #### ASCII Codes 
 
@@ -134,6 +152,17 @@ p my_string # => "Hello, world!"
    This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){:target="_blank"}
 </div>
 
+----
+
+#### Quiz Question
+
+- The ASCII code for the "pipe" symbol `|` is...
+- 124
+    - Yes! 
+{: .free_text #ascii points="10" answer="1" }
+
+----
+
 #### Start the Gitpod Project
 
 Once you've played with the REPL, it's time to move into the graded project environment.
@@ -186,7 +215,7 @@ These kinds of exceptions to the regular grammar in order to make life easier ar
 
 Next, let's familiarize ourselves with some of the `String` class's methods. For each method below, there is a an `.rb` exercise in the Gitpod project. So keep that project window open and work through it with `rails grade` as you go!
 
-For each method below, we've provided some REPLs. They are there for you to experiment with the code, click "▶ Run", or use the `irb` terminal and see how the methods work. Keep these methods in mind when working on the assignments in Gitpod.
+For each method below, we've also provided some REPLs. They are there for you to experiment with the code, click "▶ Run", or use the `irb` terminal and see how the methods work. Keep these methods in mind when working on the assignments in Gitpod.
 
 #### String addition, a.k.a. + 
 
@@ -282,6 +311,17 @@ Thus, we can see why the `String` version of `*` and the `Integer` version of `*
 <div class="proj" markdown="1">
    Return to the Gitpod `String` project and work through `multiplication.rb`
 </div>
+
+----
+
+#### Quiz Question
+
+- The output of this code: `"Hi" * 2 + " you" + "!" * 2` would be...
+- HiHi you!!
+    - Yes!
+{: .free_text #mult_add points="10" answer="1" }
+
+----
 
 #### upcase 
 
@@ -494,3 +534,7 @@ and see how it's different.
 ### Conclusion
 
 That's about all we'll need to know about strings to do most anything related to web applications! Next, we'll take a look at numbers, starting with `Integer`.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
