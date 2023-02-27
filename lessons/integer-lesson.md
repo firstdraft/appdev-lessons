@@ -106,9 +106,23 @@ p rand(9)
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/rand){:target="_blank"}
 </div>
 
+#### String#to_i 
+
+Let's go back to `String` for a moment and talk about the method `to_i`. 
+
+Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. `to_i` will attempt to convert a `String` object into an `Integer` object.
+
+```ruby
+p "8".to_i
+```
+
+<div class="experiment" markdown="1">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){:target="_blank"}
+</div>
+
 #### to_s 
 
-We often will want to combine our `Integer`s with `String`s when crafting output for our users. Give it a try:
+Okay, back to `Integer` methods. We often will want to combine our `Integer`s with `String`s when crafting output for our users. Give it a try:
 
 ```ruby
 lucky_number = rand(100)

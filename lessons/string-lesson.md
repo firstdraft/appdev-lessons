@@ -368,6 +368,10 @@ The `chomp` method is mostly used to remove the `"\n"` (newline) character from 
 "Raghu".chomp # => "Raghu"
 ```
 
+<aside markdown="1">
+Every character needs to be represented to properly render input and output to the computer. The combination `\n` represents a new paragraph or a line break. Backslashes preceeding a character are commonly used to indicate, "the thing following me does not behave as it normally would". In other words, backslashes are **escape characters**. So `\n` is saying, "this is not the letter n, this is a special character".
+</aside>
+
 This seemingly strange task is very common due to the way that getting user input works; usually someone has to type something at a prompt and then they press <kbd>return</kbd> to submit it, and that adds a "newline" (`"\n"`) to the end of the string that they typed. Typically, we want to `chomp` that off the end of their input before we do anything further with it.
 
 `chomp` can also remove other specified character(s) from the end of the string, if they are provided as an argument:
@@ -380,6 +384,29 @@ This seemingly strange task is very common due to the way that getting user inpu
 <div class="experiment" markdown="1">
    [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){:target="_blank"}
 </div>
+
+----
+
+#### Quiz Question
+
+- In the last example `"s"` in the parentheses is what?
+- A variable
+    - Not quite
+- A string
+    - Yes, and what else?
+- An ASCII character code
+   - Not quite, those are numeric values
+- An argument
+    - Yes, it is an argument to the `chomp` method
+- An object
+    - Yes, in our terminology we can think of it as a "noun"
+- A verb
+    - Not quite
+- A method
+    - Not quite
+{: .choose_all #chomp_argument points="10" answer="[2,4,5]" }
+
+----
 
 <div class="proj" markdown="1">
    Return to the Gitpod `String` project and work through `chomp.rb`
@@ -400,18 +427,6 @@ p a.gsub("ll", "ww")  # => "Hewwo"
 
 <div class="proj" markdown="1">
    Return to the Gitpod `String` project and work through `gsub.rb`
-</div>
-
-#### to_i 
-
-Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. `to_i` will attempt to convert a `String` object into an `Integer` object.
-
-```ruby
-p "8".to_i
-```
-
-<div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){:target="_blank"}
 </div>
 
 #### strip 
@@ -441,6 +456,32 @@ p "beginning".capitalize
 <div class="proj" markdown="1">
    Return to the Gitpod `String` project and work through `strip.rb`
 </div>
+
+----
+
+#### Quiz Question
+
+- Is `"   hi$".chomp("$").strip.capitalize` a valid way to output `"Hi"`?
+- Yes
+    - Exactly. We can chain methods together!
+- No
+    - Actually, it is. We can chain methods together!
+{: .choose_best #chain_methods points="10" answer="1" }
+
+----
+
+#### Quiz Question
+
+- In `"   hi$".chomp("$").strip.capitalize` the order of operations is...
+- `.chomp`, then `.capitalize`, then `.strip` 
+    - No, the chained methods act left to right
+- `.capitalize`, then `.strip`, then `.chomp`
+    - No, the chained methods act left to right
+- `.chomp`, then `.strip`, then `.capitalize` 
+    - Yes, the chained methods act left to right
+{: .choose_best #order points="10" answer="3" }
+
+----
 
 ### More on adding strings together
 
