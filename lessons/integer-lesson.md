@@ -129,7 +129,7 @@ lucky_number = rand(100)
 p "Your lucky number is" + lucky_number
 ```
 
-Uh oh! RTEM!
+Uh oh! [RTEM](https://learn.firstdraft.com/lessons/7#seriously-please-read-the-error-message){:target="_blank"}!
 
 It turns out that `String`'s `+` method can only add two strings together, not a string and an object of some other class. So, a lot of times we'll need to convert an `Integer` into a `String` prior to output. Fortunately `Integer` has a handy method, `to_s` (or "to string"), that does just that:
 
