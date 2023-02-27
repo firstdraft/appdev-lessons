@@ -142,9 +142,44 @@ p 98.to_s
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){:target="_blank"}
 </div>
 
+#### More on adding strings together
+
+We spend a lot of time composing strings of output for our users, so let's see a few more examples. Try this:
+
+```ruby
+number = 6 * 7
+message = "Your lucky number for today is " + number + "."
+```
+
+<div class="experiment" markdown="1">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){:target="_blank"}
+</div>
+
+You'll see that Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn't feel comfortable with that.
+
+The solution is to tell the `Integer` to convert itself to a `String` first using the method called `.to_s`, or "to string". Try this instead:
+
+```ruby
+number = 6 * 7
+message = "Your lucky number for today is " + number.to_s + "."
+```
+
+The above technique for composing strings, adding them together with `+`, is called string addition.
+
+There's another technique for composing strings that I personally find a bit easier; it's called **string interpolation**. Try this instead:
+
+```ruby
+number = 6 * 7
+message = "Your lucky number for today is #{number}."
+```
+
+Basically, inside the string, you place `#{}` where you eventually want your value to go. Inside the curly braces, you can write any Ruby expression without worrying about whether it is a string or not. The expression will be evaluated, converted to a string, and added to the string right in that spot. You can interpolate as many expressions as you want into a single string. Pretty neat!
+
+If you find interpolation confusing, feel free to just use addition.
+
 #### to_f 
 
-Similarly, there's a `to_f` (or "to float") method to convert an `Integer` to a `Float`, which is often handy for doing math, as we'll see next.
+Similar to `to_i`, there's a `to_f` (or "to float") method to convert an `Integer` to a `Float`, which is often handy for doing math, as we'll see next.
 
 <div class="proj" markdown="1">
 
