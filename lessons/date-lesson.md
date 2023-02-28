@@ -52,6 +52,18 @@ Call the `year` method on a `Date` object to return just the year of the date as
 t = Date.today # => #<Date: 2019-04-16 ((2458590j,0s,0n),+0s,2299161j)>
 t.year # => 2019
 ```
+
+----
+
+#### Quiz Question
+
+- What would you type after `t` above to convert the variable to a string?
+- .to_s
+    - Yes! That's the method we need.
+{: .free_text #to_string points="10" answer="1" }
+
+----
+
 #### month 
 
 Call the `month` method on a `Date` object to return just the month of the date as an `Integer`.
