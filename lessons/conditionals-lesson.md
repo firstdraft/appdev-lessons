@@ -169,6 +169,8 @@ We accidentally used the assignment operator instead of the equivalence comparis
 
 You will 💯 make this typo, we all do at some point — when your conditional always is going into the `true` branch inexplicably, let this ring a bell!
 
+**BENP: add quiz q about == and =: https://piazza.com/class/ldj532ul5a0621/post/246**
+
 ### Combining conditions with AND and OR
 
 Finally, another handy thing to have in your toolbelt are the **logical operators** `&&` (AND) and `||` (OR). These allow you to combine expressions; try these combined expressions out below:
@@ -196,6 +198,8 @@ end
 </div>
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.
+
+**BENP: confusion with rps: https://piazza.com/class/ldj532ul5a0621/post/252**
 
 <div class="proj" markdown="1">
 

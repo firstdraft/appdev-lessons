@@ -307,12 +307,14 @@ h.key(500)   #=> nil
   Return to the Gitpod `Hash` project and work through `find_value.rb`
 </div>
 
+**BENP: note this issue https://piazza.com/class/ldj532ul5a0621/post/142**
+
+**BENP: also this issue https://piazza.com/class/ldj532ul5a0621/post/253**
+
 <div class="proj" markdown="1">
 
   Finally, in the Gitpod `Hash` project complete `list.rb`
 </div>
-
-**BENP: note this issue https://piazza.com/class/ldj532ul5a0621/post/142**
 
 ### Conclusion
 
