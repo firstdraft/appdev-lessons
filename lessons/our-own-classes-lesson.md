@@ -91,7 +91,7 @@ class Person
 end
 ```
 
-**BENP: is this the first time we've defined a function?**
+**BENP: is this the first time we've defined a function? Good quick explanation by Ian: https://piazza.com/class/ldj532ul5a0621/post/185**
 
 Now, in addition to being able to store data (first and last names), I can ask any `Person` to compute its full name:
 
