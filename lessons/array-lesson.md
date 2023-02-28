@@ -356,6 +356,21 @@ p array.sample # => Returns a single random element from the array
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/sample){:target="_blank"}
 </div>
 
+----
+
+#### Quiz Question
+
+- The code `["rock", "paper", "scissors"].sample` will return...
+- `nil`, or nothing
+    - Not quite, try it in a terminal
+- an unpredictable item from the array
+    - Yes!
+- that's an illegal operation and would result in an error message
+    - Not quite, try it in a terminal
+{: .choose_best #sample points="10" answer="2" }
+
+----
+
 #### min 
 
 ```ruby
@@ -409,3 +424,7 @@ p a.sum # => 57
 ###  Conclusion
 
 That's it for `Array`s. Now we'll have a look at **conditionals** with `if` statements.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
