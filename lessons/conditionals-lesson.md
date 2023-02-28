@@ -2,7 +2,28 @@
 
 Now that we can get input from our users, we can start to make our programs smart, by behaving differently based on different conditions.
 
-To do this, we need to add a new grammar to our toolbox: the `if`/`end` **keywords**. Here's how it looks:
+----
+
+#### Quiz Question
+
+- Hold up. How do we get input from our users? Choose all that apply.
+- The user opens a Gitpod workspace
+    - No, the user only needs access to a command line for the programs we wrote so far
+- We put the method `gets` in our code
+    - Yes! When the Ruby interpreter reaches that method, it will stop the program and wait for input.
+- We store the result of the method `gets` in a new variable
+    - That's right! `gets` stands for "get string"
+- We `chomp` any newline `\n` character off the user input
+    - That's right! `gets.chomp` will remove the `\n` caused when the user presses <kdb>return</kbd>
+- The user opens an `.rb` file and puts in their response
+    - No, they don't touch our source code
+- If we wanted a few things, we might `split` the input
+    - Yes! `gets.chomp.split` with no arguments will just split on whitespace. `split("")` would cut every character apart.
+{: .choose_all #user_gets points="10" answer="[2,3,4,6]" }
+
+----
+
+To add conditions based on user input, we need to add a new grammar to our toolbox: the `if`/`end` **keywords**. Here's how it looks:
 
 ```ruby
 lucky_number = rand(100)
