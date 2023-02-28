@@ -114,6 +114,17 @@ A couple of other things for you to experiment with:
     This is our first contact with `nil`, an object that represents **the absence of anything**. When you use an index "outside" the array, you might have expected to see an error message; but instead, Ruby returns `nil`.
  - What happens when you use a negative index?
 
+----
+
+#### Quiz Question
+
+- What is the positive integer index of `5` in the array `["zebra", 6.2, 5, "bear"]`?
+- 2
+    - Yes! We index lists of things beginning from 0 in Ruby
+{: .free_text #index points="10" answer="1" }
+
+----
+
 #### at shorthand, [] 
 
 There's a shorthand for `.at()` which is very common, so you should be familiar with it. It's the `.[]` method, so we _could_ write:
