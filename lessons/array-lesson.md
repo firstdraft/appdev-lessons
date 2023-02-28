@@ -237,6 +237,13 @@ p cities.index("SF")
 
 ----
 
+<div class="proj" markdown="1">
+
+  Open the Gitpod [`Array` project](https://github.com/appdev-projects/ruby-project-array-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `element_square.rb`.
+  
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+</div>
+
 #### String#split 
 
 Before we proceed with more `Array` methods, I want to go back for a minute and talk about a method for the `String` class: `.split`. This method, when called on a `String`, will return an `Array` of substrings:
@@ -256,8 +263,6 @@ a = "Hello!".split("") # => ["H", "e", "l", "l", "o", "!"]
 a.at(0) # => "H"
 a.at(-1) # => "!"
 ```
-
-<!-- **BENP: need an exercise here, split("") is important in .each project. Also, first time with negative indexing? Maybe insert something about this earlier in section (with exercise)** -->
 
 This is particularly handy for us because it allows us to get a `String` of input from users with `gets` and then transform it into an `Array` for processing:
 
@@ -283,10 +288,8 @@ p "You entered " + length.to_s + " numbers."
 We'll be using this technique frequently to make things more interesting.
 
 <div class="proj" markdown="1">
-
-  Open the Gitpod [`Array` project](https://github.com/appdev-projects/ruby-project-array-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `element_square.rb`.
   
-  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+  Return to the Gitpod `Array` project and work through `split_string.rb`
 </div>
 
 #### count 
