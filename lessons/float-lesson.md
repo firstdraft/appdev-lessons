@@ -7,11 +7,22 @@ Ruby calls decimal numbers `Float`s. To create a `Float` rather than an `Integer
 5.0.class # => Float
 ```
 
+----
+
+#### Quiz Question
+
+- `"12".to_i.to_f` would return data of class?
+- Float
+    - Yes!
+{: .free_text #to_f points="10" answer="1" }
+
+----
+
 ### Methods
 
 #### + - * / ** (math) 
 
-The math methods work mostly like you'd expect, and similarly to the ones for integers.
+The math methods work mostly like you'd expect, and similarly to the [ones for integers](https://learn.firstdraft.com/lessons/10#-------math){:target="_blank"}.
 
 The main difference to keep in mind is with `/`. Division with floats works the way that we're used to — it returns fractional results, as a `Float`:
 
