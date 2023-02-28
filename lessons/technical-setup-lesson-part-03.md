@@ -82,6 +82,7 @@ Gitpod workspaces are not permanent! Even if we make git commits, if the workspa
 Gitpod will delete an inactive workspace after **14 days**. If you want to save the changes you've made for longer, you can "pin" a workspace in Gitpod which will prevent it from being deleted. Even better, you can push your changes to Github as explained in this section.
 </aside>
 
+
 <!-- Before you can push to GitHub, you need to give Gitpod access. Head over to the [Integrations under your account settings](https://gitpod.io/integrations) in Gitpod and make sure you check "public repos" and click "Update". 
 
 ![](assets/technical-setup/gitpod-integration-settings.png)
