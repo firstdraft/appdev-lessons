@@ -77,6 +77,8 @@ If your project requires scanning text for patterns, then [RegexOne](https://reg
 
 #### String interpolation
 
+**BENP: interpolate exercise with gets chomp: https://piazza.com/class/ldj532ul5a0621/post/128**
+
 We spend a lot of time composing strings of output for our users, so let's see another example. Try this:
 
 ```ruby
