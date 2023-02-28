@@ -64,6 +64,23 @@ cities = ["Chicago", "NYC", "LA"]
 
 This is the technique that we'll be using most often.
 
+----
+
+#### Quiz Question
+
+- What would happend to the previous `cities` variable if we wrote `cities = ["Berlin", "Paris", "Madrid"]`?
+- `cities` would contain the original cities and the new cities as two separate lists
+    - Not quite, perhaps use an `irb` terminal to experiment
+- `cities` would contain the original cities and the new cities as one combined list
+    - Not quite, perhaps use an `irb` terminal to experiment
+- We would overwrite `cities` with our new array of European cities
+    - That's right! We can re-use variables and write new data into them
+- This is an illegal operation and we would get an error message
+    - Not quite, perhaps use an `irb` terminal to experiment
+{: .choose_best #cities points="10" answer="3" }
+
+----
+
 ### Methods
 
 Now let's familiarize ourselves with some of `Array`'s methods.
