@@ -79,11 +79,13 @@ Here's a real example:
 ```
 
 <div class="experiment" markdown="1">
-  You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){:target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
+  You try it. [Click here to visit repl.it](https://replit.com/@raghubetina/hello-world){target="_blank"}, a service that offers instant programming sandboxes within your browser. Click the "Fork" button in the top right and sign in with your Github account. "Forking" a REPL will copy the REPL to your own account and allow you to edit it.
 
   ![](assets/nouns-verbs-and-grammar/replit-fork-hd.png)
 
-  In the black window that appears on the right side under the `>_ Console` tab, type:
+  In the black window that appears on the right side under the `>_ Console` tab[^the_terminal], type:
+
+  [^the_terminal]: This is a "command-line" or "terminal". You enter text commands here by typing them out *exactly*, and the computer will execute them, similar to how you click on a program with your mouse to run it. You've already seen another terminal in your GitPod workspaces for running commands like `bin/server` and `rails grade`.
 
   ```bash
   irb
@@ -96,33 +98,23 @@ Here's a real example:
   ![](assets/nouns-verbs-and-grammar/irb-new.png)
 </div>
 
-<aside markdown="1">
-The `>_ Console` tab is a "command-line" or "terminal". You enter text commands here by typing them out *exactly*, and the computer will execute them, similar to how you click on a program with your mouse to run it. You've already seen another terminal in your Gitpod workspaces for running commands like `bin/server` and `rails grade`.
-</aside>
+If all went well, you should have seen `=> "HELLO, WORLD!"` output by the command. Yay[^tradition]! What just happened?
 
-If all went well, you should have seen `=> "HELLO, WORLD!"` output by the command. Yay! What just happened?
-
-<aside markdown="1">
-It is [a time-honored tradition](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program){:target="_blank"} that the very first thing a programmer does in a new language is print out "Hello, World!" Congratulations — you're now one of us 🙌🏾
-</aside>
+[^tradition]: It is [a time-honored tradition](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program){target="_blank"} that the very first thing a programmer does in a new language is print out "Hello, World!" Congratulations — you're now one of us 🙌🏾
 
 The primary way to write an expression in Ruby is: `object.method`. We ask the _thing_, or noun, on the left side of the dot to perform the _action_, or the verb, on the right side of the dot.
 
 The computer then evaluates that expression and **returns** a new piece of data in its place (just like with the calculator).
 
-In this case, we asked `"Hello, world!"`, which is a string (Ruby's name for a piece of text), to `upcase` itself, which it (very) happily does, and we're left with `"HELLO, WORLD!"` at the end of the day.
+In this case, we asked `"Hello, world!"`, which is a string (Ruby's name for a piece of text[^string_name]), to `upcase` itself, which it (very) happily does, and we're left with `"HELLO, WORLD!"` at the end of the day.
 
-<aside markdown="1">
-The name "string" is used in pretty much every programming language for the datatype that holds a piece of text, and refers to a string of _characters_; a holdover from back when we used to have to worry about conserving the computer's physical storage space and had a separate datatype for an individual character. Now we usually don't have to worry about storage space anymore, but the name "string" stuck with us.
-</aside>
+[^string_name]: The name "string" is used in pretty much every programming language for the datatype that holds a piece of text, and refers to a string of _characters_; a holdover from back when we used to have to worry about conserving the computer's physical storage space and had a separate datatype for an individual character. Now we usually don't have to worry about storage space anymore, but the name "string" stuck with us.
 
 ### Every class has different methods
 
-Different **classes** (string being one) can perform different **methods**. Here are a few expressions to try out. Type each one into IRB.
+Different **classes**[^everything_is_object] (string being one) can perform different **methods**. Here are a few expressions to try out. Type each one into IRB.
 
-<aside markdown="1">
-Almost everything in Ruby is an **object**. That's the idea behind [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming){:target="_blank"}. Text like `"Hello, world!"` is an object — specifically a **string class object**.
-</aside>
+[^everything_is_object]: Almost everything in Ruby is an **object**. That's the idea behind [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming){target="_blank"}. Text like `"Hello, world!"` is an object — specifically a **string class object**.
 
 ```ruby
 7.odd?
@@ -133,7 +125,7 @@ Almost everything in Ruby is an **object**. That's the idea behind [object-orien
 ```
 
 <div class="experiment" markdown="1">
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/different-classes-have-different-methods){target="_blank"}
 </div>
 
 What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try it:
@@ -144,7 +136,7 @@ What do you expect will happen if we ask `"Mississippi"` if it is `even?`? Try i
 
 ### Error Messages
 
-#### _Do_, or do not. There is no  _read_. 
+#### _Do_, or do not. There is no  _read_. {-}
 
 When you saw the 🧪 exercise prompt, were you typing out every expression in a REPL? 
 
@@ -154,7 +146,7 @@ In fact, not only should you be typing the things I ask you to type, but you sho
 
 _Experiment!_
 
-#### Read. The. Error. Message. (A.k.a., "RTEM") 
+#### Read. The. Error. Message. (A.k.a., "RTEM") {-}
 
 Aha! If you were typing out every expression and running it, then
 
@@ -176,7 +168,7 @@ might mean?
 
 In this case, it is saying: "Hey, friend — there's no method called `even?` for `"Mississippi"`, which is a `String`. Sorry." Fair enough, that makes sense.
 
-#### The bottom line 
+#### The bottom line {-}
 
 The bottom line is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Then, the syntax itself is simple — `my_object.cool_method`.
 
@@ -189,7 +181,7 @@ Alright, so the **primary syntax** in Ruby is straightforward — `object.method
 ```
 
 <div class="experiment" markdown="1">
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/arguments-are-inputs){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/arguments-are-inputs){target="_blank"}
 </div>
 
 `gsub` is short for "globally substitute", because it will replace _all_ occurrences of one _substring_ with another _substring_.
@@ -233,7 +225,7 @@ Can you spot the difference? **Don't put a space between the method and the open
 It's a very easy mistake to make, so I just wanted to warn you early on so that you can begin developing good muscle memory. Try the bad version in your sandbox and see what the error message looks like:
 
 <div class="experiment" markdown="1">
-  [Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){:target="_blank"}
+  [Click here for a REPL to try it.](https://replit.com/@raghubetina/bad-argument-syntax){target="_blank"}
 </div>
 
 ### Seriously: please read the error message
@@ -260,7 +252,7 @@ Here's a debate that will rage until the end of time: what do you call this symb
 
 Is it a number sign? Is it a pound sign? Is it a hashtag? Is it a waffle?
 
-In this text, I'm going to refer to it as an [octothorpe](https://en.wiktionary.org/wiki/octothorpe){:target="_blank"}.
+In this text, I'm going to refer to it as an [octothorpe](https://en.wiktionary.org/wiki/octothorpe){target="_blank"}.
 
 The octothorpe is used quite a bit in Ruby. You can see one important way in the example above, where I said `# bad!` after some offending code. That is known as a "code comment". The Ruby interpreter, when it sees the `#`, will ignore it and everything that comes after it; allowing us to leave notes to ourselves and to each other. **Use comments liberally.**
 
@@ -289,7 +281,7 @@ However, so far we haven't been doing much with the **return value** of each exp
 ```
 
 <div class="experiment" markdown="1">
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-drop-on-the-ground){:target="_blank"} Did it work? Did you copy-paste and forget to remove the leading `#` symbol..?
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-drop-on-the-ground){target="_blank"} Did it work? Did you copy-paste and forget to remove the leading `#` symbol..?
 </div>
 
 We're not really able to make any forward progress when we only perform one operation at a time. Programs get interesting only when we start to take the return value of one expression and feed it into the _next_ method. That's how we craft our own novel, useful applications from the basic building blocks of Ruby.
@@ -304,12 +296,12 @@ s
 ```
 
 <div class="experiment" markdown="1">
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){:target="_blank"} (Keep this REPL open when you are done, we'll use it in the next few steps.)
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/variables-are-boxes){target="_blank"} (Keep this REPL open when you are done, we'll use it in the next few steps.)
 </div>
 
 This creates a box, labels it `s`, and stores the string `"HELLO WORLD!"` in it.
 
-#### The variable assignment operator 
+#### The variable assignment operator {-}
 
 The single equals sign, `=`, is called the **variable assignment operator**.
 
@@ -335,7 +327,7 @@ out loud, I say "the string hello world dot upcase _is assigned_ to the variable
 
 Great! Now we're making progress.
 
-#### Storing the next return value 
+#### Storing the next return value {-}
 
 What would you expect to happen if you add a third line so that your program reads:
 
@@ -372,7 +364,7 @@ u
 
 Fortunately, we can create as many variables as we want.
 
-#### Updating variables 
+#### Updating variables {-}
 
 It can get old coming up with different variable names for every step of the program. Instead, we usually want to re-use existing variables. We can throw away what we have in the box and put in something entirely different with the same assignment operator, `=`. Type this:
 
@@ -411,7 +403,7 @@ counter = counter + 1
 
 When we're keeping track of e.g. how many times we've printed something out on the screen. We are taking the original value of `counter`, adding `1` to it, and then replacing the contents of `counter` with that new total.
 
-#### Variable syntax 
+#### Variable syntax {-}
 
 You may have noticed that the variable assignment syntax is a departure from the primary syntax of `object.method`. But we do it all day long, so we need to know it just as well. Our programs will end up looking like this (these are made-up method names, so this code won't work):
 
@@ -428,7 +420,7 @@ storage_box_3 = storage_box_2.third_method.maybe_even("another", "one")
 
 Most programs are just a long succession of statements where we do some work with `object.method` and store the result in some variable, then we do some more work on that variable and store the result in yet another variable, and a hundred steps later we've produced our final result and we display that to our user.
 
-#### Variable naming rules 
+#### Variable naming rules {-}
 
 When you are choosing your variable names, there are some rules:
 

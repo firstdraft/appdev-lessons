@@ -20,19 +20,17 @@ s = String.new
 
 This will, however, just give us back an empty string `""`.
 
-#### Make the invisible visible in Gitpod 
-
-In the technical setup, we saw [how we can start a workspace with Gitpod](https://learn.firstdraft.com/lessons/28#getting-started-with-gitpod){:target="_blank"}. Let's refresh here and actually make use of a Gitpod workspace to write some code in.
+#### Make the invisible visible in GitPod {-}
 
 <div class="experiment" markdown="1">
 
-   Let's practice **making the invisible visible**. We will spend a moment getting a Gitpod workspace set up, and then running Ruby programs from the terminal there. The steps are:
+   Let's practice **making the invisible visible**. We will spend a moment getting a GitPod workspace set up, and then running Ruby programs from the terminal there. The steps are:
 
-   1. If you didn't already, sign up for a [Gitpod.io](https://www.gitpod.io){:target="_blank"} account. It will ask you to sign in using your GitHub account.
+   1. Sign up for a [Gitpod.io](https://www.gitpod.io){target="_blank"} account. It will ask you to sign in using your GitHub account.
 
-   1. We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** or **repo** (i.e., a folder with some code in it). For example, here is a repository:
+   1. We will create a **workspace** for each project that we work on. Each workspace is based on a GitHub **repository** (i.e., a folder with some code in it). For example, here is a repository:
    
-         [https://github.com/appdev-projects/helloruby](https://github.com/appdev-projects/helloruby){:target="_blank"}
+         [https://github.com/appdev-projects/helloruby](https://github.com/appdev-projects/helloruby){target="_blank"}
 
    1. To create a Gitpod workspace based on a repo, in the address bar of your browser enter **https\://gitpod.io/#** and then the URL of the repo. For example,
 
@@ -48,53 +46,51 @@ In the technical setup, we saw [how we can start a workspace with Gitpod](https:
 
    To get more comfortable with these steps, create another file called `invisible_to_visible.rb`, and fill it with this code:
 
-```ruby
-# One-by-one, uncomment the p statements 
-# below and rerun the code
-s = String.new
-# p s 
-s = "Hello, world!"
-# p s
-s = s.upcase
-# p s
-```
+   ```ruby
+   # One-by-one, uncomment the p statements 
+   # below and rerun the code
+   s = String.new
+   # p s 
+   s = "Hello, world!"
+   # p s
+   s = s.upcase
+   # p s
+   ```
 
    Once the file is saved, remove the leading `#` from the `p`rint statements one by one, and run the code each time with `ruby invisible_to_visible.rb` at the terminal prompt. You don't need to type it out every time, you can just press the <kbd>Up ↑</kbd> arrow key when your cursor is at the terminal `$`-sign prompt to cycle to the previous entry.
 
 </div>
 
-When you are done experimenting, feel free to close the Gitpod project window. We will open another project momentarily and only one Gitpod tab will limit confusion.
+When you are done experimenting, feel free to close the GitPod project window. We will open another project momentarily and only one GitPod tab will limit confusion.
 
-#### ASCII Codes 
+#### ASCII Codes {-}
 
 With the `String.new` approach, we would have to add each character to our variable `s` one by one. One way to do so is by using the `.concat` method, which accepts a number as an argument, interprets it as an ASCII code, translates it into a single character, and adds it on to the end of the original string.
 
-What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1`s); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){:target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers. The codes are as follows:
+What's an ASCII code? At the hardware level, computers only store integers (specifically, in _binary_ form — using only `0`s and `1`s); so all other datatypes need to be encoded somehow as a number. [ASCII](https://en.wikipedia.org/wiki/ASCII){target="_blank"}, or American Standard Code for Information Interchange, was one scheme that was developed in the early days of computing to store English characters as integers[^unicode]. The codes are as follows:
 
-<aside markdown="1">
-Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){:target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
-</aside>
+[^unicode]: Nowadays we use much more sophisticated encoding schemes such as [Unicode](https://en.wikipedia.org/wiki/Unicode){target="_blank"} that supports glyphs from many more languages, and even emojis 🙌🏾 Fortunately, Ruby handles most of this low-level stuff for us behind the scenes, so we never really have to worry about it anymore.
 
-
-**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**
-:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
-32|(space)|48|`0`|64|`@`|80|`P`|96|<code>`</code>|112|`p`
-33|`!`|49|`1`|65|`A`|81|`Q`|97|`a`|113|`q`
-34|`"`|50|`2`|66|`B`|82|`R`|98|`b`|114|`r`
-35|`#`|51|`3`|67|`C`|83|`S`|99|`c`|115|`s`
-36|`$`|52|`4`|68|`D`|84|`T`|100|`d`|116|`t`
-37|`%`|53|`5`|69|`E`|85|`U`|101|`e`|117|`u`
-38|`&`|54|`6`|70|`F`|86|`V`|102|`f`|118|`v`
-39|`'`|55|`7`|71|`G`|87|`W`|103|`g`|119|`w`
-40|`(`|56|`8`|72|`H`|88|`X`|104|`h`|120|`x`
-41|`)`|57|`9`|73|`I`|89|`Y`|105|`i`|121|`y`
-42|`*`|58|`:`|74|`J`|90|`Z`|106|`j`|122|`z`
-43|`+`|59|`;`|75|`K`|91|`[`|107|`k`|123|`{`
-44|`,`|60|`<`|76|`L`|92|`\`|108|`l`|124|`|`
-45|`-`|61|`=`|77|`M`|93|`]`|109|`m`|125|`}`
-46|`.`|62|`>`|78|`N`|94|`^`|110|`n`|126|`~`
-47|`/`|63|`?`|79|`O`|95|`_`|111|`o`|
-{: .bleed-full }
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:600px; overflow-x: scroll; ">
+   **ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**|**ASCII Code**|**Character**
+   :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
+   32|(space)|48|`0`|64|`@`|80|`P`|96|<code>\`</code>|112|`p`
+   33|`!`|49|`1`|65|`A`|81|`Q`|97|`a`|113|`q`
+   34|`"`|50|`2`|66|`B`|82|`R`|98|`b`|114|`r`
+   35|`#`|51|`3`|67|`C`|83|`S`|99|`c`|115|`s`
+   36|`$`|52|`4`|68|`D`|84|`T`|100|`d`|116|`t`
+   37|`%`|53|`5`|69|`E`|85|`U`|101|`e`|117|`u`
+   38|`&`|54|`6`|70|`F`|86|`V`|102|`f`|118|`v`
+   39|`'`|55|`7`|71|`G`|87|`W`|103|`g`|119|`w`
+   40|`(`|56|`8`|72|`H`|88|`X`|104|`h`|120|`x`
+   41|`)`|57|`9`|73|`I`|89|`Y`|105|`i`|121|`y`
+   42|`*`|58|`:`|74|`J`|90|`Z`|106|`j`|122|`z`
+   43|`+`|59|`;`|75|`K`|91|`[`|107|`k`|123|`{`
+   44|`,`|60|`<`|76|`L`|92|`\`|108|`l`|124|`|`
+   45|`-`|61|`=`|77|`M`|93|`]`|109|`m`|125|`}`
+   46|`.`|62|`>`|78|`N`|94|`^`|110|`n`|126|`~`
+   47|`/`|63|`?`|79|`O`|95|`_`|111|`o`|
+</div>
 
 Given those ASCII codes, we can now build up a new string from scratch like so:
 
@@ -131,28 +127,22 @@ p my_string # => "Hello, world!"
 ```
 
 <div class="experiment" markdown="1">
-   This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){:target="_blank"}
+   This is just a quick sandbox, so [click here for a REPL to try it.](https://repl.it/@raghubetina/creating-objects-with-new){target="_blank"}
 </div>
 
-#### Start the Gitpod Project
+#### Start the GitPod Project {- #start-gitpod-project}
 
 Once you've played with the REPL, it's time to move into the graded project environment.
 
-In our previous steps, we opened a Gitpod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on Gitpod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button on Canvas, as described below.
-
-If you need a full refresher on working with gitpod, see the [technical setup instructions](https://learn.firstdraft.com/lessons/29){:target="_blank"}.
+In our [previous steps][Make the invisible visible in GitPod], we opened a GitPod workspace via **https\://gitpod.io/#[SOME REPO]**. But, for most projects, you will be "forking" an existing GitHub repo to your account, then opening it on GitPod, so that you can save changes and keep your own copy around for future reference. We prepared these steps, so you just need to click on the **Load assignment** button when you see it.
 
 <div class="proj" markdown="1">
 
-   **Note: these steps go for opening any Gitpod project for the Ruby lessons, just change the project and file names.**
+   **Note: these steps go for opening any GitPod project, just change the project and file names.**
 
-   Open the Gitpod `String` project on Canvas that follows this reading and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
+   Open the GitPod `String` project for this chapter and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
 
-   <!-- 1. LTI{Load assignment}(https://github.com/appdev-projects/ruby-project-string-1)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(100)[string_project] -->
-
-   1. On Canvas, open the project assignment that follows this reading. Click on the "Load in new window" button, then click on the green button to "Create new workspace on Gitpod", which will open a new project for you to work on! **Keep this Gitpod tab open, there may be more than one exercise per chapter**. If you close the Gitpod window, you can always click the Canvas link again, but this time click "Find existing workspace in Gitpod Dashboard".
-
-   <!-- ![](assets/string/canvas-gitpod-start-project.png) -->
+   1. LTI{Load assignment}(https://github.com/bpurinton-appdev/string-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[string_project]
 
    1. Open the `concat.rb` file in the editor window.
 
@@ -174,7 +164,7 @@ If you need a full refresher on working with gitpod, see the [technical setup in
 
 </div>
 
-#### String literals 
+#### String literals {-}
 
 Done with `concat.rb`? What a pain! Now that we've shown that, under the hood, even creating a string follows the syntax of `noun.verb` — let's never do it again. From now on, we'll use the shortcut of creating string "**literals**" in place by typing the characters we want within quotes: `"Thank goodness!"`
 
@@ -182,13 +172,13 @@ These kinds of exceptions to the regular grammar in order to make life easier ar
 
 ### Methods
 
-Next, let's familiarize ourselves with some of the `String` class's methods. For each method below, there is a an `.rb` exercise in the Gitpod project. So keep that project window open and work through it with `rails grade` as you go!
+Next, let's familiarize ourselves with some of the `String` class's methods. For each method below, there is a an `.rb` exercise in the GitPod project. So keep that project window open and work through it with `rails grade` as you go!
 
 For each method below, we've provided some REPLs. They are there for you to experiment with the code, click "▶ Run", or use the `irb` terminal and see how the methods work. Keep these methods in mind when working on the assignments in Gitpod.
 
-#### String addition, a.k.a. + 
+#### String addition, a.k.a. + {-}
 
-We've already met the `.concat` method. `.concat` can accept an integer as an argument, which it interprets as an ASCII code, translates into a single character, and adds to the original string:
+We've already met the `.concat` method. `.concat` can accept an integer as an argument, which it interprets as an [ASCII code][ASCII Codes], translates into a single character, and adds to the original string:
 
 ```ruby
 "hi".concat(33) # => "hi!"
@@ -200,11 +190,9 @@ We've already met the `.concat` method. `.concat` can accept an integer as an ar
 "hi".concat(" there") # => "hi there"
 ```
 
-There's also a shorthand for `.concat`: `.+`. That may look a little funny, but it's nothing special, really; it's just a method with a very short (one letter long) name:
+There's also a shorthand for `.concat`: `.+`.[^concat_lie] That may look a little funny, but it's nothing special, really; it's just a method with a very short (one letter long) name:
 
-<aside markdown="1">
-`.concat` as a shorthand for `.+` is not _quite_ true. The `+` method is not just an alias for `concat` — they do slightly different things. But they're close enough, for our purposes.
-</aside>
+[^concat_lie]: This is not _quite_ true. The `+` method is not just an alias for `concat` — they do slightly different things. But they're close enough, for our purposes.
 
 ```ruby
 "hi".+(" there") # => "hi there"
@@ -216,13 +204,13 @@ But here's where it gets interesting; Ruby has another bit of nice _syntactic su
 "hi" +(" there") # => "hi there"
 ```
 
-Wild! And, as we learned earlier when we were introduced to the `p` method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:
+Wild! And, as we learned earlier when we were [introduced][Make the invisible visible] to the `p` method, Ruby also allows you to omit the parentheses around arguments if you want to; so this can be further shortened to:
 
 ```ruby
 "hi" + " there" # => "hi there"
 ```
 
-Now this is really starting to look familiar! It's a lot like the calculator language, actually. Developer happiness, indeed.
+Now this is really starting to look familiar! It's a lot like the calculator language, actually. [Developer happiness][Developer happiness], indeed.
 
 ```ruby
 a = "Hello"
@@ -232,18 +220,18 @@ p a + b # => "HelloWorld"        # You can add strings together
 
 <div class="experiment" markdown="1">
 
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/concatenation){target="_blank"}
 </div>
 
 
 <div class="proj" markdown="1">
 
-   Return to the Gitpod `String` project and work through `addition.rb`
+   Return to the GitPod `String` project and work through `addition.rb`
 </div>
 
-#### String multiplication, a.k.a * 
+#### String multiplication, a.k.a * {-}
 
-`String`s can be multiplied by numbers using the `*` method:
+`String`s can be multiplied by numbers using the `*` method[^more_sugar]:
 
 ```ruby
 "Ya" * 5 # => "YaYaYaYaYa"
@@ -251,16 +239,14 @@ p a + b # => "HelloWorld"        # You can add strings together
 
 This sort of makes sense, if you think about multiplication as being repeated addition.
 
-<aside markdown="1">
-More syntactic sugar here, like with the `+` method above; you can say `"Ya" * 5` rather than `"Ya".*(5)`.
-</aside>
+[^more_sugar]: More syntactic sugar here, like with the `+` method above; you can say `"Ya" * 5` rather than `"Ya".*(5)`.
 
 ```ruby
 p "Hello" * 3
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/multiplication){target="_blank"}
 </div>
 
 The order matters, though. See what happens when you try:
@@ -269,19 +255,19 @@ The order matters, though. See what happens when you try:
 3 * "Hello"
 ```
 
-Read The Error Message (RTEM)!
+Read The Error Message ([RTEM][Seriously: please read the error message])!
 
 Does this make sense? `"Hello" * 3` is calling the `String` method `*` with an argument of `3`, which kinda makes sense (add `"Hello"` to itself `3` times).
 
 But `3 * "Hello"` is calling the `Integer` method `*` with an argument of `"Hello"`, which doesn't make much sense (what would it mean to add `3` to itself `"Hello"` times?).
 
-Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, the bottom line is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
+Thus, we can see why the `String` version of `*` and the `Integer` version of `*` both need an integer argument. Again, [the bottom line][The bottom line] is — at all times as you are writing Ruby, you should be thinking: "What **class** is this object? What **methods** does _this_ class have available?" Even when there's some syntactic sugar making things _look_ unconventional, don't forget your basics! It's still `noun.verb` under the hood.
 
 <div class="proj" markdown="1">
-   Return to the Gitpod `String` project and work through `multiplication.rb`
+   Return to the GitPod `String` project and work through `multiplication.rb`
 </div>
 
-#### upcase 
+#### upcase {-}
 
 The upcase method returns a copy of the `String` with all lowercase letters replaced with their uppercase counterparts.
 
@@ -290,10 +276,10 @@ p "hello".upcase
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/upcase){target="_blank"}
 </div>
 
-#### downcase 
+#### downcase {-}
 
 The downcase method returns a copy of the `String` with all uppercase letters replaced with their lowercase counterparts.
 
@@ -302,10 +288,10 @@ p "I'M NOT YELLING AT YOU".downcase
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/downcase){target="_blank"}
 </div>
 
-#### swapcase 
+#### swapcase {-}
 
 The swapcase method returns a copy of the `String` with all uppercase letters replaced with their lowercase counterparts, _and_ vice versa.
 
@@ -314,10 +300,34 @@ p "FaMiLy".swapcase # => "fAmIlY
 ```
 
 <div class="proj" markdown="1">
-   Return to the Gitpod `String` project and work through `case.rb`
+   Return to the GitPod `String` project and work through `case.rb`
 </div>
 
-#### chomp 
+#### reverse {-}
+
+The reverse method returns a new `String` with the characters from the `String` in reverse order.
+
+```ruby
+p "I can speak in backwords words".reverse
+```
+
+<div class="experiment" markdown="1">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){target="_blank"}
+</div>
+
+#### length {-}
+
+The length method  returns the number of characters (as an `Integer`) that a `String` has.
+
+```ruby
+p "Supercalifragilisticexpialidocious".length
+```
+
+<div class="experiment" markdown="1">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/length){target="_blank"}
+</div>
+
+#### chomp {-}
 
 The `chomp` method is mostly used to remove the `"\n"` (newline) character from the end of a string, if it is present:
 
@@ -336,14 +346,14 @@ This seemingly strange task is very common due to the way that getting user inpu
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/chomp){target="_blank"}
 </div>
 
 <div class="proj" markdown="1">
-   Return to the Gitpod `String` project and work through `chomp.rb`
+   Return to the GitPod `String` project and work through `chomp.rb`
 </div>
 
-#### gsub 
+#### gsub {-}
 
 The `gsub` method returns a copy of the `String` it was called on with all occurrences of the first argument substituted for the second argument.
 
@@ -353,14 +363,49 @@ p a.gsub("ll", "ww")  # => "Hewwo"
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/gsub){target="_blank"}
+</div>
+
+##### Advanced gsub techniques {-}
+
+`gsub` also supports accepting a _regular expression_ as its first argument. We won't get into regular expressions in detail right now, but all languages (C, C++, Python, etc.) include a way to write regular expressions and they are a very powerful way to check whether input strings match certain patterns.
+
+In Ruby, we work with regular expressions the way we work with everything else — via a class, `Regexp`. We create `Regexp` _literals_ with forward slashes (like we use quotes to create `String` literals), and then put the pattern that we're trying to match between the slashes.
+
+For now, we're just going to copy-paste a few simple regexes[^regexone] that come in handy with `gsub`, in particular:
+
+[^regexone]: If your project requires scanning text for patterns, then [RegexOne](https://regexone.com/){target="_blank"} is a good resource for learning more. [Rubular](https://rubular.com/){target="_blank"} is handy for quickly testing your regular expressions against some example strings.
+
+ - `/\s+/` matches all whitespace, so we can use it with `gsub` to _remove_ all whitespace:
+
+    ```ruby
+    "Hello there,\nfriend".gsub(/\s+/, "") # => "Hellothere,friend"
+    ```
+ - `/[^0-9]/` matches everything _except_ numeric digits, so we can use it with `gsub` to _remove_ everything except digits:
+
+    ```ruby
+    "March 29th!".gsub(/[^0-9]/, "") # => "29"
+    ```
+ - `/[^a-z]/i` matches everything _except_ letters (case-insensitively using the `i` mode after the `//` slashes). So we can use it with `gsub` to _remove_ everything except letters:
+
+    ```ruby
+    "March 29th!".gsub(/[^a-z]/i, "") # => "Marchth"
+    ```
+ - `/[^a-z0-9\s]/i` matches everything _except_ letters, digits, and whitespace, so we can use it to remove everything except for those:
+
+    ```ruby
+    "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
+    ```
+
+<div class="proj" markdown="1">
+   Return to the GitPod `String` project and work through `gsub.rb`
 </div>
 
 <div class="proj" markdown="1">
-   Return to the Gitpod `String` project and work through `gsub.rb`
+   Return to the GitPod `String` project and work through `regex.rb`
 </div>
 
-#### to_i 
+#### to_i {-}
 
 Sometimes you have a string that contains a number, usually input from a user, and want to do math on it. `to_i` will attempt to convert a `String` object into an `Integer` object.
 
@@ -369,10 +414,10 @@ p "8".to_i
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/toi){target="_blank"}
 </div>
 
-#### strip 
+#### strip {-}
 
 `strip` removes all leading and trailing whitespace.
 
@@ -381,10 +426,10 @@ p "   This has a lot of space on the outside     ".strip
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/strip){target="_blank"}
 </div>
 
-#### capitalize 
+#### capitalize {-}
 
 capitalize returns a `String` with the first character converted to uppercase and the remainder to lowercase.
 
@@ -393,11 +438,25 @@ p "beginning".capitalize
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/capitalize){target="_blank"}
 </div>
 
 <div class="proj" markdown="1">
-   Return to the Gitpod `String` project and work through `strip.rb`
+   Return to the GitPod `String` project and work through `strip.rb`
+</div>
+
+#### include? {-}
+
+`include?` takes a String argument and returns `true` or `false` if the argument exists in the String that `include?` is called on.
+
+```ruby
+p "Happy Days".include?("H")
+
+p "Happy Days".include?("Z")
+```
+
+<div class="experiment" markdown="1">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/stringinclude){target="_blank"}
 </div>
 
 ### More on adding strings together
@@ -410,7 +469,7 @@ message = "Your lucky number for today is " + number + "."
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){target="_blank"}
 </div>
 
 You'll see that Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn't feel comfortable with that.
@@ -450,12 +509,12 @@ p "Hello, " + their_name + "!"
 ```
 
 <div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){:target="_blank"}
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/Hello-gets){target="_blank"}
 </div>
 
 Great! Our first user input. However, you'll notice a couple of things. First of all, there's a `\n` sneaking into the input. `\n` represents a newline character, and it's in there because of the <kbd>return</kbd> that is pressed to submit the input.
 
-#### puts 
+#### puts {-}
 
 If you want to see the newline in action, we can use a different printing method called `Kernel.puts` (pronounced "put S", short for "put string"). `puts` is actually the printing method that is used most when crafting the final output of command-line programs; as opposed to `Kernel.p`, which is used most for _making the invisible visible_ while debugging. Try switching
 
@@ -475,9 +534,9 @@ You can see that the quotes around the string are removed, which makes sense if 
 
 Most of the time, we'll stick with `p`, since it provides more details while debugging; but it's good to know that `puts` exists.
 
-#### gets.chomp 
+#### gets.chomp {-}
 
-We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, the handy `.chomp` method does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
+We almost never want to keep the `\n` that results from the <kbd>return</kbd> keypress that submits the user's input. Fortunately, [the handy `.chomp` method][chomp] does exactly what we need — if there's a `\n` at the end of a string, it will remove it; if there isn't, it does nothing. So, in practice, when we call `gets` we almost always tack a `.chomp` on to it immediately. Try modifying the program to:
 
 ```ruby
 their_name = gets.chomp
@@ -486,7 +545,7 @@ their_name = gets.chomp
 and see how it's different.
 
 <div class="proj" markdown="1">
-   Return to the Gitpod `String` project and work through `gets.rb`
+   Return to the GitPod `String` project and work through `gets.rb`
 </div>
 
 ### Conclusion

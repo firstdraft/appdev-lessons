@@ -324,6 +324,6 @@ end
 
 After all of that, we have an HTML page that does what we could have done quickly if we made a file called `rock.html` in the `public/` folder. But we can do something way better with this new system. 
 
-<span style="font-size: x-large">[Proceed to the next part of the lesson](https://learn.firstdraft.com/lessons/24){:target="_blank"}</span>
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
 
 ----

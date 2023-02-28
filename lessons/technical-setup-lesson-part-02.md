@@ -4,7 +4,7 @@ The assignments in this course will mostly follow the workflow outlined below. M
 
 ## First time set up
 
-Once you do these steps once, you can jump right ahead to the [daily workflow below](https://learn.firstdraft.com/lessons/29#daily-workflow){:target="_blank"} if you need a referesher in the daily workflow of working on a Gitpod assignment and gettng feedback.
+Once you do these steps once, you can jump right ahead to the [daily workflow below](#daily-workflow) if you need a referesher in the daily workflow of working on a Gitpod assignment and gettng feedback.
 
 ### Join GitHub
 
@@ -100,7 +100,7 @@ The general steps for working on _any_ Gitpod project for this course are:
 2. Navigate to your live application preview.
 3. As you work, remember to navigate to **/git** and *Always Be Committing (ABC)*. See more details on git [here](https://learn.firstdraft.com/lessons/30#using-git-in-your-projects){:target="_blank"}.
 4. Organize your workspace tabs.
-5. Run `rails grade` as often as you like to see how you are doing, but make sure you *test your app manually first* to make sure it matches the target's behavior. See more details in the [section below](https://learn.firstdraft.com/lessons/29#getting-automated-feedback-with-rails-grade){:target="_blank"}.
+5. Run `rails grade` as often as you like to see how you are doing, but make sure you *test your app manually first* to make sure it matches the target's behavior. See more details in the [section below](#getting-automated-feedback-with-rails-grade){:target="_blank"}.
 
 If some of those steps seem mysterious at the moment, read on! All will be explained shortly. You will get very comfortable with the steps while working on the several projects for the course.
 
