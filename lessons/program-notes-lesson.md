@@ -157,3 +157,7 @@ The REPLs are good for experimentation and getting a feel for how things work. B
 ### Onwards
 
 Okay! With that housekeeping out of the way, let's move on and learn more about the Fundamental Classes of Ruby, starting with `String` in the next chapter.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
