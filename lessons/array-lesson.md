@@ -130,7 +130,7 @@ A couple of other things for you to experiment with:
 - What is the **negative** integer index of `5` in the array `["zebra", 6.2, 5, "bear", "salmon"]`?
 - -3
     - Yes! We can count backwards through a list of items starting with -1 (the last item)
-{: .free_text #index points="10" answer="1" }
+{: .free_text #index_negative points="10" answer="1" }
 
 ----
 
@@ -233,7 +233,7 @@ p cities.index("SF")
     - Nope, try to test the code in a terminal
 - A `nil`, or empty, result
     - Yes
-{: .choose_best #index_first points="10" answer="4" }
+{: .choose_best #index_none points="10" answer="4" }
 
 ----
 
