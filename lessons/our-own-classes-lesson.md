@@ -91,6 +91,8 @@ class Person
 end
 ```
 
+**BENP: is this the first time we've defined a function?**
+
 Now, in addition to being able to store data (first and last names), I can ask any `Person` to compute its full name:
 
 ```ruby
