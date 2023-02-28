@@ -75,7 +75,7 @@ If your project requires scanning text for patterns, then [RegexOne](https://reg
     "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
     ```
 
-#### More on adding strings together
+#### String interpolation
 
 We spend a lot of time composing strings of output for our users, so let's see another example. Try this:
 
