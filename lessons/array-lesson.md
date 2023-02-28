@@ -203,10 +203,39 @@ p cities.index("SF")
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-index){:target="_blank"}
 </div>
 
-Some further things for you to experiment with:
+----
 
- - What will `.index` return if the element is present in the array more than once?
- - What will `.index` return if the element is not present in the array at all?
+#### Quiz Question
+
+- What will `.index` return if the element is present in the array more than once (e.g., `[0, 1, 3, 3, 3].index(3)`)?
+- The index of all the elements
+    - Nope, try to test the code in a terminal
+- The index of the first appearance of the element
+    - Yes!
+- An error message
+    - Nope, try to test the code in a terminal    
+- The index of the last appearance of the element
+    - Nope, try to test the code in a terminal
+- A `nil`, or empty, result
+    - Nope, try to test the code in a terminal
+{: .choose_best #index_first points="10" answer="2" }
+
+----
+
+#### Quiz Question
+
+- What will `.index` return if the element is not present in the array at all (e.g., `[0, 1, 3, 3, 3].index(2)`)?
+- The index of all the elements
+    - Nope, try to test the code in a terminal
+- An error message
+    - Nope, try to test the code in a terminal
+- The index of the last appearance of the element
+    - Nope, try to test the code in a terminal
+- A `nil`, or empty, result
+    - Yes
+{: .choose_best #index_first points="10" answer="4" }
+
+----
 
 #### String#split 
 
