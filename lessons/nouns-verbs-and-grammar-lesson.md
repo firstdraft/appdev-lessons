@@ -266,7 +266,7 @@ Alright, so the **primary syntax** in Ruby is straightforward — `object.method
 In order to do its job, the `gsub` method needs to know what substring to get rid of and what to replace it with. So we give it inputs, or **arguments**, which must come in parentheses _immediately_ following the method. If the method takes multiple arguments, as `gsub` does, then they are separated by commas.
 
 <aside markdown="1">
-We often use the terms **parameters** and **arguments** interchangably, but there [is a slight difference](https://www.alchemists.io/articles/ruby_method_parameters_and_arguments/){:target="_blank"}.
+We often use the terms **parameters** and **arguments** interchangably, so look out for both of them. Although, technically there [is a slight difference](https://www.alchemists.io/articles/ruby_method_parameters_and_arguments/){:target="_blank"}.
 </aside>
 
 <div class="experiment" markdown="1">
