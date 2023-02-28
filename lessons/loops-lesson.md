@@ -4,6 +4,8 @@
 
 Consider the following program, which utilizes an `if` statement:
 
+**BENP: note confusion about instantiation: https://piazza.com/class/ldj532ul5a0621/post/148**
+
 ```ruby
 numbers = Array.new
 
