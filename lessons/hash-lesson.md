@@ -316,6 +316,8 @@ h.key(500)   #=> nil
   Finally, in the Gitpod `Hash` project complete `list.rb`
 </div>
 
+**BENP: need a looping with hashes exercise: https://piazza.com/class/ldj532ul5a0621/post/263, this might help: https://piazza.com/class/ldj532ul5a0621/post/267**
+
 ### Conclusion
 
 `Array`s are very useful for storing a list of things that are all basically the same, and for lists that are of unknown length, and so it's nice for Ruby to automatically number them for you.

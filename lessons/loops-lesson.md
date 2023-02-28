@@ -177,6 +177,8 @@ In the REPL above, replace `10.times` with each of the following and play around
 
 **BENP: need exercise for range and step: https://piazza.com/class/ldj532ul5a0621/post/235**
 
+**BENP: might need letter_count hint to use times (not each): https://piazza.com/class/ldj532ul5a0621/post/266**
+
 <div class="proj" markdown="1">
 
   Open the Gitpod loops project on Canvas that follows this reading and start with the exercise `letter_count.rb`.
@@ -184,10 +186,14 @@ In the REPL above, replace `10.times` with each of the following and play around
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
 
+**BENP: multiples confusion: https://piazza.com/class/ldj532ul5a0621/post/269**
+
 <div class="proj" markdown="1">
 
   When you're done with the first one, work through `multiples.rb`
 </div>
+
+**BENP: need more instruction or better lead up with conditionals to fizzbuzz: https://piazza.com/class/ldj532ul5a0621/post/264**
 
 <div class="proj" markdown="1">
 

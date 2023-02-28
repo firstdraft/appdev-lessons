@@ -94,6 +94,9 @@ The hardest part, I think, is getting your head around the block variable; in th
 
 Try to remember that it's just a name that _we make up_, and `.each` takes care of putting each element in that variable for us behind the scenes. I could have called it `zebra` if I wanted to; there's nothing special about the name — in particular, it doesn't have to match the name of the variable containing the array. Just try to pick something descriptive of an individual element in the list.
 
+
+**BENP: note confusion with spell_word: https://piazza.com/class/ldj532ul5a0621/post/274**
+
 <div class="proj" markdown="1">
 
   Open the Gitpod `.each` project on Canvas that follows this reading and start with the exercise `spell_word.rb`.
