@@ -105,8 +105,10 @@ hs.last_name = "Simpson"
 
 Two new keywords to note:
 
- -  I used the `return` keyword to signify what value I wanted to replace `hs.full_name` in the original expression after it's been evaluated.
+ - I used the `return` keyword to signify what value I wanted to replace `hs.full_name` in the original expression after it's been evaluated.
  - I used the `self` keyword to refer to the object who was asked to calculate its full name, since I can't know in advance what (if any) variable name will be used.
+
+**BENP: some confusion / explanation of self: https://piazza.com/class/ldj532ul5a0621/post/238**
 
 Here's a slightly more involved example:
 

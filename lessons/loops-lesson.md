@@ -175,6 +175,8 @@ In the REPL above, replace `10.times` with each of the following and play around
 10.step(1, -4)
 ```
 
+**BENP: need exercise for range and step: https://piazza.com/class/ldj532ul5a0621/post/235**
+
 <div class="proj" markdown="1">
 
   Open the Gitpod loops project on Canvas that follows this reading and start with the exercise `letter_count.rb`.
