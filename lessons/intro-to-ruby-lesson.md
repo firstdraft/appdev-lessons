@@ -17,3 +17,7 @@ and
 </div>
 
 When you see those, if you aren't typing out every expression, then you're doing it wrong. If you're just _reading_, you won't be successful at learning programming; you have to _do_ in order to build up some muscle memory. _Practice is crucial._
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
