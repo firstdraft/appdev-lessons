@@ -13,7 +13,7 @@ Ruby calls decimal numbers `Float`s. To create a `Float` rather than an `Integer
 
 - `"12".to_i.to_f` would return data of class?
 - Float
-    - Yes!
+    - Yes! The `String` 12 is converted to an integer, and then to a float
 {: .free_text #to_f points="10" answer="1" }
 
 ----
@@ -83,6 +83,8 @@ p pi.round(3)
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/round){:target="_blank"}
 </div>
 
+Once you're comfortable with it, do the next Gitpod project associated with this lesson:
+
 <div class="proj" markdown="1">
 
   Return to the Gitpod `Float` project and work through `round.rb`
@@ -101,6 +103,35 @@ p rand
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/float-rand){:target="_blank"}
 </div>
 
+----
+
+#### Quiz Question
+
+- Let's pause and recall. Check everything below that is true:
+- `"5"` is an `Integer` object
+    - No, keep in mind the `""` quotes
+- `"5" + 5` would result in `10`
+    - No, we need to convert one or both objects to add them
+- `"5" + "5"` would result in `10`
+    - No, think about how string addition is different from integer addition
+- `"5".to_f + "5".to_f` would result in `10.0`
+    - Yes!
+- `"5".to_f + "5".to_f` would result in `10`
+    - No, it would return a `Float`
+- `5.0` is a `Float`
+    - Yes!
+- `.to_i` is a "noun"
+    - No, remember `noun.verb`
+- `.to_i` is a method
+    - Yes!
+{: .choose_all #recall points="10" answer="[4,6,8]" }
+
+----
+
 ###  Conclusion
 
 That's it for `Float`. Next up, we'll learn to manipulate dates and times with the `Date` and `Time` classes.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
