@@ -346,6 +346,11 @@ In this text, I'm going to refer to it as an [octothorpe](https://en.wiktionary.
 
 The octothorpe is used quite a bit in Ruby. You can see one important way in the example above, where I said `# bad!` after some offending code. That is known as a "code comment". The Ruby interpreter, when it sees the `#`, will ignore it and everything that comes after it; allowing us to leave notes to ourselves and to each other. **Use comments liberally.**
 
+<aside markdown="1">
+
+Comments in Ruby are done with `#`. But in HTML files, they are done like: `<!-- comment here -->`, and in CSS files they are done like: `/* comment here */`. Just something to keep in mind. Luckily the keyboard combination <kbd>Ctrl</kbd>+<kbd>/</kbd> will add a comment automatically in whatever format the file is in.
+</aside>
+
 Another nice trick is: when experimenting with some code and it's not working, just comment it out and try a different approach on the next line. That way you can keep the old code around for reference without having to delete it, but it won't break the program:
 
 ```ruby
