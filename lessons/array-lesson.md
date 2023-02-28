@@ -304,8 +304,6 @@ p a.count
 p a.count(3)
 ```
 
-<!-- **BENP: add project with count() with an argument, becomes important again in .each** -->
-
 <div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/count){:target="_blank"}
@@ -316,6 +314,16 @@ p a.count(3)
   Return to the Gitpod `Array` project and work through `count.rb`
 </div>
  
+----
+
+#### Quiz Question
+
+- The code `["zebra", "bear", "bear", "giraffe"].count("bear")` will return...
+- 2
+    - Yes!
+{: .free_text #count_argument points="10" answer="1" }
+
+----
 
 #### reverse 
 
