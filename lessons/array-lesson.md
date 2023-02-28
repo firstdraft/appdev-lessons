@@ -169,6 +169,25 @@ p array[2]
 
 Since retrieving the elements at positions `0` (the first one) and `-1` (the last one) is so common, there are handy shortcut methods for those: `.first` and `.last`. Give them a try.
 
+----
+
+#### Quiz Question
+
+- The code `[0, 4, 9][-1]`, the code `[0, 4, 9].at(-1)`, the code `[0, 4, 9].at(2)`, and the code `[0, 4, 9].last`...
+- will return different results.
+    - Nope, try to test the code in a terminal
+- only the first two will return the same result
+    - Nope, try to test the code in a terminal
+- only the first two and fourth will return the same result
+    - Nope, try to test the code in a terminal
+- are all equivalent ways of retrieving the same value
+    - Yes!
+- are illegal operations, since we can't call methods directly on the array object (we need a variable first)
+    - Nope, try to test the code in a terminal
+{: .choose_best #retrieve points="10" answer="4" }
+
+----
+
 #### index 
 
 The `.index` method is sort of the inverse of `.at`: given an object, `.index` searches within the array and returns the index where it resides. Give it a try:
