@@ -199,7 +199,7 @@ We'll be using this technique frequently to make things more interesting.
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod `Array` project on Canvas that follows this reading and start with the exercise `element_square.rb`.
+  Open the Gitpod [`Array` project](https://github.com/appdev-projects/ruby-project-array-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `element_square.rb`.
   
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>

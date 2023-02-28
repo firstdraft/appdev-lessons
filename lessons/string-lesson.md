@@ -175,7 +175,7 @@ If you need a full refresher on working with Gitpod, see the [technical setup in
 
    **Note: these steps go for opening any Gitpod project for the Ruby lessons, just change the project and file names.**
 
-   Open the Gitpod `String` project on Canvas that follows this reading and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
+   Open the Gitpod [`String` project](https://github.com/appdev-projects/ruby-project-string-1){:target="_blank"} on Canvas that follows this reading and start with the exercises. Follow the instructions below and complete the task in the `concat.rb` file.
 
    <!-- 1. LTI{Load assignment}(https://github.com/appdev-projects/ruby-project-string-1)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(100)[string_project] -->
 
