@@ -118,9 +118,18 @@ A couple of other things for you to experiment with:
 
 #### Quiz Question
 
-- What is the positive integer index of `5` in the array `["zebra", 6.2, 5, "bear"]`?
+- What is the **positive** integer index of `5` in the array `["zebra", 6.2, 5, "bear", "salmon"]`?
 - 2
     - Yes! We index lists of things beginning from 0 in Ruby
+{: .free_text #index points="10" answer="1" }
+
+----
+
+#### Quiz Question
+
+- What is the **negative** integer index of `5` in the array `["zebra", 6.2, 5, "bear", "salmon"]`?
+- -3
+    - Yes! We can count backwards through a list of items starting with -1 (the last item)
 {: .free_text #index points="10" answer="1" }
 
 ----
