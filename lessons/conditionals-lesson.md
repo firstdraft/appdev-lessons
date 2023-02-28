@@ -206,7 +206,9 @@ Basically, `&&` is stricter than `||`; both comparisons have to be true in order
 
 <div class="proj" markdown="1">
 
-  Also, work through `palindrome.rb`
+  Also, work through `palindrome.rb`.
+
+  (Hint: you need to account for mixed-case inputs, what methods in the [`String` lesson](https://learn.firstdraft.com/lessons/9){:target="_blank"} can be used to make inputs a uniform case?)
 </div>
 
 
