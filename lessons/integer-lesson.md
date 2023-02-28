@@ -64,6 +64,25 @@ Once you've played with the REPL, it's time to move into the graded project envi
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
 
+----
+
+#### Quiz Question
+
+- Let's recall: Of the options below, how do we typically store user input in our code?
+- `puts`
+    - Not quite, maybe have a look at the previous String lesson again
+- `.chomp`
+    - Not quite, maybe have a look at the previous String lesson again
+- `gets`
+    - Yes, but what do we add to remove the newline character?
+- `gets.chomp`
+    - Yes, but how do we actually _store_ the data.
+- `our_new_variable = gets.chomp`
+    - Correct!
+{: .choose_best #gets_chomp points="10" answer="5" }
+
+----
+
 #### odd? and even? 
 
 The `.odd?` and `.even?` methods return `true` or `false` based on whether the number is, well, odd or even. Don't be thrown off by the question mark at the end of the method name — it's nothing special, just another letter. Rubyists like to end method names with a question mark when methods return `true` or `false`.
@@ -74,10 +93,6 @@ p 7.odd?
 
 <div class="experiment" markdown="1">
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/odd){:target="_blank"}
-</div>
-
-<div class="proj" markdown="1">
-  Return to the Gitpod `Integer` project and work through `odd.rb`
 </div>
 
 #### rand 
@@ -152,6 +167,10 @@ p "8".to_i
 
 ----
 
+<div class="proj" markdown="1">
+  Return to the Gitpod `Integer` project and work through `odd.rb`
+</div>
+
 #### to_s 
 
 Okay, back to `Integer` methods. We often will want to combine our `Integer`s with `String`s when crafting output for our users. Give it a try:
@@ -174,49 +193,14 @@ p 98.to_s
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){:target="_blank"}
 </div>
 
-#### More on adding strings together
-
-We spend a lot of time composing strings of output for our users, so let's see a few more examples. Try this:
-
-```ruby
-number = 6 * 7
-message = "Your lucky number for today is " + number + "."
-```
-
-<div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){:target="_blank"}
-</div>
-
-You'll see that Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn't feel comfortable with that.
-
-The solution is to tell the `Integer` to convert itself to a `String` first using the method called `.to_s`, or "to string". Try this instead:
-
-```ruby
-number = 6 * 7
-message = "Your lucky number for today is " + number.to_s + "."
-```
-
-The above technique for composing strings, adding them together with `+`, is called string addition.
-
-There's another technique for composing strings that I personally find a bit easier; it's called **string interpolation**. Try this instead:
-
-```ruby
-number = 6 * 7
-message = "Your lucky number for today is #{number}."
-```
-
-Basically, inside the string, you place `#{}` where you eventually want your value to go. Inside the curly braces, you can write any Ruby expression without worrying about whether it is a string or not. The expression will be evaluated, converted to a string, and added to the string right in that spot. You can interpolate as many expressions as you want into a single string. Pretty neat!
-
-If you find interpolation confusing, feel free to just use addition.
-
-#### to_f 
-
-Similar to `to_i`, there's a `to_f` (or "to float") method to convert an `Integer` to a `Float`, which is often handy for doing math, as we'll see next.
-
 <div class="proj" markdown="1">
 
   Return to the Gitpod `Integer` project and work through `birth_year.rb`
 </div>
+
+#### to_f 
+
+Similar to `to_i`, there's a `to_f` (or "to float") method to convert an `Integer` to a `Float`, which is often handy for doing math, as we'll see next.
 
 ###  Conclusion
 

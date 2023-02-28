@@ -75,6 +75,41 @@ If your project requires scanning text for patterns, then [RegexOne](https://reg
     "March 29th!".gsub(/[^a-z0-9\s]/i, "") # => "March 29th"
     ```
 
+#### More on adding strings together
+
+We spend a lot of time composing strings of output for our users, so let's see another example. Try this:
+
+```ruby
+number = 6 * 7
+message = "Your lucky number for today is " + number + "."
+```
+
+<div class="experiment" markdown="1">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/String-interpolation){:target="_blank"}
+</div>
+
+Ruby gets confused (RTEM!), because we are trying to add an integer to a string and it doesn't feel comfortable with that.
+
+The solution is to tell the `Integer` to convert itself to a `String` first using `.to_s`:
+
+```ruby
+number = 6 * 7
+message = "Your lucky number for today is " + number.to_s + "."
+```
+
+The above technique for composing strings, adding them together with `+`, is called string addition.
+
+There's another technique for composing strings that I personally find a bit easier; it's called **string interpolation**. Try this instead:
+
+```ruby
+number = 6 * 7
+message = "Your lucky number for today is #{number}."
+```
+
+Basically, inside the string, you place `#{}` where you eventually want your value to go. Inside the curly braces, you can write any Ruby expression without worrying about whether it is a string or not. The expression will be evaluated, converted to a string, and added to the string right in that spot. You can interpolate as many expressions as you want into a single string. Pretty neat!
+
+If you find interpolation confusing, feel free to just use addition.
+
 ### More Float
 
 Looking for even more Float methods?
