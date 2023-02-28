@@ -237,22 +237,15 @@ p cities.index("SF")
 
 ----
 
-<div class="proj" markdown="1">
-
-  Open the Gitpod [`Array` project](https://github.com/appdev-projects/ruby-project-array-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `element_square.rb`.
-  
-  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
-</div>
-
 #### String#split 
 
-Before we proceed with more `Array` methods, I want to go back for a minute and talk about a method for the `String` class: `.split`. This method, when called on a `String`, will return an `Array` of substrings:
+Before we proceed with more `Array` methods, I want to go back for a minute and talk about a method for the `String` class: `.split`. This method, when called on a `String`, will return an `Array` of substrings.
+
+If you provide no argument, the string is split upon whitespace, which is handy for e.g. turning a sentence into a list of words:
 
 ```ruby
 "alice bob carol".split # => ["alice", "bob", "carol"]
 ```
-
-If you provide no argument, the string is split upon whitespace, which is handy for e.g. turning a sentence into a list of words:
 
 If you do provide an argument to `.split`, then the string will be chopped up wherever that argument occurs instead of whitespace — for example, use `"4,8,15,16,23,42".split(",")` to split on commas.
 
@@ -288,8 +281,15 @@ p "You entered " + length.to_s + " numbers."
 We'll be using this technique frequently to make things more interesting.
 
 <div class="proj" markdown="1">
+
+  Open the Gitpod [`Array` project](https://github.com/appdev-projects/ruby-project-array-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `element_square.rb`.
   
-  Return to the Gitpod `Array` project and work through `split_string.rb`
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+</div>
+
+<div class="proj" markdown="1">
+  
+  Continue in the Gitpod `Array` project and work through `split_string.rb`
 </div>
 
 #### count 
