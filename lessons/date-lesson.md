@@ -99,6 +99,8 @@ Date.parse("20010203") #=> #<Date: 2001-02-03 ...>
 Date.parse("3rd Feb 2001") #=> #<Date: 2001-02-03 ...>
 ```
 
+It's pretty smart!
+
 #### Subtraction 
 
 You can subtract two dates from one another, which will return the number of days between them. The return value class is a `Rational`, which can be converted to a regular `Integer` with `.to_i`:
@@ -170,7 +172,6 @@ Time.now.day # => 3
 
 The `strftime` method is used on a `Date` or `Time` object. It requires a `String` argument that will be used to format the Date or Time in a particular way.
 
-
 _Assuming today is Monday, September 7th 2020_
 
 ```ruby
@@ -181,6 +182,8 @@ Time.now.strftime("%a %e, %R %p") # => "Mon, 7 14:35 PM"
 ```
 
 You should **not** try to memorize what these patterns mean. Tools like [strftime.net](http://www.strftime.net){:target="_blank"} and [For a Good Strftime](https://www.foragoodstrftime.com/){:target="_blank"} exist to help compose the formatting string argument.
+
+**BENP: new strftime exercise**
 
 ###  Conclusion
 
