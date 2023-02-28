@@ -496,7 +496,7 @@ You can create as many GitHub Pages sites as you want --- one per repo. [Read mo
 
 ## This is the end of the required portion
 
-This is the end of the required portion of this assignment. In Canvas, submit the URL of your deployed app (something.github.io, not your GitPod preview). If you are willing to share your creation, please also include "Add me to the showcase" in the submission text area.
+This is the end of the required portion of this assignment. In Canvas, submit the URL of your deployed app (something.github.io, not your Gitpod preview). If you are willing to share your creation, please also include "Add me to the showcase" in the submission text area.
 
 ## Make it your own
 

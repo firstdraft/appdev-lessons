@@ -1,4 +1,4 @@
-## Loops
+## Loops {#loops-chapter}
 
 ### if: conditionally doing something once
 
@@ -22,7 +22,7 @@ What do you expect the output of this program to be? Try to interpret the progra
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-once){target="_blank"}
 </div>
 
 Hopefully you clicked "▶ Run". Did you guess right?
@@ -53,7 +53,7 @@ p len
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-conditionally-doing-something-multiple-times){target="_blank"}
 </div>
 
 `while` works almost exactly like `if` — it evaluates the expression next to it, and if the expression is truthy, it executes the code on the lines between it and its `end`; if not, it ignores the code on the lines between it and its `end`.
@@ -103,14 +103,12 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-while){target="_blank"}
 </div>
 
-Does the code make sense to you?
+Does the code make sense to you?[^incrementing]
 
-<aside markdown="1">
-If the line `mississipis = mississipis + 1` looks a little odd to you, you're not alone. Remember, this is _variable assignment_ with the `=`, not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
-</aside>
+[^incrementing]: If the line `mississipis = mississipis + 1` looks a little odd to you, you're not alone. [Remember, this is _variable assignment_][Updating variables], not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
 
 Or, rather than `while`, I could use `Integer`'s `.times` method, like this:
 
@@ -126,7 +124,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-mississippis-with-times){target="_blank"}
 </div>
 
 Notice there's a new keyword here: `do`. This is because the `.times` method, in order to do its job of executing some code 10 times, needs a special argument — _the code to execute_.
@@ -135,7 +133,7 @@ In order to pass a method _some lines of code_ as an argument, we need to wrap t
 
 So, given a **block** of code, the `10.times` method will execute it for us exactly 10 times; this saves us the trouble of writing a condition for `while`.
 
-#### Block variables 
+#### Block variables {-}
 
 But the `.times` method will save us even more trouble than that; we can stop worrying about creating and incrementing the counter variable, `mississipis`, too. The `.times` method will create a **block variable** and assign values to it for us automatically, but we have to choose a name for it using some new syntax after the `do`: the vertical bars, `| |`, or "pipes". It looks like this:
 
@@ -147,7 +145,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/loops-first-block-variable){target="_blank"}
 </div>
 
 Try running it. Here's what's going on:
@@ -160,7 +158,7 @@ Try running it. Here's what's going on:
  - The `.times` method executed the block of code the second time.
  - Etc.
 
-Why does `.times` start by assigning `0` to its block variable during the first iteration, rather than `1`? Well, that's just how the author of the `.times` method made it work. Remember, Ruby, like many other languages uses zero-indexing.
+Why does `.times` start by assigning `0` to its block variable during the first iteration, rather than `1`? Well, that's just how the author of the `.times` method made it work. Remember, Ruby, like many other languages [uses zero-indexing](#at-zero-indexing).
 
 Fortunately, Ruby provides lots of other looping convenience methods that we can take advantage of instead, and each one assigns different values to its block variable.
 
@@ -175,9 +173,11 @@ In the REPL above, replace `10.times` with each of the following and play around
 
 <div class="proj" markdown="1">
 
-  Open the GitPod loops project on Canvas that follows this reading and start with the exercise `letter_count.rb`.
+  Open the GitPod loops project for this chapter and start with the exercise `letter_count.rb`:
 
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/loops-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[loops_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
 </div>
 
 <div class="proj" markdown="1">

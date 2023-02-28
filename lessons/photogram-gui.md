@@ -99,7 +99,7 @@ end
 
 It's empty! Looks like we need to build it all from scratch... not quite true. If I visit **/rails/db** in my browser, I at least have database tables created for `comments`, `follow_requests`, `likes`, `photos`, and `users`. We've been planning this architecture for a long time for our social network. 
 
-The database is, however, empty, and we don't have any routes defined. We can hope that someone wrote a rake task to populate our database with sample data... and if you run `rails sample_data` at the terminal in GitPod you will find that this is the case!
+The database is, however, empty, and we don't have any routes defined. We can hope that someone wrote a rake task to populate our database with sample data... and if you run `rails sample_data` at the terminal in Gitpod you will find that this is the case!
 
 If we click on the `users` table in **/rails/db** (taking us to **/rails/db/tables/users/data**), we see we have lots of columns, and it might help to actually view our domain model:
 
@@ -396,7 +396,7 @@ Right away we put in some mockup to match the target here:
 
 Of course, we will now need to fill in the static HTML here with dynamic embedded Ruby to get the page to work for each user.
 
-In my server log on GitPod (the terminal running `bin/server`), we can see that anything I put in the second segment of **/users/austin**, will end up in the `params`, like `{"path_username"=>"austin"}`. That is available in our show action. So let's make it work now:
+In my server log on Gitpod (the terminal running `bin/server`), we can see that anything I put in the second segment of **/users/austin**, will end up in the `params`, like `{"path_username"=>"austin"}`. That is available in our show action. So let's make it work now:
 
 ```ruby
 # app/controllers/users_controller.rb
@@ -536,7 +536,7 @@ To do that we go into our layout view and add it in the `<body>` tag around wher
 ```
 {: mark_lines="20-25"}
 
-Remember, Rails made this file for you and included all of the HTML header information we discussed early on, so we don't need to worry about putting this on all of our view templates. Rails gives you a huge head start with this and so many other files that we see in the GitPod workspace.
+Remember, Rails made this file for you and included all of the HTML header information we discussed early on, so we don't need to worry about putting this on all of our view templates. Rails gives you a huge head start with this and so many other files that we see in the Gitpod workspace.
 
 By adding this code to our application layout file, we will see that anywhere we go in our app, the nav bar will follow.
 
@@ -1188,7 +1188,7 @@ end
 ```
 {: mark_lines="10-14"}
 
-We can already try and re-submit the form on **/photos**, and we should be brought again to the `create.html.erb` template that is just saying "hi". It's hard to tell that anything was added to our database, but if we go to our GitPod terminal where `bin/server` is running and look in the log, then we will see the SQL telling us that our photo was saved. 
+We can already try and re-submit the form on **/photos**, and we should be brought again to the `create.html.erb` template that is just saying "hi". It's hard to tell that anything was added to our database, but if we go to our Gitpod terminal where `bin/server` is running and look in the log, then we will see the SQL telling us that our photo was saved. 
 
 And the new photo was even assigned a unique photo ID that we can use to go directly to (`redirect_to`) the show page of our new photo:
 

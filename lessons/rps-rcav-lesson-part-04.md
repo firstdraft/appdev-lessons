@@ -77,6 +77,8 @@ Now refresh **/**. There is no error and our HTML template is rendered. And we d
   - create an *action* in that controller, 
   - and *view* the result.
 
+----
+
 #### Quiz Question
 
 - I got **/** wired up with my RCAV.
@@ -86,7 +88,9 @@ Now refresh **/**. There is no error and our HTML template is rendered. And we d
     - What is the error message? Carefully go through the previous code and get your second RCAV working.
 {: .choose_best #second_rcav points="10" answer="1" }
 
-**TODO:** ellipse rendering badly and punctuation being added to pop-up boxes
+<!-- **TODO:** ellipse rendering badly and punctuation being added to pop-up boxes -->
+
+----
 
 ### Completed Code
 
@@ -132,6 +136,8 @@ end
 
 <h1>Welcome to RPS</h1>
 ```
+
+----
 
 ## Reinforce RCAV with /paper
 
@@ -215,7 +221,9 @@ Back to our new error, we RTEM, and that tells us to go and make the new `game_t
 </h2>
 ```
 
-Refresh **/paper**. No error message? A successful RCAV!
+Refresh **/paper**. No error message? A successful RCAV! Answer the quiz questions and have a look at the completed code for this section below.
+
+----
 
 #### Quiz Question
 
@@ -226,7 +234,7 @@ Refresh **/paper**. No error message? A successful RCAV!
     - What is the error message? Carefully go through the previous code and get your third RCAV working.
 {: .choose_best #third_rcav points="10" answer="1" }
 
-**TODO:** ellipse rendering badly and punctuation being added to pop-up boxes
+----
 
 #### Quiz Question
 
@@ -240,6 +248,8 @@ Refresh **/paper**. No error message? A successful RCAV!
 - Give up.
     - Never give up! Try going back to square one when all else fails. Read every character you type and try to understand the meaning as you build up the code.
 {: .choose_all #debugging points="10" answer="[1,2,3]" }
+
+----
 
 ### Completed Code
 
@@ -295,3 +305,13 @@ end
   We played paper!
 </h2>
 ```
+
+----
+
+## Conclusions
+
+Now that we have a bunch of practice wiring up our RCAVs, we can wrap up this lesson in the next part before you finish the project on your own.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----

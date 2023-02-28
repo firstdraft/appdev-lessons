@@ -6,7 +6,7 @@ Therefore, the most common reason we'll have to write loops is to **visit each e
 
 ### Iterating over arrays with Integer's times method
 
-Try transforming the words in an Array using what you've learned so far about loops:
+Try transforming the words in an Array using what you've learned so far about [loops](#loops-chapter):
 
 Write a program that, given a list of words from the user, would take each word and print it in three forms:
 
@@ -36,18 +36,18 @@ Your program should output the following:
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){target="_blank"}
 </div>
 
 ---
 
-After you've got it working, examine [the model solution here](https://repl.it/@_jelaniwoods/userwordssolution){:target="_blank"}. You'll see that I chose to use `.times` for this job.
+After you've got it working, examine [the model solution here](https://repl.it/@_jelaniwoods/userwordssolution){target="_blank"}. You'll see that I chose to use `.times` for this job.
 
  - On Line 6, we count the length of the array.
  - On Line 8, we use that length with the `.times` method to kick off a loop with the correct number of iterations.
  - Within the block, we use the block variable (which we named `the_index`) to access the correct element within the array.
 
-<!-- **BENP: need an exercise using indexing in a loop here, this method is important in Ruby Gym** -->
+**BENP: need an exercise using indexing in a loop here, this method is important in Ruby Gym**
 
 Using `.times` to iterate over an `Array` is not bad at all, especially because `.times`'s block variable starts at `0`, just like array indexing does. Using `.times` is certainly cleaner than using `while`, where we would have to create and increment a counter variable ourselves, and then write a condition to make sure that the loop stops after the correct number of iterations (the length of the array).
 
@@ -70,7 +70,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-iterating-with-each){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-iterating-with-each){target="_blank"}
 </div>
 
 Click "Run" and verify that both programs do the same thing.
@@ -80,15 +80,14 @@ Nice! `.each` has two clear benefits over using `.times`:
  - We don't need to count the length of the array; `.each` does it for us and will take care of looping for the correct number of iterations.
  - The block variable, rather than containing an integer that we can use to access the correct element, will contain **the element itself**.
 
-     So now when we name the block variable, we should choose a name that reflects what each element in the list is.
+     So now when we name the block variable, we should choose a name[^singular_vs_plural] that reflects what each element in the list is.
 
      `.each` will, behind the scenes, pull the correct element out of the array before each iteration begins and assign it to that block variable.
 
      Then, **we just use that variable directly**, and we don't have to worry about accessing the array with `.at`.
 
-<aside markdown="1">
-I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and block variables _singularly_ (e.g. `photo`) to make it clear to myself which is which — the list itself versus one element within the list. Whatever you do, don't name the block variable plurally — that's very confusing when you come back to your code later and have to make sense of it.
-</aside>
+[^singular_vs_plural]:
+    I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and block variables _singularly_ (e.g. `photo`) to make it clear to myself which is which — the list itself versus one element within the list. Whatever you do, don't name the block variable plurally — that's very confusing when you come back to your code later and have to make sense of it.
 
 The hardest part, I think, is getting your head around the block variable; in this case, `|the_word|`. It takes some practice.
 
@@ -96,9 +95,11 @@ Try to remember that it's just a name that _we make up_, and `.each` takes care 
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `.each` project on Canvas that follows this reading and start with the exercise `spell_word.rb`.
+  Open the GitPod `.each` project for this chapter and start with the exercise `spell_word.rb`:
 
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/each-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[each_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
 </div>
 
 <div class="proj" markdown="1">
@@ -132,3 +133,31 @@ Code like this is what drives the dozens of dynamic applications you interact wi
 ###  Conclusion
 
 That's it for `.each` and loops. It's time to meet a very important data structure class that we will be seeing a lot: `Hash`.
+
+#### Addendum: each_with_index {-}
+
+There are some rare cases when you are looping over an array and, within the block, you would like access to the element _and_ its index. For example, maybe you want to print a line after every other element. You could fall back to `.times` in these scenarios, but there's also another `Array` method that has your back: `.each_with_index`. It looks like this:
+
+```ruby
+p "Enter at least 2 words, separated by spaces:"
+user_words = gets.chomp.split
+p "user_words:"
+p user_words
+
+user_words.each_with_index do |the_word, the_index|
+  p the_word.capitalize
+  p the_word.reverse
+  p the_word.upcase
+
+  if the_index.odd?
+    p "=" * 20
+  end
+end
+```
+
+<div class="experiment" markdown="1">
+
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/each-each-with-index){target="_blank"}
+</div>
+
+As you can see, some methods provide more than one block variable. `.each_with_index` allows you to name two variables within the pipes; the first one will receive the element, and the second one will receive the index of the iteration. Within the block you can use both variables as you see fit. In rare cases, handy.

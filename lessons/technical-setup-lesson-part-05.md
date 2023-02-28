@@ -1,6 +1,6 @@
 # Technical Setup Part 5: Fixing your organization permissions
 
-Once upon a time, we all [created our own GitHub organizations]\(**TODO:** link to lesson for: https://chapters.firstdraft.com/chapters/777#create-github-organization) to keep our classwork separate from our personal projects.
+Once upon a time, we all [created our own GitHub organizations](https://learn.firstdraft.com/lessons/29#create-github-organization){:target="_blank"} to keep our classwork separate from our personal projects.
 
 Since then, whenever we gave permission to a third-party (like Gitpod or grades.firstdraft.com) to access our GitHub accounts, we were supposed to remember to grant access to our organization too. **If you forgot to click "Grant" next to the organization that you created before you clicked "Authorize", you're going to run into problems.** Let's fix it.
 

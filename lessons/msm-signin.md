@@ -62,7 +62,7 @@ This is a brand-new Rails app. No routes, no models, no controllers, no views. W
 
 To begin from scratch, with our target in mind, step one is to figure out the data model. That means domain modeling by making sketches. But assuming that we already did that and we have a list of our tables and columns, then the first step is to create our tables.
 
-Let's create our tables one-by-one: `movies`, `directors`, `actors`, and `characters`. For this, we will use `draft` at the command-line. So go to your GitPod workspace, and open a fresh terminal window to work in. 
+Let's create our tables one-by-one: `movies`, `directors`, `actors`, and `characters`. For this, we will use `draft` at the command-line. So go to your Gitpod workspace, and open a fresh terminal window to work in. 
 
 To create a table for `movies`, the command is:
 
@@ -632,7 +632,7 @@ end
 
 Nice! All of the stuff you did in the Photogram Signin homework is automated now. We also see that the generator is placing the user ID into the cookies, so that we can tailor the app experience for the signed in user: `session[:user_id] = @user.id`.
 
-Again, you need to *own the code* that was generated so that you can modify things, but it's a major shortcut. If you want to change things, remember to use "Inspect" in your browser to find the routes you want to modify. You can also use the server log in the GitPod terminal running `bin/server` to figure out what you want to change and where in the code it is.
+Again, you need to *own the code* that was generated so that you can modify things, but it's a major shortcut. If you want to change things, remember to use "Inspect" in your browser to find the routes you want to modify. You can also use the server log in the Gitpod terminal running `bin/server` to figure out what you want to change and where in the code it is.
 
 
 

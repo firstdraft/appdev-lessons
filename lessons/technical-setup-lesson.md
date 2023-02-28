@@ -51,7 +51,7 @@ While you're waiting for everyone to finish creating accounts, read up on GitHub
  - Read about GitHub: [http://bit.ly/2skLlYx](http://bit.ly/2skLlYx){:target="_blank"}
  - Read about Heroku: [http://bit.ly/2uLVTAP](http://bit.ly/2uLVTAP){:target="_blank"}
 
-## GitPod
+## Gitpod
 
 - Notes:
 

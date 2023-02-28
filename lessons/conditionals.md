@@ -16,7 +16,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-conditional){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/first-conditional){target="_blank"}
 </div>
 
 Try running this program a few times and see how it behaves. These expressions, which conditonally run some code based on the truth or falseness of some condition, are known as **conditionals** or **if statements**.
@@ -37,7 +37,7 @@ end
  1. If the final return value of `condition` is "falsy", then the code on the lines between the `if` and `end` keywords is ignored.
  1. Either way, the program picks up execution on the next line after the `end` keyword and continues on.
 
-#### Don't forget the end 
+#### Don't forget the end {-}
 
 Every `if` requires a matching `end`, and forgetting it is a _very_ common mistake.
 
@@ -79,7 +79,7 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/multibranch-if){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/multibranch-if){target="_blank"}
 </div>
 
  - Note that there is **no space** in the `elsif` keyword, and that there is **no `e` in the middle** of the `elsif` keyword. (In other languages, this construct is `elseif`, `else if`, etc; but in Ruby it's just `elsif`.)
@@ -92,29 +92,27 @@ end
 
 Why did I say "truthy" and "falsy" instead of just `true` and `false`? Because many — most — Ruby expressions return values other than `true` or `false`. _Any_ expression can appear next to an `if`, and some will cause the code inside the `if` statement to execute (these values are known as "truthy") and some will not (these are "falsy").
 
-In the REPL below, try replacing `true` with each of the following. Before clicking "run" for each one, ask yourself, do you expect to see the output `"The expression is truthy."` or not?
+In the REPL below, try replacing `1 == 1` with each of the following. Before clicking "run" for each one, ask yourself, do you expect to see the output `"The expression is truthy."` or not?
 
  - `0`
  - `"false"`
  - `[]`
  - `nil`
- - `1 == 1`
+ - `true`
  - `""`
  - `false`
 
 ```ruby
-if true # Replace this with each expression. Which of them count as "truthy"?
+if 1 == 1 # Replace this with each expression. Which of them count as "truthy"?
   p "The expression is truthy."
 else
   p "The expression is falsy."
 end
 ```
 
-For 
-
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){target="_blank"}
 </div>
 
 For how many of the above did you correctly predict the output? What did you learn about what objects count as truthy and what objects count as falsy in Ruby?
@@ -149,7 +147,7 @@ For example, most classes have ways to compare _instances_ of the class to one a
 "apple" != "banana"
 ```
 
-#### Equivalence vs assignment 
+#### Equivalence vs assignment {-}
 
 Note the difference between the **equivalence operator** — two equals signs, `==` — and the variable assignment operator — one equals sign, `=`. Mixing up the two of them is probably _the_ most common typo programmers make:
 
@@ -192,16 +190,18 @@ end
 
 <div class="experiment" markdown="1">
 
-  [Click here for a REPL to try it.](https://repl.it/@raghubetina/and-and-or){:target="_blank"}
+  [Click here for a REPL to try it.](https://repl.it/@raghubetina/and-and-or){target="_blank"}
 </div>
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.
 
 <div class="proj" markdown="1">
 
-  Open the GitPod `if` statements project on Canvas that follows this reading and start with the exercise `rps.rb`.
+  Open the GitPod `if` statements project for this chapter and start with the exercise `rps.rb`:
 
-  For a GitPod refresher, see the `String` reading where we opened our first workspace.
+  LTI{Load assignment}(https://github.com/bpurinton-appdev/if-statements-chapter/tree/bp-additions)[MV4dKHMwdAFhfRn752YW3TAY]{KBpPhe42o6wDRi35rWagKY4F}(20)[conditionals_project] 
+  
+  For a GitPod refresher, [see here](#start-gitpod-project).
 </div>
 
 <div class="proj" markdown="1">
