@@ -193,10 +193,13 @@ p 98.to_s
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/tos){:target="_blank"}
 </div>
 
+If you want to see another method for combining different classes into a string, jump to an addendum on [string interpolation here](https://learn.firstdraft.com/lessons/21#string-interpolation){:target="_blank"}. But, you can always use string addition and the `.to_s` method if you're more comfortable with that.
+
 <div class="proj" markdown="1">
 
   Return to the Gitpod `Integer` project and work through `birth_year.rb`
 </div>
+
 
 #### to_f 
 
