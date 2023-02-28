@@ -59,7 +59,7 @@ Once you've played with the REPL, it's time to move into the graded project envi
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod `Integer` project on Canvas that follows this reading and start with the exercise `math.rb`.
+  Open the Gitpod [`Integer` project](https://github.com/appdev-projects/ruby-project-integer-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `math.rb`.
 
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>

@@ -169,7 +169,7 @@ Movie.where({ :title => "The Shawshank Redemption" })
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod `Hash` project on Canvas that follows this reading and start with the exercise `person.rb`.
+  Open the Gitpod [`Hash` project](https://github.com/appdev-projects/ruby-project-hash-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `person.rb`.
 
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>

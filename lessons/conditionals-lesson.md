@@ -203,7 +203,7 @@ Basically, `&&` is stricter than `||`; both comparisons have to be true in order
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod `if` statements project on Canvas that follows this reading and start with the exercise `rps.rb`.
+  Open the Gitpod [`if` statements project](https://github.com/appdev-projects/ruby-project-if-statements-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `rps.rb`.
 
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>

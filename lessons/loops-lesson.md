@@ -181,7 +181,7 @@ In the REPL above, replace `10.times` with each of the following and play around
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod loops project on Canvas that follows this reading and start with the exercise `letter_count.rb`.
+  Open the Gitpod [loops project](https://github.com/appdev-projects/ruby-project-loops-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `letter_count.rb`.
 
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
