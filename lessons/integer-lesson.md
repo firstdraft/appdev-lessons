@@ -77,7 +77,7 @@ Once you've played with the REPL, it's time to move into the graded project envi
     - Yes, but what do we add to remove the newline character?
 - `gets.chomp`
     - Yes, but how do we actually _store_ the data.
-- `our_new_variable = gets.chomp`
+- `the_users_input = gets.chomp`
     - Correct!
 {: .choose_best #gets_chomp points="10" answer="5" }
 
