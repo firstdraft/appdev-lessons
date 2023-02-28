@@ -173,3 +173,7 @@ You should **not** try to memorize what these patterns mean. Tools like [strftim
 ###  Conclusion
 
 That's it for `Date` and `Time`. Next up, we'll learn how we can make lists of data with the `Array` class.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
