@@ -69,9 +69,9 @@ Once you've played with the REPL, it's time to move into the graded project envi
 #### Quiz Question
 
 - Let's recall: Of the options below, how do we typically store user input in our code?
-- `puts`
+- `the_users_input = puts`
     - Not quite, maybe have a look at the previous String lesson again
-- `.chomp`
+- `the_users_input = input.chomp`
     - Not quite, maybe have a look at the previous String lesson again
 - `gets`
     - Yes, but what do we add to remove the newline character?
@@ -205,3 +205,7 @@ Similar to `to_i`, there's a `to_f` (or "to float") method to convert an `Intege
 ###  Conclusion
 
 That's it for `Integer`. Next up, its close cousin: `Float`.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
