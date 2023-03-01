@@ -4,8 +4,6 @@
 
 Consider the following program, which utilizes an `if` statement:
 
-**BENP: note confusion about instantiation: https://piazza.com/class/ldj532ul5a0621/post/148**
-
 ```ruby
 numbers = Array.new
 
@@ -19,6 +17,10 @@ len = numbers.length
 p numbers
 p len
 ```
+
+<aside markdown="1">
+In the code, we need to start by **instantiating**, or "creating an instance of", the variable `numbers`. This is just an empty array, but we fill it in the `if` statement (by `.push`ing into it). If we had *not* instantiated `numbers`, then what would have happened at the step `numbers.length`?
+</aside>
 
 What do you expect the output of this program to be? Try to interpret the program yourself before you ask Ruby to.
 
@@ -34,6 +36,14 @@ We start off with a blank array, `numbers`. If its length is less than `10` (thi
 Once Ruby reaches the `if`'s `end`, it proceeds to the next line and continues to execute the rest of the code (whether the `if`'s condition was true or not).
 
 At the end of the day, `numbers` has one element in it and `len` is `1`.
+
+----
+
+#### Quiz Question
+
+
+
+----
 
 ### while: conditionally doing something multiple times
 
