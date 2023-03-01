@@ -254,7 +254,45 @@ You will 💯 make this typo, we all do at some point — when your conditional
     - Not quite, look above at the previous section.
 - `==`, and it checks if two things are the same
     - Yes! `==` is not the same as `=`
-{: .choose_best #equivalence points="10" answer="1" }
+{: .choose_best #equivalence points="10" answer="4" }
+
+----
+
+#### Quiz Question
+
+```ruby
+n = "giraffe"
+n = n.capitalize
+if n != "giraffe"
+  s = "first part"
+elsif n == "Giraffe"
+  s = "second part"
+else
+  s = "third part"
+end
+
+p "It picked the " + s
+```
+
+**Think carefully,** after each `if` or `elsif` ask yourself: is this expression resulting in a `true` or a `false`?
+
+- In the above code, what would the full printed out statement be?
+- It picked the third part
+    - Yes!
+{: .free_text #multibranch_conditional points="10" answer="1" }
+
+----
+
+#### Quiz Question
+
+- In the above code, what `String` method could you use to modify `n` and have it print `It picked the second part`? (Hint: have a look at [the `String` lesson](https://learn.firstdraft.com/lessons/9){:target="_blank"}.)
+- capitalize
+    - Yes! 
+- n = n.capitalize
+    - Yes!
+- n.capitalize
+    - Yes!
+{: .free_text #multibranch_conditional_v2 points="10" answer="[1,2,3]" }
 
 ----
 
@@ -299,8 +337,6 @@ Basically, `&&` is stricter than `||`; both comparisons have to be true in order
 
   (Hint: you need to account for mixed-case inputs, what methods in the [`String` lesson](https://learn.firstdraft.com/lessons/9){:target="_blank"} can be used to make inputs a uniform case?)
 </div>
-
-
 
 ###  Conclusion
 
