@@ -101,33 +101,6 @@ Click "Run" and see what it looks like to build up a `Hash`. A few things to not
  - As in `Array`s, elements in the list (each element is one key/value _pair_) are separated by commas.
  - If the key already exists when you try to `.store` something under it, its value will be replaced.
 
-----
-
-#### Quiz Question
-
-Consider the hash:
-
-```ruby
-feeding_time = { :bear => "salmon", :zebra => "grass", :monkey => "banana" }
-```
-
-- Check all that apply
-- The symbols `:bear`, `:zebra`, and `:monkey` are the values, and `"salmon"`, `"grass"`, and `"banana"` are the keys
-    - No, please re-read the previous section
-- The strings `:bear`, `:zebra`, and `:monkey` are the keys, and `"salmon"`, `"grass"`, and `"banana"` are the values
-    - No, is `:bear` a string?
-- The symbols `:bear`, `:zebra`, and `:monkey` are the keys, and `"salmon"`, `"grass"`, and `"banana"` are the values
-    - Yes!
-- We should have used square brackets `[]` to make the `Hash`!
-    - No, please re-read the previous section
-- We could add another key/value pair with the code `feeding_time.store("cereal", :human)`
-    - No, please re-read the previous section
-- We could add another key/value pair with the code `feeding_time.store(:human, "cereal")`
-    - Yes!
-{: .choose_all #feeding_time points="10" answer="[3,6]" }
-
-----
-
 ### fetch
 
 To retrieve a piece of data from a `Hash`, we use the `.fetch` method (as opposed to `Array`'s `.at`):
@@ -187,19 +160,6 @@ p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
 
 ----
 
-#### Quiz Question
-
-- In the previous `feeding_time` variable, how would you retrieve the string `"grass"`?
-- feeding_time.fetch(:zebra)
-    - Yes!
-- .fetch(:zebra)
-    - Yes!
-- fetch(:zebra)
-    - Yes!
-{: .free_text #feeding_fetch points="10" answer="[1,2,3]" }
-
-----
-
 #### fetch fallback
 
 Get used to error messages when you're working on fetching from `Hash`es. You're going to see them a _lot_.
@@ -237,6 +197,46 @@ In particular, `Hash`es are very often used as the arguments to methods, because
 ```ruby
 Movie.where({ :title => "The Shawshank Redemption" })
 ```
+
+----
+
+#### Quiz Question
+
+Consider the hash:
+
+```ruby
+feeding_time = { :bear => "salmon", :zebra => "grass", :monkey => "banana" }
+```
+
+- Check all that apply
+- The symbols `:bear`, `:zebra`, and `:monkey` are the values, and `"salmon"`, `"grass"`, and `"banana"` are the keys
+    - No, please re-read the previous section
+- The strings `:bear`, `:zebra`, and `:monkey` are the keys, and `"salmon"`, `"grass"`, and `"banana"` are the values
+    - No, is `:bear` a string?
+- The symbols `:bear`, `:zebra`, and `:monkey` are the keys, and `"salmon"`, `"grass"`, and `"banana"` are the values
+    - Yes!
+- We should have used square brackets `[]` to make the `Hash`!
+    - No, please re-read the previous section
+- We could add another key/value pair with the code `feeding_time.store("cereal", :human)`
+    - No, please re-read the previous section
+- We could add another key/value pair with the code `feeding_time.store(:human, "cereal")`
+    - Yes!
+{: .choose_all #feeding_time points="10" answer="[3,6]" }
+
+----
+
+#### Quiz Question
+
+- In the previous `feeding_time` variable, how would you retrieve the string `"grass"`?
+- feeding_time.fetch(:zebra)
+    - Yes!
+- .fetch(:zebra)
+    - Yes!
+- fetch(:zebra)
+    - Yes!
+{: .free_text #feeding_fetch points="10" answer="[1,2,3]" }
+
+----
 
 <div class="proj" markdown="1">
 
@@ -377,8 +377,6 @@ h.key(500)   #=> nil
 
   Return to the Gitpod `Hash` project and work through `find_value.rb`
 </div>
-
-**BENP: note this issue https://piazza.com/class/ldj532ul5a0621/post/142**
 
 **BENP: also this issue https://piazza.com/class/ldj532ul5a0621/post/253**
 
