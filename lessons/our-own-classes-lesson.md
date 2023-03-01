@@ -170,12 +170,10 @@ hs.last_name = "Simpson"
 "Hello, " + hs.full_name + "!" # => "Hello, Homer Simpson!"
 ```
 
-Two new keywords to note:
+Two keywords to note:
 
  - I used the `return` keyword to signify what value I wanted to replace `hs.full_name` in the original expression after it's been evaluated.
  - I used the `self` keyword to refer to the object who was asked to calculate its full name, since I can't know in advance what (if any) variable name will be used.
-
-**BENP: some confusion / explanation of self: https://piazza.com/class/ldj532ul5a0621/post/238**
 
 Here's a slightly more involved example:
 
@@ -208,7 +206,7 @@ hs.age # => 32, as of this writing
 Note that we had to `require("date")` in order to load the `Date` class into the program; Ruby doesn't load this class into every program by default, like it does with the core classes (`String`, `Integer`, etc).
 
 <aside markdown="1">
-The parentheses are almost always dropped after `require`, so it would be `require "date"`.
+The parentheses are almost always dropped after `require`, so it would usually be: `require "date"`.
 </aside>
 
 So, rather than using a `Hash` to model real world things, it's a good idea to create classes, and then empower them with *behavior* (methods) in addition to information.
