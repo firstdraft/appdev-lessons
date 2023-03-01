@@ -116,6 +116,33 @@ end
  - Inside a branch of an `if` statement, you can have as many lines of code as you want — and you can even have whole other multi-branch if statements, if that's what you need.
  - Try to indent the code within each branch by two spaces, especially if you have multiple nested `if` statements within one another.
 
+----
+
+#### Quiz Question
+
+```ruby
+n = 15
+
+if n < 15
+  s = "first part"
+elsif n > 20
+  s = "second part"
+elsif n < 18
+  s = "third part"
+else
+  s = "fourth part"
+end
+
+p "It picked the " + s
+```
+
+- In the above code, what would the full printed out statement be?
+- It picked the third part
+    - Yes!
+{: .free_text #multibranch points="10" answer="1" }
+
+----
+
 ### truthiness and falsiness
 
 Why did I say "truthy" and "falsy" instead of just `true` and `false`? Because many — most — Ruby expressions return values other than `true` or `false`. _Any_ expression can appear next to an `if`, and some will cause the code inside the `if` statement to execute (these values are known as "truthy") and some will not (these are "falsy").
@@ -138,8 +165,6 @@ else
 end
 ```
 
-For 
-
 <div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){:target="_blank"}
@@ -147,15 +172,36 @@ For
 
 For how many of the above did you correctly predict the output? What did you learn about what objects count as truthy and what objects count as falsy in Ruby?
 
----
+----
 
-<p style="height: 150px"></p>
+#### Quiz Question
 
---- 
+- Which of the expressions is "falsy"? Choose all that apply.
+ - `0`
+    - Nope.
+ - `"false"`
+    - Nope.
+ - `[]`
+    - Nope.
+ - `nil`
+    - Yes!
+ - `1 == 1`
+    - Nope.
+ - `""`
+    - Nope
+ - `false`
+    - Yes!
+{: .choose_all #falsy points="10" answer="[4,7]" }
 
-It turns out that **only `false` and `nil` are falsy**. _All_ other objects in Ruby are truthy — even `0`, `""`, and `[]`.
+----
+
+<p style="height: 200px"></p>
+
+----
 
 ### Comparisons
+
+It turns out that **only `false` and `nil` are falsy**. _All_ other objects in Ruby are truthy — even `0`, `""`, and `[]`.
 
 That said, we'll mostly use expressions after `if` that return `true` or `false`. There are lot of methods that are designed to do this; we've seen `Integer`'s `.odd?` and `.even?`, but there are a lot more.
 
