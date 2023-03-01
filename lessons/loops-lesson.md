@@ -176,9 +176,14 @@ So, given a **block** of code, the `10.times` method will execute it for us exac
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
 
+<div class="proj" markdown="1">
+
+  Return to the Gitpod loops project and work through `fizz_buzz.rb`
+</div>
+
 #### Block variables 
 
-But the `.times` method will save us even more trouble than that; we can stop worrying about creating and incrementing the counter variable, `mississipis`, too. The `.times` method will create a **block variable** and assign values to it for us automatically, but we have to choose a name for it using some new syntax after the `do`: the vertical bars, `| |`, or "pipes". It looks like this:
+The `.times` method will save us even more trouble; we can stop worrying about creating and incrementing the counter variable, `mississipis` from our previous examples. The `.times` method will create a **block variable** and assign values to it for us automatically, but we have to choose a name for it using some new syntax after the `do`: the vertical bars, `| |`, or "pipes". It looks like this:
 
 ```ruby
 10.times do |mississipis|
@@ -201,7 +206,7 @@ Try running it. Here's what's going on:
  - The `.times` method executed the block of code the second time.
  - Etc.
 
-Why does `.times` start by assigning `0` to its block variable during the first iteration, rather than `1`? Well, that's just how the author of the `.times` method made it work. Remember, Ruby, like many other languages uses zero-indexing.
+Why does `.times` start by assigning `0` to its block variable during the first iteration, rather than `1`? Well, that's just how the author of the `.times` method made it work. Remember, Ruby, like many other languages uses [zero-indexing](https://learn.firstdraft.com/lessons/14#at){:target="_blank"}.
 
 Fortunately, Ruby provides lots of other looping convenience methods that we can take advantage of instead, and each one assigns different values to its block variable.
 
@@ -214,22 +219,34 @@ In the REPL above, replace `10.times` with each of the following and play around
 10.step(1, -4)
 ```
 
-**BENP: need exercise for range and step: https://piazza.com/class/ldj532ul5a0621/post/235**
+----
 
-**BENP: multiples confusion: https://piazza.com/class/ldj532ul5a0621/post/269**
+#### Quiz Question
+
+- Check all that apply
+- In `2.upto(10)`, the count begins with 3 and goes to 9
+    - Really? Did you try it?
+- In `0.step(10, 2)`, `0` is the start, `10` (first argument) is the step, and `2` (second argument) is the highest value
+    - Really? Did you try it?
+- In `1.step(10, 2)`, `1` is the start, `10` (first argument) is the highest value, and `2` (second argument) is the step
+    - Yes!
+- In `2.step(50, 10)`, the count would proceed like `2`, `10`, `20`, etc.
+    - Really? Did you try it?
+- In `1.upto(11)`, the count would proceed like `1`, `2`,...,`11`
+    - Yes!
+{: .choose_all #ranges points="10" answer="[3,5]" }
+
+----
 
 <div class="proj" markdown="1">
 
-  When you're done with the first one, work through `multiples.rb`
-</div>
-
-**BENP: need more instruction or better lead up with conditionals to fizzbuzz: https://piazza.com/class/ldj532ul5a0621/post/264**
-
-<div class="proj" markdown="1">
-
-  And finally, work through `fizz_buzz.rb`
+  Return to the Gitpod loops project and work through `multiples.rb`
 </div>
 
 ###  Conclusion
 
 Now that we have an understanding of loops, we can have a look at the super important `.each` method for iterating over data structures.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
