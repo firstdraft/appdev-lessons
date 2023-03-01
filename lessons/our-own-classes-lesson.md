@@ -76,6 +76,29 @@ p c.class # => Person
 
 For each attribute that we declared, we get methods that we can call to assign and retrieve values.
 
+----
+
+#### Quiz Question
+
+- Choose all that are true of our `class Person` example above.
+- We can add a new `age` method to `Person` by writing `c.age`
+    - No, we need to define the new method _in_ the class, not on an instance _of_ the class
+- `attr_accessor` is a `Symbol`
+    - No, there is no `:` symbol prepending it
+- `attr_accessor` is a new keyword for us
+    - Yes! 
+- We can define a new `.age` method to `Person` by adding `attr_accessor "age"` to the class definition
+    - Not quite, `"age"` is a string
+- We can define a new `.age` method to `Person` by adding `attr_accessor :age` to the class definition
+    - Yes!
+- `Person` is a special object, and NOT a class like `Hash` or `Array`
+    - No! `Person` is just a class that we defined
+- We can reuse our new `Person` class to create as many new people as want (stored in separate variables) 
+    - Yes!
+{: .choose_all #person_class points="10" answer="[3,5,7]" }
+
+----
+
 #### Defining instance methods 
 
 **BENP: not confusion: https://piazza.com/class/ldj532ul5a0621/post/265**
