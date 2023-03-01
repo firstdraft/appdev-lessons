@@ -4,6 +4,29 @@ When we met the `Array` class, we noted that most of what we do as developers is
 
 Therefore, the most common reason we'll have to write loops is to **visit each element in an `Array` and do something interesting with it** — for example, display the element to the user with some formatting around it.
 
+----
+
+#### Quiz Question
+
+- Which of these codes would result in an `Array` in the variable `a`? Check all that apply.
+- `a = ()`
+    - No, parentheses are used after a method to list the arguments to the method
+- `a = Array`
+    - No, what method do we need to call _on_ `Array` to create a new one?
+- `a = []`
+    - Yes! Thanks to some syntactic sugar
+- `a.new = Array`
+    - No, the method should be on the right side of the assignment operator
+- `a = Array.new`
+    - Yes!
+- `a = "ruby".split("")`
+    - Yes! The `""` argument to `split` will separate each character
+- `a = [1, 2, 3]`
+    - Yes!
+{: .choose_all #arrays points="10" answer="[3,5,6,7]" }
+
+----
+
 ### Iterating over arrays with Integer's times method
 
 Try transforming the words in an Array using what you've learned so far about loops:
