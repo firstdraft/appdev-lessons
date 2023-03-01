@@ -135,3 +135,7 @@ Code like this is what drives the dozens of dynamic applications you interact wi
 ###  Conclusion
 
 That's it for `.each` and loops. It's time to meet a very important data structure class that we will be seeing a lot: `Hash`.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
