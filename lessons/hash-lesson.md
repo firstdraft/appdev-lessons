@@ -238,13 +238,6 @@ feeding_time = { :bear => "salmon", :zebra => "grass", :monkey => "banana" }
 
 ----
 
-<div class="proj" markdown="1">
-
-  Open the Gitpod [`Hash` project](https://github.com/appdev-projects/ruby-project-hash-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `person.rb`.
-
-  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
-</div>
-
 ### fetch shorthand, []
 
 Much like `Array`'s shorthand for `.at`, `[]`, `Hash` also a shorthand for retrieving elements with `.fetch`: `.[]` (and the associated syntactic sugar). So we _could_ write:
@@ -295,6 +288,13 @@ p person1
 
 This syntactic sugar makes it _feel_ like we're doing variable assignments to keys within the `Hash`, but under the hood it's identical to `.store(:key, :value)`.
 
+<div class="proj" markdown="1">
+
+  Open the Gitpod [`Hash` project](https://github.com/appdev-projects/ruby-project-hash-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `person.rb`.
+
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+</div>
+
 ### Use .keys to explore
 
 A very important method to use when you're dealing with `Hash`es that you didn't create yourself is `.keys`:
@@ -334,12 +334,22 @@ colors_array = dictionary.fetch(:colors)
 # =>  ["red", "green", "blue"]
 ```
 
-Now we can access the value at the second position with `.at`:
+----
 
-```ruby
-colors_array.at(1)
-# => "green"
-```
+#### Quiz Question
+
+- Now that we have `colors_array`, how can we get the string `"green"`?
+- `colors_array.at(1)`
+    - Yes!
+- `colors_array.at(2)`
+    - No, remember zero indexing
+- `colors_array.fetch("green")`
+    - No, we're dealing with an `Array` object, how do we fetch from that?
+- `colors_array.fetch(1)`
+    - No, we're dealing with an `Array` object, how do we fetch from that?
+{: .choose_best #get_green points="10" answer="1" }
+
+----
 
 Similarly, to retrieve `32` from the `Hash`, we first need to access the inner `Hash` under the key `:person`.
 
@@ -348,12 +358,26 @@ person_hash = dictionary.fetch(:person)
 # => { :name => "Jenna Parker", :age => 32 }
 ```
 
-Once the inner `Hash` has been retrieved, we can access the value stored under `:age` using `fetch`:
+----
 
-```ruby
-person_hash.fetch(:age)
-# => 32
-```
+#### Quiz Question
+
+- Now that we have the inner `Hash` (`person_hash`), how can we get the integer `32`?
+- `person_hash.at(1)`
+    - No, we're dealing with a `Hash` object, how do we fetch from that?
+- `person_hash.at(2)`
+    - No, we're dealing with a `Hash` object, how do we fetch from that?
+- `person_hash.fetch(:name)`
+    - No, which key do we want to fetch?
+- `person_hash.fetch(32)`
+    - No, which key do we want to fetch?
+- `person_hash.fetch("age")`
+    - No, we want to fetch on a symbol as the key
+- `person_hash.fetch(:age)`
+    - Yes!
+{: .choose_best #get_age points="10" answer="6" }
+
+----
 
 <div class="proj" markdown="1">
 
