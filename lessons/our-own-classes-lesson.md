@@ -282,3 +282,12 @@ end
 
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
+
+
+### Conclusions
+
+That's it for our introduction to the Ruby programming language. In the next lesson you will bring all of your skills together to bulk up in the Ruby Gym. Good luck!
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
