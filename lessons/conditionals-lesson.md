@@ -66,6 +66,13 @@ My advice: type the `end` _immediately_ after typing the `if` so that you don't 
 
 (While you're at it, indent the code on the lines between by two spaces so that it is visually clear what's inside the `if` statement.)
 
+<div class="proj" markdown="1">
+
+  Open the Gitpod [`if` statements project](https://github.com/appdev-projects/ruby-project-if-statements-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `if_sample_even.rb`.
+
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+</div>
+
 ### Multibranch if statements
 
 We can also have **multibranch** `if` statements, where we specify fallback conditions to check and code to execute if the first condition is falsy:
@@ -224,9 +231,7 @@ Basically, `&&` is stricter than `||`; both comparisons have to be true in order
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod [`if` statements project](https://github.com/appdev-projects/ruby-project-if-statements-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `rps.rb`.
-
-  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+  Return to the Gitpod `if` statements project and work through `rps.rb`.
 </div>
 
 <div class="proj" markdown="1">
