@@ -18,10 +18,6 @@ p numbers
 p len
 ```
 
-<aside markdown="1">
-In the code, we need to start by **instantiating**, or "creating an instance of", the variable `numbers`. This is just an empty array, but we fill it in the `if` statement (by `.push`ing into it). If we had *not* instantiated `numbers`, then what would have happened at the step `numbers.length`?
-</aside>
-
 What do you expect the output of this program to be? Try to interpret the program yourself before you ask Ruby to.
 
 <div class="experiment" markdown="1">
@@ -30,6 +26,25 @@ What do you expect the output of this program to be? Try to interpret the progra
 </div>
 
 Hopefully you clicked "▶ Run". Did you guess right?
+
+----
+
+#### Quiz Question
+
+In the code, we need to start by **instantiating**, or "creating an instance of", the variable `numbers`. This is just an empty array, but we fill it in the `if` statement (by `.push`ing into it). 
+
+- If we had *not* instantiated `numbers`, then what would have happened at the step `numbers.length`?
+- The `if` statement would not evaluate and the code would just print the `numbers` and `len` variables
+    - No, maybe try it in the `irb` terminal
+- We would get an error message but we wouldn't take the time to read it
+    - No! Always, always RTEM!
+- We would get an error message and we would take the time to read and understand it
+    - Yes! We love error messages.
+- We cannot call `.length` on an empty array
+    - No, we can and we did
+{: .choose_best #instantiate points="10" answer="3" }
+
+----
 
 We start off with a blank array, `numbers`. If its length is less than `10` (this is true, since length is currently `0`), we push a new random number into it.
 
