@@ -273,7 +273,7 @@ The new things to note in the code above:
     - No, please re-read the previous section
 - The `self` keyword refers to the class it is inside of and can be used to reference all the attributes of that class
     - Yes!
-{: .choose_all #person_class points="10" answer="[1,3,5]" }
+{: .choose_all #class_quiz points="10" answer="[1,3,5]" }
 
 ----
 
