@@ -217,10 +217,6 @@ For example, most classes have ways to compare _instances_ of the class to one a
 1 >= 2         # "1 is greater than or equal to 2"
 1 != 1         # "1 is NOT equivalent to 1"
 1 != 2         # "1 is NOT equivalent to 2"
-"apple" < "banana"
-"apple" > "banana"
-"apple" == "banana"
-"apple" != "banana"
 ```
 
 #### Equivalence vs assignment 
