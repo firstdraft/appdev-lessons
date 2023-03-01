@@ -258,6 +258,25 @@ The new things to note in the code above:
  - When defining the method, we do `def Person.parse` rather than just `def parse` to make it a **class method** rather than an **instance method**. That way, we call the method directly on capital-`P` `Person`.
  - We give the method the ability to accept an argument by adding parentheses and choosing a name for the argument when defining the method. Then we can use the input within the method definition, sort of like how we use a block variable.
 
+----
+
+#### Quiz Question
+
+- Choose all that are true.
+- The two methods we define on a class are called instance and class 
+    - Yes!
+- Instance methods act on the class itself, and class methods act on an instance of the class
+    - No, please re-read the previous section
+- Instance methods act on an instance of the class, and class methods act on the class itself
+    - Yes!
+- When you see `Object#method` notation, you can be sure they are talking about a class method
+    - No, please re-read the previous section
+- The `self` keyword refers to the class it is inside of and can be used to reference all the attributes of that class
+    - Yes!
+{: .choose_all #person_class points="10" answer="[1,3,5]" }
+
+----
+
 ### Inheritance
 
 When you define new classes, you can choose to inherit all the power of a "parent" class, and then add some custom behavior:
