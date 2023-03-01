@@ -402,14 +402,10 @@ h.key(500)   #=> nil
   Return to the Gitpod `Hash` project and work through `find_value.rb`
 </div>
 
-**BENP: also this issue https://piazza.com/class/ldj532ul5a0621/post/253**
-
 <div class="proj" markdown="1">
 
-  Finally, in the Gitpod `Hash` project complete `list.rb`
+  Finally, in the Gitpod `Hash` project work through `list.rb`
 </div>
-
-**BENP: need a looping with hashes exercise: https://piazza.com/class/ldj532ul5a0621/post/263, this might help: https://piazza.com/class/ldj532ul5a0621/post/267**
 
 ### Conclusion
 
@@ -418,3 +414,7 @@ h.key(500)   #=> nil
 But when you are storing a list of things that are categorically different from one another and you'd rather label them yourself, then `Hash`es are a better choice. That's about it!
 
 The last intro topic to cover in the next section is creating our own classes in Ruby.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
