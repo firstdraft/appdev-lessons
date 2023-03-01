@@ -360,7 +360,39 @@ end
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){:target="_blank"}
 </div>
 
-**BENP: note confusion: https://piazza.com/class/ldj532ul5a0621/post/257**
+----
+
+#### Quiz Question
+
+Consider this code:
+
+```ruby
+class Animal
+  attr_accessor :eats
+
+  def hungry_for
+    return "Wants to eat " + self.eats
+  end
+end
+
+class Bear < Animal
+end
+```
+
+- Choose all that are true.
+- `eats` is a class method
+    - No, we use it on an instance of the class
+- `self.` refers to `hungry_for`
+    - No, it refers to `Animal` (and `Bear` because we inherit from `Animal`)
+- We cannot call `.eats` on an instance of `Bear` because we didn't define it there
+    - No, please re-read the previous section
+- `<` above means "less than"
+    - No, please re-read the previous section
+- None of the above
+    - Yes!
+{: .choose_all #inherited points="10" answer="[5]" }
+
+----
 
 <div class="proj" markdown="1">
 
@@ -368,7 +400,6 @@ end
 
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
-
 
 ### Conclusions
 
