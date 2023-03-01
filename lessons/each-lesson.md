@@ -62,12 +62,6 @@ Your program should output the following:
   [Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){:target="_blank"}
 </div>
 
----
-
-<p style="height: 150px;"></p>
-
----
-
 After you've got it working, examine [the model solution here](https://repl.it/@_jelaniwoods/userwordssolution){:target="_blank"}. You'll see that I chose to use `.times` for this job.
 
  - On Line 6, we count the length of the array.
@@ -107,7 +101,7 @@ end
 
 ### Array's each method
 
-But we can do even better than using `Integer`'s `.times` (or `.step`) method to iterate over an `Array`. There's a method that you can call directly on the `Array` itself called `.each`. Compare the code below to the model solution above and try to find the differences:
+But we can do even better than using `Integer`'s `.times` (or `.step`) method to iterate over an `Array`. There's a method that you can call directly on the `Array` itself called `.each`. Compare the code below to the previous model solution and try to find the differences:
 
 ```ruby
 p "Enter at least 2 words, separated by spaces:"
@@ -147,9 +141,6 @@ I like to name the variables that contain arrays _plurally_ (e.g. `photos`), and
 The hardest part, I think, is getting your head around the block variable; in this case, `|the_word|`. It takes some practice.
 
 Try to remember that it's just a name that _we make up_, and `.each` takes care of putting each element in that variable for us behind the scenes. I could have called it `zebra` if I wanted to; there's nothing special about the name — in particular, it doesn't have to match the name of the variable containing the array. Just try to pick something descriptive of an individual element in the list.
-
-
-**BENP: note confusion with spell_word: https://piazza.com/class/ldj532ul5a0621/post/274**
 
 <div class="proj" markdown="1">
 
