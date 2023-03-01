@@ -101,6 +101,33 @@ Click "Run" and see what it looks like to build up a `Hash`. A few things to not
  - As in `Array`s, elements in the list (each element is one key/value _pair_) are separated by commas.
  - If the key already exists when you try to `.store` something under it, its value will be replaced.
 
+----
+
+#### Quiz Question
+
+Consider the hash:
+
+```ruby
+feeding_time = { :bear => "salmon", :zebra => "grass", :monkey => "banana" }
+```
+
+- Check all that apply
+- The symbols `:bear`, `:zebra`, and `:monkey` are the values, and `"salmon"`, `"grass"`, and `"banana"` are the keys
+    - No, please re-read the previous section
+- The strings `:bear`, `:zebra`, and `:monkey` are the keys, and `"salmon"`, `"grass"`, and `"banana"` are the values
+    - No, is `:bear` a string?
+- The symbols `:bear`, `:zebra`, and `:monkey` are the keys, and `"salmon"`, `"grass"`, and `"banana"` are the values
+    - Yes!
+- We should have used square brackets `[]` to make the `Hash`!
+    - No, please re-read the previous section
+- We could add another key/value pair with the code `feeding_time.store("cereal", :human)`
+    - No, please re-read the previous section
+- We could add another key/value pair with the code `feeding_time.store(:human, "cereal")`
+    - Yes!
+{: .choose_all #feeding_time points="10" answer="[3,6]" }
+
+----
+
 ### fetch
 
 To retrieve a piece of data from a `Hash`, we use the `.fetch` method (as opposed to `Array`'s `.at`):
@@ -143,14 +170,30 @@ p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){:target="_blank"}
 </div>
 
-A few things to try:
+----
 
- - What happens when you try to `.fetch` using a `String` like `"role"`?
- - What happens when you try to `.fetch` using a key that doesn't exist, like `:middle_name`?
+#### Quiz Question
 
-Get used to those error messages. You're going to see them a _lot_.
+- What happens when you try to `.fetch` on `person1` using a string like `"role"` or a key that isn't there like `:middle_name`?
+- `"role"` still returns the role, `:middle_name` returns `nil`
+    - Really? Did you try it?
+- `"role"` returns an error, `:middle_name` returns `nil`
+    - Really? Did you try it?
+- `"role"` returns an error, `:middle_name` returns an error
+    - Yes!
+- `"role"` returns `nil`, `:middle_name` returns `nil`
+    - Really? Did you try it?
+{: .choose_best #hash_error points="10" answer="3" }
+
+----
+
+<p style="height: 100px;"></p>
+
+----
 
 #### fetch fallback
+
+Get used to error messages when you're working on fetching from `Hash`es. You're going to see them a _lot_.
 
 Sometimes you may want to call `.fetch` using a key that may not be present in the `Hash`, and you don't want the program to crash with the "key not found" error message. In that case, you can provide a second argument which will be used as a fallback return value:
 
