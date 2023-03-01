@@ -39,7 +39,7 @@ Write a program that, given a list of words from the user, would take each word 
 
 For example, for the input:
 
-```
+```bash
 apple banana orange
 ```
 
@@ -64,19 +64,50 @@ Your program should output the following:
 
 ---
 
+<p style="height: 150px;"></p>
+
+---
+
 After you've got it working, examine [the model solution here](https://repl.it/@_jelaniwoods/userwordssolution){:target="_blank"}. You'll see that I chose to use `.times` for this job.
 
  - On Line 6, we count the length of the array.
  - On Line 8, we use that length with the `.times` method to kick off a loop with the correct number of iterations.
  - Within the block, we use the block variable (which we named `the_index`) to access the correct element within the array.
 
-<!-- **BENP: need an exercise using indexing in a loop here, this method is important in Ruby Gym** -->
-
 Using `.times` to iterate over an `Array` is not bad at all, especially because `.times`'s block variable starts at `0`, just like array indexing does. Using `.times` is certainly cleaner than using `while`, where we would have to create and increment a counter variable ourselves, and then write a condition to make sure that the loop stops after the correct number of iterations (the length of the array).
+
+----
+
+#### Quiz Question
+
+Consider the following code:
+
+```ruby
+a = ["zebra", "giraffe", "monkey", "bear", "salmon"]
+
+2.step(4, 2) do |the_index|
+  p a.at(the_index).capitalize
+end
+```
+
+- It would `p`rint:
+- `"Giraffe" "Bear"`
+    - Not quite, maybe test it. How does `.step` work? And what is the index of each element in the array?
+- `"Zebra" "Giraffe" "Monkey"`
+    - Not quite, maybe test it. How does `.step` work? And what is the index of each element in the array?
+- `"Monkey" "Bear"`
+    - Not quite, maybe test it. How does `.step` work? And what is the index of each element in the array?
+- `"Monkey" "Salmon"`
+    - Yes!
+- `"Giraffe" "Monkey"`
+    - Not quite, maybe test it. How does `.step` work? And what is the index of each element in the array?
+{: .choose_best #index points="10" answer="4" }
+
+----
 
 ### Array's each method
 
-But we can do even better than using `Integer`'s `.times` method to iterate over an `Array`. There's a method that you can call directly on the `Array` itself called `.each`. Compare the code below to the model solution above and try to find the differences:
+But we can do even better than using `Integer`'s `.times` (or `.step`) method to iterate over an `Array`. There's a method that you can call directly on the `Array` itself called `.each`. Compare the code below to the model solution above and try to find the differences:
 
 ```ruby
 p "Enter at least 2 words, separated by spaces:"
