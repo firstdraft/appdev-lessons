@@ -95,7 +95,9 @@ For each attribute that we declared, we get methods that we can call to assign a
     - No! `Person` is just a class that we defined
 - We can reuse our new `Person` class to create as many new people as want (stored in separate variables) 
     - Yes!
-{: .choose_all #person_class points="10" answer="[3,5,7]" }
+- `:role` is a symbol in the class definition, and it becomes a method when we instantiate a new `Person`
+    - Yes!
+{: .choose_all #person_class points="10" answer="[3,5,7,8]" }
 
 ----
 
