@@ -194,7 +194,7 @@ class Person
 end
 ```
 
-Now every `Person` that we create will have the ability to compute their age based on their own dob attribute:
+Now every `Person` that we create will have the ability to compute their age based on their own `birthdate` attribute (translated into a `dob` by `Date`):
 
 ```ruby
 hs = Person.new
@@ -213,11 +213,15 @@ So, rather than using a `Hash` to model real world things, it's a good idea to c
 
 #### Defining class methods 
 
-**BENP, note # vs . notation**
-
-The methods `full_name` and `age` above are known as _instance methods_, because we call them on individual **instances** of the `Person` class (Homer, Mickey, Minnie, etc).
+The methods `full_name` and `age` above are known as _instance methods_, because we call them on individual **instances** of the `Person` class (Homer, Mickey, Minnie, etc). 
 
 We can also define **class**-level methods, that we call directly on `Person` itself. This can be handy if we want to define re-usable utility methods that don't really belong to any one individual person.
+
+<aside markdown="1">
+In writing text (e.g. manuals, technical references, comments) We indicate *instance* methods by `Object#method` with the `#` symbol. So we have `Person#full_name` and `Person#age` defined in the previous section. We still call them in our code with the `.` symbol like `hs.full_name`.
+
+On the other hand, we always indicate *class* methods (like `Date.parse`) by `Object.method` with the `.` symbol. 
+</aside>
 
 Here's an example similar to `Date.parse` — what if we wanted users of the `Person` class to quickly be able to create new instances of the class like this:
 
