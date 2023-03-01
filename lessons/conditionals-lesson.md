@@ -262,7 +262,7 @@ You will 💯 make this typo, we all do at some point — when your conditional
 
 ```ruby
 n = "giraffe"
-n = n.capitalize
+
 if n != "giraffe"
   s = "first part"
 elsif n == "Giraffe"
