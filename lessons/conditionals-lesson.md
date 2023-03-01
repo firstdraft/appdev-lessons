@@ -296,6 +296,18 @@ p "It picked the " + s
 
 ----
 
+<div class="proj" markdown="1">
+
+  Return to the Gitpod `if` statements project and work through `rps.rb`.
+</div>
+
+<div class="proj" markdown="1">
+
+  Also, work through `palindrome.rb`.
+
+  (Hint: you will need a couple of methods from the [`String` lesson](https://learn.firstdraft.com/lessons/9){:target="_blank"}. What methods there can be used to make inputs a uniform case?)
+</div>
+
 ### Combining conditions with AND and OR
 
 Finally, another handy thing to have in your toolbelt are the **logical operators** `&&` (AND) and `||` (OR). These allow you to combine expressions; try these combined expressions out below:
@@ -323,20 +335,6 @@ end
 </div>
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.
-
-**BENP: confusion with rps: https://piazza.com/class/ldj532ul5a0621/post/252**
-
-<div class="proj" markdown="1">
-
-  Return to the Gitpod `if` statements project and work through `rps.rb`.
-</div>
-
-<div class="proj" markdown="1">
-
-  Also, work through `palindrome.rb`.
-
-  (Hint: you need to account for mixed-case inputs, what methods in the [`String` lesson](https://learn.firstdraft.com/lessons/9){:target="_blank"} can be used to make inputs a uniform case?)
-</div>
 
 ###  Conclusion
 
