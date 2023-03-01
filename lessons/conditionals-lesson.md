@@ -336,6 +336,15 @@ end
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.
 
+<div class="proj" markdown="1">
+
+  Return to the Gitpod `if` statements project and work through `and_or.rb`.
+</div>
+
 ###  Conclusion
 
 That's it for `if` statements. Now we'll have a look at **loops** for iterating.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
