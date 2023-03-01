@@ -47,6 +47,25 @@ Otherwise, they are just like strings, and we can use them to hold text data:
 
 So, that's that. `Symbol`s are lightweight strings that we, the developers, use when we need to label things. Let's continue.
 
+----
+
+#### Quiz Question
+
+- Which of these is a valid `Symbol`?
+- `"my_symbol"`
+    - No, that's a string
+- `:my_symbol`
+    - Yes!
+- `:MySymbol`
+    - No, we only use lowercase letters to create a symbol
+- `: my_symbol`
+    - No, look out for extra whitespace
+- `:my symbol`
+    - No, look out for extra whitespace that should be an underscore
+{: .choose_best #symbol_syntax points="10" answer="2" }
+
+----
+
 ### Creating hashes and storing values
 
 Back to the problem of storing a list of attributes about a person effectively, without mixing them up.
