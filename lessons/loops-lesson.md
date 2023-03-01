@@ -52,14 +52,6 @@ Once Ruby reaches the `if`'s `end`, it proceeds to the next line and continues t
 
 At the end of the day, `numbers` has one element in it and `len` is `1`.
 
-----
-
-#### Quiz Question
-
-
-
-----
-
 ### while: conditionally doing something multiple times
 
 Now, consider almost identical code, but with the `if` keyword swapped for a new keyword — `while`:
@@ -135,9 +127,7 @@ end
 
 Does the code make sense to you?
 
-<aside markdown="1">
-If the line `mississipis = mississipis + 1` looks a little odd to you, you're not alone. Remember, this is _variable assignment_ with the `=`, not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
-</aside>
+If the line `mississipis = mississipis + 1` looks a little odd to you, you're not alone. Remember, this is _variable assignment_ with the `=`, not equivalence with `==`. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g. `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
 
 Or, rather than `while`, I could use `Integer`'s `.times` method, like this:
 
@@ -161,6 +151,30 @@ Notice there's a new keyword here: `do`. This is because the `.times` method, in
 In order to pass a method _some lines of code_ as an argument, we need to wrap the lines of code within the `do` and `end` keywords, creating what's called a **block** of code.
 
 So, given a **block** of code, the `10.times` method will execute it for us exactly 10 times; this saves us the trouble of writing a condition for `while`.
+
+----
+
+#### Quiz Question
+
+- Check all that are true
+- We can nest an `if` statement inside of a block
+    - Yes! We just need to indent it inside to make it clear.
+- The code `3.times`, the code `[0, 6, 12].count.times`, and the code `"abc".length.times` are NOT equivalent
+    - No, what do `.count` and `length` return?
+- The code `3.times`, the code `[0, 6, 12].count.times`, and the code `"abc".length.times` are equivalent
+    - Yes! The second two return the integer 3 before `.times`
+- Blocks are variables inside of if statements
+    - No, re-read the previous section
+{: .choose_all #blocks points="10" answer="[1,3]" }
+
+----
+
+<div class="proj" markdown="1">
+
+  Open the Gitpod [loops project](https://github.com/appdev-projects/ruby-project-loops-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `letter_count.rb`.
+
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+</div>
 
 #### Block variables 
 
@@ -202,15 +216,6 @@ In the REPL above, replace `10.times` with each of the following and play around
 
 **BENP: need exercise for range and step: https://piazza.com/class/ldj532ul5a0621/post/235**
 
-**BENP: might need letter_count hint to use times (not each): https://piazza.com/class/ldj532ul5a0621/post/266**
-
-<div class="proj" markdown="1">
-
-  Open the Gitpod [loops project](https://github.com/appdev-projects/ruby-project-loops-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `letter_count.rb`.
-
-  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
-</div>
-
 **BENP: multiples confusion: https://piazza.com/class/ldj532ul5a0621/post/269**
 
 <div class="proj" markdown="1">
@@ -222,7 +227,7 @@ In the REPL above, replace `10.times` with each of the following and play around
 
 <div class="proj" markdown="1">
 
-  And finally, work through `fizzbuzz.rb`
+  And finally, work through `fizz_buzz.rb`
 </div>
 
 ###  Conclusion
