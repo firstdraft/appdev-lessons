@@ -336,10 +336,42 @@ end
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.
 
-<div class="proj" markdown="1">
+----
 
-  Return to the Gitpod `if` statements project and work through `and_or.rb`.
-</div>
+#### Quiz Question
+
+```ruby
+number1 = 10 
+number2 = 15
+sum = number1 + number2
+
+if sum > 10 && sum < 20
+  p sum
+elsif number1 >= 10 || number2 > 20
+  if number1 > number2
+    p number1
+  else
+    p number2
+  end
+else
+  p "skipping"
+end
+```
+
+**Think carefully,** after each `if` or `elsif` ask yourself: is this expression resulting in a `true` or a `false`? Move through the branches until you hit a `p` statement.
+
+- The above code will print...
+- 10
+    - Nope.
+- 15
+    - Yes!
+- 25
+    - Nope.
+- `"skipping"`
+    - Nope.
+{: .choose_best #branching_and_or points="10" answer="2" }
+
+----
 
 ###  Conclusion
 
