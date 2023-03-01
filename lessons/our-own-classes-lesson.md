@@ -81,21 +81,21 @@ For each attribute that we declared, we get methods that we can call to assign a
 #### Quiz Question
 
 - Choose all that are true of our `class Person` example above.
-- We can add a new `age` method to `Person` by writing `c.age`
+- We can add a new `birthdate` method to `Person` by writing `c.birthdate`
     - No, we need to define the new method _in_ the class, not on an instance _of_ the class
 - `attr_accessor` is a `Symbol`
     - No, there is no `:` symbol prepending it
 - `attr_accessor` is a new keyword for us
     - Yes! 
-- We can define a new `.age` method to `Person` by adding `attr_accessor "age"` to the class definition
-    - Not quite, `"age"` is a string
-- We can define a new `.age` method to `Person` by adding `attr_accessor :age` to the class definition
+- We can define a new `.birthdate` method to `Person` by adding `attr_accessor "birthdate"` to the class definition
+    - Not quite, `"birthdate"` is a string
+- We can define a new `.birthdate` method to `Person` by adding `attr_accessor :birthdate` to the class definition
     - Yes!
 - `Person` is a special object, and NOT a class like `Hash` or `Array`
     - No! `Person` is just a class that we defined
-- We can reuse our new `Person` class to create as many new people as want (stored in separate variables) 
+- We can reuse our new `Person` class to create as many new people as we want (stored in separate variables) 
     - Yes!
-- `:role` is a symbol in the class definition, and it becomes a method when we instantiate a new `Person`
+- `:role` is a symbol in the class definition, and it is available as a method when we instantiate a new `Person`
     - Yes!
 {: .choose_all #person_class points="10" answer="[3,5,7,8]" }
 
@@ -103,9 +103,51 @@ For each attribute that we declared, we get methods that we can call to assign a
 
 #### Defining instance methods 
 
-**BENP: not confusion: https://piazza.com/class/ldj532ul5a0621/post/265**
+There are a few reasons I like using classes more than `Hash`es to model things, but here is the big one: in addition to just storing a list of attributes about a thing, we can also _define our own methods_ with the `def` keyword. 
 
-There are a few reasons I like using classes more than `Hash`es to model things, but here is the big one: in addition to just storing a list of attributes about a thing, we can also _define our own methods_ with the `def` keyword. For example, try adding the following `full_name` method to the class we defined in the REPL above:
+In Ruby, we define new methods with the construction:
+
+```ruby
+# define a method names 'my_method'
+def my_method
+  # do stuff
+  return "stuff"
+end
+```
+
+And then we can all our new method later in our code by just typing the name we put after `def`:
+
+```ruby
+# invoke/call method
+my_method     # => stuff
+```
+
+And the output is whatever we `return`ed from the method in our definition! Easy as that.
+
+We can even provide arguments to a method we define by including parentheses.
+
+----
+
+#### Quiz Question
+
+Consider the code:
+
+```ruby
+def square_root(a_number)
+  as_float = a_number ** 0.5
+  as_integer = as_float.to_i
+  return as_integer
+end
+```
+
+- What would be returned if we added `square_root(9)` below that method?
+- 3
+    - Yes!
+{: .free_text #square_root points="10" answer="1" }
+
+----
+
+Okay, back to our `Person` class. Try adding the following `full_name` method to the class we defined in the REPL above:
 
 ```ruby
 class Person
@@ -117,8 +159,6 @@ class Person
   end
 end
 ```
-
-**BENP: is this the first time we've defined a function? Good quick explanation by Ian: https://piazza.com/class/ldj532ul5a0621/post/185**
 
 Now, in addition to being able to store data (first and last names), I can ask any `Person` to compute its full name:
 
