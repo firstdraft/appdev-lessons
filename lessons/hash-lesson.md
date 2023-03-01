@@ -187,6 +187,19 @@ p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
 
 ----
 
+#### Quiz Question
+
+- In the previous `feeding_time` variable, how would you retrieve the string `"grass"`?
+- feeding_time.fetch(:zebra)
+    - Yes!
+- .fetch(:zebra)
+    - Yes!
+- fetch(:zebra)
+    - Yes!
+{: .free_text #feeding_fetch points="10" answer="[1,2,3]" }
+
+----
+
 #### fetch fallback
 
 Get used to error messages when you're working on fetching from `Hash`es. You're going to see them a _lot_.
@@ -207,21 +220,6 @@ p person1.fetch(:middle_name, "None provided")
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-fetch-with-fallback){:target="_blank"}
 </div>
-
-----
-
-#### Quiz Question
-
-- In the previous `feeding_time` variable, how would you retrieve the string `"grass"`?
-- feeding_time.fetch(:zebra)
-    - Yes!
-- .fetch(:zebra)
-    - Yes!
-- fetch(:zebra)
-    - Yes!
-{: .free_text #feeding_fetch points="10" answer="[1,2,3]" }
-
-----
 
 ### Hash literals
 
