@@ -203,7 +203,7 @@ For how many of the above did you correctly predict the output? What did you lea
 
 It turns out that **only `false` and `nil` are falsy**. _All_ other objects in Ruby are truthy — even `0`, `""`, and `[]`.
 
-That said, we'll mostly use expressions after `if` that return `true` or `false`. There are lot of methods that are designed to do this; we've seen `Integer`'s `.odd?` and `.even?`, but there are a lot more.
+That said, we'll mostly use expressions after `if` that return `true` or `false`. There are a lot of methods that are designed to do this; we've seen `Integer`'s `.odd?` and `.even?`, but there are a lot more.
 
 For example, most classes have ways to compare _instances_ of the class to one another:
 
@@ -217,6 +217,7 @@ For example, most classes have ways to compare _instances_ of the class to one a
 1 >= 2         # "1 is greater than or equal to 2"
 1 != 1         # "1 is NOT equivalent to 1"
 1 != 2         # "1 is NOT equivalent to 2"
+"apple" == "apple"
 ```
 
 #### Equivalence vs assignment 
@@ -239,7 +240,22 @@ We accidentally used the assignment operator instead of the equivalence comparis
 
 You will 💯 make this typo, we all do at some point — when your conditional always is going into the `true` branch inexplicably, let this ring a bell!
 
-**BENP: add quiz q about == and =: https://piazza.com/class/ldj532ul5a0621/post/246**
+----
+
+#### Quiz Question
+
+- The equivalence operator is (and does)...
+- `=`, and it checks if two things are the same
+    - No, that's the variable assignment operator, and it assigns objects into variables
+- `=`, and it assigns objects into variables
+    - No, that's the variable assignment operator.
+- `==`, and it assigns objects into variables
+    - Not quite, look above at the previous section.
+- `==`, and it checks if two things are the same
+    - Yes! `==` is not the same as `=`
+{: .choose_best #equivalence points="10" answer="1" }
+
+----
 
 ### Combining conditions with AND and OR
 
