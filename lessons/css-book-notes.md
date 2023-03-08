@@ -254,3 +254,54 @@ p, h1, h2, h3, h4, h5, h6 {
 - most inherited properties are **typography related**: `color`, `font-size`, `text-shadow`, etc.
 
 - can **force inheritance**: `color: inherit` declaration
+
+### The Cascade
+
+- browser chooses one of conflicting property values when there is overlap (e.g., element selector and class selector both have a `color` property)
+- "winner" depends on **specificity**
+    - classes are more specific than element tags
+    - IDs are more specific than classes
+
+### Block and Inline Directions
+
+- The **web was built for displaying inter-linked documents**, so CSS mechanics are inherited from print world
+- words are combined into **blocks** (e.g., `<p>`)
+- pages are just blocks stacked up
+- so we have horizontally oriented words and vertically oriented blocks (two directions)
+- CSS has a **block** and and **inline** direction
+
+### Logical Properties
+
+- only really important for *internationalization*
+
+### The Box Model
+
+**Box Model is shown in dev tools by the colored rectangles**
+
+The four aspects that make up the box model are:
+  1. Content
+    - what's the copy
+  2. Padding
+    - what's the inner space
+  3. Border
+    - what's surrounding the inner space
+  4. Margin
+    - what's the distance between boxes
+
+- use declaration `box-sizing: border-box` to include padding and border on size of a box, to make this default behavior add:
+
+    ```css
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    ```
+
+- padding can be set globally (`padding: 20px`) or assymetrically (`padding-top: 20px`; `padding: top right bottom left`)
+
+- border style is set with `border: width style color;` 
+- `border-radius: 25 px` **rounds all corners**; `border-radius: top-left top-right bottom-right bottom-left` can **round individual corners**
+- `border-radius: 50%` creates a circle / oval
+
+- `outline: width style color` goes around the border and does not affect layout (**outline = box shadowing**)
