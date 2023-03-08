@@ -144,3 +144,14 @@
 
 #### Spacing
 
+- `letter-spacing` or `line-height` properties, but `line-height` takes *unitless* number (relative to fontsize)
+- **minimum line height should be 1.5**, chrome default is only 1.15!
+
+### Browser Debugging
+
+- need to use "Inspect element" to see what is what!
+- **Elements** tab to select different boxes
+    - use arrow tool tip to select elements on the page and highlight in the dev tools
+    - sub-tab **Styles** shows all CSS for the element!
+        - crossed out things are overwritten or invalid
+        - can toggle styles on and off and add your own styles directly here! but be careful, because page refresh = **all work gone**
