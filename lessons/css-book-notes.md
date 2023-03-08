@@ -9,6 +9,8 @@
 
 ### Media Query
 
+- good place to mention **accessibility**
+
 - @media queries because different screen sizes are very important
     - provides a nice intro to conditionals!
 
@@ -68,11 +70,38 @@
 
 - using `::before` or `::after` pseudo-elements are ok if the `content` is just decorative 
 
-## Color
+### Color
+
+- **multi-format picker: https://fffuel.co/cccolor/**
 
 - simple
-    ```
+    ```css
     p {
       color: red;
     }
     ```
+
+- hex red: `#FF0000`
+- hsl red: `hsl(0deg, 100%, 50%)`
+- alpha values 0 (transparent) - 1 (opaque)
+    - if IE need legacy method `hsla(0deg, 100%, 50%, 0.2)`
+    - all other browsers support modern `hsl(0deg 100% 50% / 0.2)` OR `hsl(0deg, 100%, 50%, 0.2)` (with commas)
+
+- `color` property for text, `background-color` for element
+
+- can pass images and gradients as **values** to these **properties**
+
+### Unit
+
+- `px` for pixels is most popular
+- `em` is relative unit equal to font-size of *current* element
+    - `rem` is a better choice and it means "root element", so the default HTML tag of 16px font
+    - only change HTML default font size with percentages, so it respects users defautl font size:
+    ```css
+    html {
+      font-size: 150%
+    }
+    ```
+- `%` often used with `width` and `height` to consume available space
+
+- generally you will need a mix of *both* `px` and `rems` to make it most **accessible**
