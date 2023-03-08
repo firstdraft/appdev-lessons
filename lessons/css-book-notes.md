@@ -105,3 +105,42 @@
 - `%` often used with `width` and `height` to consume available space
 
 - generally you will need a mix of *both* `px` and `rems` to make it most **accessible**
+
+### Typography
+
+- `font-family` property (e.g., `Arial`, `Roboto`)
+- nice location to view and see e.g., bold vs italic within a family: https://fonts.google.com/
+- **serif** (edge stroke adornment; print media) vs **sans-serif** (without adornment; web)
+
+- usually we use a link tag to add external stylesheets to make different fonts available:
+
+    ```html
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+      p {
+        font-family: 'Roboto', Arial, sans-serif;
+      }
+    </style>
+    ```
+
+    - we usually surround a **web font** in quotation marks
+    - when we have many separated by commas, it is a **font stack** and the device will use the first available in the list
+
+#### bold, italic, underline
+
+- `font-weight: bold;` or `font-weight: 700;`
+    - to actually change HTML element, need `<strong>`
+- `font-style: italic;`
+    - to actually change HTML element, need `<em>`
+- underlined = links on the web; can remove with `text-decoration: none;`
+- `<b>` and `<i>` are confusing, best to avoid
+
+#### alignment
+    
+- `text-align` property to shift characters horizontally (e.g., `right` or `center`)
+    - don't use for images, only text
+
+#### Spacing
+
