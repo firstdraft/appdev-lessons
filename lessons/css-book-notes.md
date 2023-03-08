@@ -1,6 +1,6 @@
 # CSS for JS by Josh Comeau
 
-## Fundamentals
+## Module 0: Fundamentals
 
 ### Anatomy
 
@@ -153,5 +153,13 @@
 - **Elements** tab to select different boxes
     - use arrow tool tip to select elements on the page and highlight in the dev tools
     - sub-tab **Styles** shows all CSS for the element!
-        - crossed out things are overwritten or invalid
-        - can toggle styles on and off and add your own styles directly here! but be careful, because page refresh = **all work gone**
+        - crossed out things are overwritten or invalid or **commented out in the code**
+        - can toggle styles on and off and add your own styles directly here! but be careful, because page refresh = all work gone
+        - **force element state** buttons to show state styles (e.g., hover)
+        - shift+click on color to cycle through different representations
+        - generally want color contrast > 4.5
+
+- firefox has some nice features that show *why* a style isn't working. stick with chrome but useful to have firefox for tricky debugging
+
+## Module 1: Rendering Logic I
+
