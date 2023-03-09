@@ -326,6 +326,15 @@ h2 {
 
 ## Module 2: Rendering Logic II
 
-### Relative / Absolute Positioning
+### Positioned Layout
+
+#### Relative / Absolute Positioning
 
 - `position` property takes `relative`, `absolute`, `fixed`, `sticky` (default is `static`)
+
+- `relative`
+    - access to `top`, `bottom`, `left`, `right` to shift elements or classes relative to starting position without impacting layout
+
+- `absolute`
+    - access to `top`, `bottom`, `left`, `right` to set positions on the screen
+    - pulls the element **out of flow**
