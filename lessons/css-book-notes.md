@@ -172,27 +172,6 @@
 
 ```css
 /*
-  1. Use a more-intuitive box-sizing model.
-*/
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/*
-  2. Remove default margin
-*/
-* {
-  margin: 0;
-}
-
-/*
-  3. Allow percentage-based heights in the application
-*/
-html, body {
-  height: 100%;
-}
-
-/*
   Typographic tweaks!
   4. Add accessible line-height
   5. Improve text rendering
@@ -215,20 +194,6 @@ img, picture, video, canvas, svg {
 */
 input, button, textarea, select {
   font: inherit;
-}
-
-/*
-  8. Avoid text overflows
-*/
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-
-/*
-  9. Create a root stacking context
-*/
-#root, #__next {
-  isolation: isolate;
 }
 ```
 
@@ -270,6 +235,8 @@ p, h1, h2, h3, h4, h5, h6 {
 - so we have horizontally oriented words and vertically oriented blocks (two directions)
 - CSS has a **block** and and **inline** direction
 
+- this is the **flow layout** (see below)
+
 ### Logical Properties
 
 - only really important for *internationalization*
@@ -286,7 +253,7 @@ The four aspects that make up the box model are:
   3. Border
     - what's surrounding the inner space
   4. Margin
-    - what's the distance between boxes
+    - space around the element
 
 - use declaration `box-sizing: border-box` to include padding and border on size of a box, to make this default behavior add:
 
@@ -305,3 +272,37 @@ The four aspects that make up the box model are:
 - `border-radius: 50%` creates a circle / oval
 
 - `outline: width style color` goes around the border and does not affect layout (**outline = box shadowing**)
+
+- symmetric margins with `margin: 20px`, assymetric with `margin: top right bottom left`
+- margins can be negative to put element outside of parent
+- margins dictate the **gap between elements**
+- `margin: auto` (or `margin-left/right: auto`) try to use all available space for the margins; good for **centering** (if `width` has been set)
+
+### Flow Layout
+
+- default of seven layout modes (also positioned, flexbox, css grid, etc.)
+- **flow layout = microsoft word** intendended for documents
+- plain HTML doc w/out CSS uses flow
+- **block** (`<div>`, `<header>`, etc.) and **inline** (copy, `<a>`, `<span>`) elements
+- `display: block` declaration can turn **any element into a block**
+- blocks take up the entire width, can be shrunk with `width: fit-content`, **but block elements cannot be placed side-by-side**
+
+```html
+<style>
+h2 {
+  width: fit-content;
+  border: 2px dotted;
+}
+
+.red-box {
+  border: 10px solid red;
+}
+</style>
+
+<h2>
+  Hello World
+</h2>
+<div class="red-box"></div>
+```
+
+- `display: inline-block` is a way of changing an inline element to have block behavior (e.g., can give it margin and alignment), but it doesn't allow line wrapping
