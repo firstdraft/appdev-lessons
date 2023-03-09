@@ -338,3 +338,21 @@ h2 {
 - `absolute`
     - access to `top`, `bottom`, `left`, `right` to set positions on the screen
     - pulls the element **out of flow**
+
+#### Fixed Positioning
+
+#### Sticky Positioning
+
+## Module 3: Modern Component Architecture
+
+## Module 4: Flexbox
+
+## Module 5: Responsive CSS
+
+## Module 6: Typography and Images
+
+## Module 7: CSS Grid
+
+## Module 8: Animations
+
+## Module 9: Little Big Details
