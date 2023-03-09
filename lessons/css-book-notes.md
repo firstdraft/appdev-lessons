@@ -306,3 +306,18 @@ h2 {
 ```
 
 - `display: inline-block` is a way of changing an inline element to have block behavior (e.g., can give it margin and alignment), but it doesn't allow line wrapping
+
+### Width Algorithms
+
+- `auto`, `min-content`, `max-content`, `fit-content`
+- create a centered wrapper:
+    ```css
+    max-width-wrapper {
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    ```
+
