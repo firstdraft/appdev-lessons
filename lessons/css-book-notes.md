@@ -165,7 +165,6 @@
 
 ## Module 1: Rendering Logic I
 
-
 ### Default Styles
 
 - can steal Josh's common-sense functional styles: https://courses.joshwcomeau.com/css-for-js/treasure-trove/010-global-styles
@@ -307,9 +306,9 @@ h2 {
 
 - `display: inline-block` is a way of changing an inline element to have block behavior (e.g., can give it margin and alignment), but it doesn't allow line wrapping
 
-### Width Algorithms
+#### Width/Height Algorithms and Margin Collapse
 
-- `auto`, `min-content`, `max-content`, `fit-content`
+- width: `auto`, `min-content`, `max-content`, `fit-content`
 - create a centered wrapper:
     ```css
     max-width-wrapper {
@@ -321,3 +320,12 @@ h2 {
     }
     ```
 
+- generally we are more conservative with setting min/max heights
+
+- margin collapse is unique to flow layout (`display: flex` margins will never collapse), and is tricky...
+
+## Module 2: Rendering Logic II
+
+### Relative / Absolute Positioning
+
+- `position` property takes `relative`, `absolute`, `fixed`, `sticky` (default is `static`)
