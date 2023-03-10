@@ -154,47 +154,127 @@ Now, back on **/movies**, we see the `index` action page, where there is a form 
 
 Try to add one. What happens? An error we haven't encountered before: `ActionController::InvalideAuthenticityToken`.
 
-## Reviewing RCAV 00:57:30 to 
+## Reviewing RCAV 00:57:30 to 01:00:00
 
-Shaking off some rust for those of you who's been a while. Uh, okay. So we have an error showing up here That's right. And we try to make a new movie. Before we resolve that, I just want to like talk through how this page is showing up because again, it's been like a year and a half for some of you since you took app dev, so bear with me if you just took App Dev last quarter.
+Before we solve this new error, let's shake off some rust. What's even happening on the **/movies** page in this form?
 
-Okay. So the generator wrote these routes for [00:58:00] us in the routes I first visited slash movies, which is streaming the route on Live eight, which is telling Rails when somebody visits slash movies go to the app controllers folder, find something called movies controller, run the method called index. So Rails goes over here, heads over to the app controllers folder, looks for movies controller, which was just generated for us happily by the resource generator.
+The generator wrote these routes for us, and we're trying to visit one of them: 
 
-And then it looks for a method called [00:58:30] Index, which it finds here runs this code. This is referring to the model in the app models folder, which was also created by the generator for us. This is the class that we use to interact with our database table, which has methods like DOT All to go get all the movies in there.
+```ruby
+# config/routes.rb
 
-It's got dot where to get particular movies. So we got the all movies and put it into this instance variable with an act in front. We're rendering a new template in the [00:59:00] app views mobiles folder called Index H rb. So this line here is telling Rails to always go look in app views and then whatever folder and file is specified here, which again the generator created for us.
+Rails.application.routes.draw do
+  # Routes for the Movie resource:
 
-In here we have some HTML and we have some embedded Ruby. This is empty right now. This is coming back with an empty array, so it's not doing anything. But once we add some movies, that will [00:59:30] create a table row per movie in the form that's not working is this form right here where when we fill out this form, it's going to go to this url.
+  # CREATE
+  post("/insert_movie", { :controller => "movies", :action => "create" })
+          
+  # READ
+  get("/movies", { :controller => "movies", :action => "index" })
+  
+  ...
 
-It's using a method of post, which is the key part here. This is something we learned sort of towards the end of AD1. There's different http verbs they're called and we started out in AD1 using Get for Everything. [01:00:00] Then we evolved to using post when we were adding or updating records or demeaning records sometimes because if we wanted to do something like a file upload or if we have some sensitive information like passwords, we don't want to use get, because it'll put the password right in the query string and the url.
+end
+```
+{: mark_lines="10"}
 
-It'll be visible to people who are spying. Whereas Post puts all of the inputs into a different part of the request so that they're not visible and you can have file uploads [01:00:30] and you can have anything you want and you can have arbitrary length. Uh, and we switched to post for that reason. Okay. With what I just went over before we resolve this error here where I try to create a movie and I get this author history token, can anybody think of any questions about the route controller action view flow or any HTML or any Ruby, anything basically that was involved with displaying this page [01:01:00] here?
+Our app is running on the live server, so when we try to visit the **/movies** path, the `get("/movies"...)` method says: let me go to the `MoviesController` and find the method (a.k.a., `:action`) called `index`:
 
-So this action here,
+```ruby
+# app/controllers/movies_controller.rb
 
-rendering a template here, got static html, we got forms. So trying to think of anything that's fuzzy about this. Yep. Um, kind of a syntax question. Uh, and a lot of the, um, especially in the, uh, controller mm-hmm. , [01:01:30] there is a, a lot of like brackets, space, colon, kind of variable name where like read their vendor template, let's order created.
+class MoviesController < ApplicationController
+  def index
+    matching_movies = Movie.all
 
-Yep. Why is the syntax that way? What does that colon do and why is there space before? Good question. Okay. So this is a method with prees, meaning the arguments are. This method requires some input, right? Call the arguments. So far so good. The curly braces indicate that this is a hash [01:02:00] literal, so we have very stereotypes, right?
+    @list_of_movies = matching_movies.order({ :created_at => :desc })
 
-Strings, arrays in integers. Decimals. The curly bracket indicates that what's in here is a hash. So far so good cuz we have arrays like this and then we have hashes, which look like this.
+    render({ :template => "movies/index.html.erb" })
+  end
 
-And if I have an array and a variable here and a hash and a variable here later on, if I want to access the element [01:02:30] like that, I would say a at 2 0 1 2. And for a hash on say, fetch second and now return this value, right? So they both lists this kind of list. The values are labeled by us and we fetch using the labels, the labels that we choose when we're labeling these values.
+  ...
 
-Can be any, any ruby object. So I couldn't choose chosen to [01:03:00] use a string like that and then I'd have to fetch using the string. But in Ruby, so like most languages don't have this other data type, starting with the colon. In Ruby we have it, it's called a symbol, basically a string. It's just that it can't have spaces or special characters in it.
+end
+```
+{: mark_lines="4 10"}
 
-We started off with a colon. We don't have to end it with the colon because there can't be spaces. So it just ends when it runs at the end of the token, and usually in Ruby [01:03:30] we use these as the keys in our hashes. In other languages they're called associated arrays or dictionaries. But for labels, we use symbols in really?
+Rails then runs that `index` method. Remember, all of these files were generated for us by our `draft:resources` command.
 
-So far so good. Yeah. Okay. Now the white space, we don't need, it's totally stylistic. So some white space and ruby is significant. Most white space and ruby is not significant. The only really place usually that it bites people is if you put a space right between the parenthesis, [01:04:00] you put a space right there that's going to mess it up.
+`Movie` is the model (find it in `app/models/movie.rb`) that we use to interact with our `movies` table. That's why we can call the `.all` instance method on `Movies` in the first line of the `index` action. Then we `.order` the movies by their `created_at` field, and render the instance variable `@list_of_movies` with a `.each` loop in our view:
 
-Cuz now this method doesn't know what's its parenthesis and what's its arguments and what's coming later. So parenthesis are used for order of operations as well. So that's the only place where you really gotta avoid space is everywhere else. It's almost immaterial, just up to you. Like, we could do this if we wanted to for like you, the line was too long and we wanted to indent it.
+```html
+<!-- app/views/movies/index.html.erb -->
 
-We could do that. [01:04:30] Most white spaces ignore. Good. Yeah. Thanks. Any other questions about anything so far? Love it. Okay, so let me go check out these notes again and. Okay. First of all, I want this to work, uh, here. There's so many things we need to learn when it comes to leveling up our code base from what we're doing after f1, which was [01:05:00] easy to get started with, but then like all the little things that you actually need in a professional code base that you're charging money for, that we would never have even thought of in terms of security and performance.
+<div>
+  <div>
+    <h1>
+      List of all movies
+    </h1>
+  </div>
+</div>
 
-But happily, Rails and tens of thousands of companies that use Rails have encountered these security holes and performance issues and built solutions for them into Rails. It requires us a little bit of extra work to use these solutions built into Rails and after one, we actually [01:05:30] disabled them all to make it simpler for us as we get something up and running.
+...
 
-But now in after two, we've re-enabled all of those default protections, so we need to take a few extra steps to make things work. Here's what's going on here. When I submitted this form, it did a post to
+      <% @list_of_movies.each do |a_movie| %>
+      <tr>
+        <td>
+          <%= a_movie.id %>
+        </td>
 
-the slash insert route, and now that we are using Post [01:06:00] for our update and create anything, any, any action that we expect to be modifying our database, we're using Post Rails now is going to expect. That post to come along with essentially a password that guarantees that this form that the person is filling out was created by us and not by a [01:06:30] malicious third party.
+...
+
+```
+{: mark_lines="13"}
+
+Remember, this is an embedded Ruby `.html.erb` file, so we can use the tags `<% %>` for hidden Ruby and `<%= %>` to render things on the page.
+
+Our `movies` table is empty right now, so there is nothing rendered on the **/movies** page (we are `.each` looping on an empty array). But, once we add some movies, that will create a table row per movie in the form on our view page, and that's not working right now.
+
+## HTTP Verb POST 01:00:00 to 
+
+Now that we've reviewed some RCAV, let's have a look at that form on top of the **/movies** view template:
+
+```html
+<!-- app/views/movies/index.html.erb -->
+
+...
+
+    <form action="/insert_movie" method="post">
+
+        ...
+
+    </form>
+
+...
+
+```
+{: mark_lines="5"}
+
+The `action` for this form is visiting the **/insert_movie** URL, which we can find in our routes:
+
+```ruby
+# config/routes.rb
+
+Rails.application.routes.draw do
+  # Routes for the Movie resource:
+
+  # CREATE
+  post("/insert_movie", { :controller => "movies", :action => "create" })
+...
+```
+{: mark_lines="7"}
+
+It's using a `method` of `post`, which is the key part here. This is something we learned towards the end of AD1. 
+
+There's a few different HTTP verbs. In AD1, we started out by using GET for everything. Then we evolved to using POST when we were adding or updating records, or deleting records sometimes. If we wanted to do something like a file upload, or if we have some sensitive information like passwords, we don't want to use GET, because it'll put the password right in the query string and the URL. Meaning it'll be visible to anyone!
+
+On the other hand, POST puts all of the inputs into a different part of the request so that they're not visible. You can have file uploads, passwords, anything you want, and you can have arbitrary length. 
+
+In AD1, we were actually not using POST entirely correctly. We left a security hole! Happily, Rails and tens of thousands of companies that use Rails, have encountered these security holes and performance issues and built solutions for them. It requires a little bit of extra work to use these solutions built into Rails. In AD1, we actually disabled them all to make it simpler to get something up and running. But now, in AD2, we've re-enabled all of those default protections. 
+
+Here's what's going on here. 
+
+When I submitted the form, it did a POST to `"/insert_movie"`. and now that we are using Post [01:06:00] for our update and create anything, any, any action that we expect to be modifying our database, we're using Post Rails now is going to expect. That post to come along with essentially a password that guarantees that this form that the person is filling out was created by us and not by a [01:06:30] malicious third party.
 
 The reason for that is if we just blindly accepted that request, somebody could put this form on their own website, like a malicious person if they tricked one of your users into filling this form out. But then they put our domain here. So suppose a malicious attacker [01:07:00] put this form on their website, but had it point to around in our website, then they would be able to modify our database.
 
