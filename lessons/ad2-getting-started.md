@@ -12,7 +12,7 @@ In AD1, we used a slimmed down Rails project that didn't include all the out-of-
 
 When the `bin/setup` command finishes, do a `bin/server` and check out the app with the app preview in a new tab. 
 
-## `draft:resource` 00:48:00
+## `draft:resource` 00:48:00 to 00:57:30
 
 The homepage of the app is just the blank Ruby on Rails welcome page. We can see if there are any routes in our app by checking in on `config/routes.rb`:
 
@@ -92,31 +92,71 @@ Now try again the command:
 rails generate draft:resource movie title:string description:text released:boolean
 ```
 
-So sure, [00:51:30] once you have that installed, you should be able to run the Rails, generate draft code, resource movie, et cetera, et cetera, from the . And this time it ought to work since we pulled in that gem from GitHub and it generates the standard controller for us, our migration, our movie model, and our index and show and some routes.
+And this time it ought to work, since we pulled in that gem from GitHub:
 
-Let's go check it out and go to my [00:52:00] route. RV can remind ourselves the routes that are remote for us and then we can go check this out with, if I go into slash movies in my app, it gives us the pending migration air cuz we forgot, I forgot the reels. DB migrated as always. I guess in rail six there's a button I can click right there cause it's actually, yeah I did it.
+```bash
+Running via Spring preloader in process 1372
+      create  app/controllers/movies_controller.rb
+      invoke  active_record
+      create    db/migrate/20230310220332_create_movies.rb
+      create    app/models/movie.rb
+      invoke    test_unit
+      create      test/models/movie_test.rb
+      create      test/fixtures/movies.yml
+      create  app/views/movies
+      create  app/views/movies/index.html.erb
+      create  app/views/movies/show.html.erb
+       route  RESTful routes
+      insert  config/routes.rb
+```
 
-It's nice. The [00:52:30] error message. I dunno if you saw that, but as of rail six point something, the error message had a button in it that said run pen migrations. I just clicked on it and it did the Rails DB migrate for me. Nice. Uh, and now I've got my movies and I can add something.
+Let's go check out some of these files that were created, starting back with our `routes.rb`: 
 
-Oh, and we see our first error, which we're going to have to now talk about.[00:53:00] 
+```ruby
+# config/routes.rb
 
-So I tried to add a movie and I got this invalid authenticity token error. I'm going to pause here, make sure everybody's caught up with me. Raise your hand if not[00:53:30] 
+Rails.application.routes.draw do
+  # Routes for the Movie resource:
 
-the.[00:54:00] 
+  # CREATE
+  post("/insert_movie", { :controller => "movies", :action => "create" })
+          
+  # READ
+  get("/movies", { :controller => "movies", :action => "index" })
+  
+  get("/movies/:path_id", { :controller => "movies", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_movie/:path_id", { :controller => "movies", :action => "update" })
+  
+  # DELETE
+  get("/delete_movie/:path_id", { :controller => "movies", :action => "destroy" })
 
-Better than I am. This
+  #------------------------------
 
-is the repository, which is.[00:54:30] [00:55:00] 
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+end
+```
+{: mark_lines=""}
 
-So I.[00:55:30] 
+And we check this out in our live app preview by visiting one of the URLs, like **/movies**.
 
-It's like, oh.[00:56:00] 
+But wait! Another error! RTEM: `Mirgrations are pending... run rails db:migrate...`
 
-[00:56:30] Say,[00:57:00] 
+Of course! I forgot to migrate the new `movies` table to my database. As of Rails 6, there's actually a button on the error message that you can click to run that migration. Or you can always go back to the terminal on Gitpod and run:
 
-supposed to.
+```bash
+rails db:migrate
+```
 
-This is great. I'm glad. [00:57:30] Shaking off some rust for those of you who's been a while. Uh, okay. So we have an error showing up here That's right. And we try to make a new movie. Before we resolve that, I just want to like talk through how this page is showing up because again, it's been like a year and a half for some of you since you took app dev, so bear with me if you just took App Dev last quarter.
+Now, back on **/movies**, we see the `index` action page, where there is a form to add things to the table in our database.
+
+Try to add one. What happens? An error we haven't encountered before: `ActionController::InvalideAuthenticityToken`.
+
+## Reviewing RCAV 00:57:30 to 
+
+Shaking off some rust for those of you who's been a while. Uh, okay. So we have an error showing up here That's right. And we try to make a new movie. Before we resolve that, I just want to like talk through how this page is showing up because again, it's been like a year and a half for some of you since you took app dev, so bear with me if you just took App Dev last quarter.
 
 Okay. So the generator wrote these routes for [00:58:00] us in the routes I first visited slash movies, which is streaming the route on Live eight, which is telling Rails when somebody visits slash movies go to the app controllers folder, find something called movies controller, run the method called index. So Rails goes over here, heads over to the app controllers folder, looks for movies controller, which was just generated for us happily by the resource generator.
 
