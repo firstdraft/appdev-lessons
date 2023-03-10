@@ -69,3 +69,9 @@ All contained in the `lessons/` (or sometimes `glossaries/`) folder:
   - The One Reference
     - the-one-reference-part-01.md, https://learn.firstdraft.com/lessons/33
     - the-one-reference-part-02.md, https://learn.firstdraft.com/lessons/34
+
+## List of AppDev-2 Transcriptions in Progress
+
+The lesson name below matches a branch name that the transcription can be found on.
+
+ - ad2-program-notes.md
