@@ -1,46 +1,96 @@
-And then we'll, we'll start doing our next project, which is called AD2 two. Getting started. You can start to set up your GI [00:34:30] pod workspace if you finish with the exorcism set up, and then we'll be living in here for the rest of the day.[00:35:00] 
+# AD2 Getting Started
 
-Let us know if you have any issues so we can come pop out.[00:35:30] [00:36:00] [00:36:30] 
+**BENP: Document based on everything from 45 min on of modified descript transcription of AD2 WS 2023 Day 1 recording.**
 
-We'll do work on exorcism work. See how far [00:37:00] you can get on exorcism problem setting until like 6 45. Then we'll keep going.[00:37:30] [00:38:00] [00:38:30] [00:39:00] [00:39:30] [00:40:00] [00:40:30] [00:41:00] [00:41:30] [00:42:00] [00:42:30] [00:43:00] [00:43:30] 
+## Starting our Workspace 00:45:00 to 00:48:00
 
-One more minute for extracellular puzzles.[00:44:00] [00:44:30] [00:45:00] 
+The first project for this course is called [AD2: Getting started](https://github.com/appdev-projects/ad2-getting-started). As usual from AD1, we need to open the Gitpod workspace for our project. If you need, refresh yourself on setting up Gitpod workspaces with the [AD1 technical material](https://learn.firstdraft.com/lessons/29). 
 
-All right, everybody. Let's, uh, let's keep going. I just realized actually that exorcism has the solutions that I submitted nine years ago. When I was learning Ruby. And so here was my first iteration of a puzzle called Anagram. So you can [00:45:30] see, you know, pretty decent, Ruby. I mean, I don't know. But I went through, so then I, and I expected immediately to be let through, but then I had to go through seven iterations before they let me go to the next puzzle.
+Once your workspace is up, do a `bin/setup` to ensure all the setup is run.
 
-And my from this, so 21 lines to this nine lines. So this is how you learn programming. There's like so much in Ruby, it's impossible to just [00:46:00] exhaustively learn it top to bottom A to Z. The way you learn Ruby, is you solve actual problems and then you share that code with other people and they give you feedback on how they might have solved it.
+In AD1, we used a slimmed down Rails project that didn't include all the out-of-the-box Rails features. We didn't need them, and they slow down the setup process. But, in AD2 we're including more in our projects. Specifically, we'll use the [vanilla-rails](https://github.com/appdev-projects/vanilla-rails) repository. Setup might take a little longer and we're just going to have to to get used to that.
 
-And you kind of virally just learn everything that everybody else knows if you go through this code review process. So think of it as taking your vitamins and take, do like one or two of these per week and you're going to get better quickly. And if you don't, obviously if you don't get the human mentoring from exorcism, [00:46:30] well that's what we are here for.
+When the `bin/setup` command finishes, do a `bin/server` and check out the app with the app preview in a new tab. 
 
-You have teachers, so we can just talk about them in office hours. All right, great. Let's keep going. Set up your, let's start on the next project called 82. Getting started. There's a bunch of notes that read me, so let's keep that open by clicking on this blue button. And I'm going to close up a bunch of other tabs
+## `draft:resource` 00:48:00
 
-and we're going to start to go through this.[00:47:00] 
+The homepage of the app is just the blank Ruby on Rails welcome page. We can see if there are any routes in our app by checking in on `config/routes.rb`:
 
-Once your workspace is up, do a bin set up just to make sure that it runs all the setup stuff.
+```ruby
+# config/routes.rb
 
-One difference between app dev two and app dev one is, is in app dev one. We had kind of a slimmed down Rails project that didn't include stuff that usually comes out of the box with Rails that we just didn't need in ab dev [00:47:30] one cuz it like slows down the setup process and it was unnecessary dead wait for us.
+Rails.application.routes.draw do
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+end
+```
+{: mark_lines=""}
 
-But in app dev two we're including it in our projects. So setup might take a little longer and we're just going to have to to get used to that. But once you do bin set up, let's do Bin Server and check it out. As usual. You're open my app preview and then I'm going to check out Route Stu RV [00:48:00] and we'll see that this is actually just an empty app.
+and we'll see that this is actually just an empty app.
 
-There's nothing in it right now, but we're going to use this to review some stuff and, and think about where we're headed this quarter. So first thing I wanted to remind you all, so these are notes in the Read Me. I'll remind you that there is a chapter. That's like gigantic reference of all the ruby stuff that we encounted in app dev one.
+We're going to use this empty space to review things, and think about where we're headed. 
 
-So you shouldn't at some [00:48:30] point just kind of scan through this and make sure that it mostly makes sense to you. I know that for some of you it's been a long time since it took app dev one, but this is the best way I can think of to just quickly review all the stuff that we covered and then come talk to us in office hours, if any.
+As a first step, we have a couple of big references of all the Ruby stuff that we encounted in AD1: [here](https://learn.firstdraft.com/lessons/33) and [here](https://learn.firstdraft.com/lessons/34). You may want to scan through these and make sure that it mostly makes sense to you.
 
-It seems like Greek because I will expect you to be fairly familiar with everything in here as we start to build out our after have two projects. Okay? Now what I want to do first is generate a draft [00:49:00] resource and just examined that code and make sure that we all feel pretty good about what's happening with the `draft:resource`.
+Feel good about basic Ruby methods, syntax, etc.? Good, then the first thing we want to do in our blank app is generate a resource, examine that code, and make sure that we feel pretty good about what's happening when we invoke `draft:resource`.
 
-Cuz it pretty much represents the culmination of what we learned in act one. So I want to copy this command and run it at a terminal tab and when you try that, it's not going to work initially cuz it's going to say, could not find generator `draft:resource`. That's because we wrote the [00:49:30] `draft:resource` generator and it doesn't come with Rails out of the box.
+This command essentially represents the culmination of what we learned in AD1:
 
-And we wrote it in order to make it easier to learn and after one. But moving forward, actually don't want, like after today, I don't want you to use the `draft:resource` generator anymore. We're going to learn more powerful generators that come with Rails. So this is the last time where I'm going to generate one of these.
+```bash
+rails generate draft:resource movie title:string description:text released:boolean
+```
 
-Therefore we didn't include it in the base app that you cloned, so we're going to have to actually pull that in. So let's head over [00:50:00] to our gem file, which is located in the root folder, somewhere at the bottom here. And let's pull in the draft under generator's gem. Then we have to say, go get that from GitHub.
+Copy this command and run it in a terminal tab.
 
-And the repo name is first draft, draft underscore gender rate towards. So you have to add this line here to your gem file. And then [00:50:30] in a terminal tab, run the bundle install command, or just bundle for sure. And it'll go to get 'em and it'll go install that gem for us.
+Uhoh. RTEM!
 
-And this is how we add gen. You've never done that before.
+```bash
+Running via Spring preloader in process 1045
+Could not find generator 'draft:resource'. 
+Run `bin/rails generate --help` for more options.
+```
 
-Command here is bundle [00:51:00] install.
+Why couldn't Rails find the generator? That's because _we_ wrote the `draft:resource` generator and it doesn't come with Rails out of the box!
 
-Again. This is the last time I want. Well, yeah, yeah. Ideally this is the last time where we're going to use the `draft:resource` generator cuz we're going to evolve to more powerful ones. So, Try to avoid doing this in the future. I know it's tempting because we're very comfortable with the draft generators, but we want to try and force ourselves to to level up here.
+We wrote it in order to make it easier to learn in AD1. But, moving forward, I don't want you to use the `draft:resource` generator anymore. We're going to learn more powerful generators that come with Rails. _So this is the last time where I'm going to generate one of these._
+
+Because we aren't going to be using this generator anymore, we didn't include it in the [base app that you cloned](https://github.com/appdev-projects/vanilla-rails). That means we're going to have to actually pull that generator in ourselves.
+
+Let's head over to our `Gemfile`, which is located in the root folder, and pull in the `draft_generator` gem:
+
+```ruby
+# Gemfile
+
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '3.0.3'
+
+gem "draft_generators", :github => "firstdraft/draft_generators"
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+...
+```
+{: mark_lines="8"}
+
+Note that we also needed to include the Github repository path where the gem can be found. 
+
+Now, back in a terminal tab, run 
+
+```bash
+bundle install
+``` 
+
+(Or just `bundle` for short.) 
+
+This command will go get all the gems from our `Gemfile` and install them. And that's how we add gems. TIL!
+
+Again, ideally this is the last time we're going to use the `draft:resource` generator, so try to avoid doing this in the future. I know it's tempting because we're very comfortable with the draft generators, but we want to try and force ourselves to level up now.
+
+Now try again the command:
+
+```bash
+rails generate draft:resource movie title:string description:text released:boolean
+```
 
 So sure, [00:51:30] once you have that installed, you should be able to run the Rails, generate draft code, resource movie, et cetera, et cetera, from the . And this time it ought to work since we pulled in that gem from GitHub and it generates the standard controller for us, our migration, our movie model, and our index and show and some routes.
 
@@ -76,7 +126,7 @@ It's got dot where to get particular movies. So we got the all movies and put it
 
 In here we have some HTML and we have some embedded Ruby. This is empty right now. This is coming back with an empty array, so it's not doing anything. But once we add some movies, that will [00:59:30] create a table row per movie in the form that's not working is this form right here where when we fill out this form, it's going to go to this url.
 
-It's using a method of post, which is the key part here. This is something we learned sort of towards the end of app dev one. There's different http verbs they're called and we started out in app dev one using Get for Everything. [01:00:00] Then we evolved to using post when we were adding or updating records or demeaning records sometimes because if we wanted to do something like a file upload or if we have some sensitive information like passwords, we don't want to use get, because it'll put the password right in the query string and the url.
+It's using a method of post, which is the key part here. This is something we learned sort of towards the end of AD1. There's different http verbs they're called and we started out in AD1 using Get for Everything. [01:00:00] Then we evolved to using post when we were adding or updating records or demeaning records sometimes because if we wanted to do something like a file upload or if we have some sensitive information like passwords, we don't want to use get, because it'll put the password right in the query string and the url.
 
 It'll be visible to people who are spying. Whereas Post puts all of the inputs into a different part of the request so that they're not visible and you can have file uploads [01:00:30] and you can have anything you want and you can have arbitrary length. Uh, and we switched to post for that reason. Okay. With what I just went over before we resolve this error here where I try to create a movie and I get this author history token, can anybody think of any questions about the route controller action view flow or any HTML or any Ruby, anything basically that was involved with displaying this page [01:01:00] here?
 
@@ -136,7 +186,7 @@ But if somebody tries to be syncing and inspect and copy that token or modify th
 
 here's, that's one improvement. Here's another improvement that I want to make to our code. We look at the routes.
 
-We kind of built these up during app dev one we started with slash movies, and then we started [01:13:00] with the details, page slash movies, and then a dynamic route segment. We expected the ID number to appear and then we showed the details of one thing. Then we added insert movie as a way to trigger an action that creates it when we started.
+We kind of built these up during AD1 we started with slash movies, and then we started [01:13:00] with the details, page slash movies, and then a dynamic route segment. We expected the ID number to appear and then we showed the details of one thing. Then we added insert movie as a way to trigger an action that creates it when we started.
 
 actually, this was a get as well. And then eventually we evolved it to a post. But we named these pads in a way that made it really obvious to us what the [01:13:30] intention, what our intention was, right? So we've insert movie, modify movie, delete movie. We could have named these zebra, giraffe, whatever. But we chose names that revealed our intentions for what action was supposed to be destroyed, uh, triggered by these visits.
 
@@ -658,7 +708,7 @@ So don't get too tripped on, tripped up on understanding, feeling like you need 
 
 We are not writing automated tests for you anymore. I want you to get in the habit of writing your own automated tests. [02:52:00] So try it. If you can get it, that's great. If you can't get it, that's okay because there's a bunch, there's examples already in the project that you can look at and then copy, paste, and use.
 
-But I just want you to attempt writing your own tests first and like understand where to put the file for your tests, how to run the tests. Then you can use these, and this is an especially important context to have automated tests because the whole point is we're refactoring our app dev one code and making it better [02:52:30] while keeping the functionality exactly the same.
+But I just want you to attempt writing your own tests first and like understand where to put the file for your tests, how to run the tests. Then you can use these, and this is an especially important context to have automated tests because the whole point is we're refactoring our AD1 code and making it better [02:52:30] while keeping the functionality exactly the same.
 
 Already today, every time I made a change, I had to like click through everything. I add a movie, delete a movie, edit a movie, click through like five or six things to make sure that I didn't break anything. Once you get bored of manually testing your app, you'll understand the value of having an automated test suite that you could just run when you're trying to improve a code base without introducing bugs into it.
 
