@@ -230,7 +230,7 @@ Remember, this is an embedded Ruby `.html.erb` file, so we can use the tags `<% 
 
 Our `movies` table is empty right now, so there is nothing rendered on the **/movies** page (we are `.each` looping on an empty array). But, once we add some movies, that will create a table row per movie in the form on our view page, and that's not working right now.
 
-## HTTP Verb POST 01:00:00 to 
+## HTTP POST Authenticity 01:00:00 to 01:12:30
 
 Now that we've reviewed some RCAV, let's have a look at that form on top of the **/movies** view template:
 
@@ -272,43 +272,66 @@ On the other hand, POST puts all of the inputs into a different part of the requ
 
 In AD1, we were actually not using POST entirely correctly. We left a security hole! Happily, Rails and tens of thousands of companies that use Rails, have encountered these security holes and performance issues and built solutions for them. It requires a little bit of extra work to use these solutions built into Rails. In AD1, we actually disabled them all to make it simpler to get something up and running. But now, in AD2, we've re-enabled all of those default protections. 
 
-Here's what's going on here. 
+**Here's what's going on here:** When I submitted the form, it did a POST to `"/insert_movie"`. Now that we are using POST for our update and create actions to _modify our database_, Rails is going to expect that POST to come along with a password. That guarantees that the form was created by us and not by a malicious third party.
 
-When I submitted the form, it did a POST to `"/insert_movie"`. and now that we are using Post [01:06:00] for our update and create anything, any, any action that we expect to be modifying our database, we're using Post Rails now is going to expect. That post to come along with essentially a password that guarantees that this form that the person is filling out was created by us and not by a [01:06:30] malicious third party.
+If we just blindly accepted that HTTP request, somebody could put this form on their own website, but have it point to _our_ website (e.g., by replacing the `<form>` `action` attribute with: `action="https://our-app-domain.com/insert_moview`). Then they would be able to modify our database!
 
-The reason for that is if we just blindly accepted that request, somebody could put this form on their own website, like a malicious person if they tricked one of your users into filling this form out. But then they put our domain here. So suppose a malicious attacker [01:07:00] put this form on their website, but had it point to around in our website, then they would be able to modify our database.
+That's called **cross-site request forgery**. It was a really common attack that happened a lot in the early 2000s until frameworks like Rails started building in protections against it.
 
-And that was, that's called cross-site request forgery. It was a really common attack that happened a lot in like the early two thousands until frameworks like Rails started just building in protections against it. The the solution is, in this form, we're going to put a hidden input that [01:07:30] has a password essentially, and we're going to randomly generate a password every time we draw this form.
+What's the solution? In the form, we're going to put a hidden input that has a "password", and Rails is going to randomly generate a password every time we draw this form:
 
-And we do it in such a way that only we are able to generate those passwords correctly and when we receive the parameters. We're going to check and make sure that it contains one of our passwords that nobody else can. Spoof sounds very complicated. Happily Rails takes care of it for us. We're going to go into this form and add an input in here.[01:08:00] 
+```html
+<!-- app/views/movies/index.html.erb -->
 
-Let's start with type equals text. And for the value of this, we're going to use a helper method. So Beson will be right there.
+...
 
-And the helper method is called Born Authenticity Tool. Lemme just make sure that works and then we'll go back to the code. [01:08:30] Okay, so now I have this input here with this like long random string generated automatically for me. This method returns that does a bunch of fancy pants photography. There's like a cookie that it's set, there's a secret key on the back end, and there's a cookie on the front end that it uses all that to create this string that only we know how to create.
+    <form action="/insert_movie" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        ...
 
-And we need this to come into the prash under a name that I'm probably going to forget and [01:09:00] I check this, I think it is, refresh this. So get. See if it works. Okay, cool. So we need to name, we need to name that input authenticity underscore token that that'll make it come, appear in a prams, hash and Rails automatically makes sure that this parameter exists with the correct value for any post request.
+    </form>
 
-Boom. All of a sudden we [01:09:30] have C S R F protection. One of the many things that's like we would never have thought of to build this until we got hacked. And then once we had detected that was we were being hacked, we would've to like scramble to fix it. But Rails just has this out of the box so that you can't even build forms without solving this problem first.
+...
 
-Cool. Any questions? Yes. So I guess every time we want to add or edit, uh, something [01:10:00] we'll need to have this authenticity token so we can just put it in the layout. This great, great question. Can we just put it in the layout? We couldn't put it in the layout because we need it to be inside the form with a name so that it shows up in our pram slash Right.
+```
+{: mark_lines="6"}
 
-So that's a good idea. So that wouldn't quite work in the. But trust. But at the end of like the next couple of days of claps, we're going to see helper methods that Rails has that just does all of this automatically. But we're building up to it very [01:10:30] incrementally. But you have the right idea. So in the meantime, we need to include this line of code in every place.
+Let's break down what we did. We added a new form `<input>` with some attributes. First, we set the `type="hidden"`, so the input is not displayed to the user. Then we gave the input a `name="authenticity_token`. Finally, we fill it in with a `value`, which is a rendered Ruby method `<%= form_authenticity_token %>`.
 
-We want to any, any request. That's a, that's not a get. So it's posta or delete. We need to have the format, the this token. Yeah. Which final from like, its not a, there's not a, so like Yes. It's a method. So that's a great question. So there's one, one of the, of the many things we're going to start to [01:11:00] learn about our view helper methods.
+The method `form_authenticity_token` is known as a **helper method** and it comes with Rails out of the box. This is the method that uses cryptography to generate and return a long string token that acts as our "password" for Rails to check and make sure the request is from _us_ and not an outside source. The string is scrambled going into and out of Rails, so even if someone did an "Inspect" on the browser view of our page, the token would not be useful for getting into our database.
 
-We saw I think one which was, suppose I have, uh, H two and I have like time now. I was sticking that right in my form. It's like, ugh, that was terrible. We were, we learned like one helper method, which was time ago in words. And then it like formats it, it's like [01:11:30] less than a minute ago, one hour ago. One week ago.
+We need this token in our `params` hash, so we gave it a name. `authenticity_token` is the name in the `params` that Rails will automatically look for to extract the token, so we had no choice but to name it so.
 
-So this is an example of, it's not an instance very anymore, right? It's a method. And these are called view helper methods. And then we give them arguments sometimes. Sometimes we don't give them arguments, just like any method. So that's not a variable containing one piece of data. It's a method that's running, which means that every time I refresh this notice that that value is changing.
+With this one-line addition to the form code, try and re-submit a new movie on the **/movies** page.
 
-Cause that method change, it generates that every time, every per [01:12:00] request. And it's always unique. So these are, this is the first of many view helper methods that we're going to find or learn about. Okay. And then usually we don't want the user to see this, so we switch this to hidden rather than text, and then the form won't go through.
+Boom. Error message begone. All of a sudden we have **CSRF** protection. One of the many things that we would never have thought of building until we got hacked. Rails just has this out of the box so that you can't even _build_ forms without solving this problem first!
 
-But if somebody tries to be syncing and inspect and copy that token or modify that token, it won't work. Rail is going to detect it and prevent that from working a whole bunch of fancy pants, math and cryptography that we don't need [01:12:30] to worry about. Okay, great. So, um,
+Again, we did this all with the **helper method** `form_authenticity_token` that comes with Rails. We actually already saw some other Rails helper methods, for instance, remember `time_ago_in_words`? There's a whole bunch of these helper methods that we need to learn to level up our codebase.
 
-here's, that's one improvement. Here's another improvement that I want to make to our code. We look at the routes.
+## RESTful 01:12:30 to 
 
-We kind of built these up during AD1 we started with slash movies, and then we started [01:13:00] with the details, page slash movies, and then a dynamic route segment. We expected the ID number to appear and then we showed the details of one thing. Then we added insert movie as a way to trigger an action that creates it when we started.
+Here's another improvement that I want to make to our code. Look at our routes:
 
-actually, this was a get as well. And then eventually we evolved it to a post. But we named these pads in a way that made it really obvious to us what the [01:13:30] intention, what our intention was, right? So we've insert movie, modify movie, delete movie. We could have named these zebra, giraffe, whatever. But we chose names that revealed our intentions for what action was supposed to be destroyed, uh, triggered by these visits.
+```ruby
+# config/routes.rb
+
+Rails.application.routes.draw do
+  # Routes for the Movie resource:
+
+  # CREATE
+  post("/insert_movie", { :controller => "movies", :action => "create" })
+          
+  # READ
+  get("/movies", { :controller => "movies", :action => "index" })
+
+  get("/movies/:path_id", { :controller => "movies", :action => "show" })
+  ...
+```
+{: mark_lines="5 15"}
+
+During AD1, we started with **/movies** for the `index` page, and for the details of an individual movie (`show`), we did **/movies/ID**, with the dynamic route segment `"/movies/:path_id"`. We expected the ID number to appear and then we showed the details of one thing. Then we added **/insert_movie** as a way to trigger an action that `create`s it when we started.
+
+All of these were originally GETs, and we only later evolved the `create` path to a POST. We named these paths in a way that made it really obvious to us what the [01:13:30] intention, what our intention was, right? So we've insert movie, modify movie, delete movie. We could have named these zebra, giraffe, whatever. But we chose names that revealed our intentions for what action was supposed to be destroyed, uh, triggered by these visits.
 
 Alright? Now, in the real world, professional developers don't do this the way that we name our URLs. Shouldn't the, the path itself by convention shouldn't include [01:14:00] what we're trying to do with the resource. The path should only identify the resource that we're trying to work with. And then the http verbal over here is supposed to tell us what operation and form on it.
 
