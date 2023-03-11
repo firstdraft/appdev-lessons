@@ -612,9 +612,10 @@ And we need to make this change everywhere (`path_id` to `id`) in our codebase.
 
 You can try selecting the offending characters and [creating multiple cursors](https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor) to change them. Or you can try a [global find and replace](https://learn.microsoft.com/en-us/visualstudio/ide/finding-and-replacing-text?view=vs-2022#find-and-replace-control). But if you do any major find-and-replace operations, be sure to `git commit` before so can rewind if you mess things up.
 
-## 
+With that, our routes are done. They are industrial grade. The next thing to do is build separate pages for create and update actions instead of having them on the show and index pages.
 
-Our, our, our routes now are done. They're like industrial grade. This is what a proper restful API would look like. Alright, let's pause there. The next thing we're going to do is build pages separately for, uh, add and edit instead of having them on the show page and on the next page. But let's take a break first and.[01:38:00] 
+## 01:38:00 to
+
 
 We'll get started again at 7 55.[01:38:30] 
 
