@@ -1320,38 +1320,6 @@ When we render this template using the `MoviesController#new` action _or_ using 
 
 You can't always use this hack. If the two forms diverge significantly, just make two templates and do the two different RCAVs to keep things simple. But, for many cases, this works well. 
 
-So yeah. Where is the, where are the values that the user input being held? Like how did it get here? Yeah, so the, the, the flow is, so I'm going to code it slash movies for the first time. It's blank form. [02:48:00] Now, when I fill out one of these and I click create, it goes into the create action, right? So the, the form sends me here with all the info in the pr slash we instantiated a movie and then we assign all the values to the movie object.
+The last thing we want to do here is to do the same thing for the `update` action: render a form with nice error messages and prepopulated fields from the object (which in this case already exists in our database). 
 
-That movie Object has values even before we save it, right? Let me show you how this works in the Rails console real [02:48:30] quick.
-
-So if I do em post movie new and then m title equals something, and then if I look at them, that object. We've assigned the attribute to the object, even though we haven't saved it yet, we're getting ready to save it, but I can get it back out, right? So the Ruby object that's stored in M [02:49:00] has those attributes, even though it hasn't been saved into the database yet.
-
-Now, if I try to have not saved, it's like no. And now if I do M errors, full messages, it'll tell me why. But so m, even though it hasn't been saved, it still has all the information on it, including the errors collection. So now, because we turn that into an instance variable here, [02:49:30] like any action, we can render a template and the instance variables are available to us in the In the view, right?
-
-That's how we started doing acad in the first place. Before we got to redirect, we always had a view template and that view template had access to any instance variables defined in the action. Now, in that mute template, we can prepopulate the form and display datas collection with some nice markup around it.
-
-Tricky. Like I said, it doesn't [02:50:00] always work, but when it works, it lets us avoid having a whole other template to display the error page. Alright,
-
-very good. We'll leave it there for today. The last thing maybe we want to do is do the same thing for the update action and make it so that we have a nice errors collection and we, we render a template here, uh, but we don't have time to do that right now. I'll let you kind of chew on that [02:50:30] over during the week.
-
-Uh, the homework, let me make sure I didn't get anything. One second. So we added, added, dedicated, added edit pages. We added a better validation failure, and that's it. Okay, good. So the homework, there's a video where you're going to pick off pretty much where we left off just now. There's two parts to it where you're building up the same project, [02:51:00] the starting point, the wrong canvas,
-
-the starting point here. Okay. First of all, there's a reading where I want you to go through, and I'm sending you to the official Rails guide on testing. I'm just calling out some sections to read. Now it's going to be the first example of many where when you read this, it's going to feel like a [02:51:30] lot, maybe like a little bit over your head.
-
-So don't get too tripped on, tripped up on understanding, feeling like you need to understand every single thing. Just read through it once. Ask questions on Piazza if you have questions, but then move on to the project, and what I want you to do is just take a stab at writing some tests using the information from these sections.
-
-We are not writing automated tests for you anymore. I want you to get in the habit of writing your own automated tests. [02:52:00] So try it. If you can get it, that's great. If you can't get it, that's okay because there's a bunch, there's examples already in the project that you can look at and then copy, paste, and use.
-
-But I just want you to attempt writing your own tests first and like understand where to put the file for your tests, how to run the tests. Then you can use these, and this is an especially important context to have automated tests because the whole point is we're refactoring our AD1 code and making it better [02:52:30] while keeping the functionality exactly the same.
-
-Already today, every time I made a change, I had to like click through everything. I add a movie, delete a movie, edit a movie, click through like five or six things to make sure that I didn't break anything. Once you get bored of manually testing your app, you'll understand the value of having an automated test suite that you could just run when you're trying to improve a code base without introducing bugs into it.
-
-Okay, so first thing to do is read through this. Don't get tripped up. Attempt to write [02:53:00] some of your own tests, but ultimately you can look at the examples that are included in the project already, the project. Is helper methods and the starting the code base that you'll start with is pretty much what we left off today.
-
-There's one video to follow along with, and by the end, you're going to be in position Next time in class, we're going to close the gap between the code that we learned and everything that you saw on the scaffold [02:53:30] generated code. We'll be able to finish that up by next time. Alright, how you feeling? It's a lot of stuff.
-
-This is, this is how it's going to, it's how we roll and have to have two people. Make sure to book a lot of boss hours and talk through anything that seems fuzzy and use Piazza as always. I forgot to mention that on the homepage here, there's a link to piza and a link to a Slack. You we're going to have a slack now, which we didn't have [02:54:00] app to.
-
-One rule of thumb is if it's a quick question that nobody's going to care about tomorrow, ask it on Slack, like something if you missed a URL during class or whatever. Slack is great for that. If it's something that we might refer to in the future, or you might want to refer to in the future, ask it on Piazza so that it has a URL that we can share with each other.
-
-All right, that's it for today. Great to see you all. I'll see you next week.[02:54:30] 
+Can you do that on your own? 
