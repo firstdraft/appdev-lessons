@@ -447,44 +447,123 @@ or you could do `.first`:
 
 These methods are shared between arrays and `ActiveRecord:Relation`s. Square brackets are very common on the internet (and in other programming languages), so I recommend getting used to that. 
 
-Try the "Show details" link again after you make this change. Working? Great!
+Try the "Show details" link again after you make this change. Working? Great! Be sure to make this change everywhere else you find a `.at(0)` in your controller.
 
-## DELETE 01:22:30 to 
+## DELETE 01:22:30 to 01:25:00
 
-Now, on the details page for a movie, try to click 
-Okay? Now when we click on delete, it says, okay, no wrong patches cause we used to point to delete underscore movie not [01:22:30] working anymore. So if I go check out the code for that delete link, which is in the movie's show template, line 15, I have to switch this to slash movies to match up with. What we have now is around final.
+Now, on the details page for a movie is working, try to click "Delete movie". What's the error telling us?
 
-But if I, now I'm trying to use that and I click on delete movie, it just takes me right back to the routes page or the the show page [01:23:00] because this is still a get request. And if you do get movie slash ID number, that's just going to go to the details page, right? So now we have like a kind of a conflict between the two.
+```
+No route matches [GET] "/delete_movie/1"
+```
 
-So we need to make this aag submit a delete request instead of a get request. Now this sadly, I wish we could just do method equals delete.
+Right, we changed that route to be RESTful using the `delete` method, so in our `show.html.erb` view template, we need to change the link:
 
-Kind of the way that we do in the form that would make a lot of [01:23:30] sense. But for some reason in HTML, they don't have delete. They only have post and get. People who wrote H M L are different than the committee who wrote HT d p, and they apparently didn't share the memo. So we only have Gap and Post, actually.
+```html
+<!-- app/views/movies/show.html.erb -->
 
-Fortunately though, Rails includes some fanciness that will let us fake this pretty easily. We add a data dash method attribute, delete, and make sure that [01:24:00] this works, and then we'll chat about it. Okay? So it works. But we have this app issue, which we can fix in the Destroy action in a second. But if you add this attribute onto a link, Rails will add some stuff in the background that makes it appear like a delete request to our server.
+<div>
+  <div>
+    <h1>
+      Movie #<%= @the_movie.id %> details
+    </h1>
 
-And then we can use this in our routes without any trouble. So make that change and then resolve this next issue, which is online. 66. Same issue with the.app. We're [01:24:30] going to go back here and do the dot first.
+    <div>
+      <div>
+        <a href="/movies">
+          Go back
+        </a>
+      </div>
 
-Now
+      <div>
+        <a href="/delete_movie/<%= @the_movie.id %>">
+          Delete movie
+        </a>
+      </div>
+    </div>
+```
+{: mark_lines="17"}
 
-the lead works
+to this:
 
-with. So far. Good. Any questions? Any issues? Are you stuck?
+```html
+    <a href="/movies/<%= @the_movie.id %>">    
+```
 
-Okay. Last thing we need to fix [01:25:00] then is the, uh, update, the form to update. It's going to go down. I need to go to the show page. And so we're here. There's a form starting online, 69 to modify movie, but now we switch this to movies slash movies slash and then put the ID there. Okay. Now we're going to have the same issue [01:25:30] where we want this to place a patch request so that it goes to here and it doesn't get tripped up Anywhere else?
+Make that change and try to "Delete movie" again. Nothing happens. Because this is _still a GET request_. And if you do `get("/movies/:id"...)`, our routes indicate that this should call the `show` action. So now we have a conflict between the two. How do we fix it?
 
-Patch, I wish, I wish I could just do patch, but again, HTML doesn't have that bird, so we're going to keep it as post. And what we do is we include, well first we need to include the ity token, just like we did before, [01:26:00] type equals, let's start with text value equals form. Ity. Embed that smoothie, generate the string properly.
+We need to make this `<a>` link tag submit a DELETE request instead of a GET request. Sadly, we can't just add an attribute to the `<a>` tag `method="delete"`. HTML only has POST and GET, because the people who wrote HTML are different than the committee who wrote HTTP, and they apparently didn't share the memo.
 
-First, we need that hidden input or I'm just keeping visible for now. Secondly, oh, have a name of just token, [01:26:30] so that will allow it through the csrm protection. Secondly,
+Fortunately though, Rails includes some fanciness that will let us fake this pretty easily. Change the link to:
 
-we need, I'm going to forget this. Lemme see if I remembered it. I think it's method.
+```html
+    <a href="/movies/<%= @the_movie.id %>" data-method="delete">    
+```
 
-I'm going to try this first and make sure that works.
+Now go back and try the "Delete movie" link once more. It worked! (Unless you forgot to change `.at(0)` to `[0]` in the controller.)
 
-Think it worked to fix this issue[01:27:00] 
+With Rails, we can just add this attribute onto a link, and Rails will add some stuff in the background that makes it appear like a DELETE request to our server.
 
-first here.
+## PATCH 01:25:00
 
-Okay, good. So here is what I added. Was this in good? The reason I don't remember, I don't memorize any of this. I have to remind myself every time I teach FDO two because we're going to get to a point where we're using advanced helper methods that generate all of this [01:27:30] automatically for us. But up until we get there, we're going to have to use this manually.
+Now let's fix the "Edit movie" form that we use to update a database entry. This form is at the bottom of the `show` page:
+
+```html
+<!-- app/views/movies/show.html.erb -->
+
+<div>
+  <div>
+    <h1>
+      Movie #<%= @the_movie.id %> details
+    </h1>
+
+    ...
+
+    <form action="/modify_movie/<%= @the_movie.id %>"  method="post" >
+      <div>
+        <label for="title_box">
+          Title
+        </label>
+
+        <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>">
+      </div>
+    ...
+```
+{: mark_lines="11 18"}
+
+Right away, we know we can switch the `action` to point to the correct URL:
+
+```html
+    ...
+    <form action="/movies/<%= @the_movie.id %>"  method="post" >
+    ...
+```
+
+And now we're going to have the same conflict issue that we did with the delete method. We wish we could just change the `method` to `"patch"`, but that's not an option in plain HTML. We also can't just use `data-method="patch"`, similar to how we did it with the delete link.
+
+Well, let's start by adding the authenticity token to our `post` request so it would actually work:
+
+```html
+    ...
+    <form action="/movies/<%= @the_movie.id %>"  method="post" >
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    ...
+```
+{: mark_lines="3"}
+
+Now we need to add the following:
+
+```html
+    ...
+    <form action="/movies/<%= @the_movie.id %>"  method="post" >
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+        <input type="hidden" name="_method" value="patch">
+    ...
+```
+{: mark_lines="5"}
+
+Another hack! Once again, this bit of code is just some Rails fanciness to trick the HTTP server into making a PATCH rather than a POST request. There's no need to memorize this oddity, because soon we'll use some advanced helper methods to generate all of this automatically.
 
 So in with the link, we're able to fake a delete request with just the data method attribute on the link itself. Performs we have to include an input that has the very specific name, underscore method, and then the value of patch in order to thank the patch request. Now we're able to have restful routes for the index, the show, [01:28:00] the update, the create, and the delete.
 
