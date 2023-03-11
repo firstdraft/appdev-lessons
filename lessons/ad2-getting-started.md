@@ -1221,15 +1221,11 @@ Let's think about this. In the `MoviesController#create` action, we changed the 
 
 Because we're rendering a template rather than redirecting, we have access to `@the_movie` in the `with_errors.html.erb` template.
 
-This new template, `with_errors`, is similar to what we've done in the past with edit forms. We looked up an existing object in our database using the ID, and then we prepopulated the whole form using value attributes taken from that object.
+This new template, `with_errors`, that we are using to `create` a  new object is similar to what we've done in the past with edit forms. In the case of edit or `update` actions, we looked up an existing object in our database using the ID, and then we prepopulated the whole form using value attributes taken from that object.
 
-Very similarly here, we're using the object that we attempted to save, but failed to [02:41:30] save to prepopulate. This form here, what do you think? It's a lot of dots to connect. Can you repeat a question? Yeah. Um, I've notice that the
+Similarly, now we're using the object that we _attempted_ to save, to prepopulate the `with_errors` form. Interesting similarity. Can we exploit that?
 
-&lt;INAUDIBLE&gt; instead previous study. Yes. Is that addressable or is that It's a great point. That's kind of why I was saying earlier that I liked the Cookies solution, but this is because [02:42:00] the form did a post to slash movies and it was that same action that's rendering this template. Right. So it's a good observation and if there are some disadvantages to it, but we just live with it.
-
-I don't, I don't know anybody who you could, you couldn't change the, your not, but typically we don't bother, like only very tech savvy people would even notice that. So good observation. Usually we just live with it. The benefit is we're on the same action. [02:42:30] So we have the instance variable that has all the info that we need.
-
-Otherwise we'd have to persist it like we did with cookies. So that, that's the way to address it, I guess. Okay. So this is a very good, now here's a little hack that we're going to be using that most Rails app. Use this template that I just created, the Width Arrows template for this specific purpose of reinventing the new form.
+Indeed! Here's a little hack that we're going to be using that most Rails app. Use this template that I just created, the Width Arrows template for this specific purpose of reinventing the new form.
 
 [02:43:00] How like this is super similar. To the actual new form, right? Those two templates are almost identical. The difference is there's this errors collection here displaying at the top and there's these value attributes here attempting to prepopulate. Whereas in the new form, of course, those are all just blank.
 
