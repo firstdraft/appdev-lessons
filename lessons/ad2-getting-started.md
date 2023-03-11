@@ -504,7 +504,7 @@ Now go back and try the "Delete movie" link once more. It worked! (Unless you fo
 
 With Rails, we can just add this attribute onto a link, and Rails will add some stuff in the background that makes it appear like a DELETE request to our server.
 
-## PATCH 01:25:00
+## PATCH 01:25:00 to 01:34:30
 
 Now let's fix the "Edit movie" form that we use to update a database entry. This form is at the bottom of the `show` page:
 
@@ -563,63 +563,56 @@ Now we need to add the following:
 ```
 {: mark_lines="5"}
 
-Another hack! Once again, this bit of code is just some Rails fanciness to trick the HTTP server into making a PATCH rather than a POST request. We _have_ to name the new hidden input `"_method"` because Rails will be looking for that key in the `params` hash. 
+Another hack! Once again, this bit of code is just some Rails fanciness to trick the HTTP server into making a PATCH rather than a POST request. We _have_ to name the new hidden input `"_method"` because Rails will be looking for that key in the `params` hash, and if it sees that key, then it will know to work its magic based on the value (here, `"patch"`).
 
-There's no need to memorize this oddity, because soon we'll use some advanced helper methods to generate all of this automatically. 
+There's no need to memorize this oddity, because soon we'll use some advanced helper methods to generate all of this automatically.
 
-Now we have RESTful routes for create, read (index and show), update, and delete. CRUD.
+Now we have working, RESTful routes for create, read (index and show), update, and delete. CRUD.
 
-We're going to help you get stuck. We now have nice restful rounds. Please go back to Sure.[01:28:30] 
+## Dynamic Segment Naming 01:34:30 to 01:38:00
 
-Underscore has no special significance. It's just the name in the PRM slash that Rails is looking for, and if it finds that, then it'll use this value to change the type of the request from a post to a patch when it's looking through Rosta RV for a match. So when I look at it [01:29:00] here in the server, when I did.
+Let's make another quick change. 
 
-Authenticity token when we did that one, we can see that that actually showed up in the PRM slash like our other key value pairs, right? Yeah. The OnCore method one doesn't show up in the PRMs, but that's what changed the request up here from opposed into a patch. The presence of that key value pair [01:29:30] looking for literally Rails is looking in the, in the incoming parameters.
+In our `config/routes.rb` file, we were always using `:path_id` for the dynamic route segment indicating a movie's ID column. We made this name up to make it clear to us that this is a parameter that is going to appear in the address bar, e.g., at **/movies/1**. Then, we know in the `params` hash when we see `path_id`, it is coming from the URL path as opposed to something that's coming to us from a query string. 
 
-In the in requests. It's looking for a key underscore method. If I had just method that it wouldn't work cuz it'd show up just as a regular but underscore method is supposed to be a way to like make sure it doesn't complete with any actual parameter. Method is like kind a common thing. Somebody might actually make an input method so they just put underscore in front to reduce the probability of somebody accidentally using that key.[01:30:00] 
+Now in the real world, the developers just call it `:id`, so all of our routes `"/movies/:path_id"` should be changed to `"/movies/:id"`. We could of course call it `:zebra_id`, or whatever else, as long as we know what it is, then in the controller we use that key to fetch it from the `params`. It's up to us. But, in real Rails code, you will just see `:id`.
 
-We use X and image. Uh, so for these two we pretty much always use hidden. I was just doing text so that we had something to look at. But you should use it.
+If you switch the dynamic path segments in the `config/routes.rb` like from this:
 
-Yeah. Make right now we should keep getting to the point where database, yes, that's it. And edit and everything. Everything should be back to working. So basically the goal is [01:30:30] we've switched our routes to be restful. Yeah. And now we need to make it all work together cause we broke everyth.
+```ruby
+get("/movies/:path_id", { :controller => "movies", :action => "show" })
+```
 
-So,
+to this:
 
-[01:31:00] oh,
+```ruby
+get("/movies/:id", { :controller => "movies", :action => "show" })
+```
 
-so we did three things, right? First and foremost, we switched the action to point to our new arrest. Then we have to include this in order to get through [01:31:30] the cross-site request order protection. And then we had to include this to change to kind of fake a patch request because forms don't have the ability to just say, patch, your honor.
+Then we need to remember to change the `params` key in the `app/controllers/movies_controller.rb` file for that action (in the example, `show`). From this:
 
-So this is how we can make it patch with a patch in.
+```ruby
+...
+  def show
+    the_id = params.fetch("path_id")
+...
+```
 
-This is we. So yeah, we, you have to use this name. We don't get to pick Rails is going to look for specifically. [01:32:00] A parameter that has the name underscore method. And if it sees one of those, then it'll interpret. Even though actually the request is a post coming to Rails for routing purposes, Rails is like, okay, because I see this in the pram hash, we're going to interpret it as a patch when we figure out which route it hits.
+to this:
 
-Yeah. And this is sort of a, it's just best [01:32:30] practices. So we're just learning best practices now. We're becoming pros. So it's time to start using best practices, but it, it is going to pay, it seems like kind of our journey, extra work right now. Trust me. What we get to the end of this sequence, by, by next week, you're going to see that by adhering to all these injections, we're going to be able to do what we did in after one, using like 75 lines code.
+```ruby
+...
+  def show
+    the_id = params.fetch("id")
+...
+```
+{: mark_lines="3"}
 
-It's going to come down to like 10 once we adopt all these con, but then they always compound on each other and let us shorten our code [01:33:00] line. So the, for, uh, all of these changes that we've made, we never had to, um, make, um, like sort of the parallel changes to the label tag. Oh, you're right, actually, um, well, we haven't changed.
+And we need to make this change everywhere (`path_id` to `id`) in our codebase. 
 
-So for these two, because they're hidden inputs, we actually didn't even put labels in. Right. Labels are for people to see and for people to click on for accessibility purposes. But since we intend to just hide these anyway, we need them, but the users never see them or know that they. [01:33:30] We don't need labels.
+You can try selecting the offending characters and [creating multiple cursors](https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor) to change them. Or you can try a [global find and replace](https://learn.microsoft.com/en-us/visualstudio/ide/finding-and-replacing-text?view=vs-2022#find-and-replace-control). But if you do any major find-and-replace operations, be sure to `git commit` before so can rewind if you mess things up.
 
-Now we are going to start to modify these as well eventually. And then we're going to have to update the labels to match. Like we're not going to do this today, but generally speaking we just use the name of the value here. So this is all, this is going to be titled, that's going to be titled, and this is going to be title.
-
-We named them all different nata one to help us keep, keep it straight, what matches with what. But in a conventional code base, those are all just going to be the same thing as the column. [01:34:00] So we're going to make all those changes eventually, but not yet. Yeah. Does it matter where in the form put this input Now it doesn't matter.
-
-I mean, generally speaking this is not, not just for these two, but for any inputs, order doesn't matter. But if you happen to have two inputs with the same name, which you shouldn't, that's a bug. But if you do, the last one is the one that will, will actually make it through the frame session. But you should never have two inputs with the same name anyway.
-
-Almost never there's,[01:34:30] 
-
-okay, good. Let's make two more quick changes and then we're going to take a break and then we're going to keep going. So the quick changes are in here we have path id. So this is the name that we chose for this dynamic route segment. And I made this name up path Id just because I wanted an easy way to talk about the fact.
-
-That is something that's going to [01:35:00] appear in the browser address bar or in the request in that spot of the path so that when we see it in the PRM slash we know where it's coming from as opposed to something that's coming to us from a query strip, for example. Now in the real world, the developers just call it idn.
-
-We can call it ID zebra or whatever, as long as we know what it is, then in the controller we use that to fetch it. It's up to us. But I just want to let you know in a real Rails code [01:35:30] base, everybody just calls this id.
-
-So we're going to start to do that again. You have to, you have to remember yourself, that when you, when this is going to go into the PR hash and you need to fetch it, and it's coming from the url, not from the, uh, from the path and not the query string. So let's switch those to id and if it's id, then we're going to go to controller.
-
-Wherever we have [01:36:00] path id, we need to update that to just ideally to match. You can just find and replace if you want to as well,
-
-delete some of this stuff here. Is there a question? Yeah. That's to replace everything. So what I just did here was, uh, I selected the first instance of it. And then I get command D [01:36:30] and I kept, I hold the command and I keep pressing D or it's control D on windows. Then you get a cursor at every spot and then when you type, it repeats everywhere until you click somewhere with your mouse.
-
-You'll have a cursor at all those places. Or you can command shit f or uh, the replace dialogue over here. And then you can find and replace and change things like all across the entire app and all the files. I just, one, if you're going to do this mass finding [01:37:00] replacer even before you do this, find and replace in a single file, usually a good idea to make a gig commit first.
-
-Cuz I then really mess myself up big time by finding, replacing and getting it wrong. And then I'm picking through hundreds of files for the next follows. Okay, cool. So we're going to do that and I think that's good. So as long as you don't have any anymore. At zeros we have dot first or square brackets. We have [01:37:30] IDs.
+## 
 
 Our, our, our routes now are done. They're like industrial grade. This is what a proper restful API would look like. Alright, let's pause there. The next thing we're going to do is build pages separately for, uh, add and edit instead of having them on the show page and on the next page. But let's take a break first and.[01:38:00] 
 
