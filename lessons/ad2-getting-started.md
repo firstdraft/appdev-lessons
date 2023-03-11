@@ -196,7 +196,7 @@ class MoviesController < ApplicationController
 
 end
 ```
-{: mark_lines="4 10"}
+{: mark_lines="4-10"}
 
 Rails then runs that `index` method. Remember, all of these files were generated for us by our `draft:resources` command.
 
@@ -331,7 +331,7 @@ Here's another improvement that I want to make to our code. Look at our routes:
   get("/delete_movie/:path_id", { :controller => "movies", :action => "destroy" })
 ...
 ```
-{: mark_lines="5 15"}
+{: mark_lines="5-15"}
 
 During AD1, we started with **/movies** for the `index` page, and for the details of an individual movie (`show`), we did **/movies/ID**, with the dynamic route segment `"/movies/:path_id"`. We expected the ID number to appear and then we showed the details of one thing. Then we added **/insert_movie** as a way to trigger an action that `create`s it when we started.
 
@@ -529,7 +529,7 @@ Now let's fix the "Edit movie" form that we use to update a database entry. This
       </div>
     ...
 ```
-{: mark_lines="11 18"}
+{: mark_lines="11-18"}
 
 Right away, we know we can switch the `action` to point to the correct URL:
 
@@ -748,7 +748,7 @@ class BooksController < ApplicationController
   end
   ...
 ```
-{: mark_lines="11 12" }
+{: mark_lines="11-12" }
 
 The generator includes responses for multiple formats besides HTML (e.g., above for JSON). 
 
@@ -805,7 +805,7 @@ Looks good so far. But, I think it's time to stop typing out the longest version
 
 class MoviesController < ApplicationController
   def new
-    render template: "movies/new.html.erb"
+    render template: "movies/new"
   end
   ...
 ```
@@ -814,6 +814,7 @@ class MoviesController < ApplicationController
 We: 
  - dropped the optional parantheses after the `render` method, 
  - dropped the curly braces from the hash since it's the last argument to the method, 
+ - dropped the `.html.erb` since Rails looks for that file ending by default
  - and put the `:` after the `template` symbol in order to drop the `=>` hash rocket.
 
 This is the convention you will see all over the internet, and it's the one we will adopt from now on.
@@ -896,7 +897,7 @@ class MoviesController < ApplicationController
   end
   ...
 ```
-{: mark_lines="8 10" }
+{: mark_lines="8-10" }
 
 Then cut-paste the form to the view template:
 
@@ -958,7 +959,7 @@ class Book < ApplicationRecord
   validates :description, presence: true
 end
 ```
-{: mark_lines="4 5" }
+{: mark_lines="4-5" }
 
 With this, the `Book` model will not allow a `.save` to be called on it _unless_ there's a value for those columns.
 
@@ -968,7 +969,19 @@ Now look at the UI when we mess up the form:
 
 How can we implement something like this on our **/movies/new** form? What did we do in AD1? 
 
-Let's have a look at the `create` action in the `MoviesController`:
+First, let's add the validations to `Movie`:
+
+```ruby
+# app/models/movie.rb
+
+class Movie < ApplicationRecord
+  validates :title, presence: true
+  validates :description, presence: true
+end
+```
+{: mark_lines="4-5" }
+
+Now, let's have a look at the `create` action in the `MoviesController`:
 
 ```ruby
 # app/controllers/movies_controller.rb
@@ -990,7 +1003,7 @@ class MoviesController < ApplicationController
   end
   ...
 ```
-{: mark_lines="8 10" }
+{: mark_lines="8-10" }
 
 In AD1, we instantianted a `.new` record, take columns from the form with the query string and `params` hash, and assign them to the columns in our `the_movie` database record. Then we ask if `the_movie` is `.valid?`, which returns true or false based on whether all the validation rules in the `Movie` model pass or not.
 
@@ -1036,11 +1049,15 @@ As in AD1, we can add the notice and alert messages to the application layout, s
   </body>
 </html>
 ```
-{: mark_lines="10 11" }
+{: mark_lines="10-11" }
 
 Now the messages will appear on top of the page, which is rendered at the location of `<%= yield %>`. 
 
-Try to enter a movie with a blank title on **/movies/new** and you will see the `alert` message, which is being generated in the controller from `the_movie.errors.full_messages.to_sentence`. Great! But let's also keep the user on the form when they mess something up. In the `MoviesController` file, change this:
+Try to enter a movie with a blank title on **/movies/new** and you will see the `alert` message, which is being generated in the controller from `the_movie.errors.full_messages.to_sentence`. 
+
+There's a lot of stuff there. Do you remember notices and redirects? Do you remember the `.errors` collection that we had on the object? Errors tell us which validations failed, and then we're taking the full message strings with `.full_messages`, and then we are joining them together with `.to_sentence` for our display.
+
+Great! But let's also keep the user on the form when they mess something up. In the `MoviesController` file, change this:
 
 ```ruby
 redirect_to("/movies", { :alert => the_movie.errors.full_messages.to_sentence })
@@ -1052,67 +1069,117 @@ to this:
 redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
 ```
 
+Now, when the user trys to input a blank movie, they remain on the form and are given an error message. But all their progress on the form has been wiped out! What if they wrote a long description? That would be gone and they would need to retype it. Not great.
 
+Let's figure out how to keep the data in the form. When `the_movie.valid?` is false, and I follow that `else` branch of the control flow in my controller `create` form, instead of wiping out all the values, I would like to prepopulate the form with the data that has already been entered. We could do this with `cookies`, but let's see another (maybe more straightforward) way.
 
-And then if I leave it til both blank and I click on create, it didn't create, that's good, but it just redirected to the next page. And I don't actually know what happened here. Now we did set an alert, but we don't, we haven't displayed in this application, we didn't do anything with the notice in the alert.
+When `the_movie.valid?` returns false, and we go to the `else` statement, you can see we are still using `the_movie` object to get the `.errors`. So `the_movie` object is still available to us in that branch. And prior to that `.valid?` method, we _already stored values_ in the attributes of this new object that we just instantiated:
 
-Again, typically what we do is we go to the application layout file because we want those alert notice and alert to show up [02:28:00] on every page if you get redirected to that page with the notice and alert. So we would add this comment that notice an alert, some kind markup so that I try
+```ruby
+# app/controllers/movies_controller.rb
 
-submitted
+class MoviesController < ApplicationController
+  def new
+    render template: "movies/new"
+  end
+  
+  ...
+  
+  def create
+    the_movie = Movie.new
+    the_movie.title = params.fetch("query_title")
+    the_movie.description = params.fetch("query_description")
+    the_movie.released = params.fetch("query_released", false)
 
-okay. At least the value there in the alert [02:28:30] because, We used this errors dot messages dot two sentence to transform the validation failures into like a human readable blurb of text. Alright, so there's a lot of stuff there. Do you remember notice and redirects and notices? Do you remember the dot errors collection that we had on the object after we got saying that it didn't work?
+    if the_movie.valid?
+      the_movie.save
+      redirect_to("/movies", { :notice => "Movie created successfully." })
+    else
+      redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
+    end
+  end
+...
+```
 
-Errors tell us which validations failed and then we're taking the full messages strings, [02:29:00] joining them together and display the what questions?
+That means, `the_movie` has everything we need to redraw the form with the entered data. However, when we `redirect_to` a new page, it is the same as the user typing the name into their address bar. Which means we lose the access to anything from this `create` action. It begins a whole new RCAV starting from **/movies/new**, going to the `new` action and rendering the template without any instance variables defined in that `new` action.
 
-Adding a new book. It looked like there was bootstraps added to it and there was like, uh, it looked like a . Yeah, the css. It wasn't just a standard like times new Roman ui, right? One of the things that was generated when we did the scaffold generator was in the app style asset style sheets. [02:29:30] There's a scaffolded stop css, which has some very basic styles in there.
+```ruby
+  def new
+    render template: "movies/new"
+  end
+```
 
-Now I don't love these. Usually I delete this file, but it's something to get started with. It's not actually bootstrap, it's just this very basic style sheet here. It's not very long. It's like 60 lines. Okay. So yeah, we will add bootstrap eventually. All right, so this is, this is all right. But that other, that other one, that other experience.[02:30:00] 
+Okay, then rather than `redirect_to`, let's instead make `the_movie` and instance variable (`@the_movie`) and `render`:
 
-With books. It's so much better cuz like we come back to the same form when I fill it, when I fill out the form partially correct and then submit it. At least the part that I got right stays put as opposed to like wiping it all out and I have to fill it all out again. What if there was 30, 30 columns in this?
+```ruby
+  def create
+    @the_movie = Movie.new
+    @the_movie.title = params.fetch("query_title")
+    @the_movie.description = params.fetch("query_description")
+    @the_movie.released = params.fetch("query_released", false)
 
-That would be terrible to have to do. I mean, even if it tells us when we're wrong, I don't want to [02:30:30] fill out all 30 again just to fix one of 'em. Okay? So we can dramatically improve the experience of submitting this one. Here's how it goes. This is, this is a lot of dots to connect here, but it's worth it and we're going to do it for every form from that one.
+    if @the_movie.valid?
+      @the_movie.save
+      redirect_to("/movies", { :notice => "Movie created successfully." })
+    else
+    # redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
+    render template: "movies/with_errors"
+    end
+  end
+```
+{: mark_lines="2 11-12" }
 
-So let's figure this out. First of all, when if the movie is not valid, so here we don't want to redirect to slash movies. We should at least some slightly better [02:31:00] would be to redirect back to the page that has the form on it, right? Movie slash new. So now at least if I fail to build this out, I bring it back to the form with like a helpful message being displayed in the alert.
+Now we create that new view template where we have access to the `@the_movie` object:
 
-That's a little bit better. That's like a nice thing to do. But if I type something in one but not the other. So if I fix one of these issues, It takes me back. It tells me what the issue is now, but it wiped down the form cuz we're just rendering the whole thing from [02:31:30] scratch again. Okay. Had anybody tried to invent a solution to this problem?
+```html
+<!-- app/views/movies/with_errors.html.erb -->
 
-So instead of wiping out all the values, I would like to show the form that has all the stuff that they just tried prepopulated and then they just have to modify one thing rather than filling out all the appeals again. What do you think? Any ideas? Yeah, [02:32:00] the values and just reapply it. Ooh, interesting.
+<%= @the_movies.inspect %>
+<%= @the_movies.errors.full_messages.to_sentence %>
+```
 
-That's great idea. So we could store all the values in a cookie.
+And now, if we enter a movie with a blank title at **/movies/new**, we will be taken to our page with the `ActiveRecord` object and the errors. And we can see that the object does contain any information that the user filled out!
 
-I like that. So we could do cookies and then we can store the key and title and take this,
+Let's copy-paste from the form from the `new.html.erb` template into this new view template, and prepopulate the values with our instance variable:
 
-you don't have to type this because I'm going to show you another way in a second, but [02:32:30] I do like this, so let's make it work, right? So we're going to store all three values in the cookies, and then how would I make it sharp in the page? So let's just prove that this works. I'm going to open up my dev tools. Go get my application tab so I can look at the cookies right there.[02:33:00] 
+```html
+<!-- app/views/movies/new.html.erb -->
 
-And when I fill out this form right now, say whatever create, if it worked, didn't work, is missing with the phone because of the the checkbox. This is always annoying. I'm going to comment this time. Check boxes are always tricky. Okay, so I submitted that and now there's the description and there's the title right there.
+<h2>
+  Add a new movie
+</h2>
 
-So the values that they typed in into the form [02:33:30] are stored in the cookies. Now I have them in the cookie sash. How can I make them appear here in the input? How do I pre-populate inputs? It's attribute form. It's an attribute in the form. That's right. So I go back to my new, and then here, here's the input for title.
+<form action="/movies" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-Remember to pre-populate, we use the value attribute just like we did up here. [02:34:00] And I'm going to use the cookie sash and get the value.
+  <div>
+    <label for="title_box">
+      Title
+    </label>
 
-And I can do the same thing before description
+    <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>">
+  </div>
 
-now. Oh, that.
+  <div>
+    <label for="description_box">
+      Description
+    </label>
 
-Great text area, you don't need the value because it's just the content of the element for the text area. Great. So I've got [02:34:30] this. If I change this and go a description down here, all goes well. Course. Nice. That's a good solution.
+    <textarea id="description_box" name="query_description" rows="3"><%= @the_movie.description %></textarea>
+  </div>
 
-I, I've never had that suggested before. I like that. I kind of actually almost like this better than the solution that I'm going to show you. Uh, but let me show you another solution here. [02:35:00] The solution that I'm going to show you is
+  <div>
+    <input type="checkbox" id="released_box" name="query_released" value="1">
 
-this variable, this movie, when I do do save, and the validations failed, as we see here, this object gains an array, which has all the things that went wrong in it. And this object already has [02:35:30] the values that the user typed. We already stored those values in the attributes of this new object that we just instantiated.
+    <label for="released_box">Released</label>
+  </div>
 
-So actually, this thing has all the information that we need to draw the helpful form. However, when we redirect to a new page, redirect is the same as the user just typing the same into their address bar and we don't [02:36:00] have access to any, anything from this action. So to hold to our cap starting from the top.
-
-And we only have, once we, once we route the user go through the routing process again, we end up, up here and we only have any instance variables or whatever is set up over here. So that means that object from the create action that had the error messages and had all the values that they typed, we don't have it up in the new action.
-
-So I'm going to say, you know what? [02:36:30] I think rather than redirecting, I'm going to render. So I'm going to, I'm going to turn this into an instance variable.
-
-So this is now an instance variable and I'm going to render a template just like we used to. So let's render template and then say with errors[02:37:00] 
-
-leaving out at that hrv, because if I do Rails, we'll just assume that as the default. Okay? So I'm rendering a template, I'm going to. Call it with errors, HWB. Now, in this template I have access to instant strangles.
-
-And so now let's see [02:37:30] what happens. I submit this form, I'm rendering a template that has the movie, it didn't get saved and the idea is still no, it's got the attributes that they typed. And that means since I have this contract, I can also do
-
-errors messages
+  <button>
+    Create movie
+  </button>
+</form>
+```
+{: mark_lines="15 23" }
 
 Ruby added. [02:38:00] So now I'm rendering a template. I've got the movie object with all the information I need to prepopulate the inputs. And I also have the errors collection that I need to draw. Nice sample, hence for the user. So the solution here, even though I love this cookie solution, we're going to comment it out
 
