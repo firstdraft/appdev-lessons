@@ -315,9 +315,7 @@ Here's another improvement that I want to make to our code. Look at our routes:
 ```ruby
 # config/routes.rb
 
-Rails.application.routes.draw do
-  # Routes for the Movie resource:
-
+...
   # CREATE
   post("/insert_movie", { :controller => "movies", :action => "create" })
           
@@ -325,25 +323,68 @@ Rails.application.routes.draw do
   get("/movies", { :controller => "movies", :action => "index" })
 
   get("/movies/:path_id", { :controller => "movies", :action => "show" })
-  ...
+  
+  # UPDATE
+  post("/modify_movie/:path_id", { :controller => "movies", :action => "update" })
+  
+  # DELETE
+  get("/delete_movie/:path_id", { :controller => "movies", :action => "destroy" })
+...
 ```
 {: mark_lines="5 15"}
 
 During AD1, we started with **/movies** for the `index` page, and for the details of an individual movie (`show`), we did **/movies/ID**, with the dynamic route segment `"/movies/:path_id"`. We expected the ID number to appear and then we showed the details of one thing. Then we added **/insert_movie** as a way to trigger an action that `create`s it when we started.
 
-All of these were originally GETs, and we only later evolved the `create` path to a POST. We named these paths in a way that made it really obvious to us what the [01:13:30] intention, what our intention was, right? So we've insert movie, modify movie, delete movie. We could have named these zebra, giraffe, whatever. But we chose names that revealed our intentions for what action was supposed to be destroyed, uh, triggered by these visits.
+All of these were originally GET methods (`get` in Ruby on Rails), and we only later evolved the `create` path to a POST (`post` in Ruby on Rails). We named these paths in a way that made it really obvious to us what the intention was. We specifically _chose_ names that revealed our intentions for what action was supposed to trigger on these URL paths.
 
-Alright? Now, in the real world, professional developers don't do this the way that we name our URLs. Shouldn't the, the path itself by convention shouldn't include [01:14:00] what we're trying to do with the resource. The path should only identify the resource that we're trying to work with. And then the http verbal over here is supposed to tell us what operation and form on it.
+In the real world, professional developers don't do this! 
 
-So get indicates reading. So that one's good, because this path doesn't say like read movie, it just says the, the, the way we identified it. Movie, movie. And the get tells us [01:14:30] our attention. This is a topic that you probably heard of, you might have come across as acronym of REST or Rest API or Arrest Hold api.
+The way we name our URLs shouldn't have to include what we're trying to do with the resource. The path should only identify the resource that we're trying to work with (here, `movies`). And then the **HTTP verb** (`get`, `post`, etc.) is supposed to tell us what operation to perform on it.
 
-Basically that, that term is kind of squishy these days, but basically what it means is if your routes are restful, it, it means you're, you're adhering to the naming and convention that most other web developers use. That means, uh, we don't [01:15:00] use the, which cloud function is being performed in the I itself, the request method should be used to indicate which cloud function is happening.
+`get` (GET) indicates reading. So the route:
 
-And there's a, there's a useful link here on how to resource, how to name resources if you want to, but the gist of it is fairly simple. All of our routes are going to start with slash and then the plural version of the table name. So these are actually good. [01:15:30] And then we have a dynamic route segment with an ID number for an individual record if we want to modify it.
+```ruby
+get("/movies", { :controller => "movies", :action => "index" })
+```
 
-So I'm going to change this route here to slash movies. And here I'm going to change this to the verb patch. So now, even if, even though these two paths are the same, [01:16:00] we won't have a routing ambiguity because they have a different HTB burden. So Rails can differentiate the requests. Similarly, to delete a movie, we're going to use the HTB verb delete.
+is good, because our path doesn't say `read movie`, or something like that, it just says `movie`, which is the resource (a.k.a. table in our database) we want to read from. `get` tells us our intention. 
 
-And again, this should be movies. And this should be movies. So it all starts at slash movie slash movie slash movies. And these two are not going to get mixed up again [01:16:30] because they have different verbs.
+This is a topic that you may have heard of. You might have come across this acronym called REST or REST API or [RESTful API](https://restfulapi.net/resource-naming/).
+
+That term is kind of squishy these days. What it means is: If your routes are RESTful, then they're adhering to the naming convention that most other web developers use. 
+
+That means, *we don't use which CRUD function is being performed in the URL itself, rather the request method should be used to indicate which CRUD function is happening.*
+
+In practice, it's fairly simple. All of our routes are going to start with slash and then the plural version of the table name. So our `# READ` routes are good:
+
+```ruby
+# READ
+get("/movies", { :controller => "movies", :action => "index" })
+
+get("/movies/:path_id", { :controller => "movies", :action => "show" })
+```
+
+But, we need to change the `# UPDATE` route: 
+
+```ruby
+# UPDATE
+patch("/movies/:path_id", { :controller => "movies", :action => "update" })
+```
+
+We updated the route name to start with our resource of interest (`"/movies/"`) and we changed the **HTTP verb** to a new method `patch` (a.k.a. PATCH).
+
+Now, even though our movie details page with the `show` action and our update movie page with the `update` action share the same URL path, Rails won't get confused, because they are using different HTTP verbs to specify what type of request is being made.
+
+Similarly, to delete a movie, we're going to use the HTTP verb DELETE (a.k.a. `delete`):
+
+```ruby
+# DELETE
+delete("/movies/:id", { :controller => "movies", :action => "destroy" })
+```
+
+Despite all the similar paths in our routes (`"/movies/ID"`), none of them will get mixed up because they have different verbs.
+
+
 
 So that means if I, so with this change, if I want the form that we just fixed to work, I need to go back to the form itself, change this to slash movies. The method posts should remain. If I go back and refresh and try it again, click on create, it should work. So make sure that you update the action here to just slash [01:17:00] movies and then the route to post slash movies.
 
