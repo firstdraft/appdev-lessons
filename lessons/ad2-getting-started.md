@@ -1225,23 +1225,70 @@ This new template, `with_errors`, that we are using to `create` a  new object is
 
 Similarly, now we're using the object that we _attempted_ to save, to prepopulate the `with_errors` form. Interesting similarity. Can we exploit that?
 
-Indeed! Here's a little hack that we're going to be using that most Rails app. Use this template that I just created, the Width Arrows template for this specific purpose of reinventing the new form.
+Indeed! Copy-paste the contents of `app/views/movies/with_errors.html.erb` to `app/views/movies/new.html.erb`:
 
-[02:43:00] How like this is super similar. To the actual new form, right? Those two templates are almost identical. The difference is there's this errors collection here displaying at the top and there's these value attributes here attempting to prepopulate. Whereas in the new form, of course, those are all just blank.
+```html
+<!-- app/views/movies/new.html.erb -->
 
-If you want to be lazy, which Rails developers are, we actually just use the same template. [02:43:30] So I'm going to make this the new temp. I copy pasted it all over it in a new template, and here I'm just going to render the new template from the sad branch of the create action. That way, let's imagine I add a new column to the movies table.
+<h2>
+  Add a new movie
+</h2>
 
-I don't have to go change two forms. I just changed the one form in the new template. So this is nice. Now I try this again, create, [02:44:00] it's working and it's just rendering that one template. I can delete this template if I want to,
+<% @the_movie.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
 
-and we've just encapsulated that all here. The only issue is let's, if I just go to the top, just navigate to movie slash new. I get an error here. Undefined method errors for Hill cause online five. We're trying to call the errors on. At the movie, but when [02:44:30] I just navigate to movie slash noom for the first time, I'm going to this action.
+<form action="/movies" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-And there's no instance variable being defined here. This is the danger that you are into Anytime you're reusing the same view template from two different actions, that view template probably depends on some instance variables. And if you're reusing that template, all the actions that are using it have to set up the same instance [02:45:00] variables that it depends upon.
+  <div>
+    <label for="title_box">
+      Title
+    </label>
 
-So how do we solve this? While we could just go back and have the two templates that's reasonable, or a hack that Rails developers uses, we just create that. We create the variable that the template wants, just put a blank brand new movie instance in it. We don't try to.save or we don't try to do, or we don't call.save or dot valid, which means the validations don't get run.[02:45:30] 
+    <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>">
+  ...
+```
+{: mark_lines="" }
 
-And that means that when we render this template, now the template is happy because the instance rate exists, we can still call dot errors, but because we never call dot same or dot valid, that errors question is an empty array. So this loop never runs and nothing is displayed. And then down here over pre-populating, we can call dot title and dot description, dot whatever.
+And also change the render statement in `MoviesController#create` on the "sad" branch to point to this template:
 
-It's a valid movie object. [02:46:00] It has those methods, but it's brand new, so it's blank. And so that instance variable satisfies this new template, and when we try to submit it, the same code will work. So this is just a clever hack. We're reusing the same template from these two places, and we kind of massage the template and the action and the, in the names of the instance variables to make it possible to reuse one template from both places.[02:46:30] 
+```ruby
+    ...
+    if @the_movie.valid?
+      @the_movie.save
+      redirect_to("/movies", { :notice => "Movie created successfully." })
+    else
+      # redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
+      # render template: "movies/with_errors"
+      render template: "movies/new"
+    end
+    ...
+```
+
+Try the new movie form again. Still working like before? Good, then we can delete the `with_errors.html.erb` file.
+
+However, there's one issue. What if I refresh the **/movies/new** page by typing it into the address bar (i.e., by triggering the `MoviesController#new` action)?
+
+We get an error `undefined method 'errors' for nil`. That's because `@the_movie` is not defined in our `MoviesController#new` action that gets trigged when a user visits **/movies/new**!
+
+We can solve this with a little hack:
+
+```ruby
+  ...
+  def new
+    @the_movie = Movie.new
+    render template: "movies/new"
+  end
+  ...
+```
+
+We create the variable that the template wants, by just putting a blank brand new movie instance in it. We don't try to `.save` or call `.valid`, which means the validations don't get run. 
+
+That means that when we render this template using the `MoviesController#new` action _or_ using the `MoviesController#create` action, the instance variable `@the_movie` is available. When it is the empty `.new` instance, there are no errors to display and no values to prepoluate with, so those things in our form are just ignored.
+
+
+
 
 Sometimes you can't get away with that. You just gotta make two different templates. If they, if they diverge sufficiently, just make the two templates and do the two different archives and keep things simple. But for many cases, this works well. What do you think? Can you think of any questions here?
 
