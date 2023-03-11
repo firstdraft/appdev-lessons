@@ -1201,7 +1201,7 @@ We didn't add the `alert:` to our `render("movies/new"...)` so we aren't getting
 
 Test out the form. Do you see error messages when you leave something blank? Does the form stay prepoulated? What about when you succeed? Are you redirected to the index page with your movie added to the table? Yes to all? Great!
 
-## Reusing New Template 02:40:35 to
+## Reusing `new` View Template 02:40:35 to
 
 Now, let's think about this. In the `MoviesController#create` action, we changed the "sad" branch, where `@the_movie` is _not_ valid:
 
