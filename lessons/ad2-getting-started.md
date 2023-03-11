@@ -942,7 +942,7 @@ Why did we write `params.fetch(:id)`? Isn't the ID a string in the `params` hash
 
 Just like we did in the `show` action (but all on one line now). And now the edit form should work. Try it out to be sure.
 
-## Form Error Messages 02:24:30 to 
+## Form Errors 02:24:30 to 
 
 I want to take and aside, and talk about the user experience of filling out a form. What if somebody submits a movie with a blank title? Typically we don't want to allow that and we want to notify the user so they can correct it. 
 
@@ -994,7 +994,65 @@ class MoviesController < ApplicationController
 
 In AD1, we instantianted a `.new` record, take columns from the form with the query string and `params` hash, and assign them to the columns in our `the_movie` database record. Then we ask if `the_movie` is `.valid?`, which returns true or false based on whether all the validation rules in the `Movie` model pass or not.
 
-If it _is_ valid, we `.save` and redirect. If it is _not_ valid, we just redirect. The only difference with the redirection is that we have a different `:notice` and `:alert` message. But we aren't doing anything with that `:alert` message yet, so we don't get any notification on our `Movie` model that something went wrong if a validation doesn't pass.
+If it _is_ valid, we `.save` and redirect. If it is _not_ valid, we just redirect. The only difference with the redirection is that we have different `:notice` and `:alert` messages. 
+
+But we aren't doing anything with that `:alert` message yet, so we don't get any notification on our `Movie` model that something went wrong if a validation doesn't pass. And we're just redirecting back to **/movies** rather than staying on the form. Use the **/movies/new** form to add a movie with and without a title and see how it works.
+
+Now might be a good time to add a link to the new movie form on the index page:
+
+```html
+<!-- app/views/movies/index.html.erb -->
+
+<div>
+  <div>
+    <h1>
+      List of all movies
+    </h1>
+
+  <a href="/movies/new">Add a new movie</a>
+  </div>
+</div>
+...
+```
+
+Let's improve the UI on the form.
+
+As in AD1, we can add the notice and alert messages to the application layout, so they render on every page:
+
+```html
+<!-- app/views/layouts/application.html.erb -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    ...
+  </head>
+
+  <body>
+    <%= notice %>
+    <%= alert %>
+
+    <%= yield %>
+  </body>
+</html>
+```
+{: mark_lines="10 11" }
+
+Now the messages will appear on top of the page, which is rendered at the location of `<%= yield %>`. 
+
+Try to enter a movie with a blank title on **/movies/new** and you will see the `alert` message, which is being generated in the controller from `the_movie.errors.full_messages.to_sentence`. Great! But let's also keep the user on the form when they mess something up. In the `MoviesController` file, change this:
+
+```ruby
+redirect_to("/movies", { :alert => the_movie.errors.full_messages.to_sentence })
+```
+
+to this:
+
+```ruby
+redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
+```
+
+
 
 And then if I leave it til both blank and I click on create, it didn't create, that's good, but it just redirected to the next page. And I don't actually know what happened here. Now we did set an alert, but we don't, we haven't displayed in this application, we didn't do anything with the notice in the alert.
 
