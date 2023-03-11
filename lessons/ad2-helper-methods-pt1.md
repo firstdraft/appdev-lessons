@@ -21,8 +21,6 @@ Once we finish those clean-ups, we'll begin our first new task: refactoring our 
 
 After the Gitpod workspace is setup and you have your live app started by running `rails server`, have a look around. It should look familiar. I can add a movie, view the details, edit the record, etc. 
 
-Now let's start to refactor the heck out of this code and we're going to be making lots of changes. Therefore, as always, I'm going to have my **/git** interface ready to go so that I can go back if something goes terribly wrong.
-
 ## Testing 
 
 Before we go further, let's get something clear about testing.
@@ -45,10 +43,11 @@ After you’ve spent 20-30 minutes on it, you’re allowed to look at the exampl
 
 As we refactor for the rest of the project, you should run the tests periodically to ensure you didn’t break anything.
 
+## Cleaning up `config/routes.rb` 00:03:00 to
 
-## 00:03:00 to
+Now let's start to refactor the heck out of this code (with our tests, perhaps) and we're going to be making lots of changes. Therefore, as always, I'm going to have my **/git** interface ready to go so that I can go back if something goes terribly wrong. Consider also jotting down some notes to turn into a TIL blog post.
 
-Um, um, also if I were you, it might be a good idea to have your notes open so that anything that you learn, anything that seems fuzzy, you can write it down a question for us to discuss in class. Maybe it'll become a blog post for your, today I learned blog. So [00:03:30] those are all good things to have and let's head over to routes to begin with.
+Let's head over to routes to begin with.
 
 now. Now, now there's so much that we have to talk about in our routes file. So right away we see there's optional modern syntaxes that we have to use. So let's drop the curly brackets around this hash literal, because it's the last argument to the get method. So those are optional. We're going to stop putting those in explicitly.
 
