@@ -308,7 +308,7 @@ Boom. Error message begone. All of a sudden we have **CSRF** protection. One of 
 
 Again, we did this all with the **helper method** `form_authenticity_token` that comes with Rails. We actually already saw some other Rails helper methods, for instance, remember `time_ago_in_words`? There's a whole bunch of these helper methods that we need to learn to level up our codebase.
 
-## RESTful 01:12:30 to 
+## RESTful Routes 01:12:30 to 
 
 Here's another improvement that I want to make to our code. Look at our routes:
 
@@ -364,25 +364,34 @@ get("/movies", { :controller => "movies", :action => "index" })
 get("/movies/:path_id", { :controller => "movies", :action => "show" })
 ```
 
-But, we need to change the `# UPDATE` route: 
+But, we need to change the `# CREATE` route, so it doesn't say `"/insert_movie"`:
+
+```ruby
+# CREATE
+post("/movies", { :controller => "movies", :action => "create" })
+```
+
+Now, even though our movie index page with the `index` action and our insert movie page with the `create` action share the same URL path (**/movies**), Rails won't get confused, because they are using different HTTP verbs to specify what type of request is being made (GET / `get` vs. POST / `post`).
+
+We also need to change the `# UPDATE` route: 
 
 ```ruby
 # UPDATE
 patch("/movies/:path_id", { :controller => "movies", :action => "update" })
 ```
 
-We updated the route name to start with our resource of interest (`"/movies/"`) and we changed the **HTTP verb** to a new method `patch` (a.k.a. PATCH).
+We changed the route name to start with our resource of interest (`"/movies/"`), and we changed the **HTTP verb** to a new method `patch` (a.k.a. PATCH).
 
-Now, even though our movie details page with the `show` action and our update movie page with the `update` action share the same URL path, Rails won't get confused, because they are using different HTTP verbs to specify what type of request is being made.
+And again, even though our movie details page with the `show` action and our update movie page with the `update` action share the same URL path the difference in HTTP verbs will prevent any confusion (GET / `get` vs. PATCH / `patch`)
 
 Similarly, to delete a movie, we're going to use the HTTP verb DELETE (a.k.a. `delete`):
 
 ```ruby
 # DELETE
-delete("/movies/:id", { :controller => "movies", :action => "destroy" })
+delete("/movies/:path_id", { :controller => "movies", :action => "destroy" })
 ```
 
-Despite all the similar paths in our routes (`"/movies/ID"`), none of them will get mixed up because they have different verbs.
+Despite all the similar URL paths in our routes (`"/movies/ID"`), none of them will get mixed up because they have different verbs!
 
 
 
