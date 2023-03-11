@@ -10,14 +10,7 @@ We're going to close the gap between the code we wrote in AD1 and the code that 
 
 That will produce the exact same HTML in the end, but allow us to write a lot less code. It'll be a lot less error prone, and it'll be more security, along with other benefits, all done automatically for us. 
 
-We'll start by making a few syntax changes to make our code more professional and in-line with what you might find in Rails Guides or on StackOverflow.
-
- - Anywhere you see the old `Hash` syntax (`:symbol` keys with hash rockets `=>`): switch to [the new `Hash` syntax](https://chapters.firstdraft.com/chapters/787#new-hash-syntax).
- - Anywhere you see [optional curly braces around `Hash` arguments](https://chapters.firstdraft.com/chapters/787#curly-braces-around-hash-arguments): remove them.
- - Where possible, drop `render` statements.
- - When providing keys to `params`, use `Symbol`s. (Unlike with most hashes, you can use `String`s and `Symbol`s interchangeably as keys to `params`.)
-
-Once we finish those clean-ups, we'll begin our first new task: refactoring our routes using more succinct forms of `get`, `post`, `patch`, `delete`, and, ultimately, `resources`.
+We'll start by making a few syntax changes to make our code more professional and in-line with what you might find in Rails Guides or on StackOverflow. Once we finish those clean-ups, we'll begin our first new task: refactoring our routes using more succinct forms of `get`, `post`, `patch`, `delete`, and, ultimately, `resources`.
 
 After the Gitpod workspace is setup and you have your live app started by running `rails server`, have a look around. It should look familiar. I can add a movie, view the details, edit the record, etc. 
 
@@ -47,9 +40,106 @@ As we refactor for the rest of the project, you should run the tests periodicall
 
 Now let's start to refactor the heck out of this code (with our tests, perhaps) and we're going to be making lots of changes. Therefore, as always, I'm going to have my **/git** interface ready to go so that I can go back if something goes terribly wrong. Consider also jotting down some notes to turn into a TIL blog post.
 
-Let's head over to routes to begin with.
+Let's head over to routes to begin with:
 
-now. Now, now there's so much that we have to talk about in our routes file. So right away we see there's optional modern syntaxes that we have to use. So let's drop the curly brackets around this hash literal, because it's the last argument to the get method. So those are optional. We're going to stop putting those in explicitly.
+```ruby
+# config/routes.rb
+
+Rails.application.routes.draw do
+  get("/", { :controller => "movies", :action => "index" })
+
+  # Routes for the Movie resource:
+
+  # CREATE
+  post("/movies", { :controller => "movies", :action => "create" })
+  get("/movies/new", { :controller => "movies", :action => "new" })
+          
+  # READ
+  get("/movies", { :controller => "movies", :action => "index" })
+  get("/movies/:id", { :controller => "movies", :action => "show" })
+  
+  # UPDATE
+  patch("/movies/:id", { :controller => "movies", :action => "update" })
+  get("/movies/:id/edit", { :controller => "movies", :action => "edit" })
+  
+  # DELETE
+  delete("/movies/:id", { :controller => "movies", :action => "destroy" })
+
+  #------------------------------
+end
+```
+
+This looks familiar from our getting started lesson. It's basically where we left off. We can see the different HTTP verbs and our RESTfully named routes. But, right away we see there's optional syntaxes that we need to change. 
+
+ - Anywhere you see the old `Hash` syntax (`:symbol` keys with hash rockets `=>`): switch to [the new `Hash` syntax](https://chapters.firstdraft.com/chapters/787#new-hash-syntax).
+ - Anywhere you see [optional curly braces around `Hash` arguments](https://chapters.firstdraft.com/chapters/787#curly-braces-around-hash-arguments): remove them.
+ - _Optionally_ drop the parentheses around arguments.
+
+The last point is optional since it's not something that I always do. I like the parentheses around arguments to a method to make it clear to me that _these_ are the arguments that go with _this_ method: `method(argument_one, argument_two)`.
+
+Especially if there's an order of operations with multiple method calls on the same line of code. My convention is: if there's no other methods on this line. There's no order of operations concerns. I will leave out the parentheses.
+
+Type those changes out by hand to get some muscle memory!
+
+In the end, our routes should look like:
+
+```ruby
+# config/routes.rb
+
+Rails.application.routes.draw do
+  get "/", controller: "movies", action: "index"
+
+  # CREATE
+  post "/movies", controller: "movies", action: "create"
+  get "/movies/new", controller: "movies", action: "new"
+          
+  # READ
+  get "/movies", controller: "movies", action: "index"
+  get "/movies/:id", controller: "movies", action: "show"
+  
+  # UPDATE
+  patch "/movies/:id", controller: "movies", action: "update"
+  get "/movies/:id/edit", controller: "movies", action: "edit"
+  
+  # DELETE
+  delete "/movies/:id", controller: "movies", action: "destroy"
+
+  #------------------------------
+end
+```
+
+We can actually go farther with this shortening. Rather than saying `controller: "movies", action: "index"` when writing routes, we can replace that whole thing as `=> movies#index`. Remember, the `#` octothorpe symbol is used to indicate an `Object#method`, which in this example is `MoviesController#index`.
+
+Try to do this on your own for all of the routes.
+
+In the end you should have:
+
+```ruby
+# config/routes.rb
+
+Rails.application.routes.draw do
+  get "/" => "movies#index"
+
+  # CREATE
+  post "/movies" => "movies#create"
+  get "/movies/new" => "movies#new"
+          
+  # READ
+  get "/movies" => "movies#index"
+  get "/movies/:id" => "movies#show"
+  
+  # UPDATE
+  patch "/movies/:id" => "movies#update"
+  get "/movies/:id/edit" => "movies#edit"
+  
+  # DELETE
+  delete "/movies/:id" => "movies#destroy"
+
+  #------------------------------
+end
+```
+
+, okay, so we can dramatically shorten this. One other thing that we can do to make this shorter is. [00:05:00] We can, there's a sh there's a shorthand syntax when we're writing routes rather than saying controller movies, action index as a hash, you can say, just as a string here, movies, Octa Thorpe Index.
 
 Here we see hash rockets. The [00:04:00] key is a symbol. So we can replace that hash rocket by moving that colon to the. and we're going to start doing that now. For all of our hashes and even this, we're going to get rid of these parentheses. This is not something that I'm always going to do. I like the parentheses around arguments to a method to make it clear to me that these are the arguments that go with this method.
 
