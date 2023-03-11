@@ -758,7 +758,7 @@ All of this is the point. It might seem like what we're doing is arbitrary. We'r
 
 One last thing to note, then we'll go back to working on our `movies` resource. 
 
-## Movie Form Pages 02:08:00
+## Movie Form Pages 02:08:00 to 02:24:30
 
 On the `scaffold` **/books** `index` or `show` pages, there's no form to add a book or edit a book. Instead, there's a link that brings you to that form. 
 
@@ -929,28 +929,26 @@ Back in the controller, we'll need to:
 class MoviesController < ApplicationController
   ...
   def edit
-    @the_movie = Movie.where(id: params.fetch(:id))
+    @the_movie = Movie.where(id: params.fetch(:id))[0]
     render template: "movies/edit.html.erb"
   end
   ...
 ```
 {: mark_lines="6" }
 
-Just like we did in the `show` action. And now the edit form should work. Try it out to be sure.
+<aside markdown="1">
+Why did we write `params.fetch(:id)`? Isn't the ID a string in the `params` hash? Well `params` is not actually a hash, it's a subclass of hash that Rails created. It can use _both_ symbols and strings. Most of the time you're going to see symbols.
+</aside>
 
-Does that make sense? What do you think? Yeah, the, when you're fetching from the branch, you can either put the colon in the front or you can use the same name. But quotes is that is one the bird I see fetching here. Yeah. Here I use a symbol. You also see me a lot of times using the string. Yeah. And this is after I harped on you a bunch of times saying those two are not interchangeable.
+Just like we did in the `show` action (but all on one line now). And now the edit form should work. Try it out to be sure.
 
-However, the prams [02:23:00] hash is some special hash Rails. It's not actually a hash, it's a subclass of hash that Rails created. And it is, it's called a hash within different access. And you can use both symbol string. Most of the time you're going to see symbols. Here we use strings in active one because if you look at the perhaps hash of the server lock, everything is actually a string keys and values.
+## Form Error Messages 02:24:30 to 
 
-But from now on we'll use symbols here.[02:23:30] 
+I want to take and aside, and talk about the user experience of filling out a form. What if somebody submits a movie with a blank title? Typically we don't want to allow that and we want to notify the user so they can correct it. 
 
-Okay. Any questions about getting, moving this edit over to its own page? Edit form?
+Let's look at what happens with the **/books** scaffold when we try adding a book with a blank title:
 
-You know, typically you don't have the edit form right On the details page you have to click to get to it. Yep. I uh, if you navigate slash edit now, we should still get an error cause we don't have anything on, we do haves cuz of this, the four. And then in my [02:24:00] route I had that dynamics, the second segment is dynamic.
 
-So that's how that got into the
-
-Okay. One last thing. I'm not sure if we're going to have time for it, but I want to talk about the experience when I fill out the form. But like, [02:24:30] what if somebody submits a movie with a blank title? Typically we don't want to allow that. So let's look at, I'm going to take a quick look at what happens with the scaffold that I generated.
 
 So here's the scaffold that books. Does anybody remember how, what was our tool for preventing somebody from creating a book with the blank title? Validation validations. Validations are this very [02:25:00] excellent, uh, technique. If you need a refresher, there's a chapter number 43 currently on chapters@firstchapter.com.
 
