@@ -943,7 +943,7 @@ Why did we write `params.fetch(:id)`? Isn't the ID a string in the `params` hash
 
 Just like we did in the `show` action (but all on one line now). And now the edit form should work. Try it out to be sure.
 
-## Form Errors 02:24:30 to 
+## Form Errors 02:24:30 to 02:40:35
 
 I want to take and aside, and talk about the user experience of filling out a form. What if somebody submits a movie with a blank title? Typically we don't want to allow that and we want to notify the user so they can correct it. 
 
@@ -1122,8 +1122,8 @@ Okay, then rather than `redirect_to`, let's instead make `the_movie` and instanc
       @the_movie.save
       redirect_to("/movies", { :notice => "Movie created successfully." })
     else
-    # redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
-    render template: "movies/with_errors"
+      # redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
+      render template: "movies/with_errors"
     end
   end
 ```
@@ -1140,10 +1140,10 @@ Now we create that new view template where we have access to the `@the_movie` ob
 
 And now, if we enter a movie with a blank title at **/movies/new**, we will be taken to our page with the `ActiveRecord` object and the errors. And we can see that the object does contain any information that the user filled out!
 
-Let's copy-paste from the form from the `new.html.erb` template into this new view template, and prepopulate the values with our instance variable:
+Let's copy-paste from the form from our other `new.html.erb` template into this view template, and prepopulate the values with our instance variable:
 
 ```html
-<!-- app/views/movies/new.html.erb -->
+<!-- app/views/movies/with_errors.html.erb -->
 
 <h2>
   Add a new movie
@@ -1181,27 +1181,43 @@ Let's copy-paste from the form from the `new.html.erb` template into this new vi
 ```
 {: mark_lines="15 23" }
 
-Ruby added. [02:38:00] So now I'm rendering a template. I've got the movie object with all the information I need to prepopulate the inputs. And I also have the errors collection that I need to draw. Nice sample, hence for the user. So the solution here, even though I love this cookie solution, we're going to comment it out
+We didn't add the `alert:` to our `render("movies/new"...)` so we aren't getting any message if we mess things up, but at least the form is staying prepopulated now. Let's add some messages though:
 
-and we're just going to render a template that's dedicated to showing them the form again, but with a bunch of powerful [02:38:30] stuff. I'm going to copy the form from the new template cuz it's basically the same.
+```html
+<!-- app/views/movies/new.html.erb -->
 
-And here. Instead of cookies title, we're going to use the movie title
+<h2>
+  Add a new movie
+</h2>
 
-here. We'll use movie description and we'll deal with that checkbox in a second.[02:39:00] 
+<% @the_movie.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
 
-Try to, we'll submit it and kind works. So lemme try this and shape into a title create. So it's rendering the form, it's displaying the previously filled out attributes. Let me also add something at the top that will display the error messages at the [02:39:30] movie, errors
+<form action="/movies" method="post">
+  ...
+```
+{: mark_lines="7-9" }
 
-messages, that's an array. And then to make it look nice, I'm going to do a each just throw into a list. So for now
+Test out the form. Do you see error messages when you leave something blank? Does the form stay prepoulated? What about when you succeed? Are you redirected to the index page with your movie added to the table? Yes to all? Great!
 
-it's a little better
+## Reusing New Template 02:40:35 to
 
-sign.[02:40:00] 
+Now, let's think about this. In the `MoviesController#create` action, we changed the "sad" branch, where `@the_movie` is _not_ valid:
 
-Switch that description. Switch that. All right. And then if I actually submit them both, hopefully now it gets happy and it goes to the other branch where it just gets added. I try adding it again. This is showing up because of the cookie, so I should delete that cookie. It's kinda confusing right now.
+```ruby
+    ...
+    if @the_movie.valid?
+      @the_movie.save
+      redirect_to("/movies", { :notice => "Movie created successfully." })
+    else
+      # redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
+      render template: "movies/with_errors"
+    end
+    ...
+```
 
-Method that we did.[02:40:30] 
-
-Okay, so cool. Uh, let's think about this. We changed this branch, the SAT branch. Instead of redirecting, we're just going to do the normal thing that we do, which is render a template because we're rendering a template from this action. We have, we have access to this variable, which we switched into an instance variable, and with [02:41:00] that, we're able to do whatever we want.
+Instead of redirecting, we do the normal thing of rendering a template because we're rendering a template from this action. We have, we have access to this variable, which we switched into an instance variable, and with [02:41:00] that, we're able to do whatever we want.
 
 The new template. It's actually, you know, it's, if you think about it, it's the thing that we've been doing forever when it comes to edit forms with an edit form. We already had an object in the database. We looked it up using the id, and then we prepopulated the whole form using value attributes and the object that we looked up out of the database table.
 
