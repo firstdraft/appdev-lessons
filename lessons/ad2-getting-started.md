@@ -308,7 +308,7 @@ Boom. Error message begone. All of a sudden we have **CSRF** protection. One of 
 
 Again, we did this all with the **helper method** `form_authenticity_token` that comes with Rails. We actually already saw some other Rails helper methods, for instance, remember `time_ago_in_words`? There's a whole bunch of these helper methods that we need to learn to level up our codebase.
 
-## RESTful Routes 01:12:30 to 
+## RESTful Routes 01:12:30 to 01:20:00
 
 Here's another improvement that I want to make to our code. Look at our routes:
 
@@ -393,36 +393,65 @@ delete("/movies/:path_id", { :controller => "movies", :action => "destroy" })
 
 Despite all the similar URL paths in our routes (`"/movies/ID"`), none of them will get mixed up because they have different verbs!
 
+We do need to update the URLs now anywhere else they appear in our app. For instance, in the `index` page form, we need to change this:
 
+```html
+<form action="/insert_movie" method="post">
+```
 
-So that means if I, so with this change, if I want the form that we just fixed to work, I need to go back to the form itself, change this to slash movies. The method posts should remain. If I go back and refresh and try it again, click on create, it should work. So make sure that you update the action here to just slash [01:17:00] movies and then the route to post slash movies.
+to this:
 
-Yep. So if you manually type in the URLs, go to the first one. Uh, if you manually type it into the browser address bar, the browser's address bar can only perform get requests. So in this case, it would go to this one. So that's why that one we started out with get for Everything, so that it would be easy for us to manually type it in and [01:17:30] test it.
+```html
+<form action="/movies" method="post">
+```
 
-But now we're evolving past that. I might have missed this earlier, but I see how the verbs at the beginning, like, tell us what we're trying to do, but why is it a problem? Like you said, you should never put the action in the url. Is that like a security? Not really security? No. Like we did it have to one, and it worked and then, and once we switched it, switching to from get to post, that was the thing that we needed to do for security reasons.
+And we don't need to worry about confusion, because Rails will look for the route with the matching `method` (here, that's POST, or `post`).
 
-After that, the way you name your [01:18:00] URLs is just up to you. It's not necessarily going to cause any problems. But this is an example of how we're just trying to like level up and learn the conventions that professional developers use. Because now, like whenever we use somebody else's API or they use our api, you can pretty much just guess what the URLs are going to be instead of having to learn what each developer decided to name each one of their routes.
+But what if we manually type in **/movies** to the address bar? Which operation will be performed. Well, the browser can _only_ perform GET requests! So that method will be used and the index of movies will be shown.
 
-Got it. Yeah. Can you go back to the, yep. So we just have to make sure that this action matches the [01:18:30] URL that we switch to.
+## No .at for ActiveRecord 01:20:00 to 01:22:30
 
-All right. Yeah. Basic question, just to make sure. What is the difference between main name and value? Main is what's going to become the key in the perhaps hash. So when I actually submit this form, go to my server log
+One quick thing we need to fix. On the **/movies** index page, try to click on the "Show details" link for the movie you added.
 
-and clear it and submit this form, [01:19:00] look at the server log. So, In the prime. Now we have a key with the name of authenticity token and that's, we have to, we have to have exactly this name cuz with this CSM protection enabled, any time there's a post, if there isn't this key with a valid value, Rails will reject the request.
+We get an error message `undefined method 'at' for #<ActiveRecord:Relation...`, pointing to this line in our `MoviesController`:
 
-Right? So this one we don't get to set and the other one we can just whatever kind [01:19:30] of, except in this case for this specific purpose, we don't really get to pick whatever we want. We have to use this, this helper method generates that very specific string that nobody else can spoof. So we, we can, we couldn't even spoof it if we tried to, we have to use this helper method to generate it.
+```ruby
+# app/controllers/movies_controller.rb
 
-Okay. I think. Good. All right, let's keep going and fix the rest of our app to adhere to [01:20:00] this new name convention. So my index page is fine. My show page is fine. I didn't change those, but the delete and update changed. So if I go ahead to, so I go click on the show details here. Oh, here's another thing. I jump out.
+class MoviesController < ApplicationController
+  ...
+  def show
+    the_id = params.fetch("path_id")
+    
+    matching_movies = Movie.where({ :id => the_id })
+    
+    @the_movie = matching_movies.at(0)
+    
+    render({ :template => "movies/show.html.erb" })
+  end
+  ...
+```
+{: mark_lines="10"}
 
-So I clicked on the show and we get an error, error message on Define Method Act for active record relation line 27 of movies controller. Alright, here's what's going on here [01:20:30] I go to the line 27 of Louis Control. All right. So dot where searches the movie table returns an active record relation with all the matches.
+Back in AD1, I told you all to just think of an `ActiveRecord:Relation` (here the `matching_movies` from our `movies` table, which were accessed a `.where` query on the `Movie` model) like an array, and to use the familiar array methods (like `.at`). But, it's not actually an array! Sorry! In the real world, `.at` is not defined for `ActiveRecord:Relation`, we just added it to make it more familiar for us beginners. From now on, when you have an `ActiveRecord:Relation`, and you're trying to get a single element out of it, you could do square bracket syntax:
 
-Put that in his variable. And I, you have to have one. I told you all, just think of it like an array and use, use it the way that you use an array, but it's not actually an array, it's an active record relation. This method.at exists for regular, plain old ruby arrays, [01:21:00] but it actually in the real world, doesn't exist for active record relations.
+```ruby
+@the_movie = matching_movies[0]
+```
 
-We just added it to active record relations and act at one projects, just to make it more familiar for us to be accessing an element. So from now on, when you have an active record relation and you're trying to get a single element out of it, you could do square bracket syntax or you could do dot first.
+or you could do `.first`:
 
-These are, these methods are shared between arrays and [01:21:30] relations, but you just can't use that.app anymore. So anywhere that you're doing.at on a relation, we're going to have to switch it to dot bursts or dopa square brackets. Lemme make sure that works. Now I can get to this movie details page. Any questions about this?
+```ruby
+@the_movie = matching_movies.first
+```
 
-the.at method, this square brackets syntax for accessing something in an array. Is by far the most common in other [01:22:00] programming languages as well. So it's not a bad idea to just start getting used to it. When you're reading other languages or when you're reading Ruby, you're going to start to see, you're going to see the spread brackets much more commonly than the.at.at is pretty much just active one for draft stuff.
+These methods are shared between arrays and `ActiveRecord:Relation`s. Square brackets are very common on the internet (and in other programming languages), so I recommend getting used to that. 
 
+Try the "Show details" link again after you make this change. Working? Great!
+
+## DELETE 01:22:30 to 
+
+Now, on the details page for a movie, try to click 
 Okay? Now when we click on delete, it says, okay, no wrong patches cause we used to point to delete underscore movie not [01:22:30] working anymore. So if I go check out the code for that delete link, which is in the movie's show template, line 15, I have to switch this to slash movies to match up with. What we have now is around final.
 
 But if I, now I'm trying to use that and I click on delete movie, it just takes me right back to the routes page or the the show page [01:23:00] because this is still a get request. And if you do get movie slash ID number, that's just going to go to the details page, right? So now we have like a kind of a conflict between the two.
