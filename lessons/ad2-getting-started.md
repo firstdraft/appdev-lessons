@@ -614,108 +614,60 @@ You can try selecting the offending characters and [creating multiple cursors](h
 
 With that, our routes are done. They are industrial grade. The next thing to do is build separate pages for create and update actions instead of having them on the show and index pages.
 
-## 01:38:00 to
+## The Goal: Scaffolds 01:55:00 to
+
+Why are we doing all this seemingly arbitrary work? Switching naming conventions and making our routes RESTful? Well, let's look at the command we're going to start using rather than `draft:resource`:
+
+```bash
+rails generate scaffold book title:string description:text released:boolean
+```
+
+It's just another Rail's generator. There's a name for a model (`book`) and columns (`title`, etc.). But the difference is the name of the generator we choose: `scaffold`. 
+
+This, like the model generator and the controller generator, are just built into Rails.
+
+When we run this generator, look what happens:
+
+```bash
+    Running via Spring preloader in process 4313
+      invoke  active_record
+      create    db/migrate/20230311022329_create_books.rb
+      create    app/models/book.rb
+      invoke    test_unit
+      create      test/models/book_test.rb
+      create      test/fixtures/books.yml
+      invoke  resource_route
+       route    resources :books
+      invoke  scaffold_controller
+      create    app/controllers/books_controller.rb
+      invoke    erb
+      create      app/views/books
+      create      app/views/books/index.html.erb
+      create      app/views/books/edit.html.erb
+      create      app/views/books/show.html.erb
+      create      app/views/books/new.html.erb
+      create      app/views/books/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/books_controller_test.rb
+      create      test/system/books_test.rb
+      invoke    helper
+      create      app/helpers/books_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/books/index.json.jbuilder
+      create      app/views/books/show.json.jbuilder
+      create      app/views/books/_book.json.jbuilder
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/books.scss
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.scss
+```
+
+Woah! Unlike the `draft:resource` generator, I didn't have to add a gem to get this to run. It's just built in out of the box. And look at all the stuff it does!
 
 
-We'll get started again at 7 55.[01:38:30] 
-
-That's
-
-taken, but I'm pretty sure what happens.[01:39:00] 
-
-I think U is, that link is not keep rolling. No, it just.
-
-It just like not the expected[01:39:30] 
-
-somewhere. I'm not sure what it'll actually read out here. You'd have to add like a text what it was doing, but just the expectation, like buttons going to perform
-
-all the websites that I know, or News link, but they, [01:40:00] they probably, they're accessible. They probably just have a button. Like the actual underlying element is that could be true, but I doubt so I, as far as I'm just world Yeah. The world, that world that exists
-
-conform to the world that exists. Right. And I would expect with the prevalence of like, you know, it's an amazing thing to read though, [01:40:30] um, I forget, is in one of, she has you. It's aor incredible
-
-element, but only like you have to use a screen to listen to how, when it's focusing and that experience of even just that one little exercise. I didn't,[01:41:00] 
-
-he already offered me a pretty solid discount for the CSS
-
-to get, but hopefully maybe he'll bundle both of.
-
-Do you know how much I paid? Um, I paid
-
-it's less,[01:41:30] 
-
-which is good.
-
-Okay.
-
-To refresh.[01:42:00] [01:42:30] [01:43:00] 
-
-So[01:43:30] 
-
-filter.
-
-Status duct.[01:44:00] [01:44:30] [01:45:00] 
-
-Let's say they have[01:45:30] [01:46:00] 
-
-for the colors and everything.[01:46:30] 
-
-Oh,
-
-you too.[01:47:00] 
-
-More safe than.[01:47:30] 
-
-But that's awesome. So did you.[01:48:00] 
-
-Also do the same thing,[01:48:30] 
-
-and that just lets me figure out the hard parts and then I just, I don't actually give them.[01:49:00] 
-
-Hopeful you'll be able to go a little bit further in the[01:49:30] 
-
-say, good to see you. Um, so
-
-up until chapter five going, well, the tests make sense
-
-back into it. [01:50:00] Testing.
-
-Okay. But as usual,[01:50:30] 
-
-Yeah, I actually started the, this past week I was thinking about actually. Okay. I was like, oh man. Like yeah.
-
-Yeah. And like you explain like I can figure out the logic.
-
-Movies complicated. I dunno where the logic is coming from. Write yourself.
-
-[01:51:00] Yeah, we're, that's one of the things,
-
-you going to hit the path and go, go bus sellable. Have to
-
-charging. So, okay. And then the other routes are io it's charging through. Oh, I [01:51:30] do that too. . I mean, depending on how much time you try, like I'll be hosting three resources in both and we'll be talking in class a little bit each day about both things. Both
-
-slacks you, you.[01:52:00] [01:52:30] 
-
-Integrated, there's,[01:53:00] 
-
-it would've just after you opened it up for a little bit. The greatest, yeah. Three Wonder Canvas. Yeah,[01:53:30] 
-
-possible should be fine for this. Um, probably an email if there's no,[01:54:00] 
-
-I have a good sign email. What did I get?
-
-You think great on it. Like I didn't think about this. That's the actual Okay. I'm not sure about [01:54:30] your
-
-Oh, yeah, yeah.
-
-Alright, everyone, we're going to get started again. You could get back. To where we were at and I realize now looking at the notes that I totally skipped a step, which was, there's a section here that says the goal [01:55:00] and I wanted to give you a preview of why we're doing all of this cuz I know it seems a little bit arbitrary right now.
-
-Like why do we have to switch the methods and why do we have to use all that? Here's why. So if you copy this command, which is very similar, it's Rails generate. Then there's a name model and columns. But the difference is right here, the name of the generator we choose is Scaffold. This like the model generator and the controller generator are just built into Rails.
-
-Let's take a look and [01:55:30] see what happens with this generator. We're going to it in, run it. And
-
-unlike the `draft:resource` generator, I didn't have to add a gem to get this to run. It's just built in out of the box. It's sticking a while. It's kinda surpris. Kinda wonder whether might workspace shut. I wasn't paying [01:56:00] attention.
-
-Is that hanging for you guys too? I got [01:56:30] it.
 
 Well, if it worked for you, I want you to just take a second and take a, so it's going to say down here all the files that were generated by this, just take a look at. So first of all, if you, if you Rails DB migrate, do the same thing, navigate to slash books, you'll see that you have a fully functional CRUD resource just like before.
 
