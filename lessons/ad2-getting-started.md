@@ -1181,7 +1181,9 @@ Let's copy-paste from the form from our other `new.html.erb` template into this 
 ```
 {: mark_lines="15 23" }
 
-We didn't add the `alert:` to our `render("movies/new"...)` so we aren't getting any message if we mess things up, but at least the form is staying prepopulated now. Let's add some messages though:
+(The HTML `<textarea>` element does not have a `value` attribute, so we had to prepopulate the field itself.)
+
+We didn't add the `alert:` to our `render template: "movies/with_errors"` line, so we aren't getting any message if we mess things up, but at least the form is staying prepopulated now. Let's add some messages though:
 
 ```html
 <!-- app/views/movies/new.html.erb -->
@@ -1203,7 +1205,7 @@ Test out the form. Do you see error messages when you leave something blank? Doe
 
 ## Reusing `new` View Template 02:40:35 to
 
-Now, let's think about this. In the `MoviesController#create` action, we changed the "sad" branch, where `@the_movie` is _not_ valid:
+Let's think about this. In the `MoviesController#create` action, we changed the "sad" branch, where `@the_movie` is _not_ valid:
 
 ```ruby
     ...
@@ -1217,9 +1219,9 @@ Now, let's think about this. In the `MoviesController#create` action, we changed
     ...
 ```
 
-Instead of redirecting, we do the normal thing of rendering a template because we're rendering a template from this action. We have, we have access to this variable, which we switched into an instance variable, and with [02:41:00] that, we're able to do whatever we want.
+Because we're rendering a template rather than redirecting, we have access to `@the_movie` in the `with_errors.html.erb` template.
 
-The new template. It's actually, you know, it's, if you think about it, it's the thing that we've been doing forever when it comes to edit forms with an edit form. We already had an object in the database. We looked it up using the id, and then we prepopulated the whole form using value attributes and the object that we looked up out of the database table.
+This new template, `with_errors`, is similar to what we've done in the past with edit forms. We looked up an existing object in our database using the ID, and then we prepopulated the whole form using value attributes taken from that object.
 
 Very similarly here, we're using the object that we attempted to save, but failed to [02:41:30] save to prepopulate. This form here, what do you think? It's a lot of dots to connect. Can you repeat a question? Yeah. Um, I've notice that the
 
