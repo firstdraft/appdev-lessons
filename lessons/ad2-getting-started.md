@@ -758,7 +758,7 @@ All of this is the point. It might seem like what we're doing is arbitrary. We'r
 
 One last thing to note, then we'll go back to working on our `movies` resource. 
 
-## New Movies Page 02:08:00
+## Movie Form Pages 02:08:00
 
 On the `scaffold` **/books** `index` or `show` pages, there's no form to add a book or edit a book. Instead, there's a link that brings you to that form. 
 
@@ -781,6 +781,10 @@ Rails.application.routes.draw do
   ...
 ```
 {: mark_lines="7" }
+
+<aside markdown="1">
+Be sure your new `get("/movies/new"...)` route is _above_ the `get("/movies/:id"...)` route that is already in `config/routes.rb`. If it was _below_ this route, then there would be a conflict and anytime we tried to visit **/movies/new** Rails would treat **new** in the path as an `:id`, which wouldn't work.
+</aside>
 
 Now we need to add the (conventionally named) `new` action to our controller:
 
@@ -834,55 +838,105 @@ To continue with our RCAV, let's go to the live app and navigate to **/movies/ne
 </form>
 ```
 
-and [02:12:00] copy this form. Everything from this page two, line 13 all the way down to the closing form tag. Just copy it over Going to, um, our auto format's not working in this workspace, but we'll fix it. Um, then if I refresh this, we should have this. If I had a movie, does it work? Second [02:12:30] works. We didn't have to do anything else except just copy it over because the action still stays the same and the methods the same.
+(Hint: You can autoformat your code to fix indentation issues in the editor, [see here](https://code.visualstudio.com/docs/editor/codebasics#formatting).)
 
-Everything else is the same. You just put it in its own page
+Refresh **/movies/new** and test the form. Working? Great!
 
-and just test to make sure that it works. Can you check real quick with homework,
+Now, on your own, do the same with the editing form on the `show` page. Start with a new route:
 
-any questions on this new form? [02:13:00] If not, try to do the edit as well. I want edit forms to appear at Movies slash ID number slash edit. That's the typical location, so at a route to allow for this, and then on that page, put the edit form.[02:13:30] 
+```ruby
+get("/movies/:id/edit", { :controller => "movies", :action => "edit" })
+```
 
-Actually copy the form to create movie, which previously was on the index pamphlet. It just moved it over and it worked. The edit form is not going to work with just copy pasting, but tried to figure out how to make it work.[02:14:00] [02:14:30] 
+or, sticking with our new syntax:
 
-Um, you're just trying to, this one is just, you're just kind direct to the, to the page itself.[02:15:00] 
+```ruby
+get "/movies/:id/edit",  controller: "movies", action: "edit"
+```
 
-Oh,[02:15:30] 
+<aside markdown="1">
+Why are we using `get` on the new `edit` action? Because all this route is going is GETting the `edit` page for us, not making any database changes. But on the `edit` form, we have our `patch` method to update the database record.
+</aside>
 
-basically.
+Then add the `edit` action, view template, and cut-paste the edit form onto the new view.
 
-Okay. Um, yeah, let's go back to their officers. [02:16:00] Um,
+Did you try that? Let's do it together now.
 
-yeah, we creating a wheel route for edit. Yep. Okay. Want now [02:16:30] something like this to work? So, oh. Looks like you have a little spin on the, this should display a form to edit whatever.
+First, I added to the routes:
 
-Syntax. Do we not need to? Yeah, there we,
+```ruby
+# config/routes.rb
 
-oh actually, well, okay. Great question. No, [02:17:00] because the purpose of this to just explain the form, it's not actually updating a database record. So we're getting the page that has to pull on Do we have to keep using the rocket or we move that? Yeah, I mean you should actually try to shorten it up so you could drop the front seats, drop the cur symbol, drop the half.
+Rails.application.routes.draw do
+  resources :books
 
-Yeah. [02:17:30] Um, can you go back?
+  # Routes for the Movie resource:
 
-Okay, let's go back to,
+  get("/movies/new", { :controller => "movies", :action => "new" }))
+  get "/movies/:id/edit",  controller: "movies", action: "edit"
 
-so one thing we want do is direct to Yeah. We're do something.[02:18:00] 
+  # CREATE
+  post("/movies", { :controller => "movies", :action => "create" })     
+  ...
+```
+{: mark_lines="8" }
 
-No, we want keep that cuz you doing two considered going to separate things. This one is just getting the age that's going to show the report and the other actions going to actually allow us create.[02:18:30] 
+Then add the new action:
 
-The concept,[02:19:00] 
+```ruby
+# app/controllers/movies_controller.rb
 
-we'll get to it later, but
+class MoviesController < ApplicationController
+  def new
+    render template: "movies/new.html.erb"
+  end
 
-I'm going to start to step through this. Sorry if you didn't finish yet, but we're running a little short on time, so I want to make sure we get to what you need to for the homework. I think we'll, we'll get to like, alright, so what I want is, rather than edit form being right on the details [02:19:30] page, I'd like to have a separate route that looks like this and the edit page will be there.
+  def edit
+    render template: "movies/edit.html.erb"
+  end
+  ...
+```
+{: mark_lines="8 10" }
 
-So I added a route movie slash id slash edit. Also, let me point out that. This get slash movie slash new. It's higher up in the routes file above get movie slash ID if you put it lower below this. Now these two are in [02:20:00] conflict. They're the same verb and slash new will count as a dynamic passing. So now this route will never be reached.
+Then cut-paste the form to the view template:
 
-So watch out for that. If you ever have a static route that matches the same pattern as a dynamic route, make sure that it's above so it doesn't get caught at the dynamic route. Does that make sense? Otherwise, you're going to go to the show action. It's going to look for a movie with the idea of new, and then it's going to crash, saying that doesn't [02:20:30] exist, right?
+```html
+<!-- app/views/movies/edit.html.erb -->
 
-So let's move this up. And we need now to do movies such ID slash edit. I made the route, let me implement the action goes, copy the new action and change that to edit and then create a new template. I just duplicated the new form
+<h2>
+  Edit movie
+</h2>
 
-and just to get it working. [02:21:00] I have some stuff in there. Uh, I just duplicated the new page. But of course, I need this to be an edit form, which means this form should be prepopulated. With the details from movie number four so that I can just change whatever I want to change and then update. So I already have an form on the show page, so I could go copy that I'm feeling lazy, look at this, go to my edit page, [02:21:30] paste this in, say update.
+<form action="/movies/<%= @the_movie.id %>"  method="post" >
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-And if I try this, I get an error right here because we're trying to call that ID in that form. And this instance rate well at the league doesn't exist in this action. So what we need to do is look up the movie [02:22:00] based on the brands,
+  <input type="hidden" name="_method" value="patch">
+  ...
 
-just like we did in the show action. I'm just doing it all on online now. And that should then make the form work, I hope, make sure, okay, so now I have this and I think if I update, it should work. It works, the formal works as long as we supply the right instance [02:22:30] variable that that other template was using, that it should.
+  <button>
+    Update movie
+  </button>
+</form>
+```
+
+Now try the new **/movies/[ID]/edit** route for one of the movies. We get an error `undefined method 'id' for nil:NilClass`. And we can see on the error page, that the problem is with the instance variable `@the_movie`. That's `nil` on our new page, because it doesn't exist in our `edit` action back in the controller!
+
+Back in the controller, we'll need to:
+
+```ruby
+# app/controllers/movies_controller.rb
+
+class MoviesController < ApplicationController
+  ...
+  def edit
+    @the_movie = Movie.where(id: params.fetch(:id))
+    render template: "movies/edit.html.erb"
+  end
+  ...
+```
+{: mark_lines="6" }
+
+Just like we did in the `show` action. And now the edit form should work. Try it out to be sure.
 
 Does that make sense? What do you think? Yeah, the, when you're fetching from the branch, you can either put the colon in the front or you can use the same name. But quotes is that is one the bird I see fetching here. Yeah. Here I use a symbol. You also see me a lot of times using the string. Yeah. And this is after I harped on you a bunch of times saying those two are not interchangeable.
 
