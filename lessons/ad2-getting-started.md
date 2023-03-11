@@ -764,33 +764,75 @@ On the `scaffold` **/books** `index` or `show` pages, there's no form to add a b
 
 Let's move the **/movies** `index` form to add a new movie onto it's own page now.
 
-And that's the main [02:07:00] benefit. So good. Okay, so let's get back to it then. One thing that we will see is on the index page of a scaffold, we don't have a form to add a new book.
+Starting with `config/routes.rb`, add the new route we want:
 
-Instead there's a link here and conventionally the form to add a new record to this table is located at a path that is just slash new after the [02:07:30] name of the resource that we fill it out over here. Similarly, the edit, the edit form doesn't show up right on the details page. Right. I think that's pretty rare for the edit form to be on the details page.
+```ruby
+# config/routes.rb
 
-Typically have to click a link to get to another page that has the edit form. Okay, let's do that. We're going to update our movies to be kind of like that. I don't, I want to move this form into its own page. So let's go to, first of all, Rossby [02:08:00] and add.
+Rails.application.routes.draw do
+  resources :books
 
-Get slash movies slash new, and then controller goes to movies. Then let's make an action called let's add a new action called New,
+  # Routes for the Movie resource:
 
-which is the conventional name for that action. And then we have to do the same old things. Think way back, we have to connect Route controller [02:08:30] Action and creative view template. So defined slash new or a method called new
+  get("/movies/new", { :controller => "movies", :action => "new" }))
 
-and render a template. Okay, I'm going to, let's pause for one second and I am now going to finally start to stop typing out the longest version of everything. So the way that I always did this after one was parenthesis for the arguments, [02:09:00] then a hash here, and then template here, movies, new H, right? However, we saw that there's a bunch of different styles that you can write.
+  # CREATE
+  post("/movies", { :controller => "movies", :action => "create" })     
+  ...
+```
+{: mark_lines="7" }
 
-Movie, this is the most explicit, but we're going to start to adopt some of the more idiomatic ways of doing it. First of all, when we have a hash, the hash is the last argument to a method. We can [02:09:30] drop the curly brackets. Around the hash. Literal the only one. It's the last argument to a method. No other time.
+Now we need to add the (conventionally named) `new` action to our controller:
 
-So if we just have a hash out here
+```ruby
+# app/controllers/movies_controller.rb
 
-like this, you can't just drop the curls out in space. Now it's a syntax error. But when it's the last argument to a method, which en Rails is like all the time, [02:10:00] right? With routes, with dot wear, with render Rails, methods are designed in this way where there's usually a hashes. The last thing that lets you supply a whole bunch of different options.
+class MoviesController < ApplicationController
+  def new
+    render({ :template => "movies/new.html.erb" })
+  end
+  ...
+```
 
-You can drop the curls or we're going to start doing that. The other thing we're going to start to do is when the key in the hashes a symbol as of Ruby 1.9, they added the ability to move the coal into the end and drop the hash rocket. [02:10:30] When you're typing this out a thousand times, this saves you a lot of trouble.
+Looks good so far. But, I think it's time to stop typing out the longest version of everything. We can significantly shorten our render statement using some of the more professional Ruby syntax:
 
-Sorry guys. Uh, so from now on in class two, I'm just going to start typing in hash literals out this way instead of the long way, and then unwrapping it. The last thing we can do is with methods you are allowed to drop the parentes. [02:11:00] Around the arguments. If there's no order of operations, care issues, my can mention is only when there's one method on the line.
+```ruby
+# app/controllers/movies_controller.rb
 
-And if the method is just being called without a receiver, so no object dot before it, which basically is render the routing methods like get, when I'm printing stuff with the puts method, I'll drop the parenthesis cuz there's nothing, there's no possible order of operations conflicts there. This is what you're [02:11:30] going to see now.
+class MoviesController < ApplicationController
+  def new
+    render template: "movies/new.html.erb"
+  end
+  ...
+```
+{: mark_lines="5" }
 
-Like when you go out and start reading blog posts and stack overflow, this is the syntax that you're going to see and you just have to kind of unwind it in your head to put it back into a form that feels more familiar. Okay, so let me now try and visit slash new and we got to the right place and it says missing template.
+We: 
+ - dropped the optional parantheses after the `render` method, 
+ - dropped the curly braces from the hash since it's the last argument to the method, 
+ - and put the `:` after the `template` symbol in order to drop the `=>` hash rocket.
 
-Let's create that template
+This is the convention you will see all over the internet, and it's the one we will adopt from now on.
+
+To continue with our RCAV, let's go to the live app and navigate to **/movies/new**. A `Missing template...` error! Let's create that, and cut the POST form out of the `index.html.erb` page and paste it into the `new.html.erb` page:
+
+```html
+<!-- app/views/movies/new.html.erb -->
+
+<h2>
+  Add a new movie
+</h2>
+
+<form action="/movies" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  ...
+
+  <button>
+    Create movie
+  </button>
+</form>
+```
 
 and [02:12:00] copy this form. Everything from this page two, line 13 all the way down to the closing form tag. Just copy it over Going to, um, our auto format's not working in this workspace, but we'll fix it. Um, then if I refresh this, we should have this. If I had a movie, does it work? Second [02:12:30] works. We didn't have to do anything else except just copy it over because the action still stays the same and the methods the same.
 
