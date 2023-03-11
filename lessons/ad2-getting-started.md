@@ -1209,17 +1209,48 @@ Let's think about this. In the `MoviesController#create` action, we changed the 
 
 ```ruby
     ...
+  def create
+    @the_movie = Movie.new
+    @the_movie.title = params.fetch("query_title")
+    @the_movie.description = params.fetch("query_description")
+    @the_movie.released = params.fetch("query_released", false)
+
     if @the_movie.valid?
       @the_movie.save
       redirect_to("/movies", { :notice => "Movie created successfully." })
     else
-      # redirect_to("/movies/new", { :alert => the_movie.errors.full_messages.to_sentence })
-      render template: "movies/with_errors"
+      # redirect_to("/movies/new", { :alert => @the_movie.errors.full_messages.to_sentence })
+      render template: movies/with_errors
     end
+  end
     ...
 ```
 
-Because we're rendering a template rather than redirecting, we have access to `@the_movie` in the `with_errors.html.erb` template.
+Because we're rendering a template rather than redirecting, we have access to `@the_movie` in the `with_errors.html.erb` template. It was _not_ valid for saving, but that doesn't mean the variable was deleted or further modified. It just never entered the database. Any of the values that we assinged in the `create` action (e.g., `@the_movie.title = params.fetch("query_title")`) are still available to prepopulate the form in the template.
+
+<aside markdown="1">
+Playing with a `Movie` object in the `rails console` is a good way to understand what is happening. At a terminal type:
+
+```bash
+rails console
+```
+
+Then in the IRB console:
+
+```ruby
+pry(main)> m = Movie.new 
+pry(main)> m.title = "Some title" 
+pry(main)> m.save 
+```
+
+That should cause an error, then you can inspect the error messages with:
+
+```ruby
+pry(main)> m.errors.full_messages
+```
+
+And if you print `m` or do an `m.inspect`, you will see that the `title` is still filled in despite the save error.
+</aside>
 
 This new template, `with_errors`, that we are using to `create` a  new object is similar to what we've done in the past with edit forms. In the case of edit or `update` actions, we looked up an existing object in our database using the ID, and then we prepopulated the whole form using value attributes taken from that object.
 
@@ -1285,16 +1316,9 @@ We can solve this with a little hack:
 
 We create the variable that the template wants, by just putting a blank brand new movie instance in it. We don't try to `.save` or call `.valid`, which means the validations don't get run. 
 
-That means that when we render this template using the `MoviesController#new` action _or_ using the `MoviesController#create` action, the instance variable `@the_movie` is available. When it is the empty `.new` instance, there are no errors to display and no values to prepoluate with, so those things in our form are just ignored.
+When we render this template using the `MoviesController#new` action _or_ using the `MoviesController#create` action, the instance variable `@the_movie` is available. When it is the empty `.new` instance, there are no errors to display and no values to prepoluate with, so those things in our form are just ignored.
 
-
-
-
-Sometimes you can't get away with that. You just gotta make two different templates. If they, if they diverge sufficiently, just make the two templates and do the two different archives and keep things simple. But for many cases, this works well. What do you think? Can you think of any questions here?
-
-Yeah. Could, could another, uh, method be adding the, the inputs that were [02:47:00] submitted to the query string, and then have the form by default just pull from the query string? Um, the immediate thing that jumps to my mind with that solution, if we just added them all to the query string, is we run into the same problems that caused us to switch to post in the first place, which query strings have a limit on the length.
-
-Hmm. So you can't have arbitrary long content. You can't have file uploads. You don't want sensitive information like passwords, cuz then it'll just be in person's URL when they're filling out the new form. So for [02:47:30] the same reason that we switched to post, I don't love that solution. The cooking solution was nice kind of, but that would also run into the problem of if there's a file load, cookies wouldn't work either.
+You can't always use this hack. If the two forms diverge significantly, just make two templates and do the two different RCAVs to keep things simple. But, for many cases, this works well. 
 
 So yeah. Where is the, where are the values that the user input being held? Like how did it get here? Yeah, so the, the, the flow is, so I'm going to code it slash movies for the first time. It's blank form. [02:48:00] Now, when I fill out one of these and I click create, it goes into the create action, right? So the, the form sends me here with all the info in the pr slash we instantiated a movie and then we assign all the values to the movie object.
 
