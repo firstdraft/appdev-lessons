@@ -563,9 +563,11 @@ Now we need to add the following:
 ```
 {: mark_lines="5"}
 
-Another hack! Once again, this bit of code is just some Rails fanciness to trick the HTTP server into making a PATCH rather than a POST request. There's no need to memorize this oddity, because soon we'll use some advanced helper methods to generate all of this automatically.
+Another hack! Once again, this bit of code is just some Rails fanciness to trick the HTTP server into making a PATCH rather than a POST request. We _have_ to name the new hidden input `"_method"` because Rails will be looking for that key in the `params` hash. 
 
-So in with the link, we're able to fake a delete request with just the data method attribute on the link itself. Performs we have to include an input that has the very specific name, underscore method, and then the value of patch in order to thank the patch request. Now we're able to have restful routes for the index, the show, [01:28:00] the update, the create, and the delete.
+There's no need to memorize this oddity, because soon we'll use some advanced helper methods to generate all of this automatically. 
+
+Now we have RESTful routes for create, read (index and show), update, and delete. CRUD.
 
 We're going to help you get stuck. We now have nice restful rounds. Please go back to Sure.[01:28:30] 
 
