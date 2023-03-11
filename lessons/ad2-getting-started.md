@@ -946,21 +946,55 @@ Just like we did in the `show` action (but all on one line now). And now the edi
 
 I want to take and aside, and talk about the user experience of filling out a form. What if somebody submits a movie with a blank title? Typically we don't want to allow that and we want to notify the user so they can correct it. 
 
-Let's look at what happens with the **/books** scaffold when we try adding a book with a blank title:
+Let's look at what happens with the **/books** scaffold when we try adding a book with a blank title. Right now, it lets us do that if we use the form at **/books/new**. Why?
 
+We need to add **validations** to prevent this from happening! We can do that in the `Book` model:
 
+```ruby
+# app/models/book.rb
 
-So here's the scaffold that books. Does anybody remember how, what was our tool for preventing somebody from creating a book with the blank title? Validation validations. Validations are this very [02:25:00] excellent, uh, technique. If you need a refresher, there's a chapter number 43 currently on chapters@firstchapter.com.
+class Book < ApplicationRecord
+  validates :title, presence: true
+  validates :description, presence: true
+end
+```
+{: mark_lines="4 5" }
 
-But basically we can go into the model, we go book model, we're going to add, uh, Valenti dates, and then we say the title or the column that we want to put a rule on. And then, so I'm using the short syntax sound, so [02:25:30] not using the curls around that, moving the column in the end. Not using the parentheses, but with this now the book model will not allow a dot saved unless there's a value in that.
+With this, the `Book` model will not allow a `.save` to be called on it _unless_ there's a value for those columns.
 
-So that means if I try this format right now, it didn't let it, then let it work. And check out the UI here. Error to this book from being saved. Title can't be blank and even highlighted the [02:26:00] input should be cool. So if I add another one here, let's say validates the description, I submit. Now it's like both of them.
+Now look at the UI when we mess up the form:
 
-If I hire fill one,
+![](/assets/new-book-form-error.png)
 
-that one's good now, but okay, great. That's a great experience. What did we do in act one? So if I can go add these validations to the movie model, [02:26:30] and then if I try to create, just read the code here. In Act one, we sheet a new record. We take columns from the form, sign them to the columns we call in if the movie do valid, which returns true or false based on whether all the validation rules pass or not.
+How can we implement something like this on our **/movies/new** form? What did we do in AD1? 
 
-If it is valid, we save. We're redirecting, it's not valid. [02:27:00] We're also redirecting. The only difference is we have different notice on an alert here. So that means right now if I try to go to slash movies and you know, movie slash new, I should give myself a link to make my life a lot easier. Go here, the link to movie slash note just cause I don't want to keep typing that over and over.[02:27:30] 
+Let's have a look at the `create` action in the `MoviesController`:
+
+```ruby
+# app/controllers/movies_controller.rb
+
+class MoviesController < ApplicationController
+  ...
+  def create
+    the_movie = Movie.new
+    the_movie.title = params.fetch("query_title")
+    the_movie.description = params.fetch("query_description")
+    the_movie.released = params.fetch("query_released", false)
+
+    if the_movie.valid?
+      the_movie.save
+      redirect_to("/movies", { :notice => "Movie created successfully." })
+    else
+      redirect_to("/movies", { :alert => the_movie.errors.full_messages.to_sentence })
+    end
+  end
+  ...
+```
+{: mark_lines="8 10" }
+
+In AD1, we instantianted a `.new` record, take columns from the form with the query string and `params` hash, and assign them to the columns in our `the_movie` database record. Then we ask if `the_movie` is `.valid?`, which returns true or false based on whether all the validation rules in the `Movie` model pass or not.
+
+If it _is_ valid, we `.save` and redirect. If it is _not_ valid, we just redirect. The only difference with the redirection is that we have a different `:notice` and `:alert` message. But we aren't doing anything with that `:alert` message yet, so we don't get any notification on our `Movie` model that something went wrong if a validation doesn't pass.
 
 And then if I leave it til both blank and I click on create, it didn't create, that's good, but it just redirected to the next page. And I don't actually know what happened here. Now we did set an alert, but we don't, we haven't displayed in this application, we didn't do anything with the notice in the alert.
 
