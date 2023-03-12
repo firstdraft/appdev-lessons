@@ -157,16 +157,15 @@ Next, let's talk about a built-in `rake task` that comes with Rails, much like `
 
 ```bash
 gitpod /workspace/helper-methods:(main) $ rails routes
-            Prefix Verb   URI Pattern                      Controller#Action
-              root GET    /                                movies#index
-            movies GET    /movies(.:format)                movies#index
-                   POST   /movies(.:format)                movies#create
-         new_movie GET    /movies/new(.:format)            movies#new
-        edit_movie GET    /movies/:id/edit(.:format)       movies#edit
-             movie GET    /movies/:id(.:format)            movies#show
-                   PATCH  /movies/:id(.:format)            movies#update
-                   PUT    /movies/:id(.:format)            movies#update
-                   DELETE /movies/:id(.:format)            movies#destroy
+                Prefix Verb   URI Pattern                         Controller#Action
+                  root  GET    /                                   movies#index
+                movies  POST   /movies(.:format)                   movies#create
+            movies_new  GET    /movies/new(.:format)               movies#new
+                        GET    /movies(.:format)                   movies#index
+                        GET    /movies/:id(.:format)               movies#show
+                        PATCH  /movies/:id(.:format)               movies#update
+                        GET    /movies/:id/edit(.:format)          movies#edit
+                        DELETE /movies/:id(.:format)               movies#destroy
 ```
 
 There's a whole bunch in here. You may need to make your terminal wider to prevent line wrapping, since it's trying to print a big table with the columns `Prefix`, `Verb`, `URI Pattern`, and `Controller#Action`. We just want to foucs on the top of the table.
@@ -179,7 +178,7 @@ What about the `Prefix`?
 
 Well, we just saw that Rails comes with the method `root` that always defines the **/** homepage route. `Prefix` means that Rails has defined a method that we can call _anywhere_ in our view templates, controller actions, etc., that will return the URL _with_ the defined HTTP verb. And look, there's some other methods defined in the `Prefix` column!
 
-You can also view all of this route information in your browser by navigating your live app to **/rails/info/routes**, and you will see a searchable table, with the actual full names of the helper methods (e.g., `root` is actually `root_path`):
+You can also view all of this route information in your browser by navigating your live app to **/rails/info/routes**, and you will see a searchable table, with the actual full names (not just the "prefix") of the helper methods (e.g., `root` is actually `root_path`):
 
 ![](/assets/rails-info-route.png)
 
@@ -206,13 +205,7 @@ Now refresh the **/movies** page in the live app to see what that embedded Ruby 
 
 What if we change the code to `<%= new_movies_path %>`? Refresh **/movies** after this change, and it renders `"/movies/new"`. Following this patter, `<%= root_path %>` just renders `"/"`, etc. for the other routes and methods.
 
-You might be wondering why that matters. 
-
-
-
-Well, we are allowed, so these were automatically assigned by Rails because it just kind of guessed it based on how many [00:13:30] segments and there's no dynamic parts to it.
-
-So when there's just a purely static route, Rails just kind of puts those segments together and gives you the method for. , but for all the rest, there's no methods. But we can name the routes and then we'll get methods. So let me go to routes dot rb and I can say, you know what, I want to call this show method and say [00:14:00] as details.
+You might be wondering why that matters. Well, the routes we mentioned so far the already have method assigned to them were automatically assigned by Rails. These were static routes, without dynamic ID numbers, so Rails just puts the segments together and gives you the method for. , but for all the rest, there's no methods. But we can name the routes and then we'll get methods. So let me go to routes dot rb and I can say, you know what, I want to call this show method and say [00:14:00] as details.
 
 Okay. So with this as option, I can name it. Now watch. What happens, the movie Details Path here, movie's, ID now has its own name, details Path. That's why it was called Prefix by the way, is cuz the underscore path gets appended to whatever we name it as. Now in my view template, I can put Details [00:14:30] path
 
