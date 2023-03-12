@@ -208,6 +208,8 @@ What if we change the code to `<%= new_movies_path %>`? Refresh **/movies** afte
 
 You might be wondering why that matters. 
 
+
+
 Well, we are allowed, so these were automatically assigned by Rails because it just kind of guessed it based on how many [00:13:30] segments and there's no dynamic parts to it.
 
 So when there's just a purely static route, Rails just kind of puts those segments together and gives you the method for. , but for all the rest, there's no methods. But we can name the routes and then we'll get methods. So let me go to routes dot rb and I can say, you know what, I want to call this show method and say [00:14:00] as details.
