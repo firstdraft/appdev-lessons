@@ -177,15 +177,29 @@ Hopefully they do now! We have our different HTTP verbs, the paths we defined in
 
 What about the `Prefix`? 
 
-Well, we just saw that Rails comes with the method `root` that always defines the **/** homepage route. `Prefix` means that Rails has defined a method that we can call _anywhere_ in our view templates, controller actions, etc., that will return the URL _with_ the defined HTTP verb. And look, there's some other methods defined in the `Prefix` column. I can call a method `movies` and it'll return `"/movies`.
+Well, we just saw that Rails comes with the method `root` that always defines the **/** homepage route. `Prefix` means that Rails has defined a method that we can call _anywhere_ in our view templates, controller actions, etc., that will return the URL _with_ the defined HTTP verb. And look, there's some other methods defined in the `Prefix` column!
 
 You can also view all of this route information in your browser by navigating your live app to **/rails/info/routes**, and you will see a searchable table.
 
-Let's see these route methods in action to get a better understanding.
+Let's see these route methods in action in one of our view templates. Open `app/views/movies/index.html.erb` and add some embedded Ruby:
 
-and return this string slash movie slash new, and I can call a method called root and it's called prefix because that's not the [00:11:30] whole method name, and I'll show you what I mean by this. Also, incidentally, if you don't like that rake task in the command line, you can just navigate to a path Rails slash info, and it'll go to routes automatically.
+```html
+<!-- app/views/movies/index.html.erb -->
 
-Redirect you to. And you've got the same information here in a nice, kind of searchable interface, which is really cool, and it shows you the same information, so that's really nice. [00:12:00] Okay, so I'm going to leave this up too. Okay. Here's what I mean by method. I can go to any view template. I'm going to go to my movies index, let's say, just so I have some view.
+<h1>
+  List of all movies
+</h1>
+
+<hr>
+
+<div>
+  <%= link_to "Add a new movie", new_movie_path %>
+</div>
+...
+
+```
+{: mark_lines="9-11"}
+
 
 To look at. Let me make a H two right here so we have something to play around with. I'm going to embed some Ruby and then I'm going to say movie. So what were my [00:12:30] methods here? Movie's Path, for example, put this in and take a look at my page and that method. Movies underscore. Returns slash movies and I can say Root Path and it returns just slash, okay.
 
