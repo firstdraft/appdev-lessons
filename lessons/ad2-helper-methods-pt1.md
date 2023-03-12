@@ -179,7 +179,9 @@ What about the `Prefix`?
 
 Well, we just saw that Rails comes with the method `root` that always defines the **/** homepage route. `Prefix` means that Rails has defined a method that we can call _anywhere_ in our view templates, controller actions, etc., that will return the URL _with_ the defined HTTP verb. And look, there's some other methods defined in the `Prefix` column!
 
-You can also view all of this route information in your browser by navigating your live app to **/rails/info/routes**, and you will see a searchable table.
+You can also view all of this route information in your browser by navigating your live app to **/rails/info/routes**, and you will see a searchable table, with the actual full names of the helper methods (e.g., `root` is actually `root_path`):
+
+![](/assets/rails-info-route.png)
 
 Let's see these route methods in action in one of our view templates. Open `app/views/movies/index.html.erb` and add some embedded Ruby:
 
@@ -193,19 +195,20 @@ Let's see these route methods in action in one of our view templates. Open `app/
 <hr>
 
 <div>
-  <%= link_to "Add a new movie", new_movie_path %>
+  <%= movies_path %>
 </div>
 ...
 
 ```
 {: mark_lines="9-11"}
 
+Now refresh the **/movies** page in the live app to see what that embedded Ruby renders. What do you know, it rendered the string `"/movies"`! 
 
-To look at. Let me make a H two right here so we have something to play around with. I'm going to embed some Ruby and then I'm going to say movie. So what were my [00:12:30] methods here? Movie's Path, for example, put this in and take a look at my page and that method. Movies underscore. Returns slash movies and I can say Root Path and it returns just slash, okay.
+What if we change the code to `<%= new_movies_path %>`? Refresh **/movies** after this change, and it renders `"/movies/new"`. Following this patter, `<%= root_path %>` just renders `"/"`, etc. for the other routes and methods.
 
-I can do movies, new path, [00:13:00] and it returns
+You might be wondering why that matters. 
 
-movies new. Okay. So basically whatever the string is for that route, whatever the path component is. This method will return that. Okay, so what big deal, how that doesn't really, you might be wondering why that matters. Well, we are allowed, so these were automatically assigned by Rails because it just kind of guessed it based on how many [00:13:30] segments and there's no dynamic parts to it.
+Well, we are allowed, so these were automatically assigned by Rails because it just kind of guessed it based on how many [00:13:30] segments and there's no dynamic parts to it.
 
 So when there's just a purely static route, Rails just kind of puts those segments together and gives you the method for. , but for all the rest, there's no methods. But we can name the routes and then we'll get methods. So let me go to routes dot rb and I can say, you know what, I want to call this show method and say [00:14:00] as details.
 
