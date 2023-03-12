@@ -177,9 +177,9 @@ Hopefully they do now! We have our different HTTP verbs, the paths we defined in
 
 What about the `Prefix`? 
 
-Well, we just saw the Rails comes with the method `root` that always defines the **/** homepage route. `Prefix` means that Rails has defined a method that we can call _anywhere_ in our view templates, controller actions, etc., that will return the URL _with_ the defined HTTP verb. And look, there's some other methods defined in the `Prefix` column. I can call a method `movies` and it'll return `"/movies`.
+Well, we just saw that Rails comes with the method `root` that always defines the **/** homepage route. `Prefix` means that Rails has defined a method that we can call _anywhere_ in our view templates, controller actions, etc., that will return the URL _with_ the defined HTTP verb. And look, there's some other methods defined in the `Prefix` column. I can call a method `movies` and it'll return `"/movies`.
 
-You can also view all this route information by navigating your live app to **/rails/info/routes**, and you will see a searchable table.
+You can also view all of this route information in your browser by navigating your live app to **/rails/info/routes**, and you will see a searchable table.
 
 Let's see these route methods in action to get a better understanding.
 
