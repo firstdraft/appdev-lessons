@@ -151,7 +151,7 @@ This is going to be the pattern of this lesson. We're going to start writing the
 
 Click around in the app (or better yet, run some automated tests). Everything should be working exactly as before after this refactoring. This is a perfect time for **/git** commit!
 
-## Route Helpers 00:09:30
+## Route Helper Methods 00:09:30 to 00:23:00
 
 Next, let's talk about a built-in `rake task` that comes with Rails, much like `rails db:migrate` or `rails console`. At the terminal, run `rails routes`:
 
@@ -203,51 +203,127 @@ Let's see these route methods in action in one of our view templates. Open `app/
 
 Now refresh the **/movies** page in the live app to see what that embedded Ruby renders. What do you know, it rendered the string `"/movies"`! 
 
-What if we change the code to `<%= new_movies_path %>`? Refresh **/movies** after this change, and it renders `"/movies/new"`. Following this patter, `<%= root_path %>` just renders `"/"`, etc. for the other routes and methods.
+What if we change the code to `<%= movies_new_path %>`? Refresh **/movies** after this change, and it renders `"/movies/new"`. Following this patter, `<%= root_path %>` just renders `"/"`, etc. for the other routes and methods.
 
-You might be wondering why that matters. Well, the routes we mentioned so far the already have method assigned to them were automatically assigned by Rails. These were static routes, without dynamic ID numbers, so Rails just puts the segments together and gives you the method for. , but for all the rest, there's no methods. But we can name the routes and then we'll get methods. So let me go to routes dot rb and I can say, you know what, I want to call this show method and say [00:14:00] as details.
+You might be wondering why that matters. Well, the routes we mentioned so far that already have a method assigned to them were automatically assigned by Rails. These were static routes, without dynamic ID numbers in the path, so Rails just puts the segments together and gives you the method. But, for all the rest of the routes that do contain `:id`, there's no methods. We get to define those methods ourselves!
 
-Okay. So with this as option, I can name it. Now watch. What happens, the movie Details Path here, movie's, ID now has its own name, details Path. That's why it was called Prefix by the way, is cuz the underscore path gets appended to whatever we name it as. Now in my view template, I can put Details [00:14:30] path
+Back in `config/routes.rb`, what if we add some code to give the movie details page its own method:
 
-and I get an error. It's like, wait, wait, wait, wait. No Route matches. And we tried to go to the controller and the action that you specified in the route, but missing required keys id. And that's because in the routes, this one has a flexible segment and it can't produce this URL unless you tell it what to put in this segment right here.
+```ruby
+# config/routes.rb
 
-[00:15:00] Cool. So we need to provide an argument here and say 42 or some argument then this. Can actually put this URL together for us. Okay. That's pretty cool because the benefit of this, there's a couple benefits. One is, there's two versions of this. There's path and there's also U R url and watch what happens.
+Rails.application.routes.draw do
+  root "movies#index"
 
-When I switch it to url. Aha. It gives me the fully qualified url starting from the hgd ps. It automatically [00:15:30] determines which server I'm running on and it puts that in. . This is very cool because that means I can use fully qualified D URLs if I want to using this method. But then when I deploy my code to my Heroku app and it's running on my domain.com, this'll just automatically work no matter what server it's running on.
+  # CREATE
+  post "/movies" => "movies#create"
+  get "/movies/new" => "movies#new"
+          
+  # READ
+  get "/movies" => "movies#index"
+  get "/movies/:id" => "movies#show", as: :details
+  
+  # UPDATE
+  patch "/movies/:id" => "movies#update"
+  get "/movies/:id/edit" => "movies#edit"
+  
+  # DELETE
+  delete "/movies/:id" => "movies#destroy"
 
-This method is going to put in the right host [00:16:00] and i'd. Otherwise I would if I actually typed out this string. In like hres in my code, I would have to like up every time I was about to, I was ready to deploy it to my server. I would have to update this to my domain.com, and then I have to switch it, find and replace.
+  #------------------------------
+end
+```
+{: mark_lines="12"}
 
-Oh, that would be terrible if I'd have to switch that every single time I'm deploying it or everybody. When all the developers on the team, when they're running it on their own laptop and they have a different local address on their own laptop or their own [00:16:30] GI podd, if they had to change all of these url,
+With the `as:` option, I got to pick a method name (in the form of a symbol). And back on **/rails/info/routes** we see:
 
-Terrible. So this helper method is incredibly helpful for that purpose, for one thing. But we could have, of course, we could have just used the path. And so, and we usually, we do use the path, so that's not the biggest benefit. The biggest benefit is if you name your routes in your routes, dot arby file diligently, and then you're very, [00:17:00] very diligent.
+![](/assets/rails-info-route-details.png)
 
-Outside of this routes dot RB file, everywhere else in your application, never refer to URLs. Only refer to them by this name that you've given it this method, right? Only refer to this by whatever name you've given it everywhere else in your code. Then if for some reason you don't know why, but 10 years down the road for some reason.
+And we can check in our `app/views/movies/index.html.erb` view template by changing the embedded Ruby to: `<%= details_path %>`, and on the live app we should see... and error!
 
-You have a business [00:17:30] requirement to change this URL to films. If you have this URL scattered in 10,000 places throughout your code base, you run a real risk of breaking a lot of stuff. If you try to find and replace or do some kind of, there's the word movie is in this application a billion times, a find and replace is going to be very risky.
+```bash
+No route matches {:action=>"show", :controller=>"movies"}, missing required keys: {:id}
+```
 
-So, This would be a big problem. [00:18:00] However, if you've named it and then you've been using details path diligently everywhere else that you ever needed, then you're totally fine. You can change this to Zebra and the rest of your application code doesn't have to change at all if you have always been referring to it from, from this moment forward if you use this helper method.
+That's because there is a flexible (a.k.a. dyanmic) segment in the route, so Rails can't produce the URL unless you tell it what to put in that spot!
 
-So that's the huge win of. Names for your routes and then using this helper [00:18:30] method everywhere else. So outside of Routes dot rb, from now on, we're never going to refer to these URLs as actual strings anymore. We're always going to refer to them through these names that we give them. And traditionally the name that we give it for the details, one is movie singular.
+Cool. So we need to provide an argument. Change the embedded Ruby to `<%= details_path(42) %>`. Refresh **/movies**. It should now render the string `"/movies/42"`.
 
-Traditionally, the name that we give the index route is movies [00:19:00] and it the, this, the methods that are defined. So this is going to give us movies, URL and movies path cuz we named it movies. So Rails defines these two methods for us, and they simply just return this string and it's, it totally ignores the verb.
+There's a couple of benefits to these route **helper methods**. 
 
-It has nothing to do with the verb, it just returns this. So since I've named it once here, this string is repeated here. Here, and that's it. So I only have to, I don't have to name this one again [00:19:30] cuz I already have a, I already have this method that returns a string. So this one, I don't need to name this one.
+One, is that there is actually two versions of the method, `_path` and `_url`. If you change the method in the view template to `details_url(42)` and refresh **/movies**, then you will see the full URL of the Gitpod app, including the path! This is very cool because that means I can use fully qualified URLs if I want to using this method. But then, when I deploy my code to my Heroku app, and it's running on mydomain.com, this method will automatically work -- no matter what server it's running on! No need to **hard code** anything and then later need to change it when I move my app around.
 
-Traditionally, we name it new movie, which means Rails is going to give us methods called new movie, r l, and new movie.
+That URL benefit is pretty nice, but we usually use the `_path` version anyway. 
 
-And we're going to use those now to refer to this everywhere. This one, we've already named this string up here. [00:20:00] This one we've already named as movie singular. So this is the singular one. This is the plural one. So this is going to give me movie path, and this is expect an argument to populate Id segment. Okay, this already, again, already named this string.
+The biggest benefit of using the route helper methods is the following. If you name your routes in your `config/routes.rb` diligently, and outside of this file, everywhere else in your application, _never_ refer to URLs and only refer to the methods associated with them, then if you ever have to change the URL from `movies` to `films` (or `zebra` or anything!), you don't need to do this throughout your codebase and risk breaking everything.
 
-We've already named right here. So I've already got this supplemented, [00:20:30] uh, so I don't need another one. This I am going to call, uh, edit movie. And again, this is going to expect an argument.
+With our new route helper methods, we're never going to refer to these URLs as actual strings anymore. We're always going to refer to them through these names that we give them. 
 
-And finally this one we're already done cuz it's the same as these two. So we [00:21:00] already have the movie pack one. Okay, so that's it. We've now provided names for all of our routes. Now we want to use these every single place in our application where we are using. URLs like this, we're going to replace them. So let me go start to take a look at my URLs.
+Now let's get these names down per the conventions that most Rails developers use:
 
-Here's one, I no longer ever want to do this. I want to replace this with a Ruby Method call, and [00:21:30] that one was new movie path. I'm going to get rid of this. Take a look at this, and if all went well, if I view source on this. It should look exactly the same as before. So if I go back, do this one more time, or I can copy this, right?
+```ruby
+# config/routes.rb
 
-So here's the old version, here's the new version,
+Rails.application.routes.draw do
+  root "movies#index"
 
-and the old version and the new [00:22:00] version are exactly the same. And this is a pattern that should be repeating throughout the day. Use view source constantly throughout the day today to verify. The handwritten HTML that we did before matches up with the HTML that these helper methods are producing for us.
+  # CREATE
+  post "/movies" => "movies#create", as: :movies # movies_url and movies_path 
+  get "/movies/new" => "movies#new", as: :new_movie # new_movie_url and new_movie_path
+          
+  # READ
+  get "/movies" => "movies#index" # we defined a method for this path 4 lines above
+  get "/movies/:id" => "movies#show", as: :movie # movie_url and movie_path
+  
+  # UPDATE
+  patch "/movies/:id" => "movies#update" # we defined a method for this path 4 lines above
+  get "/movies/:id/edit" => "movies#edit", as: :edit_movie # edit_movie_url and edit_movie_path
+  
+  # DELETE
+  delete "/movies/:id" => "movies#destroy" # we defined a method for this path 4 lines above
 
-Then we know that we're using them correctly. All right, I'm going to delete the old one and I'm going to make a get commit.[00:22:30] 
+  #------------------------------
+end
+```
+{: mark_lines="7-8 11-12 15-16 19"}
+
+Note that we don't need to define methods twice for paths that already have a method defined. These methods just return a string with the path name, they ignore the HTTP verb, so there's no difference between naming a route helper method for `delete` or `patch` above; both will return `"/movies/ID"`. We defined the method `movie_path` and `movie_url` for all three `get`, `patch`, and `delete` HTTP verbs for this route just by adding it once.
+
+That's it! We've now provided names for all of our routes. Now we want to use these every single place in our application where we are using URLs like this, we're going to replace them. Let me go start to take a look at my URLs.
+
+There's one I see right away in the `app/views/movies/index.html.erb` we were using to demonstrate the helper methods:
+
+```html
+<!-- app/views/movies/index.html.erb -->
+
+...
+<div>
+  <a href="/movies/new">Add a new movie</a>
+</div>
+...
+```
+{: mark_lines="5"}
+
+That should be:
+
+```html
+<!-- app/views/movies/index.html.erb -->
+
+...
+<div>
+  <a href="<%= new_movie_path %>">Add a new movie</a>
+</div>
+...
+```
+{: mark_lines="5"}
+
+Refresh **/movies** in the live app. If all went well, there should be no error messages and if you view source on the page, you won't see any Ruby, but just the string that the method returned: `"/movies/new"`. Same as before!
+
+This is a pattern that should be repeating throughout the day. Use view source constantly to confirm that the handwritten HTML that we did before matches up with the HTML that these helper methods are producing for us. Then we know that we're using them correctly. 
+
+Time for a **/git** commit after all that preparation!
+
+## Cleaning up the Routes 00:23:00 to 
 
 Gave names to routes and started using them. Now we're going to go through and find every reference to a URL anywhere in our application and replace it. Here's another one here. This is going to the. [00:23:00] Movie show path. So I want to say movie path and it expects the argument of the ID number of a movie. So I've got the movie here, and we'll put the ID number in.
 
