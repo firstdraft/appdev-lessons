@@ -36,7 +36,7 @@ After you’ve spent 20-30 minutes on it, you’re allowed to look at the exampl
 
 As we refactor for the rest of the project, you should run the tests periodically to ensure you didn’t break anything.
 
-## Cleaning up `config/routes.rb` 00:03:00 to
+## Cleaning up `config/routes.rb` 00:03:00 to 00:09:30
 
 Now let's start to refactor the heck out of this code (with our tests, perhaps) and we're going to be making lots of changes. Therefore, as always, I'm going to have my **/git** interface ready to go so that I can go back if something goes terribly wrong. Consider also jotting down some notes to turn into a TIL blog post.
 
@@ -108,9 +108,15 @@ Rails.application.routes.draw do
 end
 ```
 
-We can actually go farther with this shortening. Rather than saying `controller: "movies", action: "index"` when writing routes, we can replace that whole thing as `=> movies#index`. Remember, the `#` octothorpe symbol is used to indicate an `Object#method`, which in this example is `MoviesController#index`.
+We can actually go farther with this shortening. Rather than saying `get "/movies", controller: "movies", action: "create"` when writing routes, we can replace that whole thing as `get "/movies" => movies#create`. 
 
-Try to do this on your own for all of the routes.
+All we are doing here is passing a hash argument to the `get` method, and this hash is `{ "/movies" => "movies#create" }` (with the curly braces dropped because it is the last argument to the method).
+
+Remember, the `#` octothorpe symbol is used to indicate an `Object#method`, which, in this example, is `MoviesController#create`. 
+
+Actually, we can go even shorter for the homepage route at the URL path **/**. We can just write: `root movies#index`. `root` is a method provided by Rails to define the "homepage". It doesn't need a URL path, because the homepage is always **/**.
+
+Try to do this refactoring on your own for all of the routes.
 
 In the end you should have:
 
@@ -118,7 +124,7 @@ In the end you should have:
 # config/routes.rb
 
 Rails.application.routes.draw do
-  get "/" => "movies#index"
+  root "movies#index"
 
   # CREATE
   post "/movies" => "movies#create"
@@ -139,45 +145,43 @@ Rails.application.routes.draw do
 end
 ```
 
-, okay, so we can dramatically shorten this. One other thing that we can do to make this shorter is. [00:05:00] We can, there's a sh there's a shorthand syntax when we're writing routes rather than saying controller movies, action index as a hash, you can say, just as a string here, movies, Octa Thorpe Index.
+Just imagine how much typing it would've saved us if we were doing this from the very beginning! But, as beginners, it would've been very confusing. 
 
-Here we see hash rockets. The [00:04:00] key is a symbol. So we can replace that hash rocket by moving that colon to the. and we're going to start doing that now. For all of our hashes and even this, we're going to get rid of these parentheses. This is not something that I'm always going to do. I like the parentheses around arguments to a method to make it clear to me that these are the arguments that go with this method.
+This is going to be the pattern of this lesson. We're going to start writing the very abbreviated versions of everything.That's the kind of code you're going to be reading out in the world.
 
-Especially sometimes we have to have them for order of operations if we have multiple method calls on the same line. My [00:04:30] convention is in this case, where you're calling a. As, as the very first thing and the only thing on one line of code, like when we're calling the P method to print something out or the get method like this.
+Click around in the app (or better yet, run some automated tests). Everything should be working exactly as before after this refactoring. This is a perfect time for **/git** commit!
 
-In that case, there's no other methods on this line. There's no order of operations concerns. I will leave out that apprentices, okay, so we can dramatically shorten this. One other thing that we can do to make this shorter is. [00:05:00] We can, there's a sh there's a shorthand syntax when we're writing routes rather than saying controller movies, action index as a hash, you can say, just as a string here, movies, Octa Thorpe Index.
+## Route Helpers 00:09:30
 
-But then rather than passing that as a second argument, you're going to pass this as a hash. So basically what this is, if I write it out, It's actually you're providing a hash argument to the get method. [00:05:30] The key is the path that you want to route. The value is the string that just has an abbreviation of controller hash, uh, octothorp action.
+Next, let's talk about a built-in `rake task` that comes with Rails, much like `rails db:migrate` or `rails console`. At the terminal, run `rails routes`:
 
-This is supposed to be that shorthand syntax for class instance method, but it doesn't include the underscore controller. So this is like a super shorthand Rails, the way of saying controller. , but this will work just like a regular route. [00:06:00] So, and then of course, because it's the last argument and the parenthesis, everything we talked about, we can super shorten our routes quite a bit with this syntax.
+```bash
+gitpod /workspace/helper-methods:(main) $ rails routes
+            Prefix Verb   URI Pattern                      Controller#Action
+              root GET    /                                movies#index
+            movies GET    /movies(.:format)                movies#index
+                   POST   /movies(.:format)                movies#create
+         new_movie GET    /movies/new(.:format)            movies#new
+        edit_movie GET    /movies/:id/edit(.:format)       movies#edit
+             movie GET    /movies/:id(.:format)            movies#show
+                   PATCH  /movies/:id(.:format)            movies#update
+                   PUT    /movies/:id(.:format)            movies#update
+                   DELETE /movies/:id(.:format)            movies#destroy
+```
 
-So this is the first refactoring that we're going to do. I'm going to do this now for all of these. So I'm going to move, what am I going to do? I'm going to get rid of all these parentheses.
+There's a whole bunch in here. You may need to make your terminal wider to prevent line wrapping, since it's trying to print a big table with the columns `Prefix`, `Verb`, `URI Pattern`, and `Controller#Action`. We just want to foucs on the top of the table.
 
-And I'm going to get rid of all of these opening crows. [00:06:30] In fact, I'm going to, I'm going to get rid of all of this whole thing.
+What do those column names mean to you? Do the values in each row make sense? 
 
-Boom, boom, boom. Put the hash rocket in. Jump over there with option, right arrow to jump to the end of the next token. Then again, I'm going to jump to the end of the next token. Next token. Oh, too far. Too far. Okay. That was all. I was holding option while using my arrow keys there for that. [00:07:00] And now I've shortened these routes quite a bit.
+Hopefully they do now! We have our different HTTP verbs, the paths we defined in our routes, and the controller and action related to each route. 
 
-Okay. So just imagine how much typing it would've saved us if we were doing this from the very beginning. But now there's so much going on here that's hidden from us, and as beginners, it would've been very confusing to. Imagine all of that from the very beginning. So this is going to be the pattern of today.
+What about the `Prefix`? 
 
-All that stuff that we explicitly had written out, and it was easy to understand as beginners. But [00:07:30] now that we kind of know what's going on, we can just glance at this and understand, okay, this is the path, this part is the controller, this part is the action. You know that by now. So we're going to start writing the very abbreviated versions of it.
+Well, we just saw the Rails comes with the method `root` that always defines the **/** homepage route. `Prefix` means that Rails has defined a method that we can call _anywhere_ in our view templates, controller actions, etc., that will return the URL _with_ the defined HTTP verb. And look, there's some other methods defined in the `Prefix` column. I can call a method `movies` and it'll return `"/movies`.
 
-That's the kind of code you're going to be reading out in the world. All right, so let's just prove that this works and I can still show and I can still go to all these routes and they all just wor route work exactly the same as before. Very good. I'm going to make a GI commit.[00:08:00] 
+You can also view all this route information by navigating your live app to **/rails/info/routes**, and you will see a searchable table.
 
-And uh, one last thing before I make this gi commit for the root route, this special one, there's another shorthand syntax where. You don't actually have to specify the path, you can just say there's a method, specifically root for the, for that, that one path. And then you just give it the argument of the controller and the action.
-
-And you don't have to specify the path cuz there's only one no path. [00:08:30] And so this is the right way to set that first homepage or the root url. Uh, and we'll be using that from now on. Okay, so now I'm going to make a get commit.
-
-And then we will take a look at some other ways to refactor.[00:09:00] 
-
-Hmm. I don't have any changes here. Aha. Why is that? Well, because I forgot to turn on auto save. and so none of the changes that I made in this route start are B file saved. Now I'll get my,
-
-hopefully I'll get my changes in my GI interface. There we go. Now I can make my commit. [00:09:30] We factored routes too short and commit. All right, great. Now, Next, I want to talk about something even better. There is a rake task that you can run. Rails routes. This is a built-in rake task, much like Rails, DB [00:10:00] Migrate, or Rails Console, and it will show you all of the routes that you've defined in your application.
-
-So there's a whole bunch in here that are just kind of built in Rails. This has to do with emailing the mailers and stuff. This is all stuff that's in vanilla Rails that we took out of base Rails, but at the top, here are the routes that we added for movies Now. . You can see it's delete to movie's. Id get patch, et cetera, et cetera over here.[00:10:30] 
-
-Make this a little bit smaller so that it doesn't wrap quite as much. Okay, now we have a table. So it says prefix verb, u r i, pattern, and then controller action. So here the, this looks good, right? This makes sense. Get post, get, get, get patch. So we wrote out what is this prefix part? Okay. And here we have root.
-
-That's because we just switched to using that root [00:11:00] method. What this prefix part means is that Rails has defined a method that we can call in our view templates and in our controller actions we, that will return this string right here. So I can call a method movies and it'll return movies. I can call the method movies.
+Let's see these route methods in action to get a better understanding.
 
 and return this string slash movie slash new, and I can call a method called root and it's called prefix because that's not the [00:11:30] whole method name, and I'll show you what I mean by this. Also, incidentally, if you don't like that rake task in the command line, you can just navigate to a path Rails slash info, and it'll go to routes automatically.
 
