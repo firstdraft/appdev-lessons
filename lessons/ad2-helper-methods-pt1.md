@@ -323,52 +323,216 @@ This is a pattern that should be repeated throughout the day. Use view source co
 
 Time for a **/git** commit after all that preparation!
 
-## Cleaning up the Routes 00:23:00 to 
+## Cleaning up the Routes 00:23:00 to 00:32:30
 
-Gave names to routes and started using them. Now we're going to go through and find every reference to a URL anywhere in our application and replace it. Here's another one here. This is going to the. [00:23:00] Movie show path. So I want to say movie path and it expects the argument of the ID number of a movie. So I've got the movie here, and we'll put the ID number in.
+Now that we gave names to our routes, we're going to go through and find every reference to a URL anywhere in our application and replace it.
 
-Okay. And that should still work. I'm going to go. Attempt it, click on show and it still works fine. Great. [00:23:30] Next, we'll look at the show template and here's an href. So I want this to be movies path, and this should be edit movie path argument.
+For instance, at the bottom the `<table>` in the `index` view template:
 
-Of this [00:24:00] movie ID and this should be Movie Path, again. Movie
+```html
+<!-- app/views/movies/index.html.erb -->
 
-Path. The movie id.
+...
+    <td>
+      <%= time_ago_in_words(a_movie.updated_at) %> ago
+    </td>
 
-Okay. Great. So that's that. And I think we're good on the show page [00:24:30] can edit the movie works, delete the movie works show. And then finally, if I go back and I go to the other two templates, which are new, we have an action here to slash movies, which is just the index route. So it. Movies path, and I think that's it for URLs here on the [00:25:00] edit page, we have movies slash movie id, so this is the same route as again, so as the single movie resource essentially, right?
+    <td>
+      <a href="/movies/<%= a_movie.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+```
+{: mark_lines="9"}
 
-So we're saying Patch the single movie resource. So this is where Restful Routing comes in. There's only one name for this single movie resource, and there's one name. Plural movie resource. And then there's three actions that modify that single movie resource with different verbs. So movie path, [00:25:30] at the movie.id, and so all goes well if we go to edit this, and then we view source.
+Should be:
 
-it again, just produces that same string for us as we did before with embedding it, but it does it in a much more robust way. Alright, now we can also just check and make sure that works. Cool. Great. All right. [00:26:00] So far so good. Here's something cool. Let's. Take a look at this. So we've got movie slash two here being output by this helper method right now.
+```html
+<!-- app/views/movies/index.html.erb -->
 
-And you know, I could put like 53 just to prove to you that we're working on the same, I'm working on that template, but putting the movie.id, I can be a bit more concise here actually. If I omit the.id [00:26:30] from movie path, it will assume. If we just give it an instance of active record and not an instance of integer, the these, all of these route helper methods are pretty smart and they expect that they're going to be used in conjunction with active record objects because we are after all building a Rails application.
+...
+    <td>
+      <%= time_ago_in_words(a_movie.updated_at) %> ago
+    </td>
 
-So if you give it an instance of active record, it uses the ID attribute, [00:27:00] so you don't have to explicitly peel off that attribute. If you want to use a different a. You're welcome to do so. But if you're using the ID attribute, that is the default and you can just give it to these helper methods. It'll use it by default.
+    <td>
+      <a href="<%= movie_path(a_movie.id) %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+```
+{: mark_lines="9"}
 
-So I can go back and every place I was calling.id here, I can take that off. So that's pretty nice. Um, and then you can do that as well if you want. Take it off here, take it off here. [00:27:30] And that's even more. All right, so now that's pretty much it for Route Helper Methods. They're really cool, very helpful.
+We supply the movie ID as an argument to our new method. And if we try and refresh our live app and click one of the "Show details" links on the **/movies** page, it should work. We can also "view source" and see the HTML we expect in that link location: `"/movies/ID"`. Great!
 
-Actually, you know what? That's not, that's not cool. That's not in, that's not, uh, all we have to do because we use these, uh, over here. No, not over here. That's the name of a template. That's not a url, but we do use them here in redirects a lot. So we should here do Move [00:28:00] Bees url. This is. Technically speaking, you should use URLs and not pads in, in the view template.
+Now on to the `show` template for the details page, there's three links near the top to change:
 
-You should use pads that's on the client, on the server. When we're sending, when we're sending responses back, we should use the fully qualified url, including the https s so that's what, that's when the URL helper really comes in handy. All right. This [00:28:30] is going to be. Movie url and the argument is the movie and the.id is implicit.
+```html
+<!-- app/views/movies/show.html.erb -->
 
-Similarly here, same thing.
+<div>
+  <div>
+    <h1>
+      Movie #<%= @the_movie.id %> details
+    </h1>
 
-And this is going to be movies url. Oh boy. And we said that whenever we encountered old syntax, we were going to change it. So, [00:29:00] Let's do that now. Whenever we have notice, we're going to say, notice. Whenever we see alert like this, we're going to, I guess, where's the only place we're going to say alert And we're supposed to get rid of all of this situation.
+    <div>
+      <div>
+        <a href="/movies">
+          Go back
+        </a>
+      </div>
 
-Supposed to get rid of all this situation too[00:29:30] 
+      <div>
+        <a href="/movies/<%= @the_movie.id %>/edit">
+          Edit Movie
+        </a>
+      </div>
 
-and get rid of this.
+      <div>
+        <a href="/movies/<%= @the_movie.id %>" data-method="delete">
+          Delete Movie
+        </a>
+      </div>
+    </div>
+...
+```
+{: mark_lines="11 17 23"}
 
-Lots of refactoring to do here. I should have made a get commit before doing this. Um, this looks good, this, let's make this [00:30:00] consistent.
+Those index, edit, and delete links should be using the helper methods:
 
-Let's make this consistent.
+```html
+<!-- app/views/movies/show.html.erb -->
 
-Okay, nice and neat. It looks like, [00:30:30] and we've removed all references to URLs. We still have template names in here, which are not URLs, so the, our route helpers can't help us with this. Uh, but. Oh C syntax error line 41. Syntax error. Let's check it out. Uh, yes.
+<div>
+  <div>
+    <h1>
+      Movie #<%= @the_movie.id %> details
+    </h1>
 
-Okay, so [00:31:00] everything looks good. Delete, add. All right, sweet. Let's make a get commit.
+    <div>
+      <div>
+        <a href="<%= movies_path %>">
+          Go back
+        </a>
+      </div>
 
-And we're now in great shape. We've named our routes. If we need for some reason to change one of those URLs to films, we just change it in our routes dot rb and like maybe just this one. For some reason, [00:31:30] somebody wants to change to films. No problem. Now the rest of our application or the show. At this point, the rest of our application is totally fine.
+      <div>
+        <a href="<%= edit_movie_path(@the_movie.id) %>">
+          Edit Movie
+        </a>
+      </div>
 
-We're going to go back, show details, and it just adapts automatically. Everything is totally fine now. Great. Let's make a commit. Finished using named route helpers [00:32:00] instead of raw.
+      <div>
+        <a href="<%= movie_path(@the_movie.id) %>" data-method="delete">
+          Delete Movie
+        </a>
+      </div>
+    </div>
+...
+```
+{: mark_lines="11 17 23"}
 
+Again, we supply arguments to the helper methods that need an ID number.
+
+Test those links out manually to be sure everything worked.
+
+And finally on the `new` and `edit` pages, we'll make two changes:
+
+```html
+<!-- app/views/movies/new.html.erb -->
+
+<h1>New movie</h1>
+
+<% @the_movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
+
+<form action="<%= movies_path %>" method="post">
+...
+```
+{: mark_lines="9"}
+
+```html
+<!-- app/views/movies/edit.html.erb -->
+
+<h1>Edit movie</h1>
+
+<% @the_movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
+
+<form action="<%= movie_path(@the_movie.id) %>" method="post">
+...
+```
+{: mark_lines="9"}
+
+Now we've seen that there's only one name (`movie_path(id)`) for a single movie resource, and then there's three actions that modify that single movie resource with different HTTP verbs: `post` to show details, `patch` to edit, and `delete` to destroy. 
+
+Now here's something cool. Wherever we wrote:
+
+```ruby
+movie_path(@the_movie.id)
+```
+
+We can be bit more concice and omit the `.id`:
+
+```ruby
+movie_path(@the_movie)
+```
+
+If we just give `movie_path` an instance of `ActiveRecord` Rails will figure out the ID number for us by searching that record for the `id` column. Try and go back through the view templates and remove the `.id` for that helper method.
+
+Now we need to clean up the routes in our `app/controllers/movies_controller.rb` file, since we were using them a lot for redirects. For instance, in the `create` action:
+
+```ruby
+# app/controllers/movies_controller.rb
+
+class MoviesController < ApplicationController
+  ...
+  def create
+    @the_movie = Movie.new
+    @the_movie.title = params.fetch("query_title")
+    @the_movie.description = params.fetch("query_description")
+
+    if @the_movie.valid?
+      @the_movie.save
+      redirect_to(movies_url, { :notice => "Movie created successfully." })
+    else
+      render template: "movies/new.html.erb"
+    end
+  end
+  ...
+```
+{: mark_lines="12"}
+
+Wait! Why did we change `"/movies"` in that `redirect_to` after the save to `movies_url`, rather than the `movies_path` we've been using? We have both methods available to us, and technically, we should only use paths on the client facing view templates, whereas. But, when we're sending responses back, we should use the fully qualified URL, including the domain name.
+
+Can you find the other places in the code where we need to change the path to the `_url` helper method? (Hint: look for any `redirect_to`s, and remember `movie_url` takes an argument of the `ActiveRecord` instance with or without the `.id`.) 
+
+While we're at it in the `movies_controller.rb` file, try to go through and change all of the old syntax to our new syntax. For instance, in the `create` action, this:
+
+```ruby
+redirect_to(movies_url, { :notice => "Movie created successfully." })
+```
+
+Should be:
+
+```ruby
+redirect_to movies_url, notice: "Movie created successfully."
+```
+
+We won't need to go back and change things like this going forward, because we'll always be writing code from the get go with our new syntax.
+
+Once you've changed all the syntax, and confirmed you didn't break anything by clicking around in the live app or by running some automated tests, do a **/git** commit.
+
+## 00:32:30
 All right. Now, as we were doing that refactoring, I saw something that we should talk about. We've got these template names that are very explicit and excellent, but we can shorten these a lot too. Now that we're comfortable with the difference between render Ringa template versus sending people to a url, this is an internal file name within our code [00:32:30] base, somewhere that users.
 
 whereas redirecting to a URL is sending them somewhere on the internet that's public that they see anyways, so we use this kind of extension to make it very obvious and APTA one, that this is an internal thing in our code base with the E R b, but we don't need this Rails assumes if we just say this, that the format is going to be uh, H L E R B template.
