@@ -77,3 +77,4 @@ The lesson name below matches a branch name that the transcription can be found 
  - ad2-program-notes.md (first part of Day 1 recording)
  - ad2-getting-started.md (second part of Day 1 recording)
  - ad2-helper-methods-part1.md
+ - ad2-helper-methods-part2.md
