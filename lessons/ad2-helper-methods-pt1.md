@@ -157,7 +157,7 @@ Next, let's talk about a built-in `rake task` that comes with Rails, much like `
 
 ```bash
 gitpod /workspace/helper-methods:(main) $ rails routes
-                Prefix Verb   URI Pattern                         Controller#Action
+                Prefix  Verb   URI Pattern                         Controller#Action
                   root  GET    /                                   movies#index
                 movies  POST   /movies(.:format)                   movies#create
             movies_new  GET    /movies/new(.:format)               movies#new
@@ -168,7 +168,7 @@ gitpod /workspace/helper-methods:(main) $ rails routes
                         DELETE /movies/:id(.:format)               movies#destroy
 ```
 
-There's a whole bunch in here. You may need to make your terminal wider to prevent line wrapping, since it's trying to print a big table with the columns `Prefix`, `Verb`, `URI Pattern`, and `Controller#Action`. We just want to foucs on the top of the table.
+There's a whole bunch in here. You may need to make your terminal wider to prevent line wrapping, since it's trying to print a big table with the columns `Prefix`, `Verb`, `URI Pattern`, and `Controller#Action`. We just want to focus on the top of the table.
 
 What do those column names mean to you? Do the values in each row make sense? 
 
@@ -176,7 +176,7 @@ Hopefully they do now! We have our different HTTP verbs, the paths we defined in
 
 What about the `Prefix`? 
 
-Well, we just saw that Rails comes with the method `root` that always defines the **/** homepage route. `Prefix` means that Rails has defined a method that we can call _anywhere_ in our view templates, controller actions, etc., that will return the URL _with_ the defined HTTP verb. And look, there's some other methods defined in the `Prefix` column!
+Well, we just saw that Rails comes with the method `root` that always defines the **/** homepage route. `Prefix` means that Rails has defined a method that we can call _anywhere_ in our view templates, controller actions, etc., that will return the path as a string. And look, there's some other methods defined in the `Prefix` column!
 
 You can also view all of this route information in your browser by navigating your live app to **/rails/info/routes**, and you will see a searchable table, with the actual full names (not just the "prefix") of the helper methods (e.g., `root` is actually `root_path`):
 
@@ -203,9 +203,9 @@ Let's see these route methods in action in one of our view templates. Open `app/
 
 Now refresh the **/movies** page in the live app to see what that embedded Ruby renders. What do you know, it rendered the string `"/movies"`! 
 
-What if we change the code to `<%= movies_new_path %>`? Refresh **/movies** after this change, and it renders `"/movies/new"`. Following this patter, `<%= root_path %>` just renders `"/"`, etc. for the other routes and methods.
+What if we change the code to `<%= movies_new_path %>`? Refresh **/movies** after this change, and it renders `"/movies/new"`. Following this pattern, `<%= root_path %>` just renders `"/"`.
 
-You might be wondering why that matters. Well, the routes we mentioned so far that already have a method assigned to them were automatically assigned by Rails. These were static routes, without dynamic ID numbers in the path, so Rails just puts the segments together and gives you the method. But, for all the rest of the routes that do contain `:id`, there's no methods. We get to define those methods ourselves!
+You might be wondering why that matters. Well, the routes we mentioned so far that already have a method assigned to them were automatically assigned by Rails. These were static routes, without dynamic ID numbers in the path, so Rails just puts the segments together and gives you the method. But, for all the rest of the routes that do contain `:id`, there are no methods defined yet. We get to define those methods ourselves!
 
 Back in `config/routes.rb`, what if we add some code to give the movie details page its own method:
 
@@ -239,25 +239,25 @@ With the `as:` option, I got to pick a method name (in the form of a symbol). An
 
 ![](/assets/rails-info-route-details.png)
 
-And we can check in our `app/views/movies/index.html.erb` view template by changing the embedded Ruby to: `<%= details_path %>`, and on the live app we should see... and error!
+And we can check in our `app/views/movies/index.html.erb` view template by changing the embedded Ruby to: `<%= details_path %>`, and on the live app we should see... an error!
 
 ```bash
 No route matches {:action=>"show", :controller=>"movies"}, missing required keys: {:id}
 ```
 
-That's because there is a flexible (a.k.a. dyanmic) segment in the route, so Rails can't produce the URL unless you tell it what to put in that spot!
+That's because there is a flexible (a.k.a. dynamic) segment in the route, so Rails can't produce the path unless you tell it what to put in that spot!
 
 Cool. So we need to provide an argument. Change the embedded Ruby to `<%= details_path(42) %>`. Refresh **/movies**. It should now render the string `"/movies/42"`.
 
 There's a couple of benefits to these route **helper methods**. 
 
-One, is that there is actually two versions of the method, `_path` and `_url`. If you change the method in the view template to `details_url(42)` and refresh **/movies**, then you will see the full URL of the Gitpod app, including the path! This is very cool because that means I can use fully qualified URLs if I want to using this method. But then, when I deploy my code to my Heroku app, and it's running on mydomain.com, this method will automatically work -- no matter what server it's running on! No need to **hard code** anything and then later need to change it when I move my app around.
+One, is that there is actually two versions of the method, `_path` and `_url`. If you change the method in the view template to `details_url(42)` and refresh **/movies**, then you will see the full URL of the Gitpod app, including the path! 
 
-That URL benefit is pretty nice, but we usually use the `_path` version anyway. 
+This is very cool, because it means I can use fully qualified URLs. And when I deploy my code to my Heroku app, and it's running on mydomain.com, this method will automatically work -- no matter what server it's running on! No need to hard code anything, and then later need to change it when I move my app around.
 
-The biggest benefit of using the route helper methods is the following. If you name your routes in your `config/routes.rb` diligently, and outside of this file, everywhere else in your application, _never_ refer to URLs and only refer to the methods associated with them, then if you ever have to change the URL from `movies` to `films` (or `zebra` or anything!), you don't need to do this throughout your codebase and risk breaking everything.
+The biggest benefit of using the route helper methods is the following. If you name your routes once in your `config/routes.rb`, and outside of this file in your application, _never_ refer to paths or URLs and only refer to the methods associated with them, then if you ever have to change the URL from `movies` to `films` (or `zebra` or anything!), you don't need to do this throughout your codebase and risk breaking everything.
 
-With our new route helper methods, we're never going to refer to these URLs as actual strings anymore. We're always going to refer to them through these names that we give them. 
+With our new route helper methods, we're never going to refer to these paths as actual strings anymore. We're always going to refer to them through these method names that we give them. 
 
 Now let's get these names down per the conventions that most Rails developers use:
 
@@ -289,7 +289,7 @@ end
 
 Note that we don't need to define methods twice for paths that already have a method defined. These methods just return a string with the path name, they ignore the HTTP verb, so there's no difference between naming a route helper method for `delete` or `patch` above; both will return `"/movies/ID"`. We defined the method `movie_path` and `movie_url` for all three `get`, `patch`, and `delete` HTTP verbs for this route just by adding it once.
 
-That's it! We've now provided names for all of our routes. Now we want to use these every single place in our application where we are using URLs like this, we're going to replace them. Let me go start to take a look at my URLs.
+That's it! We've now provided names for all of our routes. Now we want to use these every single place in our application where we are using string paths. Let me go start to take a look at my paths.
 
 There's one I see right away in the `app/views/movies/index.html.erb` we were using to demonstrate the helper methods:
 
@@ -317,9 +317,9 @@ That should be:
 ```
 {: mark_lines="5"}
 
-Refresh **/movies** in the live app. If all went well, there should be no error messages and if you view source on the page, you won't see any Ruby, but just the string that the method returned: `"/movies/new"`. Same as before!
+Refresh **/movies** in the live app. If all went well, there should be no error messages and if you "view source" on the page, you won't see any Ruby, just the string that the method returned: `"/movies/new"`. Same as before!
 
-This is a pattern that should be repeating throughout the day. Use view source constantly to confirm that the handwritten HTML that we did before matches up with the HTML that these helper methods are producing for us. Then we know that we're using them correctly. 
+This is a pattern that should be repeated throughout the day. Use view source constantly to confirm that the handwritten HTML that we did before matches up with the HTML that these helper methods are producing for us. Then we know that we're using them correctly. 
 
 Time for a **/git** commit after all that preparation!
 
