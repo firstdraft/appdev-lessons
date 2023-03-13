@@ -532,16 +532,86 @@ We won't need to go back and change things like this going forward, because we'l
 
 Once you've changed all the syntax, and confirmed you didn't break anything by clicking around in the live app or by running some automated tests, do a **/git** commit.
 
-## 00:32:30
-All right. Now, as we were doing that refactoring, I saw something that we should talk about. We've got these template names that are very explicit and excellent, but we can shorten these a lot too. Now that we're comfortable with the difference between render Ringa template versus sending people to a url, this is an internal file name within our code [00:32:30] base, somewhere that users.
+## Shorten Template Names 00:32:30 to
 
-whereas redirecting to a URL is sending them somewhere on the internet that's public that they see anyways, so we use this kind of extension to make it very obvious and APTA one, that this is an internal thing in our code base with the E R b, but we don't need this Rails assumes if we just say this, that the format is going to be uh, H L E R B template.
+Let's do another thing to make our code more concise and in line with what you'll see professional developers using. Whenever we render a template in our `movies` controller, we were writing out the whole name:
 
-If you have some other format J on CSV xm. [00:33:00] Template, then you have to include that extension. But if you omit it, HTML ERB is the assumed extension. Secondly, we can also, if this folder name that the view templates are located inside, matches the name of the controller, and if the action name matches the name of the template, we can just get rid.
+```ruby
+# app/controller/movies_controller.rb
 
-[00:33:30] First of all, one thing to note is that you can also, if you're rendering a template without any other options, there are other options that you could potentially pass to this method. But if you're not, you could just give the string directly as the argument to render and omit even more typing. Although I actually don't do that typically, cuz many times I'm going to be passing other options to this method.
+  ...
+  def new
+    @the_movie = Movie.new
 
-But you could just say render like, And then if the folder name matches the controller name [00:34:00] and the template name matches the action name, you can omit the render method altogether, and Rails will assume that that is what you're trying to do. It'll, you're telling it to go to the app views movies folder and look for a template inside called New HTML rb.
+    render template: "movies/new.html.erb"
+  end
+  ...
+```
+{: mark_lines="7"}
+
+Actually, we don't need the extension, Rails assumes the file is in `.html.erb` format, so we can just write:
+
+```ruby
+  def new
+    @the_movie = Movie.new
+
+    render template: "movies/new"
+  end
+```
+{: mark_lines="4"}
+
+Also, we don't actually need `template:` because if you pass the `render` method a single string argument, it assumes that is a view template!
+
+```ruby
+  def new
+    @the_movie = Movie.new
+
+    render "movies/new"
+  end
+```
+{: mark_lines="4"}
+
+Next, if the folder name that the view templates are located inside of, matches the name of the controller, and if the action name matches the name of the template, we can just get rid of the whole string! (And the method!)
+
+```ruby
+  def new
+    @the_movie = Movie.new
+  end
+```
+
+Wow! Rails looks at the controller `MoviesController` and assumes the view template is in `app/views/movies`, and then looks at the action `new` and assumes the template is named `new.html.erb`, and then it assumes you want to render that template given that action (which we do).
+
+Try and go through the code in the controller and delete any render statements where the template matches the action name.
+
+One hint, in the `index` action, where we have:
+
+```ruby
+  ...
+  def index
+    ...
+      format.html do
+        render template: "movies/index.html.erb"
+      end
+    end
+  end
+```
+{: mark_lines="4-6"}
+
+We can just get rid of that whole loop block:
+
+```ruby
+  ...
+  def index
+    ...
+      format.html
+    end
+  end
+```
+{: mark_lines="4"}
+
+To just indicate that we support the HTML format with this action.
+
+
 
 So with that, we can now get rid of a lot of code in here. We can get rid of this render movies index, which means that we can just get rid of this whole block and just say, we support html. Now just do the [00:34:30] default behavior for html. That means here we can drop movies show because it matches with the index or with the action name.
 
