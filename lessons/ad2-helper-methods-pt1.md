@@ -532,7 +532,7 @@ We won't need to go back and change things like this going forward, because we'l
 
 Once you've changed all the syntax, and confirmed you didn't break anything by clicking around in the live app or by running some automated tests, do a **/git** commit.
 
-## Shorten Template Names 00:32:30 to
+## Shorten Template Names 00:32:30 to 00:35:30
 
 Let's do another thing to make our code more concise and in line with what you'll see professional developers using. Whenever we render a template in our `movies` controller, we were writing out the whole name:
 
@@ -581,7 +581,7 @@ Next, if the folder name that the view templates are located inside of, matches 
 
 Wow! Rails looks at the controller `MoviesController` and assumes the view template is in `app/views/movies`, and then looks at the action `new` and assumes the template is named `new.html.erb`, and then it assumes you want to render that template given that action (which we do).
 
-Try and go through the code in the controller and delete any render statements where the template matches the action name.
+Try and go through the code in the controller and delete any render statements _where the template matches the action name_ (only when it matches, Rails won't figure out when it doesn't).
 
 One hint, in the `index` action, where we have:
 
@@ -611,55 +611,99 @@ We can just get rid of that whole loop block:
 
 To just indicate that we support the HTML format with this action.
 
+Once you finish that refactoring, make sure you app still works, and do a **/git** commit!
 
+## `link_to` Helper Method 00:35:30 to 00:43:28
 
-So with that, we can now get rid of a lot of code in here. We can get rid of this render movies index, which means that we can just get rid of this whole block and just say, we support html. Now just do the [00:34:30] default behavior for html. That means here we can drop movies show because it matches with the index or with the action name.
+Next we're going to talk about a very, very useful helper method called `link_to`, that will replace all of our plain HTML `<a>` link elements. 
 
-That means here we already are doing the best that we can because this doesn't match well, we can actually, we can drop this if we. Because the controller name matches, but it doesn't match the action name. So we have to keep the template here. We can drop this [00:35:00] here. We're redirecting. And we're redirecting.
+This is the first example of a helper method that produces an actual HTML element. 
 
-So there's no render statements there. No render statements there. Okay, so now we dropped even more code. Go back and everything still works fine. Show all those renderings are still working perfectly fine. All right, that's a great chunk of refactoring. Let's make a get. And meanwhile, we're going to check out what's next up on our list.
+Let's experiment with a simple example with some dummy code in our `index` view template:
 
-All right, we're going to next look at Link two methods,[00:35:30] 
+```html
+<!-- app/views/movies/index.html.erb -->
 
-dropped as many render statements as possible.
+<h1>
+  List of all movies
+</h1>
 
-Okay. Next we're going to talk about a very, very useful helper method called Link two.
+<hr>
 
-And link two is the first example of a helper method that produces an actual H TML element. And [00:36:00] as you might guess, it produces an A element. So lemme show you how this works. With a simple example, say go to Google, and then you put the URL over here that you want to populate. The A attribute. Then if we take a look at our index, take a look at the view source of this, here's the output, [00:36:30] right?
+<div>
+  <a href="<%= new_movie_path %>">Add a new movie</a>
 
-So this produced, this doesn't seem like very much help right now because it's almost as verbose as just writing out the. H itself. But you'll see that we get tons of benefits out of this. So first of all, let's do this using this. So this is the content for the link that goes here. This is the url. So this J, [00:37:00] that's just the new.
+  <%= link_to "Go to Google", "https://www.google.com" %>
+</div>
+...
+```
+{: mark_lines="12"}
 
-This is just Ruby. So we don't need it within, if I do string, it's going to literally populate that. Well, that's not what we want. Right? We that, that's the whole point of the route Helper methods. They're Ruby. And now we're inside embedded Ruby here. So we're going to call that method. That method will return the string that we want to put right there.
+We have the method (`link_to`) and two arguments (remember, we omitted the paranetheses from `link_to()`): Some text to display ("Go to Google"), and the URL (google). 
 
-Beautiful. So now we have a nice link and we can get rid of this. And from [00:37:30] now on, our goal is going to be, we are never going to write a raw a element ever again in a age Erb. If we're writing a plain h and l file in the public folder, for example, well sure. Then we don't, we can't embed Ruby, so we have to write a tags.
+Refresh **/movies** in the live app, and you will see a working link. And if you view source on the page, you should see:
 
-But within our templates from now on, we're going to attempt to never write a raw a element. Again, there's lots of benefits that I'll describe as we go along [00:38:00] to doing this, but just now keep it in your mind and make it an. If you, if you even come across an A element anywhere in your code from now on, just try to replace it then and there with the equivalent link two version.
+```html
+<a href="https://www.google.com">Go to Google</a>
+```
 
-All right, let's do that now. So here's one, I'm going to say
+Just as we would have written in plain HTML, but now we're letting Rails do that for us. Now let's see how that benefits our code by changing the "Add a new movie" link (we can remove our Google link):
 
-link two. And the first argument is the copy, the content for the A element. And the second argument is [00:38:30] where, what should be the at? Now I can delete this. Let me just, I'll leave it in for now, and then we can take a look at the source code and we can see that it produces the same exact output down here.
+```html
+<!-- app/views/movies/index.html.erb -->
 
-Then I'm going to delete the old version. All right, so far so good. Now we will cont continue. Well, I'll let you replace the rest, but I want to show you one really cool thing. Here. [00:39:00] Now we have a link to show details. The argument telling it where to go is a route helper. This is where it starts to get really, really, this is where people start to refer the Rails magic.
+<h1>
+  List of all movies
+</h1>
 
-And it's not magic, it's just you have to know how things are working step by step. But what if, so this method, A url, right? That's it's a route helper. It returns a string that contains url, and [00:39:30] this method expects a U URL as a second argument. And this method, I'm able to give it an active record object as its argument, and then it by default assumes that you're going to use the ID to populate that second segment.
+<hr>
 
-What if
+<div>
+  <!-- <a href="<%= new_movie_path %>">Add a new movie</a> -->
+  <%= link_to "Add a new movie", new_movie_path %>
+</div>
+...
+```
+{: mark_lines="10-11"}
 
-I give the link to method? An active record object where it's expecting a string. [00:40:00] Right? So this link to, it's expecting something like https, www.google.com. It wants a string URL as its second argument, because that's going to become the hf. What if we now just, we're giving it an active, an instance of active record, right?
+Try out the new link and view source on it. Beautiful. So now we have a nice link that doesn't rely on us writing any HTML, just embedded Ruby. From now on, our goal is going to be, to never write a raw HTML element in our view templates. 
 
-We're giving it movie. First, how the heck is the Link Two method? It's going to turn [00:40:30] a record from the movie table into a url.
+Let's look at a really cool benefit from doing this replacement. Look at the "Show details" link:
 
-Well, here's what it does secretly, the link two checks and it says,
+```html
+<!-- app/views/movies/index.html.erb -->
 
-so.
+...
+    <td>
+      <%= link_to "Show details", movie_path(a_movie) %>
+    </td>
+...
+```
+{: mark_lines="5"}
 
-It tries to takes, it takes his expression, says [00:41:00] this, says what class are you? Then it does a down case. Then it does a plus URL on it, and then it calls that method. So it looks for a named route helper method. That matches the name of this class, because that's the convention. If you have a table called movie, you're going to have routes that are, [00:41:30] as we discussed, you're going to have restful routes that are movies slash id movies slash id slash edit.
+We have our helper method, the text to display, and the path to link to. Now here's where people start to refer to the "Rails Magic".
 
-You're going to have those restful routes if you have those restful routes, and if you name them conventionally, then you're going to have this helper. . And so if you're doing everything by convention, think about how many things have to go by convention here for all, with all this whole thing to work. But if you're doing everything conventionally now, someday, when it [00:42:00] comes time for you to write a link to the details page of this active record object, you can simply just say, link to show details.
+What if I provide the second argument not as the `movie_path(a_movie)`, which returns the string `"/movie/ID"`, but rather just the `ActiveRecord` object _itself_:
 
-Give it the object itself. and it's just going to go figure out how to put together the URL for the details page of that object, whatever that is.
+```html
+<!-- app/views/movies/index.html.erb -->
 
-So refresh and we get [00:42:30] the same thing. Oh, and it's still films because I forgot to, to change that name back. So that's, that's the beauty of it. Like if some new developer on your team joins, they don't need to know what the URLs are named. They can just link to the. And if everything's conventional, it's just going to figure out how to get the URL for the details page from the routes file.
+...
+    <td>
+      <%= link_to "Show details", a_movie %>
+    </td>
+...
+```
+{: mark_lines="5"}
 
-But while I'm here, I should put this back to [00:43:00] movies, but that's, that's exactly the power of it, is that a new developer wouldn't have had to know that. All right, let's go back and take a minute and go to the edit page and the other. And anywhere you see an A element, so pause the video. Anywhere you see an A element, replace it with a link to element and then come back and we'll do the next thing.
+This will work, and produce the correct link! Try it in the live app.
 
+What's happening here? Secretly, `link_to` checks and says, what `.class` is `a_movie`? In this case, that would return `Movie`. Then it does a `.downcase`. Then it does a `+ "_url"` on that, and then it calls that helper method: 
+
+```ruby
+a_movie.class.downcase + "_url"
+```
+
+So `link_to` looks for a named route helper method that matches the name of `a_movie`'s class (`Movie`), because that's the _convention_. If you have a table called `movies`, you're going to have RESTful routes with names like `"/movies"` and `"/movie/ID"`. If you're doing everything by _convention_, this shorthand works!
+
+Take a moment now to go through and replace `<a>` elements with our `link_to` embedded Ruby in the view templates: `index.html.erb`, `show.html.erb`, `new.html.erb`, and `edit.html.erb`. And remember to **/git** commit when you are done.
