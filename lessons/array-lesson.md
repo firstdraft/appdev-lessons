@@ -64,6 +64,23 @@ cities = ["Chicago", "NYC", "LA"]
 
 This is the technique that we'll be using most often.
 
+----
+
+#### Quiz Question
+
+- What would happend to the previous `cities` variable if we wrote `cities = ["Berlin", "Paris", "Madrid"]`?
+- `cities` would contain the original cities and the new cities as two separate lists
+    - Not quite, perhaps use an `irb` terminal to experiment
+- `cities` would contain the original cities and the new cities as one combined list
+    - Not quite, perhaps use an `irb` terminal to experiment
+- We would overwrite `cities` with our new array of European cities
+    - That's right! We can re-use variables and write new data into them
+- This is an illegal operation and we would get an error message
+    - Not quite, perhaps use an `irb` terminal to experiment
+{: .choose_best #cities points="10" answer="3" }
+
+----
+
 ### Methods
 
 Now let's familiarize ourselves with some of `Array`'s methods.
@@ -96,6 +113,26 @@ A couple of other things for you to experiment with:
 
     This is our first contact with `nil`, an object that represents **the absence of anything**. When you use an index "outside" the array, you might have expected to see an error message; but instead, Ruby returns `nil`.
  - What happens when you use a negative index?
+
+----
+
+#### Quiz Question
+
+- What is the **positive** integer index of `5` in the array `["zebra", 6.2, 5, "bear", "salmon"]`?
+- 2
+    - Yes! We index lists of things beginning from 0 in Ruby
+{: .free_text #index points="10" answer="1" }
+
+----
+
+#### Quiz Question
+
+- What is the **negative** integer index of `5` in the array `["zebra", 6.2, 5, "bear", "salmon"]`?
+- -3
+    - Yes! We can count backwards through a list of items starting with -1 (the last item)
+{: .free_text #index_negative points="10" answer="1" }
+
+----
 
 #### at shorthand, [] 
 
@@ -132,6 +169,25 @@ p array[2]
 
 Since retrieving the elements at positions `0` (the first one) and `-1` (the last one) is so common, there are handy shortcut methods for those: `.first` and `.last`. Give them a try.
 
+----
+
+#### Quiz Question
+
+- The code `[0, 4, 9][-1]`, the code `[0, 4, 9].at(-1)`, the code `[0, 4, 9].at(2)`, and the code `[0, 4, 9].last`...
+- will return different results.
+    - Nope, try to test the code in a terminal
+- only the first two will return the same result
+    - Nope, try to test the code in a terminal
+- only the first two and fourth will return the same result
+    - Nope, try to test the code in a terminal
+- are all equivalent ways of retrieving the same value
+    - Yes!
+- are illegal operations, since we can't call methods directly on the array object (we need a variable first)
+    - Nope, try to test the code in a terminal
+{: .choose_best #retrieve points="10" answer="4" }
+
+----
+
 #### index 
 
 The `.index` method is sort of the inverse of `.at`: given an object, `.index` searches within the array and returns the index where it resides. Give it a try:
@@ -147,20 +203,49 @@ p cities.index("SF")
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/array-index){:target="_blank"}
 </div>
 
-Some further things for you to experiment with:
+----
 
- - What will `.index` return if the element is present in the array more than once?
- - What will `.index` return if the element is not present in the array at all?
+#### Quiz Question
+
+- What will `.index` return if the element is present in the array more than once (e.g., `[0, 1, 3, 3, 3].index(3)`)?
+- The index of all the elements
+    - Nope, try to test the code in a terminal
+- The index of the first appearance of the element
+    - Yes!
+- An error message
+    - Nope, try to test the code in a terminal    
+- The index of the last appearance of the element
+    - Nope, try to test the code in a terminal
+- A `nil`, or empty, result
+    - Nope, try to test the code in a terminal
+{: .choose_best #index_first points="10" answer="2" }
+
+----
+
+#### Quiz Question
+
+- What will `.index` return if the element is not present in the array at all (e.g., `[0, 1, 3, 3, 3].index(2)`)?
+- The index of all the elements
+    - Nope, try to test the code in a terminal
+- An error message
+    - Nope, try to test the code in a terminal
+- The index of the last appearance of the element
+    - Nope, try to test the code in a terminal
+- A `nil`, or empty, result
+    - Yes
+{: .choose_best #index_none points="10" answer="4" }
+
+----
 
 #### String#split 
 
-Before we proceed with more `Array` methods, I want to go back for a minute and talk about a method for the `String` class: `.split`. This method, when called on a `String`, will return an `Array` of substrings:
+Before we proceed with more `Array` methods, I want to go back for a minute and talk about a method for the `String` class: `.split`. This method, when called on a `String`, will return an `Array` of substrings.
+
+If you provide no argument, the string is split upon whitespace, which is handy for e.g. turning a sentence into a list of words:
 
 ```ruby
 "alice bob carol".split # => ["alice", "bob", "carol"]
 ```
-
-If you provide no argument, the string is split upon whitespace, which is handy for e.g. turning a sentence into a list of words:
 
 If you do provide an argument to `.split`, then the string will be chopped up wherever that argument occurs instead of whitespace — for example, use `"4,8,15,16,23,42".split(",")` to split on commas.
 
@@ -171,8 +256,6 @@ a = "Hello!".split("") # => ["H", "e", "l", "l", "o", "!"]
 a.at(0) # => "H"
 a.at(-1) # => "!"
 ```
-
-<!-- **BENP: need an exercise here, split("") is important in .each project. Also, first time with negative indexing? Maybe insert something about this earlier in section (with exercise)** -->
 
 This is particularly handy for us because it allows us to get a `String` of input from users with `gets` and then transform it into an `Array` for processing:
 
@@ -204,6 +287,11 @@ We'll be using this technique frequently to make things more interesting.
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
 
+<div class="proj" markdown="1">
+  
+  Continue in the Gitpod `Array` project and work through `split_string.rb`
+</div>
+
 #### count 
 
 `.count` counts how many elements are in the list, if called with no arguments. If an argument is provided, it counts how many times that argument occurs in the list.
@@ -216,8 +304,6 @@ p a.count
 p a.count(3)
 ```
 
-<!-- **BENP: add project with count() with an argument, becomes important again in .each** -->
-
 <div class="experiment" markdown="1">
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/count){:target="_blank"}
@@ -228,6 +314,16 @@ p a.count(3)
   Return to the Gitpod `Array` project and work through `count.rb`
 </div>
  
+----
+
+#### Quiz Question
+
+- The code `["zebra", "bear", "bear", "giraffe"].count("bear")` will return...
+- 2
+    - Yes!
+{: .free_text #count_argument points="10" answer="1" }
+
+----
 
 #### reverse 
 
@@ -259,6 +355,21 @@ p array.sample # => Returns a single random element from the array
   
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/sample){:target="_blank"}
 </div>
+
+----
+
+#### Quiz Question
+
+- The code `["rock", "paper", "scissors"].sample` will return...
+- `nil`, or nothing
+    - Not quite, try it in a terminal
+- an unpredictable item from the array
+    - Yes!
+- that's an illegal operation and would result in an error message
+    - Not quite, try it in a terminal
+{: .choose_best #sample points="10" answer="2" }
+
+----
 
 #### min 
 
@@ -313,3 +424,7 @@ p a.sum # => 57
 ###  Conclusion
 
 That's it for `Array`s. Now we'll have a look at **conditionals** with `if` statements.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
