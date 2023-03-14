@@ -4,6 +4,29 @@ When we met the `Array` class, we noted that most of what we do as developers is
 
 Therefore, the most common reason we'll have to write loops is to **visit each element in an `Array` and do something interesting with it** — for example, display the element to the user with some formatting around it.
 
+----
+
+#### Quiz Question
+
+- Which of these codes would result in an `Array` in the variable `a`? Check all that apply.
+- `a = ()`
+    - No, parentheses are used after a method to list the arguments to the method
+- `a = Array`
+    - No, what method do we need to call _on_ `Array` to create a new one?
+- `a = []`
+    - Yes! Thanks to some syntactic sugar
+- `a.new = Array`
+    - No, the method should be on the right side of the assignment operator
+- `a = Array.new`
+    - Yes!
+- `a = "ruby".split("")`
+    - Yes! The `""` argument to `split` will separate each character
+- `a = [1, 2, 3]`
+    - Yes!
+{: .choose_all #arrays points="10" answer="[3,5,6,7]" }
+
+----
+
 ### Iterating over arrays with Integer's times method
 
 Try transforming the words in an Array using what you've learned so far about loops:
@@ -16,7 +39,7 @@ Write a program that, given a list of words from the user, would take each word 
 
 For example, for the input:
 
-```
+```bash
 apple banana orange
 ```
 
@@ -39,21 +62,46 @@ Your program should output the following:
   [Click here for a REPL to try it.](https://repl.it/@_jelaniwoods/userwordstimes){:target="_blank"}
 </div>
 
----
-
 After you've got it working, examine [the model solution here](https://repl.it/@_jelaniwoods/userwordssolution){:target="_blank"}. You'll see that I chose to use `.times` for this job.
 
  - On Line 6, we count the length of the array.
  - On Line 8, we use that length with the `.times` method to kick off a loop with the correct number of iterations.
  - Within the block, we use the block variable (which we named `the_index`) to access the correct element within the array.
 
-<!-- **BENP: need an exercise using indexing in a loop here, this method is important in Ruby Gym** -->
-
 Using `.times` to iterate over an `Array` is not bad at all, especially because `.times`'s block variable starts at `0`, just like array indexing does. Using `.times` is certainly cleaner than using `while`, where we would have to create and increment a counter variable ourselves, and then write a condition to make sure that the loop stops after the correct number of iterations (the length of the array).
+
+----
+
+#### Quiz Question
+
+Consider the following code:
+
+```ruby
+a = ["zebra", "giraffe", "monkey", "bear", "salmon"]
+
+2.step(4, 2) do |the_index|
+  p a.at(the_index).capitalize
+end
+```
+
+- It would `p`rint:
+- `"Giraffe" "Bear"`
+    - Not quite, maybe test it. How does `.step` work? And what is the index of each element in the array?
+- `"Zebra" "Giraffe" "Monkey"`
+    - Not quite, maybe test it. How does `.step` work? And what is the index of each element in the array?
+- `"Monkey" "Bear"`
+    - Not quite, maybe test it. How does `.step` work? And what is the index of each element in the array?
+- `"Monkey" "Salmon"`
+    - Yes!
+- `"Giraffe" "Monkey"`
+    - Not quite, maybe test it. How does `.step` work? And what is the index of each element in the array?
+{: .choose_best #index points="10" answer="4" }
+
+----
 
 ### Array's each method
 
-But we can do even better than using `Integer`'s `.times` method to iterate over an `Array`. There's a method that you can call directly on the `Array` itself called `.each`. Compare the code below to the model solution above and try to find the differences:
+But we can do even better than using `Integer`'s `.times` (or `.step`) method to iterate over an `Array`. There's a method that you can call directly on the `Array` itself called `.each`. Compare the code below to the previous model solution and try to find the differences:
 
 ```ruby
 p "Enter at least 2 words, separated by spaces:"
@@ -94,9 +142,6 @@ The hardest part, I think, is getting your head around the block variable; in th
 
 Try to remember that it's just a name that _we make up_, and `.each` takes care of putting each element in that variable for us behind the scenes. I could have called it `zebra` if I wanted to; there's nothing special about the name — in particular, it doesn't have to match the name of the variable containing the array. Just try to pick something descriptive of an individual element in the list.
 
-
-**BENP: note confusion with spell_word: https://piazza.com/class/ldj532ul5a0621/post/274**
-
 <div class="proj" markdown="1">
 
   Open the Gitpod [`.each` project](https://github.com/appdev-projects/ruby-project-each-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `spell_word.rb`.
@@ -135,3 +180,7 @@ Code like this is what drives the dozens of dynamic applications you interact wi
 ###  Conclusion
 
 That's it for `.each` and loops. It's time to meet a very important data structure class that we will be seeing a lot: `Hash`.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
