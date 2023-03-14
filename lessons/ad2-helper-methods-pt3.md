@@ -12,9 +12,67 @@ As long as your looking through notes, now might also be a great time to have a 
 
 Now let's keep going with our helper methods and learn about four more Rails shortcuts.
 
-## CSS 00:09:00 to
+## Bootstrap CSS and Font Awesome 00:09:00 to
 
-I want to start getting in the habit of making our maps look better as we're, so we're gonna pull in bootstrap and awesome and sometimes use it while we're prototyping. So the quick, quickest way of getting bootstrap font awesome. Uh, and all the Java success is you put link, it takes you to by design chapter.
+I want to start getting in the habit of making our apps look better. That means pulling in Bootstrap CSS and Font Awesome. 
+
+Rather than us downloading and then uploading the files into our workspace, the quickest way of getting those is using some design resources from AD1:
+
+```html
+<!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
+<meta charset="utf-8">
+
+<!-- Make it responsive -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Connect Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<!-- Connect Bootstrap JavaScript and its dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+<!-- Connect Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+```
+
+Specifically, we want the CDN links in your HTML application layout view template. And if it's not already there, we also want the UTF-8 character set and the responsive viewport for different screen sizes.
+
+Take those HTML elements and copy-paste into `app/views/layouts/application.html.erb`, our wrapper file for all of the pages we are `yield`ing into the `<body>` of:
+
+```html
+<!-- app/views/layouts/application.html.erb -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VanillaRails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Connect Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Connect Bootstrap JavaScript and its dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- Connect Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  </head>
+  ...
+```
+{: mark_lines="6 8 15-16 18-19 21-22"}
+
+Note that we put the UTF-8 character set at the _top_ of the `<head>` because we want those characters available throughout our application, including in the `<title>` of the page.
+
+<aside markdown="1">
+When copy-pasting code into HTML documents, you can auto-format the indentation so that the elements are properly nested using <kbd>Cmd</kbd>(Mac) or <kbd>Cntrl</kbd>(PC) + <kbd>shift</kbd> + <kbd>P</kbd> to open the command menu on Gitpod's VS Code editor. With the `>` prompt open, you can search "Format" and find the command. (You can search for any command in this prompt.) You will also see a direct keyboard shortcut to that formatting command that might be useful to you. Become a keyboard ninja!
+</aside> 
+
 
 And this just has stuff that you can [00:09:30] copy directly into the head of your document, which is in the application layout file. And it'll pull these files, these, uh, CDNs instead of us having to download them and upload them and host them ourselves. So eventually we will download them and upload them and host them ourselves.
 
