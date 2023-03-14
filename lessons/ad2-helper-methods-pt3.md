@@ -256,35 +256,100 @@ Lastly, let's delete the the `<li>` defining the dropdown menu, so that our fina
 
 </aside>
 
-**BENP: CLI `git` 00:15:30 to 00:19:30 using chapters. Maybe better to wait to show/**
-
 Now's a good time for another **/git** commit. 
+
+**BENP: CLI `git` 00:15:30 to 00:19:30 using chapters. Maybe better to wait to show in a separate subsequent lesson**
 
 ## Bootstrap Alerts 00:19:30 to 
 
-https://getbootstrap.com/docs/5.1/components/alerts/
+Let's add some more bootstrap. Right now, when we add a movie at **/movies/new** there is a green sentence that comes up, which is the `:notice` message we set in our `create` action in the controller being rendered in the application layout:
 
-Um, there's a nice, so if I look at it right now, and if I add, it's like not bad, there's like a green paragraph up there. But let's switch that to be a little bit nicer by using the bootstrap alert. Click on this link to reach the bootstrap alert documentation. And Bootstrap includes these nice like [00:20:00] colored boxes and the text and alert and we're gonna want to use the alert danger for the, the alert danger for the redirect alert and alert success for the notice.
+```html
+<!-- app/views/layouts/application.html.erb -->
 
-So I'm gonna copy these, let's paste them into the application layout.
+...
+  <body>
 
-We did last time [00:20:30] exhibit first. I'm gonna make sure that it just shows up before I mess around with it. So there they are. Now of course, I want that to be the content here. So who it is should be here and alert should be here. And I can delete these things down here and take a look. [00:21:00] And we have an issue, which is if there's no notice or alert the slide.
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      ...
+    </nav>
+    
+    <div style="color: green;">
+      <%= notice %>
+    </div>
 
-So what should we do?
+    <div style="color: red;">
+      <%= alert %>
+    </div>
+    
+    <%= yield %>
+  </body>
+</html>
+```
+{: mark_lines="10-12 14-16"}
 
-What's statement? Yeah, let's we, let's conditionally render this. Only if those available. If and if you want to, if you're in an EER B template, you can use the, you can start to use some of these zips [00:21:30] and I will send it out to DRB if and tag contract. And then I'm gonna say, if notice is present, which is checking, make sure that it's not, and it's not an empty string.
+We can improve that simple green text with [bootstrap alerts](https://getbootstrap.com/docs/5.1/components/alerts/). Again, we can just copy and paste the examples we want (perhaps the green "success" and red "danger" boxes):
 
-And then I'm gonna under this, if have.
+```html
+<!-- app/views/layouts/application.html.erb -->
 
-And then
+...
+  <body>
 
-fix all my [00:22:00] indentation now looks good. When I,
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      ...
+    </nav>
+    
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
 
-something has flash, it shows up, page it goes away. Looks good. So that's some bootstrap flash. Bootstrapped flash messages here and
+    <div class="alert alert-danger" role="alert">
+      <%= alert %>
+    </div>
+    
+    <%= yield %>
+  </body>
+</html>
+```
+{: mark_lines="10 14"}
 
-pretty nice. Any [00:22:30] questions on this
+And now try to refresh the **/movies** page. 
 
-time? It was, that was a for making engagement, so I'm gonna do that right now. Some, I'm gonna do GI, ACM and then a string containing my GI commit message. In this case added prettier slash messages. [00:23:00] So we're visual slash
+We have an issue. If there is no notice or alert, a red and a green box still appear. So what should we do? How about some `if` control flow? There's a nice method for this, which will check if the message is undefined or `nil` and return true or false:
+
+```html
+<!-- app/views/layouts/application.html.erb -->
+
+...
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      ...
+    </nav>
+    
+    <% if notice.present? %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="alert alert-danger" role="alert">
+        <%= alert %>
+      </div>
+    <% end %>
+
+    
+    <%= yield %>
+  </body>
+</html>
+```
+{: mark_lines="10 14 16 20"}
+
+Test out adding movies and also filling out forms correctly and incorrectly. Do the messages appear and disappear as expected? Good! Time for another commit.
+
+
 
 Okay, what else? So let's do check now in my app. Everything is like all the way to the edges, and I would like some padding around the content. This is the perfect use case for our, [00:23:30] and we want basically on every page, we want to wrap everything within a digital class container. And if it's something that I want to happen on every single page, then I should put it in your, so between the nav bar and the flash messages, I'm gonna add a Diviv class container.
 
