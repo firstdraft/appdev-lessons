@@ -250,12 +250,6 @@ Lastly, let's delete the the `<li>` defining the dropdown menu, so that our fina
 ...
 ```
 
-
-
-<aside markdown="1">
-
-</aside>
-
 Now's a good time for another **/git** commit. 
 
 **BENP: CLI `git` 00:15:30 to 00:19:30 using chapters. Maybe better to wait to show in a separate subsequent lesson**
@@ -348,7 +342,7 @@ We have an issue. If there is no notice or alert, a red and a green box still ap
 
 Test out adding movies and also filling out forms correctly and incorrectly. Do the messages appear and disappear as expected? Good! Time for another commit.
 
-## Add Bootstrap Containers for Padding 00:23:30 to 
+## Add Bootstrap Containers for Padding 00:23:30 to 00:27:00
 
 Okay, what else? Wouldn't it be nice if everything in the app wasn't pushed all the way to the edges? We would like some padding around the content. This is the perfect use case for [bootstrap `container` class](https://getbootstrap.com/docs/5.2/layout/containers/). 
 
@@ -390,23 +384,13 @@ When I'm actually writing code, to speed things up, I use the "Emmet" abbreviati
 
 We put the container around our alerts and our `yield` (where all the rest of each page goes), but under the navbar, so the navbar will still stretch across the top of the screen.
 
-Actually, I'm gonna do this also. I'm gonna start using app dev. I'm gonna start to show the shortcuts that I use when I'm really writing code it slow way. So you also, I [00:24:00] want add with a class of container. The quick shortcut for that is do whatever element you want, dot whatever class you want. And then hit tab to accept the Emmett abbreviation and move stand out open tab class.
+If we test this, it looks pretty good. But there's not a lot of space between flash messages and the navbar. We can shift everything down a little by adding to the `class` attribute in the container and making it: `class="container mt-4"`. MT for margin top and "4" for the spacing. 
 
-And then move this down below everything else below the yield even. And then auto format. And I've got the container first thing, which is just below the nav [00:24:30] bar. And then within that, the first thing is the flash messages, and then my view templates will be pasted in there so that now we have breathing from here.
+Looks good? Great! Commit again.
 
-We can see that we decided to constrain that. Notice the flash message. Also within the container, change it. We need the, and the start of our content. [00:25:00] So let's add like either on or a margin on the nav bar. Kinda like margin top on the Diviv class container. Maybe we'll do like a four and see how that looks.
+I want to note: there's an open [pull request for this project](https://github.com/appdev-projects/helper-methods-3/pull/1/files) on Github, that contains all of the changes we will be incrementally making in this lesson. That's a nice resource to occassionally glance at as we go throught the project to see a summary of changes on each file.
 
-Yeah, that looks nice. Looks like a kind of symmetrical space between this and this, which I kind of like. So we'll go with that. [00:25:30] This an example of utility classes that we start by ourselves to. If we need a value, like a margin that's like much bigger than that, we'll have to start to write our own css.
-
-But for the most part, the five or 10 options that we start will get percent of the way and lead to having a more consistent us, us choosing the values white space that we need and [00:26:00] make add.
-
-And that's now, let me give you a second. If you need to, there's, at the very bottom of this, there's a link to solutions in a poll request. So like everything that I'm gonna do today is you can view it all here, kind of the line by line changes [00:26:30] between the starting point and the final result. Now, you know, kind of build up incrementally so it will make sense.
-
-Results.
-
-See what we ended up with. All right.
-
-Solutions.[00:27:00] 
+## 00:27:00 to
 
 Yeah. Yeah. If you think it's better for my own self
 
