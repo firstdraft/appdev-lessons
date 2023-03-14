@@ -47,6 +47,25 @@ Otherwise, they are just like strings, and we can use them to hold text data:
 
 So, that's that. `Symbol`s are lightweight strings that we, the developers, use when we need to label things. Let's continue.
 
+----
+
+#### Quiz Question
+
+- Which of these is a valid `Symbol`?
+- `"my_symbol"`
+    - No, that's a string
+- `:my_symbol`
+    - Yes!
+- `:MySymbol`
+    - No, we only use lowercase letters to create a symbol
+- `: my_symbol`
+    - No, look out for extra whitespace
+- `:my symbol`
+    - No, look out for extra whitespace that should be an underscore
+{: .choose_best #symbol_syntax points="10" answer="2" }
+
+----
+
 ### Creating hashes and storing values
 
 Back to the problem of storing a list of attributes about a person effectively, without mixing them up.
@@ -104,7 +123,7 @@ Beautiful! Now we don't have to remember that position number 1 is last name, po
 
 Let's put it all together with multiple `Hash`es:
 
-```
+```ruby
 person1 = Hash.new
 person1.store(:first_name, "Raghu")
 person1.store(:last_name, "Betina")
@@ -124,14 +143,26 @@ p person2.fetch(:first_name) + " is a " + person2.fetch(:role)
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/hash-second-person){:target="_blank"}
 </div>
 
-A few things to try:
+----
 
- - What happens when you try to `.fetch` using a `String` like `"role"`?
- - What happens when you try to `.fetch` using a key that doesn't exist, like `:middle_name`?
+#### Quiz Question
 
-Get used to those error messages. You're going to see them a _lot_.
+- What happens when you try to `.fetch` on `person1` using a string like `"role"` or a key that isn't there like `:middle_name`?
+- `"role"` still returns the role, `:middle_name` returns `nil`
+    - Really? Did you try it?
+- `"role"` returns an error, `:middle_name` returns `nil`
+    - Really? Did you try it?
+- `"role"` returns an error, `:middle_name` returns an error
+    - Yes!
+- `"role"` returns `nil`, `:middle_name` returns `nil`
+    - Really? Did you try it?
+{: .choose_best #hash_error points="10" answer="3" }
+
+----
 
 #### fetch fallback
+
+Get used to error messages when you're working on fetching from `Hash`es. You're going to see them a _lot_.
 
 Sometimes you may want to call `.fetch` using a key that may not be present in the `Hash`, and you don't want the program to crash with the "key not found" error message. In that case, you can provide a second argument which will be used as a fallback return value:
 
@@ -167,12 +198,45 @@ In particular, `Hash`es are very often used as the arguments to methods, because
 Movie.where({ :title => "The Shawshank Redemption" })
 ```
 
-<div class="proj" markdown="1">
+----
 
-  Open the Gitpod [`Hash` project](https://github.com/appdev-projects/ruby-project-hash-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `person.rb`.
+#### Quiz Question
 
-  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
-</div>
+Consider the hash:
+
+```ruby
+feeding_time = { :bear => "salmon", :zebra => "grass", :monkey => "banana" }
+```
+
+- Check all that apply
+- The symbols `:bear`, `:zebra`, and `:monkey` are the values, and `"salmon"`, `"grass"`, and `"banana"` are the keys
+    - No, please re-read the previous section
+- The strings `:bear`, `:zebra`, and `:monkey` are the keys, and `"salmon"`, `"grass"`, and `"banana"` are the values
+    - No, is `:bear` a string?
+- The symbols `:bear`, `:zebra`, and `:monkey` are the keys, and `"salmon"`, `"grass"`, and `"banana"` are the values
+    - Yes!
+- We should have used square brackets `[]` to make the `Hash`!
+    - No, please re-read the previous section
+- We could add another key/value pair with the code `feeding_time.store("cereal", :human)`
+    - No, please re-read the previous section
+- We could add another key/value pair with the code `feeding_time.store(:human, "cereal")`
+    - Yes!
+{: .choose_all #feeding_time points="10" answer="[3,6]" }
+
+----
+
+#### Quiz Question
+
+- In the previous `feeding_time` variable, how would you retrieve the string `"grass"`?
+- feeding_time.fetch(:zebra)
+    - Yes!
+- .fetch(:zebra)
+    - Yes!
+- fetch(:zebra)
+    - Yes!
+{: .free_text #feeding_fetch points="10" answer="[1,2,3]" }
+
+----
 
 ### fetch shorthand, []
 
@@ -224,6 +288,13 @@ p person1
 
 This syntactic sugar makes it _feel_ like we're doing variable assignments to keys within the `Hash`, but under the hood it's identical to `.store(:key, :value)`.
 
+<div class="proj" markdown="1">
+
+  Open the Gitpod [`Hash` project](https://github.com/appdev-projects/ruby-project-hash-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `person.rb`.
+
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+</div>
+
 ### Use .keys to explore
 
 A very important method to use when you're dealing with `Hash`es that you didn't create yourself is `.keys`:
@@ -263,12 +334,22 @@ colors_array = dictionary.fetch(:colors)
 # =>  ["red", "green", "blue"]
 ```
 
-Now we can access the value at the second position with `.at`:
+----
 
-```ruby
-colors_array.at(1)
-# => "green"
-```
+#### Quiz Question
+
+- Now that we have `colors_array`, how can we get the string `"green"`?
+- `colors_array.at(1)`
+    - Yes!
+- `colors_array.at(2)`
+    - No, remember zero indexing
+- `colors_array.fetch("green")`
+    - No, we're dealing with an `Array` object, how do we fetch from that?
+- `colors_array.fetch(1)`
+    - No, we're dealing with an `Array` object, how do we fetch from that?
+{: .choose_best #get_green points="10" answer="1" }
+
+----
 
 Similarly, to retrieve `32` from the `Hash`, we first need to access the inner `Hash` under the key `:person`.
 
@@ -277,12 +358,26 @@ person_hash = dictionary.fetch(:person)
 # => { :name => "Jenna Parker", :age => 32 }
 ```
 
-Once the inner `Hash` has been retrieved, we can access the value stored under `:age` using `fetch`:
+----
 
-```ruby
-person_hash.fetch(:age)
-# => 32
-```
+#### Quiz Question
+
+- Now that we have the inner `Hash` (`person_hash`), how can we get the integer `32`?
+- `person_hash.at(1)`
+    - No, we're dealing with a `Hash` object, how do we fetch from that?
+- `person_hash.at(2)`
+    - No, we're dealing with a `Hash` object, how do we fetch from that?
+- `person_hash.fetch(:name)`
+    - No, which key do we want to fetch?
+- `person_hash.fetch(32)`
+    - No, which key do we want to fetch?
+- `person_hash.fetch("age")`
+    - No, we want to fetch on a symbol as the key
+- `person_hash.fetch(:age)`
+    - Yes!
+{: .choose_best #get_age points="10" answer="6" }
+
+----
 
 <div class="proj" markdown="1">
 
@@ -307,16 +402,10 @@ h.key(500)   #=> nil
   Return to the Gitpod `Hash` project and work through `find_value.rb`
 </div>
 
-**BENP: note this issue https://piazza.com/class/ldj532ul5a0621/post/142**
-
-**BENP: also this issue https://piazza.com/class/ldj532ul5a0621/post/253**
-
 <div class="proj" markdown="1">
 
-  Finally, in the Gitpod `Hash` project complete `list.rb`
+  Finally, in the Gitpod `Hash` project work through `list.rb`
 </div>
-
-**BENP: need a looping with hashes exercise: https://piazza.com/class/ldj532ul5a0621/post/263, this might help: https://piazza.com/class/ldj532ul5a0621/post/267**
 
 ### Conclusion
 
@@ -325,3 +414,7 @@ h.key(500)   #=> nil
 But when you are storing a list of things that are categorically different from one another and you'd rather label them yourself, then `Hash`es are a better choice. That's about it!
 
 The last intro topic to cover in the next section is creating our own classes in Ruby.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
