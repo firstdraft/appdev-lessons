@@ -77,7 +77,7 @@ If your project requires scanning text for patterns, then [RegexOne](https://reg
 
 #### String interpolation
 
-**BENP: interpolate exercise with gets chomp: https://piazza.com/class/ldj532ul5a0621/post/128**
+**TODO: interpolate exercise with gets chomp: https://piazza.com/class/ldj532ul5a0621/post/128**
 
 We spend a lot of time composing strings of output for our users, so let's see another example. Try this:
 
@@ -262,6 +262,6 @@ end
 As you can see, some methods provide more than one block variable. `.each_with_index` allows you to name two variables within the pipes; the first one will receive the element, and the second one will receive the index of the iteration. Within the block you can use both variables as you see fit. In rare cases, handy.
 
 
-**BENP: might be cool to include some notes / exercise about "bang!": https://piazza.com/class/ldj532ul5a0621/post/192**
+**TODO: might be cool to include some notes / exercise about "bang!": https://piazza.com/class/ldj532ul5a0621/post/192**
 
 ----
