@@ -310,7 +310,7 @@ We can improve that simple green text with [bootstrap alerts](https://getbootstr
 
 And now try to refresh the **/movies** page. 
 
-We have an issue. If there is no notice or alert, a red and a green box still appear. So what should we do? How about some `if` control flow? There's a nice method for this, which will check if the message is undefined or `nil` and return true or false:
+We have an issue. If there is no notice or alert, a red and a green box still appear. So what should we do? How about some `if` control flow? There's a nice method for this, which will check if the message is undefined or `nil` and return true or false: `.present?`
 
 ```html
 <!-- app/views/layouts/application.html.erb -->
