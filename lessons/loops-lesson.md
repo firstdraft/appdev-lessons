@@ -4,8 +4,6 @@
 
 Consider the following program, which utilizes an `if` statement:
 
-**BENP: note confusion about instantiation: https://piazza.com/class/ldj532ul5a0621/post/148**
-
 ```ruby
 numbers = Array.new
 
@@ -28,6 +26,25 @@ What do you expect the output of this program to be? Try to interpret the progra
 </div>
 
 Hopefully you clicked "▶ Run". Did you guess right?
+
+----
+
+#### Quiz Question
+
+In the code, we need to start by **instantiating**, or "creating an instance of", the variable `numbers`. This is just an empty array, but we fill it in the `if` statement (by `.push`ing into it). 
+
+- If we had *not* instantiated `numbers`, then what would have happened at the step `numbers.length`?
+- The `if` statement would not evaluate and the code would just print the `numbers` and `len` variables
+    - No, maybe try it in the `irb` terminal
+- We would get an error message but we wouldn't take the time to read it
+    - No! Always, always RTEM!
+- We would get an error message and we would take the time to read and understand it
+    - Yes! We love error messages.
+- We cannot call `.length` on an empty array
+    - No, we can and we did
+{: .choose_best #instantiate points="10" answer="3" }
+
+----
 
 We start off with a blank array, `numbers`. If its length is less than `10` (this is true, since length is currently `0`), we push a new random number into it.
 
@@ -110,9 +127,7 @@ end
 
 Does the code make sense to you?
 
-<aside markdown="1">
-If the line `mississipis = mississipis + 1` looks a little odd to you, you're not alone. Remember, this is _variable assignment_ with the `=`, not equivalence. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
-</aside>
+If the line `mississipis = mississipis + 1` looks a little odd to you, you're not alone. Remember, this is _variable assignment_ with the `=`, not equivalence with `==`. So the expression on the right side (`mississipis + 1`) is evaluated _first_ until there's just one object (e.g. `2`) left; and then that object replaces the contents of the variable (`mississipis`) named on the left. Rinse and repeat.
 
 Or, rather than `while`, I could use `Integer`'s `.times` method, like this:
 
@@ -137,9 +152,38 @@ In order to pass a method _some lines of code_ as an argument, we need to wrap t
 
 So, given a **block** of code, the `10.times` method will execute it for us exactly 10 times; this saves us the trouble of writing a condition for `while`.
 
+----
+
+#### Quiz Question
+
+- Check all that are true
+- We can nest an `if` statement inside of a block
+    - Yes! We just need to indent it inside to make it clear.
+- The code `3.times`, the code `[0, 6, 12].count.times`, and the code `"abc".length.times` are NOT equivalent
+    - No, what do `.count` and `length` return?
+- The code `3.times`, the code `[0, 6, 12].count.times`, and the code `"abc".length.times` are equivalent
+    - Yes! The second two return the integer 3 before `.times`
+- Blocks are variables inside of if statements
+    - No, re-read the previous section
+{: .choose_all #blocks points="10" answer="[1,3]" }
+
+----
+
+<div class="proj" markdown="1">
+
+  Open the Gitpod [loops project](https://github.com/appdev-projects/ruby-project-loops-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `letter_count.rb`.
+
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+</div>
+
+<div class="proj" markdown="1">
+
+  Return to the Gitpod loops project and work through `fizz_buzz.rb`
+</div>
+
 #### Block variables 
 
-But the `.times` method will save us even more trouble than that; we can stop worrying about creating and incrementing the counter variable, `mississipis`, too. The `.times` method will create a **block variable** and assign values to it for us automatically, but we have to choose a name for it using some new syntax after the `do`: the vertical bars, `| |`, or "pipes". It looks like this:
+The `.times` method will save us even more trouble; we can stop worrying about creating and incrementing the counter variable, `mississipis` from our previous examples. The `.times` method will create a **block variable** and assign values to it for us automatically, but we have to choose a name for it using some new syntax after the `do`: the vertical bars, `| |`, or "pipes". It looks like this:
 
 ```ruby
 10.times do |mississipis|
@@ -162,7 +206,7 @@ Try running it. Here's what's going on:
  - The `.times` method executed the block of code the second time.
  - Etc.
 
-Why does `.times` start by assigning `0` to its block variable during the first iteration, rather than `1`? Well, that's just how the author of the `.times` method made it work. Remember, Ruby, like many other languages uses zero-indexing.
+Why does `.times` start by assigning `0` to its block variable during the first iteration, rather than `1`? Well, that's just how the author of the `.times` method made it work. Remember, Ruby, like many other languages uses [zero-indexing](https://learn.firstdraft.com/lessons/14#at){:target="_blank"}.
 
 Fortunately, Ruby provides lots of other looping convenience methods that we can take advantage of instead, and each one assigns different values to its block variable.
 
@@ -175,31 +219,34 @@ In the REPL above, replace `10.times` with each of the following and play around
 10.step(1, -4)
 ```
 
-**BENP: need exercise for range and step: https://piazza.com/class/ldj532ul5a0621/post/235**
+----
 
-**BENP: might need letter_count hint to use times (not each): https://piazza.com/class/ldj532ul5a0621/post/266**
+#### Quiz Question
+
+- Check all that apply
+- In `2.upto(10)`, the count begins with 3 and goes to 9
+    - Really? Did you try it?
+- In `0.step(10, 2)`, `0` is the start, `10` (first argument) is the step, and `2` (second argument) is the highest value
+    - Really? Did you try it?
+- In `1.step(10, 2)`, `1` is the start, `10` (first argument) is the highest value, and `2` (second argument) is the step
+    - Yes!
+- In `2.step(50, 10)`, the count would proceed like `2`, `10`, `20`, etc.
+    - Really? Did you try it?
+- In `1.upto(11)`, the count would proceed like `1`, `2`,...,`11`
+    - Yes!
+{: .choose_all #ranges points="10" answer="[3,5]" }
+
+----
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod [loops project](https://github.com/appdev-projects/ruby-project-loops-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `letter_count.rb`.
-
-  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
-</div>
-
-**BENP: multiples confusion: https://piazza.com/class/ldj532ul5a0621/post/269**
-
-<div class="proj" markdown="1">
-
-  When you're done with the first one, work through `multiples.rb`
-</div>
-
-**BENP: need more instruction or better lead up with conditionals to fizzbuzz: https://piazza.com/class/ldj532ul5a0621/post/264**
-
-<div class="proj" markdown="1">
-
-  And finally, work through `fizzbuzz.rb`
+  Return to the Gitpod loops project and work through `multiples.rb`
 </div>
 
 ###  Conclusion
 
 Now that we have an understanding of loops, we can have a look at the super important `.each` method for iterating over data structures.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
