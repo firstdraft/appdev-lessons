@@ -597,53 +597,132 @@ This is a very handy way of bundling together related inputs in a form into a la
 
 This is the technique that we use more often when we're building forms. All of the inputs that are related to one model object, a `Movie` or a `Director`, are bundled into one subhash and stored a key `movie` or `director`. We want _that_ resoure to be a top level key in the `params` hash and then the subhash should have all of the attributes (or column values) for that top level key. 
 
-## Refactor Forms with Subhashes 00:39:00
+## Refactor Forms with Mass Assignment 00:39:00
 
-Given this new principle of nested hashes in our `params`, let's reorganize our forms. Open 
+Given this new principle of nested hashes in our `params`, let's reorganize our forms. Open the `new.html.erb` form:
 
-So I'm going to go back here. I'm going to bring this back here. And given this, I want to think about our new form and what I want to do. Is put all of these [00:39:00] into a, in the prams hash. I want them all to be in a subha under a key called movie.
+```html
+<!-- app/views/movies/new.html.erb -->
 
-So what I'm saying here is I want the prams hash to end up looking like movie. And then I want title, some whatever I type. And then description.
+...
+<%= form_with(url: movie_path(@movie)) do %>
+  <div>
+    <%= label_tag :title %>
 
-This is, this is my goal. I want the prams hash [00:39:30] to look like this. So I need to name my inputs in, in a particular way. Okay, cool, cool, cool. That means, so this is, what is the name of the inputs? So I'm, I had 'em a very concise form here. Now I have to make it like less concise, but that's cool. I'm going to do, I'm going to use strings here, cuz now you have to use those square brackets.
+    <%= text_field_tag :title, @movie.title %>
+  </div>
 
-And I'm not sure if I can use square brackets and symbols, but, If I want the top level key, that means they have [00:40:00] to say movie and then title and movie, and then the description, and we'll worry about these labels in later on. We'll get all that to match up the labels and the IDs and the forests. We'll get that all tidied up later.
+  <div>
+    <%= label_tag :description %>
 
-Let's just get this to work first. So I'm going to go check out my form, view source, [00:40:30] see if this did what I wanted. So the input now has a name movie, Squareback title movie, Squareback description. So I think this is going to do what I want when I submit this form, say sum title, some description. Of course, my controller actions are now going to have to be updated, so I'm getting a missing parameter error.
+    <%= text_area_tag :description, @movie.description, { rows: 3 } %>
+  </div>
+...
+```
 
-But in the server log, [00:41:00] I got what I wanted in terms of the structure. I have a top level key movie and all of the movie related attributes, which could be like 30 of them, are nicely bundled into the subhash. Excellent. Now let's update our controller code to take advantage of this in the create action. I have to, well, it's going to be a little bit more verbose now because I'm going to do prams [00:41:30] fetch first.
+My goal with this form, is to have the `params` hash end up looking like:
 
-I'm going to fetch the key of movie. Then I'm going to fetch, oops, I did thought I had multiple controllers here. Multiple cursors rather. So first I'm going to fetch the Kiev movie, and then I'm going to fetch. The next key, right? So you have to go two levels in. Okay, now this should work. And there we go. We're back to [00:42:00] having it work Like before now, you might be like, oh, wow, you just made extra work for yourself.
+```ruby
+{ :movie => { :title => "Some title", :description => "Some description" } }
+```
 
-But trust me, we're, we're getting, we're getting there slowly, step by step. Okay? Here's another thing to realize. Let me make a good commit. So far, so good.
+Whereas, right now, it looks like:
 
-In my Rails console, I want to look at a nice [00:42:30] technique. Let me just make this commit before I mess anything up. New movie form. Now, Nasts movie attributes subha within prams.
+```ruby
+{ :title => "Some title", :description => "Some description" }
+```
 
-Here is what we usually do when we want to create a new movie. Movie can movie our new M title equals high M description equals bye m save. [00:43:00] Right. Great. There's a slightly more concise way of doing this sort of suppose you happen to have a hash laying around that happens to have keys in it
+So let's change the `"name"` attribute in the helper methods to use those square brackets we just learned about:
 
-that exactly match your column names. Exactly right. So the hash has exactly the [00:43:30] same column names as the movie table. Well, I can say movie.new and I can give the new method, the hash as an argument. and the new method will iterate through the key value pairs and it will assign this value to the column that has this name and this value to the column that has this name.
+```html
+...
+<%= form_with(url: movie_path(@movie)) do %>
+  <div>
+    <%= label_tag :title %>
 
-So that just like that X is initialized with those values. [00:44:00] Mm-hmm. , maybe you can see where I'm going with this now. Right?
+    <%= text_field_tag "movie[title]", @movie.title %>
+  </div>
 
-Uh, look at that hash and then look at the hash that came into our server log. I already cleared it, but perms fetch. So like the movie attributes are in a subhash [00:44:30] called movie, which means I can just pass them as an argument. to.new and imagine in your head if there was 30 of those. So there, there was in, in APTA one code, there's 30 lines of code of of assignments here happening every single time, right?
+  <div>
+    <%= label_tag :description %>
 
-We don't have to do that. This is called mass assignment. the.new method is capable of receiving a hash containing all of the attribute value [00:45:00] pairs and it'll mass assign them to all of the columns for us.
+    <%= text_area_tag "movie[description]", @movie.description, { rows: 3 } %>
+  </div>
+...
+```
+{: mark_lines="6 12"}
 
-Is this going to work? Unfortunately, it's not going to work. It's not that easy. My friends, if I say Alice, Bob and I create, I get this forbidden attributes error. What is this? This is Rails doing more fancy pants security on our behalf without us even realizing it. [00:45:30] This is protecting us against another type of attack, not a CSR attack, but a different type of attack.
+Now we can test our form at **/movies/new** and we will get an error because we haven't changed the controller yet to fetch the parameters in this new format. But, if we look at the server log, then we should see that we achieved our goal and we have subhash. 
 
-Where if people know Rails does this and people know that Rails developers are blindly passing whatever parameters are in the form there, there's an attack where people manipulate the form, which already has that C S R F authenticity token in it. So they're going to, in Chrome, they're going to inspect the form that already has the [00:46:00] authenticity token.
+Let's update our controller to take advantage of this in the `create` action: 
 
-Then they manipulate what inputs are in there to put inputs that are not supposed to be in there, and they'll modify columns that are not supposed to be modified like admin, and they'll switch it to true. So what you have to do is you have to say which attributes are allowed to be mass assigned like this.
+```ruby
+# app/controllers/movies_controller.rb
 
-You have to whitelist which columns you, you allow to be assigned in this manner. Because there are sneaky users. And that funny, it [00:46:30] was funny because the, the security researcher who discovered this hack, and we don't know how many times the hack was abused before this, but the person who publicized this hack, the way that he got attention, he, he's, he claims he reported it, but it, he didn't get enough attention from the Rails team.
+  ...
+  def create
+    @movie = Movie.new
+    @movie.title = params.fetch(:movie).fetch(:title)
+    @movie.description = params.fetch(:movie).fetch(:description)
+  ...
+```
+{: mark_lines="6-7"}
 
-So he hacked GitHub, made himself uh, an admin on the Rails repository, and then he made a commit to Rails itself. And then that got David's attention and then they made this change. So, [00:47:00] alright, we, what we need to do here is we say prams dot require instead of fetch and prams because prams isn't actually just a plain hash, peram is a very complicated and powerful other class.
+Now the form on **/movies/new** should work.
 
-It has a method called Require, which returns an object of another class, which has a method called Permit. Then you list, which, Attributes you will allow through for mass [00:47:30] assignment. So now if I try this, I noticed that I didn't allow description through, I only allowed title through. So description ran into that wall, title, got through, description, didn't, and now we get this red error in the server log.
+But with our new subhash, we can be slightly more concise. Suppose you have a `Movie` object, and you happen to have a hash laying around that has keys in it that exactly match your column names. So the hash has _exactly_ the same column names as the `movies` table.
 
-That's really easy to spot. This is a super common thing. Whenever you add a new column, whenever I add a new column, I always forget that. I also have to whitelist it in my, what's called [00:48:00] strong parameters list. And then I look at my server log and I see this error message. I'm like, have strong parameters.
+Well, I can say `Movie.new`, and I can give the `.new` method that hash as an argument: 
 
-I forgot about the GitHub hack. And then I have to go in here and I have to do this. And then it'll work,
+```ruby
+# app/controllers/movies_controller.rb
+
+  ...
+  def create
+    movie_attributes = params.fetch(:movie)
+    @movie = Movie.new(movie_attributes)
+    # @movie.title = params.fetch(:movie).fetch(:title)
+    # @movie.description = params.fetch(:movie).fetch(:description)
+  ...
+```
+{: mark_lines="5-6"}
+
+The `.new` method will iterate through the key value pairs in `movie_attributes`: `{ :title => "Some title, :description => "Some description }`, and it will assign this value to the matching column! 
+
+We don't need to have the assignment happening on separate lines. Imagine if our table had 30 columns we were trying to assign? This **mass assignment** technique would help a lot.
+
+Is this going to work? Try and refresh **/movies/new** and try the form again... Unfortunately, it's not going to work. It's not that easy, my friends. 
+
+I get a `ForbiddenAttributesError`. What is this? This is Rails doing more fancy security on our behalf without us even realizing it.
+
+There's an attack where people manipulate forms, which already have that CSRF authenticity token in them. A malicious user can still manipulate what inputs are in the form to put inputs that are not supposed to be there (e.g., `admin`), allowing them to modify columns that are not supposed to be modified.
+
+How do we fix this error? We have to say which attributes are _allowed_ to be mass assigned by **whitelisting** them.
+
+<aside markdown="1">
+The security researcher who discovered this security hole got attention for it by hacking GitHub, making himself an admin on the Rails repository, and then making a commit to Rails itself. That got their attention! And the whitelisting fix was added.
+</aside>
+
+In our `create` action, we need to change the way we get the `params`:
+
+```ruby
+# app/controllers/movies_controller.rb
+
+  ...
+  def create
+    movie_attributes = params.require(:movie).permit(:title, :description)
+    @movie = Movie.new(movie_attributes)
+    # @movie.title = params.fetch(:movie).fetch(:title)
+    # @movie.description = params.fetch(:movie).fetch(:description)
+  ...
+```
+{: mark_lines="5"}
+
+Rather than `.fetch`ing `:movie` from the `params`, we need to `require(:movie)` and then `.permit` and list of the allowed columns. 
+
+Whenever you add a new column, you also have whitelist it in your **strong parameters** list and then it'll work. Try the **/movies/new** form and see.
+
+What if you added a new column or forgot about one of them, like if you remove `:description` from the `permit` list above? Try it and check the server log. You should see in red font `Unpermitted parameter: :description`. Rails makes this error really prominent, because it's so common. Don't forget to whitelist all of the columns you want to modify, but, if you do, you'll be reminded!
 
 create, and now it works. Yay. Okay, so this is awesome. Oh my gosh, this my friends is the biggest code savings of all. Think about. How many columns we usually have in all of our, in our tables, usually not just two. And [00:48:30] then for, we have one of these, we have like huge chunks of code for all of these assignments in all of our controllers.
 
