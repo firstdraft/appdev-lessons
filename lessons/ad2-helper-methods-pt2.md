@@ -597,7 +597,7 @@ This is a very handy way of bundling together related inputs in a form into a la
 
 This is the technique that we use more often when we're building forms. All of the inputs that are related to one model object, a `Movie` or a `Director`, are bundled into one subhash and stored a key `movie` or `director`. We want _that_ resoure to be a top level key in the `params` hash and then the subhash should have all of the attributes (or column values) for that top level key. 
 
-## Refactor Forms with Mass Assignment 00:39:00
+## Refactor Forms with Mass Assignment 00:39:00 to 00:49:00
 
 Given this new principle of nested hashes in our `params`, let's reorganize our forms. Open the `new.html.erb` form:
 
@@ -724,85 +724,190 @@ Whenever you add a new column, you also have whitelist it in your **strong param
 
 What if you added a new column or forgot about one of them, like if you remove `:description` from the `permit` list above? Try it and check the server log. You should see in red font `Unpermitted parameter: :description`. Rails makes this error really prominent, because it's so common. Don't forget to whitelist all of the columns you want to modify, but, if you do, you'll be reminded!
 
-create, and now it works. Yay. Okay, so this is awesome. Oh my gosh, this my friends is the biggest code savings of all. Think about. How many columns we usually have in all of our, in our tables, usually not just two. And [00:48:30] then for, we have one of these, we have like huge chunks of code for all of these assignments in all of our controllers.
+Please take a moment and refactor the `update` action as well to follow this new format. When you're done, make a **/git** commit.
 
-All of that goes away now with this mass assignment technique. So amazing. We can do the same thing. Uh, for update. I'm going to allow you to do the update action yourself, but let me make this even more concise. Let me make this a, let me get, commit this first. [00:49:00] Now, one last thing
+## Form Builder with Model 00:49:00
 
-for this video. This is looking great. Love this. This is looking awesome, this form. This is the, this is the only thing that, and we have to make the IDs match up, and that's the thing that we have to do. Like I feel like I went a little bit backwards here. It was [00:49:30] nice, and then I made it less nice and it's going to get even less nice once I fix these label tags to match up.
+We need to go back to our forms and make sure the `for=""` and `id=""` attributes matchup between labels and inputs. They already did before, but when we introduced that `[]` square bracket syntax to get to mass assignment with whitelisting, we went a bit backwards:
 
-And then I have to add the ID back over here to both of these things, so I may, there's a better way here if we want this nested behavior. Essentially what's happening is when you're making forms, generally this is the right technique. When you're making a sign-in form or when you're making a search form, this is what you have to [00:50:00] do form with url label tag, text field tag.
+```html
+<!-- app/views/movies/new.html.erb -->
 
-These are the helper methods that you use when you're making a form for the specific purpose of creating a record in your database table using an active record instance or updating a record. That's a very specific job and there's a, a more specific method for that, and that will save us even more code.
+<h1>New movie</h1>
 
-It's actually the same [00:50:30] method. It's just a different way of using the method. It used to be a different method, but then they unified the two methods in rail six. So we're going to use that. And as you know, most of what our applications do is crud. So actually 99% of our forms, the purpose of them is to just create or update one record.
+<% @movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
 
-So it's really handy that there's this other way of using it. Here's how it works. Instead of saying form with url, you say form with model. [00:51:00] And the argument for this now should be the object that itself, that you're trying to build a form for. Now, what the heck is this object? Oh, this was, remember, think.
+<%= form_with(url: movies_path) do %>
+  <div>
+    <%= label_tag :title %>
 
-Remember how we created a new movie Object. in the new action. Now we did that only because we were going to draw this errors collection and if we did this and we didn't have any object there on the very first time somebody visited slash new before they even filled anything out, so there was no [00:51:30] errors, we would get a undefined method errors for nil.
+    <%= text_field_tag "movie[title]", @movie.title %>
+  </div>
 
-So we're like, okay, we're just going to create a blank object just to satisfy that so that when we re-render the page later from a different action, we can use the reuse the same template. So this object will have an errors collection in this case, and it allowed us to be lazy and reuse the same template from two different actions instead of creating two different templates that have 99% of the same code.
+  <div>
+    <%= label_tag :description %>
 
-But hey, it's going to come in handy for us [00:52:00] that we have a movie object, cuz now I'm going to say, give me a form. And the purpose of this form is to create this new record in the movies table. Okay, with only that change, I just switched it from form with URL to form with model. What's going to happen to the action attribute?
+    <%= text_area_tag "movie[description]", @movie.description, { rows: 3 } %>
+  </div>
 
-Let's take a look here. So if I go to add a new movie, look at the source code of this form,[00:52:30] 
+  <%= button_tag "Create Movie" %>
+<% end %>
+```
+{: mark_lines=""}
 
-it did the same exact thing. Let me prove to you that it did the same exact thing. I'm going to put an end in here and switch it back to URL and movies path. So now there's two. And let's take a look at the source code of this and prove that actually. So here's the form with url [00:53:00] and here's the new form with model.
+Well, there's actually a better way if we want that nested hash behavior. If we're making a form for the specific purpose of creating a record in our database table or updating a record with `ActiveRecord`, there's a more specific way of using `form_with`. Here's how it works. 
 
-And the opening tags are exactly the same with a slightly different authenticity token of course. , but they do the same exact thing. So this is another one of these so-called magical instances where Rails knows or assumes that if you're trying to create a record and this record is [00:53:30] class is, so Rails calls a dot class on this and Rails understands, okay, this is a class instance of class movie.
+Instead of saying `form_with(url: ...)`, you say `form_with(model: ...)`. And the argument for this should be the object _itself_, that you're trying to build a form for! 
 
-And if you are going to be, if you're following all the conventions, then that means you probably have a route called movies and that's probably alias as movies. So there must be a movie's URL helper Method, and Rails itself is going to call that helper method in order to generate the URL for the action of the form.[00:54:00] 
+```html
+<!-- app/views/movies/new.html.erb -->
 
-I know Madness, right? If you don't believe me, I'm going to comment this out. And this out. So that means there's no movies help Path Route Helper anymore, which means we're going to get undefined local VRBO method movies, path Online Seven. It's like, oh, actually wait. I did explicitly call Movies Path there.
+<h1>New movie</h1>
 
-Hang on a second, [00:54:30] go back here, I'll comment these out. So now it's a form with Online 12. Look at that. Now. On line 12 it says, undefined Method Movies, path Online. 12. We didn't call Movies Path. Who called Movies Path. The Form with Method saw that this is an instance of class movie and it called Movies Path, assuming that you were going to re name your Routes Restfully.
+<% @movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
 
-But, so if you don't have Restful Routes, then you can't [00:55:00] use this form with Model Trick. So this is why Restful Routes and generally conventions and Rails. , the dividends just compound and compound and compound and compound and compound on each other. Alright, so let's go back and I want my restful routes again.
+<%= form_with(model: @movie) do %>
+  <div>
+    <%= label_tag :title %>
 
-So put that back, put that back. Now that this method exists, now I can use this method. I've got this going and I can get rid of this. [00:55:30] Awesome. I can get rid of this. Now that we get that idea. Alright, cool. So I've exactly replicated the previous behavior with this form with, but the benefit of using form with model is there's now a block variable.
+    <%= text_field_tag "movie[title]", @movie.title %>
+  </div>
 
-Provided this method now produces a block variable known as a form builder object. And you can call it anything you want to, the convention is to call it [00:56:00] form, but again, it's, it's just a block variable. So you can call it whatever. Now the Form Object has methods called label. Basically it's the same thing, but take off the tag and it has labels called that form label, form text field.
+  <div>
+    <%= label_tag :description %>
 
-And I'm going to switch this back to just movie. And I'm going to take [00:56:30] out this, or sorry, title rather. So we'll put it back to how it was before I took out that, uh, at movie title, the second argument. And let's just take a look at what happens to the source code here. For this first section, we're going to refresh and it created a label.
+    <%= text_area_tag "movie[description]", @movie.description, { rows: 3 } %>
+  </div>
 
-It correctly created the content for the label by capitalizing what we put in as the argument. It created a four attribute of [00:57:00] movie underscore title, which is interesting, and it matched that up with the input correctly, which is great input type text and look at the name of this, it correctly did exactly what we wanted, which was create that nested structure cuz it knows that we're trying to create a form for a model.
+  <%= button_tag "Create Movie" %>
+<% end %>
+```
+{: mark_lines="9"}
 
-Excellent. Well what about this though, like previously we had at movie title, this was the, this was to be [00:57:30] used as the value attribute in case of form validation failures and we lost that, right? Let's, let's check out what happens here. If I say description. So, okay, so if I leave everything blank validations fail, put in this.
+Now, what the heck is this `@movie` object? 
 
-Wait a second. It works. It still works. Just like before, if I put this in, do that, look at the source code. We still have, [00:58:00] uh, this is the wrong source code.
+Remember how we created a new `@movie` object in the `new` action in our controller? We did that only because we were going to draw the errors collection in the first few lines on the `new.html.erb` page. We created a blank object just to satisfy the case where a user visits **/movies/new** for the first time, and there is no prepopulating of fields to do. 
 
-Hmm, I see It's giving me the source code of the index page because this is after a validation failure. So it's rendering the new template, but it's on the route. Looks like slash movies cuz we did a post to slash movie. [00:58:30] So it's doing a get of the source code of slash movies. But I need this. But in any case, you can see here, if I inspect element, that'll be a better way of doing it.
+Now `@movie` is coming in handy again, by telling the form that we want to `create` this new empty movie object. We want to take this empty thing and save it to our database.
 
-It did a value attribute and it populated it with what it, what it had before, so it's correctly pre-populating. This box Rails does it automatically when we use the form with helper for a model, give it a form block [00:59:00] variable. These methods automatically do the right thing of using whatever attributes this object already has.
+Okay, with only that change, what's going to happen to the `action` attribute on the form?
 
-So if I previously, let's just oppose this object, if I do at movie dot title equals preexisting value, so I'm assigning a value to it and then I rendered this form when the title method here [00:59:30] is called with Tex Field. It's going to be smart enough to prepopulate. Whatever value's already on that object. So it makes edit forms super easy.
+Refresh **/movies/new** and view source. It did the same exact thing! The `action` is still `"/movies"`. 
 
-It makes this re rendering super easy after validation. Failure methods, me messages. Okay. Whew. So now this form becomes really elegant. Form dot description. Oops. And this just [01:00:00] becomes description. We can get rid of this, it takes care of automatically. We can put in any other customizations that we want and we can even do form dot button, and we can even get rid of this copy.
+This is another one of these so-called "magical" instances. Rails knows, or assumes, that there is a route called `@movie.class.downcase` (`movie`) that is an alias for`"/movies"`, and it can then call `movie_url` and find the action associated with that route in `config/routes.rb` (`create`) to build a form for the new movie!
 
-And because this is a smart, smart method and it knows that this is a new instance that we created over here, it's a, it still hasn't been persisted to the database. It doesn't have an id. It knows that, oh, oh, I [01:00:30] shouldn't use the dot tag. I need to get rid of dot underscore tag on these two.
+Madness, right? This is the result of all of these compounding dividends, straight from our RESTful routes to here!
 
-It knows to put Create movie on here because that's a brand new record. If I had already saved that object, let's just for kicks, do movie, do new save. Although that won't work because it needs some attributes. So I'm going to say title dot, hi prescription [01:01:00] as you can mass signing these and saving it.
+Another benefit of using `form_with(model: ...)` is that there's now a block variable, known as a **form builder object**. 
 
-Oops. And then I'm going to go to add a new movie,
+```html
+<!-- app/views/movies/new.html.erb -->
 
-undefined. Oops. Okay, so let me, I did that too much in one line. Do this@movie.save and then let's see what it says. Okay, so it's going to prefill [01:01:30] and notice. That because this object already exists. The button copy changed to update. This is a smart helper. It's such a smart helper because I'm calling it on this object.
+<h1>New movie</h1>
 
-This object is coming from here. This is an argument. It knows that this has already been persisted to the database. So it writes this copy for us. Of course we can change it and say howdy and put whatever copy we want to [01:02:00] if necessary, we can override it. As always, default behavior that is override is Rails.
+<% @movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
 
-His philosophy in life, we're going to save you a bunch of time with defaults, but then you can then override it. That's the whole resin detra for Rails. All right, so I'm going to go back here, get this out, get this out, and we now have an amazingly concise new and create [01:02:30] action. And my challenge to you. Is use this technique to update the edit form and update action and get it as concise as you possibly can and ask lots of questions as you're doing so, and then generate a new model.
+<%= form_with(model: @movie) do |form| %>
+  <div>
+    <%= label_tag :title %>
 
-So head over to a terminal, generate a [01:03:00] new model, not a, not a draft resource, only a model Rails, generate model. Pick anything you want. Director name string is the default date of birth. Okay? Whatever you want to pick. Pick a model. Some columns starting from just the model and the database table. Build up the entire resource, all the routes controller, and then.[01:03:30] 
+    <%= text_field_tag "movie[title]", @movie.title %>
+  </div>
 
-The seven golden actions that we did here, but do it in this modern way and get practice at doing it in this modern way for all seven of these actions. One last thing I want to tell you to get you on your way for doing that is for these seven routes, there's a shortcut. Because these seven routes are the standard restful routes, this name naming, convention id, the these names, [01:04:00] this is completely standard for every restful resource.
+  <div>
+    <%= label_tag :description %>
 
-Therefore, if I, let me pull up my rail slash info again.
+    <%= text_area_tag "movie[description]", @movie.description, { rows: 3 } %>
+  </div>
 
-So if I go here, let's search for movies again. So we got all my movie stuff, right? If I comment these out now I've got no routes,
+  <%= button_tag "Create Movie" %>
+<% end %>
+```
+{: mark_lines="9"}
 
-right? So now I've got no movies, routes.[01:04:30] 
+Conventially, we just call it `form`. Now that `form` object has methods called `.label`, `.text_field`, etc., which we can use like so:
 
-Resource movies. That's it. One line gives you all seven of these routes. Go back here, refresh, search for movies. You've got it all back. So when you're starting on your next resource, if it's director, whatever, whatever table, whatever [01:05:00] model you generate, do resources, directors,
+```html
+<!-- app/views/movies/new.html.erb -->
 
-go check it out. You've got all seven ready to go. Then add your director's controller and then implement your seven routes and, and then your four view templates, and try to use everything you learned for every link. Write it using a link to helper method for every [01:05:30] URL in the controller and in the view time every, for every url, write it using a route helper every A element.
+<h1>New movie</h1>
 
-Write it using a link to helper every form. Use the form with helper and practice that at least once. All right. See you on Piazza.
+<% @movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
 
+<%= form_with(model: @movie) do |form| %>
+  <div>
+    <%= form.label :title %>
+
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+
+    <%= form.text_area :description, { rows: 3 } %>
+  </div>
+
+  <%= form.button %>
+<% end %>
+```
+{: mark_lines="11 13 17 19 22"}
+
+We dropped all our syntax for the nested mass assignment subhash, because form is associated with the `@movie` object, which is an instance of `Movie`! We also dropped references to `@movie.title` and `@movie.description`, again because we already have the reference to `@movie` in the form builder. 
+
+Finally, we didn't even need to put any "Create Movie" copy on the `form.button` method, because Rails will check and see that the object does not exist in the database yet (it has not been **persisted**), so it will choose the copy "Create Movie" for us.
+
+Wow, Rails magic indeed.
+
+Check the **/movies/new** form functionality and also view source on the page. You should still see all the syntax and attributes we spent time writing on our own, now done in a few succinct lines of code by Rails!
+
+This is the point. Rails will save you a ton of time with default functionallity if you name things the way we expect. You can override any of these features, but aren't they nice?
+
+My challenge to you: refactor the `edit` form and the `update` action to match what we've done here with the `new` form and `create` action. After that, generate a new model, say `directors`:
+
+```bash
+rails g model director name ...
+```
+
+Give it a few more columns (maybe date of birth, bio, etc.). 
+
+Starting from only this model (not a scaffold) try to build up the entire resource. All of the routes. The seven golden actions in the controller that we did here. But do it all in this modern way.
+
+And one last thing. Because these seven "golden" routes are so common, there's actualy a shortcut to create them all:
+
+```ruby
+# config/routes.rb
+
+Rails.application.routes.draw do
+  root "movies#index"
+
+  resources "movies"
+
+  # # CREATE
+  # post "/movies" => "movies#create", as: :movies # movies_url and movies_path 
+  # get "/movies/new" => "movies#new", as: :new_movie # new_movie_url and new_movie_path
+          
+  # # READ
+  # get "/movies" => "movies#index" # we defined a method for this path 4 lines above
+  # get "/movies/:id" => "movies#show", as: :movie # movie_url and movie_path
+  
+  # # UPDATE
+  # patch "/movies/:id" => "movies#update" # we defined a method for this path 4 lines above
+  # get "/movies/:id/edit" => "movies#edit", as: :edit_movie # edit_movie_url and edit_movie_path
+  
+  # # DELETE
+  # delete "/movies/:id" => "movies#destroy" # we defined a method for this path 4 lines above
+
+  #------------------------------
+end
+```
+{: mark_lines="6"}
+
+That's it. We can comment out all seven routes, including the named route helper methods we defined after `as:`, and just write `resources "movies"` and all those routes and helper methods will be defined in our app! Boom.
