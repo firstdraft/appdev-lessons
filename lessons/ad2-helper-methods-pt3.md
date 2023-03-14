@@ -260,7 +260,7 @@ Lastly, let's delete the the `<li>` defining the dropdown menu, so that our fina
 
 Now's a good time for another **/git** commit. 
 
-## 00:19:30 to 
+## Bootstrap Alerts 00:19:30 to 
 
 Um, there's a nice, so if I look at it right now, and if I add, it's like not bad, there's like a green paragraph up there. But let's switch that to be a little bit nicer by using the bootstrap alert. Click on this link to reach the bootstrap alert documentation. And Bootstrap includes these nice like [00:20:00] colored boxes and the text and alert and we're gonna want to use the alert danger for the, the alert danger for the redirect alert and alert success for the notice.
 
