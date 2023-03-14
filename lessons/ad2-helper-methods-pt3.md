@@ -260,7 +260,7 @@ Now's a good time for another **/git** commit.
 
 **BENP: CLI `git` 00:15:30 to 00:19:30 using chapters. Maybe better to wait to show in a separate subsequent lesson**
 
-## Bootstrap Alerts 00:19:30 to 
+## Bootstrap Alerts 00:19:30 to 00:23:30
 
 Let's add some more bootstrap. Right now, when we add a movie at **/movies/new** there is a green sentence that comes up, which is the `:notice` message we set in our `create` action in the controller being rendered in the application layout:
 
@@ -340,7 +340,6 @@ We have an issue. If there is no notice or alert, a red and a green box still ap
       </div>
     <% end %>
 
-    
     <%= yield %>
   </body>
 </html>
@@ -349,9 +348,47 @@ We have an issue. If there is no notice or alert, a red and a green box still ap
 
 Test out adding movies and also filling out forms correctly and incorrectly. Do the messages appear and disappear as expected? Good! Time for another commit.
 
+## Add Bootstrap Containers for Padding 00:23:30 to 
+
+Okay, what else? Wouldn't it be nice if everything in the app wasn't pushed all the way to the edges? We would like some padding around the content. This is the perfect use case for [bootstrap `container` class](https://getbootstrap.com/docs/5.2/layout/containers/). 
+
+And since we want padding on every page, why not put it in the application layout again!
+
+```html
+<!-- app/views/layouts/application.html.erb -->
+
+...
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      ...
+    </nav>
+    
+    <div class="container">
+      <% if notice.present? %>
+        <div class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <% if alert.present? %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
+```
+{: mark_lines="10 "}
 
 
-Okay, what else? So let's do check now in my app. Everything is like all the way to the edges, and I would like some padding around the content. This is the perfect use case for our, [00:23:30] and we want basically on every page, we want to wrap everything within a digital class container. And if it's something that I want to happen on every single page, then I should put it in your, so between the nav bar and the flash messages, I'm gonna add a Diviv class container.
+
+<aside markdown="1">
+When I'm actually writing code, to speed things up, I use the "Emmet" abbreviation to generate tags for a given class in HTML. For instance, you can just type `div.container` in the code editor, and you should see an option come up to press <kbd>tab</kbd>, which will generate `<div class="container"></div>`.
+</aside>
 
 Actually, I'm gonna do this also. I'm gonna start using app dev. I'm gonna start to show the shortcuts that I use when I'm really writing code it slow way. So you also, I [00:24:00] want add with a class of container. The quick shortcut for that is do whatever element you want, dot whatever class you want. And then hit tab to accept the Emmett abbreviation and move stand out open tab class.
 
