@@ -475,27 +475,95 @@ That was a lot of refactoring. Let's make a **/git** commit.
 
 ## 00:30:00
 
-And what else can we approve about this controller? It's looking really good. So far. One thing is in the prams hash. [00:30:00] Typically we use symbols and knot strings, so we'll follow that convention and be consistent about it.
+Let's do some more work on our forms. We can demonstrate something with some dummy code, maybe in the `index` page:
 
-You can use them interchangeably only in the prams hash, nowhere else. Most hashes, you can't just interchangeably use strings and symbols, but the special Rails, hashes of prams and a couple of others, you can. Um, that looks good. [00:30:30] All right. This is looking great. Lemme make one more commit here. Refactor.
+```html
+<!-- app/views/movies/index.html.erb -->
 
-Lets say modernized controller. All right. Now there's one major topic left to talk about, and that is the following. I can, in my [00:31:00] forms, I'm going to demonstrate this with a form, like a plain old HTML form. And I'm going to say just form for now. I'm going to have a button to submit this form, and so we're going to keep it as simple as we can.
+<h1>
+  List of all movies
+</h1>
 
-I'm going to have an input, I'm going to have a name, and let's just say Zebra. Start with, and this was my new impact. I'm [00:31:30] going to move this to my index page. Let's put it right here at the very top so it's easier to find and just show you, here's that input. Oh, I didn't close my button.
+<form>
+  <input name="zebra">
+  <button>Submit</button>
+</form>
+...
+```
+{: mark_lines="7-10"}
 
-So this entire page is not my button. That's kind of cool. All right. So I say hi and let me close. Get my server log here [00:32:00] and then submit, and we'll see what happens here. Zebra. Hi. Okay, I'm going to move this over to the left. And move this over to the right. Should make it a little bit quicker to jump back and forth.
+Now, if we refresh **/movies**, we should see our blank form with just one, un-labelled input box. If we type "hi" into the form and click "Submit", then go to our server log in the terminal (the terminal that we ran `bin/server` in that's connected to the live app), we should be able to find the `params` hash and see:
 
-Close the sidebar. Okay, so we got our prams zebra high as expected right now let me show you something kind of [00:32:30] cool. I can do zebra and put some square brackets next to it and let's just see what happens With only that one change, I'm going to now say hi again. Clear my server. Submit. Now take a look at how this worked.
+```bash
+Parameters: {"zebra"=>"hi"}
+```
 
-It put, it still had a key of zebra just like before, but instead of putting high as the key, it created an array [00:33:00] and it put high as an element of the array. So that's interesting. Ha. And let me put in another one of these. I'm going to put another input in and let's refresh. I'm going to say hi there, and then I'm going to clear my server log and then submit.
+What happens if I change my form slightly to add some square brackets next to `"zebra"`:
 
-And now look what it did. [00:33:30] Both inputs have the same name and Rails. If we follow this convention, this is a Rails thing. Rails. If it sees this weirdness of two names, but it happens to end with the square brackets, it understands that what we're trying to achieve is we're trying to capture both of those values and put them under the same key in the prams hash, but put those values in an array.
+```html
+<!-- app/views/movies/index.html.erb -->
 
-So now I can do a prams dot fetch of zebra, and I can have an array of however many of [00:34:00] these are, and I can do a dot each. And. Maybe create a list of tags or something. So what this is very commonly used for is input type checkbox. And you have something like this. You might have some labels in here except, or let's say red say value [00:34:30] equals red label blue
+<h1>
+  List of all movies
+</h1>
 
-and value equals blue. Now I'm going to submit these, just let's just check one to start command K to clear submit. Now you can see that only red was checked and that was the only value that went in if I checked both. [00:35:00] Now both of them go into this. So this is how this kind of naming convention is how you can create nested structures within your prams hash.
+<form>
+  <input name="zebra[]">
+  <button>Submit</button>
+</form>
+...
+```
+{: mark_lines="8"}
 
-Interesting, interesting. So let's look at this a little bit more. This gives you a lot of different power and flexibility. So this is a very common use case. It, it's like basically you can draw a list of tags and let people check them off and then [00:35:30] submit, and then you get an array and you loop through the array and then you can create a join between each of those tags and whatever record the per the, the user is creating.
+Again, refresh **/movies** and submit something to the blank form again. How do the `params` look? You should see something like:
+
+```bash
+Parameters: {"zebra"=>["hi"]}
+```
+
+The key is still `"zebra"`, but now it put the value into an array. Interesting. Let me put in another one of these inputs:
+
+```html
+<!-- app/views/movies/index.html.erb -->
+
+<h1>
+  List of all movies
+</h1>
+
+<form>
+  <input name="zebra[]">
+  <input name="zebra[]">
+  <button>Submit</button>
+</form>
+...
+```
+{: mark_lines="9"}
+
+And on the form put something different in both input boxes then submit, and view the `params` in the server log. You should see something like:
+
+```bash
+Parameters: {"zebra"=>["hi", "there"]}
+```
+
+Rails put the two values for the two different inputs on the same `name`d input fields into an array. So now, we could do `params.fetch("zebra")` and that would return an array that we could do `.each` on to loop through. In other words, we have created nested structures in our `params`.
+
+This gives you a lot of different power and flexibility. A classic use case here is creating check boxes. For instance with code like this:
+
+```html
+...
+<form>
+  <label>Red</label>
+  <input type="checkbox" name="zebra[]" value="red">
+  
+  <label>Blue</label>
+  <input type="checkbox" name="zebra[]" value="blue">
+
+  <button>Submit</button>
+</form>
+...
+```
+{: mark_lines="9"}
+
 
 What else? Well, other than the classic many to many checkbox situation, I go back to type text and I want to do something else I'm going to do, we'll just leave those values in there to save me some typing. But they're type text [00:36:00] now. Watch if I do giraffe, what if I put a value in there? Now what's going to happen?
 
