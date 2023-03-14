@@ -234,23 +234,43 @@ Does the edit form work like before we refactored? If yes, then make another **/
 
 ## 00:16:00
 
-The hidden input for the authenticity token and the hidden input for the method patch. Excellent. Okay. Now what should we do next? Well, I'd like to spend some time refactoring our controller. Our views are looking great. Our views, we are much more concise. We're using Ruby Helper methods embedded in the view templates to generate HTML in a more secure way and in a [00:16:30] more reusable way using route helper methods.
+Our views are now much more concise. We're using Ruby helper methods embedded in the view templates to generate HTML in a more secure way, and in a more reusable way using route helper methods.
 
-Let's spend some time in our controller. So right now there's a few things we need to improve. There's some hash literals and we can do a lot of work with those. So like anywhere we have the explicit curlies, we can, we said we were going to get rid of these and so we should. [00:17:00] And, oops, that's not great first.
+Now it's time to spend some time refactoring our `app/controllers/movies_controller.rb` file. If you haven't already, go through and make all the syntax changes. For instance, a line like:
 
-Okay, next. We also said we're going to use the new hash syntax, so we should do this wherever we can. Okay, so that's better. Alright, uh, and here to create that, this is when the new [00:17:30] hash syntax starts to bother me is when you have symbols for both the keys and the values. It starts to get a little confusing, but just remember to unwind it in your head to the old syntax.
+```ruby
+matching_movies = Movie.where({ :id => the_id })
+```
 
-All right. Now in APT Dev one, we wanted to be very clear. A lot of students tended to get confused about getting a collection of records. And that was an instance of the class active record relation. And then [00:18:00] you have to then go an extra step to take the first record out when you're working with only one record.
+should end up like:
 
-For some reason, when we didn't do this three step process for, for, for years, we didn't do this three step process, students would get very confused between an active record relation, which is a collection of multiple records, and then one instance of active record, which is just one [00:18:30] row. So we like were we, were very deliberate about always doing it in three steps.
+```ruby
+matching_movies = Movie.where(id: the_id)
+```
 
-First you get the id, then you get a record. Then you get the set of movies that are all matching this Id. Even though we know it's unique and there's only one, then we get the first element out of that array, which is the object that we're looking for. Now, as you might expect, professional rails, developers do not do this.
+(We could even drop the parentheses, but that's very much optional. Just keep it in mind when you see other people's code.)
+
+In AD1, we were very deliberate in the three steps to get an `ActiveRecord` instance (a single row of a table) compared to an `ActiveRecord:Relation` (many rows of a table):
+
+```ruby
+  ...
+  def show
+    the_id = params.fetch(:id) # FIRST we get the ID
+
+    matching_movies = Movie.where({ :id => the_id }) # THEN we get the set of matching rows
+
+    @the_movie = matching_movies.first # FINALLY we get one instance of ActiveRecord, or one row
+  end
+  ...
+```
+
+As you might expect, professional Rails, developers do not do this. 
 
 First of all, this typically is done in one line. [00:19:00] We, this is a spot, a place where pip, usually people don't even, I usually don't make an intermediate variable for that. And you know how much I love my intermediate variables. So usually it looks more like this, but even then this dot where, and then dot first can typically be done on one line, so that you just have this.
 
 And if [00:19:30] you're going to do that, then there's a method that is designed to do exactly that. It's called Find by, and it's exactly the same thing as dot wear. It's just that it goes and finds all the matches. And regardless of how many matches there are, it just takes the first record out of the set of matches and returns that first.
 
-Record to you. So it'll either be one record or it'll be nil. So if we pop open a [00:20:00] rails console and give this a shot and side note to open new terminals, now I have to go over to my little plus here in the VS code interface. But if I open a Rails console and then I do movie dot find by
+Record to you. So it'll either be one record or it'll be nil. So if we pop open a [00:20:00] Rails console and give this a shot and side note to open new terminals, now I have to go over to my little plus here in the VS code interface. But if I open a Rails console and then I do movie dot find by
 
 ID one, I get nil. Let's look at Movie dot. All right. [00:20:30] Now first ID is three, that's why. So I do movie dot find by ID three, and it just gives me back the individual instance, not an array containing it. And I can just go ahead and say title right away. So that is how the fine by Method works. And. Even better than that.
 
@@ -264,11 +284,11 @@ It doesn't show up as a, something went wrong, 500. It doesn't report an error t
 
 Alright, so from now on, This is what we're going to do in all of these actions that are looking up a, an individual record based on an ID number. We're just going to do [00:23:00] movie dot finds, dot fetch id. This is the right way to do this.
 
-All right? And another thing is, just so you're aware, conventionally rails developers don't say the underscore movie. I [00:23:30] did that in app dev one cuz I wanted to be very explicit that I was just making up whatever variable names that I wanted in actual rails applications. The convention is name these variables the same thing as the class name and the controller name.
+All right? And another thing is, just so you're aware, conventionally Rails developers don't say the underscore movie. I [00:23:30] did that in app dev one cuz I wanted to be very explicit that I was just making up whatever variable names that I wanted in actual Rails applications. The convention is name these variables the same thing as the class name and the controller name.
 
 I reason I didn't do it in Apt Dev one is because people seem to think that it had to match the model name, but it doesn't have to match. You can name one of your variables, whatever you want to, but you know it's just a convention and you don't have to like think about [00:24:00] what to name it. Just name it. The same thing as the model.
 
-As long as we all know now we're on the same page. We make up whatever variable names we want to. So similarly list of movies conventionally, they just call it at movies, and I'm going to make this all more concise as well. Movie dot order render JSON movies. This is starting to look like a professionally written rails controller.
+As long as we all know now we're on the same page. We make up whatever variable names we want to. So similarly list of movies conventionally, they just call it at movies, and I'm going to make this all more concise as well. Movie dot order render JSON movies. This is starting to look like a professionally written Rails controller.
 
 [00:24:30] Now the only thing that doesn't is these inputs where we did query underscore back when we were learning that these things come from. The names of our inputs, which go into the query string, which then go into the pram slash, which is what we're fetching out of. So we use this prefix to remind ourselves of that.
 
@@ -304,7 +324,7 @@ Now that we understand that we're going to do what's convention, which is just n
 
 That was a lot of refactoring. Let's make a get commit. And what else can we approve about this controller? It's looking really good. So far. One thing is in the prams hash. [00:30:00] Typically we use symbols and knot strings, so we'll follow that convention and be consistent about it.
 
-You can use them interchangeably only in the prams hash, nowhere else. Most hashes, you can't just interchangeably use strings and symbols, but the special rails, hashes of prams and a couple of others, you can. Um, that looks good. [00:30:30] All right. This is looking great. Lemme make one more commit here. Refactor.
+You can use them interchangeably only in the prams hash, nowhere else. Most hashes, you can't just interchangeably use strings and symbols, but the special Rails, hashes of prams and a couple of others, you can. Um, that looks good. [00:30:30] All right. This is looking great. Lemme make one more commit here. Refactor.
 
 Lets say modernized controller. All right. Now there's one major topic left to talk about, and that is the following. I can, in my [00:31:00] forms, I'm going to demonstrate this with a form, like a plain old HTML form. And I'm going to say just form for now. I'm going to have a button to submit this form, and so we're going to keep it as simple as we can.
 
@@ -316,7 +336,7 @@ Close the sidebar. Okay, so we got our prams zebra high as expected right now le
 
 It put, it still had a key of zebra just like before, but instead of putting high as the key, it created an array [00:33:00] and it put high as an element of the array. So that's interesting. Ha. And let me put in another one of these. I'm going to put another input in and let's refresh. I'm going to say hi there, and then I'm going to clear my server log and then submit.
 
-And now look what it did. [00:33:30] Both inputs have the same name and rails. If we follow this convention, this is a rails thing. Rails. If it sees this weirdness of two names, but it happens to end with the square brackets, it understands that what we're trying to achieve is we're trying to capture both of those values and put them under the same key in the prams hash, but put those values in an array.
+And now look what it did. [00:33:30] Both inputs have the same name and Rails. If we follow this convention, this is a Rails thing. Rails. If it sees this weirdness of two names, but it happens to end with the square brackets, it understands that what we're trying to achieve is we're trying to capture both of those values and put them under the same key in the prams hash, but put those values in an array.
 
 So now I can do a prams dot fetch of zebra, and I can have an array of however many of [00:34:00] these are, and I can do a dot each. And. Maybe create a list of tags or something. So what this is very commonly used for is input type checkbox. And you have something like this. You might have some labels in here except, or let's say red say value [00:34:30] equals red label blue
 
@@ -352,7 +372,7 @@ I'm going to fetch the key of movie. Then I'm going to fetch, oops, I did though
 
 But trust me, we're, we're getting, we're getting there slowly, step by step. Okay? Here's another thing to realize. Let me make a good commit. So far, so good.
 
-In my rails console, I want to look at a nice [00:42:30] technique. Let me just make this commit before I mess anything up. New movie form. Now, Nasts movie attributes subha within prams.
+In my Rails console, I want to look at a nice [00:42:30] technique. Let me just make this commit before I mess anything up. New movie form. Now, Nasts movie attributes subha within prams.
 
 Here is what we usually do when we want to create a new movie. Movie can movie our new M title equals high M description equals bye m save. [00:43:00] Right. Great. There's a slightly more concise way of doing this sort of suppose you happen to have a hash laying around that happens to have keys in it
 
@@ -412,7 +432,7 @@ I know Madness, right? If you don't believe me, I'm going to comment this out. A
 
 Hang on a second, [00:54:30] go back here, I'll comment these out. So now it's a form with Online 12. Look at that. Now. On line 12 it says, undefined Method Movies, path Online. 12. We didn't call Movies Path. Who called Movies Path. The Form with Method saw that this is an instance of class movie and it called Movies Path, assuming that you were going to re name your Routes Restfully.
 
-But, so if you don't have Restful Routes, then you can't [00:55:00] use this form with Model Trick. So this is why Restful Routes and generally conventions and rails. , the dividends just compound and compound and compound and compound and compound on each other. Alright, so let's go back and I want my restful routes again.
+But, so if you don't have Restful Routes, then you can't [00:55:00] use this form with Model Trick. So this is why Restful Routes and generally conventions and Rails. , the dividends just compound and compound and compound and compound and compound on each other. Alright, so let's go back and I want my restful routes again.
 
 So put that back, put that back. Now that this method exists, now I can use this method. I've got this going and I can get rid of this. [00:55:30] Awesome. I can get rid of this. Now that we get that idea. Alright, cool. So I've exactly replicated the previous behavior with this form with, but the benefit of using form with model is there's now a block variable.
 
@@ -428,7 +448,7 @@ Wait a second. It works. It still works. Just like before, if I put this in, do 
 
 Hmm, I see It's giving me the source code of the index page because this is after a validation failure. So it's rendering the new template, but it's on the route. Looks like slash movies cuz we did a post to slash movie. [00:58:30] So it's doing a get of the source code of slash movies. But I need this. But in any case, you can see here, if I inspect element, that'll be a better way of doing it.
 
-It did a value attribute and it populated it with what it, what it had before, so it's correctly pre-populating. This box rails does it automatically when we use the form with helper for a model, give it a form block [00:59:00] variable. These methods automatically do the right thing of using whatever attributes this object already has.
+It did a value attribute and it populated it with what it, what it had before, so it's correctly pre-populating. This box Rails does it automatically when we use the form with helper for a model, give it a form block [00:59:00] variable. These methods automatically do the right thing of using whatever attributes this object already has.
 
 So if I previously, let's just oppose this object, if I do at movie dot title equals preexisting value, so I'm assigning a value to it and then I rendered this form when the title method here [00:59:30] is called with Tex Field. It's going to be smart enough to prepopulate. Whatever value's already on that object. So it makes edit forms super easy.
 
@@ -442,11 +462,11 @@ Oops. And then I'm going to go to add a new movie,
 
 undefined. Oops. Okay, so let me, I did that too much in one line. Do this@movie.save and then let's see what it says. Okay, so it's going to prefill [01:01:30] and notice. That because this object already exists. The button copy changed to update. This is a smart helper. It's such a smart helper because I'm calling it on this object.
 
-This object is coming from here. This is an argument. It knows that this has already been persisted to the database. So it writes this copy for us. Of course we can change it and say howdy and put whatever copy we want to [01:02:00] if necessary, we can override it. As always, default behavior that is override is rails.
+This object is coming from here. This is an argument. It knows that this has already been persisted to the database. So it writes this copy for us. Of course we can change it and say howdy and put whatever copy we want to [01:02:00] if necessary, we can override it. As always, default behavior that is override is Rails.
 
-His philosophy in life, we're going to save you a bunch of time with defaults, but then you can then override it. That's the whole resin detra for rails. All right, so I'm going to go back here, get this out, get this out, and we now have an amazingly concise new and create [01:02:30] action. And my challenge to you. Is use this technique to update the edit form and update action and get it as concise as you possibly can and ask lots of questions as you're doing so, and then generate a new model.
+His philosophy in life, we're going to save you a bunch of time with defaults, but then you can then override it. That's the whole resin detra for Rails. All right, so I'm going to go back here, get this out, get this out, and we now have an amazingly concise new and create [01:02:30] action. And my challenge to you. Is use this technique to update the edit form and update action and get it as concise as you possibly can and ask lots of questions as you're doing so, and then generate a new model.
 
-So head over to a terminal, generate a [01:03:00] new model, not a, not a draft resource, only a model rails, generate model. Pick anything you want. Director name string is the default date of birth. Okay? Whatever you want to pick. Pick a model. Some columns starting from just the model and the database table. Build up the entire resource, all the routes controller, and then.[01:03:30] 
+So head over to a terminal, generate a [01:03:00] new model, not a, not a draft resource, only a model Rails, generate model. Pick anything you want. Director name string is the default date of birth. Okay? Whatever you want to pick. Pick a model. Some columns starting from just the model and the database table. Build up the entire resource, all the routes controller, and then.[01:03:30] 
 
 The seven golden actions that we did here, but do it in this modern way and get practice at doing it in this modern way for all seven of these actions. One last thing I want to tell you to get you on your way for doing that is for these seven routes, there's a shortcut. Because these seven routes are the standard restful routes, this name naming, convention id, the these names, [01:04:00] this is completely standard for every restful resource.
 
