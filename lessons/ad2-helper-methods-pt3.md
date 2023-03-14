@@ -342,7 +342,7 @@ We have an issue. If there is no notice or alert, a red and a green box still ap
 
 Test out adding movies and also filling out forms correctly and incorrectly. Do the messages appear and disappear as expected? Good! Time for another commit.
 
-## Add Bootstrap Containers for Padding 00:23:30 to 00:27:00
+## Bootstrap Containers for Padding 00:23:30 to 00:27:00
 
 Okay, what else? Wouldn't it be nice if everything in the app wasn't pushed all the way to the edges? We would like some padding around the content. This is the perfect use case for [bootstrap `container` class](https://getbootstrap.com/docs/5.2/layout/containers/). 
 
@@ -390,41 +390,11 @@ Looks good? Great! Commit again.
 
 I want to note: there's an open [pull request for this project](https://github.com/appdev-projects/helper-methods-3/pull/1/files) on Github, that contains all of the changes we will be incrementally making in this lesson. That's a nice resource to occassionally glance at as we go throught the project to see a summary of changes on each file.
 
-## 00:27:00 to
+**BENP 00:27:00 to 00:33:30 is Q/A**
 
-Yeah. Yeah. If you think it's better for my own self
+## Getting Started with Partial View Templates 00:33:30 to 
 
-rather than Cause And that's why we have the recordings too, right? To ask the questions while we're together.
-
-Uh, okay. Yeah. Question mark. [00:27:30] It's just the name of the method here. It's just the name of the method. So like, if I took question, it'll be an undefined method present. Does that make. It's, it's, it's like, it looks a little funny, but just think of it as if I'm trying Hello Capital,
-
-right? That's not the method name. So then it's [00:28:00] undefined method. Similarly rails adds a method to strength that is present with the question mark. It just happens to be the last letter in the method name, but no special functionality and it will just return true or false. So if we do nail false, you can also do dot blank, which is, but [00:28:30] the nice thing about this versus just checking, so imagine I have a variable, right?
-
-I don't know what, what's in it. I could check. Is it equal to nil? Right? So why don't I just do that? Well sometimes get a value that's like an empty string. We still don't want to count it. And if we just, that it'll be like, it's not the, it's not equivalent to N so it would say false. So that's right. The present method is smart and it can check both nil.
-
-And is it a empty [00:29:00] string? And it's even smart enough to check of like, oh, is it just white space in here? Then it still, uh, blank. Yeah. What my question some, some of our languages use for volume be,
-
-uh, no, that's not the ruby. The, it's just literally a naming convention, a method. If you're defining a method that's gonna return true or false, then [00:29:30] the convention is end the method name of the question. Yep. You explain what role equals is doing there. Here this has to do with accessibility for screen readers and other types of like machines.
-
-Reading your app, your page. So this, if somebody's visually impaired user is visiting your site with a screen reader, the role attributes help the screen reader know how [00:30:00] to navigate page. And sometimes, sometimes it just tells the screen reader like, oh, you don't have to even read this. Sometimes it indicates to the screen reader that it's an important thing to read or out loud like this.
-
-So that's, that's about, we haven't talked about it before in app dev one cuz we're just trying to like get, but yes, in a professional actual you have to do a, to make sure is accessible. Uh, rails has a lot of helpers for that, which we can talk to. We'll talk authors of bootstrap [00:30:30] prioritize accessibility very next.
-
-So most their examples are gonna include all of that stuff. We just. A lot of little things. Usually I like, don't worry too much about it when I'm prototyping, but before I ship it to real users or especially real customers, I'll hire a firm to do an accessibility audit. And actually a second question. In the, um, in the conditional logic, there's [00:31:00] no like verb that sells, um, the program to do div class E equal, right?
-
-So it just, I would've accepted a p or A due or something like that. I mean, that's that source separate from, um, the condition logic, just generally, whenever we're embedding anything in a view template, the thing that tells to print print is the presence or absence of [00:31:30] a equal sign right there. So if we're using, if we, we, we, this would be the control flow, but we don't want it to actually affect the HTML source code.
-
-So we're using the non output version here. We, if, if this runs which, and this is true, then it's going to execute this code. And then we wanna put the actual text of the notice into this dib. So we'll use the equal sign. Alright. Yep. Um, is there an advantage during notice stop present instead of saying if, notice [00:32:00] if, if notice in that case then, uh, The empty string will count as true.
-
-The only things that count, just so if, whatever, right? The only things that count as not true are nil and false, but everything else, including the empty string and string counts as true as far as if it's concerned. So that's the whole point of that method.
-
-[00:32:30] Yeah. Um, on the files we're pulling from, on the edited new pages, it had a condition at the top for movie errors that seemed to be overriding. What? The trap css. Is that because it's in, uh, yes. So like we're style. Mine was still showing the style color, red message. Is that because message is separate from alert and, yes.
-
-Okay. This, this is the AP accurate [00:33:00] object that we tried to say. That validation failure were saying gains this errors array, which to turn English string. So what went wrong? We're looping through that. This, uh, blue pier drawing a paragraph. All of this is totally separate from the reader. The, the cookies that get.
-
-From Redirect. Right. Okay. Totally separate. So yeah, what you're suggesting is maybe we should use Srap alert here too. Okay. But there's no way to catch the application file because it's [00:33:30] conditional justice
-
-template. So however, that does lead us to our next topic, which is sometimes we have code that we want to reuse, but not in every single template, but in some of templates. And it would be really nice not to have to duplicate that code and then if we change it, have to change it in all these different view templates.
+Sometimes we have code that we want to reuse, but not in every single template, but in some of templates. And it would be really nice not to have to duplicate that code and then if we change it, have to change it in all these different view templates.
 
 For example, [00:34:00] right now, given all the work that we did on edit and New,
 
