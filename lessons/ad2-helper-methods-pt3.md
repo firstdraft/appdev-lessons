@@ -400,6 +400,13 @@ Partial view templates (or just "partials", for short) are an extremely powerful
 
 Here is the [official article in the Rails API reference](https://edgeapi.rubyonrails.org/classes/ActionView/PartialRenderer.html) describing all the ways you can use partials. There are lots of powerful options available, but for now we're going to focus on the most frequently used ones.
 
+Let's get our first feel for partials on our `new.html.erb` and `edit.html.erb` forms. Open those files. What to do you notice? Where are the differences?
+
+It turns out, because we switched to `form_with` helpers, the two forms are identical besides the copy in the `<h1>` tag at the top of each page! ("New" vs. "Edit".)
+
+`form_with` does a lot for us. It knows whether the object is persisted in the database or not, and how to fill in placeholder values for partially filled out forms or objects that already have column values. So everything is basically the same! 
+
+That means we should probably just be re-using the same code on each form rather than duplicating it.
 
 
 
