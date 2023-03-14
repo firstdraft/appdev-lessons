@@ -70,7 +70,7 @@ Take those HTML elements and copy-paste into `app/views/layouts/application.html
 Note that we put the UTF-8 character set at the _top_ of the `<head>` because we want those characters available throughout our application, including in the `<title>` of the page.
 
 <aside markdown="1">
-When copy-pasting code into HTML documents, you can auto-format the indentation so that the elements are properly nested using <kbd>Cmd</kbd>(Mac) or <kbd>Cntrl</kbd>(PC) + <kbd>shift</kbd> + <kbd>P</kbd> to open the command menu on Gitpod's VS Code editor. With the `>` prompt open, you can search "Format" and find the command. (You can search for any command in this prompt.) You will also see a direct keyboard shortcut to that formatting command that might be useful to you. Become a keyboard ninja!
+When copy-pasting code into HTML documents, you can auto-format the indentation so that the elements are properly nested using <kbd>Cmd</kbd>(Mac) or <kbd>Cntrl</kbd>(PC) + <kbd>shift</kbd> + <kbd>P</kbd> to open the command pallet on Gitpod's VS Code editor. With the `>` command pallet prompt open, you can search "Format" and find the command. (You can search for any command in this prompt.) You will also see a direct keyboard shortcut to that formatting command that might be useful to you. Become a keyboard ninja!
 </aside> 
 
 Now refresh a page in your app (**/**, the root should be set to the movies `index` page) and see the change. If the fonts look a little better, you know you you connected the assets correctly.
@@ -250,15 +250,13 @@ Lastly, let's delete the the `<li>` defining the dropdown menu, so that our fina
 ...
 ```
 
-We don't any, but I'm just gonna leave it for now. Any questions on the bootstrap nav bar? Bootstrap in general? Copy pasting in elements? Yeah, Jack, just simple question is, is there like a shortcut for like commenting out, not in like Ruby, but when you're dealing with like a layout review file like this Actually my normal command slash we have G's [00:15:30] got a A Vs extension installed for us.
+Now's a good time for another **/git** commit.
 
-That puts,
+<aside markdown="1">
+How are you feeling about our browser-based **/git** interface? Hopefully pretty comfortable. But this is the last lesson that we'll be using that interface for, because soon we'll learn command line (CI) `git` interface. That's what professional developers use.
+</aside>
 
-yeah, about auto formatting. It's I generally speaking command shift P to bring up the command pallet and then search for whatever you want. And then sometimes if there's a keyboard shortcut, it shows up right here. So something that you're doing a lot start to try and memorize the keyboard shortcut. And yes, auto format is a good one to memorize.[00:16:00] 
-
-It'll be different from mac and windows. So control ship P on windows to bring up the pallet. Command shift P on Mac, those are the most, the two most important ones. From there, you can reach everything else with this fuzzy search. Alright, let's make a get commit.
-
-Thank you.[00:16:30] 
+## 00:15:30 to
 
 I guess because [00:17:00] part one of the homework for next week is we gotta start learning actual git, not the slash GI interface that we created for you. For rapid one, most developers use command line commands and you're gonna just be much faster and more proficient if we start using command line commands. So let's do it that way.
 
