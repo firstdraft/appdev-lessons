@@ -323,6 +323,18 @@ Thus, we can see why the `String` version of `*` and the `Integer` version of `*
 
 ----
 
+#### reverse 
+
+The reverse method returns a new `String` with the characters from the `String` in reverse order.
+
+```ruby
+p "I can speak in backwords words".reverse
+```
+
+<div class="experiment" markdown="1">
+   [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){:target="_blank"}
+</div>
+
 #### upcase 
 
 The upcase method returns a copy of the `String` with all lowercase letters replaced with their uppercase counterparts.

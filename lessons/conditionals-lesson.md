@@ -2,7 +2,28 @@
 
 Now that we can get input from our users, we can start to make our programs smart, by behaving differently based on different conditions.
 
-To do this, we need to add a new grammar to our toolbox: the `if`/`end` **keywords**. Here's how it looks:
+----
+
+#### Quiz Question
+
+- Hold up. How do we get input from our users? Choose all that apply.
+- The user opens a Gitpod workspace
+    - No, the user only needs access to a command line for the programs we wrote so far
+- We put the method `gets` in our code
+    - Yes! When the Ruby interpreter reaches that method, it will stop the program and wait for input.
+- We store the result of the method `gets` in a new variable
+    - That's right! `gets` stands for "get string"
+- We `chomp` any newline `\n` character off the user input
+    - That's right! `gets.chomp` will remove the `\n` caused when the user presses <kdb>return</kbd>
+- The user opens an `.rb` file and puts in their response
+    - No, they don't touch our source code
+- If we wanted a few things, we might `split` the input
+    - Yes! `gets.chomp.split` with no arguments will just split on whitespace. `split("")` would cut every character apart.
+{: .choose_all #user_gets points="10" answer="[2,3,4,6]" }
+
+----
+
+To add conditions based on user input, we need to add a new grammar to our toolbox: the `if`/`end` **keywords**. Here's how it looks:
 
 ```ruby
 lucky_number = rand(100)
@@ -44,6 +65,13 @@ Every `if` requires a matching `end`, and forgetting it is a _very_ common mista
 My advice: type the `end` _immediately_ after typing the `if` so that you don't forget it; _then_ worry about typing the condition, and the code that comes on the lines between the `if` and the `end`.
 
 (While you're at it, indent the code on the lines between by two spaces so that it is visually clear what's inside the `if` statement.)
+
+<div class="proj" markdown="1">
+
+  Open the Gitpod [`if` statements project](https://github.com/appdev-projects/ruby-project-if-statements-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `if_sample_even.rb`.
+
+  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
+</div>
 
 ### Multibranch if statements
 
@@ -88,6 +116,33 @@ end
  - Inside a branch of an `if` statement, you can have as many lines of code as you want — and you can even have whole other multi-branch if statements, if that's what you need.
  - Try to indent the code within each branch by two spaces, especially if you have multiple nested `if` statements within one another.
 
+----
+
+#### Quiz Question
+
+```ruby
+n = 15
+
+if n < 15
+  s = "first part"
+elsif n > 20
+  s = "second part"
+elsif n < 18
+  s = "third part"
+else
+  s = "fourth part"
+end
+
+p "It picked the " + s
+```
+
+- In the above code, what would the full printed out statement be?
+- It picked the third part
+    - Yes!
+{: .free_text #multibranch points="10" answer="1" }
+
+----
+
 ### truthiness and falsiness
 
 Why did I say "truthy" and "falsy" instead of just `true` and `false`? Because many — most — Ruby expressions return values other than `true` or `false`. _Any_ expression can appear next to an `if`, and some will cause the code inside the `if` statement to execute (these values are known as "truthy") and some will not (these are "falsy").
@@ -110,8 +165,6 @@ else
 end
 ```
 
-For 
-
 <div class="experiment" markdown="1">
 
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/truthiness){:target="_blank"}
@@ -119,17 +172,38 @@ For
 
 For how many of the above did you correctly predict the output? What did you learn about what objects count as truthy and what objects count as falsy in Ruby?
 
----
+----
 
-<p style="height: 150px"></p>
+#### Quiz Question
 
---- 
+- Which of the expressions is "falsy"? Choose all that apply.
+ - `0`
+    - Nope.
+ - `"false"`
+    - Nope.
+ - `[]`
+    - Nope.
+ - `nil`
+    - Yes!
+ - `1 == 1`
+    - Nope.
+ - `""`
+    - Nope
+ - `false`
+    - Yes!
+{: .choose_all #falsy points="10" answer="[4,7]" }
 
-It turns out that **only `false` and `nil` are falsy**. _All_ other objects in Ruby are truthy — even `0`, `""`, and `[]`.
+----
+
+<p style="height: 200px"></p>
+
+----
 
 ### Comparisons
 
-That said, we'll mostly use expressions after `if` that return `true` or `false`. There are lot of methods that are designed to do this; we've seen `Integer`'s `.odd?` and `.even?`, but there are a lot more.
+It turns out that **only `false` and `nil` are falsy**. _All_ other objects in Ruby are truthy — even `0`, `""`, and `[]`.
+
+That said, we'll mostly use expressions after `if` that return `true` or `false`. There are a lot of methods that are designed to do this; we've seen `Integer`'s `.odd?` and `.even?`, but there are a lot more.
 
 For example, most classes have ways to compare _instances_ of the class to one another:
 
@@ -143,9 +217,7 @@ For example, most classes have ways to compare _instances_ of the class to one a
 1 >= 2         # "1 is greater than or equal to 2"
 1 != 1         # "1 is NOT equivalent to 1"
 1 != 2         # "1 is NOT equivalent to 2"
-"apple" < "banana"
-"apple" > "banana"
-"apple" == "banana"
+"apple" == "apple"
 "apple" != "banana"
 ```
 
@@ -169,7 +241,72 @@ We accidentally used the assignment operator instead of the equivalence comparis
 
 You will 💯 make this typo, we all do at some point — when your conditional always is going into the `true` branch inexplicably, let this ring a bell!
 
-**BENP: add quiz q about == and =: https://piazza.com/class/ldj532ul5a0621/post/246**
+----
+
+#### Quiz Question
+
+- The equivalence operator is (and does)...
+- `=`, and it checks if two things are the same
+    - No, that's the variable assignment operator, and it assigns objects into variables
+- `=`, and it assigns objects into variables
+    - No, that's the variable assignment operator.
+- `==`, and it assigns objects into variables
+    - Not quite, look above at the previous section.
+- `==`, and it checks if two things are the same
+    - Yes! `==` is not the same as `=`
+{: .choose_best #equivalence points="10" answer="4" }
+
+----
+
+#### Quiz Question
+
+```ruby
+n = "giraffe"
+
+if n != "giraffe"
+  s = "first part"
+elsif n == "Giraffe"
+  s = "second part"
+else
+  s = "third part"
+end
+
+p "It picked the " + s
+```
+
+**Think carefully,** after each `if` or `elsif` ask yourself: is this expression resulting in a `true` or a `false`?
+
+- In the above code, what would the full printed out statement be?
+- It picked the third part
+    - Yes!
+{: .free_text #multibranch_conditional points="10" answer="1" }
+
+----
+
+#### Quiz Question
+
+- In the above code, what `String` method could you use to modify `n` and have it print `It picked the second part`? (Hint: have a look at [the `String` lesson](https://learn.firstdraft.com/lessons/9){:target="_blank"}.)
+- capitalize
+    - Yes! 
+- n = n.capitalize
+    - Yes!
+- n.capitalize
+    - Yes!
+{: .free_text #multibranch_conditional_v2 points="10" answer="[1,2,3]" }
+
+----
+
+<div class="proj" markdown="1">
+
+  Return to the Gitpod `if` statements project and work through `rps.rb`.
+</div>
+
+<div class="proj" markdown="1">
+
+  Also, work through `palindrome.rb`.
+
+  (Hint: you will need a couple of methods from the [`String` lesson](https://learn.firstdraft.com/lessons/9){:target="_blank"}. What methods there can be used to make inputs a uniform case?)
+</div>
 
 ### Combining conditions with AND and OR
 
@@ -199,24 +336,47 @@ end
 
 Basically, `&&` is stricter than `||`; both comparisons have to be true in order for the whole statement to be true when combined with `&&`; either one being true is sufficient for `||`.
 
-**BENP: confusion with rps: https://piazza.com/class/ldj532ul5a0621/post/252**
+----
 
-<div class="proj" markdown="1">
+#### Quiz Question
 
-  Open the Gitpod [`if` statements project](https://github.com/appdev-projects/ruby-project-if-statements-1){:target="_blank"} on Canvas that follows this reading and start with the exercise `rps.rb`.
+```ruby
+number1 = 10 
+number2 = 15
+sum = number1 + number2
 
-  For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
-</div>
+if sum > 10 && sum < 20
+  p sum
+elsif number1 >= 10 || number2 > 20
+  if number1 > number2
+    p number1
+  else
+    p number2
+  end
+else
+  p "skipping"
+end
+```
 
-<div class="proj" markdown="1">
+**Think carefully,** after each `if` or `elsif` ask yourself: is this expression resulting in a `true` or a `false`? Move through the branches until you hit a `p` statement.
 
-  Also, work through `palindrome.rb`.
+- The above code will print...
+- 10
+    - Nope.
+- 15
+    - Yes!
+- 25
+    - Nope.
+- `"skipping"`
+    - Nope.
+{: .choose_best #branching_and_or points="10" answer="2" }
 
-  (Hint: you need to account for mixed-case inputs, what methods in the [`String` lesson](https://learn.firstdraft.com/lessons/9){:target="_blank"} can be used to make inputs a uniform case?)
-</div>
-
-
+----
 
 ###  Conclusion
 
 That's it for `if` statements. Now we'll have a look at **loops** for iterating.
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----

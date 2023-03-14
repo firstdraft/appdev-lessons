@@ -4,18 +4,6 @@ Here are some more Ruby methods that we didn't cover in the previous sections, b
 
 ### More String 
 
-#### reverse 
-
-The reverse method returns a new `String` with the characters from the `String` in reverse order.
-
-```ruby
-p "I can speak in backwords words".reverse
-```
-
-<div class="experiment" markdown="1">
-   [Click here for a REPL to try it.](https://repl.it/@raghubetina/reverse){:target="_blank"}
-</div>
-
 #### length 
 
 The length method  returns the number of characters (as an `Integer`) that a `String` has.
