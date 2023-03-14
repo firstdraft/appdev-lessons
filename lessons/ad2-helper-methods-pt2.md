@@ -19,7 +19,7 @@ Let's start with the form in `app/views/movies/new.html.erb`. The new helper met
   <p style="color: red;"><%= message %></p>
 <% end %>
 
-<%= form_with(model: @movie) do |form| %>
+<%= form_with(url: movie_path) do %>
   
 <% end %>
 
@@ -29,43 +29,145 @@ Let's start with the form in `app/views/movies/new.html.erb`. The new helper met
 ```
 {: mark_lines="9-11" }
 
-It's called form width and it needs some arguments and specifically it needs a hash that's going to tell us the action. So I'm going to say movies path just like below.
+As you can see, the method takes arguments. In this case we pass the option `url:` the output of our route helper `movies_path` (which we know is just `"/movies"`). We also put this helper in a `do`-`end` block, because it's going to write a form for us in this block!
 
-And then. I'm going to give it a [00:01:00] block. And the reason it needs a block is that it needs a closing tag. So many of our view helper methods that output html, like HTML elements, are going to require an end, a closing tag. So that's what this is going to, we're going to create closing tags by providing a block to the method, and then put the end of the block where we want the closing tag of whatever opening tag this method is going to create for us.[00:01:30] 
+In the live app, refresh the **/movies/new** page and "view source". You should see that `form_with` has produced:
 
-So if I do this, let's take a look at what this produces, and as usual, I'm going to view source and see. So here's what we wrote by hand. This is what the output of that helper method was. So it's a form action equals movies and it actually does, uh, more stuff than we were doing by hand. And these are all good things that we should have been doing by hand.
+```html
+<form action="/movies" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="some-long-token">
 
-It sets the default except character set for the form. Look at this, the [00:02:00] form with helper, right? So just this and nothing else automatically created this authenticity token for us that we had to do by hand. And we learned about how to do that. But actually, once you start going down the path of using the form with helper, you don't have to manually worry about putting in this CSR f authenticity token.
+</form>
+```
 
-Fantastic. So we can go back to app dev one mode where we didn't have to think about this. [00:02:30] Excellent. All right, so that takes care of our opening tag and our authenticity token. Now I can basically get rid of this and this, and I can move all of my inputs inside this helper method, and we now have a better.
+Compare that with the form that we wrote by hand. Pretty similar right? 
 
-Form [00:03:00] opening tag and closing tag being created by the helper method. And then all of our other H M L just goes right inside. Great. Now what else can we do? Well for divs, there's not really much we do for labels. There is, we can do a label tag element and then we provide copy like this. Let me take a look at what ha that [00:03:30] outputs.
+The `form_with` helper not only added an attribute with the accepted characterset (UTF-8), but also automatically created an authenticity token to protect our form against CSRF attacks. We don't need to worry about remembering this step with the `form_with` helper. 
 
-Take a look at the source code. So here's what we wrote by hand. Here's what that helper method outputted. So if we just say title, it's going to use that for both the copy and for the four attribute. But if we want it something different for each of these two. Then we need to provide a second argument here.
+Let's move all of our previous inputs and tags into this block now (removing our old `<form>` opening and closing tags):
 
-Title box. The first argument is the four attribute. The second argument is going to become the content [00:04:00] because in some sense, the first argument is more important. It's the four attribute. And then the second argument is the content for that element. So that is label, and now we can get rid of this. Great.
+```html
+<!-- app/views/movies/new.html.erb -->
 
-And then we also have helper methods for our inputs. And you might expect it to be input tag if we're following the same kind of pattern, but it's actually not because we have a separate [00:04:30] helper method for each. Of input. So we have a text field tag, we have a number tag, we have a checkbox tag, we have a text area tag.
+<h1>New movie</h1>
 
-So we have all these different helper methods that output different types of inputs. But then we have as an argument, I'm going to say query title and let's just start with that and see what it outputs here. The output of the method is this input type text, cuz it's [00:05:00] the text field tag. And both name and ID are both query title cuz I only gave it one argument of query title.
+<% @the_movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
 
-So it's pretty close to what we have written by hand before, except that we want a different ID for it. So I'm going to have to provide more arguments. Now the second argument to this method, the first argument is assumed to be the name and if you, and then it's going to use that for the id. Two second argument is going to [00:05:30] be the.
+<%= form_with(url: movie_path) do %>
+  <div>
+    <label for="title_box">
+      Title
+    </label>
 
-The value attribute. So if you want to prepopulate the input, the second argument is what will be used. So if we take a look at this, whatever is in that second spot will be used to populate a value attribute. Okay? So that's good. That'll be handy for us. In fact, what we're going to want to do is prepopulate prepopulated with this.
+    <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>">
+  </div>
 
-That's what we want in that second spot in case. So this is for when validations fail and if we're re-entering the page with error [00:06:00] messages, we want to put that in there. So like in this situation, um, oh, I didn't actually add, I have no validations. I thought I had one. Let me do title presence. True. So now we can go back
+  <div>
+    <label for="description_box">
+      Description
+    </label>
 
-and
+    <textarea id="description_box" name="query_description" rows="3"><%= @the_movie.description %></textarea>
+  </div>
 
-some syntax error.[00:06:30] 
+  <button>
+    Create Movie
+  </button>
+<% end %>
+```
 
-Okay, so, okay, so here's my now two inputs and in case of validation error, the title can't be blank. Let me type in some description here, [00:07:00] and if there's a validation error, we render this and we're getting this message here. Let me add another validation just for kicks and say description should also be present.
+Now what else can we do here?
 
-Now if I say this is blank, some title create says description can be blank, title can't be blank. Let me say some title [00:07:30] in both of these boxes. And this is working just like before because we're populating it well using the second argument here. Okay, great. And after that I can pass a hash of any other options that I want.
+For `<labels>`, we can use `label_tag`:
 
-Zebra, giraffe. And this will then become arbitrary H T M L attributes on [00:08:00] the element. And this is true of most of our helper methods that output a string of H T M L. If you just need to put arbitrary H M L attributes, you can pass a hash as this last argument. In our case, what we wanted to customize the ID and make it something that is not conventional, conventionally, we use actually just title for everything.
+```html
+...
+<%= form_with(url: movie_path) do %>
+  <div>
+    <%= label_tag :title_box, "Title" %>
 
-And that would be the name. That would be the id. It would be the same for all of them, but if you want them to be different like this, then you can just pass it [00:08:30] as that last hash of arbitrary whatever attributes you need to put on that element. Great. So now we can do everything that we could do before, and it's actually a lot better.
+    <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>">
+  </div>
+...
+```
+{: mark_lines="4"}
+
+The first argument to `label_tag` is the `for=""` attribute that connects the label with the input (by the input `id=""`), and the second argument is the copy we want shown. As usual, refresh and view source on the live app, and you should see a `<label>` tag rendered by this helper method. Same as before!
+
+We can actually leave out the first argument `:title_box`, and just write `<%= label_tag "Title" %>`. What does that do on the page? View source and see for yourself.
+
+The `for=""` attribute is now populated with the copy (`for="Title"`). That's nice, but in this case, we want to make sure our `for` and `id` attribute values matchup, so let's leave it as `<%= label_tag :title_box, "Title" %>`.
+
+We also have helper methods for our `<input>`s. You might expect it to be `input_tag`, if we're following the same kind of pattern, but it's actually not because we have a separate helper method for each type of input: 
+
+```html
+...
+<%= form_with(url: movie_path) do %>
+  <div>
+    <%= label_tag :title_box, "Title" %>
+
+    <%= text_field_tag :query_title, @the_movie.title %>
+    <!-- <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>"> -->
+  </div>
+...
+```
+{: mark_lines="6-7"}
+
+The `text_field_tag` that's replacing our `<input type="text"...>` HTML element is taking the `name=""` attribute as the first argument. This `name=""` is how the input will be registered in the `params` hash (in this case, as `query_string`), so that's a very important argument. After that, we have the `value=""` attribute that we want to prepopulate our form with. We spent awhile getting those prepoulation values working, to improve the form filling experience.
+
+Refresh the live app and view source again. What do you notice about the `id=""` attribute with this input helper method?
+
+It is just using the `name=""` attribute `query_string`, that we supplied the method! Similar to leaving out the `for=""` attribute on the `label_tag` helper. Rails will try to fill these in for us. We'll see how useful this is soon.
+
+But for now, let's note that the final argument to our `text_field_tag` can be a hash of additional options that I want:
+
+```html
+...
+<%= form_with(url: movie_path) do %>
+  <div>
+    <%= label_tag :title_box, "Title" %>
+
+    <%= text_field_tag :query_title, @the_movie.title, {id: "title_box" } %>
+    <!-- <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>"> -->
+  </div>
+...
+```
+{: mark_lines="6"}
+
+And refreshing our **/movies/new** then viewing source, we can see that added an `id="title_box"` to our `<input>` HTML element.
+
+Do the same for the movie description as well. This is a `<textarea>` input, so we need to use the helper `text_area_tag`. Otherwise, the rest is similar to the "Title", so the whole form should end up like:
+
+```html
+<!-- app/views/movies/new.html.erb -->
+
+<h1>New movie</h1>
+
+<% @the_movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
+
+<%= form_with(url: movie_path) do %>
+  <div>
+    <%= label_tag :title_box, "Title" %>
+
+    <%= text_field_tag :query_title, @the_movie.title, {id: "title_box" } %>
+  </div>
+
+  <div>
+    <%= label_tag :description_box, "Description" %>
+
+    <%= text_area_tag :query_description, @the_movie.description, {id: "description_box" } %>
+  </div>
+
+  <button>
+    Create Movie
+  </button>
+<% end %>
+```
+{: mark_lines="17 19"}
+
 
 So I'm going to delete this old one and we are in great shape. We'll do the same thing for description, label, tag, description, description. Oh, this should be [00:09:00] description box so that that populates the four attribute. And then I'm going to do a, in this case, it's a text field tag,
 
