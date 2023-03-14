@@ -232,7 +232,7 @@ We never need to remember to add that again, because `form_with(..., method: :pa
 
 Does the edit form work like before we refactored? If yes, then make another **/git** commit!
 
-## 00:16:00
+## Refactoring `MoviesController` 00:16:00 to 00:24:30
 
 Our views are now much more concise. We're using Ruby helper methods embedded in the view templates to generate HTML in a more secure way, and in a more reusable way using route helper methods.
 
@@ -248,8 +248,6 @@ should end up like:
 matching_movies = Movie.where(id: the_id)
 ```
 
-(We could even drop the parentheses, but that's very much optional. Just keep it in mind when you see other people's code.)
-
 In AD1, we were very deliberate in the three steps to get an `ActiveRecord` instance (a single row of a table) compared to an `ActiveRecord:Relation` (many rows of a table):
 
 ```ruby
@@ -257,72 +255,227 @@ In AD1, we were very deliberate in the three steps to get an `ActiveRecord` inst
   def show
     the_id = params.fetch(:id) # FIRST we get the ID
 
-    matching_movies = Movie.where({ :id => the_id }) # THEN we get the set of matching rows
+    matching_movies = Movie.where(id: the_id) # THEN we get the set of matching rows (ActiveRecord:Relation)
 
     @the_movie = matching_movies.first # FINALLY we get one instance of ActiveRecord, or one row
   end
   ...
 ```
 
-As you might expect, professional Rails, developers do not do this. 
+As you might expect, professional Rails, developers do not do this. Instead, you will often see:
 
-First of all, this typically is done in one line. [00:19:00] We, this is a spot, a place where pip, usually people don't even, I usually don't make an intermediate variable for that. And you know how much I love my intermediate variables. So usually it looks more like this, but even then this dot where, and then dot first can typically be done on one line, so that you just have this.
+```ruby
+  ...
+  def show
+    @the_movie = Movie.where(id: params.fetch(:id)).first
+  end
+  ...
+```
 
-And if [00:19:30] you're going to do that, then there's a method that is designed to do exactly that. It's called Find by, and it's exactly the same thing as dot wear. It's just that it goes and finds all the matches. And regardless of how many matches there are, it just takes the first record out of the set of matches and returns that first.
+There's actually a succinct method that is designed to do exactly that. It's called `find_by`, and it's exactly the same thing as `.where`, except that if automatically returns just the `.first` record given a collection:
 
-Record to you. So it'll either be one record or it'll be nil. So if we pop open a [00:20:00] Rails console and give this a shot and side note to open new terminals, now I have to go over to my little plus here in the VS code interface. But if I open a Rails console and then I do movie dot find by
+```ruby
+  ...
+  def show
+    @the_movie = Movie.find_by(id: params.fetch(:id))
+  end
+  ...
+```
 
-ID one, I get nil. Let's look at Movie dot. All right. [00:20:30] Now first ID is three, that's why. So I do movie dot find by ID three, and it just gives me back the individual instance, not an array containing it. And I can just go ahead and say title right away. So that is how the fine by Method works. And. Even better than that.
+That method will return a `nil` if the `id` isn't found. (Try it in the `rails console` to see for yourself.)
 
-There's another method. Instead of find buy, this is called find, [00:21:00] and this only takes an integer and the find method assumes that you are searching by ID only, you can't use find with any other column. You're, you're definitely, you must be looking in the primary key column. In that case, it's going to do the same thing.
+And we can actually go one step farther and use another method:
 
-The difference in behavior is if you provide an ID number that doesn't exist, it doesn't return nil, it throws an exception of class. Active record. Record not found. And this [00:21:30] is really handy to have an exception thrown sometimes when you don't want the code to proceed any further. If somebody tries to access a ID number that doesn't exist and you want to stop with an exception and in a Real Rails app, let's show you what happens here.
+```ruby
+  ...
+  def show
+    @the_movie = Movie.find(params.fetch(:id))
+  end
+  ...
+```
 
-I'm going to switch this to just a find by prams of ID and comment this out. Now I'm going to go to [00:22:00] movies slash six works just like before, if I go to movies slash something like this, now I get this active record record not found in. Once I push this to Roku, and once this is running in production mode, this error message shows up as a 4 0 4 page, which is the correct behavior.
+The `find` method, only takes an integer argument, and it assumes that you are searching on the table's ID column. No need to tell it which column as we did with `.where`. 
 
-It doesn't show up as a, something went wrong, 500. It doesn't report an error to us. It just means that somebody tries to navigate to a resource that doesn't exist, stops the action, doesn't proceed any [00:22:30] further, and just returns the 4 0 4 page. So this is a special type of method. It returns an expected type of exception when it's given an argument that it's not expecting.
+As opposed to `find_by`, which returns `nil` if the record with the given ID doesn't exist, `find` throws an error exception of class `ActiveRecord::RecordNotFound`. (Again, use the `rails console` to experiment with both methods on the `Movie` model.)
 
-Alright, so from now on, This is what we're going to do in all of these actions that are looking up a, an individual record based on an ID number. We're just going to do [00:23:00] movie dot finds, dot fetch id. This is the right way to do this.
+Once I push this my app to Heroku, if I'm using the `find` method, then this error message shows up as a 404 page, which is the correct behavior when someone tries to visit a resource that doesn't exist (like **/movies/890909820**, or some ID number we don't have in our table). If we used `find_by` and the query returned a `nil`, then a 500 page would be shown ("Something went wrong"), which is not the experience we want for our users.
 
-All right? And another thing is, just so you're aware, conventionally Rails developers don't say the underscore movie. I [00:23:30] did that in app dev one cuz I wanted to be very explicit that I was just making up whatever variable names that I wanted in actual Rails applications. The convention is name these variables the same thing as the class name and the controller name.
+And another thing while we're talking about this `show` method. Conventionally, Rails developers don't say `the` underscore `movie`. We did that in AD1 to be very explicit. The convention is to name these variables the same thing as the class name and the controller name!
 
-I reason I didn't do it in Apt Dev one is because people seem to think that it had to match the model name, but it doesn't have to match. You can name one of your variables, whatever you want to, but you know it's just a convention and you don't have to like think about [00:24:00] what to name it. Just name it. The same thing as the model.
+```ruby
+  ...
+  def show
+    @movie = Movie.find(params.fetch(:id))
+  end
+  ...
+```
 
-As long as we all know now we're on the same page. We make up whatever variable names we want to. So similarly list of movies conventionally, they just call it at movies, and I'm going to make this all more concise as well. Movie dot order render JSON movies. This is starting to look like a professionally written Rails controller.
+You _can_ name your variables whatever you want to, but it's just a convention and you'll see this done a lot.
 
-[00:24:30] Now the only thing that doesn't is these inputs where we did query underscore back when we were learning that these things come from. The names of our inputs, which go into the query string, which then go into the pram slash, which is what we're fetching out of. So we use this prefix to remind ourselves of that.
+Similarly, we should rename all of our `list_of_movies` variables to just `movies` (the resource plural). 
 
-I am now going to get rid of it [00:25:00] and just use the name of the column, which is conventional. And again, the reason we didn't do that before is people seem to think that this has to match with this, but no, it doesn't. What this has to match with is whatever we name our inputs, that's what it has to match with because that's what's going into the pram.
+For instance, the `index` action should end up like:
 
-Sash, which is what, what we're fetching out of. So that's all that really matters. So I'm going to get rid of [00:25:30] this while we're on the topic. This underscore box, for the same reason, this suffix doesn't really exist in conventional code base. People understand what the difference is between four and ID and name and value.
+```ruby
+  ...
+  def index
+    @movies = Movie.order(created_at: :desc)
 
-And so the, they don't need to name them separately to help them keep them straight in their minds. So it's like less mental cognitive overhead to just name everything the same thing. So that's what you'll see in professional code bases, which [00:26:00] then allows us to not have to specify them separately here, cuz it'll use this first argument for everything.
+    respond_to do |format|
+      format.json do
+        render json: @movies
+      end
 
-And even here, if you do it like this, it's just going to capitalize this and use it for the content. So Rails will be pretty smart. You can just say label tag and it'll use it. Title it'll call dot Title Lies on this to actually draw the form. So let's go here. Nope, I broke my edit form because this variable doesn't exist anymore.
+      format.html
+    end
+  end
+  ...
+```
 
-So the index [00:26:30] page can't be accessed. So I have to change this to at movies while I'm here. I'm going to change this to just movie, which is the conventional block. Typically, the array is plural. The block name variables, typically the singular version. Now again, you don't have to do this if you don't want to.
+## Query String Naming and View Refactoring 00:24:30 to 00:30:00
 
-If you like the very long descriptive variable names, feel free to keep those for as long as you want to. But I just want to show you what a conventional code base is going to look like when you get [00:27:00] out into the world. So now my index page should work again. Now if I go to add a new movie, this, the movie variable doesn't exist.
+Now what about those query strings? 
 
-Again. Go back to new at the movie. Everywhere is just movie now. And now this form works. Notice that this was properly, these both are properly capitalized, even though, oh, lemme get these out of here.[00:27:30] 
+```ruby
+  ...
+  def create
+    @movie = Movie.new
+    @movie.title = params.fetch("query_title")
+    @movie.description = params.fetch("query_description")
 
-These out of here,
+    if @movie.valid?
+      @movie.save
+      redirect_to movies_path, notice: "Movie created successfully."
+    else
+      render template: "movies/new.html.erb"
+    end
+  end
+  ...
+```
+{: mark_lines="4-5"}
 
-don't need this anymore. Don't need this anymore.
+Recall, `"query_title"` is the `name` we gave to the input in our form, which goes into query string, and then into the `params` hash that we're fetching from. But we don't need the `"query_"` construction, it was just there to remind us. 
 
-And these labels are still fine because Rails is smart enough when it's creating the content of the label to capitalize are actually title [00:28:00] this. And so that's why we can just say label ti title and it and it does both the four attribute and the content properly cuz it capitalizes. All right, looking good.
+If we want to be more professional, we would just change those to the name of the column we are getting inputs for:
 
-Look at how much shorter and shorter and shorter our code is getting as long as we start to follow conventions. And you ain't seen nothing yet.
+```ruby
+  ...
+  def create
+    @movie = Movie.new
+    @movie.title = params.fetch("title")
+    @movie.description = params.fetch("description")
 
-Okay, looking great [00:28:30] show. Ah-ha. This one I still haven't updated to at movie movies. Path. Looking good. Let's make sure that still works. Looks good. Find method errors. Forgot to change this instance variable in the edit page.
+    if @movie.valid?
+      @movie.save
+      redirect_to movies_path, notice: "Movie created successfully."
+    else
+      render template: "new"
+    end
+  end
+  ...
+```
+{: mark_lines="4-5"}
 
-All right. [00:29:00] And in the edit action. I didn't change this variable,
+And, also, in the `params` hash, we typically fetch on symbols, rather than strings. We can only use strings and symbols interchangably in `params` because it is a special subclass of `Hash`:
 
-I'm just making this all the same. Everywhere again. In Apt Dev one, we named things differently. We named them differently in each action to make sure people understood that. Each action is completely independent and had nothing to do with any other action. So we on purpose named our variables different in everyone.
+```ruby
+  ...
+  def create
+    @movie = Movie.new
+    @movie.title = params.fetch(:title)
+    @movie.description = params.fetch(:description)
 
-Now that we understand that we're going to do what's convention, which is just name the [00:29:30] variable movie in all of these actions, and we don't have to think about making up different names in every action. All right, looking good.
+    if @movie.valid?
+      @movie.save
+      redirect_to movies_path, notice: "Movie created successfully."
+    else
+      render template: "new"
+    end
+  end
+  ...
+```
+{: mark_lines="4-5"}
 
-That was a lot of refactoring. Let's make a get commit. And what else can we approve about this controller? It's looking really good. So far. One thing is in the prams hash. [00:30:00] Typically we use symbols and knot strings, so we'll follow that convention and be consistent about it.
+Now, what that `params` key has to match is the `name` that we assigned that input back on our form. Let's take a peek back there on the `new.html.erb` form:
+
+```html
+<!-- app/views/movies/new.html.erb -->
+
+...
+<%= form_with(url: movie_path(@movie)) do %>
+  <div>
+    <%= label_tag :title_box, "Title" %>
+
+    <%= text_field_tag :query_title, @movie.title, {id: "title_box" } %>
+  </div>
+
+  <div>
+    <%= label_tag :description_box, "Description" %>
+
+    <%= text_area_tag :query_description, @movie.description, {id: "description_box", rows: 3 } %>
+  </div>
+...
+```
+{: mark_lines="4 8 14"}
+
+First of all, note that we changed `@the_movie` to `@movie`, because we changed the name of that instance variable in the controller. Now, look at these changes to align our view template with our controller `params` fetching:
+
+```html
+<!-- app/views/movies/new.html.erb -->
+
+...
+<%= form_with(url: movie_path(@movie)) do %>
+  <div>
+    <%= label_tag :title, "Title" %>
+
+    <%= text_field_tag :title, @movie.title, {id: "title" } %>
+  </div>
+
+  <div>
+    <%= label_tag :description, "Description" %>
+
+    <%= text_area_tag :description, @movie.description, {id: "description", rows: 3 } %>
+  </div>
+...
+```
+{: mark_lines="6 8 12 14"}
+
+We don't need the `query_` and we don't need the `_box`. Those are names we made up to help use keep track of things, but they aren't used in a professional code base.
+
+Also, we can remove some more things here and let Rails automatically: 
+ 
+ - set the label copy (by calling `.capitalize` on the `:title` or `:description`) 
+ - and set the `for=""` / `id=""` attributes (which are just going to default to `"title"` and `"description"`):
+
+```html
+<!-- app/views/movies/new.html.erb -->
+
+...
+<%= form_with(url: movie_path(@movie)) do %>
+  <div>
+    <%= label_tag :title %>
+
+    <%= text_field_tag :title, @movie.title %>
+  </div>
+
+  <div>
+    <%= label_tag :description %>
+
+    <%= text_area_tag :description, @movie.description, { rows: 3 } %>
+  </div>
+...
+```
+{: mark_lines="6 8 12 14"}
+
+Spend a few minutes now manually testing your app and chasing down any error messages caused by the controller refactoring. This comes down to changing the `list_of_movies` to `movies` (plural) and any variable that includes `the_movie` or `a_movie` (see the `index.html.erb` loop!) to just be `movie`. 
+
+In AD1, we named every variable differently to be very explicit about the connections between our pages and actions. But, now that we understand the conventions, which is to just name the variable after the resource (`movie` or `movies`), we don't have to think about making up different names.
+
+That was a lot of refactoring. Let's make a **/git** commit. 
+
+## 00:30:00
+
+And what else can we approve about this controller? It's looking really good. So far. One thing is in the prams hash. [00:30:00] Typically we use symbols and knot strings, so we'll follow that convention and be consistent about it.
 
 You can use them interchangeably only in the prams hash, nowhere else. Most hashes, you can't just interchangeably use strings and symbols, but the special Rails, hashes of prams and a couple of others, you can. Um, that looks good. [00:30:30] All right. This is looking great. Lemme make one more commit here. Refactor.
 
