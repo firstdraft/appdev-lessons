@@ -384,11 +384,11 @@ And since we want padding on every page, why not put it in the application layou
 ```
 {: mark_lines="10 "}
 
-
-
 <aside markdown="1">
 When I'm actually writing code, to speed things up, I use the "Emmet" abbreviation to generate tags for a given class in HTML. For instance, you can just type `div.container` in the code editor, and you should see an option come up to press <kbd>tab</kbd>, which will generate `<div class="container"></div>`.
 </aside>
+
+We put the container around our alerts and our `yield` (where all the rest of each page goes), but under the navbar, so the navbar will still stretch across the top of the screen.
 
 Actually, I'm gonna do this also. I'm gonna start using app dev. I'm gonna start to show the shortcuts that I use when I'm really writing code it slow way. So you also, I [00:24:00] want add with a class of container. The quick shortcut for that is do whatever element you want, dot whatever class you want. And then hit tab to accept the Emmett abbreviation and move stand out open tab class.
 
