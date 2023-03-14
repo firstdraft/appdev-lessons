@@ -12,7 +12,7 @@ As long as your looking through notes, now might also be a great time to have a 
 
 Now let's keep going with our helper methods and learn about four more Rails shortcuts.
 
-## Bootstrap CSS and Font Awesome 00:09:00 to
+## Bootstrap CSS Navbar 00:09:00 to 00:15:30
 
 I want to start getting in the habit of making our apps look better. That means pulling in Bootstrap CSS and Font Awesome. 
 
@@ -73,38 +73,182 @@ Note that we put the UTF-8 character set at the _top_ of the `<head>` because we
 When copy-pasting code into HTML documents, you can auto-format the indentation so that the elements are properly nested using <kbd>Cmd</kbd>(Mac) or <kbd>Cntrl</kbd>(PC) + <kbd>shift</kbd> + <kbd>P</kbd> to open the command menu on Gitpod's VS Code editor. With the `>` prompt open, you can search "Format" and find the command. (You can search for any command in this prompt.) You will also see a direct keyboard shortcut to that formatting command that might be useful to you. Become a keyboard ninja!
 </aside> 
 
+Now refresh a page in your app (**/**, the root should be set to the movies `index` page) and see the change. If the fonts look a little better, you know you you connected the assets correctly.
 
-And this just has stuff that you can [00:09:30] copy directly into the head of your document, which is in the application layout file. And it'll pull these files, these, uh, CDNs instead of us having to download them and upload them and host them ourselves. So eventually we will download them and upload them and host them ourselves.
+Let's start putting it to use. Visit the [Bootstrap docs](https://getbootstrap.com/docs/5.1/getting-started/introduction/) (we are using v5.1), specifically the docs for implementing a [navbar](https://getbootstrap.com/docs/5.1/components/navbar/).
 
-But just for getting started, this is the easiest way and I'm gonna paste that into the head of my document, which I'm gonna find in the application lab file. And then I'm gonna auto [00:10:00] cause I stuff and the invitation got messed up. Um, and then
+Near the top of the page you can copy the "kitchen sink" example, with everything in it, and click the "Copy" button:
 
-one more step, but looks like that's good. So now you see the fonts change, you know that you connected the assets, correct. Any questions on that? I know it's been a long time for some of you Bootstrap font. Awesome. External sheets, link elements, script elements, CDNs, anybody, any questions?[00:10:30] 
+![](/assets/navbar-bootstrap-gif.gif)
 
-All right, let's start putting it to use. Um, I want to add, so as usual, what I'm gonna do is go to the bootstrap docs. I include, and you know, you can read this, the refresher memory. Usually what I do is go straight to the kitchen sink example here with examples of dropdowns, search boxes, disabled link, [00:11:00] and right here I'm gonna copy the example by clicking this handy button in the top right corner and then paste it into my app.
+There's a lot here, but we just want to take it all and then remove what we don't need:
 
-And this is a good example of something that would go in the application layout file, because we want the navar to appear on every page and be the same on every page. So I'm gonna paste it in, usually just inside the body tag, above the notice and the alert. And I'm gonna auto format again, fix the [00:11:30] indentation, take a look and make sure it showed up.
+```html
+<!-- app/views/layouts/application.html.erb -->
 
-So there it is, dropdowns working. So I've got my, uh, example nav bar, and then as usual, it's time to start to like mess around with it and make it auto. So I would. Actually, what I should do is make a gig commit. So let me make a gig commit before I get too far
+...
+    <!-- Connect Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  </head>
 
-closes.
+  <body>
 
-[00:12:00] Keep my workspace, keep my preview.
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    
+    <div style="color: green;">
+      <%= notice %>
+    </div>
 
-First time you load under,
+    <div style="color: red;">
+      <%= alert %>
+    </div>
+    
+    <%= yield %>
+  </body>
+</html>
+```
+{: mark_lines="10"}
 
-but okay, I'm just gonna make a couple changes before I make my first. So in this whole massive of code, here is the link for this part, the top left. And let's modify that to be something like helper [00:12:30] methods three. Let's make that link, just go to the homepage. So just a slash. And really if we're gonna adhere to our new rule, we want possible not.
+This is a good example of something that would go in the application layout file in the `<body>` above our `<%= yield %>` statement, because we want the navar to appear on every page.
 
-So actually what I do is replace this with the equivalent link to put the copy over here in a string and then the URL here with a root [00:13:00] round implemented. And also if we want to have this class on the link, we can conclude options on the end.
+After this copy-paste, check on your live app that the navbar showed up.
 
-Now I have the two equivalent version, right? And help method. Lemme just make sure this works. Looks exactly the same. So really this is, this is how, what we wanna have when we're copying in boots back, [00:13:30] examples. Of course it's gonna be plant, but it's a good idea right then and there to switch it over to the help method.
+Now would be a good time for **/git** commit.
 
-Otherwise you're gonna have a bunch of 'em all to do all at once. And it's easy to introduce errors then. So I'm gonna do that. And what else? This part of the nav bar is the little hamburger. So you never really modify that. That's what here. So we leave that alone. Here's where the actual nav [00:14:00] links begin.
+Let's start modifying the navbar to suit our purposes, starting with the homepage link:
 
-And then there's lists. And then each of these ally with a class of nav I know and a a with the class of nav link are all of our, our links. We don't want too many now we just have movies. So I just wanna show you adding a nav bar. I'm gonna switch. In fact, I guess, like I said, that's do it the right way.
+```html
+...
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <a class="navbar-brand" href="/">Helper Methods 3</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+       ...
+```
+{: mark_lines="5-6"}
 
-Use the link to helper. Let's just make it, uh, movies. And it's a good movies path. [00:14:30] And the class on this seems to be no link.
+Okay, we have a link to our **/** root page now. But actually, we should use our new helper methods! Remember, we have `link_to` now, which will draw `<a>` elements for us:
 
-And like pretty much everything else. We don't need anything off now, so got all, all the other items in the lab, but just there, that's it. We'll add more links as we add more resources.[00:15:00] 
+```html
+...
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <a class="navbar-brand" href="/">Helper Methods 3</a>
+        <%= link_to "Helper Methods 3", root_path, class: "navbar-brand" %>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+...
+```
+{: mark_lines="5-7"}
+
+We added another argument to `link_to` besides the copy (first position), and the path (second position). We can also pass additional arguments as a hash on the end of the method, noting that we dropped the curly braces since this hash is the last argument to the method. And in that hash, we are just noting that the `class` of the link should be `"navbar-brand"`, as it was in the original `<a>` element.
+
+Confirm that the new `link_to` method works exactly as expected (and looks good with bootstrap). Then feel free to delete the old HTML element.
+
+What next? Just below the `"navbar-brand"` root link, there is code for the "hamburger" menu for smaller screens, so we don't want to modify that at all. But, a bit farther down is the actual nav links:
+
+```html
+...
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+...
+```
+{: mark_lines="3-6"}
+
+We have a list beginning with `<ul>`, then each `<li>` with a `class="nav-item"` followed by an `<a>` link of `class="nav-link"`. Well, we can replace those with `link_to`s and put in the paths we want links to:
+
+```html
+...
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+            <%= link_to "Movies", movies_path, class: "nav-link" %>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+...
+```
+{: mark_lines="6-7"}
+
+We could add more links to things like **/movies/new**, but we'll just keep it simple for now. 
+
+Lastly, let's delete the the `<li>` defining the dropdown menu, so that our final navbar code in the `<body>` of `app/views/layouts/application.html.erb` looks like:
+
+```html
+...
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <%= link_to "Helper Methods 3", root_path, class: "navbar-brand" %>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <%= link_to "Movies", movies_path, class: "nav-link" %>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+...
+```
 
 We don't any, but I'm just gonna leave it for now. Any questions on the bootstrap nav bar? Bootstrap in general? Copy pasting in elements? Yeah, Jack, just simple question is, is there like a shortcut for like commenting out, not in like Ruby, but when you're dealing with like a layout review file like this Actually my normal command slash we have G's [00:15:30] got a A Vs extension installed for us.
 
