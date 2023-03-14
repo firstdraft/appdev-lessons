@@ -49,7 +49,7 @@ Please follow the instructions below to enter the Ruby Gym for some weight train
 
 <div class="proj" markdown="1">
 
-  Open the Gitpod Ruby Gym project that follows this reading and complete the exercises.
+  Open the [Gitpod Ruby Gym project](https://github.com/appdev-projects/ruby-project-gym){:target="_blank"} on Canvas that follows this reading and complete the exercises.
 
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 
