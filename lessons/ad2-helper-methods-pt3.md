@@ -2,71 +2,19 @@
 
 **BENP: Document based on descript transcription of AD2 WS 2023 Day 3 Recording.**
 
-## Starting HM3
+## Getting Started 00:00:00 to 00:09:00
 
-[Helper Methods (Part 3)](https://github.com/appdev-projects/helper-methods-3).
+Please start the Gitpod workspace for [Helper Methods (Part 3)](https://github.com/appdev-projects/helper-methods-3). As usual, run `bin/setup` and get the server started as well. 
 
-**Raghu:** [00:00:00] All right everyone, we're gonna get started. Welcome today, two of F two. There's an called medics,
+Have a look through the code. It is a solution Parts 1 and 2 of the Helper Methods project, with all of our professional refactoring. Refresh anything that looks unfamiliar by glancing back to your notes.
 
-so please, uh, start the workspace process on that assign. We're gonna be using it to just experimenting the starting point of this, uh, project. When you set on will be a solution to [00:00:30] helper methods one and two. So first thing is may glance through that code base and see if you can think of any questions and then we're gonna press
+As long as your looking through notes, now might also be a great time to have a look at Ruby Weekly from this week. Did you see anything interesting? Could you begin to make some sense of some of the news with all your AD1 and beginning AD2 knowledge? Hopefully yes!
 
-mm-hmm. Any question if you could, um, I explain the difference post, understand the concept, but it's a bit more refresh,[00:01:00] 
+Now let's keep going with our helper methods and learn about four more Rails shortcuts.
 
-so have form,
+## CSS 00:09:00 to
 
-whatever,
-
-and then I.[00:01:30] 
-
-And so there's basically an implicit entry value. Your method equals get, and if you leave it out, that's the default, but we can also switch it to posts. Those are two options, right?
-
-And then I have an input in here.[00:02:00] [00:02:30] 
-
-I call the ticket stop now,
-
-Okay, so if we have a input and then I submit this form, what's gonna happen? Well, whatever the user types, it's gonna be sent to some url, and then the cruise string, and then the value that they type.[00:03:00] 
-
-Okay, what if I don't want this? What if it's a file upload? You can't put it into the url, right? Only short values can go into the url. Not even like a long value, like a blog post. So the solution is we switch post, I'm sorry. If it was get, then it would drove like this. If it's post now the request gets placed to just that action.
-
-A query string is not assembled.[00:03:30] 
-
-However, then you can have file those sensitive things like pathway
-
-small, let's say the [00:04:00] route which said post and banks say like, I dunno, I issued Gap later on in one of the other, uh, templates. Um, people say the routing error, right?
-
-Two route. So they don't, there's no confusion between them. Whatever the request is, will only match exactly the verb and the path Combin. Okay. Um, so I wanted ask before we get started, hopefully you got your helper [00:04:30] methods, workspace, uh, sitting. If you just walked in, find this assignment, get your gift pod creation happening.
-
-I wanted to ask if anybody found anything interesting in Ruby Weekly this week. Hey, um,
-
-hanging out with the, uh, like crackling, which
-
-I think so, yeah.[00:05:00] 
-
-Um, okay. So anybody find anything interesting? I found something really interesting. I wanna show you all, uh, this, I didn't have time to look at this week. So I looked at the, the last week one, which I first showed you, and I found that like one of the core Ruby develop first release, uh, extension, which is so cool.
-
-Imagine. So this [00:05:30] is vs. Code installed locally on my own laptop, not the GI Podd BS code. But imagine if I start to write some Ruby and, and then
-
-100 and then print X times Y. And I was, I always tell you, all right. So many times, almost every other line, when you're building up a Ruby program, it's useful to print the output to make sure that [00:06:00] whatever happened, actually what you thought. Well, here's what the extension does. So I have this command, save, execute, and show the execution.
-
-And, and oops, it like adds like a comment at the end of each line showing the result of that[00:06:30] 
-
-one keyboard, every single line, and then follow what happens, right? If
-
-I dunno something, but
-
-like it'll tell you like, which branch [00:07:00] did it going? Visibil here. So I'm gonna be using this constantly. Probably it's not that helpful for us when we're writing Rails applications because we have the prams and our outputs in the server log and, uh, the browser. But for pure Ruby programs, this is gonna be great.
-
-Maybe it'll be helpful for reals apps too. I haven't tried it yet. Okay, so anyways. That's like a really, that's an example of a Ruby Weekly article that actually is applicable no matter [00:07:30] what your level of advancement is, right? This is applicable to beginners even. And there's a lot of Ruby Weekly stuff that is applicable to beginners.
-
-So keep an eye on it, see if you find anything interesting, and then share
-
-Also, did anybody do any exercises this week? Nice. Good for you. Take your vitamins. People do one per week. We're actually moving pretty fast, so I think within two weeks. We'll, so [00:08:00] it's really helpful to learn Travis Pigs to redo the same things that you've already accomplished in Ruby and that's like a great way to, to translate it all.
-
-Okay. Let us, I have a quick question on, um, you always recommend just kinda doing the next one It recommends or should we be like jumping around exercise? Interesting question for that. It's been a while since I've done it and it's changed a lot, so I guess I would do the one they recommend. Uh, but I'm not [00:08:30] on that.
-
-Okay. So here's my, keep the notes to the project up. Here's my app. And I don't think this crackling has recurred, right? Has it? The mic crackling? There's a little bit. Okay. Okay. All right. Here's the application, the list of movies. And we're gonna keep going, make this a little bit better and learn about [00:09:00] four shortcuts.
-
-So first of all, I want to start to get in the habit of making our maps look better as we're, so we're gonna pull in bootstrap and awesome and sometimes use it while we're prototyping. So the quick, quickest way of getting bootstrap font awesome. Uh, and all the Java success is you put link, it takes you to by design chapter.
+I want to start getting in the habit of making our maps look better as we're, so we're gonna pull in bootstrap and awesome and sometimes use it while we're prototyping. So the quick, quickest way of getting bootstrap font awesome. Uh, and all the Java success is you put link, it takes you to by design chapter.
 
 And this just has stuff that you can [00:09:30] copy directly into the head of your document, which is in the application layout file. And it'll pull these files, these, uh, CDNs instead of us having to download them and upload them and host them ourselves. So eventually we will download them and upload them and host them ourselves.
 
