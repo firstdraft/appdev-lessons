@@ -394,7 +394,14 @@ I want to note: there's an open [pull request for this project](https://github.c
 
 ## Getting Started with Partial View Templates 00:33:30 to 
 
-Sometimes we have code that we want to reuse, but not in every single template, but in some of templates. And it would be really nice not to have to duplicate that code and then if we change it, have to change it in all these different view templates.
+Sometimes we have code that we want to reuse, but not in every single template, but in _some_ templates. And it would be really nice to avoid duplication. Also, look how long our application layout has become with all of the bootstrap additions we made. Wouldn't it be great if we could put some of that code in separate files to make it all more readable?
+
+Partial view templates (or just "partials", for short) are an extremely powerful tool to help us modularize and organize our view templates. Especially once we start adding in styling with Bootstrap, etc, our view files will grow to be hundreds or thousands of lines long, so it becomes increasingly helpful to break them up into partials.
+
+Here is the [official article in the Rails API reference](https://edgeapi.rubyonrails.org/classes/ActionView/PartialRenderer.html) describing all the ways you can use partials. There are lots of powerful options available, but for now we're going to focus on the most frequently used ones.
+
+
+
 
 For example, [00:34:00] right now, given all the work that we did on edit and New,
 
