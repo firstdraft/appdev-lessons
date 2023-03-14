@@ -256,26 +256,11 @@ Lastly, let's delete the the `<li>` defining the dropdown menu, so that our fina
 
 </aside>
 
-## CLI `git` 00:15:30 to
+**BENP: CLI `git` 00:15:30 to 00:19:30 using chapters. Maybe better to wait to show/**
 
-Now's a good time for another **/git** commit. But wait! How are you feeling about our browser-based **/git** interface? Hopefully pretty comfortable. But it's time to see the command line interface (CLI) for `git`. That's what professional developers use.
+Now's a good time for another **/git** commit. 
 
-
-...
-
-Okay, so there, there's, in under the assignments, parts one and two of the before week three section are about kit. Let's open up the part two. Oh, that's the wrong canvas. So there should be one about GIT CLI in the assignments list
-
-right here. [00:18:00] We'll look for this assignment, part two and week three before class. And it just has a link to some readings, some chapters about gi And so I'm not gonna go through all of this right now, but all the button click slash kit interface until now did this on, on your behalf. So whenever you clicked on the, it was the equivalent of doing these two commands and typing in the description here.[00:18:30] 
-
-Also, get it, we, uh, it's already a get repost so we don't need to do a get net, but we added a bunch of shortcuts just to make it easier for you to all alter, do this easily. So rather than having to type GI add dash a get commit dash M and then put your message here, we have a shortcut, alias a.
-
-Description here. So let's, right now I'm gonna go into my terminal [00:19:00] and do, get ACM added. Bootstrap a bar. That's
-
-all right.
-
-Keep open as well with the rest of my notes.[00:19:30] 
-
-I've got it.
+## 00:19:30 to 
 
 Um, there's a nice, so if I look at it right now, and if I add, it's like not bad, there's like a green paragraph up there. But let's switch that to be a little bit nicer by using the bootstrap alert. Click on this link to reach the bootstrap alert documentation. And Bootstrap includes these nice like [00:20:00] colored boxes and the text and alert and we're gonna want to use the alert danger for the, the alert danger for the redirect alert and alert success for the notice.
 
