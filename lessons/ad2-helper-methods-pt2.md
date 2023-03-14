@@ -473,7 +473,7 @@ In AD1, we named every variable differently to be very explicit about the connec
 
 That was a lot of refactoring. Let's make a **/git** commit. 
 
-## 00:30:00
+## Bundled Subhashes in `params` 00:30:00 to 00:39:00
 
 Let's do some more work on our forms. We can demonstrate something with some dummy code, maybe in the `index` page:
 
@@ -547,7 +547,7 @@ Parameters: {"zebra"=>["hi", "there"]}
 
 Rails put the two values for the two different inputs on the same `name`d input fields into an array. So now, we could do `params.fetch("zebra")` and that would return an array that we could do `.each` on to loop through. In other words, we have created nested structures in our `params`.
 
-This gives you a lot of different power and flexibility. A classic use case here is creating check boxes. For instance with code like this:
+This gives you a lot of different power and flexibility. A classic use case here is creating checkboxes. For instance with code like this:
 
 ```html
 ...
@@ -562,22 +562,44 @@ This gives you a lot of different power and flexibility. A classic use case here
 </form>
 ...
 ```
-{: mark_lines="9"}
 
+Which would lead to the `params` hash: `{"zebra"=>["red", "blue"]}`.
 
-What else? Well, other than the classic many to many checkbox situation, I go back to type text and I want to do something else I'm going to do, we'll just leave those values in there to save me some typing. But they're type text [00:36:00] now. Watch if I do giraffe, what if I put a value in there? Now what's going to happen?
+What else? Remove the `type="checkbox"` to go back to the default `"text"` input, and add something else to the brackets:
 
-So I now have this form. Zebra, zebra. I put the square brackets, but now I put something else inside the square brackets and I type in some stuff. 1, 2, 3, 4, 5, 6. Imagine I just typed in some values. What do you think the peram hash is going to look like? Now, take [00:36:30] a guess. Is it going to be an array again with values, giraffe and elephant in it?
+```html
+<!-- app/views/movies/index.html.erb -->
 
-If so, what? It's going to happen to red one, two, and three blue. Where is this food going to go? Is it going to be nested arrays? Two levels deep. So the key will be the top level key will be zebra and the peram slash then the value will be an array. Is it an array of arrays? Let's, let's see. [00:37:00] So as, as always, top level key in the prams hash, we got zebra, but now the value is a hash, so nested hash.
+<h1>
+  List of all movies
+</h1>
 
-And the first key for this input is giraffe, and it's got a value of whatever I typed. The second key is elephant, and it's got a value of what I write typed. So this is a very handy way of bundling [00:37:30] together related inputs in a form into a subhash. So they're not all in an array. They're labeled in a subhash, which is really handy as well.
+<form>
+  <input name="zebra[giraffe]">
+  <input name="zebra[elephant]">
+  <button>Submit</button>
+</form>
+...
+```
+{: mark_lines="8-9"}
 
-And this is actually the technique that we use more often. The first technique I showed you is useful mainly for check boxes, which are not that common, but this is super common. In fact, this is the technique we use for 95% of our forms is. All of the inputs that are [00:38:00] related to one model type object, a movie or a director, anything related to one database record.
+Type something into both inputs on the **/movies** form in your live app. What do you think the. What do you think the `params` hash is going to look like? Take a guess. Is it going to be an array again with values `giraffe` and `elephant` in it?
 
-We want to bundle them all together into one subha and store them in a key movie or director or event or whatever. We want that to be a top level key in the pram slash and then the subhash should ha have all of the attributes for that top level key in that way if we want to. It's very easy to have attributes for multiple different objects [00:38:30] in the same form if we need to.
+Have a look at the server log (assuming you typed "hi" and "there" into the boxes on the form):
 
-Alright, so let's re, given this principle, I want to reorganize our form a little bit. So I'm going to go back here. I'm going to bring this back here. And given this, I want to think about our new form and what I want to do. Is put all of these [00:39:00] into a, in the prams hash. I want them all to be in a subha under a key called movie.
+```bash
+Parameters: {"zebra"=>{"giraffe"=>"hi", "elephant"=>"there"}}
+```
+
+Now the value to the `"zebra"` key is also a hash; a nested hash! And the first key for the first input is `"giraffe"`. It has a value of whatever I typed. The second key is `"elephant"`, and it also has a value of what I typed. 
+
+This is a very handy way of bundling together related inputs in a form into a labeled **subhash**. 
+
+This is the technique that we use more often when we're building forms. All of the inputs that are related to one model object, a `Movie` or a `Director`, are bundled into one subhash and stored a key `movie` or `director`. We want _that_ resoure to be a top level key in the `params` hash and then the subhash should have all of the attributes (or column values) for that top level key. 
+
+## Refactor Forms with Subhashes 00:39:00
+
+Given this new principle of nested hashes in our `params`, let's reorganize our forms. So I'm going to go back here. I'm going to bring this back here. And given this, I want to think about our new form and what I want to do. Is put all of these [00:39:00] into a, in the prams hash. I want them all to be in a subha under a key called movie.
 
 So what I'm saying here is I want the prams hash to end up looking like movie. And then I want title, some whatever I type. And then description.
 
