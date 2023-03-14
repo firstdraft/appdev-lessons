@@ -2,7 +2,7 @@
 
 **BENP: Document based on descript transcription of AD2 WS 2023 Helper Methods Part 2 Video.**
 
-## `form_with` 00:00:00 to 
+## `form_with` 00:00:00 to 00:12:00
 
 We're continuing to work in our same [Helper Methods](https://github.com/appdev-projects/helper-methods) Gitpod project. We'll start where we left off with the `link_to` helper method. Hopefully all of your `<a>` elements are now `link_to` helper methods instead. 
 
@@ -19,17 +19,17 @@ Let's start with the form in `app/views/movies/new.html.erb`. The new helper met
   <p style="color: red;"><%= message %></p>
 <% end %>
 
-<%= form_with(url: movie_path) do %>
+<%= form_with(url: movie_path(@the_movie)) do %>
   
 <% end %>
 
-<form action="<%= movies_path %>" method="post">
+<form action="<%= movie_path(@the_movie))%>" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   ...
 ```
 {: mark_lines="9-11" }
 
-As you can see, the method takes arguments. In this case we pass the option `url:` the output of our route helper `movies_path` (which we know is just `"/movies"`). We also put this helper in a `do`-`end` block, because it's going to write a form for us in this block!
+As you can see, the method takes arguments. In this case we pass the option `url:` the output of our route helper `movie_path(@the_movie)) (which we know is just `"/movies"`). We also put this helper in a `do`-`end` block, because it's going to write a form for us in this block!
 
 In the live app, refresh the **/movies/new** page and "view source". You should see that `form_with` has produced:
 
@@ -54,7 +54,7 @@ Let's move all of our previous inputs and tags into this block now (removing our
   <p style="color: red;"><%= message %></p>
 <% end %>
 
-<%= form_with(url: movie_path) do %>
+<%= form_with(url: movie_path(@the_movie)) do %>
   <div>
     <label for="title_box">
       Title
@@ -83,7 +83,7 @@ For `<labels>`, we can use `label_tag`:
 
 ```html
 ...
-<%= form_with(url: movie_path) do %>
+<%= form_with(url: movie_path(@the_movie)) do %>
   <div>
     <%= label_tag :title_box, "Title" %>
 
@@ -103,7 +103,7 @@ We also have helper methods for our `<input>`s. You might expect it to be `input
 
 ```html
 ...
-<%= form_with(url: movie_path) do %>
+<%= form_with(url: movies_path) do %>
   <div>
     <%= label_tag :title_box, "Title" %>
 
@@ -124,7 +124,7 @@ But for now, let's note that the final argument to our `text_field_tag` can be a
 
 ```html
 ...
-<%= form_with(url: movie_path) do %>
+<%= form_with(url: movies_path) do %>
   <div>
     <%= label_tag :title_box, "Title" %>
 
@@ -137,7 +137,7 @@ But for now, let's note that the final argument to our `text_field_tag` can be a
 
 And refreshing our **/movies/new** then viewing source, we can see that added an `id="title_box"` to our `<input>` HTML element.
 
-Do the same for the movie description as well. This is a `<textarea>` input, so we need to use the helper `text_area_tag`. Otherwise, the rest is similar to the "Title", so the whole form should end up like:
+Do the same for the movie description as well. This is a `<textarea>` input, so we need to use the helper `text_area_tag`. Also, we had a `rows="3"` attribute, so we need to add that to our optional hash. Otherwise, the rest is similar to the "Title", so the whole form should end up like:
 
 ```html
 <!-- app/views/movies/new.html.erb -->
@@ -148,7 +148,7 @@ Do the same for the movie description as well. This is a `<textarea>` input, so 
   <p style="color: red;"><%= message %></p>
 <% end %>
 
-<%= form_with(url: movie_path) do %>
+<%= form_with(url: movie_path(@the_movie)) do %>
   <div>
     <%= label_tag :title_box, "Title" %>
 
@@ -158,7 +158,7 @@ Do the same for the movie description as well. This is a `<textarea>` input, so 
   <div>
     <%= label_tag :description_box, "Description" %>
 
-    <%= text_area_tag :query_description, @the_movie.description, {id: "description_box" } %>
+    <%= text_area_tag :query_description, @the_movie.description, {id: "description_box", rows: 3 } %>
   </div>
 
   <button>
@@ -168,40 +168,73 @@ Do the same for the movie description as well. This is a `<textarea>` input, so 
 ```
 {: mark_lines="17 19"}
 
+Check out the live app. Everything looking good? Great!
 
-So I'm going to delete this old one and we are in great shape. We'll do the same thing for description, label, tag, description, description. Oh, this should be [00:09:00] description box so that that populates the four attribute. And then I'm going to do a, in this case, it's a text field tag,
+The last thing is the `<button>`. Even for this, we have a `button_tag` helper method:
 
-no text area tag. And then this one, the name should be query description and we should pre-populate it with this [00:09:30] description if it exists. And then we want an ID on it of description box so that the app, so that the label matches properly with it. Okay, great. And also, I said that I was going to stop using these, so I'll stop using these and we'll be very terse, [00:10:00] even though it's not my favorite style.
+```html
+...
+  <!-- <button>
+    Create Movie
+  </button> -->
+  <%= button_tag "Create Movie" %>
+<% end %>
+```
 
-And if we examine the text area that was written. Here's this one. Here's this one. Oh, this one had rose on it. I. When we wrote it by hand, we put rows on it. That's okay. Like I said, we can put an arbitrary, any pairs of HTML attributes that we want in there. And so we got that. We got with that, we got that.
+All right, so now we've replaced all of the essential parts of this form, other than `<div>`s that we use to organize it, with helper methods. Ultimately, the output is the _exact_ same HTML as before, but it's better in many ways.
 
-We've achieved parody and I'm going to delete [00:10:30] the old raw HTML versions. One more time. Let's just give this a whirl. Add a new movie. Try this one, try that, try this, try this. Great. Everything looks good. And the last thing is this button. And even for this, we have a button tag[00:11:00] 
+The most concrete way in this example is that we didn't have to generate the CSRF token manually. That's going to save us a lot of work over the hundreds of forms that we're going to make! 
 
-create movie. And that's about as simple as it gets. It's just going to put that button in for us. And we're good to go. All right, so now we've replaced all of the essential parts of this form other than just divs that we use to organize it with helper methods. Ultimately, the output is the exact same H T M L as we had before, but [00:11:30] it's better in many ways.
+Make a **/git** commit now.
 
-The most concrete way in this example is we didn't have to generate the cross-site request for a re token manually. That's going to save us a lot of work over the hundreds of forms that we were going to make. We don't have to worry about creating the hidden input and populating it with the form authenticity.
+## Update Edit Form 00:12:00 to 00:16:00
 
-Token derails, just by default, almost invisibly now takes care of that for us. Fantastic. Alright, and we're going to do the same update. I'm going to copy this. [00:12:00] We're going to do pretty much the same update for our edit form and. The edit form. I'm going to paste this here and it's pretty similar. The difference is I'm going to, actually, before I do this, what should I do?
+Let's take our new helper methods and do the same update on our edit page. Try to type out the new form to build some muscle memory. It's almost identical to our `new.html.erb` form. However, we can see a few key differences that need to be incorporated:
 
-I should make a gig commit. So let me get this going. You might notice that this Web Git client is slower, and that's because we're using [00:12:30] Vanilla Rails, which uses a different asset management system that's a little bit more complicated, doesn't play well with our Git gem. The good news is that we're not going to be using this Git interface for long, cuz you all are going to learn command line git, which is what most developers use.
+```html
+<!-- app/views/movies/new.html.erb -->
 
-So maybe just one more project we have to use this for. All right, so replaced new form with form with. Now let's do the same for our edit form. And first we'll do the opening tag [00:13:00] form with. URL goes to something and we'll have our due, then we'll have our end.
+<h1>Edit movie</h1>
 
-Now what do we put here? Well, we can just start to move it over bit by bit from the handwritten version. We don't have to specify method post because the form width uses that by default. If you [00:13:30] wanted to do a method get, then you would have to specify that. It's basically the inverse of H T M L H T M L element.
+<% @the_movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
 
-The default method for a form is a get, but rails knows that most of our forms should post. So it flips the default behavior. Okay. I don't have to do the authenticity token. I wanted this method to be a patch. Okay, great. So now I can take advantage of this and do method patch, [00:14:00] and it will also automatically generate this.
+<%= form_with(url: movie_path(@the_movie), method: :patch) do %>
+  <div>
+    <%= label_tag :title_box, "Title" %>
 
-Here. So let's take a look at that. Before I delete everything, let me put this back. Actually we can compare the two put method. Get here, there's patch. Rather take a look at the output of this
+    <%= text_field_tag :query_title, @the_movie.title, {id: "title_box" } %>
+  </div>
 
-show details. Go to an edit forum, view source resource. And now here's [00:14:30] our new form width output and you can see that it put in the right action compared to the previous one. I copy pasted this out, but it used to, it added the car set, which is good. It used the method post like this one did it automatically put in the authenticity token kitt, which is good.
+  <div>
+    <%= label_tag :description_box, "Description" %>
 
-And it automatically generated the method patch. So both of these hidden inputs that we wrote by hand we can get rid of. Awesome. [00:15:00] And we put in all the contents for our stuff inside. But if you think about the content for our stuff, label for title with the value of the movie title, description, value, description.
+    <%= text_area_tag :query_description, @the_movie.description, {id: "description_box", rows: 3 } %>
+  </div>
 
-The only thing that's different between the create form and the update form is the copy on this button. So I'm going to delete all of this. Go to my new form. I'm just going to copy this, just paste it in cuz [00:15:30] now all this is the same, assuming that this instance variable is the same, which we did name it the same.
+  <%= button_tag "Update Movie" %>
+<% end %>
+```
+{: mark_lines="9"}
 
-So we got lucky there. But then I just sort of update this copy of this button and then it should be good to go. Let's go back. I'm going to go back. Let's edit something that has something in it. Edit, update. Looks like it works. Fantastic. Okay, so now we have a much better. [00:16:00] Update form using the form with helper, which again just writes HTML for us, but now it saved us two things.
+The default method that HTML forms use is `get`. But Rails is smart, and it knows that many of our forms use `post`. So by default, the `form_with` method on our `new.html.erb` form added the `method="post"` attribute _and_ the authenticity token. 
 
-The hidden input for the authenticity token and the hidden input for the method patch. Excellent. Okay. Now what should we do next? Well, I'd like to spend some time refactoring our controller. Our views are looking great. Our views, we are much more concise. We're using Ruby Helper methods embedded in the view templates to generate H T M L in a more secure way and in a [00:16:30] more reusable way using route helper methods.
+Similarly, we can tell `form_with` exactly which method (HTTP verb) we want to use. In the case of our `edit.html.erb` form, we actually want the `method: :patch`, which we pass in as an argument above.
+
+If you view source on the new edit form, you will see that adding this argument to the helper method produced that odd bit of HTML to "trick" the form into making a patch request:
+
+```html
+<input name="_method" value="patch" type="hidden">
+```
+
+We never need to remember to add that again, because `form_with(..., method: :patch)` does it for us. Nifty!
+
+Does the edit form work like before we refactored? If yes, then make another **/git** commit!
+
+## 00:16:00
+
+The hidden input for the authenticity token and the hidden input for the method patch. Excellent. Okay. Now what should we do next? Well, I'd like to spend some time refactoring our controller. Our views are looking great. Our views, we are much more concise. We're using Ruby Helper methods embedded in the view templates to generate HTML in a more secure way and in a [00:16:30] more reusable way using route helper methods.
 
 Let's spend some time in our controller. So right now there's a few things we need to improve. There's some hash literals and we can do a lot of work with those. So like anywhere we have the explicit curlies, we can, we said we were going to get rid of these and so we should. [00:17:00] And, oops, that's not great first.
 
