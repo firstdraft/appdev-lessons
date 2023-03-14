@@ -250,17 +250,18 @@ Lastly, let's delete the the `<li>` defining the dropdown menu, so that our fina
 ...
 ```
 
-Now's a good time for another **/git** commit.
+
 
 <aside markdown="1">
-How are you feeling about our browser-based **/git** interface? Hopefully pretty comfortable. But this is the last lesson that we'll be using that interface for, because soon we'll learn command line (CI) `git` interface. That's what professional developers use.
+
 </aside>
 
-## 00:15:30 to
+## CLI `git` 00:15:30 to
 
-I guess because [00:17:00] part one of the homework for next week is we gotta start learning actual git, not the slash GI interface that we created for you. For rapid one, most developers use command line commands and you're gonna just be much faster and more proficient if we start using command line commands. So let's do it that way.
+Now's a good time for another **/git** commit. But wait! How are you feeling about our browser-based **/git** interface? Hopefully pretty comfortable. But it's time to see the command line interface (CLI) for `git`. That's what professional developers use.
 
-Um, let actually publish one and two on canvas with the homework. Let me just,[00:17:30] 
+
+...
 
 Okay, so there, there's, in under the assignments, parts one and two of the before week three section are about kit. Let's open up the part two. Oh, that's the wrong canvas. So there should be one about GIT CLI in the assignments list
 
