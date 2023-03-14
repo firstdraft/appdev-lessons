@@ -76,11 +76,78 @@ p c.class # => Person
 
 For each attribute that we declared, we get methods that we can call to assign and retrieve values.
 
+----
+
+#### Quiz Question
+
+- Choose all that are true of our `class Person` example above.
+- We can add a new `birthdate` method to `Person` by writing `c.birthdate`
+    - No, we need to define the new method _in_ the class, not on an instance _of_ the class
+- `attr_accessor` is a `Symbol`
+    - No, there is no `:` symbol prepending it
+- `attr_accessor` is a new keyword for us
+    - Yes! 
+- We can define a new `.birthdate` method to `Person` by adding `attr_accessor "birthdate"` to the class definition
+    - Not quite, `"birthdate"` is a string
+- We can define a new `.birthdate` method to `Person` by adding `attr_accessor :birthdate` to the class definition
+    - Yes!
+- `Person` is a special object, and NOT a class like `Hash` or `Array`
+    - No! `Person` is just a class that we defined
+- We can reuse our new `Person` class to create as many new people as we want (stored in separate variables) 
+    - Yes!
+- `:role` is a symbol in the class definition, and it is available as a method when we instantiate a new `Person`
+    - Yes!
+{: .choose_all #person_class points="10" answer="[3,5,7,8]" }
+
+----
+
 #### Defining instance methods 
 
-**BENP: not confusion: https://piazza.com/class/ldj532ul5a0621/post/265**
+There are a few reasons I like using classes more than `Hash`es to model things, but here is the big one: in addition to just storing a list of attributes about a thing, we can also _define our own methods_ with the `def` keyword. 
 
-There are a few reasons I like using classes more than `Hash`es to model things, but here is the big one: in addition to just storing a list of attributes about a thing, we can also _define our own methods_ with the `def` keyword. For example, try adding the following `full_name` method to the class we defined in the REPL above:
+In Ruby, we define new methods with the construction:
+
+```ruby
+# define a method names 'my_method'
+def my_method
+  # do stuff
+  return "stuff"
+end
+```
+
+And then we can all our new method later in our code by just typing the name we put after `def`:
+
+```ruby
+# invoke/call method
+my_method     # => stuff
+```
+
+And the output is whatever we `return`ed from the method in our definition! Easy as that.
+
+We can even provide arguments to a method we define by including parentheses.
+
+----
+
+#### Quiz Question
+
+Consider the code:
+
+```ruby
+def square_root(a_number)
+  as_float = a_number ** 0.5
+  as_integer = as_float.to_i
+  return as_integer
+end
+```
+
+- What would be returned if we added `square_root(9)` below that method?
+- 3
+    - Yes!
+{: .free_text #square_root points="10" answer="1" }
+
+----
+
+Okay, back to our `Person` class. Try adding the following `full_name` method to the class we defined in the REPL above:
 
 ```ruby
 class Person
@@ -93,8 +160,6 @@ class Person
 end
 ```
 
-**BENP: is this the first time we've defined a function? Good quick explanation by Ian: https://piazza.com/class/ldj532ul5a0621/post/185**
-
 Now, in addition to being able to store data (first and last names), I can ask any `Person` to compute its full name:
 
 ```ruby
@@ -105,12 +170,10 @@ hs.last_name = "Simpson"
 "Hello, " + hs.full_name + "!" # => "Hello, Homer Simpson!"
 ```
 
-Two new keywords to note:
+Two keywords to note:
 
  - I used the `return` keyword to signify what value I wanted to replace `hs.full_name` in the original expression after it's been evaluated.
  - I used the `self` keyword to refer to the object who was asked to calculate its full name, since I can't know in advance what (if any) variable name will be used.
-
-**BENP: some confusion / explanation of self: https://piazza.com/class/ldj532ul5a0621/post/238**
 
 Here's a slightly more involved example:
 
@@ -131,7 +194,7 @@ class Person
 end
 ```
 
-Now every `Person` that we create will have the ability to compute their age based on their own dob attribute:
+Now every `Person` that we create will have the ability to compute their age based on their own `birthdate` attribute (translated into a `dob` by `Date`):
 
 ```ruby
 hs = Person.new
@@ -143,18 +206,22 @@ hs.age # => 32, as of this writing
 Note that we had to `require("date")` in order to load the `Date` class into the program; Ruby doesn't load this class into every program by default, like it does with the core classes (`String`, `Integer`, etc).
 
 <aside markdown="1">
-The parentheses are almost always dropped after `require`, so it would be `require "date"`.
+The parentheses are almost always dropped after `require`, so it would usually be: `require "date"`.
 </aside>
 
 So, rather than using a `Hash` to model real world things, it's a good idea to create classes, and then empower them with *behavior* (methods) in addition to information.
 
 #### Defining class methods 
 
-**BENP, note # vs . notation**
-
-The methods `full_name` and `age` above are known as _instance methods_, because we call them on individual **instances** of the `Person` class (Homer, Mickey, Minnie, etc).
+The methods `full_name` and `age` above are known as _instance methods_, because we call them on individual **instances** of the `Person` class (Homer, Mickey, Minnie, etc). 
 
 We can also define **class**-level methods, that we call directly on `Person` itself. This can be handy if we want to define re-usable utility methods that don't really belong to any one individual person.
+
+<aside markdown="1">
+In writing text (e.g. manuals, technical references, comments) We indicate *instance* methods by `Object#method` with the `#` symbol. So we have `Person#full_name` and `Person#age` defined in the previous section. We still call them in our code with the `.` symbol like `hs.full_name`.
+
+On the other hand, we always indicate *class* methods (like `Date.parse`) by `Object.method` with the `.` symbol. 
+</aside>
 
 Here's an example similar to `Date.parse` — what if we wanted users of the `Person` class to quickly be able to create new instances of the class like this:
 
@@ -190,6 +257,25 @@ The new things to note in the code above:
 
  - When defining the method, we do `def Person.parse` rather than just `def parse` to make it a **class method** rather than an **instance method**. That way, we call the method directly on capital-`P` `Person`.
  - We give the method the ability to accept an argument by adding parentheses and choosing a name for the argument when defining the method. Then we can use the input within the method definition, sort of like how we use a block variable.
+
+----
+
+#### Quiz Question
+
+- Choose all that are true.
+- The two methods we define on a class are called instance and class 
+    - Yes!
+- Instance methods act on the class itself, and class methods act on an instance of the class
+    - No, please re-read the previous section
+- Instance methods act on an instance of the class, and class methods act on the class itself
+    - Yes!
+- When you see `Object#method` notation, you can be sure they are talking about a class method
+    - No, please re-read the previous section
+- The `self` keyword refers to the class it is inside of and can be used to reference all the attributes of that class
+    - Yes!
+{: .choose_all #class_quiz points="10" answer="[1,3,5]" }
+
+----
 
 ### Inheritance
 
@@ -274,7 +360,39 @@ end
   [Click here for a REPL to try it.](https://repl.it/@raghubetina/our-own-classes-inheritance){:target="_blank"}
 </div>
 
-**BENP: note confusion: https://piazza.com/class/ldj532ul5a0621/post/257**
+----
+
+#### Quiz Question
+
+Consider this code:
+
+```ruby
+class Animal
+  attr_accessor :eats
+
+  def hungry_for
+    return "Wants to eat " + self.eats
+  end
+end
+
+class Bear < Animal
+end
+```
+
+- Choose all that are true.
+- `eats` is a class method
+    - No, we use it on an instance of the class
+- `self.` refers to `hungry_for`
+    - No, it refers to `Animal` (and `Bear` because we inherit from `Animal`)
+- We cannot call `.eats` on an instance of `Bear` because we didn't define it there
+    - No, please re-read the previous section
+- `<` above means "less than"
+    - No, please re-read the previous section
+- None of the above
+    - Yes!
+{: .choose_all #inherited points="10" answer="[5]" }
+
+----
 
 <div class="proj" markdown="1">
 
@@ -282,3 +400,11 @@ end
 
   For a Gitpod refresher, see [this section](https://learn.firstdraft.com/lessons/9#start-the-gitpod-project){:target="_blank"} in `String`, where we opened our first workspace.
 </div>
+
+### Conclusions
+
+That's it for our introduction to the Ruby programming language. In the next lesson you will bring all of your skills together to bulk up in the Ruby Gym. Good luck!
+
+<span style="font-size: large">**Return to Canvas and head to the next part of the lesson**</span>
+
+----
