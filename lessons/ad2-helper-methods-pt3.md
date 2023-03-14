@@ -4,6 +4,8 @@
 
 ## Starting HM3
 
+[Helper Methods (Part 3)](https://github.com/appdev-projects/helper-methods-3).
+
 **Raghu:** [00:00:00] All right everyone, we're gonna get started. Welcome today, two of F two. There's an called medics,
 
 so please, uh, start the workspace process on that assign. We're gonna be using it to just experimenting the starting point of this, uh, project. When you set on will be a solution to [00:00:30] helper methods one and two. So first thing is may glance through that code base and see if you can think of any questions and then we're gonna press
