@@ -726,7 +726,7 @@ What if you added a new column or forgot about one of them, like if you remove `
 
 Please take a moment and refactor the `update` action as well to follow this new format. When you're done, make a **/git** commit.
 
-## Form Builder with Model 00:49:00
+## Form Builder with Model 00:49:00 to 01:06:00
 
 We need to go back to our forms and make sure the `for=""` and `id=""` attributes matchup between labels and inputs. They already did before, but when we introduced that `[]` square bracket syntax to get to mass assignment with whitelisting, we went a bit backwards:
 
@@ -869,6 +869,8 @@ Wow, Rails magic indeed.
 Check the **/movies/new** form functionality and also view source on the page. You should still see all the syntax and attributes we spent time writing on our own, now done in a few succinct lines of code by Rails!
 
 This is the point. Rails will save you a ton of time with default functionallity if you name things the way we expect. You can override any of these features, but aren't they nice?
+
+## Challenge 01:03:00 to 01:06:00
 
 My challenge to you: refactor the `edit` form and the `update` action to match what we've done here with the `new` form and `create` action. After that, generate a new model, say `directors`:
 
