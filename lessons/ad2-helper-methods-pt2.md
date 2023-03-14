@@ -599,7 +599,9 @@ This is the technique that we use more often when we're building forms. All of t
 
 ## Refactor Forms with Subhashes 00:39:00
 
-Given this new principle of nested hashes in our `params`, let's reorganize our forms. So I'm going to go back here. I'm going to bring this back here. And given this, I want to think about our new form and what I want to do. Is put all of these [00:39:00] into a, in the prams hash. I want them all to be in a subha under a key called movie.
+Given this new principle of nested hashes in our `params`, let's reorganize our forms. Open 
+
+So I'm going to go back here. I'm going to bring this back here. And given this, I want to think about our new form and what I want to do. Is put all of these [00:39:00] into a, in the prams hash. I want them all to be in a subha under a key called movie.
 
 So what I'm saying here is I want the prams hash to end up looking like movie. And then I want title, some whatever I type. And then description.
 
