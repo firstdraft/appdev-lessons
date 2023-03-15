@@ -784,7 +784,7 @@ Actually, we can shorten things a bit. If you are rendering a partial with some 
 
 That's optional though, and I prefer typing out the long way with `partials:` and `locals:` so you can tell exactly what's going on.
 
-### Adding Another Column 01:17:00 to
+### Adding Another Column 01:17:00 to 01:19:18
 
 Let's see the power of our new form partials by adding another column to the database and then to our forms.
 
@@ -800,53 +800,43 @@ rails db:migrate
 
 Then we need to whitelist the new column in our strong parameters to allow mass assignment:
 
+```ruby
+# app/controllers/movies_controller.rb
+
+...
+  private
+
+  def movie_params
+    params.require(:movie).permit(:title, :description, :image_url, :released_on)
+  end
+end
 ```
-#
+{: mark_lines="7"}
+
+And finally, we can just pop that into the `movies/_form.html.erb` file (using the `.date_select` method to create a nice selection menu on the form):
+
+```html
+...
+  <div>
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div>
+    <%= form.label :released_on %>
+    <%= form.date_select :released_on %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
 ```
+{: mark_lines="7-10"}
 
-And uh, let's see where I am here. We [01:16:30] did static partials that are always the same and then we're partials with inputs and we applied that to our form and that's great. Column to model table, make rails, generate migration, add, I don't know, released on to movies.
+And it will appear (and work) in both of our new and edit forms!
 
-Released on is a date rail CB migrate.[01:17:00] 
-
-And make sure to add it to strong parameters. The hi remembered for once release on and we'll go to the form and release on. We can make this a date. I forget the, remember the helper at theater date Select, is it? [01:17:30] Yeah. Okay, so now I have a nice select here. Pretty cool. And even better, my edit form automatically has it because it's the same form.
-
-The code is the same. Now, that's not all. Sometimes you wanna feel in the new form and you don't want them in the, that you should use the same partnerships they probably want, but in many cases the field are exact same [01:18:00] as the building form. So you can just use this partial reuse technique. What do you think?
-
-Ready? Well, let's say it is a time and I want, yeah, this is good. I'm gonna take a snapshot of my workspace and share it. [01:18:30] So that you can poke around at what I've done so far. Take a break
-
-for the, the main parts, not like the zebra giraffe stuff, but the actual form stuff. And then we'll answer some questions and then we'll press forward from there.
-
-All right, everyone, we're gonna keep on [01:19:00] plowing forward, so if you could find your date
-
-and before we dive into the next section, which is active record partials, anybody think of any questions, anything you want me to clarify or expand upon about anything we've done so far?
-
-Yeah, uh, I have a question about the homework. It was similar to one of the issues that we saw earlier where, uh, one of the, um, [01:19:30] rule actions, I was rendering a template and it wouldn't work if I didn't include templates. I said render. It was the new movie form. I said render error vendor template.
-
-Do you know why that might be? Well, yeah, these shortcut.
-
-Sometimes if you use the secret [01:20:00] for one, you can leave form. But I think if you use the, you, the
-
-I see, okay. That's exactly much problem. Yeah. So is, like I said, this is actually seat in the real communities. I, and also when you're doing partials, the rails community [01:20:30] will oftentimes do this form here where they do that and then they leave this off and then they do this. So that's the most, most common style.
-
-My style over time has been just type , just like type it out. Like there's many cases where obviously I embrace the shortcuts of rails that let you be more concise, but I just find that pretty quickly we have to switch this anyway in most cases. Yep.[01:21:00] 
-
-Do we have form label?
-
-You want to have a partial template for something like, uh, shared slash forms field. And then you want pass in? Yeah, like the, uh, what should we [01:21:30] call it? Field? Mm-hmm. . Or let's just do a symbol. Let me do the, I'm supposed to be using the new syntax here now, so that's an interesting idea. And then literally you want to just have this and then this and
-
-really making me think that's, yeah. I didn't know if you could that [01:22:00] Yes. Works. So we could create a template. We would create it called form field, and then in here we would copy out all of this, put it down here and render it here. Oh. But here is where we would put the field name [01:22:30] local variable, so that we can pass that in
-
-like that. Let's see if it works. Undefined design variable. Oh, interesting. Okay. So because this block variable too from the form, right? That it's using this. So we'll have to add that.
-
-Object, actually, this is too, let's just make life [01:23:00] simple call. Same thing, just passing it straight through with the same name. Then we get these,
-
-uh, then yeah, we could add another, we could put another variable to be like field type and then use that. So I like where your head is at. Like we can start anytime you see something sort of repetitive with only slight changes, you can create a partial and then have to figure out a way to pass. But sometimes, depending on how much customizing you're doing, you're putting a [01:23:30] bunch of conditionals inside the form.
-
-It gets very unwieldy so you start to lose the benefits of it. But like the, for like, the fact that fields are so repetitive, there's a gem like that basically independently discovered. Probably the most, um, one of the most popular gems in the rails ecosystem is called simple form, which does pretty much what you're talking about.
-
-And it lets you [01:24:00] do like just dot input with the name and you don't even have to do the label part. And it expands out the label and the input and everything. It d it examines the, the type of, the column in the database to automatically infer what type of field. So if it's a text column, it uses text area.
-
-If it's a string, it uses type info text. If it's fully in, it automatically does check boxes. So yes, there's a gem that [01:24:30] does that. Cool. And it's like super, it does so much stuff. Like if you need to have like a form for like a parent object and like tags, it's like a liner. All the boxes stuff. Okay. Um, let's think about this.
+## `ActiveRecord` Object Partials 01:25:00 to
 
 So I wanna make the show page of [01:25:00] a movie look a little bit better first. So we over to the details page of a movie. Right now it looks pretty terrible and it's, I want this to be in like the header of the card. Not, uh, in this case, I think, I don't really wanna spend time building up the bootstrap stuff, like a tab.
 
