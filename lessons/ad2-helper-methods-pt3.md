@@ -561,12 +561,12 @@ Then, in any of your other view templates, e.g. `movies/index.html.erb`, add:
   List of all movies
 </h1>
 
-<%= render template: "zebra/giraffe" %>
+<%= render partial: "zebra/giraffe" %>
 ...
 ```
 {: mark_lines="7"}
 
-Notice that we don't include the underscore when referencing the partial in the `render` method, even though the underscore _must_ be present in the actual filename.
+Notice that we don't include the underscore when referencing the `partial:` in the `render` method, even though the underscore _must_ be present in the actual filename.
 
 You can render the partial as many times as you want:
 
@@ -577,11 +577,11 @@ You can render the partial as many times as you want:
   List of all movies
 </h1>
 
-<%= render template: "zebra/giraffe" %>
+<%= render partial: "zebra/giraffe" %>
 
 <hr>
 
-<%= render template: "zebra/giraffe" %>
+<%= render partial: "zebra/giraffe" %>
 ...
 ```
 {: mark_lines="11"}
@@ -622,7 +622,7 @@ And back in the layout:
 ...
   <body>
 
-    <%= render "shared/navbar" %>
+    <%= render partial: "shared/navbar" %>
     
     <div class="container">
       <% if notice.present? %>
@@ -663,14 +663,14 @@ Now our application layout file should look much, much cleaner:
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%= render "shared/cdn_assets" %>
+    <%= render partial: "shared/cdn_assets" %>
   <body>
 
-    <%= render "shared/navbar" %>
+    <%= render partial: "shared/navbar" %>
 
     <div class="container mt-4">
 
-      <%= render "shared/flash_messages" %>
+      <%= render partial: "shared/flash_messages" %>
 
       <%= yield %>
 
@@ -695,26 +695,28 @@ Create another file called `app/views/zebra/_elephant.html.erb`, and add the fol
 Then, in `movies/index`, try:
 
 ```html
-<%= render template: "zebra/elephant" %>
+<%= render partial: "zebra/elephant" %>
 ```
 
 When you test it, it will break and complain about an undefined local variable person. To fix it, try:
 
 ```html
-<%= render template: "zebra/elephant", locals: { person: "Alice" } %>
+<%= render partial: "zebra/elephant", locals: { person: "Alice" } %>
 ```
 
 Now it becomes more clear why it can be useful to render the same partial multiple times:
 
 ```html
-<%= render template: "zebra/elephant", locals: { person: "Alice" } %>
+<%= render partial: "zebra/elephant", locals: { person: "Alice" } %>
 
 <hr>
 
-<%= render template: "zebra/elephant", locals: { person: "Bob" } %>
+<%= render partial: "zebra/elephant", locals: { person: "Bob" } %>
 ```
 
-If we think of rendering partials as calling methods that return HTML, then the :locals option is how we pass in arguments to those methods. This allows us to create powerful, reusable HTML components.
+If we think of rendering partials as _calling methods that return HTML_, then the `:locals` option is how we pass in arguments to those methods. This allows us to create powerful, reusable HTML components.
+
+The arguments that we pass with the option `:locals` take the form of a hash with key/value pairs. The keys correspond to the name of the variables in the the partial, and the value is whatever we want the variable to be.
 
 underscore elephant h and I want it to have something like hello, but then not always the same h to be able, if I read through this from my index, the way that I did [01:03:30] works, it's not, it did render that template when it got to here. It's like undefined local but very lower method. What I wanted to send in the value of that, So you can provide an option called locals, and the value of that should be a hash and in this hash all the key [01:04:00] variables inside this template.
 
