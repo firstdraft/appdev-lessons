@@ -392,119 +392,149 @@ I want to note: there's an open [pull request for this project](https://github.c
 
 **BENP 00:27:00 to 00:33:30 is Q/A**
 
-## Getting Started with Partial View Templates 00:33:30 to 
+## Reviewing Form Builder 00:33:30 to 00:51:30 
 
 Sometimes we have code that we want to reuse, but not in every single template, but in _some_ templates. And it would be really nice to avoid duplication. Also, look how long our application layout has become with all of the bootstrap additions we made. Wouldn't it be great if we could put some of that code in separate files to make it all more readable?
+
+It turns out, because we switched to `form_with` helpers, the two forms are identical besides the copy in the `<h1>` tag at the top of each page! ("New" vs. "Edit".)
+
+`form_with` does a lot for us. It knows whether the object is persisted in the database or not, and how to fill in placeholder values for partially filled out forms or objects that already have column values. So everything is basically the same! 
+
+Now, what if we add a new column? Let's see how we would change our code to allow that. How about an image URL for the movie?
+
+Start by running the terminal command:
+
+```bash
+rails g migration AddImageUrlToMovies image_url:string
+```
+
+Then migrate the change to the database:
+
+```bash
+rails db:migrate
+```
+
+And you can check the `db/schema.rb` file to see that the table `movies` now has this additional column.
+
+What if I want to add it to my form so people can actually use that column? 
+
+We can do that with the `form_with` construction easily:
+
+```html
+<!-- app/views/movies/new.html.erb -->
+
+<h1>New movie</h1>
+
+<% @movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
+
+<%= form_with model: @movie do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+```
+{: mark_lines="20-23"}
+
+But what if I try that out in the **/movies/new** page? It won't actually work yet. Why?
+
+Because we also need to remember to whitelist this new column to allow for mass assignment to take place!
+
+```ruby
+# app/controllers/movies_controller.rb
+
+  ...
+  def create
+    movie_params = params.require(:movie).permit(:title, :description, :image_url)
+    
+    @movie = Movie.new(movie_params)
+  
+  ...
+  
+  def update
+    @movie = Movie.find(params.fetch(:id))
+
+    movie_params = params.require(:movie).permit(:title, :description, :image_url)
+
+    if @movie.update(movie_params)
+    ...
+```
+{: mark_lines="5 14"}
+
+And we whitelisted in both the `create` and `update` action so we can save new recrods and edit them later.
+
+Okay, that aside was just to remind us how `form_with model` works with mass assignment. But back to the point. We have these two forms `edit` and `new` and we would like to just reuse the code in them and not need to make changes in two places ever.
+
+First of all, where we are creating that variable `movie_params` twice in our controller, we can dry that up. We can do that by defining a new method in the bottom of the controller:
+
+```ruby
+# app/controllers/movies_controller.rb
+
+...
+
+  private
+
+  def movie_params
+    params.require(:movie).permit(:title, :description, :image_url)
+  end
+end
+```
+{: mark_lines="5 7-9"}
+
+We put a new keyword `private` and below this, we defined our helper method. We put any methods that are just helpers for the actions below `private` in the controller.
+
+Then passing that _method_ to the `create` and `update` actions!
+
+```ruby
+# app/controllers/movies_controller.rb
+
+  ...
+  def create
+    # movie_params = params.require(:movie).permit(:title, :description, :image_url)
+    
+    @movie = Movie.new(movie_params)
+  
+  ...
+  
+  def update
+    @movie = Movie.find(params.fetch(:id))
+
+    # movie_params = params.require(:movie).permit(:title, :description, :image_url)
+
+    if @movie.update(movie_params)
+    ...
+```
+{: mark_lines="5 14"}
+
+When these actions are triggered, Rails will reach that `movie_params` argument, which we didn't define in the action, and instead of throwing an error, it will search the controller for a method that matches that argument and call that method. We could write `self.movie_params`, as the longhand for what this step is doing!
+
+So now all of our whitelisted columns are in one place and we don't need to repeat our code when we make changes to the database.
+
+## Partial View Templates 00:51:30
+
+Now that we can add to the forms, how can we get the forms in one place so we can reuse them for different purposes (`create` and `update`) on different pages? The answer is partial view templates.
 
 Partial view templates (or just "partials", for short) are an extremely powerful tool to help us modularize and organize our view templates. Especially once we start adding in styling with Bootstrap, etc, our view files will grow to be hundreds or thousands of lines long, so it becomes increasingly helpful to break them up into partials.
 
 Here is the [official article in the Rails API reference](https://edgeapi.rubyonrails.org/classes/ActionView/PartialRenderer.html) describing all the ways you can use partials. There are lots of powerful options available, but for now we're going to focus on the most frequently used ones.
 
 Let's get our first feel for partials on our `new.html.erb` and `edit.html.erb` forms. Open those files. What to do you notice? Where are the differences?
-
-It turns out, because we switched to `form_with` helpers, the two forms are identical besides the copy in the `<h1>` tag at the top of each page! ("New" vs. "Edit".)
-
-`form_with` does a lot for us. It knows whether the object is persisted in the database or not, and how to fill in placeholder values for partially filled out forms or objects that already have column values. So everything is basically the same! 
-
-That means we should probably just be re-using the same code on each form rather than duplicating it.
-
-
-
-For example, [00:34:00] right now, given all the work that we did on edit and New,
-
-here's the edit on the left and new on the right, what's different? Literally nothing except for the heading because we switched to using the form with helper and given all the stuff that form with does for us in terms [00:34:30] of like, it knows how to prepopulate an input if the object already has values. So we don't have to do that manually ourselves.
-
-The difference between the edit form and the new form when we wrote ourselves was edit form. We put the value attribute in to prepopulate all the fields. The action was different to point to the update action instead of the create action. But the form width figures that out automatically based on whether the object is already saved or not.
-
-And even the submit button form is gonna do if, if it's a [00:35:00] brand new object that's never been saved. This is gonna create a button that says Create movie. And this will be a button that says Update movie. So literally these 20 lines of code, 40 lines code are the same. Now, what if we add a new column?
-
-Column? Let do that. You do this, but lemme just demonstrate that if I add a new column to my movies table, add, I don't know. [00:35:30] Uh, image.
-
-Okay. Add image URL to movies. And this, I'm gonna run this migration real quick. Now I've add So now, oh, I don't have the, Ooh, that's [00:36:00] not great. We should add. You think we should? We should, should we preconfigure vanilla rails with annotate? Maybe It's a good moment to teach what annotate does. Uh, We don't, the gem that we used in app dev one that automatically put those comments at the top of the model that showed you what all of your columns were and if there's any uniqueness and all that, that's a third party gem that we would put in for you.
-
-Okay. doesn't happen. So if you want to have [00:36:30] that, it's really helpful. I'll point out the gem later. I don't want to spend time right now installing it. But the actual way to see what is in your database is the DB schema dot rb file. This is that. This is the actual , the sum of volume operations have produced in your database.
-
-So I can see here that I have a movies table and I now have this new column called IMA url. That's [00:37:00] a string. Okay. So great. I have the column in my table, but if I want to now use it, so if I go to,
-
-I go to my form, of course, I'm gonna have to add this myself. Yep. Quick question about the schema. Rb. Yep. So if, let's say you wanted to like edit the data type or description, [00:37:30] you did the edit thing,
-
-would it create like another, this edit table, or would it update create. First Pointable manually touch this file. This file is automatically generated when we run rails. Do we migrate? So if you need this to be a different column type, don't just change it here. That's not gonna do anything. What you need to do is create a new migration that will change that how type from what you want from [00:38:00] rolls, migrate, update schema, rb.
-
-Or if you don't really care about your data, you could go and like change this migration, which we ran to add the column, change it here, then rails DB drop to destroy your database. And then when your rails B migrate, it'll run all of your migrations from the top and then it'll uh, change. Change. Now it's anything cause it's already been run, [00:38:30] so I could roll it back.
-
-This will the most recent then board migrate and now it will be the right thing here. Okay. No. What if I want to add it to my form so people can actually use that column. Right. Generating our, adding a column is not gonna change our view templates or our controller. That's up to us. So I would, [00:39:00] if I wanted to use that in a form.
-
-Again, you don't have to do this, I'm just demonstrating. I could add. Image u r O here and it'll show up in the field. If I try to populate it, it doesn't show up here. It did save the movie. I don't have a column in my index to show it, so I should do that too. Let's add another [00:39:30] url.
-
-C. We can see movie that I just added. The fifth one, Ima URL did not get Spanish
-
-when I add a column.
-
-Yeah, it have to do with controller. You to add thatt. [00:40:00] Remember this in actually assigned that value to the column, right? Well, yes I did because I started to use this new technique of mass assignment, right? So because I used the form with helper, all the inputs that were in that form, Gary put sub hash in the prams hash.
-
-Yep. Yes. So it's because of this part here, this is where, this is security, that rail, [00:40:30] it only allows one you explicitly say can be through because stuff, so if you. Seven column. You add the column, you add it to your form, you test it out, it doesn't work, you forget, you like bang your head against it for a while.
-
-Maybe you look in your server log. Finally
-
-at one point they, it's so common that highlight this red to make it easier to spot in the server [00:41:00] log. And you're like, oh yeah, right. I got got, let me go add it here
-
-and then now it'll work. Hopefully let's add a new movie. 1, 2, 3, 3. Fantastic. Yeah. Question five. In the homework we added that director's, um, model and we already had a movies model. Now I have a director's model. Um, what I didn't do is I didn't create like a column [00:41:30] saying IDs of the movies that that director has many of.
-
-Do I need to create that column and migrate that in or do I just add some, has many statements matter fundamentally, so it's hard to know sometimes now where are there, what happens that and what doesn't. But the data model is still up to us, so we have to add the column to the movies table. And then if we have any existing movie records, we need to go through and [00:42:00] write a script.
-
-To put the right value in that column, then as many as purely about giving us convenient ways of working with that data. But it doesn't actually,
-
-I, um, it was pretty similar. I, I wanted to create these association when we already have like the two tables, but we would need to change, uh, in terms of the, like the data model, but also in terms of like the white list, [00:42:30] like, like director ID for something list. Yeah. Added image url. I would add a column, direct Id make sure during the, uh, strong parameters and then I'd add like a dropdown or something for the user to actually fill that out in the form.
-
-Okay. I, I, what we were discussing before of the migrations, we would need to create a new migration file for the new association. You [00:43:00] need the form of key column, right? Add a column, whether it's an image, url, or director. Any column you have to do a migration to add the change. Yep. Because we are using all the shortcuts here real quick.
-
-So I'm going to add
-
-thanks. Okay.[00:43:30] 
-
-Directors, then I usually, it's easier for me to check it out.
-
-Alright, five directors. Oh, the CSS got messed up. That's because the scaffold generator generates the scaffold. Do CSS style sheet for us to make it look a little bit better. But since we're [00:44:00] using Bootstrap, we don't want that. So just delete that. Okay, so directors, I can add somebody. Frank . Great. Got Frank.
-
-Now my movies though don't know anything about directors, right? So I have to add the foreign key column rails, generate migration, add director id.
-
-This is a super shortcut way of [00:44:30] generating migration and auto writing the code in that migration all at once. And then reels, do you migrate This is this, adding a column is in the original AP Dev one actor record chapter. And now if I look at schema dot rb, my movie has a direct id. Cool. Now I need to update my form.[00:45:00] 
-
-Director ID
-
-is this one now It worked and ah, I literally
-
-moving
-
-director id [00:45:30] now. I should be able to add a movie
-
-and I'm not showing it on the index page, so I should show it.
-
-Photo format, that very last one got the direct id. And [00:46:00] because we're using forms, it's pretty easy now to make this experience a lot better. I could do form collection, which takes the arguments of an array of active record objects
-
-and the attribute that should be saved and the. Attribute that should be used as the content of the dropdown request. And now [00:46:30] nice dropdown another,
-
-um,
-
-create, add a new movie. Now I have my nice dropdown. Super nice to do stuff like that. Now with these and the values and the ideas and everything manually all yeah. Director's controller, you, you don't have [00:47:00] to wait list anything. The director's controller's not even touched by any part of that flow of a,
-
-okay, so that's cool. Here's what I was getting at in the first place though. We improved this with two new inputs and director with the fancy drop, but my edit form [00:47:30] doesn't
-
-have to go copy paste the stuff that I just did in here. And because it's form, it's literally the exact same. So I could go to the edit and just replace this and it should.
-
-Too white [00:48:00] listed here. Gotta do this here in the update action as well.
-
-That should be see
-
-seven. Switch it to, right? Okay, so now it's showing up. Uh, I should
-
-improve the show page too, but, okay, here's, so [00:48:30] notice all the things that I had to, like, I had to allow the new attributes in both the grid action and the edit action, right? Update action. And I had to copy paste the, the form stuff. Let's see how we can like dry up that repetition first folder. This here, where I'm defining a variable called movie prams and then assigning it.
-
-This code is replicated in two songs. Its [00:49:00] the exact same code. I'm going to try it up by defining a method. I'm gonna call this method movie prams,
-
-and I'm going write code here and get rid of that . So now imagine what happens when we get to. We tell Ruby Movie pers Ruby's, like is that a local variable that was created within this, this scope? Nope. [00:49:30] But it also checks to see whether it's a method defined within the same class that, so this is the equivalent of self do movie paras to run this method over here.
-
-This method over here now is gonna do all the work of getting that subhash out and then method right in the spot that we want it. And then I can use this, I think both spots that [00:50:00] we're doing this work
 
 and if you leave out the self dot, that's the implicit receiver of any method call. So if this is not a local variable, before Ruby gives up and crashes, it tries to call a method by this name on self, which is the same object that this method is within. Okay. So that means
 
