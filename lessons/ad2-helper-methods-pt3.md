@@ -784,15 +784,27 @@ Actually, we can shorten things a bit. If you are rendering a partial with some 
 
 That's optional though, and I prefer typing out the long way with `partials:` and `locals:` so you can tell exactly what's going on.
 
-So now here, instead of using any instance variable, the partial will itself pick variable names for everything that it needs from the outside world. We define the variable names here, just as local variables, and then be sure to pass them in from everywhere that you're rendering that form. So here they fu and then in this case, the value is [01:15:00] at new movie, but by the time the partial it's gonna from, from all contexts, it gets named the same thing.
+### Adding Another Column 01:17:00 to
 
-So now this works and this works,
+Let's see the power of our new form partials by adding another column to the database and then to our forms.
 
-uh, in the new action. Oh, because I forgot my locals, the reason. Okay, so I keep getting, I keep typing this out wrong and it's because I didn't even include it in this lesson because I wanted [01:15:30] you to see the long. But if you use a short computer without the partials, then you also don't need the locals. So now swing do the same thing, syntax, which is what I keep doing and running into this error.
+The first step is generating the migration and running it:
 
-You got one I actually avoid doing. So we'll see here that this works. Now we get both of those two renderings doing the exact same thing. I used to use this when I was building Rails apps, but I just type it the long [01:16:00] way because like 99% of the time this being too constraining. So I usually type it all on now, but both of those are available in case you want.
+```bash
+rails g migration AddReleasedOnToMovies released_on:date
+```
 
-Okay, so partials are awesome. And then even more the ability to pass in locals makes partials incredible. And uh, let's see where I am here. We [01:16:30] did static partials that are always the same and then we're partials with inputs and we applied that to our form and that's great. Column to model table, make rails, generate migration, add, I don't know, released on to movies.
+```bash
+rails db:migrate
+```
+
+Then we need to whitelist the new column in our strong parameters to allow mass assignment:
+
+```
+#
+```
+
+And uh, let's see where I am here. We [01:16:30] did static partials that are always the same and then we're partials with inputs and we applied that to our form and that's great. Column to model table, make rails, generate migration, add, I don't know, released on to movies.
 
 Released on is a date rail CB migrate.[01:17:00] 
 
