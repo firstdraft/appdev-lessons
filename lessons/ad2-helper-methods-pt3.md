@@ -538,15 +538,55 @@ Partial view templates (or just "partials", for short) are an extremely powerful
 
 Here is the [official article in the Rails API reference](https://edgeapi.rubyonrails.org/classes/ActionView/PartialRenderer.html) describing all the ways you can use partials. There are lots of powerful options available, but for now we're going to focus on the most frequently used ones.
 
-Let's get our first feel for partials on our `new.html.erb` and `edit.html.erb` forms. Open those files. What to do you notice? Where are the differences?
+Let's get our first feel for partials, then see about our `new.html.erb` and `edit.html.erb` forms. 
 
-and if you leave out the self dot, that's the implicit receiver of any method call. So if this is not a local variable, before Ruby gives up and crashes, it tries to call a method by this name on self, which is the same object that this method is within. Okay. So that means
+Create a partial view template in the same way that you create a regular view template, except that the first letter in the file name must be an underscore. This is how we (and Rails) distinguish partial view templates from full view templates.
 
-where if I add another column in the future, I just [00:50:30] whitelist it once in the permit method. Here is this one where you have to have like the movies like ahead of it in the file. So it could be on the very last line would still, that's it's not actual action controller. All the methods we define. To help us write actions, we put them at the bottom and they're given a keyword called private that has no functional[00:51:00] 
+For example, create a folder (`app/views/zebra/`) and file within it called `_giraffe.html.erb`. Within the file, write the following:
 
-methods. The main point of a class are called the public methods intended for users of that class to call. Then all the little methods that we use in order to build those are called private method. Come on here. Great. So, yes, so that's one nice thing we can do. And the other nice thing we can do is we have , we can, this is, and this is kind, the main topic of today's class is a technique known as partial view templates.[00:51:30] 
+```html
+<!-- app/views/zebra/_giraffe.html.erb -->
 
-So we can break up our big view templates into little part partial templates. Uh, ran over. So here's, I'm going to, well lemme just demonstrate to you how it works. Before we do it for real. Uh, here we, here's going to the official documentation getting started. Okay. So if I create a file, I'm [00:52:00] gonna create a file called App View zebra giraff.
+<h1>Hello from the giraffe partial!</h1>
+```
+
+Then, in any of your other view templates, e.g. `movies/index.html.erb`, add:
+
+```html
+<!-- app/views/movies/index.html.erb -->
+
+<h1>
+  List of all movies
+</h1>
+
+<%= render template: "zebra/giraffe" %>
+...
+```
+{: mark_lines="7"}
+
+Notice that we don't include the underscore when referencing the partial in the `render` method, even though the underscore _must_ be present in the actual filename.
+
+You can render the partial as many times as you want:
+
+```html
+<!-- app/views/movies/index.html.erb -->
+
+<h1>
+  List of all movies
+</h1>
+
+<%= render template: "zebra/giraffe" %>
+
+<hr>
+
+<%= render template: "zebra/giraffe" %>
+...
+```
+{: mark_lines="11"}
+
+A more realistic example of putting some static HTML into a partial is extracting a 200 line Bootstrap navbar into app/views/shared/_navbar.html.erb and then rendering it from within the application layout. Try doing that now.
+
+If I create a file, I'm [00:52:00] gonna create a file called App View zebra giraff.
 
 But notice the key difference here is that there's an underscore at the start of the name. This is review template as opposed to a main, a regular view template. You don't have to type along with this if you don't want to. Just maybe watch what I'm doing. You can, if you want to experiment with it, but I'm gonna create a folder.
 
