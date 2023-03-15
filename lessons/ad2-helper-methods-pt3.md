@@ -540,6 +540,8 @@ Here is the [official article in the Rails API reference](https://edgeapi.rubyon
 
 Let's get our first feel for partials, then see about our `new.html.erb` and `edit.html.erb` forms. 
 
+### Static HTML Partials 00:52:00 to 
+
 Create a partial view template in the same way that you create a regular view template, except that the first letter in the file name must be an underscore. This is how we (and Rails) distinguish partial view templates from full view templates.
 
 For example, create a folder (`app/views/zebra/`) and file within it called `_giraffe.html.erb`. Within the file, write the following:
@@ -584,7 +586,99 @@ You can render the partial as many times as you want:
 ```
 {: mark_lines="11"}
 
-A more realistic example of putting some static HTML into a partial is extracting a 200 line Bootstrap navbar into app/views/shared/_navbar.html.erb and then rendering it from within the application layout. Try doing that now.
+A more realistic example of putting some static HTML into a partial is extracting the long Bootstrap navbar into `app/views/shared/_navbar.html.erb` and then `render`ing it from within the application layout. This will make our very long view templates much easier to navigate and make sense of. Try doing that now!
+
+First create the folder `shared` in `app/views/`, then create the `_navbar.html.erb` file within that. Now, cut and paste the entire `<nav></nav>` element from the `app/views/layouts/application.html.erb` file to the new `_navbar.html.erb` file:
+
+```html
+<!-- app/views/shared/_navbar.html.erb -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to "Helper Methods 3", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Movies", movies_path, class: "nav-link" %>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+```
+
+And back in the layout:
+
+```html
+<!-- app/views/layouts/application.html.erb -->
+
+...
+  <body>
+
+    <%= render "shared/navbar" %>
+    
+    <div class="container">
+      <% if notice.present? %>
+        <div class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <% if alert.present? %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
+```
+{: mark_lines="6"}
+
+Much more organized! And why not do the same with the alert messages? Put the whole content of the `if ...present?` statements into a file `app/views/shared/_flash_messages.html.erb` and render that in the layout file. And while we're at it: the bootstrap and font awesome stuff can also go in another static view template called `app/views/shared/_cdn_assets.html.erb`.
+
+Now our application layout file should look much, much cleaner:
+
+```html
+<!-- app/views/layouts/application.html.erb -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VanillaRails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= render "shared/cdn_assets" %>
+  <body>
+
+    <%= render "shared/navbar" %>
+
+    <div class="container mt-4">
+
+      <%= render "shared/flash_messages" %>
+
+      <%= yield %>
+
+    </div>
+  </body>
+</html>
+```
+{: mark_lines="15 18 21"}
 
 If I create a file, I'm [00:52:00] gonna create a file called App View zebra giraff.
 
