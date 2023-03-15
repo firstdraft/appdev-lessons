@@ -396,9 +396,13 @@ I want to note: there's an open [pull request for this project](https://github.c
 
 Sometimes we have code that we want to reuse, but not in every single template, but in _some_ templates. And it would be really nice to avoid duplication. Also, look how long our application layout has become with all of the bootstrap additions we made. Wouldn't it be great if we could put some of that code in separate files to make it all more readable?
 
+We're headed towards partial view templates. Let's get our first feel for things with our `new.html.erb` and `edit.html.erb` forms. Open those files. What to do you notice? Where are the differences?
+
 It turns out, because we switched to `form_with` helpers, the two forms are identical besides the copy in the `<h1>` tag at the top of each page! ("New" vs. "Edit".)
 
-`form_with` does a lot for us. It knows whether the object is persisted in the database or not, and how to fill in placeholder values for partially filled out forms or objects that already have column values. So everything is basically the same! 
+`form_with` does a lot for us. Let's review it before we go on to partial view templates. 
+
+It knows whether the object is persisted in the database or not, and how to fill in placeholder values for partially filled out forms or objects that already have column values. So everything is basically the same! 
 
 Now, what if we add a new column? Let's see how we would change our code to allow that. How about an image URL for the movie?
 
