@@ -540,7 +540,7 @@ Here is the [official article in the Rails API reference](https://edgeapi.rubyon
 
 Let's get our first feel for partials, then see about our `new.html.erb` and `edit.html.erb` forms. 
 
-### Static HTML Partials 00:52:00 to 
+### Static HTML Partials 00:52:00 to 01:00:00
 
 Create a partial view template in the same way that you create a regular view template, except that the first letter in the file name must be an underscore. This is how we (and Rails) distinguish partial view templates from full view templates.
 
@@ -680,67 +680,41 @@ Now our application layout file should look much, much cleaner:
 ```
 {: mark_lines="15 18 21"}
 
-If I create a file, I'm [00:52:00] gonna create a file called App View zebra giraff.
+Partials make our code more modular, easier to read, and they will enable us to get to AJAX in a few more lessons.
 
-But notice the key difference here is that there's an underscore at the start of the name. This is review template as opposed to a main, a regular view template. You don't have to type along with this if you don't want to. Just maybe watch what I'm doing. You can, if you want to experiment with it, but I'm gonna create a folder.
+### Partials with Inputs 01:02:30 to
 
-Called,
+Partials get even more powerful when you can send data into them to be automatically used in the output of the partial. 
 
-called draft repeat. And in here I'm gonna say [00:52:30] hello from draft. And then in my view template, let's just say the movie's view template, I'm gonna render. So I'm using the render method just like it did in the controller, but here we says the name of a partial view template, the folder and the file name.
+Create another file called `app/views/zebra/_elephant.html.erb`, and add the following code there:
 
-But notice rendering it, I don't include the underscore here. The underscore is implicit because we're calling the render method for a view rather than [00:53:00] a controller. So it has to be a park render here. You can't render like a real, a big view template from within another big view template that will give us a result of Hello from giraffe here.
+```html
+<h1>Hello, <%= person %>!</h1>
+```
 
-And you can call this as many times as you want
+Then, in `movies/index`, try:
 
-inside the same template. So the fact that we can pretty much ex extract if we have [00:53:30] like a, if our templates are starting to get massive, which they are, they will very quickly. When we start to go down the bootstrap road, you start to have thousands of lines. Of code in a template and it gets very painful to navigate around it and just understand what's what.
+```html
+<%= render template: "zebra/elephant" %>
+```
 
-So this technique allows us to break up our big templates. Immediate example that I always do is my application file starts to get really big with like, okay, I copied in and then there's a huge nav bar [00:54:00] and then there's the flash messages. So let me organize this. I'm gonna create a partial, usually I make a folder called shared and then there some partials, one for my flash messages.
+When you test it, it will break and complain about an undefined local variable person. To fix it, try:
 
-H hml dot RB page. Send stuff from here. Here, auto indent. And then here I'm just gonna [00:54:30] record, share flash messages and let's make sure it still works.
+```html
+<%= render template: "zebra/elephant", locals: { person: "Alice" } %>
+```
 
-Yes, so it still works, but I just understand now like the major parts of this template. Similarly, I'm almost create, uh,
+Now it becomes more clear why it can be useful to render the same partial multiple times:
 
-that bar, cause this ends up being massive. [00:55:00] And put that in here as well. Underscore that.
+```html
+<%= render template: "zebra/elephant", locals: { person: "Alice" } %>
 
-That bar still works great. And I also usually create one. If I have all this like CDN stuff, no, I don't need that. Just the CDN stuff I usually put into another one. CDN assets dot html dot [00:55:30] rb case that all in auto indent. And then get it back with, I usually put that above the style sheet link tag because I want my own CSS to take priority.
+<hr>
 
-Also, I think I just learned this recently, the meta care set tag is supposed to be the very first thing in the h l document, so [00:56:00] this should go here even above the title and everything else.
+<%= render template: "zebra/elephant", locals: { person: "Bob" } %>
+```
 
-I just learned this because apparently it needs to be within the first file so that the browser knows which character set to use before it can do anything else. So today I, uh, this, look at this now my, my layout file is so much nicer now, right? And you do this a [00:56:30] lot. I'm gonna start to break up our big view templates and give really nicely named.
-
-Uh, we use really nicely named partial view templates to make the code easier to understand. Okay. Let me give you a second to try to do that. Yeah. Danny, is there a, uh, explicit best practice around how we tell the path? Because I've had issues where it needed to know one level above in order to know, or, or [00:57:00] it gets kind of messy.
-
-Well, it depends on the specific example, but when it comes to the render method, we never have to specify app slash use because all use are gonna be located in there. So we never have to say that part. But then usually we want folder in the, sometimes there's some like rails defaults, like if you're in the movies [00:57:30] controllers, you're have to include the folder.
-
-But my suggestion in that one, were too suggest always include the folder in the file because eventually you're gonna from, and then that shortcut will not work anymore. So my rule of thumb is just include both, even though sometimes you're able to drop it. Okay. And see, you can clean up your application layout to [00:58:00] match, match mine.
-
-Template.[00:58:30] [00:59:00] [00:59:30] 
-
-Questions about these partials far. We have a lot more to learn about partials. We're using them super heavily for the rest of the quarter because our main goal for first quarter class is getting to age X, those partial partial age updates and being able to render a part of a page in a partial crucial to being able to achieve those partial page [01:00:00] updates as well.
-
-So they have so many benefits. You can make your code more modular, easier to read, but also be what enables us to get to Ax question mentioned.
-
-So yeah, I'll mention it. I don't wanna spend too much time on it, but Right. The way, let's suppose we wrote our own CSS file, right in the past
-
-[01:00:30] public folder. Create the file,
-
-right? Like,
-
-and then once we've done that, it's hosted at My Styles CSS automatically. Anything in the public folder. We'll just. Then we could use that in our editor. Use a link tag. Right. Okay. Another way and probably the more sufficient way, [01:01:00] now we'll get,
-
-and we create our style sheets in here. Anything in here is gonna
-
-all pressing take on all the white space. Put, you can 10 different files to help to keep you organized. Rails will put them all into one file when you're in production mode, which helps. So this is like a pre-processing system known as the asset pipeline [01:01:30] and all of gets included in your document here, wherever this line is.
-
-So all, all the cssc right in that folder will get plugged in if you have, uh, helper with it. Otherwise it won't show up anywhere. Yes.
-
-In this
-
-seven actually stopped using, [01:02:00] use it on anyway. This is a different system known as sprockets anyway. Anyhow.
-
-But if I go back to my. Like these two, these two got render here. The partials that we rendered in the,[01:02:30] 
-
-when I call that render for the partial, it's always giving me back exactly the same partials. Really, really powerful when you can send it data into the market and then that will be automatically used in the output of the partial. If I wanted to have something like this, right? It's got a, a dynamic [01:03:00] bit of information in it, so called
+If we think of rendering partials as calling methods that return HTML, then the :locals option is how we pass in arguments to those methods. This allows us to create powerful, reusable HTML components.
 
 underscore elephant h and I want it to have something like hello, but then not always the same h to be able, if I read through this from my index, the way that I did [01:03:30] works, it's not, it did render that template when it got to here. It's like undefined local but very lower method. What I wanted to send in the value of that, So you can provide an option called locals, and the value of that should be a hash and in this hash all the key [01:04:00] variables inside this template.
 
