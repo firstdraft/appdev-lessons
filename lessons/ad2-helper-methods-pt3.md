@@ -718,6 +718,64 @@ If we think of rendering partials as _calling methods that return HTML_, then th
 
 The arguments that we pass with the option `:locals` take the form of a hash with key/value pairs. The keys correspond to the name of the variables in the the partial, and the value is whatever we want the variable to be.
 
+We're finally at the point where we can move our form into a partial to reuse on the `new` and `edit` pages!
+
+Make a new file in `app/views/movies/` called `_form.html.erb`, and cut-paste the content of our form there (changing all of the `@movie` instance variables to just local variables called `movie`):
+
+```html
+<!-- app/views/movies/new.html.erb -->
+
+<% movie.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
+
+<%= form_with model: movie do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+```
+{: mark_lines="3 7"}
+
+<aside markdown="1">
+Note that we could have still used `@movie` in this partial, because instance variables that are defined in the actions will be available in the partial, and the instance variable is the same in both actions using this form. But if the name was different in the two actions (e.g., `@the_movie` vs. `@new_movie`), then we would want to use `:locals` as we do in the example.
+</aside>
+
+And now, we can just render this partial on both of our view templates, passing the `@movie` instance variable from the `create` and `update` actions to the partial as the local variable `movie`:
+
+```html
+<!-- app/views/movies/new.html.erb -->
+
+<h1>New movie</h1>
+
+<%= render partial: "movies/form", locals: { movie: @movie }  %>
+```
+
+```html
+<!-- app/views/movies/edit.html.erb -->
+
+<h1>Edit movie</h1>
+
+<%= render partial: "movies/form", locals: { movie: @movie }  %>
+```
+
+And in our partial, everywhere that says `movie` will be replaced with `@movie` and everything will work like before.
+
 underscore elephant h and I want it to have something like hello, but then not always the same h to be able, if I read through this from my index, the way that I did [01:03:30] works, it's not, it did render that template when it got to here. It's like undefined local but very lower method. What I wanted to send in the value of that, So you can provide an option called locals, and the value of that should be a hash and in this hash all the key [01:04:00] variables inside this template.
 
 And then with the value like this, lemme do one more and show you how it looks.
