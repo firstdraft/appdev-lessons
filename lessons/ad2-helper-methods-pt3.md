@@ -763,7 +763,7 @@ And now, we can just render this partial on both of our view templates, passing 
 
 <h1>New movie</h1>
 
-<%= render partial: "movies/form", locals: { movie: @movie }  %>
+<%= render partial: "movies/form", locals: { movie: @movie } %>
 ```
 
 ```html
@@ -771,80 +771,18 @@ And now, we can just render this partial on both of our view templates, passing 
 
 <h1>Edit movie</h1>
 
-<%= render partial: "movies/form", locals: { movie: @movie }  %>
+<%= render partial: "movies/form", locals: { movie: @movie } %>
 ```
 
-And in our partial, everywhere that says `movie` will be replaced with `@movie` and everything will work like before.
+And in our partial, everywhere that we put `movie` will be replaced with the instance variable and everything will work like before.
 
-underscore elephant h and I want it to have something like hello, but then not always the same h to be able, if I read through this from my index, the way that I did [01:03:30] works, it's not, it did render that template when it got to here. It's like undefined local but very lower method. What I wanted to send in the value of that, So you can provide an option called locals, and the value of that should be a hash and in this hash all the key [01:04:00] variables inside this template.
+Actually, we can shorten things a bit. If you are rendering a partial with some local variables, we could just drop the `partial:` and `locals:` keyword, and Rails will figure it all out:
 
-And then with the value like this, lemme do one more and show you how it looks.
+```html
+<%= render "movies/form", movie: @movie %>
+```
 
-Person.
-
-We're getting that error.
-
-Oh, okay. Sorry. Uh, I have [01:04:30] been using a shorthand syntax unconsciously that I shouldn't have been using. Instead of saying the name of the temp, the this, instead of this being just a string, it's supposed to be template. Just like we, like, we've been doing this a thousand times in the controller. We always do render template and then the name of the template.
-
-And we have to do that now if we're gonna use any other options besides just the name of the particle that you have to use. The here. [01:05:00] So now
-
-Zebra,
-
-um.
-
-Search in,
-
-which is where this is, isn't it? It was working a second ago.[01:05:30] 
-
-Wonder
-
-here, uh, where you put the person variable?
-
-So I've got two, two elephant and giraffe, correct. Oh, sorry.
-
-This one is that. This one is this. And then in my movies [01:06:00] I'm rendering the template. What's correct? Strange. I'm gonna just check to see if it's that get pod issue sometimes where you, when you are adding files and folders, that happens from time to time. That's the issue. Still getting this issue. It was working a second ago when I was using the short canned version of just this.
-
-So let's try that. [01:06:30] What do I, I'm just having some kind of brain,
-
-right? It happens to you multiple times per assignment.
-
-Yeah, but now Elephant, so the problem is this one, right? Oh,[01:07:00] 
-
-that's, I have render templates. Time change. Then it'll look. So you, that's definitely not the issue with template. Just when I add the, if you have template is the
-
-be very surprising to me. Why? But I trust you. [01:07:30] Wow. Interesting.
-
-Okay. I to this out because even in my solutions, which I just, I never say render.
-
-Oh, that's what it's okay. Sorry y'all. It's partial. So I actually never knew this would work. Interesting. Okay. [01:08:00] Surrender template is what we say in the, in the action to render like a template. So you with using render with the template, you give it the literal. Whole file name. If you're doing a partial, that's when you don't include the underscore because it's implied because it's a partial and now these all will work.
-
-I until this second didn't, I thought that you could not render template from [01:08:30] within a template, but apparently you can. So we just learned something together. Partial that you didn't put partial or template. If you don't say anything, like I can, I can't think of a case when you would ever render a whole template from within another template.
-
-So I think that's assumption is always that if you're calling, okay, that's what that was. So [01:09:00] anyway, the point being here, these are kind of like, so think as like a method that we're calling to get back some HTML that we wanna put into the bigger template. And just like with methods, very often the, it's useful to be able to send some inputs into the method so that the method isn't doing the same thing every time.
-
-It's gonna take the arguments and then change what it does a little bit and send back. So think of this local [01:09:30] hash as the analogous thing to methods to an argument. Okay, now, With this, we can do some really cool stuff. Um, can you populate the locals dynamically? Like I'm thinking if you have a form and you wanna edit the movie, but you don't wanna allow them to change the movie title, edit the info about it, could you do like, get the [01:10:00] person or the movie to be like this movie or something?
-
-So I think generally the answer to your question would be yes. Because if I was gonna try so, because in an edit and okay, I don't, yes. So this is what we started down, this edit exact flow, right? So let's fix that up. Now I'm gonna extract this, put it into,[01:10:30] 
-
-and same from new, actually, I can put this in there too. That would be nice.
-
-Put [01:11:00] the error.
-
-Now my new movie form and
-
-are using the same podcast. If you wanted mostly the same, but then behavior you would pass in, conditionally check and be like, [01:11:30] okay, let's disable this field or not. So I might something like locals disabled and then like pass list of things that I would want to be disabled and then I could use that array to like check and add that attribute.
-
-So yeah, if house being rendered.
-
-Okay, now here's, [01:12:00] here's, this is currently working. We have I, I extracted this form partial and I'm using it in both, in the new this part using an instance variable called atmo. Right? So one thing that we can see right away is that an instance variable that I defined in my action in the controller is to the partial view templates as well.
-
-And we didn't have to explicitly do anything to enable that. [01:12:30] So instance variables that are defined in the action are available in the view. And any partials rented by that. That's oftentimes convenient, but often times not a convenient. So there's many cases where these two actions new and edit, they like they're want to use somewhere, but they might method name, sorry, variable [01:13:00] name.
-
-So let's just imagine we were doing, we're naming our variables in the app dev. One way this would've been the movie and this one would've been like new movie. And they're that the same. Now we're rendering the template. That's assuming like, okay, now it's calling Dr. Movie, which is nil. So now in the new form, if I go change it to at and at new, then it's gonna work again.[01:13:30] 
-
-It's not gonna work because now here the, so I guess never call that very well anything other than atmo. No matter how many hundreds of actions are using that partial. And sometimes it is hundreds of actions that are gonna use a particular partial. Like think of something that's gonna be all over the place, like the avatar for a user or gonna use [01:14:00] it every single action, the whole app sometimes.
-
-So you don't want to be constrained to have to use the exact same instance. Variable names all over the place. But that's cool because we have the locals because say with line variable, I'm gonna pass in locals and say, I'm gonna pick variable name here, fu and pass in at the movie in this case. So now that means that the record [01:14:30] said, define the local variable, call FU and send it in and put this value into that local variable.
+That's optional though, and I prefer typing out the long way with `partials:` and `locals:` so you can tell exactly what's going on.
 
 So now here, instead of using any instance variable, the partial will itself pick variable names for everything that it needs from the outside world. We define the variable names here, just as local variables, and then be sure to pass them in from everywhere that you're rendering that form. So here they fu and then in this case, the value is [01:15:00] at new movie, but by the time the partial it's gonna from, from all contexts, it gets named the same thing.
 
